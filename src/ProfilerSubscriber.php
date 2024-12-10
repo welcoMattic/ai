@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App;
 
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
-use Symfony\Component\HttpKernel\KernelInterface;
 
 /**
  * Can be deleted with Symfony 7.3, see https://github.com/symfony/symfony/pull/59123.
@@ -14,7 +14,8 @@ use Symfony\Component\HttpKernel\KernelInterface;
 final class ProfilerSubscriber implements EventSubscriberInterface
 {
     public function __construct(
-        private KernelInterface $kernel,
+        #[Autowire('kernel.debug')]
+        private readonly bool $debug,
     ) {
     }
 
@@ -27,7 +28,7 @@ final class ProfilerSubscriber implements EventSubscriberInterface
 
     public function onKernelResponse(ResponseEvent $event): void
     {
-        if (!$this->kernel->isDebug()) {
+        if (!$this->debug && !$event->isMainRequest()) {
             return;
         }
 

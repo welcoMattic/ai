@@ -27,3 +27,4 @@ phpstan.neon
 ###< phpunit/phpunit ###
 
 chromadb
+coverage
