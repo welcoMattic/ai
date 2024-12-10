@@ -24,7 +24,7 @@ jobs:
         run: composer install --no-scripts
 
       - name: Lint PHP
-        run: php -l src/**/*.php
+        run: php -l src/**/*.php tests/**/*.php
 
       - name: Lint Templates
         run: bin/console lint:twig templates
