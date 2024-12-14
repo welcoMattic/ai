@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Command;
+namespace App\Blog\Command;
 
 use App\Blog\Embedder;
 use Symfony\Component\Console\Attribute\AsCommand;
