@@ -1,0 +1,33 @@
+{
+    "name": "php-llm/mcp-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony integration bundle for Model Context Protocol (via php-llm/mcp-sdk)",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christopher Hertel",
+            "email": "mail@christopher-hertel.de"
+        }
+    ],
+    "require": {
+        "php-llm/mcp-sdk": "dev-main",
+        "symfony/config": "^6.4 || ^7.0",
+        "symfony/dependency-injection": "^6.4 || ^7.0",
+        "symfony/framework-bundle": "^6.4 || ^7.0"
+    },
+    "require-dev": {
+        "php-cs-fixer/shim": "dev-master",
+        "phpstan/phpstan": "2.1.x-dev",
+        "rector/rector": "dev-main"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpLlm\\McpBundle\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

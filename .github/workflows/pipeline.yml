@@ -1,0 +1,43 @@
+name: pipeline
+on: pull_request
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Conventional Commit
+        uses: ytanikin/pr-conventional-commits@1.4.1
+        with:
+          task_types: '["feat", "fix", "docs", "test", "ci", "style", "refactor", "perf", "chore", "revert"]'
+          add_label: 'true'
+          custom_labels: '{"feat": "feature", "fix": "bug", "docs": "documentation", "test": "test", "ci": "CI/CD", "style": "codestyle", "refactor": "refactor", "perf": "performance", "chore": "chore", "revert": "revert"}'
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Install Composer
+        uses: "ramsey/composer-install@v3"
+
+      - name: Composer Validation
+        run: composer validate --strict
+
+      - name: Install PHP Dependencies
+        run: composer install --no-scripts
+
+      - name: Code Style PHP
+        run: vendor/bin/php-cs-fixer fix --dry-run
+
+      - name: Rector
+        run: vendor/bin/rector --dry-run
+
+      - name: PHPStan
+        run: vendor/bin/phpstan analyse
