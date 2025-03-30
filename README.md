@@ -26,8 +26,9 @@ configuration and usable in your chains.
 
 ### Act as Server
 
-To use your application as a MCP server, exposing tools to clients like [Claude Desktop](https://claude.ai/download),
-you need to configure in the `client` section the transports you want to use. You can use either STDIO or SSE.
+To use your application as an MCP server, exposing tools to clients like [Claude Desktop](https://claude.ai/download),
+you need to configure in the `client_transports` section the transports you want to expose to clients.
+You can use either STDIO or SSE.
 
 ## Configuration
 
@@ -46,9 +47,8 @@ mcp:
             sse:
                 url: 'http://localhost:8000/sse' # URL to SSE endpoint of MCP server
         
-    # Configure this application to act as a MCP server
-    client:
-        transports:
-            stdio: true # Enable STDIO via command
-            sse: true # Enable Server-Sent Event via controller
+    # Configure this application to act as an MCP server
+    client_transports:
+        stdio: true # Enable STDIO via command
+        sse: true # Enable Server-Sent Event via controller
 ```
