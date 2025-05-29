@@ -20,7 +20,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php-version: ['8.1', '8.2', '8.3', '8.4']
+                php-version: ['8.2', '8.3', '8.4']
                 dependency-version: ['']
                 symfony-version: ['']
                 minimum-stability: ['stable']
@@ -29,10 +29,10 @@ jobs:
                     -   minimum-stability: 'dev'
                         php-version: '8.4'
                     # lowest deps
-                    -   php-version: '8.1'
+                    -   php-version: '8.2'
                         dependency-version: 'lowest'
                     # LTS version of Symfony
-                    -   php-version: '8.1'
+                    -   php-version: '8.2'
                         symfony-version: '6.4.*'
 
         env:
@@ -48,6 +48,7 @@ jobs:
                   echo PHPUNIT='vendor/bin/phpunit' >> $GITHUB_ENV
                   [ 'lowest' = '${{ matrix.dependency-version }}' ] && export SYMFONY_DEPRECATIONS_HELPER=weak
 
+                  PACKAGES=$(find src/ -mindepth 2 -type f -name composer.json -not -path "*/vendor/*" -printf '%h\n' | sed 's/^src\///' | grep -Ev "examples" | sort |  tr '\n' ' ')
                   echo "Packages: $PACKAGES"
                   echo "PACKAGES=$PACKAGES" >> $GITHUB_ENV
 
