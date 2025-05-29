@@ -38,7 +38,7 @@ return (new PhpCsFixer\Config())
         '@Symfony' => true,
         '@Symfony:risky' => true,
         'protected_to_private' => false,
-        'declare_strict_types' => true,
+        'declare_strict_types' => false,
         'header_comment' => [
             'header' => implode('', $fileHeaderParts),
         ],
