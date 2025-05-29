@@ -2,12 +2,21 @@
 
 declare(strict_types=1);
 
-namespace PhpLlm\McpSdk;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-use PhpLlm\McpSdk\Server\JsonRpcHandler;
-use PhpLlm\McpSdk\Server\TransportInterface;
+namespace Symfony\AI\McpSdk;
+
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use Symfony\AI\McpSdk\Server\JsonRpcHandler;
+use Symfony\AI\McpSdk\Server\TransportInterface;
 
 final readonly class Server
 {

@@ -2,9 +2,18 @@
 
 declare(strict_types=1);
 
-namespace PhpLlm\McpSdk\Server\NotificationHandler;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-use PhpLlm\McpSdk\Message\Notification;
+namespace Symfony\AI\McpSdk\Server\NotificationHandler;
+
+use Symfony\AI\McpSdk\Message\Notification;
 
 final class InitializedHandler extends BaseNotificationHandler
 {

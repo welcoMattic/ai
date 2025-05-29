@@ -1,9 +1,20 @@
 <?php
 
-namespace PhpLlm\McpSdk\Capability\Tool;
+declare(strict_types=1);
 
-use PhpLlm\McpSdk\Exception\ToolExecutionException;
-use PhpLlm\McpSdk\Exception\ToolNotFoundException;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\AI\McpSdk\Capability\Tool;
+
+use Symfony\AI\McpSdk\Exception\ToolExecutionException;
+use Symfony\AI\McpSdk\Exception\ToolNotFoundException;
 
 interface ToolExecutorInterface
 {

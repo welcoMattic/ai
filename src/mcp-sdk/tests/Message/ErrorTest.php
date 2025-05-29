@@ -2,10 +2,19 @@
 
 declare(strict_types=1);
 
-namespace PhpLlm\McpSdk\Tests\Message;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-use PhpLlm\McpSdk\Message\Error;
+namespace Symfony\AI\McpSdk\Tests\Message;
+
 use PHPUnit\Framework\TestCase;
+use Symfony\AI\McpSdk\Message\Error;
 
 final class ErrorTest extends TestCase
 {

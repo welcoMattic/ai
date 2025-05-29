@@ -1,11 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace App;
 
-use PhpLlm\McpSdk\Capability\Resource\MetadataInterface;
-use PhpLlm\McpSdk\Capability\Resource\ResourceRead;
-use PhpLlm\McpSdk\Capability\Resource\ResourceReaderInterface;
-use PhpLlm\McpSdk\Capability\Resource\ResourceReadResult;
+use Symfony\AI\McpSdk\Capability\Resource\MetadataInterface;
+use Symfony\AI\McpSdk\Capability\Resource\ResourceRead;
+use Symfony\AI\McpSdk\Capability\Resource\ResourceReaderInterface;
+use Symfony\AI\McpSdk\Capability\Resource\ResourceReadResult;
 
 class ExampleResource implements MetadataInterface, ResourceReaderInterface
 {

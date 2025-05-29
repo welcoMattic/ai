@@ -1,5 +1,5 @@
 {
-    "name": "php-llm/mcp-sdk",
+    "name": "symfony/mcp-sdk",
     "type": "library",
     "description": "Model Context Protocol SDK for Client and Server applications in PHP",
     "license": "MIT",
@@ -31,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PhpLlm\\McpSdk\\": "src/"
+            "Symfony\\AI\\McpSdk\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PhpLlm\\McpSdk\\Tests\\": "tests/"
+            "Symfony\\AI\\McpSdk\\Tests\\": "tests/"
         }
     }
 }

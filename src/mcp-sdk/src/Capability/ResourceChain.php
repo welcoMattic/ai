@@ -1,15 +1,26 @@
 <?php
 
-namespace PhpLlm\McpSdk\Capability;
+declare(strict_types=1);
 
-use PhpLlm\McpSdk\Capability\Resource\CollectionInterface;
-use PhpLlm\McpSdk\Capability\Resource\IdentifierInterface;
-use PhpLlm\McpSdk\Capability\Resource\MetadataInterface;
-use PhpLlm\McpSdk\Capability\Resource\ResourceRead;
-use PhpLlm\McpSdk\Capability\Resource\ResourceReaderInterface;
-use PhpLlm\McpSdk\Capability\Resource\ResourceReadResult;
-use PhpLlm\McpSdk\Exception\ResourceNotFoundException;
-use PhpLlm\McpSdk\Exception\ResourceReadException;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\AI\McpSdk\Capability;
+
+use Symfony\AI\McpSdk\Capability\Resource\CollectionInterface;
+use Symfony\AI\McpSdk\Capability\Resource\IdentifierInterface;
+use Symfony\AI\McpSdk\Capability\Resource\MetadataInterface;
+use Symfony\AI\McpSdk\Capability\Resource\ResourceRead;
+use Symfony\AI\McpSdk\Capability\Resource\ResourceReaderInterface;
+use Symfony\AI\McpSdk\Capability\Resource\ResourceReadResult;
+use Symfony\AI\McpSdk\Exception\ResourceNotFoundException;
+use Symfony\AI\McpSdk\Exception\ResourceReadException;
 
 /**
  * A collection of resources. All resources need to implement IdentifierInterface.

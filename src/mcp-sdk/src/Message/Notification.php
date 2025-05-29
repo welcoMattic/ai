@@ -2,7 +2,16 @@
 
 declare(strict_types=1);
 
-namespace PhpLlm\McpSdk\Message;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\AI\McpSdk\Message;
 
 final readonly class Notification implements \JsonSerializable, \Stringable
 {
@@ -40,6 +49,6 @@ final readonly class Notification implements \JsonSerializable, \Stringable
 
     public function __toString(): string
     {
-        return sprintf('%s', $this->method);
+        return \sprintf('%s', $this->method);
     }
 }

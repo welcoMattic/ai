@@ -1,9 +1,20 @@
 <?php
 
-namespace PhpLlm\McpSdk\Capability\Resource;
+declare(strict_types=1);
 
-use PhpLlm\McpSdk\Exception\ResourceNotFoundException;
-use PhpLlm\McpSdk\Exception\ResourceReadException;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\AI\McpSdk\Capability\Resource;
+
+use Symfony\AI\McpSdk\Exception\ResourceNotFoundException;
+use Symfony\AI\McpSdk\Exception\ResourceReadException;
 
 interface ResourceReaderInterface
 {

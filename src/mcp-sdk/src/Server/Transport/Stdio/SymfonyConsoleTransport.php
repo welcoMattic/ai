@@ -2,9 +2,18 @@
 
 declare(strict_types=1);
 
-namespace PhpLlm\McpSdk\Server\Transport\Stdio;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-use PhpLlm\McpSdk\Server\TransportInterface;
+namespace Symfony\AI\McpSdk\Server\Transport\Stdio;
+
+use Symfony\AI\McpSdk\Server\TransportInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\StreamableInputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -33,14 +42,14 @@ final class SymfonyConsoleTransport implements TransportInterface
 
     public function receive(): \Generator
     {
-        $stream = $this->input instanceof StreamableInputInterface ? $this->input->getStream() ?? STDIN : STDIN;
+        $stream = $this->input instanceof StreamableInputInterface ? $this->input->getStream() ?? \STDIN : \STDIN;
         $line = fgets($stream);
         if (false === $line) {
             return;
         }
-        $this->buffer .= STDIN === $stream ? rtrim($line).PHP_EOL : $line;
-        if (str_contains($this->buffer, PHP_EOL)) {
-            $lines = explode(PHP_EOL, $this->buffer);
+        $this->buffer .= \STDIN === $stream ? rtrim($line).\PHP_EOL : $line;
+        if (str_contains($this->buffer, \PHP_EOL)) {
+            $lines = explode(\PHP_EOL, $this->buffer);
             $this->buffer = array_pop($lines);
 
             yield from $lines;

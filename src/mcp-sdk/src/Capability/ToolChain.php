@@ -1,15 +1,26 @@
 <?php
 
-namespace PhpLlm\McpSdk\Capability;
+declare(strict_types=1);
 
-use PhpLlm\McpSdk\Capability\Tool\CollectionInterface;
-use PhpLlm\McpSdk\Capability\Tool\IdentifierInterface;
-use PhpLlm\McpSdk\Capability\Tool\MetadataInterface;
-use PhpLlm\McpSdk\Capability\Tool\ToolCall;
-use PhpLlm\McpSdk\Capability\Tool\ToolCallResult;
-use PhpLlm\McpSdk\Capability\Tool\ToolExecutorInterface;
-use PhpLlm\McpSdk\Exception\ToolExecutionException;
-use PhpLlm\McpSdk\Exception\ToolNotFoundException;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\AI\McpSdk\Capability;
+
+use Symfony\AI\McpSdk\Capability\Tool\CollectionInterface;
+use Symfony\AI\McpSdk\Capability\Tool\IdentifierInterface;
+use Symfony\AI\McpSdk\Capability\Tool\MetadataInterface;
+use Symfony\AI\McpSdk\Capability\Tool\ToolCall;
+use Symfony\AI\McpSdk\Capability\Tool\ToolCallResult;
+use Symfony\AI\McpSdk\Capability\Tool\ToolExecutorInterface;
+use Symfony\AI\McpSdk\Exception\ToolExecutionException;
+use Symfony\AI\McpSdk\Exception\ToolNotFoundException;
 
 /**
  * A collection of tools. All tools need to implement IdentifierInterface.

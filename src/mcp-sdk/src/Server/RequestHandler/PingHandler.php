@@ -2,10 +2,19 @@
 
 declare(strict_types=1);
 
-namespace PhpLlm\McpSdk\Server\RequestHandler;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-use PhpLlm\McpSdk\Message\Request;
-use PhpLlm\McpSdk\Message\Response;
+namespace Symfony\AI\McpSdk\Server\RequestHandler;
+
+use Symfony\AI\McpSdk\Message\Request;
+use Symfony\AI\McpSdk\Message\Response;
 
 final class PingHandler extends BaseRequestHandler
 {

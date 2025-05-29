@@ -2,9 +2,18 @@
 
 declare(strict_types=1);
 
-namespace PhpLlm\McpSdk\Server\Transport\Sse;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-use PhpLlm\McpSdk\Server\TransportInterface;
+namespace Symfony\AI\McpSdk\Server\Transport\Sse;
+
+use Symfony\AI\McpSdk\Server\TransportInterface;
 use Symfony\Component\Uid\Uuid;
 
 final readonly class StreamTransport implements TransportInterface
@@ -44,9 +53,9 @@ final readonly class StreamTransport implements TransportInterface
 
     private function flushEvent(string $event, string $data): void
     {
-        echo sprintf('event: %s', $event).PHP_EOL;
-        echo sprintf('data: %s', $data).PHP_EOL;
-        echo PHP_EOL;
+        echo \sprintf('event: %s', $event).\PHP_EOL;
+        echo \sprintf('data: %s', $data).\PHP_EOL;
+        echo \PHP_EOL;
         if (false !== ob_get_length()) {
             ob_flush();
         }

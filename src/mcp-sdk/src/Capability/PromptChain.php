@@ -1,15 +1,26 @@
 <?php
 
-namespace PhpLlm\McpSdk\Capability;
+declare(strict_types=1);
 
-use PhpLlm\McpSdk\Capability\Prompt\CollectionInterface;
-use PhpLlm\McpSdk\Capability\Prompt\IdentifierInterface;
-use PhpLlm\McpSdk\Capability\Prompt\MetadataInterface;
-use PhpLlm\McpSdk\Capability\Prompt\PromptGet;
-use PhpLlm\McpSdk\Capability\Prompt\PromptGetResult;
-use PhpLlm\McpSdk\Capability\Prompt\PromptGetterInterface;
-use PhpLlm\McpSdk\Exception\PromptGetException;
-use PhpLlm\McpSdk\Exception\PromptNotFoundException;
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\AI\McpSdk\Capability;
+
+use Symfony\AI\McpSdk\Capability\Prompt\CollectionInterface;
+use Symfony\AI\McpSdk\Capability\Prompt\IdentifierInterface;
+use Symfony\AI\McpSdk\Capability\Prompt\MetadataInterface;
+use Symfony\AI\McpSdk\Capability\Prompt\PromptGet;
+use Symfony\AI\McpSdk\Capability\Prompt\PromptGetResult;
+use Symfony\AI\McpSdk\Capability\Prompt\PromptGetterInterface;
+use Symfony\AI\McpSdk\Exception\PromptGetException;
+use Symfony\AI\McpSdk\Exception\PromptNotFoundException;
 
 /**
  * A collection of prompts. All prompts need to implement IdentifierInterface.
