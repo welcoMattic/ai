@@ -1,18 +1,5 @@
 llm_chain:
     platform:
-        # anthropic:
-        #     api_key: '%env(ANTHROPIC_API_KEY)%'
-        # azure:
-        #     gpt_deployment:
-        #         base_url: '%env(AZURE_GPT_BASE_URL)%'
-        #         deployment: '%env(AZURE_GPT_DEPLOYMENT)%'
-        #         api_key: '%env(AZURE_GPT_API_KEY)%'
-        #         api_version: '%env(AZURE_GPT_VERSION)%'
-        #     embeddings_deployment:
-        #         base_url: '%env(AZURE_EMBEDDINGS_BASE_URL)%'
-        #         deployment: '%env(AZURE_EMBEDDINGS_DEPLOYMENT)%'
-        #         api_key: '%env(AZURE_EMBEDDINGS_API_KEY)%'
-        #         api_version: '%env(AZURE_EMBEDDINGS_VERSION)%'
         openai:
             api_key: '%env(OPENAI_API_KEY)%'
     chain:
@@ -57,13 +44,8 @@ llm_chain:
         chroma_db:
             symfonycon:
                 collection: 'symfony_blog'
-            # web_summer_camp:
-            #     host: '%env(CHROMADB_HOST)%'
-            #     collection: 'wsc_program'
     embedder:
         default:
-            # platform: 'llm_chain.platform.anthropic'
-            # store: 'llm_chain.store.chroma_db.symfonycon'
             model:
                 name: 'Embeddings'
                 version: 'text-embedding-ada-002'
