@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /*
  * This file is part of the Symfony package.
  *
@@ -33,8 +31,6 @@ return (new PhpCsFixer\Config())
     // @see https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/pull/7777
     ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setRules([
-        '@PHP71Migration' => true,
-        '@PHPUnit75Migration:risky' => true,
         '@Symfony' => true,
         '@Symfony:risky' => true,
         'protected_to_private' => false,
@@ -50,5 +46,4 @@ return (new PhpCsFixer\Config())
             ->append([__FILE__])
             ->notPath('#/Fixtures/#')
     )
-    ->setCacheFile('.php-cs-fixer.cache')
 ;
