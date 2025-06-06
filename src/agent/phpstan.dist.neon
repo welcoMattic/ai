@@ -1,0 +1,10 @@
+parameters:
+    level: 6
+    paths:
+        - src/
+        - tests/
+    ignoreErrors:
+        -
+            message: '#no value type specified in iterable type array#'
+            path: tests/*
+
