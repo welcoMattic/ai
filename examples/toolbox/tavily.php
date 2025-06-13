@@ -20,8 +20,8 @@ use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpClient\HttpClient;
 
-require_once dirname(__DIR__, 2).'/vendor/autoload.php';
-(new Dotenv())->loadEnv(dirname(__DIR__, 2).'/.env');
+require_once dirname(__DIR__).'/vendor/autoload.php';
+(new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
 if (empty($_ENV['OPENAI_API_KEY']) || empty($_ENV['TAVILY_API_KEY'])) {
     echo 'Please set the OPENAI_API_KEY and TAVILY_API_KEY environment variable.'.\PHP_EOL;

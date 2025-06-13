@@ -14,8 +14,8 @@ use Symfony\AI\Platform\Bridge\OpenAI\Whisper;
 use Symfony\AI\Platform\Message\Content\Audio;
 use Symfony\Component\Dotenv\Dotenv;
 
-require_once dirname(__DIR__, 2).'/vendor/autoload.php';
-(new Dotenv())->loadEnv(dirname(__DIR__, 2).'/.env');
+require_once dirname(__DIR__).'/vendor/autoload.php';
+(new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
 if (empty($_ENV['AZURE_OPENAI_BASEURL']) || empty($_ENV['AZURE_OPENAI_WHISPER_DEPLOYMENT']) || empty($_ENV['AZURE_OPENAI_WHISPER_API_VERSION']) || empty($_ENV['AZURE_OPENAI_KEY'])
 ) {

@@ -13,7 +13,7 @@ use Codewithkyrian\Transformers\Pipelines\Task;
 use Symfony\AI\Platform\Bridge\TransformersPHP\PlatformFactory;
 use Symfony\AI\Platform\Model;
 
-require_once dirname(__DIR__, 2).'/vendor/autoload.php';
+require_once dirname(__DIR__).'/vendor/autoload.php';
 
 if (!extension_loaded('ffi') || '1' !== ini_get('ffi.enable')) {
     echo 'FFI extension is not loaded or enabled. Please enable it in your php.ini file.'.\PHP_EOL;
@@ -21,7 +21,7 @@ if (!extension_loaded('ffi') || '1' !== ini_get('ffi.enable')) {
     exit(1);
 }
 
-if (!is_dir(dirname(__DIR__, 2).'/.transformers-cache/Xenova/LaMini-Flan-T5-783M')) {
+if (!is_dir(dirname(__DIR__).'/.transformers-cache/Xenova/LaMini-Flan-T5-783M')) {
     echo 'Model "Xenova/LaMini-Flan-T5-783M" not found. Downloading it will be part of the first run. This may take a while...'.\PHP_EOL;
 }
 

@@ -683,8 +683,8 @@ foreach ($responses as $response) {
 
 #### Code Examples
 
-1. [Parallel GPT Calls](examples/parallel-chat-gpt.php)
-1. [Parallel Embeddings Calls](examples/parallel-embeddings.php)
+1. [Parallel GPT Calls](examples/misc/parallel-chat-gpt.php)
+1. [Parallel Embeddings Calls](examples/misc/parallel-embeddings.php)
 
 > [!NOTE]
 > Please be aware that some embedding models also support batch processing out of the box.
