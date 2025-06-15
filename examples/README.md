@@ -20,7 +20,7 @@ composer install
 #### Configuration
 
 Depending on the examples you want to run, you may need to configure the needed API keys. Therefore, you need to create a
-`.env.local` file in the root of the examples directory. This file should contain the environment variables for the
+`.env.local` file in the root of the examples' directory. This file should contain the environment variables for the
 corresponding example you want to run.
 
 _Now you can run examples standalone or via the example runner._

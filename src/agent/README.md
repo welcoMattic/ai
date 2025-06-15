@@ -1,8 +1,9 @@
-# Symfony AI Bundle
+# Symfony AI - Agent Component
 
-Integration bundle for Symfony AI components.
+The Agent component provides a framework for building AI agents that, sits on top of the Platform and Store components,
+allowing you to create agents that can interact with users, perform tasks, and manage workflows.
 
-**This Bundle is experimental**.
+**This Component is experimental**.
 [Experimental features](https://symfony.com/doc/current/contributing/code/experimental.html)
 are not covered by Symfony's
 [Backward Compatibility Promise](https://symfony.com/doc/current/contributing/code/bc.html).
@@ -10,7 +11,7 @@ are not covered by Symfony's
 ## Installation
 
 ```bash
-composer require symfony/ai-bundle
+composer require symfony/ai-agent
 ```
 
 **This repository is a READ-ONLY sub-tree split**. See

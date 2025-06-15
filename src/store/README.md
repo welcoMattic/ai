@@ -1,8 +1,8 @@
-# Symfony AI Bundle
+# Symfony AI - Store Component
 
-Integration bundle for Symfony AI components.
+The Store component provides a low-level abstraction for storing and retrieving documents in a vector store.
 
-**This Bundle is experimental**.
+**This Component is experimental**.
 [Experimental features](https://symfony.com/doc/current/contributing/code/experimental.html)
 are not covered by Symfony's
 [Backward Compatibility Promise](https://symfony.com/doc/current/contributing/code/bc.html).
@@ -10,7 +10,7 @@ are not covered by Symfony's
 ## Installation
 
 ```bash
-composer require symfony/ai-bundle
+composer require symfony/ai-store
 ```
 
 **This repository is a READ-ONLY sub-tree split**. See
