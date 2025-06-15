@@ -26,8 +26,8 @@ use Symfony\AI\Store\Embedder;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\Uid\Uuid;
 
-require_once dirname(__DIR__, 2).'/vendor/autoload.php';
-(new Dotenv())->loadEnv(dirname(__DIR__, 2).'/.env');
+require_once dirname(__DIR__).'/vendor/autoload.php';
+(new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
 if (empty($_ENV['OPENAI_API_KEY']) || empty($_ENV['MONGODB_URI'])) {
     echo 'Please set OPENAI_API_KEY and MONGODB_URI environment variables.'.\PHP_EOL;

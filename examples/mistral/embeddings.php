@@ -14,8 +14,8 @@ use Symfony\AI\Platform\Bridge\Mistral\PlatformFactory;
 use Symfony\AI\Platform\Response\VectorResponse;
 use Symfony\Component\Dotenv\Dotenv;
 
-require_once dirname(__DIR__, 2).'/vendor/autoload.php';
-(new Dotenv())->loadEnv(dirname(__DIR__, 2).'/.env');
+require_once dirname(__DIR__).'/vendor/autoload.php';
+(new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
 if (empty($_ENV['MISTRAL_API_KEY'])) {
     echo 'Please set the MISTRAL_API_KEY environment variable.'.\PHP_EOL;

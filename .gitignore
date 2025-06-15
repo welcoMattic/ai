@@ -1,8 +1,6 @@
 .doctor-rst.cache
-.env.local
 .php-cs-fixer.cache
 .phpunit.cache
-.transformers-cache
 
 composer.lock
 vendor
