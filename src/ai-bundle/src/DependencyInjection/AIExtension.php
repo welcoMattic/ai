@@ -33,6 +33,8 @@ use Symfony\AI\Platform\Bridge\Azure\OpenAI\PlatformFactory as AzureOpenAIPlatfo
 use Symfony\AI\Platform\Bridge\Google\Gemini;
 use Symfony\AI\Platform\Bridge\Google\PlatformFactory as GooglePlatformFactory;
 use Symfony\AI\Platform\Bridge\Meta\Llama;
+use Symfony\AI\Platform\Bridge\Mistral\Mistral;
+use Symfony\AI\Platform\Bridge\Mistral\PlatformFactory as MistralPlatformFactory;
 use Symfony\AI\Platform\Bridge\OpenAI\Embeddings;
 use Symfony\AI\Platform\Bridge\OpenAI\GPT;
 use Symfony\AI\Platform\Bridge\OpenAI\PlatformFactory as OpenAIPlatformFactory;
@@ -212,6 +214,21 @@ final class AIExtension extends Extension
             return;
         }
 
+        if ('mistral' === $type) {
+            $platformId = 'llm_chain.platform.mistral';
+            $definition = (new Definition(Platform::class))
+                ->setFactory(MistralPlatformFactory::class.'::create')
+                ->setAutowired(true)
+                ->setLazy(true)
+                ->addTag('proxy', ['interface' => PlatformInterface::class])
+                ->setArguments(['$apiKey' => $platform['api_key']])
+                ->addTag('llm_chain.platform');
+
+            $container->setDefinition($platformId, $definition);
+
+            return;
+        }
+
         throw new \InvalidArgumentException(\sprintf('Platform "%s" is not supported for configuration via bundle at this point.', $type));
     }
 
@@ -228,6 +245,7 @@ final class AIExtension extends Extension
             'claude' => Claude::class,
             'llama' => Llama::class,
             'gemini' => Gemini::class,
+            'mistral' => Mistral::class,
             default => throw new \InvalidArgumentException(\sprintf('Model "%s" is not supported.', $modelName)),
         };
         $modelDefinition = new Definition($modelClass);
