@@ -13,6 +13,8 @@ namespace Symfony\AI\Platform\Bridge\Google;
 
 use Symfony\AI\Platform\Bridge\Google\Contract\AssistantMessageNormalizer;
 use Symfony\AI\Platform\Bridge\Google\Contract\MessageBagNormalizer;
+use Symfony\AI\Platform\Bridge\Google\Contract\ToolCallMessageNormalizer;
+use Symfony\AI\Platform\Bridge\Google\Contract\ToolNormalizer;
 use Symfony\AI\Platform\Bridge\Google\Contract\UserMessageNormalizer;
 use Symfony\AI\Platform\Contract;
 use Symfony\AI\Platform\Platform;
@@ -35,6 +37,8 @@ final readonly class PlatformFactory
         return new Platform([$responseHandler], [$responseHandler], Contract::create(
             new AssistantMessageNormalizer(),
             new MessageBagNormalizer(),
+            new ToolNormalizer(),
+            new ToolCallMessageNormalizer(),
             new UserMessageNormalizer(),
         ));
     }
