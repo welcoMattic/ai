@@ -15,16 +15,12 @@ use Symfony\AI\Platform\Bridge\Google\Gemini;
 use Symfony\AI\Platform\Contract\Normalizer\ModelContractNormalizer;
 use Symfony\AI\Platform\Message\AssistantMessage;
 use Symfony\AI\Platform\Model;
-use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
  */
-final class AssistantMessageNormalizer extends ModelContractNormalizer implements NormalizerAwareInterface
+final class AssistantMessageNormalizer extends ModelContractNormalizer
 {
-    use NormalizerAwareTrait;
-
     protected function supportedDataClass(): string
     {
         return AssistantMessage::class;
@@ -42,8 +38,23 @@ final class AssistantMessageNormalizer extends ModelContractNormalizer implement
      */
     public function normalize(mixed $data, ?string $format = null, array $context = []): array
     {
-        return [
-            ['text' => $data->content],
-        ];
+        $normalized = [];
+
+        if (isset($data->content)) {
+            $normalized['text'] = $data->content;
+        }
+
+        if (isset($data->toolCalls[0])) {
+            $normalized['functionCall'] = [
+                'id' => $data->toolCalls[0]->id,
+                'name' => $data->toolCalls[0]->name,
+            ];
+
+            if ($data->toolCalls[0]->arguments) {
+                $normalized['functionCall']['args'] = $data->toolCalls[0]->arguments;
+            }
+        }
+
+        return [$normalized];
     }
 }
