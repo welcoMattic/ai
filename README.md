@@ -165,7 +165,7 @@ $yourTool = new YourTool();
 $toolbox = Toolbox::create($yourTool);
 $toolProcessor = new AgentProcessor($toolbox);
 
-$agent = new Agent($platform, $model, inputProcessor: [$toolProcessor], outputProcessor: [$toolProcessor]);
+$agent = new Agent($platform, $model, inputProcessors: [$toolProcessor], outputProcessors: [$toolProcessor]);
 ```
 
 Custom tools can basically be any class, but must configure by the `#[AsTool]` attribute.
@@ -178,7 +178,7 @@ final class CompanyName
 {
     public function __invoke(): string
     {
-        return 'ACME Corp.'
+        return 'ACME Corp.';
     }
 }
 ```
