@@ -38,7 +38,9 @@ use Symfony\AI\Platform\Bridge\Mistral\PlatformFactory as MistralPlatformFactory
 use Symfony\AI\Platform\Bridge\OpenAI\Embeddings;
 use Symfony\AI\Platform\Bridge\OpenAI\GPT;
 use Symfony\AI\Platform\Bridge\OpenAI\PlatformFactory as OpenAIPlatformFactory;
+use Symfony\AI\Platform\Bridge\OpenRouter\PlatformFactory as OpenRouterPlatformFactory;
 use Symfony\AI\Platform\Bridge\Voyage\Voyage;
+use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface;
 use Symfony\AI\Platform\Platform;
 use Symfony\AI\Platform\PlatformInterface;
@@ -214,15 +216,30 @@ final class AIExtension extends Extension
             return;
         }
 
+        if ('openrouter' === $type) {
+            $platformId = 'symfony_ai.platform.openrouter';
+            $definition = (new Definition(Platform::class))
+                ->setFactory(OpenRouterPlatformFactory::class.'::create')
+                ->setAutowired(true)
+                ->setLazy(true)
+                ->addTag('proxy', ['interface' => PlatformInterface::class])
+                ->setArguments(['$apiKey' => $platform['api_key']])
+                ->addTag('symfony_ai.platform');
+
+            $container->setDefinition($platformId, $definition);
+
+            return;
+        }
+
         if ('mistral' === $type) {
-            $platformId = 'llm_chain.platform.mistral';
+            $platformId = 'symfony_ai.platform.mistral';
             $definition = (new Definition(Platform::class))
                 ->setFactory(MistralPlatformFactory::class.'::create')
                 ->setAutowired(true)
                 ->setLazy(true)
                 ->addTag('proxy', ['interface' => PlatformInterface::class])
                 ->setArguments(['$apiKey' => $platform['api_key']])
-                ->addTag('llm_chain.platform');
+                ->addTag('symfony_ai.platform');
 
             $container->setDefinition($platformId, $definition);
 
@@ -246,6 +263,7 @@ final class AIExtension extends Extension
             'llama' => Llama::class,
             'gemini' => Gemini::class,
             'mistral' => Mistral::class,
+            'openrouter' => Model::class,
             default => throw new \InvalidArgumentException(\sprintf('Model "%s" is not supported.', $modelName)),
         };
         $modelDefinition = new Definition($modelClass);
