@@ -197,13 +197,13 @@ final readonly class ModelHandler implements ModelClientInterface, ResponseConve
 
     /**
      * @param array{
-     *     id: string,
+     *     id?: string,
      *     name: string,
      *     args: mixed[]
      * } $toolCall
      */
     private function convertToolCall(array $toolCall): ToolCall
     {
-        return new ToolCall($toolCall['id'], $toolCall['name'], $toolCall['args']);
+        return new ToolCall($toolCall['id'] ?? '', $toolCall['name'], $toolCall['args']);
     }
 }
