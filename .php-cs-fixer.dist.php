@@ -42,7 +42,7 @@ return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
     ->setFinder(
         (new PhpCsFixer\Finder())
-            ->in([__DIR__.'/src', __DIR__.'/examples', __DIR__.'/fixtures'])
+            ->in([__DIR__.'/demo', __DIR__.'/examples', __DIR__.'/fixtures', __DIR__.'/src'])
             ->append([__FILE__])
             ->notPath('#/Fixtures/#')
     )
