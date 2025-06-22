@@ -47,7 +47,7 @@ final class TranscriptFetcher
 
         // Collect all text elements from the captions
         $transcript = $xmlCrawler->filter('text')->each(function (Crawler $node) {
-            return $node->text().' ';
+            return $node->text() . ' TranscriptFetcher.php';
         });
 
         // Combine all the text elements into one string
