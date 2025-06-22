@@ -396,22 +396,22 @@ $response = $agent->call($messages);
 Symfony AI supports document embedding and similarity search using vector stores like ChromaDB, Azure AI Search, MongoDB
 Atlas Search, or Pinecone.
 
-For populating a vector store, Symfony AI provides the service `Embedder`, which requires an instance of an
+For populating a vector store, Symfony AI provides the service `Indexer`, which requires an instance of an
 `EmbeddingsModel` and one of `StoreInterface`, and works with a collection of `Document` objects as input:
 
 ```php
 use Symfony\AI\Platform\Bridge\OpenAI\Embeddings;
 use Symfony\AI\Platform\Bridge\OpenAI\PlatformFactory;
 use Symfony\AI\Store\Bridge\Pinecone\Store;
-use Symfony\AI\Store\Embedder;
+use Symfony\AI\Store\Indexer;
 use Probots\Pinecone\Pinecone;
 
-$embedder = new Embedder(
+$indexer = new Indexer(
     PlatformFactory::create($_ENV['OPENAI_API_KEY']),
     new Embeddings(),
     new Store(Pinecone::client($_ENV['PINECONE_API_KEY'], $_ENV['PINECONE_HOST']),
 );
-$embedder->embed($documents);
+$indexer->index($documents);
 ```
 
 The collection of `Document` instances is usually created by text input of your domain entities:

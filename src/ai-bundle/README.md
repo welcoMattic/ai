@@ -77,7 +77,7 @@ ai:
             # multiple collections possible per type
             default:
                 collection: 'my_collection'
-    embedder:
+    indexer:
         default:
             # platform: 'symfony_ai.platform.anthropic'
             # store: 'symfony_ai.store.chroma_db.default'

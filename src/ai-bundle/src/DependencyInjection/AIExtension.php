@@ -49,7 +49,7 @@ use Symfony\AI\Store\Bridge\Azure\SearchStore as AzureSearchStore;
 use Symfony\AI\Store\Bridge\ChromaDB\Store as ChromaDBStore;
 use Symfony\AI\Store\Bridge\MongoDB\Store as MongoDBStore;
 use Symfony\AI\Store\Bridge\Pinecone\Store as PineconeStore;
-use Symfony\AI\Store\Embedder;
+use Symfony\AI\Store\Indexer;
 use Symfony\AI\Store\StoreInterface;
 use Symfony\AI\Store\VectorStoreInterface;
 use Symfony\Component\Config\FileLocator;
@@ -108,11 +108,11 @@ final class AIExtension extends Extension
             $container->setAlias(StoreInterface::class, reset($stores));
         }
 
-        foreach ($config['embedder'] as $embedderName => $embedder) {
-            $this->processEmbedderConfig($embedderName, $embedder, $container);
+        foreach ($config['indexer'] as $indexerName => $indexer) {
+            $this->processIndexerConfig($indexerName, $indexer, $container);
         }
-        if (1 === \count($config['embedder']) && isset($embedderName)) {
-            $container->setAlias(Embedder::class, 'symfony_ai.embedder.'.$embedderName);
+        if (1 === \count($config['indexer']) && isset($indexerName)) {
+            $container->setAlias(Indexer::class, 'symfony_ai.indexer.'.$indexerName);
         }
 
         $container->registerAttributeForAutoconfiguration(AsTool::class, static function (ChildDefinition $definition, AsTool $attribute): void {
@@ -465,7 +465,7 @@ final class AIExtension extends Extension
     /**
      * @param array<string, mixed> $config
      */
-    private function processEmbedderConfig(int|string $name, array $config, ContainerBuilder $container): void
+    private function processIndexerConfig(int|string $name, array $config, ContainerBuilder $container): void
     {
         ['name' => $modelName, 'version' => $version, 'options' => $options] = $config['model'];
 
@@ -482,14 +482,14 @@ final class AIExtension extends Extension
             $modelDefinition->setArgument('$options', $options);
         }
         $modelDefinition->addTag('symfony_ai.model.embeddings_model');
-        $container->setDefinition('symfony_ai.embedder.'.$name.'.model', $modelDefinition);
+        $container->setDefinition('symfony_ai.indexer.'.$name.'.model', $modelDefinition);
 
-        $definition = new Definition(Embedder::class, [
-            '$model' => new Reference('symfony_ai.embedder.'.$name.'.model'),
+        $definition = new Definition(Indexer::class, [
+            '$model' => new Reference('symfony_ai.indexer.'.$name.'.model'),
             '$platform' => new Reference($config['platform']),
             '$store' => new Reference($config['store']),
         ]);
 
-        $container->setDefinition('symfony_ai.embedder.'.$name, $definition);
+        $container->setDefinition('symfony_ai.indexer.'.$name, $definition);
     }
 }

@@ -22,7 +22,7 @@ use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Store\Bridge\MongoDB\Store;
 use Symfony\AI\Store\Document\Metadata;
 use Symfony\AI\Store\Document\TextDocument;
-use Symfony\AI\Store\Embedder;
+use Symfony\AI\Store\Indexer;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\Uid\Uuid;
 
@@ -61,8 +61,8 @@ foreach ($movies as $movie) {
 
 // create embeddings for documents
 $platform = PlatformFactory::create($_ENV['OPENAI_API_KEY']);
-$embedder = new Embedder($platform, $embeddings = new Embeddings(), $store);
-$embedder->embed($documents);
+$indexer = new Indexer($platform, $embeddings = new Embeddings(), $store);
+$indexer->index($documents);
 
 // initialize the index
 $store->initialize();
