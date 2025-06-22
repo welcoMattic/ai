@@ -10,11 +10,9 @@
  */
 
 use Symfony\AI\Agent\Agent;
-use Symfony\AI\Agent\Toolbox\AgentProcessor;
-use Symfony\AI\Agent\Toolbox\Tool\Clock;
-use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Platform\Bridge\Google\Gemini;
 use Symfony\AI\Platform\Bridge\Google\PlatformFactory;
+use Symfony\AI\Platform\Message\Content\Audio;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\Component\Dotenv\Dotenv;
@@ -28,13 +26,15 @@ if (empty($_ENV['GOOGLE_API_KEY'])) {
 }
 
 $platform = PlatformFactory::create($_ENV['GOOGLE_API_KEY']);
-$llm = new Gemini(Gemini::GEMINI_2_FLASH);
+$model = new Gemini(Gemini::GEMINI_1_5_FLASH);
 
-$toolbox = Toolbox::create(new Clock());
-$processor = new AgentProcessor($toolbox);
-$chain = new Agent($platform, $llm, [$processor], [$processor]);
-
-$messages = new MessageBag(Message::ofUser('What time is it?'));
-$response = $chain->call($messages);
+$agent = new Agent($platform, $model);
+$messages = new MessageBag(
+    Message::ofUser(
+        'What is this recording about?',
+        Audio::fromFile(dirname(__DIR__, 2).'/fixtures/audio.mp3'),
+    ),
+);
+$response = $agent->call($messages);
 
 echo $response->getContent().\PHP_EOL;

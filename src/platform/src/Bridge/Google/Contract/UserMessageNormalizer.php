@@ -13,7 +13,7 @@ namespace Symfony\AI\Platform\Bridge\Google\Contract;
 
 use Symfony\AI\Platform\Bridge\Google\Gemini;
 use Symfony\AI\Platform\Contract\Normalizer\ModelContractNormalizer;
-use Symfony\AI\Platform\Message\Content\Image;
+use Symfony\AI\Platform\Message\Content\File;
 use Symfony\AI\Platform\Message\Content\Text;
 use Symfony\AI\Platform\Message\UserMessage;
 use Symfony\AI\Platform\Model;
@@ -45,7 +45,7 @@ final class UserMessageNormalizer extends ModelContractNormalizer
             if ($content instanceof Text) {
                 $parts[] = ['text' => $content->text];
             }
-            if ($content instanceof Image) {
+            if ($content instanceof File) {
                 $parts[] = ['inline_data' => [
                     'mime_type' => $content->getFormat(),
                     'data' => $content->asBase64(),
