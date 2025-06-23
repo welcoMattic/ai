@@ -51,14 +51,14 @@ return static function (ContainerConfigurator $container): void {
             ->alias(ToolboxInterface::class, Toolbox::class)
         ->set(ReflectionToolFactory::class)
             ->alias(ToolFactoryInterface::class, ReflectionToolFactory::class)
-        ->set('symfony_ai.tool.chain_processor.abstract')
+        ->set('symfony_ai.tool.agent_processor.abstract')
             ->class(ToolProcessor::class)
             ->abstract()
             ->args([
                 '$toolbox' => abstract_arg('Toolbox'),
             ])
         ->set(ToolProcessor::class)
-            ->parent('symfony_ai.tool.chain_processor.abstract')
+            ->parent('symfony_ai.tool.agent_processor.abstract')
             ->tag('symfony_ai.agent.input_processor')
             ->tag('symfony_ai.agent.output_processor')
             ->args([

@@ -41,10 +41,10 @@ final class DataCollector extends AbstractDataCollector
      * @param TraceableToolbox[]  $toolboxes
      */
     public function __construct(
-        #[TaggedIterator('llm_chain.traceable_platform')]
+        #[TaggedIterator('symfony_ai.traceable_platform')]
         iterable $platforms,
         private readonly ToolboxInterface $defaultToolBox,
-        #[TaggedIterator('llm_chain.traceable_toolbox')]
+        #[TaggedIterator('symfony_ai.traceable_toolbox')]
         iterable $toolboxes,
     ) {
         $this->platforms = $platforms instanceof \Traversable ? iterator_to_array($platforms) : $platforms;
@@ -62,7 +62,7 @@ final class DataCollector extends AbstractDataCollector
 
     public static function getTemplate(): string
     {
-        return '@LlmChain/data_collector.html.twig';
+        return '@AI/data_collector.html.twig';
     }
 
     /**
