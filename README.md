@@ -8,7 +8,7 @@
 
 Symfony AI is a set of components that integrate AI capabilities into PHP applications.
 
-## Components
+## Components & Bundles
 
 Symfony AI consists of several lower and higher level **components** and the respective integration **bundles**:
 
@@ -21,10 +21,11 @@ Symfony AI consists of several lower and higher level **components** and the res
   * **[AI Bundle](src/ai-bundle/README.md)**: Symfony integration for AI Platform, Store and Agent components.
   * **[MCP Bundle](src/mcp-bundle/README.md)**: Symfony integration for MCP SDK, allowing them to act as MCP servers or clients.
 
-## Examples
+## Examples & Demo
 
-To get started with Symfony AI, check out the following [examples/](./examples) folder.
-
+To get started with Symfony AI, you can either check out the [examples](./examples) to see how to use the
+components in smaller snippets, or you can run the [demo application](./demo) to see the components work together in a
+full Symfony web application.
 
 ## Sponsor
 
