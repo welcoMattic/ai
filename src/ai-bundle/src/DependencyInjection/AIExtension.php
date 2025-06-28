@@ -302,8 +302,8 @@ final class AIExtension extends Extension
                     // We use the memory factory in case method, description and name are set
                     if (isset($tool['name'], $tool['description'])) {
                         if ($tool['is_agent']) {
-                            $chainWrapperDefinition = new Definition(AgentTool::class, ['$agent' => $reference]);
-                            $container->setDefinition('symfony_ai.toolbox.'.$name.'.agent_wrapper.'.$tool['name'], $chainWrapperDefinition);
+                            $agentWrapperDefinition = new Definition(AgentTool::class, ['$agent' => $reference]);
+                            $container->setDefinition('symfony_ai.toolbox.'.$name.'.agent_wrapper.'.$tool['name'], $agentWrapperDefinition);
                             $reference = new Reference('symfony_ai.toolbox.'.$name.'.agent_wrapper.'.$tool['name']);
                         }
                         $memoryFactoryDefinition->addMethodCall('addTool', [$reference, $tool['name'], $tool['description'], $tool['method'] ?? '__invoke']);

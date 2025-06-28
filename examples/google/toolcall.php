@@ -32,9 +32,9 @@ $llm = new Gemini(Gemini::GEMINI_2_FLASH);
 
 $toolbox = Toolbox::create(new Clock());
 $processor = new AgentProcessor($toolbox);
-$chain = new Agent($platform, $llm, [$processor], [$processor]);
+$agent = new Agent($platform, $llm, [$processor], [$processor]);
 
 $messages = new MessageBag(Message::ofUser('What time is it?'));
-$response = $chain->call($messages);
+$response = $agent->call($messages);
 
 echo $response->getContent().\PHP_EOL;
