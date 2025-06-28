@@ -16,6 +16,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\ToolResultConverter;
+use Symfony\AI\Fixtures\StructuredOutput\UserWithConstructor;
 
 #[CoversClass(ToolResultConverter::class)]
 final class ToolResultConverterTest extends TestCase
@@ -41,7 +42,7 @@ final class ToolResultConverterTest extends TestCase
 
         yield 'string' => ['plain string', 'plain string'];
 
-        yield 'datetime' => [new \DateTimeImmutable('2021-07-31 12:34:56'), '2021-07-31T12:34:56+00:00'];
+        yield 'datetime' => [new \DateTimeImmutable('2021-07-31 12:34:56'), '"2021-07-31T12:34:56+00:00"'];
 
         yield 'stringable' => [
             new class implements \Stringable {
@@ -61,6 +62,17 @@ final class ToolResultConverterTest extends TestCase
                 }
             },
             '{"key":"value"}',
+        ];
+
+        yield 'object' => [
+            new UserWithConstructor(
+                id: 123,
+                name: 'John Doe',
+                createdAt: new \DateTimeImmutable('2021-07-31 12:34:56'),
+                isActive: true,
+                age: 18,
+            ),
+            '{"id":123,"name":"John Doe","createdAt":"2021-07-31T12:34:56+00:00","isActive":true,"age":18}',
         ];
     }
 }
