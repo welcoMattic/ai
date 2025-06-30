@@ -37,14 +37,19 @@
         "phpstan/phpstan": "^2.0",
         "phpunit/phpunit": "^11.5.13",
         "symfony/ai-store": "@dev",
+        "symfony/cache": "^6.4 || ^7.1",
         "symfony/css-selector": "^6.4 || ^7.1",
         "symfony/dom-crawler": "^6.4 || ^7.1",
-        "symfony/event-dispatcher": "^6.4 || ^7.1"
+        "symfony/event-dispatcher": "^6.4 || ^7.1",
+        "symfony/http-foundation": "^6.4 || ^7.1"
     },
     "suggest": {
         "mrmysql/youtube-transcript": "For using the YouTube transcription tool.",
         "symfony/ai-store": "For using Similarity Search with a vector store.",
-        "symfony/dom-crawler": "For using the Crawler tool."
+        "symfony/css-selector": "For using the YouTube transcription tool.",
+        "symfony/dom-crawler": "For using the Crawler tool.",
+        "symfony/http-foundation": "For using the SessionStore as message store.",
+        "psr/cache": "For using the CacheStore as message store."
     },
     "config": {
         "sort-packages": true
