@@ -4,8 +4,10 @@
     "type": "project",
     "license": "MIT",
     "require": {
+        "ext-pdo": "*",
         "async-aws/bedrock-runtime": "^1.1",
         "codewithkyrian/transformers": "^0.5.3",
+        "doctrine/dbal": "^3.3|^4.0",
         "probots-io/pinecone-php": "^1.1",
         "symfony/ai-agent": "@dev",
         "symfony/ai-platform": "@dev",
