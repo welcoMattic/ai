@@ -13,11 +13,13 @@ namespace Symfony\AI\Agent\Toolbox;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use Symfony\AI\Agent\Toolbox\Event\ToolCallArgumentsResolved;
 use Symfony\AI\Agent\Toolbox\Exception\ToolExecutionException;
 use Symfony\AI\Agent\Toolbox\Exception\ToolNotFoundException;
 use Symfony\AI\Agent\Toolbox\ToolFactory\ReflectionToolFactory;
 use Symfony\AI\Platform\Response\ToolCall;
 use Symfony\AI\Platform\Tool\Tool;
+use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -45,6 +47,8 @@ final class Toolbox implements ToolboxInterface
         private readonly ToolFactoryInterface $toolFactory,
         iterable $tools,
         private readonly LoggerInterface $logger = new NullLogger(),
+        private readonly ToolCallArgumentResolverInterface $argumentResolver = new ToolCallArgumentResolver(),
+        private readonly ?EventDispatcherInterface $eventDispatcher = null,
     ) {
         $this->tools = $tools instanceof \Traversable ? iterator_to_array($tools) : $tools;
     }
@@ -77,7 +81,11 @@ final class Toolbox implements ToolboxInterface
 
         try {
             $this->logger->debug(\sprintf('Executing tool "%s".', $toolCall->name), $toolCall->arguments);
-            $result = $tool->{$metadata->reference->method}(...$toolCall->arguments);
+
+            $arguments = $this->argumentResolver->resolveArguments($tool, $metadata, $toolCall);
+            $this->eventDispatcher?->dispatch(new ToolCallArgumentsResolved($tool, $metadata, $arguments));
+
+            $result = $tool->{$metadata->reference->method}(...$arguments);
         } catch (\Throwable $e) {
             $this->logger->warning(\sprintf('Failed to execute tool "%s".', $toolCall->name), ['exception' => $e]);
             throw ToolExecutionException::executionFailed($toolCall, $e);
