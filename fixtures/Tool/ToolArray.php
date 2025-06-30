@@ -13,7 +13,7 @@ namespace Symfony\AI\Fixtures\Tool;
 
 use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
 
-#[AsTool('tool_no_params', 'A tool without parameters')]
+#[AsTool('tool_array', 'A tool with array parameters')]
 final class ToolArray
 {
     /**
