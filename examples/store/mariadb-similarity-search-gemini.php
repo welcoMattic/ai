@@ -11,20 +11,21 @@
 
 use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Tools\DsnParser;
-use PhpLlm\LlmChain\Chain\Chain;
-use PhpLlm\LlmChain\Chain\Toolbox\ChainProcessor;
-use PhpLlm\LlmChain\Chain\Toolbox\Tool\SimilaritySearch;
-use PhpLlm\LlmChain\Chain\Toolbox\Toolbox;
-use PhpLlm\LlmChain\Platform\Bridge\Google\Embeddings;
-use PhpLlm\LlmChain\Platform\Bridge\Google\Embeddings\TaskType;
-use PhpLlm\LlmChain\Platform\Bridge\Google\Gemini;
-use PhpLlm\LlmChain\Platform\Bridge\Google\PlatformFactory;
-use PhpLlm\LlmChain\Platform\Message\Message;
-use PhpLlm\LlmChain\Platform\Message\MessageBag;
-use PhpLlm\LlmChain\Store\Bridge\MariaDB\Store;
-use PhpLlm\LlmChain\Store\Document\Metadata;
-use PhpLlm\LlmChain\Store\Document\TextDocument;
-use PhpLlm\LlmChain\Store\Indexer;
+use Symfony\AI\Agent\Agent;
+use Symfony\AI\Agent\Toolbox\AgentProcessor;
+use Symfony\AI\Agent\Toolbox\Tool\SimilaritySearch;
+use Symfony\AI\Agent\Toolbox\Toolbox;
+use Symfony\AI\Platform\Bridge\Google\Embeddings;
+use Symfony\AI\Platform\Bridge\Google\Embeddings\TaskType;
+use Symfony\AI\Platform\Bridge\Google\Gemini;
+use Symfony\AI\Platform\Bridge\Google\PlatformFactory;
+use Symfony\AI\Platform\Message\Message;
+use Symfony\AI\Platform\Message\MessageBag;
+use Symfony\AI\Store\Bridge\MariaDB\Store;
+use Symfony\AI\Store\Document\Metadata;
+use Symfony\AI\Store\Document\TextDocument;
+use Symfony\AI\Store\Document\Vectorizer;
+use Symfony\AI\Store\Indexer;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\Uid\Uuid;
 
@@ -66,20 +67,21 @@ $store->initialize(['dimensions' => 768]);
 // create embeddings for documents
 $platform = PlatformFactory::create($_ENV['GOOGLE_API_KEY']);
 $embeddings = new Embeddings(options: ['dimensions' => 768, 'task_type' => TaskType::SemanticSimilarity]);
-$indexer = new Indexer($platform, $embeddings, $store);
+$vectorizer = new Vectorizer($platform, $embeddings);
+$indexer = new Indexer($vectorizer, $store);
 $indexer->index($documents);
 
 $model = new Gemini(Gemini::GEMINI_2_FLASH_LITE);
 
 $similaritySearch = new SimilaritySearch($platform, $embeddings, $store);
 $toolbox = Toolbox::create($similaritySearch);
-$processor = new ChainProcessor($toolbox);
-$chain = new Chain($platform, $model, [$processor], [$processor]);
+$processor = new AgentProcessor($toolbox);
+$agent = new Agent($platform, $model, [$processor], [$processor]);
 
 $messages = new MessageBag(
     Message::forSystem('Please answer all user questions only using SimilaritySearch function.'),
     Message::ofUser('Which movie fits the theme of the mafia?')
 );
-$response = $chain->call($messages);
+$response = $agent->call($messages);
 
 echo $response->getContent().\PHP_EOL;
