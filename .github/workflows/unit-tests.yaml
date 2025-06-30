@@ -14,6 +14,9 @@ concurrency:
     group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
     cancel-in-progress: true
 
+env:
+    REQUIRED_PHP_EXTENSIONS: 'mongodb'
+
 jobs:
     php:
         runs-on: ubuntu-latest
@@ -57,6 +60,7 @@ jobs:
               with:
                 php-version: ${{ matrix.php-version }}
                 tools: flex
+                extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
 
             - name: Install root dependencies
               run: composer install
