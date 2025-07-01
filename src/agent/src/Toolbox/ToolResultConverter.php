@@ -11,32 +11,33 @@
 
 namespace Symfony\AI\Agent\Toolbox;
 
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\SerializerInterface;
+
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
  */
 final readonly class ToolResultConverter
 {
-    /**
-     * @param \JsonSerializable|\Stringable|array<int|string, mixed>|float|string|\DateTimeInterface|null $result
-     */
-    public function convert(\JsonSerializable|\Stringable|array|float|string|\DateTimeInterface|null $result): ?string
+    public function __construct(
+        private SerializerInterface $serializer = new Serializer([new JsonSerializableNormalizer(), new DateTimeNormalizer(), new ObjectNormalizer()], [new JsonEncoder()]),
+    ) {
+    }
+
+    public function convert(mixed $result): ?string
     {
-        if (null === $result) {
-            return null;
+        if (null === $result || \is_string($result)) {
+            return $result;
         }
 
-        if ($result instanceof \JsonSerializable || \is_array($result)) {
-            return json_encode($result, flags: \JSON_THROW_ON_ERROR);
-        }
-
-        if (\is_float($result) || $result instanceof \Stringable) {
+        if ($result instanceof \Stringable) {
             return (string) $result;
         }
 
-        if ($result instanceof \DateTimeInterface) {
-            return $result->format(\DATE_ATOM);
-        }
-
-        return $result;
+        return $this->serializer->serialize($result, 'json');
     }
 }
