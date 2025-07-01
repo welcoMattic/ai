@@ -8,7 +8,9 @@
         "async-aws/bedrock-runtime": "^1.1",
         "codewithkyrian/transformers": "^0.5.3",
         "doctrine/dbal": "^3.3|^4.0",
+        "php-http/discovery": "^1.20",
         "probots-io/pinecone-php": "^1.1",
+        "psr/http-factory-implementation": "*",
         "symfony/ai-agent": "@dev",
         "symfony/ai-platform": "@dev",
         "symfony/ai-store": "@dev",
@@ -34,7 +36,8 @@
     ],
     "config": {
         "allow-plugins": {
-            "codewithkyrian/transformers-libsloader": true
+            "codewithkyrian/transformers-libsloader": true,
+            "php-http/discovery": true
         }
     }
 }
