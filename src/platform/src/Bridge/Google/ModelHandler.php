@@ -61,6 +61,12 @@ final readonly class ModelHandler implements ModelClientInterface, ResponseConve
             $options['stream'] ?? false ? 'streamGenerateContent' : 'generateContent',
         );
 
+        if (isset($options['response_format']['json_schema']['schema'])) {
+            $options['responseMimeType'] = 'application/json';
+            $options['responseJsonSchema'] = $options['response_format']['json_schema']['schema'];
+            unset($options['response_format']);
+        }
+
         $generationConfig = ['generationConfig' => $options];
         unset($generationConfig['generationConfig']['stream']);
         unset($generationConfig['generationConfig']['tools']);
