@@ -21,6 +21,7 @@ use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Store\Bridge\MariaDB\Store;
 use Symfony\AI\Store\Document\Metadata;
 use Symfony\AI\Store\Document\TextDocument;
+use Symfony\AI\Store\Document\Vectorizer;
 use Symfony\AI\Store\Indexer;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\Uid\Uuid;
@@ -62,7 +63,8 @@ $store->initialize();
 
 // create embeddings for documents
 $platform = PlatformFactory::create($_ENV['OPENAI_API_KEY']);
-$indexer = new Indexer($platform, $embeddings = new Embeddings(), $store);
+$vectorizer = new Vectorizer($platform, $embeddings = new Embeddings());
+$indexer = new Indexer($vectorizer, $store);
 $indexer->index($documents);
 
 $model = new GPT(GPT::GPT_4O_MINI);
