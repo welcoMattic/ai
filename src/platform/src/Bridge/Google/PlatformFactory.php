@@ -11,11 +11,7 @@
 
 namespace Symfony\AI\Platform\Bridge\Google;
 
-use Symfony\AI\Platform\Bridge\Google\Contract\AssistantMessageNormalizer;
-use Symfony\AI\Platform\Bridge\Google\Contract\MessageBagNormalizer;
-use Symfony\AI\Platform\Bridge\Google\Contract\ToolCallMessageNormalizer;
-use Symfony\AI\Platform\Bridge\Google\Contract\ToolNormalizer;
-use Symfony\AI\Platform\Bridge\Google\Contract\UserMessageNormalizer;
+use Symfony\AI\Platform\Bridge\Google\Contract\GoogleContract;
 use Symfony\AI\Platform\Bridge\Google\Embeddings\ModelClient;
 use Symfony\AI\Platform\Contract;
 use Symfony\AI\Platform\Platform;
@@ -31,17 +27,16 @@ final readonly class PlatformFactory
         #[\SensitiveParameter]
         string $apiKey,
         ?HttpClientInterface $httpClient = null,
+        ?Contract $contract = null,
     ): Platform {
         $httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
         $responseHandler = new ModelHandler($httpClient, $apiKey);
         $embeddings = new ModelClient($httpClient, $apiKey);
 
-        return new Platform([$responseHandler, $embeddings], [$responseHandler, $embeddings], Contract::create(
-            new AssistantMessageNormalizer(),
-            new MessageBagNormalizer(),
-            new ToolNormalizer(),
-            new ToolCallMessageNormalizer(),
-            new UserMessageNormalizer(),
-        ));
+        return new Platform(
+            [$responseHandler, $embeddings],
+            [$responseHandler, $embeddings],
+            $contract ?? GoogleContract::create(),
+        );
     }
 }

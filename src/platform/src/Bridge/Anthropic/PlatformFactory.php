@@ -11,14 +11,7 @@
 
 namespace Symfony\AI\Platform\Bridge\Anthropic;
 
-use Symfony\AI\Platform\Bridge\Anthropic\Contract\AssistantMessageNormalizer;
-use Symfony\AI\Platform\Bridge\Anthropic\Contract\DocumentNormalizer;
-use Symfony\AI\Platform\Bridge\Anthropic\Contract\DocumentUrlNormalizer;
-use Symfony\AI\Platform\Bridge\Anthropic\Contract\ImageNormalizer;
-use Symfony\AI\Platform\Bridge\Anthropic\Contract\ImageUrlNormalizer;
-use Symfony\AI\Platform\Bridge\Anthropic\Contract\MessageBagNormalizer;
-use Symfony\AI\Platform\Bridge\Anthropic\Contract\ToolCallMessageNormalizer;
-use Symfony\AI\Platform\Bridge\Anthropic\Contract\ToolNormalizer;
+use Symfony\AI\Platform\Bridge\Anthropic\Contract\AnthropicContract;
 use Symfony\AI\Platform\Contract;
 use Symfony\AI\Platform\Platform;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
@@ -34,22 +27,14 @@ final readonly class PlatformFactory
         string $apiKey,
         string $version = '2023-06-01',
         ?HttpClientInterface $httpClient = null,
+        ?Contract $contract = null,
     ): Platform {
         $httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
 
         return new Platform(
             [new ModelClient($httpClient, $apiKey, $version)],
             [new ResponseConverter()],
-            Contract::create(
-                new AssistantMessageNormalizer(),
-                new DocumentNormalizer(),
-                new DocumentUrlNormalizer(),
-                new ImageNormalizer(),
-                new ImageUrlNormalizer(),
-                new MessageBagNormalizer(),
-                new ToolCallMessageNormalizer(),
-                new ToolNormalizer(),
-            )
+            $contract ?? AnthropicContract::create(),
         );
     }
 }

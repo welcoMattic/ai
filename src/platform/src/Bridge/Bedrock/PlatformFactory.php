@@ -15,6 +15,7 @@ use AsyncAws\BedrockRuntime\BedrockRuntimeClient;
 use Symfony\AI\Platform\Bridge\Bedrock\Anthropic\ClaudeHandler;
 use Symfony\AI\Platform\Bridge\Bedrock\Meta\LlamaModelClient;
 use Symfony\AI\Platform\Bridge\Bedrock\Nova\NovaHandler;
+use Symfony\AI\Platform\Contract;
 
 /**
  * @author Björn Altmann
@@ -23,11 +24,12 @@ final readonly class PlatformFactory
 {
     public static function create(
         BedrockRuntimeClient $bedrockRuntimeClient = new BedrockRuntimeClient(),
+        ?Contract $contract = null,
     ): Platform {
         $modelClient[] = new ClaudeHandler($bedrockRuntimeClient);
         $modelClient[] = new NovaHandler($bedrockRuntimeClient);
         $modelClient[] = new LlamaModelClient($bedrockRuntimeClient);
 
-        return new Platform($modelClient);
+        return new Platform($modelClient, $contract);
     }
 }
