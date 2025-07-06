@@ -39,4 +39,4 @@ $response = $platform->request($model, $longText, [
     'task' => Task::SUMMARIZATION,
 ]);
 
-echo $response->getContent().\PHP_EOL;
+echo $response->asText().\PHP_EOL;

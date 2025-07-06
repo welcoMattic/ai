@@ -29,4 +29,4 @@ $response = $platform->request($model, 'John Smith works at Microsoft in London.
     'task' => Task::TOKEN_CLASSIFICATION,
 ]);
 
-dump($response->getContent());
+dump($response->asObject());

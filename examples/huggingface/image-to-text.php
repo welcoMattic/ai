@@ -31,4 +31,4 @@ $response = $platform->request($model, $image, [
     'task' => Task::IMAGE_TO_TEXT,
 ]);
 
-echo $response->getContent().\PHP_EOL;
+echo $response->asText().\PHP_EOL;

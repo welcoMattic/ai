@@ -12,7 +12,6 @@
 use Symfony\AI\Platform\Bridge\HuggingFace\PlatformFactory;
 use Symfony\AI\Platform\Bridge\HuggingFace\Task;
 use Symfony\AI\Platform\Model;
-use Symfony\AI\Platform\Response\VectorResponse;
 use Symfony\Component\Dotenv\Dotenv;
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
@@ -30,6 +29,4 @@ $response = $platform->request($model, 'Today is a sunny day and I will get some
     'task' => Task::FEATURE_EXTRACTION,
 ]);
 
-assert($response instanceof VectorResponse);
-
-echo 'Dimensions: '.$response->getContent()[0]->getDimensions().\PHP_EOL;
+echo 'Dimensions: '.$response->asVectors()[0]->getDimensions().\PHP_EOL;

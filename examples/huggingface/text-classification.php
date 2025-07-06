@@ -29,4 +29,4 @@ $response = $platform->request($model, 'I like you. I love you.', [
     'task' => Task::TEXT_CLASSIFICATION,
 ]);
 
-dump($response->getContent());
+dump($response->asObject());

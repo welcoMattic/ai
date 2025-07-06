@@ -14,7 +14,6 @@ namespace Symfony\AI\Agent\Toolbox\Tool;
 use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\PlatformInterface;
-use Symfony\AI\Platform\Vector\Vector;
 use Symfony\AI\Store\Document\VectorDocument;
 use Symfony\AI\Store\VectorStoreInterface;
 
@@ -41,8 +40,7 @@ final class SimilaritySearch
      */
     public function __invoke(string $searchTerm): string
     {
-        /** @var Vector[] $vectors */
-        $vectors = $this->platform->request($this->model, $searchTerm)->getContent();
+        $vectors = $this->platform->request($this->model, $searchTerm)->asVectors();
         $this->usedDocuments = $this->vectorStore->query($vectors[0]);
 
         if (0 === \count($this->usedDocuments)) {

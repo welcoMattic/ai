@@ -11,7 +11,6 @@
 
 use Symfony\AI\Platform\Bridge\Mistral\Embeddings;
 use Symfony\AI\Platform\Bridge\Mistral\PlatformFactory;
-use Symfony\AI\Platform\Response\VectorResponse;
 use Symfony\Component\Dotenv\Dotenv;
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
@@ -32,6 +31,4 @@ $response = $platform->request($model, <<<TEXT
     salt. The goal was to prevent deficiencies and promote better health in the population.
     TEXT);
 
-assert($response instanceof VectorResponse);
-
-echo 'Dimensions: '.$response->getContent()[0]->getDimensions().\PHP_EOL;
+echo 'Dimensions: '.$response->asVectors()[0]->getDimensions().\PHP_EOL;
