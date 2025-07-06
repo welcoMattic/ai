@@ -33,6 +33,7 @@ final readonly class PlatformFactory
         #[\SensitiveParameter]
         string $apiKey,
         ?HttpClientInterface $httpClient = null,
+        ?Contract $contract = null,
     ): Platform {
         $httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
 
@@ -51,7 +52,7 @@ final readonly class PlatformFactory
                 $dallEModelClient,
                 new WhisperResponseConverter(),
             ],
-            Contract::create(new AudioNormalizer()),
+            $contract ?? Contract::create(new AudioNormalizer()),
         );
     }
 }

@@ -11,6 +11,7 @@
 
 namespace Symfony\AI\Platform\Bridge\Voyage;
 
+use Symfony\AI\Platform\Contract;
 use Symfony\AI\Platform\Platform;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
@@ -24,10 +25,11 @@ final class PlatformFactory
         #[\SensitiveParameter]
         string $apiKey,
         ?HttpClientInterface $httpClient = null,
+        ?Contract $contract = null,
     ): Platform {
         $httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
         $handler = new ModelHandler($httpClient, $apiKey);
 
-        return new Platform([$handler], [$handler]);
+        return new Platform([$handler], [$handler], $contract);
     }
 }
