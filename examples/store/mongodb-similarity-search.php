@@ -30,7 +30,7 @@ use Symfony\Component\Uid\Uuid;
 require_once dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
-if (!$_ENV['OPENAI_API_KEY'] || !$_ENV['MONGODB_URI']) {
+if (!isset($_ENV['OPENAI_API_KEY'], $_ENV['MONGODB_URI'])) {
     echo 'Please set OPENAI_API_KEY and MONGODB_URI environment variables.'.\PHP_EOL;
     exit(1);
 }
