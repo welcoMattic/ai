@@ -44,6 +44,6 @@ return (new PhpCsFixer\Config())
         (new PhpCsFixer\Finder())
             ->in([__DIR__.'/demo', __DIR__.'/examples', __DIR__.'/fixtures', __DIR__.'/src'])
             ->append([__FILE__])
-            ->exclude(__DIR__.'/demo/var')
+            ->exclude('var')
     )
 ;

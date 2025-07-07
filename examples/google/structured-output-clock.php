@@ -21,8 +21,8 @@ use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\Component\Clock\Clock as SymfonyClock;
 use Symfony\Component\Dotenv\Dotenv;
 
-require_once dirname(__DIR__, 2).'/vendor/autoload.php';
-(new Dotenv())->loadEnv(dirname(__DIR__, 2).'/.env');
+require_once dirname(__DIR__).'/vendor/autoload.php';
+(new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
 if (!isset($_ENV['GEMINI_API_KEY'])) {
     echo 'Please set the GEMINI_API_KEY environment variable.'.\PHP_EOL;

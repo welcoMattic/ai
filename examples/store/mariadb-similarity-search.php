@@ -11,6 +11,8 @@
 
 use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Tools\DsnParser;
+use Symfony\AI\Agent\Agent;
+use Symfony\AI\Agent\Toolbox\AgentProcessor;
 use Symfony\AI\Agent\Toolbox\Tool\SimilaritySearch;
 use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Platform\Bridge\OpenAI\Embeddings;
@@ -26,8 +28,8 @@ use Symfony\AI\Store\Indexer;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\Uid\Uuid;
 
-require_once dirname(__DIR__, 2).'/vendor/autoload.php';
-(new Dotenv())->loadEnv(dirname(__DIR__, 2).'/.env');
+require_once dirname(__DIR__).'/vendor/autoload.php';
+(new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
 if (!isset($_ENV['OPENAI_API_KEY'], $_ENV['MARIADB_URI'])) {
     echo 'Please set OPENAI_API_KEY and MARIADB_URI environment variables.'.\PHP_EOL;
@@ -71,13 +73,13 @@ $model = new GPT(GPT::GPT_4O_MINI);
 
 $similaritySearch = new SimilaritySearch($platform, $embeddings, $store);
 $toolbox = Toolbox::create($similaritySearch);
-$processor = new ChainProcessor($toolbox);
-$chain = new Chain($platform, $model, [$processor], [$processor]);
+$processor = new AgentProcessor($toolbox);
+$agent = new Agent($platform, $model, [$processor], [$processor]);
 
 $messages = new MessageBag(
     Message::forSystem('Please answer all user questions only using SimilaritySearch function.'),
     Message::ofUser('Which movie fits the theme of the mafia?')
 );
-$response = $chain->call($messages);
+$response = $agent->call($messages);
 
 echo $response->getContent().\PHP_EOL;

@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-use PhpLlm\LlmChain\Chain\Chain;
-use PhpLlm\LlmChain\Chain\Toolbox\ChainProcessor;
-use PhpLlm\LlmChain\Chain\Toolbox\Tool\Clock;
-use PhpLlm\LlmChain\Chain\Toolbox\Toolbox;
-use PhpLlm\LlmChain\Platform\Bridge\Google\Gemini;
-use PhpLlm\LlmChain\Platform\Bridge\Google\PlatformFactory;
-use PhpLlm\LlmChain\Platform\Message\Message;
-use PhpLlm\LlmChain\Platform\Message\MessageBag;
+use Symfony\AI\Agent\Agent;
+use Symfony\AI\Agent\Toolbox\AgentProcessor;
+use Symfony\AI\Agent\Toolbox\Tool\Clock;
+use Symfony\AI\Agent\Toolbox\Toolbox;
+use Symfony\AI\Platform\Bridge\Google\Gemini;
+use Symfony\AI\Platform\Bridge\Google\PlatformFactory;
+use Symfony\AI\Platform\Message\Message;
+use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\Component\Dotenv\Dotenv;
 
-require_once dirname(__DIR__, 2).'/vendor/autoload.php';
-(new Dotenv())->loadEnv(dirname(__DIR__, 2).'/.env');
+require_once dirname(__DIR__).'/vendor/autoload.php';
+(new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
 if (!isset($_ENV['GEMINI_API_KEY'])) {
     echo 'Please set the GEMINI_API_KEY environment variable.'.\PHP_EOL;
@@ -33,8 +33,8 @@ $platform = PlatformFactory::create($_ENV['GEMINI_API_KEY']);
 $llm = new Gemini('gemini-2.5-pro-preview-03-25', ['server_tools' => ['url_context' => true], 'temperature' => 1.0]);
 
 $toolbox = Toolbox::create(new Clock());
-$processor = new ChainProcessor($toolbox);
-$chain = new Chain($platform, $llm);
+$processor = new AgentProcessor($toolbox);
+$agent = new Agent($platform, $llm);
 
 $messages = new MessageBag(
     Message::ofUser(
@@ -44,6 +44,6 @@ $messages = new MessageBag(
     ),
 );
 
-$response = $chain->call($messages);
+$response = $agent->call($messages);
 
 echo $response->getContent().\PHP_EOL;
