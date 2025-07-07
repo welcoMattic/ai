@@ -6,3 +6,12 @@ services:
       MARIADB_DATABASE: my_database
     ports:
       - "3309:3306"
+
+  postgres:
+    image: ankane/pgvector
+    environment:
+        POSTGRES_DB: my_database
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+    ports:
+        - "5432:5432"
