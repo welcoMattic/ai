@@ -20,20 +20,25 @@ require_once __DIR__ . '/vendor/autoload.php';
  */
 $app = (new SingleCommandApplication('Symfony AI Example Runner'))
     ->setDescription('Runs all Symfony AI examples in folder examples/')
-    ->addArgument('subdirectory', InputArgument::OPTIONAL, 'Subdirectory to run examples from, e.g. "anthropic" or "huggingface".')
+    ->addArgument('subdirectories', InputArgument::OPTIONAL | InputArgument::IS_ARRAY, 'List of subdirectories to run examples from, e.g. "anthropic" or "huggingface".')
     ->addOption('filter', 'f', InputOption::VALUE_REQUIRED, 'Filter examples by name, e.g. "audio" or "toolcall".')
     ->setCode(function (InputInterface $input, OutputInterface $output) {
         $io = new SymfonyStyle($input, $output);
         $io->title('Symfony AI Examples');
 
-        $directory = __DIR__;
+        $findIn = __DIR__;
 
-        if ($subdirectory = $input->getArgument('subdirectory')) {
-            $directory .= '/'.$subdirectory;
-            if (!is_dir($directory)) {
-                $io->error(sprintf('Subdirectory "%s" does not exist.', $subdirectory));
-                return Command::FAILURE;
+        if ($subdirectories = $input->getArgument('subdirectories')) {
+            foreach ($subdirectories as $key => $subdirectory) {
+                $directory = $findIn.'/'.$subdirectory;
+
+                if (!is_dir($directory)) {
+                    $io->error(sprintf('Subdirectory "%s" does not exist.', $subdirectory));
+                }
+
+                $subdirectories[$key] = $directory;
             }
+            $findIn = $subdirectories;
         }
 
         $filter = '*.php';
@@ -42,7 +47,7 @@ $app = (new SingleCommandApplication('Symfony AI Example Runner'))
         }
 
         $examples = (new Finder())
-            ->in($directory)
+            ->in($findIn)
             ->name($filter)
             ->exclude('vendor')
             ->sortByName()
