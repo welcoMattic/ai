@@ -66,7 +66,7 @@ final readonly class ClaudeHandler implements BedrockModelClient
     {
         $data = json_decode($bedrockResponse->getBody(), true, 512, \JSON_THROW_ON_ERROR);
 
-        if (!isset($data['content']) || 0 === \count($data['content'])) {
+        if (!isset($data['content']) || [] === $data['content']) {
             throw new RuntimeException('Response does not contain any content');
         }
 
@@ -80,7 +80,7 @@ final readonly class ClaudeHandler implements BedrockModelClient
                 $toolCalls[] = new ToolCall($content['id'], $content['name'], $content['input']);
             }
         }
-        if (0 !== \count($toolCalls)) {
+        if ([] !== $toolCalls) {
             return new ToolCallResponse(...$toolCalls);
         }
 

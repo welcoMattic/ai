@@ -42,7 +42,7 @@ class ResponseConverter implements ResponseConverterInterface
 
         $data = $response->toArray();
 
-        if (!isset($data['content']) || 0 === \count($data['content'])) {
+        if (!isset($data['content']) || [] === $data['content']) {
             throw new RuntimeException('Response does not contain any content');
         }
 
@@ -53,11 +53,11 @@ class ResponseConverter implements ResponseConverterInterface
             }
         }
 
-        if (!isset($data['content'][0]['text']) && 0 === \count($toolCalls)) {
+        if (!isset($data['content'][0]['text']) && [] === $toolCalls) {
             throw new RuntimeException('Response content does not contain any text nor tool calls.');
         }
 
-        if (0 !== \count($toolCalls)) {
+        if ([] !== $toolCalls) {
             return new ToolCallResponse(...$toolCalls);
         }
 

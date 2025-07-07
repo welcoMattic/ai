@@ -45,7 +45,7 @@ final class SimilaritySearch
         $vectors = $this->platform->request($this->model, $searchTerm)->getContent();
         $this->usedDocuments = $this->vectorStore->query($vectors[0]);
 
-        if (0 === \count($this->usedDocuments)) {
+        if ([] === $this->usedDocuments) {
             return 'No results found';
         }
 

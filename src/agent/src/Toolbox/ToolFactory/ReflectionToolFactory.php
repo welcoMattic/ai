@@ -33,7 +33,7 @@ final class ReflectionToolFactory extends AbstractToolFactory
         $reflectionClass = new \ReflectionClass($reference);
         $attributes = $reflectionClass->getAttributes(AsTool::class);
 
-        if (0 === \count($attributes)) {
+        if ([] === $attributes) {
             throw ToolException::missingAttribute($reference);
         }
 
