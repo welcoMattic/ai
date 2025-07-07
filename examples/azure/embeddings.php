@@ -11,7 +11,6 @@
 
 use Symfony\AI\Platform\Bridge\Azure\OpenAI\PlatformFactory;
 use Symfony\AI\Platform\Bridge\OpenAI\Embeddings;
-use Symfony\AI\Platform\Response\VectorResponse;
 use Symfony\Component\Dotenv\Dotenv;
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
@@ -37,6 +36,4 @@ $response = $platform->request($embeddings, <<<TEXT
     country was very peaceful and prosperous. The people lived happily ever after.
     TEXT);
 
-assert($response instanceof VectorResponse);
-
-echo 'Dimensions: '.$response->getContent()[0]->getDimensions().\PHP_EOL;
+echo 'Dimensions: '.$response->asVectors()[0]->getDimensions().\PHP_EOL;

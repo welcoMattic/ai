@@ -30,7 +30,7 @@ $response = $platform->request(
     options: [
         'response_format' => 'url', // Generate response as URL
     ],
-);
+)->getResponse();
 
 assert($response instanceof ImageResponse);
 

@@ -31,4 +31,4 @@ $response = $platform->request($model, $image, [
     'task' => Task::OBJECT_DETECTION,
 ]);
 
-dump($response->getContent());
+dump($response->asObject());

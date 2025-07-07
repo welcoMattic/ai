@@ -20,7 +20,6 @@ use Symfony\AI\Platform\Capability;
 use Symfony\AI\Platform\Message\MessageBagInterface;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\PlatformInterface;
-use Symfony\AI\Platform\Response\AsyncResponse;
 use Symfony\AI\Platform\Response\ResponseInterface;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\HttpExceptionInterface;
@@ -76,11 +75,7 @@ final readonly class Agent implements AgentInterface
         }
 
         try {
-            $response = $this->platform->request($model, $messages, $options);
-
-            if ($response instanceof AsyncResponse) {
-                $response = $response->unwrap();
-            }
+            $response = $this->platform->request($model, $messages, $options)->getResponse();
         } catch (ClientExceptionInterface $e) {
             $message = $e->getMessage();
             $content = $e->getResponse()->toArray(false);

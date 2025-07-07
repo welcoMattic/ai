@@ -17,6 +17,7 @@ use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\PlatformInterface;
 use Symfony\AI\Platform\Response\ObjectResponse;
 use Symfony\AI\Platform\Response\ResponseInterface;
+use Symfony\AI\Platform\Response\ResponsePromise;
 use Symfony\AI\Platform\Response\TextResponse;
 
 use function Codewithkyrian\Transformers\Pipelines\pipeline;
@@ -26,14 +27,14 @@ use function Codewithkyrian\Transformers\Pipelines\pipeline;
  */
 final class Platform implements PlatformInterface
 {
-    public function request(Model $model, object|array|string $input, array $options = []): ResponseInterface
+    public function request(Model $model, object|array|string $input, array $options = []): ResponsePromise
     {
         if (null === $task = $options['task'] ?? null) {
             throw new InvalidArgumentException('The task option is required.');
         }
 
         $pipeline = pipeline(
-            $options['task'],
+            $task,
             $model->getName(),
             $options['quantized'] ?? true,
             $options['config'] ?? null,
@@ -41,10 +42,19 @@ final class Platform implements PlatformInterface
             $options['revision'] ?? 'main',
             $options['modelFilename'] ?? null,
         );
+        $execution = new PipelineExecution($pipeline, $input);
 
-        $data = $pipeline($input);
+        return new ResponsePromise($this->convertResponse(...), new RawPipelineResponse($execution), $options);
+    }
 
-        return match ($task) {
+    /**
+     * @param array<string, mixed> $options
+     */
+    private function convertResponse(PipelineExecution $pipelineExecution, array $options): ResponseInterface
+    {
+        $data = $pipelineExecution->getResult();
+
+        return match ($options['task']) {
             Task::Text2TextGeneration => new TextResponse($data[0]['generated_text']),
             default => new ObjectResponse($data),
         };

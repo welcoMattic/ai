@@ -31,4 +31,4 @@ $response = $platform->request($model, $image, [
     'task' => Task::IMAGE_SEGMENTATION,
 ]);
 
-dump($response->getContent());
+dump($response->asObject());

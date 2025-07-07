@@ -12,7 +12,6 @@
 use Symfony\AI\Platform\Bridge\HuggingFace\PlatformFactory;
 use Symfony\AI\Platform\Bridge\HuggingFace\Task;
 use Symfony\AI\Platform\Model;
-use Symfony\AI\Platform\Response\BinaryResponse;
 use Symfony\Component\Dotenv\Dotenv;
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
@@ -30,6 +29,4 @@ $response = $platform->request($model, 'Astronaut riding a horse', [
     'task' => Task::TEXT_TO_IMAGE,
 ]);
 
-assert($response instanceof BinaryResponse);
-
-echo $response->toBase64().\PHP_EOL;
+echo $response->asBase64().\PHP_EOL;

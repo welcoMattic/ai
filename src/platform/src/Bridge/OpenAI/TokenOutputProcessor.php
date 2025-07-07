@@ -14,6 +14,7 @@ namespace Symfony\AI\Platform\Bridge\OpenAI;
 use Symfony\AI\Agent\Output;
 use Symfony\AI\Agent\OutputProcessorInterface;
 use Symfony\AI\Platform\Response\StreamResponse;
+use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Denis Zunke <denis.zunke@gmail.com>
@@ -27,8 +28,8 @@ final class TokenOutputProcessor implements OutputProcessorInterface
             return;
         }
 
-        $rawResponse = $output->response->getRawResponse();
-        if (null === $rawResponse) {
+        $rawResponse = $output->response->getRawResponse()?->getRawObject();
+        if (!$rawResponse instanceof ResponseInterface) {
             return;
         }
 

@@ -11,7 +11,6 @@
 
 use Symfony\AI\Platform\Bridge\OpenAI\Embeddings;
 use Symfony\AI\Platform\Bridge\OpenAI\PlatformFactory;
-use Symfony\AI\Platform\Response\VectorResponse;
 use Symfony\Component\Dotenv\Dotenv;
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
@@ -36,6 +35,5 @@ foreach (['ADA' => $ada, 'Small' => $small, 'Large' => $large] as $name => $mode
 
 echo 'Waiting for the responses ...'.\PHP_EOL;
 foreach ($responses as $response) {
-    assert($response instanceof VectorResponse);
-    echo 'Dimensions: '.$response->getContent()[0]->getDimensions().\PHP_EOL;
+    echo 'Dimensions: '.$response->asVectors()[0]->getDimensions().\PHP_EOL;
 }
