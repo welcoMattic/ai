@@ -29,8 +29,8 @@ use Symfony\AI\Store\Indexer;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\Uid\Uuid;
 
-require_once dirname(__DIR__, 2).'/vendor/autoload.php';
-(new Dotenv())->loadEnv(dirname(__DIR__, 2).'/.env');
+require_once dirname(__DIR__).'/vendor/autoload.php';
+(new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
 if (!isset($_ENV['GEMINI_API_KEY'], $_ENV['MARIADB_URI'])) {
     echo 'Please set GEMINI_API_KEY and MARIADB_URI environment variables.'.\PHP_EOL;

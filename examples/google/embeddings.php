@@ -11,18 +11,17 @@
 
 use Symfony\AI\Platform\Bridge\Google\Embeddings;
 use Symfony\AI\Platform\Bridge\Google\PlatformFactory;
-use Symfony\AI\Platform\Response\VectorResponse;
 use Symfony\Component\Dotenv\Dotenv;
 
 require_once dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
-if (empty($_ENV['GOOGLE_API_KEY'])) {
-    echo 'Please set the GOOGLE_API_KEY environment variable.'.\PHP_EOL;
+if (!isset($_ENV['GEMINI_API_KEY'])) {
+    echo 'Please set the GEMINI_API_KEY environment variable.'.\PHP_EOL;
     exit(1);
 }
 
-$platform = PlatformFactory::create($_ENV['GOOGLE_API_KEY']);
+$platform = PlatformFactory::create($_ENV['GEMINI_API_KEY']);
 $embeddings = new Embeddings();
 
 $response = $platform->request($embeddings, <<<TEXT
@@ -31,6 +30,4 @@ $response = $platform->request($embeddings, <<<TEXT
     country was very peaceful and prosperous. The people lived happily ever after.
     TEXT);
 
-assert($response instanceof VectorResponse);
-
-echo 'Dimensions: '.$response->getContent()[0]->getDimensions().\PHP_EOL;
+echo 'Dimensions: '.$response->asVectors()[0]->getDimensions().\PHP_EOL;
