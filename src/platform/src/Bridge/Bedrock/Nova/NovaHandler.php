@@ -64,7 +64,7 @@ class NovaHandler implements BedrockModelClient
     {
         $data = json_decode($bedrockResponse->getBody(), true, 512, \JSON_THROW_ON_ERROR);
 
-        if (!isset($data['output']) || 0 === \count($data['output'])) {
+        if (!isset($data['output']) || [] === $data['output']) {
             throw new RuntimeException('Response does not contain any content');
         }
 
@@ -78,7 +78,7 @@ class NovaHandler implements BedrockModelClient
                 $toolCalls[] = new ToolCall($content['toolUse']['toolUseId'], $content['toolUse']['name'], $content['toolUse']['input']);
             }
         }
-        if (!empty($toolCalls)) {
+        if ([] !== $toolCalls) {
             return new ToolCallResponse(...$toolCalls);
         }
 
