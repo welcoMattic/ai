@@ -19,12 +19,12 @@ use Symfony\Component\Dotenv\Dotenv;
 require_once dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
-if (!isset($_ENV['HUGGINGFACE_KEY'])) {
+if (!isset($_SERVER['HUGGINGFACE_KEY'])) {
     echo 'Please set the HUGGINGFACE_KEY environment variable.'.\PHP_EOL;
     exit(1);
 }
 
-$platform = PlatformFactory::create($_ENV['HUGGINGFACE_KEY']);
+$platform = PlatformFactory::create($_SERVER['HUGGINGFACE_KEY']);
 $model = new Model('HuggingFaceH4/zephyr-7b-beta');
 
 $messages = new MessageBag(Message::ofUser('Hello, how are you doing today?'));

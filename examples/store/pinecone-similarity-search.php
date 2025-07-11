@@ -30,13 +30,13 @@ use Symfony\Component\Uid\Uuid;
 require_once dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
-if (!isset($_ENV['OPENAI_API_KEY'], $_ENV['PINECONE_API_KEY'], $_ENV['PINECONE_HOST'])) {
+if (!isset($_SERVER['OPENAI_API_KEY'], $_SERVER['PINECONE_API_KEY'], $_SERVER['PINECONE_HOST'])) {
     echo 'Please set OPENAI_API_KEY, PINECONE_API_KEY and PINECONE_HOST environment variables.'.\PHP_EOL;
     exit(1);
 }
 
 // initialize the store
-$store = new Store(Pinecone::client($_ENV['PINECONE_API_KEY'], $_ENV['PINECONE_HOST']));
+$store = new Store(Pinecone::client($_SERVER['PINECONE_API_KEY'], $_SERVER['PINECONE_HOST']));
 
 // our data
 $movies = [
@@ -55,7 +55,7 @@ foreach ($movies as $movie) {
 }
 
 // create embeddings for documents
-$platform = PlatformFactory::create($_ENV['OPENAI_API_KEY']);
+$platform = PlatformFactory::create($_SERVER['OPENAI_API_KEY']);
 $vectorizer = new Vectorizer($platform, $embeddings = new Embeddings());
 $indexer = new Indexer($vectorizer, $store);
 $indexer->index($documents);
