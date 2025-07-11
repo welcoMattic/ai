@@ -32,8 +32,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        { "type": "path", "url": "../mcp-sdk" }
-    ]
+    "prefer-stable": true
 }

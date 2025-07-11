@@ -30,11 +30,6 @@
             "Symfony\\AI\\Fixtures\\": "../fixtures/"
         }
     },
-    "repositories": [
-        { "type": "path", "url": "../src/agent" },
-        { "type": "path", "url": "../src/platform" },
-        { "type": "path", "url": "../src/store" }
-    ],
     "config": {
         "allow-plugins": {
             "codewithkyrian/transformers-libsloader": true,
