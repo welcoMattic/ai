@@ -31,14 +31,14 @@ use Symfony\Component\Uid\Uuid;
 require_once dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
-if (!isset($_ENV['OPENAI_API_KEY'], $_ENV['MARIADB_URI'])) {
+if (!isset($_SERVER['OPENAI_API_KEY'], $_SERVER['MARIADB_URI'])) {
     echo 'Please set OPENAI_API_KEY and MARIADB_URI environment variables.'.\PHP_EOL;
     exit(1);
 }
 
 // initialize the store
 $store = Store::fromDbal(
-    connection: DriverManager::getConnection((new DsnParser())->parse($_ENV['MARIADB_URI'])),
+    connection: DriverManager::getConnection((new DsnParser())->parse($_SERVER['MARIADB_URI'])),
     tableName: 'my_table',
     indexName: 'my_index',
     vectorFieldName: 'embedding',
@@ -64,7 +64,7 @@ foreach ($movies as $i => $movie) {
 $store->initialize();
 
 // create embeddings for documents
-$platform = PlatformFactory::create($_ENV['OPENAI_API_KEY']);
+$platform = PlatformFactory::create($_SERVER['OPENAI_API_KEY']);
 $vectorizer = new Vectorizer($platform, $embeddings = new Embeddings());
 $indexer = new Indexer($vectorizer, $store);
 $indexer->index($documents);

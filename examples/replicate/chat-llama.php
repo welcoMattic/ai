@@ -19,12 +19,12 @@ use Symfony\Component\Dotenv\Dotenv;
 require_once dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
-if (!isset($_ENV['REPLICATE_API_KEY'])) {
+if (!isset($_SERVER['REPLICATE_API_KEY'])) {
     echo 'Please set the REPLICATE_API_KEY environment variable.'.\PHP_EOL;
     exit(1);
 }
 
-$platform = PlatformFactory::create($_ENV['REPLICATE_API_KEY']);
+$platform = PlatformFactory::create($_SERVER['REPLICATE_API_KEY']);
 $model = new Llama();
 
 $agent = new Agent($platform, $model);

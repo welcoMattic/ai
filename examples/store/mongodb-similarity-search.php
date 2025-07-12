@@ -30,14 +30,14 @@ use Symfony\Component\Uid\Uuid;
 require_once dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
-if (!isset($_ENV['OPENAI_API_KEY'], $_ENV['MONGODB_URI'])) {
+if (!isset($_SERVER['OPENAI_API_KEY'], $_SERVER['MONGODB_URI'])) {
     echo 'Please set OPENAI_API_KEY and MONGODB_URI environment variables.'.\PHP_EOL;
     exit(1);
 }
 
 // initialize the store
 $store = new Store(
-    client: new MongoDBClient($_ENV['MONGODB_URI']),
+    client: new MongoDBClient($_SERVER['MONGODB_URI']),
     databaseName: 'my-database',
     collectionName: 'my-collection',
     indexName: 'my-index',
@@ -61,7 +61,7 @@ foreach ($movies as $movie) {
 }
 
 // create embeddings for documents
-$platform = PlatformFactory::create($_ENV['OPENAI_API_KEY']);
+$platform = PlatformFactory::create($_SERVER['OPENAI_API_KEY']);
 $vectorizer = new Vectorizer($platform, $embeddings = new Embeddings());
 $indexer = new Indexer($vectorizer, $store);
 $indexer->index($documents);

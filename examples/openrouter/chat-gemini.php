@@ -19,12 +19,12 @@ use Symfony\Component\Dotenv\Dotenv;
 require_once dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
-if (!isset($_ENV['OPENROUTER_KEY'])) {
+if (!isset($_SERVER['OPENROUTER_KEY'])) {
     echo 'Please set the OPENROUTER_KEY environment variable.'.\PHP_EOL;
     exit(1);
 }
 
-$platform = PlatformFactory::create($_ENV['OPENROUTER_KEY']);
+$platform = PlatformFactory::create($_SERVER['OPENROUTER_KEY']);
 // In case free is running into 429 rate limit errors, you can use the paid model:
 // $model = new Model('google/gemini-2.0-flash-lite-001');
 $model = new Model('google/gemini-2.0-flash-exp:free');

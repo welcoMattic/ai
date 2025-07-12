@@ -19,12 +19,12 @@ use Symfony\Component\Dotenv\Dotenv;
 require_once dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
-if (!isset($_ENV['OPENAI_API_KEY'])) {
+if (!isset($_SERVER['OPENAI_API_KEY'])) {
     echo 'Please set the OPENAI_API_KEY environment variable.'.\PHP_EOL;
     exit(1);
 }
 
-$platform = PlatformFactory::create($_ENV['OPENAI_API_KEY']);
+$platform = PlatformFactory::create($_SERVER['OPENAI_API_KEY']);
 $model = new GPT(GPT::GPT_4O_MINI);
 
 $agent = new Agent($platform, $model);

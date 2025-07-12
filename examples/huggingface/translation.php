@@ -17,12 +17,12 @@ use Symfony\Component\Dotenv\Dotenv;
 require_once dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
-if (!isset($_ENV['HUGGINGFACE_KEY'])) {
+if (!isset($_SERVER['HUGGINGFACE_KEY'])) {
     echo 'Please set the HUGGINGFACE_KEY environment variable.'.\PHP_EOL;
     exit(1);
 }
 
-$platform = PlatformFactory::create($_ENV['HUGGINGFACE_KEY']);
+$platform = PlatformFactory::create($_SERVER['HUGGINGFACE_KEY']);
 $model = new Model('facebook/mbart-large-50-many-to-many-mmt');
 
 $response = $platform->request($model, 'Меня зовут Вольфганг и я живу в Берлине', [

@@ -19,12 +19,12 @@ use Symfony\Component\Dotenv\Dotenv;
 require_once dirname(__DIR__).'/vendor/autoload.php';
 (new Dotenv())->loadEnv(dirname(__DIR__).'/.env');
 
-if (!isset($_ENV['AZURE_LLAMA_BASEURL'], $_ENV['AZURE_LLAMA_KEY'])) {
+if (!isset($_SERVER['AZURE_LLAMA_BASEURL'], $_SERVER['AZURE_LLAMA_KEY'])) {
     echo 'Please set the AZURE_LLAMA_BASEURL and AZURE_LLAMA_KEY environment variable.'.\PHP_EOL;
     exit(1);
 }
 
-$platform = PlatformFactory::create($_ENV['AZURE_LLAMA_BASEURL'], $_ENV['AZURE_LLAMA_KEY']);
+$platform = PlatformFactory::create($_SERVER['AZURE_LLAMA_BASEURL'], $_SERVER['AZURE_LLAMA_KEY']);
 $model = new Llama(Llama::V3_3_70B_INSTRUCT);
 
 $agent = new Agent($platform, $model);
