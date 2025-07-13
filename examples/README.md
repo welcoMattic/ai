@@ -24,6 +24,14 @@ Before running the examples, you need to install the dependencies. You can do th
 composer install
 ```
 
+If you want to run the examples together with local changes, for example while developing a feature, you need to link
+the AI components into the vendor directory after `composer install`. You can use the `link` script in the root
+directory for this:
+
+```bash
+../link
+```
+
 #### Configuration
 
 Depending on the examples you want to run, you may need to configure the needed API keys. Therefore, you need to create a
