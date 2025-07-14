@@ -15,3 +15,10 @@ services:
         POSTGRES_PASSWORD: postgres
     ports:
         - "5432:5432"
+
+  meilisearch:
+      image: getmeili/meilisearch:v1.15
+      environment:
+          MEILI_MASTER_KEY: "${MEILISEARCH_MASTER_KEY:-changeMe}"
+      ports:
+          - "7700:7700"
