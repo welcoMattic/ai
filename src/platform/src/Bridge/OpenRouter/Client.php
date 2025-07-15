@@ -11,6 +11,7 @@
 
 namespace Symfony\AI\Platform\Bridge\OpenRouter;
 
+use Symfony\AI\Platform\Exception\InvalidArgumentException;
 use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface;
@@ -20,7 +21,6 @@ use Symfony\AI\Platform\ResponseConverterInterface;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
-use Webmozart\Assert\Assert;
 
 /**
  * @author rglozman
@@ -34,8 +34,8 @@ final readonly class Client implements ModelClientInterface, ResponseConverterIn
         #[\SensitiveParameter] private string $apiKey,
     ) {
         $this->httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
-        Assert::stringNotEmpty($apiKey, 'The API key must not be empty.');
-        Assert::startsWith($apiKey, 'sk-', 'The API key must start with "sk-".');
+        '' !== $apiKey || throw new InvalidArgumentException('The API key must not be empty.');
+        str_starts_with($apiKey, 'sk-') || throw new InvalidArgumentException('The API key must start with "sk-".');
     }
 
     public function supports(Model $model): bool
