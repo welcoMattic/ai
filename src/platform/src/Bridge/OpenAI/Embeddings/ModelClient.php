@@ -12,11 +12,11 @@
 namespace Symfony\AI\Platform\Bridge\OpenAI\Embeddings;
 
 use Symfony\AI\Platform\Bridge\OpenAI\Embeddings;
+use Symfony\AI\Platform\Exception\InvalidArgumentException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface as PlatformResponseFactory;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
-use Webmozart\Assert\Assert;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -28,8 +28,8 @@ final readonly class ModelClient implements PlatformResponseFactory
         #[\SensitiveParameter]
         private string $apiKey,
     ) {
-        Assert::stringNotEmpty($apiKey, 'The API key must not be empty.');
-        Assert::startsWith($apiKey, 'sk-', 'The API key must start with "sk-".');
+        '' !== $apiKey || throw new InvalidArgumentException('The API key must not be empty.');
+        str_starts_with($apiKey, 'sk-') || throw new InvalidArgumentException('The API key must start with "sk-".');
     }
 
     public function supports(Model $model): bool

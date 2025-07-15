@@ -11,7 +11,7 @@
 
 namespace Symfony\AI\Platform\Bridge\OpenAI\DallE;
 
-use Webmozart\Assert\Assert;
+use Symfony\AI\Platform\Exception\InvalidArgumentException;
 
 /**
  * @author Denis Zunke <denis.zunke@gmail.com>
@@ -21,6 +21,6 @@ final readonly class UrlImage
     public function __construct(
         public string $url,
     ) {
-        Assert::stringNotEmpty($url, 'The image url must be given.');
+        '' !== $url || throw new InvalidArgumentException('The image url must be given.');
     }
 }

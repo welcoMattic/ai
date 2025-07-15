@@ -12,6 +12,7 @@
 namespace Symfony\AI\Platform\Bridge\OpenAI\DallE;
 
 use Symfony\AI\Platform\Bridge\OpenAI\DallE;
+use Symfony\AI\Platform\Exception\InvalidArgumentException;
 use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface as PlatformResponseFactory;
@@ -19,7 +20,6 @@ use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
 use Symfony\AI\Platform\ResponseConverterInterface as PlatformResponseConverter;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponse;
-use Webmozart\Assert\Assert;
 
 /**
  * @see https://platform.openai.com/docs/api-reference/images/create
@@ -33,8 +33,8 @@ final readonly class ModelClient implements PlatformResponseFactory, PlatformRes
         #[\SensitiveParameter]
         private string $apiKey,
     ) {
-        Assert::stringNotEmpty($apiKey, 'The API key must not be empty.');
-        Assert::startsWith($apiKey, 'sk-', 'The API key must start with "sk-".');
+        '' !== $apiKey || throw new InvalidArgumentException('The API key must not be empty.');
+        str_starts_with($apiKey, 'sk-') || throw new InvalidArgumentException('The API key must start with "sk-".');
     }
 
     public function supports(Model $model): bool

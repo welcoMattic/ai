@@ -12,11 +12,11 @@
 namespace Symfony\AI\Platform\Bridge\OpenAI\Whisper;
 
 use Symfony\AI\Platform\Bridge\OpenAI\Whisper;
+use Symfony\AI\Platform\Exception\InvalidArgumentException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface as BaseModelClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
-use Webmozart\Assert\Assert;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -28,7 +28,7 @@ final readonly class ModelClient implements BaseModelClient
         #[\SensitiveParameter]
         private string $apiKey,
     ) {
-        Assert::stringNotEmpty($apiKey, 'The API key must not be empty.');
+        '' !== $apiKey || throw new InvalidArgumentException('The API key must not be empty.');
     }
 
     public function supports(Model $model): bool
