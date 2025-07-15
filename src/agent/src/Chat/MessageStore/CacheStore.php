@@ -13,6 +13,7 @@ namespace Symfony\AI\Agent\Chat\MessageStore;
 
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\AI\Agent\Chat\MessageStoreInterface;
+use Symfony\AI\Agent\Exception\RuntimeException;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\Message\MessageBagInterface;
 
@@ -24,7 +25,7 @@ final readonly class CacheStore implements MessageStoreInterface
         private int $ttl = 86400,
     ) {
         if (!interface_exists(CacheItemPoolInterface::class)) {
-            throw new \RuntimeException('For using the CacheStore as message store, a PSR-6 cache implementation is required. Try running "composer require symfony/cache" or another PSR-6 compatible cache.');
+            throw new RuntimeException('For using the CacheStore as message store, a PSR-6 cache implementation is required. Try running "composer require symfony/cache" or another PSR-6 compatible cache.');
         }
     }
 

@@ -16,6 +16,7 @@ use Symfony\AI\Platform\Bridge\Bedrock\Anthropic\ClaudeHandler;
 use Symfony\AI\Platform\Bridge\Bedrock\Meta\LlamaModelClient;
 use Symfony\AI\Platform\Bridge\Bedrock\Nova\NovaHandler;
 use Symfony\AI\Platform\Contract;
+use Symfony\AI\Platform\Exception\RuntimeException;
 
 /**
  * @author Björn Altmann
@@ -27,7 +28,7 @@ final readonly class PlatformFactory
         ?Contract $contract = null,
     ): Platform {
         if (!class_exists(BedrockRuntimeClient::class)) {
-            throw new \RuntimeException('For using the Bedrock platform, the async-aws/bedrock-runtime package is required. Try running "composer require async-aws/bedrock-runtime".');
+            throw new RuntimeException('For using the Bedrock platform, the async-aws/bedrock-runtime package is required. Try running "composer require async-aws/bedrock-runtime".');
         }
 
         $modelClient[] = new ClaudeHandler($bedrockRuntimeClient);

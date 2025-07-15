@@ -31,6 +31,11 @@
             "Symfony\\AI\\McpBundle\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Symfony\\AI\\PHPStan\\": "../../.phpstan"
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
