@@ -12,12 +12,8 @@
 namespace Symfony\AI\Platform\Bridge\OpenRouter;
 
 use Symfony\AI\Platform\Exception\InvalidArgumentException;
-use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface;
-use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
-use Symfony\AI\Platform\Response\TextResponse;
-use Symfony\AI\Platform\ResponseConverterInterface;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
@@ -25,7 +21,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 /**
  * @author rglozman
  */
-final readonly class Client implements ModelClientInterface, ResponseConverterInterface
+final readonly class ModelClient implements ModelClientInterface
 {
     private EventSourceHttpClient $httpClient;
 
@@ -49,20 +45,5 @@ final readonly class Client implements ModelClientInterface, ResponseConverterIn
             'auth_bearer' => $this->apiKey,
             'json' => array_merge($options, $payload),
         ]);
-    }
-
-    public function convert(ResponseInterface $response, array $options = []): LlmResponse
-    {
-        $data = $response->toArray();
-
-        if (!isset($data['choices'][0]['message'])) {
-            throw new RuntimeException('Response does not contain message');
-        }
-
-        if (!isset($data['choices'][0]['message']['content'])) {
-            throw new RuntimeException('Message does not contain content');
-        }
-
-        return new TextResponse($data['choices'][0]['message']['content']);
     }
 }

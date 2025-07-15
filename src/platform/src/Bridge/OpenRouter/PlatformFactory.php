@@ -31,11 +31,10 @@ final class PlatformFactory
         ?Contract $contract = null,
     ): Platform {
         $httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
-        $handler = new Client($httpClient, $apiKey);
 
         return new Platform(
-            [$handler],
-            [$handler],
+            [new ModelClient($httpClient, $apiKey)],
+            [new ResponseConverter()],
             $contract ?? Contract::create(
                 new AssistantMessageNormalizer(),
                 new MessageBagNormalizer(),

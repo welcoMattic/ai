@@ -28,8 +28,7 @@ final class PlatformFactory
         ?Contract $contract = null,
     ): Platform {
         $httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
-        $handler = new ModelHandler($httpClient, $apiKey);
 
-        return new Platform([$handler], [$handler], $contract);
+        return new Platform([new ModelClient($httpClient, $apiKey)], [new ResponseConverter()], $contract);
     }
 }

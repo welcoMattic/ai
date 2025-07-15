@@ -13,11 +13,8 @@ namespace Symfony\AI\Platform\Bridge\OpenAI\DallE;
 
 use Symfony\AI\Platform\Bridge\OpenAI\DallE;
 use Symfony\AI\Platform\Exception\InvalidArgumentException;
-use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
-use Symfony\AI\Platform\ModelClientInterface as PlatformResponseFactory;
-use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
-use Symfony\AI\Platform\ResponseConverterInterface as PlatformResponseConverter;
+use Symfony\AI\Platform\ModelClientInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponse;
 
@@ -26,7 +23,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponse;
  *
  * @author Denis Zunke <denis.zunke@gmail.com>
  */
-final readonly class ModelClient implements PlatformResponseFactory, PlatformResponseConverter
+final readonly class ModelClient implements ModelClientInterface
 {
     public function __construct(
         private HttpClientInterface $httpClient,
@@ -51,26 +48,5 @@ final readonly class ModelClient implements PlatformResponseFactory, PlatformRes
                 'prompt' => $payload,
             ]),
         ]);
-    }
-
-    public function convert(HttpResponse $response, array $options = []): LlmResponse
-    {
-        $response = $response->toArray();
-        if (!isset($response['data'][0])) {
-            throw new RuntimeException('No image generated.');
-        }
-
-        $images = [];
-        foreach ($response['data'] as $image) {
-            if ('url' === $options['response_format']) {
-                $images[] = new UrlImage($image['url']);
-
-                continue;
-            }
-
-            $images[] = new Base64Image($image['b64_json']);
-        }
-
-        return new ImageResponse($image['revised_prompt'] ?? null, ...$images);
     }
 }
