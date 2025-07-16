@@ -465,6 +465,84 @@ AgentAwareTrait::
         }
     }
 
+Agent Memory Management
+-----------------------
+
+Symfony AI supports adding contextual memory to agent conversations, allowing the model to recall past interactions or
+relevant information from different sources. Memory providers inject information into the system prompt, providing the
+model with context without changing your application logic.
+
+Using Memory
+~~~~~~~~~~~~
+
+Memory integration is handled through the ``MemoryInputProcessor`` and one or more ``MemoryProviderInterface`` implementations::
+
+    use Symfony\AI\Agent\Agent;
+    use Symfony\AI\Agent\Memory\MemoryInputProcessor;
+    use Symfony\AI\Agent\Memory\StaticMemoryProvider;
+    use Symfony\AI\Platform\Message\Message;
+    use Symfony\AI\Platform\Message\MessageBag;
+
+    // Platform & LLM instantiation
+
+    $personalFacts = new StaticMemoryProvider(
+        'My name is Wilhelm Tell',
+        'I wish to be a swiss national hero',
+        'I am struggling with hitting apples but want to be professional with the bow and arrow',
+    );
+    $memoryProcessor = new MemoryInputProcessor($personalFacts);
+
+    $agent = new Agent($platform, $model, [$memoryProcessor]);
+    $messages = new MessageBag(Message::ofUser('What do we do today?'));
+    $response = $agent->call($messages);
+
+Memory Providers
+~~~~~~~~~~~~~~~~
+
+The library includes several memory provider implementations that are ready to use out of the box.
+
+**Static Memory**
+
+Static memory provides fixed information to the agent, such as user preferences, application context, or any other
+information that should be consistently available without being directly added to the system prompt::
+
+    use Symfony\AI\Agent\Memory\StaticMemoryProvider;
+
+    $staticMemory = new StaticMemoryProvider(
+        'The user is allergic to nuts',
+        'The user prefers brief explanations',
+    );
+
+**Embedding Provider**
+
+This provider leverages vector storage to inject relevant knowledge based on the user's current message. It can be used
+for retrieving general knowledge from a store or recalling past conversation pieces that might be relevant::
+
+    use Symfony\AI\Agent\Memory\EmbeddingProvider;
+
+    $embeddingsMemory = new EmbeddingProvider(
+        $platform,
+        $embeddings, // Your embeddings model for vectorizing user messages
+        $store       // Your vector store to query for relevant context
+    );
+
+Dynamic Memory Control
+~~~~~~~~~~~~~~~~~~~~~~
+
+Memory is globally configured for the agent, but you can selectively disable it for specific calls when needed. This is
+useful when certain interactions shouldn't be influenced by the memory context::
+
+    $response = $agent->call($messages, [
+        'use_memory' => false, // Disable memory for this specific call
+    ]);
+
+
+**Code Examples**
+
+* `Chat with static memory`_
+* `Chat with embedding search memory`_
+
+
 .. _`Platform Component`: https://github.com/symfony/ai-platform
 .. _`Brave Tool`: https://github.com/symfony/ai/blob/main/examples/toolbox/brave.php
 .. _`Clock Tool`: https://github.com/symfony/ai/blob/main/examples/toolbox/clock.php
@@ -479,3 +557,5 @@ AgentAwareTrait::
 .. _`RAG with Pinecone`: https://github.com/symfony/ai/blob/main/examples/store/pinecone-similarity-search.php
 .. _`Structured Output with PHP class`: https://github.com/symfony/ai/blob/main/examples/openai/structured-output-math.php
 .. _`Structured Output with array`: https://github.com/symfony/ai/blob/main/examples/openai/structured-output-clock.php
+.. _`Chat with static memory`: https://github.com/symfony/ai/blob/main/examples/misc/chat-with-memory.php
+.. _`Chat with embedding search memory`: https://github.com/symfony/ai/blob/main/examples/store/mariadb-chat-memory.php
