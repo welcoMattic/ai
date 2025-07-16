@@ -16,6 +16,7 @@ use AsyncAws\BedrockRuntime\Input\InvokeModelRequest;
 use AsyncAws\BedrockRuntime\Result\InvokeModelResponse;
 use Symfony\AI\Platform\Bridge\Bedrock\BedrockModelClient;
 use Symfony\AI\Platform\Bridge\Meta\Llama;
+use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\Response\TextResponse;
 
@@ -48,7 +49,7 @@ class LlamaModelClient implements BedrockModelClient
         $responseBody = json_decode($bedrockResponse->getBody(), true, 512, \JSON_THROW_ON_ERROR);
 
         if (!isset($responseBody['generation'])) {
-            throw new \RuntimeException('Response does not contain any content');
+            throw new RuntimeException('Response does not contain any content');
         }
 
         return new TextResponse($responseBody['generation']);

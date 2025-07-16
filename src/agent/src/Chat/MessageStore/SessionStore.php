@@ -12,6 +12,7 @@
 namespace Symfony\AI\Agent\Chat\MessageStore;
 
 use Symfony\AI\Agent\Chat\MessageStoreInterface;
+use Symfony\AI\Agent\Exception\RuntimeException;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\Message\MessageBagInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -26,7 +27,7 @@ final readonly class SessionStore implements MessageStoreInterface
         private string $sessionKey = 'messages',
     ) {
         if (!class_exists(RequestStack::class)) {
-            throw new \RuntimeException('For using the SessionStore as message store, the symfony/http-foundation package is required. Try running "composer require symfony/http-foundation".');
+            throw new RuntimeException('For using the SessionStore as message store, the symfony/http-foundation package is required. Try running "composer require symfony/http-foundation".');
         }
         $this->session = $requestStack->getSession();
     }

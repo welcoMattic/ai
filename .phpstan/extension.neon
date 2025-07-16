@@ -1,0 +1,2 @@
+rules:
+    - Symfony\AI\PHPStan\ForbidNativeExceptionRule
