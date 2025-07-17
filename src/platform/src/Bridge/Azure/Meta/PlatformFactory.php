@@ -28,8 +28,8 @@ final readonly class PlatformFactory
         ?HttpClientInterface $httpClient = null,
         ?Contract $contract = null,
     ): Platform {
-        $modelClient = new LlamaHandler($httpClient ?? HttpClient::create(), $baseUrl, $apiKey);
+        $modelClient = new LlamaModelClient($httpClient ?? HttpClient::create(), $baseUrl, $apiKey);
 
-        return new Platform([$modelClient], [$modelClient], $contract);
+        return new Platform([$modelClient], [new LlamaResponseConverter()], $contract);
     }
 }

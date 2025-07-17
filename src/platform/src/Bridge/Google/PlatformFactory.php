@@ -12,7 +12,10 @@
 namespace Symfony\AI\Platform\Bridge\Google;
 
 use Symfony\AI\Platform\Bridge\Google\Contract\GoogleContract;
-use Symfony\AI\Platform\Bridge\Google\Embeddings\ModelClient;
+use Symfony\AI\Platform\Bridge\Google\Embeddings\ModelClient as EmbeddingsModelClient;
+use Symfony\AI\Platform\Bridge\Google\Embeddings\ResponseConverter as EmbeddingsResponseConverter;
+use Symfony\AI\Platform\Bridge\Google\Gemini\ModelClient as GeminiModelClient;
+use Symfony\AI\Platform\Bridge\Google\Gemini\ResponseConverter as GeminiResponseConverter;
 use Symfony\AI\Platform\Contract;
 use Symfony\AI\Platform\Platform;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
@@ -30,12 +33,10 @@ final readonly class PlatformFactory
         ?Contract $contract = null,
     ): Platform {
         $httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
-        $responseHandler = new ModelHandler($httpClient, $apiKey);
-        $embeddings = new ModelClient($httpClient, $apiKey);
 
         return new Platform(
-            [$responseHandler, $embeddings],
-            [$responseHandler, $embeddings],
+            [new EmbeddingsModelClient($httpClient, $apiKey), new GeminiModelClient($httpClient, $apiKey)],
+            [new EmbeddingsResponseConverter(), new GeminiResponseConverter()],
             $contract ?? GoogleContract::create(),
         );
     }

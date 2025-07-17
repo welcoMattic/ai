@@ -12,6 +12,7 @@
 namespace Symfony\AI\Platform\Bridge\OpenAI;
 
 use Symfony\AI\Platform\Bridge\OpenAI\DallE\ModelClient as DallEModelClient;
+use Symfony\AI\Platform\Bridge\OpenAI\DallE\ResponseConverter as DallEResponseConverter;
 use Symfony\AI\Platform\Bridge\OpenAI\Embeddings\ModelClient as EmbeddingsModelClient;
 use Symfony\AI\Platform\Bridge\OpenAI\Embeddings\ResponseConverter as EmbeddingsResponseConverter;
 use Symfony\AI\Platform\Bridge\OpenAI\GPT\ModelClient as GPTModelClient;
@@ -37,19 +38,17 @@ final readonly class PlatformFactory
     ): Platform {
         $httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
 
-        $dallEModelClient = new DallEModelClient($httpClient, $apiKey);
-
         return new Platform(
             [
                 new GPTModelClient($httpClient, $apiKey),
                 new EmbeddingsModelClient($httpClient, $apiKey),
-                $dallEModelClient,
+                new DallEModelClient($httpClient, $apiKey),
                 new WhisperModelClient($httpClient, $apiKey),
             ],
             [
                 new GPTResponseConverter(),
                 new EmbeddingsResponseConverter(),
-                $dallEModelClient,
+                new DallEResponseConverter(),
                 new WhisperResponseConverter(),
             ],
             $contract ?? Contract::create(new AudioNormalizer()),

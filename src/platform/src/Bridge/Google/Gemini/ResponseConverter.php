@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\AI\Platform\Bridge\Google;
+namespace Symfony\AI\Platform\Bridge\Google\Gemini;
 
+use Symfony\AI\Platform\Bridge\Google\Gemini;
 use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
-use Symfony\AI\Platform\ModelClientInterface;
 use Symfony\AI\Platform\Response\Choice;
 use Symfony\AI\Platform\Response\ChoiceResponse;
 use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
@@ -23,83 +23,18 @@ use Symfony\AI\Platform\Response\ToolCall;
 use Symfony\AI\Platform\Response\ToolCallResponse;
 use Symfony\AI\Platform\ResponseConverterInterface;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
-use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\RedirectionExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\ServerExceptionInterface;
-use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
-use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Roy Garrido
  */
-final readonly class ModelHandler implements ModelClientInterface, ResponseConverterInterface
+final readonly class ResponseConverter implements ResponseConverterInterface
 {
-    private EventSourceHttpClient $httpClient;
-
-    public function __construct(
-        HttpClientInterface $httpClient,
-        #[\SensitiveParameter] private string $apiKey,
-    ) {
-        $this->httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
-    }
-
     public function supports(Model $model): bool
     {
         return $model instanceof Gemini;
     }
 
-    /**
-     * @throws TransportExceptionInterface
-     */
-    public function request(Model $model, array|string $payload, array $options = []): ResponseInterface
-    {
-        $url = \sprintf(
-            'https://generativelanguage.googleapis.com/v1beta/models/%s:%s',
-            $model->getName(),
-            $options['stream'] ?? false ? 'streamGenerateContent' : 'generateContent',
-        );
-
-        if (isset($options['response_format']['json_schema']['schema'])) {
-            $options['responseMimeType'] = 'application/json';
-            $options['responseJsonSchema'] = $options['response_format']['json_schema']['schema'];
-            unset($options['response_format']);
-        }
-
-        $generationConfig = ['generationConfig' => $options];
-        unset($generationConfig['generationConfig']['stream']);
-        unset($generationConfig['generationConfig']['tools']);
-        unset($generationConfig['generationConfig']['server_tools']);
-
-        if (isset($options['tools'])) {
-            $generationConfig['tools'][] = ['functionDeclarations' => $options['tools']];
-            unset($options['tools']);
-        }
-
-        foreach ($options['server_tools'] ?? [] as $tool => $params) {
-            if (!$params) {
-                continue;
-            }
-
-            $generationConfig['tools'][] = [$tool => true === $params ? new \ArrayObject() : $params];
-        }
-
-        return $this->httpClient->request('POST', $url, [
-            'headers' => [
-                'x-goog-api-key' => $this->apiKey,
-            ],
-            'json' => array_merge($generationConfig, $payload),
-        ]);
-    }
-
-    /**
-     * @throws TransportExceptionInterface
-     * @throws ServerExceptionInterface
-     * @throws RedirectionExceptionInterface
-     * @throws DecodingExceptionInterface
-     * @throws ClientExceptionInterface
-     */
     public function convert(ResponseInterface $response, array $options = []): LlmResponse
     {
         if ($options['stream'] ?? false) {
