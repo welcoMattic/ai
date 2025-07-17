@@ -14,25 +14,25 @@ namespace Symfony\AI\Platform\Bridge\LMStudio\Embeddings;
 use Symfony\AI\Platform\Bridge\LMStudio\Embeddings;
 use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
+use Symfony\AI\Platform\Response\RawResponseInterface;
 use Symfony\AI\Platform\Response\VectorResponse;
-use Symfony\AI\Platform\ResponseConverterInterface as PlatformResponseConverter;
+use Symfony\AI\Platform\ResponseConverterInterface;
 use Symfony\AI\Platform\Vector\Vector;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
  * @author André Lubian <lubiana123@gmail.com>
  */
-final class ResponseConverter implements PlatformResponseConverter
+final class ResponseConverter implements ResponseConverterInterface
 {
     public function supports(Model $model): bool
     {
         return $model instanceof Embeddings;
     }
 
-    public function convert(ResponseInterface $response, array $options = []): VectorResponse
+    public function convert(RawResponseInterface $response, array $options = []): VectorResponse
     {
-        $data = $response->toArray();
+        $data = $response->getRawData();
 
         if (!isset($data['data'])) {
             throw new RuntimeException('Response does not contain data');

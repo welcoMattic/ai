@@ -30,7 +30,7 @@ if (!isset($_SERVER['AWS_ACCESS_KEY_ID'], $_SERVER['AWS_SECRET_ACCESS_KEY'], $_S
 }
 
 $platform = PlatformFactory::create();
-$model = new Claude();
+$model = new Claude('claude-3-7-sonnet-20250219');
 
 $wikipedia = new Wikipedia(HttpClient::create());
 $toolbox = Toolbox::create($wikipedia);

@@ -14,9 +14,9 @@ namespace Symfony\AI\Platform\Bridge\OpenAI\DallE;
 use Symfony\AI\Platform\Bridge\OpenAI\DallE;
 use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
-use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
+use Symfony\AI\Platform\Response\RawResponseInterface;
+use Symfony\AI\Platform\Response\ResponseInterface;
 use Symfony\AI\Platform\ResponseConverterInterface;
-use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponse;
 
 /**
  * @see https://platform.openai.com/docs/api-reference/images/create
@@ -30,9 +30,10 @@ final readonly class ResponseConverter implements ResponseConverterInterface
         return $model instanceof DallE;
     }
 
-    public function convert(HttpResponse $response, array $options = []): LlmResponse
+    public function convert(RawResponseInterface $response, array $options = []): ResponseInterface
     {
-        $response = $response->toArray();
+        $response = $response->getRawData();
+
         if (!isset($response['data'][0])) {
             throw new RuntimeException('No image generated.');
         }

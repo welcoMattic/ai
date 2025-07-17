@@ -16,9 +16,9 @@ use Symfony\AI\Platform\Bridge\OpenAI\Whisper\Task;
 use Symfony\AI\Platform\Exception\InvalidArgumentException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface;
+use Symfony\AI\Platform\Response\RawHttpResponse;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -47,7 +47,7 @@ final readonly class WhisperModelClient implements ModelClientInterface
         return $model instanceof Whisper;
     }
 
-    public function request(Model $model, array|string $payload, array $options = []): ResponseInterface
+    public function request(Model $model, array|string $payload, array $options = []): RawHttpResponse
     {
         $task = $options['task'] ?? Task::TRANSCRIPTION;
         $endpoint = Task::TRANSCRIPTION === $task ? 'transcriptions' : 'translations';
@@ -55,13 +55,13 @@ final readonly class WhisperModelClient implements ModelClientInterface
 
         unset($options['task']);
 
-        return $this->httpClient->request('POST', $url, [
+        return new RawHttpResponse($this->httpClient->request('POST', $url, [
             'headers' => [
                 'api-key' => $this->apiKey,
                 'Content-Type' => 'multipart/form-data',
             ],
             'query' => ['api-version' => $this->apiVersion],
             'body' => array_merge($options, $payload),
-        ]);
+        ]));
     }
 }

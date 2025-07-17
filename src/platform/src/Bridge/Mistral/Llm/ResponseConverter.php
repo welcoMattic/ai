@@ -16,7 +16,9 @@ use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\Response\Choice;
 use Symfony\AI\Platform\Response\ChoiceResponse;
-use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
+use Symfony\AI\Platform\Response\RawHttpResponse;
+use Symfony\AI\Platform\Response\RawResponseInterface;
+use Symfony\AI\Platform\Response\ResponseInterface;
 use Symfony\AI\Platform\Response\StreamResponse;
 use Symfony\AI\Platform\Response\TextResponse;
 use Symfony\AI\Platform\Response\ToolCall;
@@ -40,18 +42,19 @@ final readonly class ResponseConverter implements ResponseConverterInterface
     /**
      * @param array<string, mixed> $options
      */
-    public function convert(HttpResponse $response, array $options = []): LlmResponse
+    public function convert(RawResponseInterface|RawHttpResponse $response, array $options = []): ResponseInterface
     {
+        $httpResponse = $response->getRawObject();
+
         if ($options['stream'] ?? false) {
-            return new StreamResponse($this->convertStream($response));
+            return new StreamResponse($this->convertStream($httpResponse));
         }
 
-        $code = $response->getStatusCode();
-        $data = $response->toArray(false);
-
-        if (200 !== $code) {
-            throw new RuntimeException(\sprintf('Unexpected response code %d: %s', $code, $response->getContent(false)));
+        if (200 !== $code = $httpResponse->getStatusCode()) {
+            throw new RuntimeException(\sprintf('Unexpected response code %d: %s', $code, $httpResponse->getContent(false)));
         }
+
+        $data = $response->getRawData();
 
         if (!isset($data['choices'])) {
             throw new RuntimeException('Response does not contain choices');

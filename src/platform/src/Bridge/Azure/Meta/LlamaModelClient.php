@@ -14,8 +14,8 @@ namespace Symfony\AI\Platform\Bridge\Azure\Meta;
 use Symfony\AI\Platform\Bridge\Meta\Llama;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface;
+use Symfony\AI\Platform\Response\RawHttpResponse;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -34,16 +34,16 @@ final readonly class LlamaModelClient implements ModelClientInterface
         return $model instanceof Llama;
     }
 
-    public function request(Model $model, array|string $payload, array $options = []): ResponseInterface
+    public function request(Model $model, array|string $payload, array $options = []): RawHttpResponse
     {
         $url = \sprintf('https://%s/chat/completions', $this->baseUrl);
 
-        return $this->httpClient->request('POST', $url, [
+        return new RawHttpResponse($this->httpClient->request('POST', $url, [
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Authorization' => $this->apiKey,
             ],
             'json' => array_merge($options, $payload),
-        ]);
+        ]));
     }
 }

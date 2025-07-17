@@ -13,6 +13,7 @@ namespace Symfony\AI\Platform\Bridge\TransformersPHP;
 
 use Codewithkyrian\Transformers\Transformers;
 use Symfony\AI\Platform\Exception\RuntimeException;
+use Symfony\AI\Platform\Platform;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -25,6 +26,6 @@ final readonly class PlatformFactory
             throw new RuntimeException('For using the TransformersPHP with FFI to run models in PHP, the codewithkyrian/transformers package is required. Try running "composer require codewithkyrian/transformers".');
         }
 
-        return new Platform();
+        return new Platform([new ModelClient()], [new ResponseConverter()]);
     }
 }
