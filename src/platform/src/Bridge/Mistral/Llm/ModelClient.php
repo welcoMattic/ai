@@ -14,9 +14,9 @@ namespace Symfony\AI\Platform\Bridge\Mistral\Llm;
 use Symfony\AI\Platform\Bridge\Mistral\Mistral;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface;
+use Symfony\AI\Platform\Response\RawHttpResponse;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -38,15 +38,15 @@ final readonly class ModelClient implements ModelClientInterface
         return $model instanceof Mistral;
     }
 
-    public function request(Model $model, array|string $payload, array $options = []): ResponseInterface
+    public function request(Model $model, array|string $payload, array $options = []): RawHttpResponse
     {
-        return $this->httpClient->request('POST', 'https://api.mistral.ai/v1/chat/completions', [
+        return new RawHttpResponse($this->httpClient->request('POST', 'https://api.mistral.ai/v1/chat/completions', [
             'auth_bearer' => $this->apiKey,
             'headers' => [
                 'Content-Type' => 'application/json',
                 'Accept' => 'application/json',
             ],
             'json' => array_merge($options, $payload),
-        ]);
+        ]));
     }
 }

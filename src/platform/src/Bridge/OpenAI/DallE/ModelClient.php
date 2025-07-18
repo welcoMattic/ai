@@ -15,8 +15,8 @@ use Symfony\AI\Platform\Bridge\OpenAI\DallE;
 use Symfony\AI\Platform\Exception\InvalidArgumentException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface;
+use Symfony\AI\Platform\Response\RawHttpResponse;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponse;
 
 /**
  * @see https://platform.openai.com/docs/api-reference/images/create
@@ -39,14 +39,14 @@ final readonly class ModelClient implements ModelClientInterface
         return $model instanceof DallE;
     }
 
-    public function request(Model $model, array|string $payload, array $options = []): HttpResponse
+    public function request(Model $model, array|string $payload, array $options = []): RawHttpResponse
     {
-        return $this->httpClient->request('POST', 'https://api.openai.com/v1/images/generations', [
+        return new RawHttpResponse($this->httpClient->request('POST', 'https://api.openai.com/v1/images/generations', [
             'auth_bearer' => $this->apiKey,
             'json' => array_merge($options, [
                 'model' => $model->getName(),
                 'prompt' => $payload,
             ]),
-        ]);
+        ]));
     }
 }

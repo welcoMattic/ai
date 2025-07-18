@@ -15,7 +15,7 @@ use Symfony\AI\Platform\Bridge\Meta\Llama;
 use Symfony\AI\Platform\Exception\InvalidArgumentException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface;
-use Symfony\Contracts\HttpClient\ResponseInterface;
+use Symfony\AI\Platform\Response\RawHttpResponse;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -32,10 +32,12 @@ final readonly class LlamaModelClient implements ModelClientInterface
         return $model instanceof Llama;
     }
 
-    public function request(Model $model, array|string $payload, array $options = []): ResponseInterface
+    public function request(Model $model, array|string $payload, array $options = []): RawHttpResponse
     {
         $model instanceof Llama || throw new InvalidArgumentException(\sprintf('The model must be an instance of "%s".', Llama::class));
 
-        return $this->client->request(\sprintf('meta/meta-%s', $model->getName()), 'predictions', $payload);
+        return new RawHttpResponse(
+            $this->client->request(\sprintf('meta/meta-%s', $model->getName()), 'predictions', $payload)
+        );
     }
 }

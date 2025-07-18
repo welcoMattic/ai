@@ -13,8 +13,8 @@ namespace Symfony\AI\Platform\Bridge\Voyage;
 
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface;
+use Symfony\AI\Platform\Response\RawHttpResponse;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -32,14 +32,14 @@ final readonly class ModelClient implements ModelClientInterface
         return $model instanceof Voyage;
     }
 
-    public function request(Model $model, object|string|array $payload, array $options = []): ResponseInterface
+    public function request(Model $model, object|string|array $payload, array $options = []): RawHttpResponse
     {
-        return $this->httpClient->request('POST', 'https://api.voyageai.com/v1/embeddings', [
+        return new RawHttpResponse($this->httpClient->request('POST', 'https://api.voyageai.com/v1/embeddings', [
             'auth_bearer' => $this->apiKey,
             'json' => [
                 'model' => $model->getName(),
                 'input' => $payload,
             ],
-        ]);
+        ]));
     }
 }

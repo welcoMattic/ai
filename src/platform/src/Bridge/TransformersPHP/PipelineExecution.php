@@ -24,17 +24,12 @@ final class PipelineExecution
     private ?array $result = null;
 
     /**
-     * @param array<mixed>|string|object $input
+     * @param array<mixed>|string $input
      */
     public function __construct(
         private readonly Pipeline $pipeline,
-        private readonly object|array|string $input,
+        private readonly array|string $input,
     ) {
-    }
-
-    public function getPipeline(): Pipeline
-    {
-        return $this->pipeline;
     }
 
     /**

@@ -14,9 +14,9 @@ namespace Symfony\AI\Platform\Bridge\LMStudio\Completions;
 use Symfony\AI\Platform\Bridge\LMStudio\Completions;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface as PlatformResponseFactory;
+use Symfony\AI\Platform\Response\RawHttpResponse;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author André Lubian <lubiana123@gmail.com>
@@ -37,10 +37,10 @@ final readonly class ModelClient implements PlatformResponseFactory
         return $model instanceof Completions;
     }
 
-    public function request(Model $model, array|string $payload, array $options = []): ResponseInterface
+    public function request(Model $model, array|string $payload, array $options = []): RawHttpResponse
     {
-        return $this->httpClient->request('POST', \sprintf('%s/v1/chat/completions', $this->hostUrl), [
+        return new RawHttpResponse($this->httpClient->request('POST', \sprintf('%s/v1/chat/completions', $this->hostUrl), [
             'json' => array_merge($options, $payload),
-        ]);
+        ]));
     }
 }

@@ -14,8 +14,8 @@ namespace Symfony\AI\Platform\Bridge\LMStudio\Embeddings;
 use Symfony\AI\Platform\Bridge\LMStudio\Embeddings;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface as PlatformResponseFactory;
+use Symfony\AI\Platform\Response\RawHttpResponse;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -34,13 +34,13 @@ final readonly class ModelClient implements PlatformResponseFactory
         return $model instanceof Embeddings;
     }
 
-    public function request(Model $model, array|string $payload, array $options = []): ResponseInterface
+    public function request(Model $model, array|string $payload, array $options = []): RawHttpResponse
     {
-        return $this->httpClient->request('POST', \sprintf('%s/v1/embeddings', $this->hostUrl), [
+        return new RawHttpResponse($this->httpClient->request('POST', \sprintf('%s/v1/embeddings', $this->hostUrl), [
             'json' => array_merge($options, [
                 'model' => $model->getName(),
                 'input' => $payload,
             ]),
-        ]);
+        ]));
     }
 }

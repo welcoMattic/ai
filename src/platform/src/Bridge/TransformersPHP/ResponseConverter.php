@@ -9,18 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\AI\Platform\Bridge\OpenRouter;
+namespace Symfony\AI\Platform\Bridge\TransformersPHP;
 
-use Symfony\AI\Platform\Exception\RuntimeException;
+use Codewithkyrian\Transformers\Pipelines\Task;
 use Symfony\AI\Platform\Model;
+use Symfony\AI\Platform\Response\ObjectResponse;
 use Symfony\AI\Platform\Response\RawResponseInterface;
-use Symfony\AI\Platform\Response\ResponseInterface;
 use Symfony\AI\Platform\Response\TextResponse;
 use Symfony\AI\Platform\ResponseConverterInterface;
 
-/**
- * @author rglozman
- */
 final readonly class ResponseConverter implements ResponseConverterInterface
 {
     public function supports(Model $model): bool
@@ -28,18 +25,16 @@ final readonly class ResponseConverter implements ResponseConverterInterface
         return true;
     }
 
-    public function convert(RawResponseInterface $response, array $options = []): ResponseInterface
+    public function convert(RawResponseInterface $response, array $options = []): TextResponse|ObjectResponse
     {
         $data = $response->getRawData();
 
-        if (!isset($data['choices'][0]['message'])) {
-            throw new RuntimeException('Response does not contain message');
+        if (Task::Text2TextGeneration === $options['task']) {
+            $result = reset($data);
+
+            return new TextResponse($result['generated_text']);
         }
 
-        if (!isset($data['choices'][0]['message']['content'])) {
-            throw new RuntimeException('Message does not contain content');
-        }
-
-        return new TextResponse($data['choices'][0]['message']['content']);
+        return new ObjectResponse($data);
     }
 }

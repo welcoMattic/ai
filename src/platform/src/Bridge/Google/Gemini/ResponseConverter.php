@@ -16,14 +16,16 @@ use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\Response\Choice;
 use Symfony\AI\Platform\Response\ChoiceResponse;
-use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
+use Symfony\AI\Platform\Response\RawHttpResponse;
+use Symfony\AI\Platform\Response\RawResponseInterface;
+use Symfony\AI\Platform\Response\ResponseInterface;
 use Symfony\AI\Platform\Response\StreamResponse;
 use Symfony\AI\Platform\Response\TextResponse;
 use Symfony\AI\Platform\Response\ToolCall;
 use Symfony\AI\Platform\Response\ToolCallResponse;
 use Symfony\AI\Platform\ResponseConverterInterface;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
-use Symfony\Contracts\HttpClient\ResponseInterface;
+use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponse;
 
 /**
  * @author Roy Garrido
@@ -35,13 +37,13 @@ final readonly class ResponseConverter implements ResponseConverterInterface
         return $model instanceof Gemini;
     }
 
-    public function convert(ResponseInterface $response, array $options = []): LlmResponse
+    public function convert(RawResponseInterface|RawHttpResponse $response, array $options = []): ResponseInterface
     {
         if ($options['stream'] ?? false) {
-            return new StreamResponse($this->convertStream($response));
+            return new StreamResponse($this->convertStream($response->getRawObject()));
         }
 
-        $data = $response->toArray();
+        $data = $response->getRawData();
 
         if (!isset($data['candidates'][0]['content']['parts'][0])) {
             throw new RuntimeException('Response does not contain any content');
@@ -61,7 +63,7 @@ final readonly class ResponseConverter implements ResponseConverterInterface
         return new TextResponse($choices[0]->getContent());
     }
 
-    private function convertStream(ResponseInterface $response): \Generator
+    private function convertStream(HttpResponse $response): \Generator
     {
         foreach ((new EventSourceHttpClient())->stream($response) as $chunk) {
             if ($chunk->isFirst() || $chunk->isLast()) {

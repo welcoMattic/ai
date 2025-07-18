@@ -14,14 +14,14 @@ namespace Symfony\AI\Platform\Bridge\LMStudio\Completions;
 use Symfony\AI\Platform\Bridge\LMStudio\Completions;
 use Symfony\AI\Platform\Bridge\OpenAI\GPT\ResponseConverter as OpenAIResponseConverter;
 use Symfony\AI\Platform\Model;
-use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
-use Symfony\AI\Platform\ResponseConverterInterface as PlatformResponseConverter;
-use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponse;
+use Symfony\AI\Platform\Response\RawResponseInterface;
+use Symfony\AI\Platform\Response\ResponseInterface;
+use Symfony\AI\Platform\ResponseConverterInterface;
 
 /**
  * @author André Lubian <lubiana123@gmail.com>
  */
-final class ResponseConverter implements PlatformResponseConverter
+final class ResponseConverter implements ResponseConverterInterface
 {
     public function __construct(
         private readonly OpenAIResponseConverter $gptResponseConverter = new OpenAIResponseConverter(),
@@ -33,7 +33,7 @@ final class ResponseConverter implements PlatformResponseConverter
         return $model instanceof Completions;
     }
 
-    public function convert(HttpResponse $response, array $options = []): LlmResponse
+    public function convert(RawResponseInterface $response, array $options = []): ResponseInterface
     {
         return $this->gptResponseConverter->convert($response, $options);
     }
