@@ -39,7 +39,7 @@ if (!isset($_SERVER['OPENAI_API_KEY'], $_SERVER['QDRANT_HOST'], $_SERVER['QDRANT
 // initialize the store
 $store = new Store(
     HttpClient::create(),
-    'http://127.0.0.1:6333',
+    $_SERVER['QDRANT_HOST'],
     $_SERVER['QDRANT_SERVICE_API_KEY'],
     'movies',
 );
