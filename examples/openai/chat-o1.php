@@ -35,6 +35,6 @@ $prompt = <<<PROMPT
     PROMPT;
 
 $agent = new Agent($platform, $model, logger: logger());
-$response = $agent->call(new MessageBag(Message::ofUser($prompt)));
+$result = $agent->call(new MessageBag(Message::ofUser($prompt)));
 
-echo $response->getContent().\PHP_EOL;
+echo $result->getContent().\PHP_EOL;

@@ -20,8 +20,8 @@ $platform = PlatformFactory::create(env('HUGGINGFACE_KEY'), httpClient: http_cli
 $model = new Model('nvidia/segformer-b0-finetuned-ade-512-512');
 
 $image = Image::fromFile(dirname(__DIR__, 2).'/fixtures/image.jpg');
-$response = $platform->request($model, $image, [
+$result = $platform->invoke($model, $image, [
     'task' => Task::IMAGE_SEGMENTATION,
 ]);
 
-dump($response->asObject());
+dump($result->asObject());

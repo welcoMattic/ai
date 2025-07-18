@@ -29,6 +29,6 @@ $processor = new AgentProcessor($toolbox);
 $agent = new Agent($platform, $model, [$processor], [$processor], logger());
 
 $messages = new MessageBag(Message::ofUser('Who is the current chancellor of Germany?'));
-$response = $agent->call($messages);
+$result = $agent->call($messages);
 
-echo $response->getContent().\PHP_EOL;
+echo $result->getContent().\PHP_EOL;

@@ -18,10 +18,10 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $platform = PlatformFactory::create(env('HUGGINGFACE_KEY'), httpClient: http_client());
 $model = new Model('facebook/mbart-large-50-many-to-many-mmt');
 
-$response = $platform->request($model, 'Меня зовут Вольфганг и я живу в Берлине', [
+$result = $platform->invoke($model, 'Меня зовут Вольфганг и я живу в Берлине', [
     'task' => Task::TRANSLATION,
     'src_lang' => 'ru',
     'tgt_lang' => 'en',
 ]);
 
-echo $response->asText().\PHP_EOL;
+echo $result->asText().\PHP_EOL;
