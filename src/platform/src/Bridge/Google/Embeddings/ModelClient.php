@@ -14,8 +14,8 @@ namespace Symfony\AI\Platform\Bridge\Google\Embeddings;
 use Symfony\AI\Platform\Bridge\Google\Embeddings;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface;
+use Symfony\AI\Platform\Response\RawHttpResponse;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Valtteri R <valtzu@gmail.com>
@@ -34,12 +34,12 @@ final readonly class ModelClient implements ModelClientInterface
         return $model instanceof Embeddings;
     }
 
-    public function request(Model $model, array|string $payload, array $options = []): ResponseInterface
+    public function request(Model $model, array|string $payload, array $options = []): RawHttpResponse
     {
         $url = \sprintf('https://generativelanguage.googleapis.com/v1beta/models/%s:%s', $model->getName(), 'batchEmbedContents');
         $modelOptions = $model->getOptions();
 
-        return $this->httpClient->request('POST', $url, [
+        return new RawHttpResponse($this->httpClient->request('POST', $url, [
             'headers' => [
                 'x-goog-api-key' => $this->apiKey,
             ],
@@ -55,6 +55,6 @@ final readonly class ModelClient implements ModelClientInterface
                     \is_array($payload) ? $payload : [$payload],
                 ),
             ],
-        ]);
+        ]));
     }
 }

@@ -13,10 +13,10 @@ namespace Symfony\AI\Platform\Bridge\OpenAI\Whisper;
 
 use Symfony\AI\Platform\Bridge\OpenAI\Whisper;
 use Symfony\AI\Platform\Model;
-use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
+use Symfony\AI\Platform\Response\RawResponseInterface;
+use Symfony\AI\Platform\Response\ResponseInterface;
 use Symfony\AI\Platform\Response\TextResponse;
 use Symfony\AI\Platform\ResponseConverterInterface as BaseResponseConverter;
-use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponse;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -28,9 +28,9 @@ final class ResponseConverter implements BaseResponseConverter
         return $model instanceof Whisper;
     }
 
-    public function convert(HttpResponse $response, array $options = []): LlmResponse
+    public function convert(RawResponseInterface $response, array $options = []): ResponseInterface
     {
-        $data = $response->toArray();
+        $data = $response->getRawData();
 
         return new TextResponse($data['text']);
     }

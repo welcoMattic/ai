@@ -17,7 +17,9 @@ use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\Response\Choice;
 use Symfony\AI\Platform\Response\ChoiceResponse;
-use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
+use Symfony\AI\Platform\Response\RawHttpResponse;
+use Symfony\AI\Platform\Response\RawResponseInterface;
+use Symfony\AI\Platform\Response\ResponseInterface;
 use Symfony\AI\Platform\Response\StreamResponse;
 use Symfony\AI\Platform\Response\TextResponse;
 use Symfony\AI\Platform\Response\ToolCall;
@@ -26,7 +28,6 @@ use Symfony\AI\Platform\ResponseConverterInterface as PlatformResponseConverter;
 use Symfony\Component\HttpClient\Chunk\ServerSentEvent;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
 use Symfony\Component\HttpClient\Exception\JsonException;
-use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponse;
 
 /**
@@ -40,22 +41,16 @@ final class ResponseConverter implements PlatformResponseConverter
         return $model instanceof GPT;
     }
 
-    public function convert(HttpResponse $response, array $options = []): LlmResponse
+    public function convert(RawResponseInterface|RawHttpResponse $response, array $options = []): ResponseInterface
     {
         if ($options['stream'] ?? false) {
-            return new StreamResponse($this->convertStream($response));
+            return new StreamResponse($this->convertStream($response->getRawObject()));
         }
 
-        try {
-            $data = $response->toArray();
-        } catch (ClientExceptionInterface $e) {
-            $data = $response->toArray(throw: false);
+        $data = $response->getRawData();
 
-            if (isset($data['error']['code']) && 'content_filter' === $data['error']['code']) {
-                throw new ContentFilterException(message: $data['error']['message'], previous: $e);
-            }
-
-            throw $e;
+        if (isset($data['error']['code']) && 'content_filter' === $data['error']['code']) {
+            throw new ContentFilterException($data['error']['message']);
         }
 
         if (!isset($data['choices'])) {

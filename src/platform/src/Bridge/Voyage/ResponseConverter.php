@@ -13,11 +13,11 @@ namespace Symfony\AI\Platform\Bridge\Voyage;
 
 use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
-use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
+use Symfony\AI\Platform\Response\RawResponseInterface;
+use Symfony\AI\Platform\Response\ResponseInterface;
 use Symfony\AI\Platform\Response\VectorResponse;
 use Symfony\AI\Platform\ResponseConverterInterface;
 use Symfony\AI\Platform\Vector\Vector;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -29,9 +29,9 @@ final readonly class ResponseConverter implements ResponseConverterInterface
         return $model instanceof Voyage;
     }
 
-    public function convert(ResponseInterface $response, array $options = []): LlmResponse
+    public function convert(RawResponseInterface $response, array $options = []): ResponseInterface
     {
-        $response = $response->toArray();
+        $response = $response->getRawData();
 
         if (!isset($response['data'])) {
             throw new RuntimeException('Response does not contain embedding data');

@@ -13,7 +13,9 @@ namespace Symfony\AI\Platform\Bridge\Anthropic;
 
 use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\Model;
-use Symfony\AI\Platform\Response\ResponseInterface as LlmResponse;
+use Symfony\AI\Platform\Response\RawHttpResponse;
+use Symfony\AI\Platform\Response\RawResponseInterface;
+use Symfony\AI\Platform\Response\ResponseInterface;
 use Symfony\AI\Platform\Response\StreamResponse;
 use Symfony\AI\Platform\Response\TextResponse;
 use Symfony\AI\Platform\Response\ToolCall;
@@ -22,7 +24,7 @@ use Symfony\AI\Platform\ResponseConverterInterface;
 use Symfony\Component\HttpClient\Chunk\ServerSentEvent;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
 use Symfony\Component\HttpClient\Exception\JsonException;
-use Symfony\Contracts\HttpClient\ResponseInterface;
+use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponse;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -34,13 +36,13 @@ class ResponseConverter implements ResponseConverterInterface
         return $model instanceof Claude;
     }
 
-    public function convert(ResponseInterface $response, array $options = []): LlmResponse
+    public function convert(RawHttpResponse|RawResponseInterface $response, array $options = []): ResponseInterface
     {
         if ($options['stream'] ?? false) {
-            return new StreamResponse($this->convertStream($response));
+            return new StreamResponse($this->convertStream($response->getRawObject()));
         }
 
-        $data = $response->toArray();
+        $data = $response->getRawData();
 
         if (!isset($data['content']) || [] === $data['content']) {
             throw new RuntimeException('Response does not contain any content');
@@ -64,7 +66,7 @@ class ResponseConverter implements ResponseConverterInterface
         return new TextResponse($data['content'][0]['text']);
     }
 
-    private function convertStream(ResponseInterface $response): \Generator
+    private function convertStream(HttpResponse $response): \Generator
     {
         foreach ((new EventSourceHttpClient())->stream($response) as $chunk) {
             if (!$chunk instanceof ServerSentEvent || '[DONE]' === $chunk->getData()) {

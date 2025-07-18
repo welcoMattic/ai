@@ -13,9 +13,9 @@ namespace Symfony\AI\Platform\Bridge\Anthropic;
 
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\ModelClientInterface;
+use Symfony\AI\Platform\Response\RawHttpResponse;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -37,18 +37,18 @@ final readonly class ModelClient implements ModelClientInterface
         return $model instanceof Claude;
     }
 
-    public function request(Model $model, array|string $payload, array $options = []): ResponseInterface
+    public function request(Model $model, array|string $payload, array $options = []): RawHttpResponse
     {
         if (isset($options['tools'])) {
             $options['tool_choice'] = ['type' => 'auto'];
         }
 
-        return $this->httpClient->request('POST', 'https://api.anthropic.com/v1/messages', [
+        return new RawHttpResponse($this->httpClient->request('POST', 'https://api.anthropic.com/v1/messages', [
             'headers' => [
                 'x-api-key' => $this->apiKey,
                 'anthropic-version' => $this->version,
             ],
             'json' => array_merge($options, $payload),
-        ]);
+        ]));
     }
 }
