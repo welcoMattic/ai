@@ -51,6 +51,5 @@ CHANGELOG
    - PSR-3 logger integration throughout
    - Symfony EventDispatcher integration
  * Add model capability detection before processing
- * Add fluent API with `Toolbox::create()` for easy instantiation
  * Add comprehensive type safety with full PHP type hints
  * Add clear exception hierarchy for different error scenarios
