@@ -18,8 +18,8 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $platform = PlatformFactory::create(env('HUGGINGFACE_KEY'), httpClient: http_client());
 $model = new Model('black-forest-labs/FLUX.1-dev');
 
-$response = $platform->request($model, 'Astronaut riding a horse', [
+$result = $platform->invoke($model, 'Astronaut riding a horse', [
     'task' => Task::TEXT_TO_IMAGE,
 ]);
 
-echo $response->asBase64().\PHP_EOL;
+echo $result->asBase64().\PHP_EOL;

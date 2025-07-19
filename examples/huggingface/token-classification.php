@@ -18,8 +18,8 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $platform = PlatformFactory::create(env('HUGGINGFACE_KEY'), httpClient: http_client());
 $model = new Model('dbmdz/bert-large-cased-finetuned-conll03-english');
 
-$response = $platform->request($model, 'John Smith works at Microsoft in London.', [
+$result = $platform->invoke($model, 'John Smith works at Microsoft in London.', [
     'task' => Task::TOKEN_CLASSIFICATION,
 ]);
 
-dump($response->asObject());
+dump($result->asObject());

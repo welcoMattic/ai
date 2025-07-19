@@ -22,11 +22,11 @@ $model = new Mistral();
 $agent = new Agent($platform, $model, logger: logger());
 
 $messages = new MessageBag(Message::ofUser('What is the eighth prime number?'));
-$response = $agent->call($messages, [
+$result = $agent->call($messages, [
     'stream' => true,
 ]);
 
-foreach ($response->getContent() as $word) {
+foreach ($result->getContent() as $word) {
     echo $word;
 }
 echo \PHP_EOL;

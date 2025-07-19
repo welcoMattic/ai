@@ -22,7 +22,7 @@ $model = new Llama(Llama::V3_3_70B_INSTRUCT);
 
 $agent = new Agent($platform, $model, logger: logger());
 $messages = new MessageBag(Message::ofUser('I am going to Paris, what should I see?'));
-$response = $agent->call($messages, [
+$result = $agent->call($messages, [
     'max_tokens' => 2048,
     'temperature' => 0.8,
     'top_p' => 0.1,
@@ -30,4 +30,4 @@ $response = $agent->call($messages, [
     'frequency_penalty' => 0,
 ]);
 
-echo $response->getContent().\PHP_EOL;
+echo $result->getContent().\PHP_EOL;

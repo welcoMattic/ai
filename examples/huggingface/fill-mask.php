@@ -18,8 +18,8 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $platform = PlatformFactory::create(env('HUGGINGFACE_KEY'), httpClient: http_client());
 $model = new Model('FacebookAI/xlm-roberta-base');
 
-$response = $platform->request($model, 'Hello I\'m a <mask> model.', [
+$result = $platform->invoke($model, 'Hello I\'m a <mask> model.', [
     'task' => Task::FILL_MASK,
 ]);
 
-dump($response->asObject());
+dump($result->asObject());

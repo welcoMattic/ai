@@ -18,8 +18,8 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $platform = PlatformFactory::create(env('HUGGINGFACE_KEY'), httpClient: http_client());
 $model = new Model('ProsusAI/finbert');
 
-$response = $platform->request($model, 'I like you. I love you.', [
+$result = $platform->invoke($model, 'I like you. I love you.', [
     'task' => Task::TEXT_CLASSIFICATION,
 ]);
 
-dump($response->asObject());
+dump($result->asObject());

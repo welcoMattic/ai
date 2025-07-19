@@ -20,8 +20,8 @@ $platform = PlatformFactory::create(env('HUGGINGFACE_KEY'), httpClient: http_cli
 $model = new Model('facebook/detr-resnet-50');
 
 $image = Image::fromFile(dirname(__DIR__, 2).'/fixtures/image.jpg');
-$response = $platform->request($model, $image, [
+$result = $platform->invoke($model, $image, [
     'task' => Task::OBJECT_DETECTION,
 ]);
 
-dump($response->asObject());
+dump($result->asObject());

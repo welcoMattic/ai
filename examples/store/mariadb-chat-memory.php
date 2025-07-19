@@ -68,6 +68,6 @@ $memoryProcessor = new MemoryInputProcessor($embeddingsMemory);
 
 $agent = new Agent($platform, new GPT(GPT::GPT_4O_MINI), [$memoryProcessor], logger: logger());
 $messages = new MessageBag(Message::ofUser('Have we discussed about my friend John in the past? If yes, what did we talk about?'));
-$response = $agent->call($messages);
+$result = $agent->call($messages);
 
-echo $response->getContent().\PHP_EOL;
+echo $result->getContent().\PHP_EOL;
