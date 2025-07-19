@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
+use Symfony\AI\McpSdk\Capability\ToolChain;
 use Symfony\AI\McpSdk\Message\Factory;
 use Symfony\AI\McpSdk\Server;
 use Symfony\AI\McpSdk\Server\JsonRpcHandler;
@@ -66,5 +67,11 @@ return static function (ContainerConfigurator $container): void {
             ->args([
                 service('cache.app'),
             ])
+        ->set('mcp.tool_chain', ToolChain::class)
+            ->args([
+                tagged_iterator('mcp.tool'),
+            ])
+            ->alias('mcp.tool_executor', 'mcp.tool_chain')
+            ->alias('mcp.tool_collection', 'mcp.tool_chain')
     ;
 };

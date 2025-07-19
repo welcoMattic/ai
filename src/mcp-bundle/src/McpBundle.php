@@ -14,6 +14,7 @@ namespace Symfony\AI\McpBundle;
 use Symfony\AI\McpBundle\Command\McpCommand;
 use Symfony\AI\McpBundle\Controller\McpController;
 use Symfony\AI\McpBundle\Routing\RouteLoader;
+use Symfony\AI\McpSdk\Capability\Tool\IdentifierInterface;
 use Symfony\AI\McpSdk\Server\NotificationHandlerInterface;
 use Symfony\AI\McpSdk\Server\RequestHandlerInterface;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
@@ -42,6 +43,11 @@ final class McpBundle extends AbstractBundle
         if (isset($config['client_transports'])) {
             $this->configureClient($config['client_transports'], $builder);
         }
+
+        $builder
+            ->registerForAutoconfiguration(IdentifierInterface::class)
+            ->addTag('mcp.tool')
+        ;
     }
 
     /**
