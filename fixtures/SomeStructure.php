@@ -13,5 +13,12 @@ namespace Symfony\AI\Fixtures;
 
 final class SomeStructure
 {
+    public function __construct(?string $some = null)
+    {
+        if (null !== $some) {
+            $this->some = $some;
+        }
+    }
+
     public string $some;
 }
