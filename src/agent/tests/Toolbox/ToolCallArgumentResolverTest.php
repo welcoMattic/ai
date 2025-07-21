@@ -16,8 +16,11 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\ToolCallArgumentResolver;
+use Symfony\AI\Fixtures\SomeStructure;
 use Symfony\AI\Fixtures\Tool\ToolArray;
+use Symfony\AI\Fixtures\Tool\ToolArrayMultidimensional;
 use Symfony\AI\Fixtures\Tool\ToolDate;
+use Symfony\AI\Fixtures\Tool\ToolNoParams;
 use Symfony\AI\Platform\Result\ToolCall;
 use Symfony\AI\Platform\Tool\ExecutionReference;
 use Symfony\AI\Platform\Tool\Tool;
@@ -56,5 +59,41 @@ class ToolCallArgumentResolverTest extends TestCase
         ];
 
         self::assertSame($expected, $resolver->resolveArguments($metadata, $toolCall));
+    }
+
+    #[Test]
+    public function resolveMultidimensionalArrayArguments(): void
+    {
+        $resolver = new ToolCallArgumentResolver();
+
+        $metadata = new Tool(new ExecutionReference(ToolArrayMultidimensional::class, '__invoke'), 'tool_array_multidimensional', 'A tool with multidimensional array parameters');
+        $toolCall = new ToolCall('tool_id_1234', 'tool_array_multidimensional', [
+            'vectors' => [[1.2, 3.4], [4.5, 5.6]],
+            'sequences' => ['first' => [1, 2, 3], 'second' => [4, 5, 6]],
+            'objects' => [[['some' => 'a'], ['some' => 'b']]],
+        ]);
+
+        $expected = [
+            'vectors' => [[1.2, 3.4], [4.5, 5.6]],
+            'sequences' => ['first' => [1, 2, 3], 'second' => [4, 5, 6]],
+            'objects' => [[new SomeStructure('a'), new SomeStructure('b')]],
+        ];
+
+        self::assertEquals($expected, $resolver->resolveArguments($metadata, $toolCall));
+    }
+
+    #[Test]
+    public function ignoreExtraArguments(): void
+    {
+        $resolver = new ToolCallArgumentResolver();
+
+        $metadata = new Tool(new ExecutionReference(ToolNoParams::class, '__invoke'), 'tool_no_params', 'A tool without params');
+        $toolCall = new ToolCall('tool_id_1234', 'tool_no_params', [
+            'foo' => 1,
+            'bar' => 2,
+            'baz' => 3,
+        ]);
+
+        self::assertSame([], $resolver->resolveArguments($metadata, $toolCall));
     }
 }

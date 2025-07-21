@@ -11,21 +11,29 @@
 
 namespace Symfony\AI\Agent\Toolbox;
 
+use Symfony\AI\Agent\Toolbox\Exception\ToolException;
 use Symfony\AI\Platform\Result\ToolCall;
 use Symfony\AI\Platform\Tool\Tool;
+use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
 use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\TypeInfo\Type\CollectionType;
+use Symfony\Component\TypeInfo\TypeResolver\TypeResolver;
 
 /**
  * @author Valtteri R <valtzu@gmail.com>
  */
 final readonly class ToolCallArgumentResolver
 {
+    private TypeResolver $typeResolver;
+
     public function __construct(
-        private DenormalizerInterface $denormalizer = new Serializer([new DateTimeNormalizer(), new ObjectNormalizer()]),
+        private DenormalizerInterface $denormalizer = new Serializer([new DateTimeNormalizer(), new ObjectNormalizer(), new ArrayDenormalizer()]),
+        ?TypeResolver $typeResolver = null,
     ) {
+        $this->typeResolver = $typeResolver ?? TypeResolver::create();
     }
 
     /**
@@ -35,13 +43,33 @@ final readonly class ToolCallArgumentResolver
     {
         $method = new \ReflectionMethod($metadata->reference->class, $metadata->reference->method);
 
-        /** @var array<string, \ReflectionProperty> $parameters */
+        /** @var array<string, \ReflectionParameter> $parameters */
         $parameters = array_column($method->getParameters(), null, 'name');
         $arguments = [];
 
-        foreach ($toolCall->arguments as $name => $value) {
-            $parameterType = (string) $parameters[$name]->getType();
-            $arguments[$name] = 'array' === $parameterType ? $value : $this->denormalizer->denormalize($value, $parameterType);
+        foreach ($parameters as $name => $reflectionParameter) {
+            if (!\array_key_exists($name, $toolCall->arguments)) {
+                if (!$reflectionParameter->isOptional()) {
+                    throw new ToolException(\sprintf('Parameter "%s" is mandatory for tool "%s".', $name, $toolCall->name));
+                }
+                continue;
+            }
+
+            $value = $toolCall->arguments[$name];
+            $parameterType = $this->typeResolver->resolve($reflectionParameter);
+            $dimensions = '';
+            while ($parameterType instanceof CollectionType) {
+                $dimensions .= '[]';
+                $parameterType = $parameterType->getCollectionValueType();
+            }
+
+            $parameterType .= $dimensions;
+
+            if ($this->denormalizer->supportsDenormalization($value, $parameterType)) {
+                $value = $this->denormalizer->denormalize($value, $parameterType);
+            }
+
+            $arguments[$name] = $value;
         }
 
         return $arguments;
