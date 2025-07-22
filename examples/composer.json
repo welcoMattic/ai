@@ -6,7 +6,7 @@
     "require": {
         "ext-pdo": "*",
         "async-aws/bedrock-runtime": "^1.1",
-        "codewithkyrian/transformers": "^0.5.3",
+        "codewithkyrian/transformers": "^0.6.1",
         "doctrine/dbal": "^3.3|^4.0",
         "mrmysql/youtube-transcript": "^0.0.5",
         "php-http/discovery": "^1.20",
@@ -32,7 +32,7 @@
     },
     "config": {
         "allow-plugins": {
-            "codewithkyrian/transformers-libsloader": true,
+            "codewithkyrian/platform-package-installer": true,
             "php-http/discovery": true
         },
         "sort-packages": true
