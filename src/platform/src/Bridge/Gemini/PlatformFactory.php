@@ -9,20 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\AI\Platform\Bridge\OpenRouter;
+namespace Symfony\AI\Platform\Bridge\Gemini;
 
-use Symfony\AI\Platform\Bridge\Gemini\Contract\AssistantMessageNormalizer;
-use Symfony\AI\Platform\Bridge\Gemini\Contract\MessageBagNormalizer;
-use Symfony\AI\Platform\Bridge\Gemini\Contract\UserMessageNormalizer;
+use Symfony\AI\Platform\Bridge\Gemini\Contract\GeminiContract;
+use Symfony\AI\Platform\Bridge\Gemini\Embeddings\ModelClient as EmbeddingsModelClient;
+use Symfony\AI\Platform\Bridge\Gemini\Embeddings\ResultConverter as EmbeddingsResultConverter;
+use Symfony\AI\Platform\Bridge\Gemini\Gemini\ModelClient as GeminiModelClient;
+use Symfony\AI\Platform\Bridge\Gemini\Gemini\ResultConverter as GeminiResultConverter;
 use Symfony\AI\Platform\Contract;
 use Symfony\AI\Platform\Platform;
 use Symfony\Component\HttpClient\EventSourceHttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 /**
- * @author rglozman
+ * @author Roy Garrido
  */
-final class PlatformFactory
+final readonly class PlatformFactory
 {
     public static function create(
         #[\SensitiveParameter]
@@ -33,13 +35,9 @@ final class PlatformFactory
         $httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
 
         return new Platform(
-            [new ModelClient($httpClient, $apiKey)],
-            [new ResultConverter()],
-            $contract ?? Contract::create(
-                new AssistantMessageNormalizer(),
-                new MessageBagNormalizer(),
-                new UserMessageNormalizer(),
-            ),
+            [new EmbeddingsModelClient($httpClient, $apiKey), new GeminiModelClient($httpClient, $apiKey)],
+            [new EmbeddingsResultConverter(), new GeminiResultConverter()],
+            $contract ?? GeminiContract::create(),
         );
     }
 }
