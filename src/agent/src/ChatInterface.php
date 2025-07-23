@@ -11,6 +11,7 @@
 
 namespace Symfony\AI\Agent;
 
+use Symfony\AI\Agent\Exception\ExceptionInterface;
 use Symfony\AI\Platform\Message\AssistantMessage;
 use Symfony\AI\Platform\Message\MessageBagInterface;
 use Symfony\AI\Platform\Message\UserMessage;
@@ -19,5 +20,8 @@ interface ChatInterface
 {
     public function initiate(MessageBagInterface $messages): void;
 
+    /**
+     * @throws ExceptionInterface
+     */
     public function submit(UserMessage $message): AssistantMessage;
 }

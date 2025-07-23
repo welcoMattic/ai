@@ -11,6 +11,7 @@
 
 namespace Symfony\AI\Agent;
 
+use Symfony\AI\Agent\Exception\ExceptionInterface;
 use Symfony\AI\Platform\Message\MessageBagInterface;
 use Symfony\AI\Platform\Result\ResultInterface;
 
@@ -21,6 +22,8 @@ interface AgentInterface
 {
     /**
      * @param array<string, mixed> $options
+     *
+     * @throws ExceptionInterface
      */
     public function call(MessageBagInterface $messages, array $options = []): ResultInterface;
 }
