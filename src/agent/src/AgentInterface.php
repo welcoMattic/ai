@@ -23,7 +23,7 @@ interface AgentInterface
     /**
      * @param array<string, mixed> $options
      *
-     * @throws ExceptionInterface
+     * @throws ExceptionInterface When the agent encounters an error (e.g., unsupported model capabilities, invalid arguments, network failures, or processor errors)
      */
     public function call(MessageBagInterface $messages, array $options = []): ResultInterface;
 }

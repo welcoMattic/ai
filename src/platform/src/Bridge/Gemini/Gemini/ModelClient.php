@@ -39,7 +39,7 @@ final readonly class ModelClient implements ModelClientInterface
     }
 
     /**
-     * @throws TransportExceptionInterface
+     * @throws TransportExceptionInterface When the HTTP request fails due to network issues
      */
     public function request(Model $model, array|string $payload, array $options = []): RawHttpResult
     {

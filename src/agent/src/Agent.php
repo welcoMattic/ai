@@ -56,6 +56,10 @@ final readonly class Agent implements AgentInterface
 
     /**
      * @param array<string, mixed> $options
+     *
+     * @throws MissingModelSupportException When the model doesn't support audio or image inputs present in the messages
+     * @throws InvalidArgumentException     When the platform returns a client error (4xx) indicating invalid request parameters
+     * @throws RuntimeException             When the platform returns a server error (5xx) or network failure occurs
      */
     public function call(MessageBagInterface $messages, array $options = []): ResultInterface
     {
