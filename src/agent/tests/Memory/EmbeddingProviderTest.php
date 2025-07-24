@@ -53,12 +53,12 @@ final class EmbeddingProviderTest extends TestCase
 
         $embeddingProvider = new EmbeddingProvider(
             $platform,
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             $vectorStore,
         );
 
         $embeddingProvider->loadMemory(new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(),
             [],
         ));
@@ -75,12 +75,12 @@ final class EmbeddingProviderTest extends TestCase
 
         $embeddingProvider = new EmbeddingProvider(
             $platform,
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             $vectorStore,
         );
 
         $embeddingProvider->loadMemory(new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(Message::forSystem('This is a system message')),
             [],
         ));
@@ -97,12 +97,12 @@ final class EmbeddingProviderTest extends TestCase
 
         $embeddingProvider = new EmbeddingProvider(
             $platform,
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             $vectorStore,
         );
 
         $embeddingProvider->loadMemory(new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(Message::ofUser(new ImageUrl('foo.jpg'))),
             [],
         ));
@@ -114,7 +114,7 @@ final class EmbeddingProviderTest extends TestCase
         $vectorResult = new VectorResult($vector = new Vector([0.1, 0.2], 2));
         $resultPromise = new ResultPromise(
             static fn () => $vectorResult,
-            self::createStub(RawResultInterface::class),
+            $this->createStub(RawResultInterface::class),
         );
 
         $platform = $this->createMock(PlatformInterface::class);
@@ -130,17 +130,17 @@ final class EmbeddingProviderTest extends TestCase
 
         $embeddingProvider = new EmbeddingProvider(
             $platform,
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             $vectorStore,
         );
 
         $memory = $embeddingProvider->loadMemory(new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(Message::ofUser(new Text('Have we talked about the weather?'))),
             [],
         ));
 
-        self::assertCount(0, $memory);
+        $this->assertCount(0, $memory);
     }
 
     #[Test]
@@ -149,7 +149,7 @@ final class EmbeddingProviderTest extends TestCase
         $vectorResult = new VectorResult($vector = new Vector([0.1, 0.2], 2));
         $resultPromise = new ResultPromise(
             static fn () => $vectorResult,
-            self::createStub(RawResultInterface::class),
+            $this->createStub(RawResultInterface::class),
         );
 
         $platform = $this->createMock(PlatformInterface::class);
@@ -168,18 +168,18 @@ final class EmbeddingProviderTest extends TestCase
 
         $embeddingProvider = new EmbeddingProvider(
             $platform,
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             $vectorStore,
         );
 
         $memory = $embeddingProvider->loadMemory(new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(Message::ofUser(new Text('Have we talked about the weather?'))),
             [],
         ));
 
-        self::assertCount(1, $memory);
-        self::assertSame(
+        $this->assertCount(1, $memory);
+        $this->assertSame(
             <<<MARKDOWN
                 ## Dynamic memories fitting user message
 

@@ -36,12 +36,12 @@ final class StaticMemoryProviderTest extends TestCase
         $provider = new StaticMemoryProvider();
 
         $memory = $provider->loadMemory(new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(),
             []
         ));
 
-        self::assertCount(0, $memory);
+        $this->assertCount(0, $memory);
     }
 
     #[Test]
@@ -53,14 +53,14 @@ final class StaticMemoryProviderTest extends TestCase
         );
 
         $memory = $provider->loadMemory(new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(),
             []
         ));
 
-        self::assertCount(1, $memory);
-        self::assertInstanceOf(Memory::class, $memory[0]);
+        $this->assertCount(1, $memory);
+        $this->assertInstanceOf(Memory::class, $memory[0]);
         $expectedContent = "## Static Memory\n\n- {$fact1}\n- {$fact2}";
-        self::assertSame($expectedContent, $memory[0]->content);
+        $this->assertSame($expectedContent, $memory[0]->content);
     }
 }

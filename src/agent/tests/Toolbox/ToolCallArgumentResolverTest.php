@@ -39,7 +39,7 @@ class ToolCallArgumentResolverTest extends TestCase
         $metadata = new Tool(new ExecutionReference(ToolDate::class, '__invoke'), 'tool_date', 'test');
         $toolCall = new ToolCall('invocation', 'tool_date', ['date' => '2025-06-29']);
 
-        self::assertEquals(['date' => new \DateTimeImmutable('2025-06-29')], $resolver->resolveArguments($metadata, $toolCall));
+        $this->assertEquals(['date' => new \DateTimeImmutable('2025-06-29')], $resolver->resolveArguments($metadata, $toolCall));
     }
 
     #[Test]
@@ -58,7 +58,7 @@ class ToolCallArgumentResolverTest extends TestCase
             'ids' => [1, 2, 3],
         ];
 
-        self::assertSame($expected, $resolver->resolveArguments($metadata, $toolCall));
+        $this->assertSame($expected, $resolver->resolveArguments($metadata, $toolCall));
     }
 
     #[Test]
@@ -79,7 +79,7 @@ class ToolCallArgumentResolverTest extends TestCase
             'objects' => [[new SomeStructure('a'), new SomeStructure('b')]],
         ];
 
-        self::assertEquals($expected, $resolver->resolveArguments($metadata, $toolCall));
+        $this->assertEquals($expected, $resolver->resolveArguments($metadata, $toolCall));
     }
 
     #[Test]
@@ -94,6 +94,6 @@ class ToolCallArgumentResolverTest extends TestCase
             'baz' => 3,
         ]);
 
-        self::assertSame([], $resolver->resolveArguments($metadata, $toolCall));
+        $this->assertSame([], $resolver->resolveArguments($metadata, $toolCall));
     }
 }

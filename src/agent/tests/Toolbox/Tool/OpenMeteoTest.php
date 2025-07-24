@@ -37,7 +37,7 @@ final class OpenMeteoTest extends TestCase
             'wind_speed' => '10.7km/h',
         ];
 
-        static::assertSame($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     #[Test]
@@ -70,7 +70,7 @@ final class OpenMeteoTest extends TestCase
             ],
         ];
 
-        static::assertSame($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     /**

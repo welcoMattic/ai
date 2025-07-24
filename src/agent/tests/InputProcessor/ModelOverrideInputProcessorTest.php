@@ -43,7 +43,7 @@ final class ModelOverrideInputProcessorTest extends TestCase
         $processor = new ModelOverrideInputProcessor();
         $processor->processInput($input);
 
-        self::assertSame($claude, $input->model);
+        $this->assertSame($claude, $input->model);
     }
 
     #[Test]
@@ -55,7 +55,7 @@ final class ModelOverrideInputProcessorTest extends TestCase
         $processor = new ModelOverrideInputProcessor();
         $processor->processInput($input);
 
-        self::assertSame($gpt, $input->model);
+        $this->assertSame($gpt, $input->model);
     }
 
     #[Test]

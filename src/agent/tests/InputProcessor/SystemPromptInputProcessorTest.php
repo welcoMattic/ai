@@ -53,10 +53,10 @@ final class SystemPromptInputProcessorTest extends TestCase
         $processor->processInput($input);
 
         $messages = $input->messages->getMessages();
-        self::assertCount(2, $messages);
-        self::assertInstanceOf(SystemMessage::class, $messages[0]);
-        self::assertInstanceOf(UserMessage::class, $messages[1]);
-        self::assertSame('This is a system prompt', $messages[0]->content);
+        $this->assertCount(2, $messages);
+        $this->assertInstanceOf(SystemMessage::class, $messages[0]);
+        $this->assertInstanceOf(UserMessage::class, $messages[1]);
+        $this->assertSame('This is a system prompt', $messages[0]->content);
     }
 
     #[Test]
@@ -72,10 +72,10 @@ final class SystemPromptInputProcessorTest extends TestCase
         $processor->processInput($input);
 
         $messages = $input->messages->getMessages();
-        self::assertCount(2, $messages);
-        self::assertInstanceOf(SystemMessage::class, $messages[0]);
-        self::assertInstanceOf(UserMessage::class, $messages[1]);
-        self::assertSame('This is already a system prompt', $messages[0]->content);
+        $this->assertCount(2, $messages);
+        $this->assertInstanceOf(SystemMessage::class, $messages[0]);
+        $this->assertInstanceOf(UserMessage::class, $messages[1]);
+        $this->assertSame('This is already a system prompt', $messages[0]->content);
     }
 
     #[Test]
@@ -100,10 +100,10 @@ final class SystemPromptInputProcessorTest extends TestCase
         $processor->processInput($input);
 
         $messages = $input->messages->getMessages();
-        self::assertCount(2, $messages);
-        self::assertInstanceOf(SystemMessage::class, $messages[0]);
-        self::assertInstanceOf(UserMessage::class, $messages[1]);
-        self::assertSame('This is a system prompt', $messages[0]->content);
+        $this->assertCount(2, $messages);
+        $this->assertInstanceOf(SystemMessage::class, $messages[0]);
+        $this->assertInstanceOf(UserMessage::class, $messages[1]);
+        $this->assertSame('This is a system prompt', $messages[0]->content);
     }
 
     #[Test]
@@ -139,10 +139,10 @@ final class SystemPromptInputProcessorTest extends TestCase
         $processor->processInput($input);
 
         $messages = $input->messages->getMessages();
-        self::assertCount(2, $messages);
-        self::assertInstanceOf(SystemMessage::class, $messages[0]);
-        self::assertInstanceOf(UserMessage::class, $messages[1]);
-        self::assertSame(<<<PROMPT
+        $this->assertCount(2, $messages);
+        $this->assertInstanceOf(SystemMessage::class, $messages[0]);
+        $this->assertInstanceOf(UserMessage::class, $messages[1]);
+        $this->assertSame(<<<PROMPT
             This is a system prompt
 
             # Available tools
@@ -180,10 +180,10 @@ final class SystemPromptInputProcessorTest extends TestCase
         $processor->processInput($input);
 
         $messages = $input->messages->getMessages();
-        self::assertCount(2, $messages);
-        self::assertInstanceOf(SystemMessage::class, $messages[0]);
-        self::assertInstanceOf(UserMessage::class, $messages[1]);
-        self::assertSame(<<<PROMPT
+        $this->assertCount(2, $messages);
+        $this->assertInstanceOf(SystemMessage::class, $messages[0]);
+        $this->assertInstanceOf(UserMessage::class, $messages[1]);
+        $this->assertSame(<<<PROMPT
             My dynamic system prompt.
 
             # Available tools

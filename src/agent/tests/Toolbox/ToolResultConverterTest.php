@@ -27,7 +27,7 @@ final class ToolResultConverterTest extends TestCase
     {
         $converter = new ToolResultConverter();
 
-        self::assertSame($expected, $converter->convert($result));
+        $this->assertSame($expected, $converter->convert($result));
     }
 
     public static function provideResults(): \Generator

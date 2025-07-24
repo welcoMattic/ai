@@ -69,7 +69,7 @@ final class ChainFactoryTest extends TestCase
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolRequiredParams::class));
 
-        self::assertCount(1, $metadata);
+        $this->assertCount(1, $metadata);
     }
 
     #[Test]
@@ -77,10 +77,10 @@ final class ChainFactoryTest extends TestCase
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolOptionalParam::class));
 
-        self::assertCount(1, $metadata);
-        self::assertSame('optional_param', $metadata[0]->name);
-        self::assertSame('Tool with optional param', $metadata[0]->description);
-        self::assertSame('bar', $metadata[0]->reference->method);
+        $this->assertCount(1, $metadata);
+        $this->assertSame('optional_param', $metadata[0]->name);
+        $this->assertSame('Tool with optional param', $metadata[0]->description);
+        $this->assertSame('bar', $metadata[0]->reference->method);
     }
 
     #[Test]
@@ -88,7 +88,7 @@ final class ChainFactoryTest extends TestCase
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolMultiple::class));
 
-        self::assertCount(2, $metadata);
+        $this->assertCount(2, $metadata);
     }
 
     #[Test]
@@ -96,6 +96,6 @@ final class ChainFactoryTest extends TestCase
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolNoAttribute1::class));
 
-        self::assertCount(1, $metadata);
+        $this->assertCount(1, $metadata);
     }
 }
