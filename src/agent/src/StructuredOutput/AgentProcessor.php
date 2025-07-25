@@ -45,6 +45,10 @@ final class AgentProcessor implements InputProcessorInterface, OutputProcessorIn
         }
     }
 
+    /**
+     * @throws MissingModelSupportException When structured output is requested but the model doesn't support it
+     * @throws InvalidArgumentException     When streaming is enabled with structured output (incompatible options)
+     */
     public function processInput(Input $input): void
     {
         $options = $input->getOptions();

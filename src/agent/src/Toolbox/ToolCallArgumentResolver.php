@@ -38,6 +38,8 @@ final readonly class ToolCallArgumentResolver
 
     /**
      * @return array<string, mixed>
+     *
+     * @throws ToolException When a mandatory tool parameter is missing from the tool call arguments
      */
     public function resolveArguments(Tool $metadata, ToolCall $toolCall): array
     {
