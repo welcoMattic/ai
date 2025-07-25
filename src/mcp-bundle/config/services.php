@@ -15,46 +15,56 @@ use Symfony\AI\McpSdk\Message\Factory;
 use Symfony\AI\McpSdk\Server;
 use Symfony\AI\McpSdk\Server\JsonRpcHandler;
 use Symfony\AI\McpSdk\Server\NotificationHandler\InitializedHandler;
-use Symfony\AI\McpSdk\Server\NotificationHandlerInterface;
 use Symfony\AI\McpSdk\Server\RequestHandler\InitializeHandler;
 use Symfony\AI\McpSdk\Server\RequestHandler\PingHandler;
 use Symfony\AI\McpSdk\Server\RequestHandler\ToolCallHandler;
 use Symfony\AI\McpSdk\Server\RequestHandler\ToolListHandler;
-use Symfony\AI\McpSdk\Server\RequestHandlerInterface;
 use Symfony\AI\McpSdk\Server\Transport\Sse\Store\CachePoolStore;
 
 return static function (ContainerConfigurator $container): void {
     $container->services()
-        ->defaults()
-            ->autowire()
-            ->autoconfigure()
-        ->instanceof(NotificationHandlerInterface::class)
+        ->set('mcp.server.notification_handler.initialized', InitializedHandler::class)
+            ->args([])
             ->tag('mcp.server.notification_handler')
-        ->instanceof(RequestHandlerInterface::class)
+        ->set('mcp.server.request_handler.initialize', InitializeHandler::class)
+            ->args([
+                param('mcp.app'),
+                param('mcp.version'),
+            ])
+            ->tag('mcp.server.request_handler')
+        ->set('mcp.server.request_handler.ping', PingHandler::class)
+            ->args([])
+            ->tag('mcp.server.request_handler')
+        ->set('mcp.server.request_handler.tool_call', ToolCallHandler::class)
+            ->args([
+                service('mcp.tool_executor'),
+            ])
+            ->tag('mcp.server.request_handler')
+        ->set('mcp.server.request_handler.tool_list', ToolListHandler::class)
+            ->args([
+                service('mcp.tool_collection'),
+                20,
+            ])
             ->tag('mcp.server.request_handler')
 
-        ->set(InitializedHandler::class)
-        ->set(InitializeHandler::class)
-        ->args([
-            '$name' => param('mcp.app'),
-            '$version' => param('mcp.version'),
-        ])
-        ->set(PingHandler::class)
-        ->set(ToolCallHandler::class)
-        ->set(ToolListHandler::class)
-
         ->set('mcp.message_factory', Factory::class)
+            ->args([])
         ->set('mcp.server.json_rpc', JsonRpcHandler::class)
             ->args([
-                '$messageFactory' => service('mcp.message_factory'),
-                '$requestHandlers' => tagged_iterator('mcp.server.request_handler'),
-                '$notificationHandlers' => tagged_iterator('mcp.server.notification_handler'),
+                service('mcp.message_factory'),
+                tagged_iterator('mcp.server.request_handler'),
+                tagged_iterator('mcp.server.notification_handler'),
+                service('logger')->ignoreOnInvalid(),
             ])
         ->set('mcp.server', Server::class)
             ->args([
-                '$jsonRpcHandler' => service('mcp.server.json_rpc'),
+                service('mcp.server.json_rpc'),
+                service('logger')->ignoreOnInvalid(),
             ])
             ->alias(Server::class, 'mcp.server')
-        ->set(CachePoolStore::class)
+        ->set('mcp.server.sse.store.cache_pool', CachePoolStore::class)
+            ->args([
+                service('cache.app'),
+            ])
     ;
 };
