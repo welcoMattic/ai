@@ -91,8 +91,17 @@ final class AgentProcessor implements InputProcessorInterface, OutputProcessorIn
             return;
         }
 
+        $originalResult = $output->result;
         $output->result = new ObjectResult(
             $this->serializer->deserialize($output->result->getContent(), $this->outputStructure, 'json')
         );
+
+        if ($originalResult->getMetadata()->count() > 0) {
+            $output->result->getMetadata()->set($originalResult->getMetadata()->all());
+        }
+
+        if (!empty($originalResult->getRawResult())) {
+            $output->result->setRawResult($originalResult->getRawResult());
+        }
     }
 }

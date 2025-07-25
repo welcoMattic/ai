@@ -26,6 +26,7 @@ use Symfony\AI\Platform\Capability;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\Result\Choice;
+use Symfony\AI\Platform\Result\Metadata\Metadata;
 use Symfony\AI\Platform\Result\ObjectResult;
 use Symfony\AI\Platform\Result\TextResult;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -98,6 +99,8 @@ final class AgentProcessorTest extends TestCase
 
         $this->assertInstanceOf(ObjectResult::class, $output->result);
         $this->assertInstanceOf(SomeStructure::class, $output->result->getContent());
+        $this->assertInstanceOf(Metadata::class, $output->result->getMetadata());
+        $this->assertNull($output->result->getRawResult());
         $this->assertSame('data', $output->result->getContent()->some);
     }
 
@@ -145,6 +148,8 @@ final class AgentProcessorTest extends TestCase
 
         $this->assertInstanceOf(ObjectResult::class, $output->result);
         $this->assertInstanceOf(MathReasoning::class, $structure = $output->result->getContent());
+        $this->assertInstanceOf(Metadata::class, $output->result->getMetadata());
+        $this->assertNull($output->result->getRawResult());
         $this->assertCount(5, $structure->steps);
         $this->assertInstanceOf(Step::class, $structure->steps[0]);
         $this->assertInstanceOf(Step::class, $structure->steps[1]);
