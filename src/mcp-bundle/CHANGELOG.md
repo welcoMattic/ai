@@ -18,3 +18,5 @@ CHANGELOG
  * Add bundle configuration for enabling/disabling transports
  * Add cache-based SSE message storage
  * Add service configuration for MCP server setup
+ * Classes extending `\Symfony\AI\McpSdk\Capability\Tool\IdentifierInterface` automatically
+   get the `mcp.tool` tag for MCP tool discovery
