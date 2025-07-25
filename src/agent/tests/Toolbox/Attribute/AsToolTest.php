@@ -27,7 +27,7 @@ final class AsToolTest extends TestCase
             description: 'description',
         );
 
-        self::assertSame('name', $attribute->name);
-        self::assertSame('description', $attribute->description);
+        $this->assertSame('name', $attribute->name);
+        $this->assertSame('description', $attribute->description);
     }
 }

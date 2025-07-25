@@ -38,16 +38,16 @@ final class MemoryInputProcessorTest extends TestCase
     public function itIsDoingNothingOnInactiveMemory(): void
     {
         $memoryProvider = $this->createMock(MemoryProviderInterface::class);
-        $memoryProvider->expects($this->never())->method(self::anything());
+        $memoryProvider->expects($this->never())->method($this->anything());
 
         $memoryInputProcessor = new MemoryInputProcessor($memoryProvider);
         $memoryInputProcessor->processInput($input = new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(),
             ['use_memory' => false]
         ));
 
-        self::assertArrayNotHasKey('use_memory', $input->getOptions());
+        $this->assertArrayNotHasKey('use_memory', $input->getOptions());
     }
 
     #[Test]
@@ -55,12 +55,12 @@ final class MemoryInputProcessorTest extends TestCase
     {
         $memoryInputProcessor = new MemoryInputProcessor();
         $memoryInputProcessor->processInput($input = new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(),
             ['use_memory' => true]
         ));
 
-        self::assertArrayNotHasKey('use_memory', $input->getOptions());
+        $this->assertArrayNotHasKey('use_memory', $input->getOptions());
     }
 
     #[Test]
@@ -82,13 +82,13 @@ final class MemoryInputProcessorTest extends TestCase
         );
 
         $memoryInputProcessor->processInput($input = new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(Message::forSystem('You are a helpful and kind assistant.')),
             []
         ));
 
-        self::assertArrayNotHasKey('use_memory', $input->getOptions());
-        self::assertSame(
+        $this->assertArrayNotHasKey('use_memory', $input->getOptions());
+        $this->assertSame(
             <<<MARKDOWN
                 You are a helpful and kind assistant.
 
@@ -115,13 +115,13 @@ final class MemoryInputProcessorTest extends TestCase
         $memoryInputProcessor = new MemoryInputProcessor($firstMemoryProvider);
 
         $memoryInputProcessor->processInput($input = new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(),
             []
         ));
 
-        self::assertArrayNotHasKey('use_memory', $input->getOptions());
-        self::assertSame(
+        $this->assertArrayNotHasKey('use_memory', $input->getOptions());
+        $this->assertSame(
             <<<MARKDOWN
                 # Conversation Memory
                 This is the memory I have found for this conversation. The memory has more weight to answer user input,
@@ -146,13 +146,13 @@ final class MemoryInputProcessorTest extends TestCase
         $memoryInputProcessor = new MemoryInputProcessor($firstMemoryProvider);
 
         $memoryInputProcessor->processInput($input = new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(),
             []
         ));
 
-        self::assertArrayNotHasKey('use_memory', $input->getOptions());
-        self::assertSame(
+        $this->assertArrayNotHasKey('use_memory', $input->getOptions());
+        $this->assertSame(
             <<<MARKDOWN
                 # Conversation Memory
                 This is the memory I have found for this conversation. The memory has more weight to answer user input,
@@ -178,12 +178,12 @@ final class MemoryInputProcessorTest extends TestCase
         $memoryInputProcessor = new MemoryInputProcessor($firstMemoryProvider);
 
         $memoryInputProcessor->processInput($input = new Input(
-            self::createStub(Model::class),
+            $this->createStub(Model::class),
             new MessageBag(),
             []
         ));
 
-        self::assertArrayNotHasKey('use_memory', $input->getOptions());
-        self::assertNull($input->messages->getSystemMessage()?->content);
+        $this->assertArrayNotHasKey('use_memory', $input->getOptions());
+        $this->assertNull($input->messages->getSystemMessage()?->content);
     }
 }

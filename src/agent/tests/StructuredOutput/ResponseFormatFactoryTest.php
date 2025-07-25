@@ -28,7 +28,7 @@ final class ResponseFormatFactoryTest extends TestCase
     #[Test]
     public function create(): void
     {
-        self::assertSame([
+        $this->assertSame([
             'type' => 'json_schema',
             'json_schema' => [
                 'name' => 'User',

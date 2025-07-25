@@ -31,13 +31,13 @@ final class BraveTest extends TestCase
 
         $results = $brave('latest Dallas Cowboys game result');
 
-        self::assertCount(5, $results);
-        self::assertArrayHasKey('title', $results[0]);
-        self::assertSame('Dallas Cowboys Scores, Stats and Highlights - ESPN', $results[0]['title']);
-        self::assertArrayHasKey('description', $results[0]);
-        self::assertSame('Visit ESPN for <strong>Dallas</strong> <strong>Cowboys</strong> live scores, video highlights, and <strong>latest</strong> news. Find standings and the full 2024 season schedule.', $results[0]['description']);
-        self::assertArrayHasKey('url', $results[0]);
-        self::assertSame('https://www.espn.com/nfl/team/_/name/dal/dallas-cowboys', $results[0]['url']);
+        $this->assertCount(5, $results);
+        $this->assertArrayHasKey('title', $results[0]);
+        $this->assertSame('Dallas Cowboys Scores, Stats and Highlights - ESPN', $results[0]['title']);
+        $this->assertArrayHasKey('description', $results[0]);
+        $this->assertSame('Visit ESPN for <strong>Dallas</strong> <strong>Cowboys</strong> live scores, video highlights, and <strong>latest</strong> news. Find standings and the full 2024 season schedule.', $results[0]['description']);
+        $this->assertArrayHasKey('url', $results[0]);
+        $this->assertSame('https://www.espn.com/nfl/team/_/name/dal/dallas-cowboys', $results[0]['url']);
     }
 
     #[Test]
@@ -50,14 +50,14 @@ final class BraveTest extends TestCase
         $brave('test query', 10, 5);
 
         $request = $result->getRequestUrl();
-        self::assertStringContainsString('q=test%20query', $request);
-        self::assertStringContainsString('count=10', $request);
-        self::assertStringContainsString('offset=5', $request);
-        self::assertStringContainsString('extra=option', $request);
+        $this->assertStringContainsString('q=test%20query', $request);
+        $this->assertStringContainsString('count=10', $request);
+        $this->assertStringContainsString('offset=5', $request);
+        $this->assertStringContainsString('extra=option', $request);
 
         $requestOptions = $result->getRequestOptions();
-        self::assertArrayHasKey('headers', $requestOptions);
-        self::assertContains('X-Subscription-Token: test-api-key', $requestOptions['headers']);
+        $this->assertArrayHasKey('headers', $requestOptions);
+        $this->assertContains('X-Subscription-Token: test-api-key', $requestOptions['headers']);
     }
 
     #[Test]
@@ -69,7 +69,7 @@ final class BraveTest extends TestCase
 
         $results = $brave('this should return nothing');
 
-        self::assertEmpty($results);
+        $this->assertEmpty($results);
     }
 
     /**

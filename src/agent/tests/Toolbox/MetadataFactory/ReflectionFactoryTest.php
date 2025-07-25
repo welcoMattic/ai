@@ -97,7 +97,7 @@ final class ReflectionFactoryTest extends TestCase
     {
         $metadatas = iterator_to_array($this->factory->getTool(ToolMultiple::class));
 
-        self::assertCount(2, $metadatas);
+        $this->assertCount(2, $metadatas);
 
         [$first, $second] = $metadatas;
 
@@ -146,10 +146,10 @@ final class ReflectionFactoryTest extends TestCase
 
     private function assertToolConfiguration(Tool $metadata, string $className, string $name, string $description, string $method, array $parameters): void
     {
-        self::assertSame($className, $metadata->reference->class);
-        self::assertSame($method, $metadata->reference->method);
-        self::assertSame($name, $metadata->name);
-        self::assertSame($description, $metadata->description);
-        self::assertSame($parameters, $metadata->parameters);
+        $this->assertSame($className, $metadata->reference->class);
+        $this->assertSame($method, $metadata->reference->method);
+        $this->assertSame($name, $metadata->name);
+        $this->assertSame($description, $metadata->description);
+        $this->assertSame($parameters, $metadata->parameters);
     }
 }

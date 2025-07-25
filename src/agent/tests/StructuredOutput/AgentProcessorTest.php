@@ -51,7 +51,7 @@ final class AgentProcessorTest extends TestCase
 
         $processor->processInput($input);
 
-        self::assertSame(['response_format' => ['some' => 'format']], $input->getOptions());
+        $this->assertSame(['response_format' => ['some' => 'format']], $input->getOptions());
     }
 
     #[Test]
@@ -64,7 +64,7 @@ final class AgentProcessorTest extends TestCase
 
         $processor->processInput($input);
 
-        self::assertSame([], $input->getOptions());
+        $this->assertSame([], $input->getOptions());
     }
 
     #[Test]
@@ -96,9 +96,9 @@ final class AgentProcessorTest extends TestCase
 
         $processor->processOutput($output);
 
-        self::assertInstanceOf(ObjectResult::class, $output->result);
-        self::assertInstanceOf(SomeStructure::class, $output->result->getContent());
-        self::assertSame('data', $output->result->getContent()->some);
+        $this->assertInstanceOf(ObjectResult::class, $output->result);
+        $this->assertInstanceOf(SomeStructure::class, $output->result->getContent());
+        $this->assertSame('data', $output->result->getContent()->some);
     }
 
     #[Test]
@@ -143,15 +143,15 @@ final class AgentProcessorTest extends TestCase
 
         $processor->processOutput($output);
 
-        self::assertInstanceOf(ObjectResult::class, $output->result);
-        self::assertInstanceOf(MathReasoning::class, $structure = $output->result->getContent());
-        self::assertCount(5, $structure->steps);
-        self::assertInstanceOf(Step::class, $structure->steps[0]);
-        self::assertInstanceOf(Step::class, $structure->steps[1]);
-        self::assertInstanceOf(Step::class, $structure->steps[2]);
-        self::assertInstanceOf(Step::class, $structure->steps[3]);
-        self::assertInstanceOf(Step::class, $structure->steps[4]);
-        self::assertSame('x = -3.75', $structure->finalAnswer);
+        $this->assertInstanceOf(ObjectResult::class, $output->result);
+        $this->assertInstanceOf(MathReasoning::class, $structure = $output->result->getContent());
+        $this->assertCount(5, $structure->steps);
+        $this->assertInstanceOf(Step::class, $structure->steps[0]);
+        $this->assertInstanceOf(Step::class, $structure->steps[1]);
+        $this->assertInstanceOf(Step::class, $structure->steps[2]);
+        $this->assertInstanceOf(Step::class, $structure->steps[3]);
+        $this->assertInstanceOf(Step::class, $structure->steps[4]);
+        $this->assertSame('x = -3.75', $structure->finalAnswer);
     }
 
     #[Test]
@@ -168,6 +168,6 @@ final class AgentProcessorTest extends TestCase
 
         $processor->processOutput($output);
 
-        self::assertSame($result, $output->result);
+        $this->assertSame($result, $output->result);
     }
 }

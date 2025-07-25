@@ -55,7 +55,7 @@ class AgentProcessorTest extends TestCase
 
         $processor->processInput($input);
 
-        self::assertSame([], $input->getOptions());
+        $this->assertSame([], $input->getOptions());
     }
 
     #[Test]
@@ -72,7 +72,7 @@ class AgentProcessorTest extends TestCase
 
         $processor->processInput($input);
 
-        self::assertSame(['tools' => [$tool1, $tool2]], $input->getOptions());
+        $this->assertSame(['tools' => [$tool1, $tool2]], $input->getOptions());
     }
 
     #[Test]
@@ -89,7 +89,7 @@ class AgentProcessorTest extends TestCase
 
         $processor->processInput($input);
 
-        self::assertSame(['tools' => [$tool2]], $input->getOptions());
+        $this->assertSame(['tools' => [$tool2]], $input->getOptions());
     }
 
     #[Test]
@@ -125,9 +125,9 @@ class AgentProcessorTest extends TestCase
 
         $processor->processOutput($output);
 
-        self::assertCount(2, $messageBag);
-        self::assertInstanceOf(AssistantMessage::class, $messageBag->getMessages()[0]);
-        self::assertInstanceOf(ToolCallMessage::class, $messageBag->getMessages()[1]);
+        $this->assertCount(2, $messageBag);
+        $this->assertInstanceOf(AssistantMessage::class, $messageBag->getMessages()[0]);
+        $this->assertInstanceOf(ToolCallMessage::class, $messageBag->getMessages()[1]);
     }
 
     #[Test]
@@ -151,6 +151,6 @@ class AgentProcessorTest extends TestCase
 
         $processor->processOutput($output);
 
-        self::assertCount(0, $messageBag);
+        $this->assertCount(0, $messageBag);
     }
 }

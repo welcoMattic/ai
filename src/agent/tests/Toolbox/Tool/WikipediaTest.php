@@ -46,7 +46,7 @@ final class WikipediaTest extends TestCase
             Use the title of the article with tool "wikipedia_article" to load the content.
             EOT;
 
-        static::assertSame($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     #[Test]
@@ -60,7 +60,7 @@ final class WikipediaTest extends TestCase
         $actual = $wikipedia->search('weird questions without results');
         $expected = 'No articles were found on Wikipedia.';
 
-        static::assertSame($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     #[Test]
@@ -77,7 +77,7 @@ final class WikipediaTest extends TestCase
             The secretary-general of the United Nations (UNSG or UNSECGEN) is the chief administrative officer of the United Nations and head of the United Nations Secretariat, one of the six principal organs of the United Nations. And so on.
             EOT;
 
-        static::assertSame($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     #[Test]
@@ -96,7 +96,7 @@ final class WikipediaTest extends TestCase
             The secretary-general of the United Nations (UNSG or UNSECGEN) is the chief administrative officer of the United Nations and head of the United Nations Secretariat, one of the six principal organs of the United Nations. And so on.
             EOT;
 
-        static::assertSame($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     #[Test]
@@ -110,7 +110,7 @@ final class WikipediaTest extends TestCase
         $actual = $wikipedia->article('Blah blah blah');
         $expected = 'No article with title "Blah blah blah" was found on Wikipedia.';
 
-        static::assertSame($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     /**

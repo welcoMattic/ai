@@ -46,7 +46,7 @@ final class FaultTolerantToolboxTest extends TestCase
         $toolCall = new ToolCall('987654321', 'tool_foo');
         $actual = $faultTolerantToolbox->execute($toolCall);
 
-        self::assertSame($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     #[Test]
@@ -62,7 +62,7 @@ final class FaultTolerantToolboxTest extends TestCase
         $toolCall = new ToolCall('123456789', 'tool_xyz');
         $actual = $faultTolerantToolbox->execute($toolCall);
 
-        self::assertSame($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     private function createFaultyToolbox(\Closure $exceptionFactory): ToolboxInterface

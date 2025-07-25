@@ -150,7 +150,7 @@ final class ToolboxTest extends TestCase
             $toolDate,
         ];
 
-        self::assertEquals($expected, $actual);
+        $this->assertEquals($expected, $actual);
     }
 
     #[Test]
@@ -186,7 +186,7 @@ final class ToolboxTest extends TestCase
     #[DataProvider('executeProvider')]
     public function execute(string $expected, string $toolName, array $toolPayload = []): void
     {
-        self::assertSame(
+        $this->assertSame(
             $expected,
             $this->toolbox->execute(new ToolCall('call_1234', $toolName, $toolPayload)),
         );
@@ -240,7 +240,7 @@ final class ToolboxTest extends TestCase
             ),
         ];
 
-        self::assertEquals($expected, $toolbox->getTools());
+        $this->assertEquals($expected, $toolbox->getTools());
     }
 
     #[Test]
@@ -252,7 +252,7 @@ final class ToolboxTest extends TestCase
         $toolbox = new Toolbox([new ToolNoAttribute1()], $memoryFactory);
         $result = $toolbox->execute(new ToolCall('call_1234', 'happy_birthday', ['name' => 'John', 'years' => 30]));
 
-        self::assertSame('Happy Birthday, John! You are 30 years old.', $result);
+        $this->assertSame('Happy Birthday, John! You are 30 years old.', $result);
     }
 
     #[Test]
@@ -287,6 +287,6 @@ final class ToolboxTest extends TestCase
             ),
         ];
 
-        self::assertEquals($expected, $toolbox->getTools());
+        $this->assertEquals($expected, $toolbox->getTools());
     }
 }
