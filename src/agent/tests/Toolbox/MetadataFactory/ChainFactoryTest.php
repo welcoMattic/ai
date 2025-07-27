@@ -13,7 +13,6 @@ namespace Symfony\AI\Agent\Tests\Toolbox\MetadataFactory;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Medium;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Exception\ToolConfigurationException;
@@ -46,8 +45,7 @@ final class ChainFactoryTest extends TestCase
         $this->factory = new ChainFactory([$factory1, $factory2]);
     }
 
-    #[Test]
-    public function testGetMetadataNotExistingClass(): void
+    public function testTestGetMetadataNotExistingClass(): void
     {
         self::expectException(ToolException::class);
         self::expectExceptionMessage('The reference "NoClass" is not a valid tool.');
@@ -55,8 +53,7 @@ final class ChainFactoryTest extends TestCase
         iterator_to_array($this->factory->getTool('NoClass'));
     }
 
-    #[Test]
-    public function testGetMetadataNotConfiguredClass(): void
+    public function testTestGetMetadataNotConfiguredClass(): void
     {
         self::expectException(ToolConfigurationException::class);
         self::expectExceptionMessage(\sprintf('Method "foo" not found in tool "%s".', ToolMisconfigured::class));
@@ -64,16 +61,14 @@ final class ChainFactoryTest extends TestCase
         iterator_to_array($this->factory->getTool(ToolMisconfigured::class));
     }
 
-    #[Test]
-    public function testGetMetadataWithAttributeSingleHit(): void
+    public function testTestGetMetadataWithAttributeSingleHit(): void
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolRequiredParams::class));
 
         $this->assertCount(1, $metadata);
     }
 
-    #[Test]
-    public function testGetMetadataOverwrite(): void
+    public function testTestGetMetadataOverwrite(): void
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolOptionalParam::class));
 
@@ -83,16 +78,14 @@ final class ChainFactoryTest extends TestCase
         $this->assertSame('bar', $metadata[0]->reference->method);
     }
 
-    #[Test]
-    public function testGetMetadataWithAttributeDoubleHit(): void
+    public function testTestGetMetadataWithAttributeDoubleHit(): void
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolMultiple::class));
 
         $this->assertCount(2, $metadata);
     }
 
-    #[Test]
-    public function testGetMetadataWithMemorySingleHit(): void
+    public function testTestGetMetadataWithMemorySingleHit(): void
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolNoAttribute1::class));
 

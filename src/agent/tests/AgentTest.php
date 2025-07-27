@@ -13,7 +13,6 @@ namespace Symfony\AI\Agent\Tests;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -53,8 +52,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponseInterface;
 #[Small]
 final class AgentTest extends TestCase
 {
-    #[Test]
-    public function constructorInitializesWithDefaults(): void
+    public function testConstructorInitializesWithDefaults(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -64,8 +62,7 @@ final class AgentTest extends TestCase
         $this->assertInstanceOf(AgentInterface::class, $agent);
     }
 
-    #[Test]
-    public function constructorInitializesWithProcessors(): void
+    public function testConstructorInitializesWithProcessors(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -77,8 +74,7 @@ final class AgentTest extends TestCase
         $this->assertInstanceOf(AgentInterface::class, $agent);
     }
 
-    #[Test]
-    public function constructorSetsAgentOnAgentAwareProcessors(): void
+    public function testConstructorSetsAgentOnAgentAwareProcessors(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -101,8 +97,7 @@ final class AgentTest extends TestCase
         $this->assertSame($agent, $agentAwareProcessor->agent);
     }
 
-    #[Test]
-    public function constructorThrowsExceptionForInvalidInputProcessor(): void
+    public function testConstructorThrowsExceptionForInvalidInputProcessor(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -115,8 +110,7 @@ final class AgentTest extends TestCase
         new Agent($platform, $model, [$invalidProcessor]);
     }
 
-    #[Test]
-    public function constructorThrowsExceptionForInvalidOutputProcessor(): void
+    public function testConstructorThrowsExceptionForInvalidOutputProcessor(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -129,8 +123,7 @@ final class AgentTest extends TestCase
         new Agent($platform, $model, [], [$invalidProcessor]);
     }
 
-    #[Test]
-    public function callProcessesInputThroughProcessors(): void
+    public function testCallProcessesInputThroughProcessors(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -156,8 +149,7 @@ final class AgentTest extends TestCase
         $this->assertSame($result, $actualResult);
     }
 
-    #[Test]
-    public function callProcessesOutputThroughProcessors(): void
+    public function testCallProcessesOutputThroughProcessors(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -183,8 +175,7 @@ final class AgentTest extends TestCase
         $this->assertSame($result, $actualResult);
     }
 
-    #[Test]
-    public function callThrowsExceptionForAudioInputWithoutSupport(): void
+    public function testCallThrowsExceptionForAudioInputWithoutSupport(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -201,8 +192,7 @@ final class AgentTest extends TestCase
         $agent->call($messages);
     }
 
-    #[Test]
-    public function callThrowsExceptionForImageInputWithoutSupport(): void
+    public function testCallThrowsExceptionForImageInputWithoutSupport(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -219,8 +209,7 @@ final class AgentTest extends TestCase
         $agent->call($messages);
     }
 
-    #[Test]
-    public function callAllowsAudioInputWithSupport(): void
+    public function testCallAllowsAudioInputWithSupport(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -245,8 +234,7 @@ final class AgentTest extends TestCase
         $this->assertSame($result, $actualResult);
     }
 
-    #[Test]
-    public function callAllowsImageInputWithSupport(): void
+    public function testCallAllowsImageInputWithSupport(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -270,8 +258,7 @@ final class AgentTest extends TestCase
         $this->assertSame($result, $actualResult);
     }
 
-    #[Test]
-    public function callHandlesClientException(): void
+    public function testCallHandlesClientException(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -314,8 +301,7 @@ final class AgentTest extends TestCase
         $agent->call($messages);
     }
 
-    #[Test]
-    public function callHandlesClientExceptionWithEmptyMessage(): void
+    public function testCallHandlesClientExceptionWithEmptyMessage(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -353,8 +339,7 @@ final class AgentTest extends TestCase
         $agent->call($messages);
     }
 
-    #[Test]
-    public function callHandlesHttpException(): void
+    public function testCallHandlesHttpException(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -373,8 +358,7 @@ final class AgentTest extends TestCase
         $agent->call($messages);
     }
 
-    #[Test]
-    public function callPassesOptionsToInvoke(): void
+    public function testCallPassesOptionsToInvoke(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);
@@ -396,8 +380,7 @@ final class AgentTest extends TestCase
         $this->assertSame($result, $actualResult);
     }
 
-    #[Test]
-    public function constructorAcceptsTraversableProcessors(): void
+    public function testConstructorAcceptsTraversableProcessors(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $model = $this->createMock(Model::class);

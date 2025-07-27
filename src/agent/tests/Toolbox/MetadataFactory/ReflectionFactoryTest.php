@@ -12,7 +12,6 @@
 namespace Symfony\AI\Agent\Tests\Toolbox\MetadataFactory;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
@@ -44,8 +43,7 @@ final class ReflectionFactoryTest extends TestCase
         $this->factory = new ReflectionToolFactory();
     }
 
-    #[Test]
-    public function invalidReferenceNonExistingClass(): void
+    public function testInvalidReferenceNonExistingClass(): void
     {
         self::expectException(ToolException::class);
         self::expectExceptionMessage('The reference "invalid" is not a valid tool.');
@@ -53,8 +51,7 @@ final class ReflectionFactoryTest extends TestCase
         iterator_to_array($this->factory->getTool('invalid')); // @phpstan-ignore-line Yes, this class does not exist
     }
 
-    #[Test]
-    public function withoutAttribute(): void
+    public function testWithoutAttribute(): void
     {
         self::expectException(ToolException::class);
         self::expectExceptionMessage(\sprintf('The class "%s" is not a tool, please add %s attribute.', ToolWrong::class, AsTool::class));
@@ -62,8 +59,7 @@ final class ReflectionFactoryTest extends TestCase
         iterator_to_array($this->factory->getTool(ToolWrong::class));
     }
 
-    #[Test]
-    public function getDefinition(): void
+    public function testGetDefinition(): void
     {
         /** @var Tool[] $metadatas */
         $metadatas = iterator_to_array($this->factory->getTool(ToolRequiredParams::class));
@@ -92,8 +88,7 @@ final class ReflectionFactoryTest extends TestCase
         );
     }
 
-    #[Test]
-    public function getDefinitionWithMultiple(): void
+    public function testGetDefinitionWithMultiple(): void
     {
         $metadatas = iterator_to_array($this->factory->getTool(ToolMultiple::class));
 

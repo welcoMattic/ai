@@ -12,7 +12,6 @@
 namespace Symfony\AI\Agent\Tests\Toolbox\MetadataFactory;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
@@ -34,8 +33,7 @@ use Symfony\AI\Platform\Tool\Tool;
 #[UsesClass(DescriptionParser::class)]
 final class MemoryFactoryTest extends TestCase
 {
-    #[Test]
-    public function getMetadataWithoutTools(): void
+    public function testGetMetadataWithoutTools(): void
     {
         self::expectException(ToolException::class);
         self::expectExceptionMessage('The reference "SomeClass" is not a valid tool.');
@@ -44,8 +42,7 @@ final class MemoryFactoryTest extends TestCase
         iterator_to_array($factory->getTool('SomeClass')); // @phpstan-ignore-line Yes, this class does not exist
     }
 
-    #[Test]
-    public function getMetadataWithDistinctToolPerClass(): void
+    public function testGetMetadataWithDistinctToolPerClass(): void
     {
         $factory = (new MemoryToolFactory())
             ->addTool(ToolNoAttribute1::class, 'happy_birthday', 'Generates birthday message')
@@ -72,8 +69,7 @@ final class MemoryFactoryTest extends TestCase
         $this->assertSame($expectedParams, $metadata[0]->parameters);
     }
 
-    #[Test]
-    public function getMetadataWithMultipleToolsInClass(): void
+    public function testGetMetadataWithMultipleToolsInClass(): void
     {
         $factory = (new MemoryToolFactory())
             ->addTool(ToolNoAttribute2::class, 'checkout', 'Buys a number of items per product', 'buy')

@@ -12,7 +12,6 @@
 namespace Symfony\AI\Agent\Tests\Toolbox;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Exception\ToolExecutionException;
@@ -33,8 +32,7 @@ use Symfony\AI\Platform\Tool\Tool;
 #[UsesClass(ToolExecutionException::class)]
 final class FaultTolerantToolboxTest extends TestCase
 {
-    #[Test]
-    public function faultyToolExecution(): void
+    public function testFaultyToolExecution(): void
     {
         $faultyToolbox = $this->createFaultyToolbox(
             fn (ToolCall $toolCall) => ToolExecutionException::executionFailed($toolCall, new \Exception('error'))
@@ -49,8 +47,7 @@ final class FaultTolerantToolboxTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    #[Test]
-    public function faultyToolCall(): void
+    public function testFaultyToolCall(): void
     {
         $faultyToolbox = $this->createFaultyToolbox(
             fn (ToolCall $toolCall) => ToolNotFoundException::notFoundForToolCall($toolCall)

@@ -12,7 +12,6 @@
 namespace Symfony\AI\Agent\Tests\Toolbox\Tool;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Tool\OpenMeteo;
 use Symfony\Component\HttpClient\MockHttpClient;
@@ -21,8 +20,7 @@ use Symfony\Component\HttpClient\Response\JsonMockResponse;
 #[CoversClass(OpenMeteo::class)]
 final class OpenMeteoTest extends TestCase
 {
-    #[Test]
-    public function current(): void
+    public function testCurrent(): void
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/openmeteo-current.json');
         $httpClient = new MockHttpClient($result);
@@ -40,8 +38,7 @@ final class OpenMeteoTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    #[Test]
-    public function forecast(): void
+    public function testForecast(): void
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/openmeteo-forecast.json');
         $httpClient = new MockHttpClient($result);

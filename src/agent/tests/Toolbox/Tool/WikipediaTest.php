@@ -12,7 +12,6 @@
 namespace Symfony\AI\Agent\Tests\Toolbox\Tool;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Tool\Wikipedia;
 use Symfony\Component\HttpClient\MockHttpClient;
@@ -21,8 +20,7 @@ use Symfony\Component\HttpClient\Response\JsonMockResponse;
 #[CoversClass(Wikipedia::class)]
 final class WikipediaTest extends TestCase
 {
-    #[Test]
-    public function searchWithResults(): void
+    public function testSearchWithResults(): void
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/wikipedia-search-result.json');
         $httpClient = new MockHttpClient($result);
@@ -49,8 +47,7 @@ final class WikipediaTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    #[Test]
-    public function searchWithoutResults(): void
+    public function testSearchWithoutResults(): void
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/wikipedia-search-empty.json');
         $httpClient = new MockHttpClient($result);
@@ -63,8 +60,7 @@ final class WikipediaTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    #[Test]
-    public function articleWithResult(): void
+    public function testArticleWithResult(): void
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/wikipedia-article.json');
         $httpClient = new MockHttpClient($result);
@@ -80,8 +76,7 @@ final class WikipediaTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    #[Test]
-    public function articleWithRedirect(): void
+    public function testArticleWithRedirect(): void
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/wikipedia-article-redirect.json');
         $httpClient = new MockHttpClient($result);
@@ -99,8 +94,7 @@ final class WikipediaTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    #[Test]
-    public function articleMissing(): void
+    public function testArticleMissing(): void
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/wikipedia-article-missing.json');
         $httpClient = new MockHttpClient($result);

@@ -13,7 +13,6 @@ namespace Symfony\AI\Agent\Tests\Memory;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Input;
@@ -30,8 +29,7 @@ use Symfony\AI\Platform\Model;
 #[Small]
 final class StaticMemoryProviderTest extends TestCase
 {
-    #[Test]
-    public function itsReturnsNullWhenNoFactsAreProvided(): void
+    public function testItsReturnsNullWhenNoFactsAreProvided(): void
     {
         $provider = new StaticMemoryProvider();
 
@@ -44,8 +42,7 @@ final class StaticMemoryProviderTest extends TestCase
         $this->assertCount(0, $memory);
     }
 
-    #[Test]
-    public function itDeliversFormattedFacts(): void
+    public function testItDeliversFormattedFacts(): void
     {
         $provider = new StaticMemoryProvider(
             $fact1 = 'The sky is blue',

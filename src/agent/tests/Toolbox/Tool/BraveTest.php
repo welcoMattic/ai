@@ -12,7 +12,6 @@
 namespace Symfony\AI\Agent\Tests\Toolbox\Tool;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Tool\Brave;
 use Symfony\Component\HttpClient\MockHttpClient;
@@ -22,8 +21,7 @@ use Symfony\Component\HttpClient\Response\MockResponse;
 #[CoversClass(Brave::class)]
 final class BraveTest extends TestCase
 {
-    #[Test]
-    public function returnsSearchResults(): void
+    public function testReturnsSearchResults(): void
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/brave.json');
         $httpClient = new MockHttpClient($result);
@@ -40,8 +38,7 @@ final class BraveTest extends TestCase
         $this->assertSame('https://www.espn.com/nfl/team/_/name/dal/dallas-cowboys', $results[0]['url']);
     }
 
-    #[Test]
-    public function passesCorrectParametersToApi(): void
+    public function testPassesCorrectParametersToApi(): void
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/brave.json');
         $httpClient = new MockHttpClient($result);
@@ -60,8 +57,7 @@ final class BraveTest extends TestCase
         $this->assertContains('X-Subscription-Token: test-api-key', $requestOptions['headers']);
     }
 
-    #[Test]
-    public function handlesEmptyResults(): void
+    public function testHandlesEmptyResults(): void
     {
         $result = new MockResponse(json_encode(['web' => ['results' => []]]));
         $httpClient = new MockHttpClient($result);

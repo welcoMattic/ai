@@ -13,7 +13,6 @@ namespace Symfony\AI\Agent\Tests;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\AgentInterface;
@@ -43,8 +42,7 @@ final class ChatTest extends TestCase
         $this->chat = new Chat($this->agent, $this->store);
     }
 
-    #[Test]
-    public function itInitiatesChatByClearingAndSavingMessages(): void
+    public function testItInitiatesChatByClearingAndSavingMessages(): void
     {
         $messages = $this->createMock(MessageBagInterface::class);
 
@@ -58,8 +56,7 @@ final class ChatTest extends TestCase
         $this->chat->initiate($messages);
     }
 
-    #[Test]
-    public function itSubmitsUserMessageAndReturnsAssistantMessage(): void
+    public function testItSubmitsUserMessageAndReturnsAssistantMessage(): void
     {
         $userMessage = Message::ofUser('Hello, how are you?');
         $existingMessages = new MessageBag();
@@ -98,8 +95,7 @@ final class ChatTest extends TestCase
         $this->assertSame($assistantContent, $result->content);
     }
 
-    #[Test]
-    public function itAppendsMessagesToExistingConversation(): void
+    public function testItAppendsMessagesToExistingConversation(): void
     {
         $existingUserMessage = Message::ofUser('What is the weather?');
         $existingAssistantMessage = Message::ofAssistant('I cannot provide weather information.');
@@ -140,8 +136,7 @@ final class ChatTest extends TestCase
         $this->assertSame($newAssistantContent, $result->content);
     }
 
-    #[Test]
-    public function itHandlesEmptyMessageStore(): void
+    public function testItHandlesEmptyMessageStore(): void
     {
         $userMessage = Message::ofUser('First message');
         $emptyMessages = new MessageBag();

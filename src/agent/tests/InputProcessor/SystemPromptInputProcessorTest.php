@@ -13,7 +13,6 @@ namespace Symfony\AI\Agent\Tests\InputProcessor;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Input;
@@ -44,8 +43,7 @@ use Symfony\AI\Platform\Tool\Tool;
 #[Small]
 final class SystemPromptInputProcessorTest extends TestCase
 {
-    #[Test]
-    public function processInputAddsSystemMessageWhenNoneExists(): void
+    public function testProcessInputAddsSystemMessageWhenNoneExists(): void
     {
         $processor = new SystemPromptInputProcessor('This is a system prompt');
 
@@ -59,8 +57,7 @@ final class SystemPromptInputProcessorTest extends TestCase
         $this->assertSame('This is a system prompt', $messages[0]->content);
     }
 
-    #[Test]
-    public function processInputDoesNotAddSystemMessageWhenOneExists(): void
+    public function testProcessInputDoesNotAddSystemMessageWhenOneExists(): void
     {
         $processor = new SystemPromptInputProcessor('This is a system prompt');
 
@@ -78,8 +75,7 @@ final class SystemPromptInputProcessorTest extends TestCase
         $this->assertSame('This is already a system prompt', $messages[0]->content);
     }
 
-    #[Test]
-    public function doesNotIncludeToolsIfToolboxIsEmpty(): void
+    public function testDoesNotIncludeToolsIfToolboxIsEmpty(): void
     {
         $processor = new SystemPromptInputProcessor(
             'This is a system prompt',
@@ -106,8 +102,7 @@ final class SystemPromptInputProcessorTest extends TestCase
         $this->assertSame('This is a system prompt', $messages[0]->content);
     }
 
-    #[Test]
-    public function includeToolDefinitions(): void
+    public function testIncludeToolDefinitions(): void
     {
         $processor = new SystemPromptInputProcessor(
             'This is a system prompt',
@@ -156,8 +151,7 @@ final class SystemPromptInputProcessorTest extends TestCase
             PROMPT, $messages[0]->content);
     }
 
-    #[Test]
-    public function withStringableSystemPrompt(): void
+    public function testWithStringableSystemPrompt(): void
     {
         $processor = new SystemPromptInputProcessor(
             new SystemPromptService(),
