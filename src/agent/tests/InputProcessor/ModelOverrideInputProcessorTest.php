@@ -13,7 +13,6 @@ namespace Symfony\AI\Agent\Tests\InputProcessor;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Exception\InvalidArgumentException;
@@ -33,8 +32,7 @@ use Symfony\AI\Platform\Message\MessageBag;
 #[Small]
 final class ModelOverrideInputProcessorTest extends TestCase
 {
-    #[Test]
-    public function processInputWithValidModelOption(): void
+    public function testProcessInputWithValidModelOption(): void
     {
         $gpt = new GPT();
         $claude = new Claude();
@@ -46,8 +44,7 @@ final class ModelOverrideInputProcessorTest extends TestCase
         $this->assertSame($claude, $input->model);
     }
 
-    #[Test]
-    public function processInputWithoutModelOption(): void
+    public function testProcessInputWithoutModelOption(): void
     {
         $gpt = new GPT();
         $input = new Input($gpt, new MessageBag(), []);
@@ -58,8 +55,7 @@ final class ModelOverrideInputProcessorTest extends TestCase
         $this->assertSame($gpt, $input->model);
     }
 
-    #[Test]
-    public function processInputWithInvalidModelOption(): void
+    public function testProcessInputWithInvalidModelOption(): void
     {
         self::expectException(InvalidArgumentException::class);
         self::expectExceptionMessage('Option "model" must be an instance of Symfony\AI\Platform\Model.');

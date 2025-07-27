@@ -13,7 +13,6 @@ namespace Symfony\AI\Agent\Tests\Memory;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Input;
@@ -34,8 +33,7 @@ use Symfony\AI\Platform\Model;
 #[Small]
 final class MemoryInputProcessorTest extends TestCase
 {
-    #[Test]
-    public function itIsDoingNothingOnInactiveMemory(): void
+    public function testItIsDoingNothingOnInactiveMemory(): void
     {
         $memoryProvider = $this->createMock(MemoryProviderInterface::class);
         $memoryProvider->expects($this->never())->method($this->anything());
@@ -50,8 +48,7 @@ final class MemoryInputProcessorTest extends TestCase
         $this->assertArrayNotHasKey('use_memory', $input->getOptions());
     }
 
-    #[Test]
-    public function itIsDoingNothingWhenThereAreNoProviders(): void
+    public function testItIsDoingNothingWhenThereAreNoProviders(): void
     {
         $memoryInputProcessor = new MemoryInputProcessor();
         $memoryInputProcessor->processInput($input = new Input(
@@ -63,8 +60,7 @@ final class MemoryInputProcessorTest extends TestCase
         $this->assertArrayNotHasKey('use_memory', $input->getOptions());
     }
 
-    #[Test]
-    public function itIsAddingMemoryToSystemPrompt(): void
+    public function testItIsAddingMemoryToSystemPrompt(): void
     {
         $firstMemoryProvider = $this->createMock(MemoryProviderInterface::class);
         $firstMemoryProvider->expects($this->once())
@@ -104,8 +100,7 @@ final class MemoryInputProcessorTest extends TestCase
         );
     }
 
-    #[Test]
-    public function itIsAddingMemoryToSystemPromptEvenItIsEmpty(): void
+    public function testItIsAddingMemoryToSystemPromptEvenItIsEmpty(): void
     {
         $firstMemoryProvider = $this->createMock(MemoryProviderInterface::class);
         $firstMemoryProvider->expects($this->once())
@@ -135,8 +130,7 @@ final class MemoryInputProcessorTest extends TestCase
         );
     }
 
-    #[Test]
-    public function itIsAddingMultipleMemoryFromSingleProviderToSystemPrompt(): void
+    public function testItIsAddingMultipleMemoryFromSingleProviderToSystemPrompt(): void
     {
         $firstMemoryProvider = $this->createMock(MemoryProviderInterface::class);
         $firstMemoryProvider->expects($this->once())
@@ -167,8 +161,7 @@ final class MemoryInputProcessorTest extends TestCase
         );
     }
 
-    #[Test]
-    public function itIsNotAddingAnythingIfMemoryWasEmpty(): void
+    public function testItIsNotAddingAnythingIfMemoryWasEmpty(): void
     {
         $firstMemoryProvider = $this->createMock(MemoryProviderInterface::class);
         $firstMemoryProvider->expects($this->once())

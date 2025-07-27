@@ -12,7 +12,6 @@
 namespace Symfony\AI\Agent\Tests\Toolbox;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\ToolCallArgumentResolver;
@@ -31,8 +30,7 @@ use Symfony\AI\Platform\Tool\Tool;
 #[UsesClass(ToolCall::class)]
 class ToolCallArgumentResolverTest extends TestCase
 {
-    #[Test]
-    public function resolveArguments(): void
+    public function testResolveArguments(): void
     {
         $resolver = new ToolCallArgumentResolver();
 
@@ -42,8 +40,7 @@ class ToolCallArgumentResolverTest extends TestCase
         $this->assertEquals(['date' => new \DateTimeImmutable('2025-06-29')], $resolver->resolveArguments($metadata, $toolCall));
     }
 
-    #[Test]
-    public function resolveScalarArrayArguments(): void
+    public function testResolveScalarArrayArguments(): void
     {
         $resolver = new ToolCallArgumentResolver();
 
@@ -61,8 +58,7 @@ class ToolCallArgumentResolverTest extends TestCase
         $this->assertSame($expected, $resolver->resolveArguments($metadata, $toolCall));
     }
 
-    #[Test]
-    public function resolveMultidimensionalArrayArguments(): void
+    public function testResolveMultidimensionalArrayArguments(): void
     {
         $resolver = new ToolCallArgumentResolver();
 
@@ -82,8 +78,7 @@ class ToolCallArgumentResolverTest extends TestCase
         $this->assertEquals($expected, $resolver->resolveArguments($metadata, $toolCall));
     }
 
-    #[Test]
-    public function ignoreExtraArguments(): void
+    public function testIgnoreExtraArguments(): void
     {
         $resolver = new ToolCallArgumentResolver();
 

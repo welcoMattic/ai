@@ -13,7 +13,6 @@ namespace Symfony\AI\Agent\Tests\Toolbox;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
@@ -65,8 +64,7 @@ final class ToolboxTest extends TestCase
         ], new ReflectionToolFactory());
     }
 
-    #[Test]
-    public function getTools(): void
+    public function testGetTools(): void
     {
         $actual = $this->toolbox->getTools();
 
@@ -153,8 +151,7 @@ final class ToolboxTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    #[Test]
-    public function executeWithUnknownTool(): void
+    public function testExecuteWithUnknownTool(): void
     {
         self::expectException(ToolNotFoundException::class);
         self::expectExceptionMessage('Tool not found for call: foo_bar_baz');
@@ -162,8 +159,7 @@ final class ToolboxTest extends TestCase
         $this->toolbox->execute(new ToolCall('call_1234', 'foo_bar_baz'));
     }
 
-    #[Test]
-    public function executeWithMisconfiguredTool(): void
+    public function testExecuteWithMisconfiguredTool(): void
     {
         self::expectException(ToolConfigurationException::class);
         self::expectExceptionMessage('Method "foo" not found in tool "Symfony\AI\Fixtures\Tool\ToolMisconfigured".');
@@ -173,8 +169,7 @@ final class ToolboxTest extends TestCase
         $toolbox->execute(new ToolCall('call_1234', 'tool_misconfigured'));
     }
 
-    #[Test]
-    public function executeWithException(): void
+    public function testExecuteWithException(): void
     {
         self::expectException(ToolExecutionException::class);
         self::expectExceptionMessage('Execution of tool "tool_exception" failed with error: Tool error.');
@@ -182,9 +177,8 @@ final class ToolboxTest extends TestCase
         $this->toolbox->execute(new ToolCall('call_1234', 'tool_exception'));
     }
 
-    #[Test]
     #[DataProvider('executeProvider')]
-    public function execute(string $expected, string $toolName, array $toolPayload = []): void
+    public function testExecute(string $expected, string $toolName, array $toolPayload = []): void
     {
         $this->assertSame(
             $expected,
@@ -210,8 +204,7 @@ final class ToolboxTest extends TestCase
         ];
     }
 
-    #[Test]
-    public function toolboxMapWithMemoryFactory(): void
+    public function testToolboxMapWithMemoryFactory(): void
     {
         $memoryFactory = (new MemoryToolFactory())
             ->addTool(ToolNoAttribute1::class, 'happy_birthday', 'Generates birthday message');
@@ -243,8 +236,7 @@ final class ToolboxTest extends TestCase
         $this->assertEquals($expected, $toolbox->getTools());
     }
 
-    #[Test]
-    public function toolboxExecutionWithMemoryFactory(): void
+    public function testToolboxExecutionWithMemoryFactory(): void
     {
         $memoryFactory = (new MemoryToolFactory())
             ->addTool(ToolNoAttribute1::class, 'happy_birthday', 'Generates birthday message');
@@ -255,8 +247,7 @@ final class ToolboxTest extends TestCase
         $this->assertSame('Happy Birthday, John! You are 30 years old.', $result);
     }
 
-    #[Test]
-    public function toolboxMapWithOverrideViaChain(): void
+    public function testToolboxMapWithOverrideViaChain(): void
     {
         $factory1 = (new MemoryToolFactory())
             ->addTool(ToolOptionalParam::class, 'optional_param', 'Tool with optional param', 'bar');

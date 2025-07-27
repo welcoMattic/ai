@@ -13,7 +13,6 @@ namespace Symfony\AI\Agent\Tests\Memory;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Input;
@@ -42,8 +41,7 @@ use Symfony\AI\Store\VectorStoreInterface;
 #[Small]
 final class EmbeddingProviderTest extends TestCase
 {
-    #[Test]
-    public function itIsDoingNothingWithEmptyMessageBag(): void
+    public function testItIsDoingNothingWithEmptyMessageBag(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $platform->expects($this->never())->method('invoke');
@@ -64,8 +62,7 @@ final class EmbeddingProviderTest extends TestCase
         ));
     }
 
-    #[Test]
-    public function itIsDoingNothingWithoutUserMessageInBag(): void
+    public function testItIsDoingNothingWithoutUserMessageInBag(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $platform->expects($this->never())->method('invoke');
@@ -86,8 +83,7 @@ final class EmbeddingProviderTest extends TestCase
         ));
     }
 
-    #[Test]
-    public function itIsDoingNothingWhenUserMessageHasNoTextContent(): void
+    public function testItIsDoingNothingWhenUserMessageHasNoTextContent(): void
     {
         $platform = $this->createMock(PlatformInterface::class);
         $platform->expects($this->never())->method('invoke');
@@ -108,8 +104,7 @@ final class EmbeddingProviderTest extends TestCase
         ));
     }
 
-    #[Test]
-    public function itIsNotCreatingMemoryWhenNoVectorsFound(): void
+    public function testItIsNotCreatingMemoryWhenNoVectorsFound(): void
     {
         $vectorResult = new VectorResult($vector = new Vector([0.1, 0.2], 2));
         $resultPromise = new ResultPromise(
@@ -143,8 +138,7 @@ final class EmbeddingProviderTest extends TestCase
         $this->assertCount(0, $memory);
     }
 
-    #[Test]
-    public function itIsCreatingMemoryWithFoundVectors(): void
+    public function testItIsCreatingMemoryWithFoundVectors(): void
     {
         $vectorResult = new VectorResult($vector = new Vector([0.1, 0.2], 2));
         $resultPromise = new ResultPromise(

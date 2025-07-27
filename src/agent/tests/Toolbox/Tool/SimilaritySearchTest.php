@@ -12,7 +12,6 @@
 namespace Symfony\AI\Agent\Tests\Toolbox\Tool;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Tool\SimilaritySearch;
 use Symfony\AI\Platform\Model;
@@ -29,8 +28,7 @@ use Symfony\Component\Uid\Uuid;
 #[CoversClass(SimilaritySearch::class)]
 final class SimilaritySearchTest extends TestCase
 {
-    #[Test]
-    public function searchWithResults(): void
+    public function testSearchWithResults(): void
     {
         $searchTerm = 'find similar documents';
         $vector = new Vector([0.1, 0.2, 0.3]);
@@ -74,8 +72,7 @@ final class SimilaritySearchTest extends TestCase
         $this->assertSame([$document1, $document2], $similaritySearch->usedDocuments);
     }
 
-    #[Test]
-    public function searchWithoutResults(): void
+    public function testSearchWithoutResults(): void
     {
         $searchTerm = 'find nothing';
         $vector = new Vector([0.1, 0.2, 0.3]);
@@ -108,8 +105,7 @@ final class SimilaritySearchTest extends TestCase
         $this->assertSame([], $similaritySearch->usedDocuments);
     }
 
-    #[Test]
-    public function searchWithSingleResult(): void
+    public function testSearchWithSingleResult(): void
     {
         $searchTerm = 'specific query';
         $vector = new Vector([0.5, 0.6, 0.7]);

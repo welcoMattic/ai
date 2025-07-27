@@ -12,7 +12,6 @@
 namespace Symfony\AI\Agent\Tests\StructuredOutput;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\StructuredOutput\ResponseFormatFactory;
@@ -25,8 +24,7 @@ use Symfony\AI\Platform\Contract\JsonSchema\Factory;
 #[UsesClass(Factory::class)]
 final class ResponseFormatFactoryTest extends TestCase
 {
-    #[Test]
-    public function create(): void
+    public function testCreate(): void
     {
         $this->assertSame([
             'type' => 'json_schema',

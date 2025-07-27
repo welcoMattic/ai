@@ -12,7 +12,6 @@
 namespace Symfony\AI\Agent\Tests\Toolbox;
 
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\AgentInterface;
@@ -43,8 +42,7 @@ use Symfony\AI\Platform\Tool\Tool;
 #[UsesClass(Model::class)]
 class AgentProcessorTest extends TestCase
 {
-    #[Test]
-    public function processInputWithoutRegisteredToolsWillResultInNoOptionChange(): void
+    public function testProcessInputWithoutRegisteredToolsWillResultInNoOptionChange(): void
     {
         $toolbox = $this->createStub(ToolboxInterface::class);
         $toolbox->method('getTools')->willReturn([]);
@@ -58,8 +56,7 @@ class AgentProcessorTest extends TestCase
         $this->assertSame([], $input->getOptions());
     }
 
-    #[Test]
-    public function processInputWithRegisteredToolsWillResultInOptionChange(): void
+    public function testProcessInputWithRegisteredToolsWillResultInOptionChange(): void
     {
         $toolbox = $this->createStub(ToolboxInterface::class);
         $tool1 = new Tool(new ExecutionReference('ClassTool1', 'method1'), 'tool1', 'description1', null);
@@ -75,8 +72,7 @@ class AgentProcessorTest extends TestCase
         $this->assertSame(['tools' => [$tool1, $tool2]], $input->getOptions());
     }
 
-    #[Test]
-    public function processInputWithRegisteredToolsButToolOverride(): void
+    public function testProcessInputWithRegisteredToolsButToolOverride(): void
     {
         $toolbox = $this->createStub(ToolboxInterface::class);
         $tool1 = new Tool(new ExecutionReference('ClassTool1', 'method1'), 'tool1', 'description1', null);
@@ -92,8 +88,7 @@ class AgentProcessorTest extends TestCase
         $this->assertSame(['tools' => [$tool2]], $input->getOptions());
     }
 
-    #[Test]
-    public function processInputWithUnsupportedToolCallingWillThrowException(): void
+    public function testProcessInputWithUnsupportedToolCallingWillThrowException(): void
     {
         self::expectException(MissingModelSupportException::class);
 
@@ -104,8 +99,7 @@ class AgentProcessorTest extends TestCase
         $processor->processInput($input);
     }
 
-    #[Test]
-    public function processOutputWithToolCallResponseKeepingMessages(): void
+    public function testProcessOutputWithToolCallResponseKeepingMessages(): void
     {
         $toolbox = $this->createMock(ToolboxInterface::class);
         $toolbox->expects($this->once())->method('execute')->willReturn('Test response');
@@ -130,8 +124,7 @@ class AgentProcessorTest extends TestCase
         $this->assertInstanceOf(ToolCallMessage::class, $messageBag->getMessages()[1]);
     }
 
-    #[Test]
-    public function processOutputWithToolCallResponseForgettingMessages(): void
+    public function testProcessOutputWithToolCallResponseForgettingMessages(): void
     {
         $toolbox = $this->createMock(ToolboxInterface::class);
         $toolbox->expects($this->once())->method('execute')->willReturn('Test response');
