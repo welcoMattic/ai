@@ -557,5 +557,5 @@ useful when certain interactions shouldn't be influenced by the memory context::
 .. _`RAG with Pinecone`: https://github.com/symfony/ai/blob/main/examples/store/pinecone-similarity-search.php
 .. _`Structured Output with PHP class`: https://github.com/symfony/ai/blob/main/examples/openai/structured-output-math.php
 .. _`Structured Output with array`: https://github.com/symfony/ai/blob/main/examples/openai/structured-output-clock.php
-.. _`Chat with static memory`: https://github.com/symfony/ai/blob/main/examples/misc/chat-with-memory.php
-.. _`Chat with embedding search memory`: https://github.com/symfony/ai/blob/main/examples/store/mariadb-chat-memory.php
+.. _`Chat with static memory`: https://github.com/symfony/ai/blob/main/examples/memory/static.php
+.. _`Chat with embedding search memory`: https://github.com/symfony/ai/blob/main/memory/mariadb.php
