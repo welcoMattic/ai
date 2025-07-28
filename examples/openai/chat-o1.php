@@ -10,7 +10,7 @@
  */
 
 use Symfony\AI\Agent\Agent;
-use Symfony\AI\Platform\Bridge\OpenAi\GPT;
+use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
 use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
@@ -23,7 +23,7 @@ if (!isset($_SERVER['RUN_EXPENSIVE_EXAMPLES']) || false === filter_var($_SERVER[
 }
 
 $platform = PlatformFactory::create(env('OPENAI_API_KEY'), http_client());
-$model = new GPT(GPT::O1_PREVIEW);
+$model = new Gpt(Gpt::O1_PREVIEW);
 
 $prompt = <<<PROMPT
     I want to build a Symfony app in PHP 8.2 that takes user questions and looks them

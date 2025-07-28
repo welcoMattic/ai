@@ -20,7 +20,7 @@ use Symfony\AI\Agent\InputProcessor\SystemPromptInputProcessor;
 use Symfony\AI\Agent\Toolbox\ToolboxInterface;
 use Symfony\AI\Fixtures\Tool\ToolNoParams;
 use Symfony\AI\Fixtures\Tool\ToolRequiredParams;
-use Symfony\AI\Platform\Bridge\OpenAi\GPT;
+use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
 use Symfony\AI\Platform\Message\Content\Text;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
@@ -31,7 +31,7 @@ use Symfony\AI\Platform\Tool\ExecutionReference;
 use Symfony\AI\Platform\Tool\Tool;
 
 #[CoversClass(SystemPromptInputProcessor::class)]
-#[UsesClass(GPT::class)]
+#[UsesClass(Gpt::class)]
 #[UsesClass(Message::class)]
 #[UsesClass(MessageBag::class)]
 #[UsesClass(Input::class)]
@@ -47,7 +47,7 @@ final class SystemPromptInputProcessorTest extends TestCase
     {
         $processor = new SystemPromptInputProcessor('This is a system prompt');
 
-        $input = new Input(new GPT(), new MessageBag(Message::ofUser('This is a user message')), []);
+        $input = new Input(new Gpt(), new MessageBag(Message::ofUser('This is a user message')), []);
         $processor->processInput($input);
 
         $messages = $input->messages->getMessages();
@@ -65,7 +65,7 @@ final class SystemPromptInputProcessorTest extends TestCase
             Message::forSystem('This is already a system prompt'),
             Message::ofUser('This is a user message'),
         );
-        $input = new Input(new GPT(), $messages, []);
+        $input = new Input(new Gpt(), $messages, []);
         $processor->processInput($input);
 
         $messages = $input->messages->getMessages();
@@ -92,7 +92,7 @@ final class SystemPromptInputProcessorTest extends TestCase
             }
         );
 
-        $input = new Input(new GPT(), new MessageBag(Message::ofUser('This is a user message')), []);
+        $input = new Input(new Gpt(), new MessageBag(Message::ofUser('This is a user message')), []);
         $processor->processInput($input);
 
         $messages = $input->messages->getMessages();
@@ -130,7 +130,7 @@ final class SystemPromptInputProcessorTest extends TestCase
             }
         );
 
-        $input = new Input(new GPT(), new MessageBag(Message::ofUser('This is a user message')), []);
+        $input = new Input(new Gpt(), new MessageBag(Message::ofUser('This is a user message')), []);
         $processor->processInput($input);
 
         $messages = $input->messages->getMessages();
@@ -170,7 +170,7 @@ final class SystemPromptInputProcessorTest extends TestCase
             }
         );
 
-        $input = new Input(new GPT(), new MessageBag(Message::ofUser('This is a user message')), []);
+        $input = new Input(new Gpt(), new MessageBag(Message::ofUser('This is a user message')), []);
         $processor->processInput($input);
 
         $messages = $input->messages->getMessages();

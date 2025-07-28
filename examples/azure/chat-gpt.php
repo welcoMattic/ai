@@ -11,7 +11,7 @@
 
 use Symfony\AI\Agent\Agent;
 use Symfony\AI\Platform\Bridge\Azure\OpenAi\PlatformFactory;
-use Symfony\AI\Platform\Bridge\OpenAi\GPT;
+use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 
@@ -24,7 +24,7 @@ $platform = PlatformFactory::create(
     env('AZURE_OPENAI_KEY'),
     http_client(),
 );
-$model = new GPT(GPT::GPT_4O_MINI);
+$model = new Gpt(Gpt::GPT_4O_MINI);
 
 $agent = new Agent($platform, $model, logger: logger());
 $messages = new MessageBag(

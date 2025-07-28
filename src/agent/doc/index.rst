@@ -20,11 +20,11 @@ To instantiate an agent, you need to pass a ``Symfony\AI\Platform\PlatformInterf
 ``Symfony\AI\Platform\Model`` instance to the ``Symfony\AI\Agent\Agent`` class::
 
     use Symfony\AI\Agent\Agent;
-    use Symfony\AI\Platform\Bridge\OpenAi\GPT;
+    use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
     use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
 
     $platform = PlatformFactory::create($apiKey);
-    $model = new GPT(GPT::GPT_4O_MINI);
+    $model = new Gpt(Gpt::GPT_4O_MINI);
 
     $agent = new Agent($platform, $model);
 

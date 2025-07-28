@@ -15,7 +15,7 @@ use Symfony\AI\Agent\Toolbox\Tool\SimilaritySearch;
 use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Fixtures\Movies;
 use Symfony\AI\Platform\Bridge\OpenAi\Embeddings;
-use Symfony\AI\Platform\Bridge\OpenAi\GPT;
+use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
 use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
@@ -55,7 +55,7 @@ $vectorizer = new Vectorizer($platform, $embeddings = new Embeddings());
 $indexer = new Indexer($vectorizer, $store, logger());
 $indexer->index($documents);
 
-$model = new GPT(GPT::GPT_4O_MINI);
+$model = new Gpt(Gpt::GPT_4O_MINI);
 
 $similaritySearch = new SimilaritySearch($platform, $embeddings, $store);
 $toolbox = new Toolbox([$similaritySearch], logger: logger());

@@ -14,7 +14,7 @@ use Symfony\AI\Agent\Toolbox\AgentProcessor;
 use Symfony\AI\Agent\Toolbox\Tool\Brave;
 use Symfony\AI\Agent\Toolbox\Tool\Crawler;
 use Symfony\AI\Agent\Toolbox\Toolbox;
-use Symfony\AI\Platform\Bridge\OpenAi\GPT;
+use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
 use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
@@ -22,7 +22,7 @@ use Symfony\AI\Platform\Message\MessageBag;
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = PlatformFactory::create(env('OPENAI_API_KEY'), http_client());
-$model = new GPT(GPT::GPT_4O_MINI);
+$model = new Gpt(Gpt::GPT_4O_MINI);
 
 $brave = new Brave(http_client(), env('BRAVE_API_KEY'));
 $crawler = new Crawler(http_client());

@@ -12,7 +12,7 @@
 use Symfony\AI\Agent\Agent;
 use Symfony\AI\Agent\StructuredOutput\AgentProcessor;
 use Symfony\AI\Fixtures\StructuredOutput\MathReasoning;
-use Symfony\AI\Platform\Bridge\OpenAi\GPT;
+use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
 use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
@@ -20,7 +20,7 @@ use Symfony\AI\Platform\Message\MessageBag;
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = PlatformFactory::create(env('OPENAI_API_KEY'), http_client());
-$model = new GPT(GPT::GPT_4O_MINI);
+$model = new Gpt(Gpt::GPT_4O_MINI);
 
 $processor = new AgentProcessor();
 $agent = new Agent($platform, $model, [$processor], [$processor], logger());
