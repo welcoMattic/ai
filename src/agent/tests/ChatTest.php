@@ -42,7 +42,7 @@ final class ChatTest extends TestCase
         $this->chat = new Chat($this->agent, $this->store);
     }
 
-    public function testItInitiatesChatByClearingAndSavingMessages(): void
+    public function testItInitiatesChatByClearingAndSavingMessages()
     {
         $messages = $this->createMock(MessageBagInterface::class);
 
@@ -56,7 +56,7 @@ final class ChatTest extends TestCase
         $this->chat->initiate($messages);
     }
 
-    public function testItSubmitsUserMessageAndReturnsAssistantMessage(): void
+    public function testItSubmitsUserMessageAndReturnsAssistantMessage()
     {
         $userMessage = Message::ofUser('Hello, how are you?');
         $existingMessages = new MessageBag();
@@ -95,7 +95,7 @@ final class ChatTest extends TestCase
         $this->assertSame($assistantContent, $result->content);
     }
 
-    public function testItAppendsMessagesToExistingConversation(): void
+    public function testItAppendsMessagesToExistingConversation()
     {
         $existingUserMessage = Message::ofUser('What is the weather?');
         $existingAssistantMessage = Message::ofAssistant('I cannot provide weather information.');
@@ -136,7 +136,7 @@ final class ChatTest extends TestCase
         $this->assertSame($newAssistantContent, $result->content);
     }
 
-    public function testItHandlesEmptyMessageStore(): void
+    public function testItHandlesEmptyMessageStore()
     {
         $userMessage = Message::ofUser('First message');
         $emptyMessages = new MessageBag();

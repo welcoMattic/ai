@@ -43,7 +43,7 @@ final class ReflectionFactoryTest extends TestCase
         $this->factory = new ReflectionToolFactory();
     }
 
-    public function testInvalidReferenceNonExistingClass(): void
+    public function testInvalidReferenceNonExistingClass()
     {
         self::expectException(ToolException::class);
         self::expectExceptionMessage('The reference "invalid" is not a valid tool.');
@@ -51,7 +51,7 @@ final class ReflectionFactoryTest extends TestCase
         iterator_to_array($this->factory->getTool('invalid')); // @phpstan-ignore-line Yes, this class does not exist
     }
 
-    public function testWithoutAttribute(): void
+    public function testWithoutAttribute()
     {
         self::expectException(ToolException::class);
         self::expectExceptionMessage(\sprintf('The class "%s" is not a tool, please add %s attribute.', ToolWrong::class, AsTool::class));
@@ -59,7 +59,7 @@ final class ReflectionFactoryTest extends TestCase
         iterator_to_array($this->factory->getTool(ToolWrong::class));
     }
 
-    public function testGetDefinition(): void
+    public function testGetDefinition()
     {
         /** @var Tool[] $metadatas */
         $metadatas = iterator_to_array($this->factory->getTool(ToolRequiredParams::class));
@@ -88,7 +88,7 @@ final class ReflectionFactoryTest extends TestCase
         );
     }
 
-    public function testGetDefinitionWithMultiple(): void
+    public function testGetDefinitionWithMultiple()
     {
         $metadatas = iterator_to_array($this->factory->getTool(ToolMultiple::class));
 

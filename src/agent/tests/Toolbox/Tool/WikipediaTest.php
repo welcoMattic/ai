@@ -20,7 +20,7 @@ use Symfony\Component\HttpClient\Response\JsonMockResponse;
 #[CoversClass(Wikipedia::class)]
 final class WikipediaTest extends TestCase
 {
-    public function testSearchWithResults(): void
+    public function testSearchWithResults()
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/wikipedia-search-result.json');
         $httpClient = new MockHttpClient($result);
@@ -47,7 +47,7 @@ final class WikipediaTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    public function testSearchWithoutResults(): void
+    public function testSearchWithoutResults()
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/wikipedia-search-empty.json');
         $httpClient = new MockHttpClient($result);
@@ -60,7 +60,7 @@ final class WikipediaTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    public function testArticleWithResult(): void
+    public function testArticleWithResult()
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/wikipedia-article.json');
         $httpClient = new MockHttpClient($result);
@@ -76,7 +76,7 @@ final class WikipediaTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    public function testArticleWithRedirect(): void
+    public function testArticleWithRedirect()
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/wikipedia-article-redirect.json');
         $httpClient = new MockHttpClient($result);
@@ -94,7 +94,7 @@ final class WikipediaTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    public function testArticleMissing(): void
+    public function testArticleMissing()
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/wikipedia-article-missing.json');
         $httpClient = new MockHttpClient($result);

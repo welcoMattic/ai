@@ -45,7 +45,7 @@ final class ChainFactoryTest extends TestCase
         $this->factory = new ChainFactory([$factory1, $factory2]);
     }
 
-    public function testTestGetMetadataNotExistingClass(): void
+    public function testTestGetMetadataNotExistingClass()
     {
         self::expectException(ToolException::class);
         self::expectExceptionMessage('The reference "NoClass" is not a valid tool.');
@@ -53,7 +53,7 @@ final class ChainFactoryTest extends TestCase
         iterator_to_array($this->factory->getTool('NoClass'));
     }
 
-    public function testTestGetMetadataNotConfiguredClass(): void
+    public function testTestGetMetadataNotConfiguredClass()
     {
         self::expectException(ToolConfigurationException::class);
         self::expectExceptionMessage(\sprintf('Method "foo" not found in tool "%s".', ToolMisconfigured::class));
@@ -61,14 +61,14 @@ final class ChainFactoryTest extends TestCase
         iterator_to_array($this->factory->getTool(ToolMisconfigured::class));
     }
 
-    public function testTestGetMetadataWithAttributeSingleHit(): void
+    public function testTestGetMetadataWithAttributeSingleHit()
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolRequiredParams::class));
 
         $this->assertCount(1, $metadata);
     }
 
-    public function testTestGetMetadataOverwrite(): void
+    public function testTestGetMetadataOverwrite()
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolOptionalParam::class));
 
@@ -78,14 +78,14 @@ final class ChainFactoryTest extends TestCase
         $this->assertSame('bar', $metadata[0]->reference->method);
     }
 
-    public function testTestGetMetadataWithAttributeDoubleHit(): void
+    public function testTestGetMetadataWithAttributeDoubleHit()
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolMultiple::class));
 
         $this->assertCount(2, $metadata);
     }
 
-    public function testTestGetMetadataWithMemorySingleHit(): void
+    public function testTestGetMetadataWithMemorySingleHit()
     {
         $metadata = iterator_to_array($this->factory->getTool(ToolNoAttribute1::class));
 

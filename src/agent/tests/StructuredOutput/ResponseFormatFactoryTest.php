@@ -24,7 +24,7 @@ use Symfony\AI\Platform\Contract\JsonSchema\Factory;
 #[UsesClass(Factory::class)]
 final class ResponseFormatFactoryTest extends TestCase
 {
-    public function testCreate(): void
+    public function testCreate()
     {
         $this->assertSame([
             'type' => 'json_schema',

@@ -64,7 +64,7 @@ final class ToolboxTest extends TestCase
         ], new ReflectionToolFactory());
     }
 
-    public function testGetTools(): void
+    public function testGetTools()
     {
         $actual = $this->toolbox->getTools();
 
@@ -151,7 +151,7 @@ final class ToolboxTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testExecuteWithUnknownTool(): void
+    public function testExecuteWithUnknownTool()
     {
         self::expectException(ToolNotFoundException::class);
         self::expectExceptionMessage('Tool not found for call: foo_bar_baz');
@@ -159,7 +159,7 @@ final class ToolboxTest extends TestCase
         $this->toolbox->execute(new ToolCall('call_1234', 'foo_bar_baz'));
     }
 
-    public function testExecuteWithMisconfiguredTool(): void
+    public function testExecuteWithMisconfiguredTool()
     {
         self::expectException(ToolConfigurationException::class);
         self::expectExceptionMessage('Method "foo" not found in tool "Symfony\AI\Fixtures\Tool\ToolMisconfigured".');
@@ -169,7 +169,7 @@ final class ToolboxTest extends TestCase
         $toolbox->execute(new ToolCall('call_1234', 'tool_misconfigured'));
     }
 
-    public function testExecuteWithException(): void
+    public function testExecuteWithException()
     {
         self::expectException(ToolExecutionException::class);
         self::expectExceptionMessage('Execution of tool "tool_exception" failed with error: Tool error.');
@@ -178,7 +178,7 @@ final class ToolboxTest extends TestCase
     }
 
     #[DataProvider('executeProvider')]
-    public function testExecute(string $expected, string $toolName, array $toolPayload = []): void
+    public function testExecute(string $expected, string $toolName, array $toolPayload = [])
     {
         $this->assertSame(
             $expected,
@@ -204,7 +204,7 @@ final class ToolboxTest extends TestCase
         ];
     }
 
-    public function testToolboxMapWithMemoryFactory(): void
+    public function testToolboxMapWithMemoryFactory()
     {
         $memoryFactory = (new MemoryToolFactory())
             ->addTool(ToolNoAttribute1::class, 'happy_birthday', 'Generates birthday message');
@@ -236,7 +236,7 @@ final class ToolboxTest extends TestCase
         $this->assertEquals($expected, $toolbox->getTools());
     }
 
-    public function testToolboxExecutionWithMemoryFactory(): void
+    public function testToolboxExecutionWithMemoryFactory()
     {
         $memoryFactory = (new MemoryToolFactory())
             ->addTool(ToolNoAttribute1::class, 'happy_birthday', 'Generates birthday message');
@@ -247,7 +247,7 @@ final class ToolboxTest extends TestCase
         $this->assertSame('Happy Birthday, John! You are 30 years old.', $result);
     }
 
-    public function testToolboxMapWithOverrideViaChain(): void
+    public function testToolboxMapWithOverrideViaChain()
     {
         $factory1 = (new MemoryToolFactory())
             ->addTool(ToolOptionalParam::class, 'optional_param', 'Tool with optional param', 'bar');

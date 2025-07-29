@@ -20,7 +20,7 @@ use Symfony\Component\HttpClient\Response\JsonMockResponse;
 #[CoversClass(OpenMeteo::class)]
 final class OpenMeteoTest extends TestCase
 {
-    public function testCurrent(): void
+    public function testCurrent()
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/openmeteo-current.json');
         $httpClient = new MockHttpClient($result);
@@ -38,7 +38,7 @@ final class OpenMeteoTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    public function testForecast(): void
+    public function testForecast()
     {
         $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/openmeteo-forecast.json');
         $httpClient = new MockHttpClient($result);

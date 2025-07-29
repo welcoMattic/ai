@@ -43,7 +43,7 @@ use Symfony\AI\Platform\Tool\Tool;
 #[Small]
 final class SystemPromptInputProcessorTest extends TestCase
 {
-    public function testProcessInputAddsSystemMessageWhenNoneExists(): void
+    public function testProcessInputAddsSystemMessageWhenNoneExists()
     {
         $processor = new SystemPromptInputProcessor('This is a system prompt');
 
@@ -57,7 +57,7 @@ final class SystemPromptInputProcessorTest extends TestCase
         $this->assertSame('This is a system prompt', $messages[0]->content);
     }
 
-    public function testProcessInputDoesNotAddSystemMessageWhenOneExists(): void
+    public function testProcessInputDoesNotAddSystemMessageWhenOneExists()
     {
         $processor = new SystemPromptInputProcessor('This is a system prompt');
 
@@ -75,7 +75,7 @@ final class SystemPromptInputProcessorTest extends TestCase
         $this->assertSame('This is already a system prompt', $messages[0]->content);
     }
 
-    public function testDoesNotIncludeToolsIfToolboxIsEmpty(): void
+    public function testDoesNotIncludeToolsIfToolboxIsEmpty()
     {
         $processor = new SystemPromptInputProcessor(
             'This is a system prompt',
@@ -102,7 +102,7 @@ final class SystemPromptInputProcessorTest extends TestCase
         $this->assertSame('This is a system prompt', $messages[0]->content);
     }
 
-    public function testIncludeToolDefinitions(): void
+    public function testIncludeToolDefinitions()
     {
         $processor = new SystemPromptInputProcessor(
             'This is a system prompt',
@@ -151,7 +151,7 @@ final class SystemPromptInputProcessorTest extends TestCase
             PROMPT, $messages[0]->content);
     }
 
-    public function testWithStringableSystemPrompt(): void
+    public function testWithStringableSystemPrompt()
     {
         $processor = new SystemPromptInputProcessor(
             new SystemPromptService(),

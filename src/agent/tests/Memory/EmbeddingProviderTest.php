@@ -41,7 +41,7 @@ use Symfony\AI\Store\VectorStoreInterface;
 #[Small]
 final class EmbeddingProviderTest extends TestCase
 {
-    public function testItIsDoingNothingWithEmptyMessageBag(): void
+    public function testItIsDoingNothingWithEmptyMessageBag()
     {
         $platform = $this->createMock(PlatformInterface::class);
         $platform->expects($this->never())->method('invoke');
@@ -62,7 +62,7 @@ final class EmbeddingProviderTest extends TestCase
         ));
     }
 
-    public function testItIsDoingNothingWithoutUserMessageInBag(): void
+    public function testItIsDoingNothingWithoutUserMessageInBag()
     {
         $platform = $this->createMock(PlatformInterface::class);
         $platform->expects($this->never())->method('invoke');
@@ -83,7 +83,7 @@ final class EmbeddingProviderTest extends TestCase
         ));
     }
 
-    public function testItIsDoingNothingWhenUserMessageHasNoTextContent(): void
+    public function testItIsDoingNothingWhenUserMessageHasNoTextContent()
     {
         $platform = $this->createMock(PlatformInterface::class);
         $platform->expects($this->never())->method('invoke');
@@ -104,7 +104,7 @@ final class EmbeddingProviderTest extends TestCase
         ));
     }
 
-    public function testItIsNotCreatingMemoryWhenNoVectorsFound(): void
+    public function testItIsNotCreatingMemoryWhenNoVectorsFound()
     {
         $vectorResult = new VectorResult($vector = new Vector([0.1, 0.2], 2));
         $resultPromise = new ResultPromise(
@@ -138,7 +138,7 @@ final class EmbeddingProviderTest extends TestCase
         $this->assertCount(0, $memory);
     }
 
-    public function testItIsCreatingMemoryWithFoundVectors(): void
+    public function testItIsCreatingMemoryWithFoundVectors()
     {
         $vectorResult = new VectorResult($vector = new Vector([0.1, 0.2], 2));
         $resultPromise = new ResultPromise(
