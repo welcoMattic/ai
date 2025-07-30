@@ -58,7 +58,7 @@ final class ModelOverrideInputProcessorTest extends TestCase
     public function testProcessInputWithInvalidModelOption()
     {
         self::expectException(InvalidArgumentException::class);
-        self::expectExceptionMessage('Option "model" must be an instance of Symfony\AI\Platform\Model.');
+        self::expectExceptionMessage('Option "model" must be an instance of "Symfony\AI\Platform\Model".');
 
         $gpt = new GPT();
         $model = new MessageBag();
