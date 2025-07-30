@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-use MongoDB\Client as MongoDBClient;
+use MongoDB\Client as MongoDbClient;
 use Symfony\AI\Agent\Agent;
 use Symfony\AI\Agent\Toolbox\AgentProcessor;
 use Symfony\AI\Agent\Toolbox\Tool\SimilaritySearch;
@@ -20,7 +20,7 @@ use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
 use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
-use Symfony\AI\Store\Bridge\MongoDB\Store;
+use Symfony\AI\Store\Bridge\MongoDb\Store;
 use Symfony\AI\Store\Document\Metadata;
 use Symfony\AI\Store\Document\TextDocument;
 use Symfony\AI\Store\Document\Vectorizer;
@@ -31,7 +31,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 
 // initialize the store
 $store = new Store(
-    client: new MongoDBClient(env('MONGODB_URI')),
+    client: new MongoDbClient(env('MONGODB_URI')),
     databaseName: 'my-database',
     collectionName: 'my-collection',
     indexName: 'my-index',
