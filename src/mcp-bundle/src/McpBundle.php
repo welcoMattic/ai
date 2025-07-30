@@ -39,6 +39,7 @@ final class McpBundle extends AbstractBundle
 
         $builder->setParameter('mcp.app', $config['app']);
         $builder->setParameter('mcp.version', $config['version']);
+        $builder->setParameter('mcp.page_size', $config['page_size']);
 
         if (isset($config['client_transports'])) {
             $this->configureClient($config['client_transports'], $builder);

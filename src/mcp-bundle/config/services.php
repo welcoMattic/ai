@@ -44,7 +44,7 @@ return static function (ContainerConfigurator $container): void {
         ->set('mcp.server.request_handler.tool_list', ToolListHandler::class)
             ->args([
                 service('mcp.tool_collection'),
-                20,
+                param('mcp.page_size'),
             ])
             ->tag('mcp.server.request_handler')
 
