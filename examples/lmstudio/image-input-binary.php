@@ -10,8 +10,8 @@
  */
 
 use Symfony\AI\Agent\Agent;
-use Symfony\AI\Platform\Bridge\LMStudio\Completions;
-use Symfony\AI\Platform\Bridge\LMStudio\PlatformFactory;
+use Symfony\AI\Platform\Bridge\LmStudio\Completions;
+use Symfony\AI\Platform\Bridge\LmStudio\PlatformFactory;
 use Symfony\AI\Platform\Capability;
 use Symfony\AI\Platform\Message\Content\Image;
 use Symfony\AI\Platform\Message\Message;
