@@ -62,7 +62,7 @@ final class AgentProcessor implements InputProcessorInterface, OutputProcessorIn
         }
 
         if (true === ($options['stream'] ?? false)) {
-            throw new InvalidArgumentException('Streamed responses are not supported for structured output');
+            throw new InvalidArgumentException('Streamed responses are not supported for structured output.');
         }
 
         $options['response_format'] = $this->responseFormatFactory->create($options['output_structure']);

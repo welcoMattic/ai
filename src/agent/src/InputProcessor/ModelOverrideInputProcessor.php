@@ -30,7 +30,7 @@ final class ModelOverrideInputProcessor implements InputProcessorInterface
         }
 
         if (!$options['model'] instanceof Model) {
-            throw new InvalidArgumentException(\sprintf('Option "model" must be an instance of %s.', Model::class));
+            throw new InvalidArgumentException(\sprintf('Option "model" must be an instance of "%s".', Model::class));
         }
 
         $input->model = $options['model'];

@@ -88,7 +88,7 @@ final readonly class Agent implements AgentInterface
 
             throw new InvalidArgumentException('' === $message ? 'Invalid request to model or platform' : $message, previous: $e);
         } catch (HttpExceptionInterface $e) {
-            throw new RuntimeException('Failed to request model', previous: $e);
+            throw new RuntimeException('Failed to request model.', previous: $e);
         }
 
         $output = new Output($model, $result, $messages, $options);
@@ -107,7 +107,7 @@ final readonly class Agent implements AgentInterface
     {
         foreach ($processors as $processor) {
             if (!$processor instanceof $interface) {
-                throw new InvalidArgumentException(\sprintf('Processor %s must implement %s interface.', $processor::class, $interface));
+                throw new InvalidArgumentException(\sprintf('Processor "%s" must implement "%s".', $processor::class, $interface));
             }
 
             if ($processor instanceof AgentAwareInterface) {
