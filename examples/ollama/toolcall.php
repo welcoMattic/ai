@@ -10,6 +10,9 @@
  */
 
 use Symfony\AI\Agent\Agent;
+use Symfony\AI\Agent\Toolbox\AgentProcessor;
+use Symfony\AI\Agent\Toolbox\Tool\Clock;
+use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Platform\Bridge\Ollama\Ollama;
 use Symfony\AI\Platform\Bridge\Ollama\PlatformFactory;
 use Symfony\AI\Platform\Message\Message;
@@ -20,11 +23,11 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $platform = PlatformFactory::create(env('OLLAMA_HOST_URL'), http_client());
 $model = new Ollama();
 
-$agent = new Agent($platform, $model, logger: logger());
-$messages = new MessageBag(
-    Message::forSystem('You are a helpful assistant.'),
-    Message::ofUser('Tina has one brother and one sister. How many sisters do Tina\'s siblings have?'),
-);
+$toolbox = new Toolbox([new Clock()], logger: logger());
+$processor = new AgentProcessor($toolbox);
+$agent = new Agent($platform, $model, [$processor], [$processor], logger());
+
+$messages = new MessageBag(Message::ofUser('What time is it?'));
 $result = $agent->call($messages);
 
 echo $result->getContent().\PHP_EOL;
