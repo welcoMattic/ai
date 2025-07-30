@@ -16,6 +16,7 @@ return static function (DefinitionConfigurator $configurator): void {
         ->children()
             ->scalarNode('app')->defaultValue('app')->end()
             ->scalarNode('version')->defaultValue('0.0.1')->end()
+            ->scalarNode('page_size')->defaultValue(20)->end()
             // ->arrayNode('servers')
             //     ->useAttributeAsKey('name')
             //     ->arrayPrototype()
