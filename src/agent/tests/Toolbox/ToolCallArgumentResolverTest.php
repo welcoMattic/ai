@@ -30,7 +30,7 @@ use Symfony\AI\Platform\Tool\Tool;
 #[UsesClass(ToolCall::class)]
 class ToolCallArgumentResolverTest extends TestCase
 {
-    public function testResolveArguments(): void
+    public function testResolveArguments()
     {
         $resolver = new ToolCallArgumentResolver();
 
@@ -40,7 +40,7 @@ class ToolCallArgumentResolverTest extends TestCase
         $this->assertEquals(['date' => new \DateTimeImmutable('2025-06-29')], $resolver->resolveArguments($metadata, $toolCall));
     }
 
-    public function testResolveScalarArrayArguments(): void
+    public function testResolveScalarArrayArguments()
     {
         $resolver = new ToolCallArgumentResolver();
 
@@ -58,7 +58,7 @@ class ToolCallArgumentResolverTest extends TestCase
         $this->assertSame($expected, $resolver->resolveArguments($metadata, $toolCall));
     }
 
-    public function testResolveMultidimensionalArrayArguments(): void
+    public function testResolveMultidimensionalArrayArguments()
     {
         $resolver = new ToolCallArgumentResolver();
 
@@ -78,7 +78,7 @@ class ToolCallArgumentResolverTest extends TestCase
         $this->assertEquals($expected, $resolver->resolveArguments($metadata, $toolCall));
     }
 
-    public function testIgnoreExtraArguments(): void
+    public function testIgnoreExtraArguments()
     {
         $resolver = new ToolCallArgumentResolver();
 

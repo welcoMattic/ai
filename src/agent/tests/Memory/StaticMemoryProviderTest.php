@@ -29,7 +29,7 @@ use Symfony\AI\Platform\Model;
 #[Small]
 final class StaticMemoryProviderTest extends TestCase
 {
-    public function testItsReturnsNullWhenNoFactsAreProvided(): void
+    public function testItsReturnsNullWhenNoFactsAreProvided()
     {
         $provider = new StaticMemoryProvider();
 
@@ -42,7 +42,7 @@ final class StaticMemoryProviderTest extends TestCase
         $this->assertCount(0, $memory);
     }
 
-    public function testItDeliversFormattedFacts(): void
+    public function testItDeliversFormattedFacts()
     {
         $provider = new StaticMemoryProvider(
             $fact1 = 'The sky is blue',

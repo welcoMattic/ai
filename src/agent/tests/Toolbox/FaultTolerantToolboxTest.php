@@ -32,7 +32,7 @@ use Symfony\AI\Platform\Tool\Tool;
 #[UsesClass(ToolExecutionException::class)]
 final class FaultTolerantToolboxTest extends TestCase
 {
-    public function testFaultyToolExecution(): void
+    public function testFaultyToolExecution()
     {
         $faultyToolbox = $this->createFaultyToolbox(
             fn (ToolCall $toolCall) => ToolExecutionException::executionFailed($toolCall, new \Exception('error'))
@@ -47,7 +47,7 @@ final class FaultTolerantToolboxTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    public function testFaultyToolCall(): void
+    public function testFaultyToolCall()
     {
         $faultyToolbox = $this->createFaultyToolbox(
             fn (ToolCall $toolCall) => ToolNotFoundException::notFoundForToolCall($toolCall)

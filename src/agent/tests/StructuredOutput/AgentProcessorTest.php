@@ -41,7 +41,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 #[UsesClass(Model::class)]
 final class AgentProcessorTest extends TestCase
 {
-    public function testProcessInputWithOutputStructure(): void
+    public function testProcessInputWithOutputStructure()
     {
         $processor = new AgentProcessor(new ConfigurableResponseFormatFactory(['some' => 'format']));
 
@@ -53,7 +53,7 @@ final class AgentProcessorTest extends TestCase
         $this->assertSame(['response_format' => ['some' => 'format']], $input->getOptions());
     }
 
-    public function testProcessInputWithoutOutputStructure(): void
+    public function testProcessInputWithoutOutputStructure()
     {
         $processor = new AgentProcessor(new ConfigurableResponseFormatFactory());
 
@@ -65,7 +65,7 @@ final class AgentProcessorTest extends TestCase
         $this->assertSame([], $input->getOptions());
     }
 
-    public function testProcessInputThrowsExceptionWhenLlmDoesNotSupportStructuredOutput(): void
+    public function testProcessInputThrowsExceptionWhenLlmDoesNotSupportStructuredOutput()
     {
         self::expectException(MissingModelSupportException::class);
 
@@ -77,7 +77,7 @@ final class AgentProcessorTest extends TestCase
         $processor->processInput($input);
     }
 
-    public function testProcessOutputWithResponseFormat(): void
+    public function testProcessOutputWithResponseFormat()
     {
         $processor = new AgentProcessor(new ConfigurableResponseFormatFactory(['some' => 'format']));
 
@@ -99,7 +99,7 @@ final class AgentProcessorTest extends TestCase
         $this->assertSame('data', $output->result->getContent()->some);
     }
 
-    public function testProcessOutputWithComplexResponseFormat(): void
+    public function testProcessOutputWithComplexResponseFormat()
     {
         $processor = new AgentProcessor(new ConfigurableResponseFormatFactory(['some' => 'format']));
 
@@ -153,7 +153,7 @@ final class AgentProcessorTest extends TestCase
         $this->assertSame('x = -3.75', $structure->finalAnswer);
     }
 
-    public function testProcessOutputWithoutResponseFormat(): void
+    public function testProcessOutputWithoutResponseFormat()
     {
         $resultFormatFactory = new ConfigurableResponseFormatFactory();
         $serializer = self::createMock(SerializerInterface::class);

@@ -18,7 +18,7 @@ use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
 #[CoversClass(AsTool::class)]
 final class AsToolTest extends TestCase
 {
-    public function testCanBeConstructed(): void
+    public function testCanBeConstructed()
     {
         $attribute = new AsTool(
             name: 'name',

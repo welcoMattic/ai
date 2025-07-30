@@ -28,7 +28,7 @@ use Symfony\Component\Uid\Uuid;
 #[CoversClass(SimilaritySearch::class)]
 final class SimilaritySearchTest extends TestCase
 {
-    public function testSearchWithResults(): void
+    public function testSearchWithResults()
     {
         $searchTerm = 'find similar documents';
         $vector = new Vector([0.1, 0.2, 0.3]);
@@ -72,7 +72,7 @@ final class SimilaritySearchTest extends TestCase
         $this->assertSame([$document1, $document2], $similaritySearch->usedDocuments);
     }
 
-    public function testSearchWithoutResults(): void
+    public function testSearchWithoutResults()
     {
         $searchTerm = 'find nothing';
         $vector = new Vector([0.1, 0.2, 0.3]);
@@ -105,7 +105,7 @@ final class SimilaritySearchTest extends TestCase
         $this->assertSame([], $similaritySearch->usedDocuments);
     }
 
-    public function testSearchWithSingleResult(): void
+    public function testSearchWithSingleResult()
     {
         $searchTerm = 'specific query';
         $vector = new Vector([0.5, 0.6, 0.7]);

@@ -21,7 +21,7 @@ use Symfony\AI\Fixtures\StructuredOutput\UserWithConstructor;
 final class ToolResultConverterTest extends TestCase
 {
     #[DataProvider('provideResults')]
-    public function testConvert(mixed $result, ?string $expected): void
+    public function testConvert(mixed $result, ?string $expected)
     {
         $converter = new ToolResultConverter();
 

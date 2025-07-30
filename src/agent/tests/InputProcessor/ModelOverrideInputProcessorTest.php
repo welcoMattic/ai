@@ -32,7 +32,7 @@ use Symfony\AI\Platform\Message\MessageBag;
 #[Small]
 final class ModelOverrideInputProcessorTest extends TestCase
 {
-    public function testProcessInputWithValidModelOption(): void
+    public function testProcessInputWithValidModelOption()
     {
         $gpt = new GPT();
         $claude = new Claude();
@@ -44,7 +44,7 @@ final class ModelOverrideInputProcessorTest extends TestCase
         $this->assertSame($claude, $input->model);
     }
 
-    public function testProcessInputWithoutModelOption(): void
+    public function testProcessInputWithoutModelOption()
     {
         $gpt = new GPT();
         $input = new Input($gpt, new MessageBag(), []);
@@ -55,7 +55,7 @@ final class ModelOverrideInputProcessorTest extends TestCase
         $this->assertSame($gpt, $input->model);
     }
 
-    public function testProcessInputWithInvalidModelOption(): void
+    public function testProcessInputWithInvalidModelOption()
     {
         self::expectException(InvalidArgumentException::class);
         self::expectExceptionMessage('Option "model" must be an instance of Symfony\AI\Platform\Model.');

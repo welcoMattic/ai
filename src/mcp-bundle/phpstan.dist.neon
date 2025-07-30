@@ -5,3 +5,8 @@ parameters:
     level: 6
     paths:
         - src/
+        - tests/
+    ignoreErrors:
+        -
+            message: "#^Method .*::test.*\\(\\) has no return type specified\\.$#"
+            reportUnmatched: false # we don't have tests yet

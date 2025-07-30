@@ -42,7 +42,7 @@ use Symfony\AI\Platform\Tool\Tool;
 #[UsesClass(Model::class)]
 class AgentProcessorTest extends TestCase
 {
-    public function testProcessInputWithoutRegisteredToolsWillResultInNoOptionChange(): void
+    public function testProcessInputWithoutRegisteredToolsWillResultInNoOptionChange()
     {
         $toolbox = $this->createStub(ToolboxInterface::class);
         $toolbox->method('getTools')->willReturn([]);
@@ -56,7 +56,7 @@ class AgentProcessorTest extends TestCase
         $this->assertSame([], $input->getOptions());
     }
 
-    public function testProcessInputWithRegisteredToolsWillResultInOptionChange(): void
+    public function testProcessInputWithRegisteredToolsWillResultInOptionChange()
     {
         $toolbox = $this->createStub(ToolboxInterface::class);
         $tool1 = new Tool(new ExecutionReference('ClassTool1', 'method1'), 'tool1', 'description1', null);
@@ -72,7 +72,7 @@ class AgentProcessorTest extends TestCase
         $this->assertSame(['tools' => [$tool1, $tool2]], $input->getOptions());
     }
 
-    public function testProcessInputWithRegisteredToolsButToolOverride(): void
+    public function testProcessInputWithRegisteredToolsButToolOverride()
     {
         $toolbox = $this->createStub(ToolboxInterface::class);
         $tool1 = new Tool(new ExecutionReference('ClassTool1', 'method1'), 'tool1', 'description1', null);
@@ -88,7 +88,7 @@ class AgentProcessorTest extends TestCase
         $this->assertSame(['tools' => [$tool2]], $input->getOptions());
     }
 
-    public function testProcessInputWithUnsupportedToolCallingWillThrowException(): void
+    public function testProcessInputWithUnsupportedToolCallingWillThrowException()
     {
         self::expectException(MissingModelSupportException::class);
 
@@ -99,7 +99,7 @@ class AgentProcessorTest extends TestCase
         $processor->processInput($input);
     }
 
-    public function testProcessOutputWithToolCallResponseKeepingMessages(): void
+    public function testProcessOutputWithToolCallResponseKeepingMessages()
     {
         $toolbox = $this->createMock(ToolboxInterface::class);
         $toolbox->expects($this->once())->method('execute')->willReturn('Test response');
@@ -124,7 +124,7 @@ class AgentProcessorTest extends TestCase
         $this->assertInstanceOf(ToolCallMessage::class, $messageBag->getMessages()[1]);
     }
 
-    public function testProcessOutputWithToolCallResponseForgettingMessages(): void
+    public function testProcessOutputWithToolCallResponseForgettingMessages()
     {
         $toolbox = $this->createMock(ToolboxInterface::class);
         $toolbox->expects($this->once())->method('execute')->willReturn('Test response');
