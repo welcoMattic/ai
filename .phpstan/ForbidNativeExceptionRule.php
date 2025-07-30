@@ -53,7 +53,7 @@ final class ForbidNativeExceptionRule implements Rule
         'Symfony\\AI\\Platform' => 'Symfony\\AI\\Platform\\Exception\\',
         'Symfony\\AI\\Store' => 'Symfony\\AI\\Store\\Exception\\',
         'Symfony\\AI\\McpSdk' => 'Symfony\\AI\\McpSdk\\Exception\\',
-        'Symfony\\AI\\AIBundle' => 'Symfony\\AI\\AIBundle\\Exception\\',
+        'Symfony\\AI\\AiBundle' => 'Symfony\\AI\\AiBundle\\Exception\\',
         'Symfony\\AI\\McpBundle' => 'Symfony\\AI\\McpBundle\\Exception\\',
     ];
 

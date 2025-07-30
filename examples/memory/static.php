@@ -13,15 +13,15 @@ use Symfony\AI\Agent\Agent;
 use Symfony\AI\Agent\InputProcessor\SystemPromptInputProcessor;
 use Symfony\AI\Agent\Memory\MemoryInputProcessor;
 use Symfony\AI\Agent\Memory\StaticMemoryProvider;
-use Symfony\AI\Platform\Bridge\OpenAI\GPT;
-use Symfony\AI\Platform\Bridge\OpenAI\PlatformFactory;
+use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
+use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = PlatformFactory::create($_ENV['OPENAI_API_KEY'], http_client());
-$model = new GPT(GPT::GPT_4O_MINI);
+$model = new Gpt(Gpt::GPT_4O_MINI);
 
 $systemPromptProcessor = new SystemPromptInputProcessor('You are a professional trainer with short, personalized advices and a motivating claim.');
 

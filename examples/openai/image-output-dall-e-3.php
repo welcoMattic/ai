@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-use Symfony\AI\Platform\Bridge\OpenAI\DallE;
-use Symfony\AI\Platform\Bridge\OpenAI\DallE\ImageResult;
-use Symfony\AI\Platform\Bridge\OpenAI\PlatformFactory;
+use Symfony\AI\Platform\Bridge\OpenAi\DallE;
+use Symfony\AI\Platform\Bridge\OpenAi\DallE\ImageResult;
+use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
 
 require_once dirname(__DIR__).'/bootstrap.php';
 

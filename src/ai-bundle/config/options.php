@@ -11,8 +11,8 @@
 
 namespace Symfony\Component\Config\Definition\Configurator;
 
-use Codewithkyrian\ChromaDB\Client as ChromaDBClient;
-use MongoDB\Client as MongoDBClient;
+use Codewithkyrian\ChromaDB\Client as ChromaDbClient;
+use MongoDB\Client as MongoDbClient;
 use Probots\Pinecone\Client as PineconeClient;
 use Symfony\AI\Platform\PlatformInterface;
 use Symfony\AI\Store\StoreInterface;
@@ -161,7 +161,7 @@ return static function (DefinitionConfigurator $configurator): void {
                         ->useAttributeAsKey('name')
                         ->arrayPrototype()
                             ->children()
-                                ->scalarNode('client')->cannotBeEmpty()->defaultValue(ChromaDBClient::class)->end()
+                                ->scalarNode('client')->cannotBeEmpty()->defaultValue(ChromaDbClient::class)->end()
                                 ->scalarNode('collection')->isRequired()->end()
                             ->end()
                         ->end()
@@ -171,7 +171,7 @@ return static function (DefinitionConfigurator $configurator): void {
                         ->useAttributeAsKey('name')
                         ->arrayPrototype()
                             ->children()
-                                ->scalarNode('client')->cannotBeEmpty()->defaultValue(MongoDBClient::class)->end()
+                                ->scalarNode('client')->cannotBeEmpty()->defaultValue(MongoDbClient::class)->end()
                                 ->scalarNode('database')->isRequired()->end()
                                 ->scalarNode('collection')->isRequired()->end()
                                 ->scalarNode('index_name')->isRequired()->end()

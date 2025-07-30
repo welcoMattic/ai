@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
-use Symfony\AI\Platform\Bridge\OpenAI\Embeddings;
-use Symfony\AI\Platform\Bridge\OpenAI\PlatformFactory;
+use Symfony\AI\Platform\Bridge\OpenAi\Embeddings;
+use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
 use Symfony\AI\Store\Document\TextDocument;
 use Symfony\AI\Store\Document\VectorDocument;
 use Symfony\AI\Store\Document\Vectorizer;

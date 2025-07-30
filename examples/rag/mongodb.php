@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-use MongoDB\Client as MongoDBClient;
+use MongoDB\Client as MongoDbClient;
 use Symfony\AI\Agent\Agent;
 use Symfony\AI\Agent\Toolbox\AgentProcessor;
 use Symfony\AI\Agent\Toolbox\Tool\SimilaritySearch;
 use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Fixtures\Movies;
-use Symfony\AI\Platform\Bridge\OpenAI\Embeddings;
-use Symfony\AI\Platform\Bridge\OpenAI\GPT;
-use Symfony\AI\Platform\Bridge\OpenAI\PlatformFactory;
+use Symfony\AI\Platform\Bridge\OpenAi\Embeddings;
+use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
+use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
-use Symfony\AI\Store\Bridge\MongoDB\Store;
+use Symfony\AI\Store\Bridge\MongoDb\Store;
 use Symfony\AI\Store\Document\Metadata;
 use Symfony\AI\Store\Document\TextDocument;
 use Symfony\AI\Store\Document\Vectorizer;
@@ -31,7 +31,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 
 // initialize the store
 $store = new Store(
-    client: new MongoDBClient(env('MONGODB_URI')),
+    client: new MongoDbClient(env('MONGODB_URI')),
     databaseName: 'my-database',
     collectionName: 'my-collection',
     indexName: 'my-index',
@@ -56,7 +56,7 @@ $indexer->index($documents);
 // initialize the index
 $store->initialize();
 
-$model = new GPT(GPT::GPT_4O_MINI);
+$model = new Gpt(Gpt::GPT_4O_MINI);
 
 $similaritySearch = new SimilaritySearch($platform, $embeddings, $store);
 $toolbox = new Toolbox([$similaritySearch], logger: logger());
