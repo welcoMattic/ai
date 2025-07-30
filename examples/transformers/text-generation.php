@@ -10,7 +10,7 @@
  */
 
 use Codewithkyrian\Transformers\Pipelines\Task;
-use Symfony\AI\Platform\Bridge\TransformersPHP\PlatformFactory;
+use Symfony\AI\Platform\Bridge\TransformersPhp\PlatformFactory;
 use Symfony\AI\Platform\Model;
 
 require_once dirname(__DIR__).'/bootstrap.php';
