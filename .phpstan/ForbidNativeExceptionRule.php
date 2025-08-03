@@ -88,7 +88,7 @@ final class ForbidNativeExceptionRule implements Rule
         $exceptionClass = ltrim($exceptionClass, '\\');
 
         // Check if it's a native PHP exception
-        return in_array($exceptionClass, self::FORBIDDEN_EXCEPTIONS, true);
+        return \in_array($exceptionClass, self::FORBIDDEN_EXCEPTIONS, true);
     }
 
     private function createError(Node $node, string $exceptionClass, Scope $scope, string $context): RuleError
@@ -101,7 +101,7 @@ final class ForbidNativeExceptionRule implements Rule
 
         $suggestedNamespace = $this->getSuggestedExceptionNamespace($currentNamespace);
 
-        $message = sprintf(
+        $message = \sprintf(
             'Use of native PHP exception "%s" is forbidden in %s context. Use "%s%s" instead.',
             $exceptionClass,
             $context,
@@ -112,7 +112,7 @@ final class ForbidNativeExceptionRule implements Rule
         return RuleErrorBuilder::message($message)
             ->line($node->getLine())
             ->identifier('symfonyAi.forbidNativeException')
-            ->tip(sprintf(
+            ->tip(\sprintf(
                 'Replace "%s" with "%s%s" to use a package-specific exception.',
                 $exceptionClass,
                 $suggestedNamespace,
@@ -129,6 +129,6 @@ final class ForbidNativeExceptionRule implements Rule
             }
         }
 
-        throw new \RuntimeException(sprintf('Unexpected namespace "%s".', $currentNamespace));
+        throw new \RuntimeException(\sprintf('Unexpected namespace "%s".', $currentNamespace));
     }
 }
