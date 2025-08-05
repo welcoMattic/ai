@@ -1,0 +1,76 @@
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\AI\Agent\Tests\Toolbox\Tool;
+
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Symfony\AI\Agent\Toolbox\Tool\Firecrawl;
+use Symfony\Component\HttpClient\MockHttpClient;
+use Symfony\Component\HttpClient\Response\JsonMockResponse;
+
+#[CoversClass(Firecrawl::class)]
+final class FirecrawlTest extends TestCase
+{
+    public function testScrape()
+    {
+        $httpClient = new MockHttpClient([
+            new JsonMockResponse(json_decode(file_get_contents(__DIR__.'/fixtures/firecrawl-scrape.json'), true)),
+        ]);
+
+        $firecrawl = new Firecrawl($httpClient, 'test', 'https://127.0.0.1:3002');
+
+        $scrapingResult = $firecrawl->scrape('https://www.symfony.com');
+
+        $this->assertSame('https://www.symfony.com', $scrapingResult['url']);
+        $this->assertNotEmpty($scrapingResult['markdown']);
+        $this->assertNotEmpty($scrapingResult['html']);
+        $this->assertSame(1, $httpClient->getRequestsCount());
+    }
+
+    public function testCrawl()
+    {
+        $httpClient = new MockHttpClient([
+            new JsonMockResponse(json_decode(file_get_contents(__DIR__.'/fixtures/firecrawl-crawl-wait.json'), true)),
+            new JsonMockResponse(json_decode(file_get_contents(__DIR__.'/fixtures/firecrawl-crawl-status.json'), true)),
+            new JsonMockResponse(json_decode(file_get_contents(__DIR__.'/fixtures/firecrawl-crawl-status-done.json'), true)),
+            new JsonMockResponse(json_decode(file_get_contents(__DIR__.'/fixtures/firecrawl-crawl.json'), true)),
+        ]);
+
+        $firecrawl = new Firecrawl($httpClient, 'test', 'https://127.0.0.1:3002');
+
+        $scrapingResult = $firecrawl->crawl('https://www.symfony.com');
+
+        $this->assertCount(1, $scrapingResult);
+        $this->assertNotEmpty($scrapingResult[0]);
+
+        $firstItem = $scrapingResult[0];
+        $this->assertSame('https://www.symfony.com', $firstItem['url']);
+        $this->assertNotEmpty($firstItem['markdown']);
+        $this->assertNotEmpty($firstItem['html']);
+        $this->assertSame(4, $httpClient->getRequestsCount());
+    }
+
+    public function testMap()
+    {
+        $httpClient = new MockHttpClient([
+            new JsonMockResponse(json_decode(file_get_contents(__DIR__.'/fixtures/firecrawl-map.json'), true)),
+        ]);
+
+        $firecrawl = new Firecrawl($httpClient, 'test', 'https://127.0.0.1:3002');
+
+        $mapping = $firecrawl->map('https://www.symfony.com');
+
+        $this->assertSame('https://www.symfony.com', $mapping['url']);
+        $this->assertCount(5, $mapping['links']);
+        $this->assertSame(1, $httpClient->getRequestsCount());
+    }
+}
