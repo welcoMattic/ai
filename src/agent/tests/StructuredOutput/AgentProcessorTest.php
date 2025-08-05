@@ -65,7 +65,7 @@ final class AgentProcessorTest extends TestCase
 
     public function testProcessInputThrowsExceptionWhenLlmDoesNotSupportStructuredOutput()
     {
-        self::expectException(MissingModelSupportException::class);
+        $this->expectException(MissingModelSupportException::class);
 
         $processor = new AgentProcessor(new ConfigurableResponseFormatFactory());
 

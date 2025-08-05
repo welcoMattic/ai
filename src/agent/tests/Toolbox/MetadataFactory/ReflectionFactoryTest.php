@@ -45,16 +45,16 @@ final class ReflectionFactoryTest extends TestCase
 
     public function testInvalidReferenceNonExistingClass()
     {
-        self::expectException(ToolException::class);
-        self::expectExceptionMessage('The reference "invalid" is not a valid tool.');
+        $this->expectException(ToolException::class);
+        $this->expectExceptionMessage('The reference "invalid" is not a valid tool.');
 
         iterator_to_array($this->factory->getTool('invalid')); // @phpstan-ignore-line Yes, this class does not exist
     }
 
     public function testWithoutAttribute()
     {
-        self::expectException(ToolException::class);
-        self::expectExceptionMessage(\sprintf('The class "%s" is not a tool, please add %s attribute.', ToolWrong::class, AsTool::class));
+        $this->expectException(ToolException::class);
+        $this->expectExceptionMessage(\sprintf('The class "%s" is not a tool, please add %s attribute.', ToolWrong::class, AsTool::class));
 
         iterator_to_array($this->factory->getTool(ToolWrong::class));
     }

@@ -35,8 +35,8 @@ final class MemoryFactoryTest extends TestCase
 {
     public function testGetMetadataWithoutTools()
     {
-        self::expectException(ToolException::class);
-        self::expectExceptionMessage('The reference "SomeClass" is not a valid tool.');
+        $this->expectException(ToolException::class);
+        $this->expectExceptionMessage('The reference "SomeClass" is not a valid tool.');
 
         $factory = new MemoryToolFactory();
         iterator_to_array($factory->getTool('SomeClass')); // @phpstan-ignore-line Yes, this class does not exist
