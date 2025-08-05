@@ -90,7 +90,7 @@ class AgentProcessorTest extends TestCase
 
     public function testProcessInputWithUnsupportedToolCallingWillThrowException()
     {
-        self::expectException(MissingModelSupportException::class);
+        $this->expectException(MissingModelSupportException::class);
 
         $model = new Model('gpt-3');
         $processor = new AgentProcessor($this->createStub(ToolboxInterface::class));

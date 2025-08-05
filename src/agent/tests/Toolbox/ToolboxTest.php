@@ -153,16 +153,16 @@ final class ToolboxTest extends TestCase
 
     public function testExecuteWithUnknownTool()
     {
-        self::expectException(ToolNotFoundException::class);
-        self::expectExceptionMessage('Tool not found for call: foo_bar_baz');
+        $this->expectException(ToolNotFoundException::class);
+        $this->expectExceptionMessage('Tool not found for call: foo_bar_baz');
 
         $this->toolbox->execute(new ToolCall('call_1234', 'foo_bar_baz'));
     }
 
     public function testExecuteWithMisconfiguredTool()
     {
-        self::expectException(ToolConfigurationException::class);
-        self::expectExceptionMessage('Method "foo" not found in tool "Symfony\AI\Fixtures\Tool\ToolMisconfigured".');
+        $this->expectException(ToolConfigurationException::class);
+        $this->expectExceptionMessage('Method "foo" not found in tool "Symfony\AI\Fixtures\Tool\ToolMisconfigured".');
 
         $toolbox = new Toolbox([new ToolMisconfigured()], new ReflectionToolFactory());
 
@@ -171,8 +171,8 @@ final class ToolboxTest extends TestCase
 
     public function testExecuteWithException()
     {
-        self::expectException(ToolExecutionException::class);
-        self::expectExceptionMessage('Execution of tool "tool_exception" failed with error: Tool error.');
+        $this->expectException(ToolExecutionException::class);
+        $this->expectExceptionMessage('Execution of tool "tool_exception" failed with error: Tool error.');
 
         $this->toolbox->execute(new ToolCall('call_1234', 'tool_exception'));
     }

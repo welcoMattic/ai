@@ -47,16 +47,16 @@ final class ChainFactoryTest extends TestCase
 
     public function testTestGetMetadataNotExistingClass()
     {
-        self::expectException(ToolException::class);
-        self::expectExceptionMessage('The reference "NoClass" is not a valid tool.');
+        $this->expectException(ToolException::class);
+        $this->expectExceptionMessage('The reference "NoClass" is not a valid tool.');
 
         iterator_to_array($this->factory->getTool('NoClass'));
     }
 
     public function testTestGetMetadataNotConfiguredClass()
     {
-        self::expectException(ToolConfigurationException::class);
-        self::expectExceptionMessage(\sprintf('Method "foo" not found in tool "%s".', ToolMisconfigured::class));
+        $this->expectException(ToolConfigurationException::class);
+        $this->expectExceptionMessage(\sprintf('Method "foo" not found in tool "%s".', ToolMisconfigured::class));
 
         iterator_to_array($this->factory->getTool(ToolMisconfigured::class));
     }
