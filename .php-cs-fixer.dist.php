@@ -39,6 +39,25 @@ return (new PhpCsFixer\Config())
             'header' => implode('', $fileHeaderParts),
         ],
         'php_unit_test_case_static_method_calls' => ['call_type' => 'this'],
+        'ordered_class_elements' => [
+            'order' => [
+                'use_trait',
+                'case',
+                'constant_public',
+                'constant_protected',
+                'constant_private',
+                'property_public',
+                'property_protected',
+                'property_private',
+                'construct',
+                'destruct',
+                'magic',
+                'phpunit',
+                'method_public',
+                'method_protected',
+                'method_private',
+            ],
+        ],
     ])
     ->setRiskyAllowed(true)
     ->setFinder(
