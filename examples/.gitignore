@@ -2,3 +2,4 @@
 .transformers-cache
 composer.lock
 vendor
+tmp
