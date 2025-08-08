@@ -13,6 +13,7 @@ namespace Symfony\AI\Agent\Toolbox\Tool;
 
 use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Symfony\Contracts\HttpClient\ResponseInterface;
 
 /**
  * @author Guillaume Loulier <personal@guillaumeloulier.fr>
@@ -78,11 +79,17 @@ final readonly class Firecrawl
 
         $crawlingPayload = $response->toArray();
 
-        while ('scraping' === $this->httpClient->request('GET', \sprintf('%s/v1/crawl/%s', $this->endpoint, $crawlingPayload['id']))->toArray()['status']) {
+        $scrapingStatusRequest = fn (array $crawlingPayload): ResponseInterface => $this->httpClient->request('GET', \sprintf('%s/v1/crawl/%s', $this->endpoint, $crawlingPayload['id']), [
+            'auth_bearer' => $this->apiKey,
+        ]);
+
+        while ('scraping' === $scrapingStatusRequest($crawlingPayload)->toArray()['status']) {
             usleep(500);
         }
 
-        $scrapingPayload = $this->httpClient->request('GET', \sprintf('%s/v1/crawl/%s', $this->endpoint, $crawlingPayload['id']));
+        $scrapingPayload = $this->httpClient->request('GET', \sprintf('%s/v1/crawl/%s', $this->endpoint, $crawlingPayload['id']), [
+            'auth_bearer' => $this->apiKey,
+        ]);
 
         $finalPayload = $scrapingPayload->toArray();
 
