@@ -59,7 +59,6 @@ final class ToolWithToolParameterAttribute
         )]
         array $products,
         #[With(
-            required: true,
             minProperties: 1,
             maxProperties: 10,
             dependentRequired: true,
