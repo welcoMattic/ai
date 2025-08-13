@@ -18,7 +18,7 @@ use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 
-require_once dirname(__DIR__) . '/bootstrap.php';
+require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = PlatformFactory::create(env('OPENAI_API_KEY'), http_client());
 $model = new Gpt(Gpt::GPT_4O_MINI);
@@ -37,4 +37,4 @@ $agent = new Agent($platform, $model, inputProcessors: [$toolProcessor], outputP
 $messages = new MessageBag(Message::ofUser('Scrape the following URL: https://symfony.com/doc/current/setup.html then resume it in less than 200 words.'));
 $result = $agent->call($messages);
 
-echo $result->getContent() . \PHP_EOL;
+echo $result->getContent().\PHP_EOL;
