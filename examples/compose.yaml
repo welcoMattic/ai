@@ -68,7 +68,6 @@ services:
             MINIO_SECRET_KEY: minioadmin
         ports:
             - '9001:9001'
-            - '9000:9000'
         volumes:
             - minio_vlm:/minio_data
         command: minio server /minio_data --console-address ":9001"
@@ -145,9 +144,29 @@ services:
         ports:
             - '8108:8108'
 
+    weaviate:
+        image: cr.weaviate.io/semitechnologies/weaviate:1.32.4
+        command: ['--host', '0.0.0.0', '--port', '8080', '--scheme', 'http']
+        environment:
+            QUERY_DEFAULTS_LIMIT: 25
+            AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'false'
+            AUTHENTICATION_APIKEY_ENABLED: 'true'
+            AUTHENTICATION_APIKEY_ALLOWED_KEYS: 'symfony'
+            AUTHENTICATION_APIKEY_USERS: 'symfony'
+            PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
+            ENABLE_API_BASED_MODULES: 'true'
+            CLUSTER_HOSTNAME: 'node1'
+            RAFT_ENABLE_ONE_NODE_RECOVERY: 'true' # See https://github.com/weaviate/weaviate/issues/5491#issuecomment-2416929309
+        volumes:
+            - weaviate_data:/var/lib/weaviate
+        ports:
+            - '8080:8080'
+            - '50051:50051'
+
 volumes:
     typesense_data:
     etcd_vlm:
     minio_vlm:
     milvus_vlm:
     chroma_vlm:
+    weaviate_data:
