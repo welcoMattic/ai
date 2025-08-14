@@ -15,7 +15,7 @@ use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\PlatformInterface;
 use Symfony\AI\Store\Document\VectorDocument;
-use Symfony\AI\Store\VectorStoreInterface;
+use Symfony\AI\Store\StoreInterface;
 
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
@@ -31,7 +31,7 @@ final class SimilaritySearch
     public function __construct(
         private readonly PlatformInterface $platform,
         private readonly Model $model,
-        private readonly VectorStoreInterface $vectorStore,
+        private readonly StoreInterface $store,
     ) {
     }
 
@@ -41,7 +41,7 @@ final class SimilaritySearch
     public function __invoke(string $searchTerm): string
     {
         $vectors = $this->platform->invoke($this->model, $searchTerm)->asVectors();
-        $this->usedDocuments = $this->vectorStore->query($vectors[0]);
+        $this->usedDocuments = $this->store->query($vectors[0]);
 
         if ([] === $this->usedDocuments) {
             return 'No results found';
