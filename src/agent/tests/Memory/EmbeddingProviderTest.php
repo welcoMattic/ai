@@ -27,14 +27,14 @@ use Symfony\AI\Platform\Result\RawResultInterface;
 use Symfony\AI\Platform\Result\ResultPromise;
 use Symfony\AI\Platform\Result\VectorResult;
 use Symfony\AI\Platform\Vector\Vector;
-use Symfony\AI\Store\VectorStoreInterface;
+use Symfony\AI\Store\StoreInterface;
 
 #[UsesClass(Text::class)]
 #[UsesClass(ImageUrl::class)]
 #[UsesClass(Message::class)]
 #[UsesClass(Input::class)]
 #[UsesClass(MessageBag::class)]
-#[UsesClass(VectorStoreInterface::class)]
+#[UsesClass(StoreInterface::class)]
 #[UsesClass(Model::class)]
 #[UsesClass(PlatformInterface::class)]
 #[CoversClass(EmbeddingProvider::class)]
@@ -46,13 +46,13 @@ final class EmbeddingProviderTest extends TestCase
         $platform = $this->createMock(PlatformInterface::class);
         $platform->expects($this->never())->method('invoke');
 
-        $vectorStore = $this->createMock(VectorStoreInterface::class);
-        $vectorStore->expects($this->never())->method('query');
+        $store = $this->createMock(StoreInterface::class);
+        $store->expects($this->never())->method('query');
 
         $embeddingProvider = new EmbeddingProvider(
             $platform,
             $this->createStub(Model::class),
-            $vectorStore,
+            $store,
         );
 
         $embeddingProvider->loadMemory(new Input(
@@ -67,13 +67,13 @@ final class EmbeddingProviderTest extends TestCase
         $platform = $this->createMock(PlatformInterface::class);
         $platform->expects($this->never())->method('invoke');
 
-        $vectorStore = $this->createMock(VectorStoreInterface::class);
-        $vectorStore->expects($this->never())->method('query');
+        $store = $this->createMock(StoreInterface::class);
+        $store->expects($this->never())->method('query');
 
         $embeddingProvider = new EmbeddingProvider(
             $platform,
             $this->createStub(Model::class),
-            $vectorStore,
+            $store,
         );
 
         $embeddingProvider->loadMemory(new Input(
@@ -88,13 +88,13 @@ final class EmbeddingProviderTest extends TestCase
         $platform = $this->createMock(PlatformInterface::class);
         $platform->expects($this->never())->method('invoke');
 
-        $vectorStore = $this->createMock(VectorStoreInterface::class);
-        $vectorStore->expects($this->never())->method('query');
+        $store = $this->createMock(StoreInterface::class);
+        $store->expects($this->never())->method('query');
 
         $embeddingProvider = new EmbeddingProvider(
             $platform,
             $this->createStub(Model::class),
-            $vectorStore,
+            $store,
         );
 
         $embeddingProvider->loadMemory(new Input(
@@ -117,8 +117,8 @@ final class EmbeddingProviderTest extends TestCase
             ->method('invoke')
             ->willReturn($resultPromise);
 
-        $vectorStore = $this->createMock(VectorStoreInterface::class);
-        $vectorStore->expects($this->once())
+        $store = $this->createMock(StoreInterface::class);
+        $store->expects($this->once())
             ->method('query')
             ->with($vector)
             ->willReturn([]);
@@ -126,7 +126,7 @@ final class EmbeddingProviderTest extends TestCase
         $embeddingProvider = new EmbeddingProvider(
             $platform,
             $this->createStub(Model::class),
-            $vectorStore,
+            $store,
         );
 
         $memory = $embeddingProvider->loadMemory(new Input(
@@ -151,8 +151,8 @@ final class EmbeddingProviderTest extends TestCase
             ->method('invoke')
             ->willReturn($resultPromise);
 
-        $vectorStore = $this->createMock(VectorStoreInterface::class);
-        $vectorStore->expects($this->once())
+        $store = $this->createMock(StoreInterface::class);
+        $store->expects($this->once())
             ->method('query')
             ->with($vector)
             ->willReturn([
@@ -163,7 +163,7 @@ final class EmbeddingProviderTest extends TestCase
         $embeddingProvider = new EmbeddingProvider(
             $platform,
             $this->createStub(Model::class),
-            $vectorStore,
+            $store,
         );
 
         $memory = $embeddingProvider->loadMemory(new Input(

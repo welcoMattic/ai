@@ -18,7 +18,7 @@ use Symfony\AI\Platform\Message\MessageInterface;
 use Symfony\AI\Platform\Message\UserMessage;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\PlatformInterface;
-use Symfony\AI\Store\VectorStoreInterface;
+use Symfony\AI\Store\StoreInterface;
 
 /**
  * @author Denis Zunke <denis.zunke@gmail.com>
@@ -28,7 +28,7 @@ final readonly class EmbeddingProvider implements MemoryProviderInterface
     public function __construct(
         private PlatformInterface $platform,
         private Model $model,
-        private VectorStoreInterface $vectorStore,
+        private StoreInterface $vectorStore,
     ) {
     }
 

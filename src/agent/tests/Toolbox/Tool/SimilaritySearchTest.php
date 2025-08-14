@@ -22,7 +22,7 @@ use Symfony\AI\Platform\Result\VectorResult;
 use Symfony\AI\Platform\Vector\Vector;
 use Symfony\AI\Store\Document\Metadata;
 use Symfony\AI\Store\Document\VectorDocument;
-use Symfony\AI\Store\VectorStoreInterface;
+use Symfony\AI\Store\StoreInterface;
 use Symfony\Component\Uid\Uuid;
 
 #[CoversClass(SimilaritySearch::class)]
@@ -57,14 +57,14 @@ final class SimilaritySearchTest extends TestCase
             ->with($this->isInstanceOf(Model::class), $searchTerm)
             ->willReturn($resultPromise);
 
-        $vectorStore = $this->createMock(VectorStoreInterface::class);
-        $vectorStore->expects($this->once())
+        $store = $this->createMock(StoreInterface::class);
+        $store->expects($this->once())
             ->method('query')
             ->with($vector)
             ->willReturn([$document1, $document2]);
 
         $model = new Model('test-model');
-        $similaritySearch = new SimilaritySearch($platform, $model, $vectorStore);
+        $similaritySearch = new SimilaritySearch($platform, $model, $store);
 
         $result = $similaritySearch($searchTerm);
 
@@ -90,14 +90,14 @@ final class SimilaritySearchTest extends TestCase
             ->with($this->isInstanceOf(Model::class), $searchTerm)
             ->willReturn($resultPromise);
 
-        $vectorStore = $this->createMock(VectorStoreInterface::class);
-        $vectorStore->expects($this->once())
+        $store = $this->createMock(StoreInterface::class);
+        $store->expects($this->once())
             ->method('query')
             ->with($vector)
             ->willReturn([]);
 
         $model = new Model('test-model');
-        $similaritySearch = new SimilaritySearch($platform, $model, $vectorStore);
+        $similaritySearch = new SimilaritySearch($platform, $model, $store);
 
         $result = $similaritySearch($searchTerm);
 
@@ -129,14 +129,14 @@ final class SimilaritySearchTest extends TestCase
             ->with($this->isInstanceOf(Model::class), $searchTerm)
             ->willReturn($resultPromise);
 
-        $vectorStore = $this->createMock(VectorStoreInterface::class);
-        $vectorStore->expects($this->once())
+        $store = $this->createMock(StoreInterface::class);
+        $store->expects($this->once())
             ->method('query')
             ->with($vector)
             ->willReturn([$document]);
 
         $model = new Model('test-model');
-        $similaritySearch = new SimilaritySearch($platform, $model, $vectorStore);
+        $similaritySearch = new SimilaritySearch($platform, $model, $store);
 
         $result = $similaritySearch($searchTerm);
 
