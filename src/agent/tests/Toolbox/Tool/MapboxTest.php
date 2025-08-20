@@ -22,7 +22,7 @@ final class MapboxTest extends TestCase
 {
     public function testGeocodeWithSingleResult()
     {
-        $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/mapbox-geocode-single.json');
+        $result = JsonMockResponse::fromFile(__DIR__.'/fixtures/mapbox-geocode-single.json');
         $httpClient = new MockHttpClient($result);
 
         $mapbox = new Mapbox($httpClient, 'test_token');
@@ -48,7 +48,7 @@ final class MapboxTest extends TestCase
 
     public function testGeocodeWithMultipleResults()
     {
-        $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/mapbox-geocode-multiple.json');
+        $result = JsonMockResponse::fromFile(__DIR__.'/fixtures/mapbox-geocode-multiple.json');
         $httpClient = new MockHttpClient($result);
 
         $mapbox = new Mapbox($httpClient, 'test_token');
@@ -83,7 +83,7 @@ final class MapboxTest extends TestCase
 
     public function testGeocodeWithNoResults()
     {
-        $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/mapbox-geocode-empty.json');
+        $result = JsonMockResponse::fromFile(__DIR__.'/fixtures/mapbox-geocode-empty.json');
         $httpClient = new MockHttpClient($result);
 
         $mapbox = new Mapbox($httpClient, 'test_token');
@@ -99,7 +99,7 @@ final class MapboxTest extends TestCase
 
     public function testReverseGeocodeWithValidCoordinates()
     {
-        $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/mapbox-reverse-geocode.json');
+        $result = JsonMockResponse::fromFile(__DIR__.'/fixtures/mapbox-reverse-geocode.json');
         $httpClient = new MockHttpClient($result);
 
         $mapbox = new Mapbox($httpClient, 'test_token');
@@ -141,7 +141,7 @@ final class MapboxTest extends TestCase
 
     public function testReverseGeocodeWithNoResults()
     {
-        $result = $this->jsonMockResponseFromFile(__DIR__.'/fixtures/mapbox-reverse-geocode-empty.json');
+        $result = JsonMockResponse::fromFile(__DIR__.'/fixtures/mapbox-reverse-geocode-empty.json');
         $httpClient = new MockHttpClient($result);
 
         $mapbox = new Mapbox($httpClient, 'test_token');
@@ -153,13 +153,5 @@ final class MapboxTest extends TestCase
         ];
 
         $this->assertEquals($expected, $actual);
-    }
-
-    /**
-     * This can be replaced by `JsonMockResponse::fromFile` when dropping Symfony 6.4.
-     */
-    private function jsonMockResponseFromFile(string $file): JsonMockResponse
-    {
-        return new JsonMockResponse(json_decode(file_get_contents($file), true));
     }
 }
