@@ -17,7 +17,7 @@ use Symfony\AI\Agent\Exception\InvalidArgumentException;
 use Symfony\AI\Agent\Exception\MissingModelSupportException;
 use Symfony\AI\Agent\Exception\RuntimeException;
 use Symfony\AI\Platform\Capability;
-use Symfony\AI\Platform\Message\MessageBagInterface;
+use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\PlatformInterface;
 use Symfony\AI\Platform\Result\ResultInterface;
@@ -61,7 +61,7 @@ final readonly class Agent implements AgentInterface
      * @throws InvalidArgumentException     When the platform returns a client error (4xx) indicating invalid request parameters
      * @throws RuntimeException             When the platform returns a server error (5xx) or network failure occurs
      */
-    public function call(MessageBagInterface $messages, array $options = []): ResultInterface
+    public function call(MessageBag $messages, array $options = []): ResultInterface
     {
         $input = new Input($this->model, $messages, $options);
         array_map(fn (InputProcessorInterface $processor) => $processor->processInput($input), $this->inputProcessors);
