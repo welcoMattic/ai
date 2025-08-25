@@ -54,6 +54,11 @@ final readonly class Agent implements AgentInterface
         $this->outputProcessors = $this->initializeProcessors($outputProcessors, OutputProcessorInterface::class);
     }
 
+    public function getModel(): Model
+    {
+        return $this->model;
+    }
+
     /**
      * @param array<string, mixed> $options
      *
