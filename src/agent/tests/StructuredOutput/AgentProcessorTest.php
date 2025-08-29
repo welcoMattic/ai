@@ -130,6 +130,7 @@ final class AgentProcessorTest extends TestCase
                         "output": "x = -3.75"
                     }
                 ],
+                "confidence": 100,
                 "finalAnswer": "x = -3.75"
             }
             JSON);
@@ -148,6 +149,7 @@ final class AgentProcessorTest extends TestCase
         $this->assertInstanceOf(Step::class, $structure->steps[2]);
         $this->assertInstanceOf(Step::class, $structure->steps[3]);
         $this->assertInstanceOf(Step::class, $structure->steps[4]);
+        $this->assertSame(100, $structure->confidence);
         $this->assertSame('x = -3.75', $structure->finalAnswer);
     }
 
