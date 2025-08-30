@@ -31,7 +31,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 
 // initialize the store
 $store = new Store(
-    httpClient: HttpClient::create(),
+    httpClient: http_client(),
     endpointUrl: env('MEILISEARCH_HOST'),
     apiKey: env('MEILISEARCH_API_KEY'),
     indexName: 'movies',
