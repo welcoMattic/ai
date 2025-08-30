@@ -1,4 +1,15 @@
 services:
+    chromadb:
+        image: chromadb/chroma
+        environment:
+            IS_PERSISTENT: TRUE
+            PERSIST_DIRECTORY: /chroma/chroma # this is the default path, change it as needed
+            ANONYMIZED_TELEMETRY: false
+        volumes:
+            - chroma_vlm:/chroma/chroma
+        ports:
+            - '8001:8000'
+
     mariadb:
         image: mariadb:11.7
         environment:
@@ -122,3 +133,4 @@ volumes:
     etcd_vlm:
     minio_vlm:
     milvus_vlm:
+    chroma_vlm:
