@@ -34,6 +34,14 @@ services:
         ports:
             - '7700:7700'
 
+    mongodb:
+        image: mongodb/mongodb-atlas-local
+        environment:
+            MONGODB_INITDB_ROOT_USERNAME: symfony
+            MONGODB_INITDB_ROOT_PASSWORD: symfony
+        ports:
+            - '27018:27017'
+
     # Milvus services
     etcd:
         container_name: milvus-etcd
