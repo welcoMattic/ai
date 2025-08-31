@@ -1,6 +1,6 @@
 services:
     chromadb:
-        image: chromadb/chroma
+        image: chromadb/chroma:0.5.23
         environment:
             IS_PERSISTENT: TRUE
             PERSIST_DIRECTORY: /chroma/chroma # this is the default path, change it as needed
