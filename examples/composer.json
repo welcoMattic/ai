@@ -12,7 +12,7 @@
         "google/auth": "^1.47",
         "mrmysql/youtube-transcript": "^0.0.5",
         "php-http/discovery": "^1.20",
-        "probots-io/pinecone-php": "^1.1",
+        "probots-io/pinecone-php": "^1.0",
         "psr/http-factory-implementation": "*",
         "symfony/ai-agent": "@dev",
         "symfony/ai-platform": "@dev",
