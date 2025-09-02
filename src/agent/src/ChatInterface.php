@@ -16,6 +16,9 @@ use Symfony\AI\Platform\Message\AssistantMessage;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\Message\UserMessage;
 
+/**
+ * @author Christopher Hertel <mail@christopher-hertel.de>
+ */
 interface ChatInterface
 {
     public function initiate(MessageBag $messages): void;

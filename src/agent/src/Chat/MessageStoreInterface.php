@@ -13,6 +13,9 @@ namespace Symfony\AI\Agent\Chat;
 
 use Symfony\AI\Platform\Message\MessageBag;
 
+/**
+ * @author Christopher Hertel <mail@christopher-hertel.de>
+ */
 interface MessageStoreInterface
 {
     public function save(MessageBag $messages): void;
