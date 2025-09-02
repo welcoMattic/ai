@@ -14,7 +14,6 @@ use Symfony\AI\Platform\Bridge\VertexAi\Gemini\Model;
 use Symfony\AI\Platform\Bridge\VertexAi\PlatformFactory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
-use Symfony\AI\Platform\Result\Metadata\TokenUsage;
 
 require_once __DIR__.'/bootstrap.php';
 
@@ -31,9 +30,4 @@ $result = $agent->call($messages);
 $metadata = $result->getMetadata();
 $tokenUsage = $metadata->get('token_usage');
 
-assert($tokenUsage instanceof TokenUsage);
-
-echo 'Prompt Tokens: '.$tokenUsage->promptTokens.\PHP_EOL;
-echo 'Completion Tokens: '.$tokenUsage->completionTokens.\PHP_EOL;
-echo 'Thinking Tokens: '.$tokenUsage->thinkingTokens.\PHP_EOL;
-echo 'Utilized Tokens: '.$tokenUsage->totalTokens.\PHP_EOL;
+print_token_usage($result->getMetadata());

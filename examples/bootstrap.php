@@ -64,6 +64,7 @@ function print_token_usage(Metadata $metadata): void
     echo 'Prompt tokens: '.$tokenUsage->promptTokens.\PHP_EOL;
     echo 'Completion tokens: '.$tokenUsage->completionTokens.\PHP_EOL;
     echo 'Thinking tokens: '.$tokenUsage->thinkingTokens.\PHP_EOL;
+    echo 'Tool tokens: '.$tokenUsage->toolTokens.\PHP_EOL;
     echo 'Cached tokens: '.$tokenUsage->cachedTokens.\PHP_EOL;
     echo 'Remaining tokens minute: '.$tokenUsage->remainingTokensMinute.\PHP_EOL;
     echo 'Remaining tokens month: '.$tokenUsage->remainingTokensMonth.\PHP_EOL;
