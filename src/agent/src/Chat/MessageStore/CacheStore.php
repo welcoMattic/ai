@@ -16,6 +16,9 @@ use Symfony\AI\Agent\Chat\MessageStoreInterface;
 use Symfony\AI\Agent\Exception\RuntimeException;
 use Symfony\AI\Platform\Message\MessageBag;
 
+/**
+ * @author Christopher Hertel <mail@christopher-hertel.de>
+ */
 final readonly class CacheStore implements MessageStoreInterface
 {
     public function __construct(

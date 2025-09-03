@@ -14,6 +14,9 @@ namespace Symfony\AI\Agent\Chat\MessageStore;
 use Symfony\AI\Agent\Chat\MessageStoreInterface;
 use Symfony\AI\Platform\Message\MessageBag;
 
+/**
+ * @author Christopher Hertel <mail@christopher-hertel.de>
+ */
 final class InMemoryStore implements MessageStoreInterface
 {
     private MessageBag $messages;

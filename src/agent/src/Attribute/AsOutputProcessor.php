@@ -11,6 +11,9 @@
 
 namespace Symfony\AI\Agent\Attribute;
 
+/**
+ * @author Vincent Langlet <vincentlanglet@github.com>
+ */
 #[\Attribute(\Attribute::TARGET_CLASS | \Attribute::IS_REPEATABLE)]
 final readonly class AsOutputProcessor
 {
