@@ -118,3 +118,4 @@ Each component uses:
 - Prefer classic if statements over short-circuit evaluation when possible
 - Define array shapes for parameters and return types
 - Use project specific exceptions instead of global exception classes like \RuntimeException, \InvalidArgumentException etc.
+- NEVER mention Claude as co-author in commits
