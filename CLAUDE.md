@@ -109,3 +109,6 @@ Each component uses:
 - Use `@dev` versions for internal component dependencies during development
 - Components follow Symfony coding standards and use `@Symfony` PHP CS Fixer rules
 - The monorepo structure allows independent versioning while maintaining shared development workflow
+- Do not use void return type for testcase methods
+- Always run PHP-CS-Fixer to ensure proper code style
+- Always add a newline at the end of the file
