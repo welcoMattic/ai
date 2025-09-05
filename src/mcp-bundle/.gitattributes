@@ -2,3 +2,4 @@
 .gitattributes export-ignore
 .gitignore export-ignore
 phpstan.dist.neon export-ignore
+CLAUDE.md export-ignore
