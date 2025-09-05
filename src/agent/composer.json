@@ -1,13 +1,13 @@
 {
     "name": "symfony/ai-agent",
-    "type": "library",
     "description": "PHP library for building agentic applications.",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "ai",
         "llm",
         "agent"
     ],
-    "license": "MIT",
     "authors": [
         {
             "name": "Christopher Hertel",
@@ -33,7 +33,7 @@
         "symfony/type-info": "^7.2.3"
     },
     "require-dev": {
-        "mrmysql/youtube-transcript": "^v0.0.5",
+        "mrmysql/youtube-transcript": "^0.0.5",
         "phpstan/phpstan": "^2.0",
         "phpunit/phpunit": "^11.5.13",
         "symfony/ai-store": "@dev",
@@ -42,15 +42,6 @@
         "symfony/dom-crawler": "^6.4 || ^7.1",
         "symfony/event-dispatcher": "^6.4 || ^7.1",
         "symfony/http-foundation": "^6.4 || ^7.1"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "thanks": {
-            "name": "symfony/ai",
-            "url": "https://github.com/symfony/ai"
-        }
     },
     "autoload": {
         "psr-4": {
@@ -62,6 +53,15 @@
             "Symfony\\AI\\Agent\\Tests\\": "tests/",
             "Symfony\\AI\\Fixtures\\": "../../fixtures",
             "Symfony\\AI\\PHPStan\\": "../../.phpstan/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "thanks": {
+            "name": "symfony/ai",
+            "url": "https://github.com/symfony/ai"
         }
     }
 }
