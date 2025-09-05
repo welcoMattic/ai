@@ -162,7 +162,7 @@ final class ToolboxTest extends TestCase
     public function testExecuteWithMisconfiguredTool()
     {
         $this->expectException(ToolConfigurationException::class);
-        $this->expectExceptionMessage('Method "foo" not found in tool "Symfony\AI\Fixtures\Tool\ToolMisconfigured".');
+        $this->expectExceptionMessage('Method "foo" not found in tool "'.ToolMisconfigured::class.'".');
 
         $toolbox = new Toolbox([new ToolMisconfigured()], new ReflectionToolFactory());
 
