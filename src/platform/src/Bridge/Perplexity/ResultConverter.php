@@ -12,6 +12,7 @@
 namespace Symfony\AI\Platform\Bridge\Perplexity;
 
 use Symfony\AI\Platform\Exception\RuntimeException;
+use Symfony\AI\Platform\Metadata\Metadata;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\Result\ChoiceResult;
 use Symfony\AI\Platform\Result\RawHttpResult;
@@ -56,6 +57,10 @@ final class ResultConverter implements PlatformResponseConverter
 
     private function convertStream(HttpResponse $result): \Generator
     {
+        $searchResults = $citations = [];
+        /** @var Metadata $metadata */
+        $metadata = yield;
+
         foreach ((new EventSourceHttpClient())->stream($result) as $chunk) {
             if (!$chunk instanceof ServerSentEvent || '[DONE]' === $chunk->getData()) {
                 continue;
@@ -68,12 +73,21 @@ final class ResultConverter implements PlatformResponseConverter
                 continue;
             }
 
-            if (!isset($data['choices'][0]['delta']['content'])) {
-                continue;
+            if (isset($data['choices'][0]['delta']['content'])) {
+                yield $data['choices'][0]['delta']['content'];
             }
 
-            yield $data['choices'][0]['delta']['content'];
+            if (isset($data['search_results'])) {
+                $searchResults = $data['search_results'];
+            }
+
+            if (isset($data['citations'])) {
+                $citations = $data['citations'];
+            }
         }
+
+        $metadata->add('search_results', $searchResults);
+        $metadata->add('citations', $citations);
     }
 
     /**

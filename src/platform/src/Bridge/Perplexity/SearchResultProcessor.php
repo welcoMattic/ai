@@ -23,8 +23,13 @@ final class SearchResultProcessor implements OutputProcessorInterface
 {
     public function processOutput(Output $output): void
     {
+        $metadata = $output->result->getMetadata();
+
         if ($output->result instanceof StreamResult) {
-            // @TODO
+            $generator = $output->result->getContent();
+            // Makes $metadata accessible in the stream loop.
+            $generator->send($metadata);
+
             return;
         }
 
@@ -33,7 +38,6 @@ final class SearchResultProcessor implements OutputProcessorInterface
             return;
         }
 
-        $metadata = $output->result->getMetadata();
         $content = $rawResponse->toArray(false);
 
         if (\array_key_exists('search_results', $content)) {
