@@ -22,6 +22,7 @@ use Symfony\AI\Platform\Bridge\Anthropic\Claude;
 use Symfony\AI\Platform\Bridge\OpenAi\Embeddings;
 use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
 use Symfony\AI\Platform\Message\MessageBag;
+use Symfony\AI\Platform\Model;
 
 #[CoversClass(ModelOverrideInputProcessor::class)]
 #[UsesClass(Gpt::class)]
@@ -58,7 +59,7 @@ final class ModelOverrideInputProcessorTest extends TestCase
     public function testProcessInputWithInvalidModelOption()
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Option "model" must be an instance of "Symfony\AI\Platform\Model".');
+        $this->expectExceptionMessage('Option "model" must be an instance of "'.Model::class.'".');
 
         $gpt = new Gpt();
         $model = new MessageBag();

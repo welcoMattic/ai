@@ -104,7 +104,7 @@ final class AgentTest extends TestCase
         $invalidProcessor = new \stdClass();
 
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Processor "stdClass" must implement "Symfony\AI\Agent\InputProcessorInterface".');
+        $this->expectExceptionMessage('Processor "stdClass" must implement "'.InputProcessorInterface::class.'".');
 
         /* @phpstan-ignore-next-line */
         new Agent($platform, $model, [$invalidProcessor]);
@@ -117,7 +117,7 @@ final class AgentTest extends TestCase
         $invalidProcessor = new \stdClass();
 
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Processor "stdClass" must implement "Symfony\AI\Agent\OutputProcessorInterface".');
+        $this->expectExceptionMessage('Processor "stdClass" must implement "'.OutputProcessorInterface::class.'".');
 
         /* @phpstan-ignore-next-line */
         new Agent($platform, $model, [], [$invalidProcessor]);
