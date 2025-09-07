@@ -16,7 +16,7 @@ use Symfony\AI\Platform\Result\ToolCall;
 /**
  * @author Christopher Hertel <mail@christopher-hertel.de>
  */
-final class ToolExecutionException extends \RuntimeException implements ExceptionInterface
+final class ToolExecutionException extends \RuntimeException implements ToolExecutionExceptionInterface
 {
     public ?ToolCall $toolCall = null;
 
@@ -26,5 +26,10 @@ final class ToolExecutionException extends \RuntimeException implements Exceptio
         $exception->toolCall = $toolCall;
 
         return $exception;
+    }
+
+    public function getToolCallResult(): string
+    {
+        return \sprintf('An error occurred while executing tool "%s".', $this->toolCall->name);
     }
 }

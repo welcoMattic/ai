@@ -223,6 +223,37 @@ to the LLM::
 
     $agent = new Agent($platform, $model, inputProcessor: [$toolProcessor], outputProcessor: [$toolProcessor]);
 
+If you want to expose the underlying error to the LLM, you can throw a custom exception that implements `ToolExecutionExceptionInterface`::
+
+    use Symfony\AI\Agent\Toolbox\Exception\ToolExecutionExceptionInterface;
+
+    class EntityNotFoundException extends \RuntimeException implements ToolExecutionExceptionInterface
+    {
+        public function __construct(private string $entityName, private int $id)
+        {
+        }
+
+        public function getToolCallResult(): mixed
+        {
+            return \sprintf('No %s found with id %d', $this->entityName, $this->id);
+        }
+    }
+
+    #[AsTool('get_user_age', 'Get age by user id')]
+    class GetUserAge
+    {
+        public function __construct(private UserRepository $userRepository)
+        {
+        }
+
+        public function __invoke(int $id): int
+        {
+            $user = $this->userRepository->find($id) ?? throw new EntityNotFoundException('user', $id);
+
+            return $user->getAge();
+        }
+    }
+
 **Tool Filtering**
 
 To limit the tools provided to the LLM in a specific agent call to a subset of the configured tools, you can use the

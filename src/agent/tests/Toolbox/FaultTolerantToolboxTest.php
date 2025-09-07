@@ -15,6 +15,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Exception\ToolExecutionException;
+use Symfony\AI\Agent\Toolbox\Exception\ToolExecutionExceptionInterface;
 use Symfony\AI\Agent\Toolbox\Exception\ToolNotFoundException;
 use Symfony\AI\Agent\Toolbox\FaultTolerantToolbox;
 use Symfony\AI\Agent\Toolbox\ToolboxInterface;
@@ -55,6 +56,26 @@ final class FaultTolerantToolboxTest extends TestCase
 
         $faultTolerantToolbox = new FaultTolerantToolbox($faultyToolbox);
         $expected = 'Tool "tool_xyz" was not found, please use one of these: tool_no_params, tool_required_params';
+
+        $toolCall = new ToolCall('123456789', 'tool_xyz');
+        $actual = $faultTolerantToolbox->execute($toolCall);
+
+        $this->assertSame($expected, $actual);
+    }
+
+    public function testCustomToolExecutionException()
+    {
+        $faultyToolbox = $this->createFaultyToolbox(
+            static fn () => new class extends \RuntimeException implements ToolExecutionExceptionInterface {
+                public function getToolCallResult(): array
+                {
+                    return ['error' => 'custom'];
+                }
+            },
+        );
+
+        $faultTolerantToolbox = new FaultTolerantToolbox($faultyToolbox);
+        $expected = ['error' => 'custom'];
 
         $toolCall = new ToolCall('123456789', 'tool_xyz');
         $actual = $faultTolerantToolbox->execute($toolCall);
