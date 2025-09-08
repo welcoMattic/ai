@@ -18,11 +18,13 @@ use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
 use Symfony\AI\Agent\Toolbox\Exception\ToolConfigurationException;
 use Symfony\AI\Agent\Toolbox\Exception\ToolExecutionException;
+use Symfony\AI\Agent\Toolbox\Exception\ToolExecutionExceptionInterface;
 use Symfony\AI\Agent\Toolbox\Exception\ToolNotFoundException;
 use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Agent\Toolbox\ToolFactory\ChainFactory;
 use Symfony\AI\Agent\Toolbox\ToolFactory\MemoryToolFactory;
 use Symfony\AI\Agent\Toolbox\ToolFactory\ReflectionToolFactory;
+use Symfony\AI\Fixtures\Tool\ToolCustomException;
 use Symfony\AI\Fixtures\Tool\ToolDate;
 use Symfony\AI\Fixtures\Tool\ToolException;
 use Symfony\AI\Fixtures\Tool\ToolMisconfigured;
@@ -60,6 +62,7 @@ final class ToolboxTest extends TestCase
             new ToolOptionalParam(),
             new ToolNoParams(),
             new ToolException(),
+            new ToolCustomException(),
             new ToolDate(),
         ], new ReflectionToolFactory());
     }
@@ -122,6 +125,12 @@ final class ToolboxTest extends TestCase
             'This tool is broken',
         );
 
+        $toolCustomException = new Tool(
+            new ExecutionReference(ToolCustomException::class, 'bar'),
+            'tool_custom_exception',
+            'This tool is broken and it exposes the error',
+        );
+
         $toolDate = new Tool(
             new ExecutionReference(ToolDate::class, '__invoke'),
             'tool_date',
@@ -145,6 +154,7 @@ final class ToolboxTest extends TestCase
             $toolOptionalParam,
             $toolNoParams,
             $toolException,
+            $toolCustomException,
             $toolDate,
         ];
 
@@ -175,6 +185,14 @@ final class ToolboxTest extends TestCase
         $this->expectExceptionMessage('Execution of tool "tool_exception" failed with error: Tool error.');
 
         $this->toolbox->execute(new ToolCall('call_1234', 'tool_exception'));
+    }
+
+    public function testExecuteWithCustomException()
+    {
+        $this->expectException(ToolExecutionExceptionInterface::class);
+        $this->expectExceptionMessage('Custom error.');
+
+        $this->toolbox->execute(new ToolCall('call_1234', 'tool_custom_exception'));
     }
 
     #[DataProvider('executeProvider')]

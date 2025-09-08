@@ -15,6 +15,7 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Symfony\AI\Agent\Toolbox\Event\ToolCallArgumentsResolved;
 use Symfony\AI\Agent\Toolbox\Exception\ToolExecutionException;
+use Symfony\AI\Agent\Toolbox\Exception\ToolExecutionExceptionInterface;
 use Symfony\AI\Agent\Toolbox\Exception\ToolNotFoundException;
 use Symfony\AI\Agent\Toolbox\ToolFactory\ReflectionToolFactory;
 use Symfony\AI\Platform\Result\ToolCall;
@@ -81,6 +82,8 @@ final class Toolbox implements ToolboxInterface
             $this->eventDispatcher?->dispatch(new ToolCallArgumentsResolved($tool, $metadata, $arguments));
 
             $result = $tool->{$metadata->reference->method}(...$arguments);
+        } catch (ToolExecutionExceptionInterface $e) {
+            throw $e;
         } catch (\Throwable $e) {
             $this->logger->warning(\sprintf('Failed to execute tool "%s".', $toolCall->name), ['exception' => $e]);
             throw ToolExecutionException::executionFailed($toolCall, $e);
