@@ -12,7 +12,7 @@
 use Symfony\AI\Agent\Agent;
 use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
 use Symfony\AI\Platform\Bridge\OpenAi\PlatformFactory;
-use Symfony\AI\Platform\Message\Content\File;
+use Symfony\AI\Platform\Message\Content\Document;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 
@@ -25,8 +25,7 @@ $agent = new Agent($platform, $model, logger: logger());
 $messages = new MessageBag(
     Message::ofUser(
         'What is this document about?',
-        // Note: You can use either `File::fromFile` or `Document::fromFile` here.
-        File::fromFile(dirname(__DIR__, 2).'/fixtures/document.pdf'),
+        Document::fromFile(dirname(__DIR__, 2).'/fixtures/document.pdf'),
     ),
 );
 $result = $agent->call($messages);
