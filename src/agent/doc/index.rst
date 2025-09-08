@@ -128,7 +128,9 @@ Symfony AI generates a JSON Schema representation for all tools in the Toolbox b
 method arguments and param comments in the doc block. Additionally, JSON Schema support validation rules, which are
 partially support by LLMs like GPT.
 
-To leverage this, configure the ``#[With]`` attribute on the method arguments of your tool::
+**Parameter Validation with #[With] Attribute**
+
+To leverage JSON Schema validation rules, configure the ``#[With]`` attribute on the method arguments of your tool::
 
     use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
     use Symfony\AI\Platform\Contract\JsonSchema\Attribute\With;
@@ -139,18 +141,61 @@ To leverage this, configure the ``#[With]`` attribute on the method arguments of
         /**
          * @param string $name   The name of an object
          * @param int    $number The number of an object
+         * @param array<string> $categories List of valid categories
          */
         public function __invoke(
             #[With(pattern: '/([a-z0-1]){5}/')]
             string $name,
             #[With(minimum: 0, maximum: 10)]
             int $number,
+            #[With(enum: ['tech', 'business', 'science'])]
+            array $categories,
         ): string {
             // ...
         }
     }
 
 See attribute class ``Symfony\AI\Platform\Contract\JsonSchema\Attribute\With`` for all available options.
+
+**Automatic Enum Validation** 
+
+For PHP backed enums, Symfony AI provides automatic validation without requiring any ``#[With]`` attributes::
+
+    enum Priority: int
+    {
+        case LOW = 1;
+        case NORMAL = 5;
+        case HIGH = 10;
+    }
+
+    enum ContentType: string
+    {
+        case ARTICLE = 'article';
+        case TUTORIAL = 'tutorial';
+        case NEWS = 'news';
+    }
+
+    #[AsTool('content_search', 'Search for content with automatic enum validation.')]
+    final class ContentSearchTool
+    {
+        /**
+         * @param array<string> $keywords The search keywords
+         * @param ContentType   $type     The content type to search for
+         * @param Priority      $priority Minimum priority level
+         * @param ContentType|null $fallback Optional fallback content type
+         */
+        public function __invoke(
+            array $keywords,
+            ContentType $type,
+            Priority $priority,
+            ?ContentType $fallback = null,
+        ): array {
+            // Enums are automatically validated - no #[With] attribute needed!
+            // ...
+        }
+    }
+
+This eliminates the need for manual ``#[With(enum: [...])]`` attributes when using PHP's native backed enum types.
 
 .. note::
 
