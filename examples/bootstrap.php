@@ -25,7 +25,7 @@ require_once __DIR__.'/vendor/autoload.php';
 
 function env(string $var)
 {
-    if (!isset($_SERVER[$var])) {
+    if (!isset($_SERVER[$var]) || '' === $_SERVER[$var]) {
         printf('Please set the "%s" environment variable to run this example.', $var);
         exit(1);
     }
