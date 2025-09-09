@@ -3,3 +3,4 @@
 .gitignore export-ignore
 phpstan.dist.neon export-ignore
 CLAUDE.md export-ignore
+AGENTS.md export-ignore
