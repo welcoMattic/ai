@@ -26,6 +26,7 @@ CHANGELOG
    - `Clock` for current date/time
    - `Brave` for web search integration
    - `Crawler` for web page crawling
+   - `Mapbox` for geocoding addresses to coordinates and reverse geocoding
    - `OpenMeteo` for weather information
    - `SerpApi` for search engine results
    - `Tavily` for AI-powered search

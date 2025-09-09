@@ -352,6 +352,8 @@ messages will be added to your MessageBag::
 * `Brave Tool`_
 * `Clock Tool`_
 * `Crawler Tool`_
+* `Mapbox Geocode Tool`_
+* `Mapbox Reverse Geocode Tool`_
 * `SerpAPI Tool`_
 * `Tavily Tool`_
 * `Weather Tool with Event Listener`_
@@ -623,6 +625,8 @@ useful when certain interactions shouldn't be influenced by the memory context::
 .. _`Brave Tool`: https://github.com/symfony/ai/blob/main/examples/toolbox/brave.php
 .. _`Clock Tool`: https://github.com/symfony/ai/blob/main/examples/toolbox/clock.php
 .. _`Crawler Tool`: https://github.com/symfony/ai/blob/main/examples/toolbox/brave.php
+.. _`Mapbox Geocode Tool`: https://github.com/symfony/ai/blob/main/examples/toolbox/mapbox-geocode.php
+.. _`Mapbox Reverse Geocode Tool`: https://github.com/symfony/ai/blob/main/examples/toolbox/mapbox-reverse-geocode.php
 .. _`SerpAPI Tool`: https://github.com/symfony/ai/blob/main/examples/toolbox/serpapi.php
 .. _`Tavily Tool`: https://github.com/symfony/ai/blob/main/examples/toolbox/tavily.php
 .. _`Weather Tool with Event Listener`: https://github.com/symfony/ai/blob/main/examples/toolbox/weather-event.php

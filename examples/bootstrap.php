@@ -23,7 +23,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 require_once __DIR__.'/vendor/autoload.php';
 (new Dotenv())->loadEnv(__DIR__.'/.env');
 
-function env(string $var)
+function env(string $var): string
 {
     if (!isset($_SERVER[$var])) {
         printf('Please set the "%s" environment variable to run this example.', $var);
