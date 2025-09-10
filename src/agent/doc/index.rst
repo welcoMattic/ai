@@ -613,6 +613,99 @@ useful when certain interactions shouldn't be influenced by the memory context::
     ]);
 
 
+Testing
+-------
+
+MockAgent
+~~~~~~~~~
+
+For testing purposes, the Agent component provides a ``MockAgent`` class that behaves like Symfony's ``MockHttpClient``.
+It provides predictable responses without making external API calls and includes assertion methods for verifying interactions::
+
+    use Symfony\AI\Agent\MockAgent;
+    use Symfony\AI\Platform\Message\Message;
+    use Symfony\AI\Platform\Message\MessageBag;
+
+    $agent = new MockAgent([
+        'What is Symfony?' => 'Symfony is a PHP web framework',
+        'Tell me about caching' => 'Symfony provides powerful caching',
+    ]);
+
+    $messages = new MessageBag(Message::ofUser('What is Symfony?'));
+    $result = $agent->call($messages);
+    
+    echo $result->getContent(); // "Symfony is a PHP web framework"
+
+Call Tracking and Assertions::
+
+    // Verify agent interactions
+    $agent->assertCallCount(1);
+    $agent->assertCalledWith('What is Symfony?');
+    
+    // Get detailed call information
+    $calls = $agent->getCalls();
+    $lastCall = $agent->getLastCall();
+    
+    // Reset call tracking
+    $agent->reset();
+
+MockResponse Objects
+~~~~~~~~~~~~~~~~~~~~
+
+Similar to ``MockHttpClient``, you can use ``MockResponse`` objects for more complex scenarios::
+
+    use Symfony\AI\Agent\MockResponse;
+
+    $complexResponse = new MockResponse('Detailed response content');
+    $agent = new MockAgent([
+        'complex query' => $complexResponse,
+        'simple query' => 'Simple string response',
+    ]);
+
+Callable Responses
+~~~~~~~~~~~~~~~~~~
+
+Like ``MockHttpClient``, ``MockAgent`` supports callable responses for dynamic behavior::
+
+    $agent = new MockAgent();
+    
+    // Dynamic response based on input and context
+    $agent->addResponse('weather', function ($messages, $options, $input) {
+        $messageCount = count($messages->getMessages());
+        return "Weather info (context: {$messageCount} messages)";
+    });
+    
+    // Callable can return string or MockResponse
+    $agent->addResponse('complex', function ($messages, $options, $input) {
+        return new MockResponse("Complex response for: {$input}");
+    });
+    
+
+Service Testing Example
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Testing a service that uses an agent::
+
+    class ChatServiceTest extends TestCase 
+    {
+        public function testChatResponse(): void
+        {
+            $agent = new MockAgent([
+                'Hello' => 'Hi there! How can I help?',
+            ]);
+            
+            $chatService = new ChatService($agent);
+            $response = $chatService->processMessage('Hello');
+            
+            $this->assertSame('Hi there! How can I help?', $response);
+            $agent->assertCallCount(1);
+            $agent->assertCalledWith('Hello');
+        }
+    }
+
+The ``MockAgent`` provides all the benefits of traditional mocks while offering a more intuitive API for AI agent testing,
+making your tests more reliable and easier to maintain.
+
 **Code Examples**
 
 * `Chat with static memory`_
