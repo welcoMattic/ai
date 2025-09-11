@@ -307,7 +307,7 @@ final class AgentTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Client error');
 
-        $agent = new Agent($platform, $model, [], [], $logger);
+        $agent = new Agent($platform, $model, logger: $logger);
         $agent->call($messages);
     }
 
@@ -404,5 +404,26 @@ final class AgentTest extends TestCase
         $agent = new Agent($platform, $model, $inputProcessors, $outputProcessors);
 
         $this->assertInstanceOf(AgentInterface::class, $agent);
+    }
+
+    public function testGetNameReturnsDefaultName()
+    {
+        $platform = $this->createMock(PlatformInterface::class);
+        $model = $this->createMock(Model::class);
+
+        $agent = new Agent($platform, $model);
+
+        $this->assertSame('agent', $agent->getName());
+    }
+
+    public function testGetNameReturnsProvidedName()
+    {
+        $platform = $this->createMock(PlatformInterface::class);
+        $model = $this->createMock(Model::class);
+        $name = 'test';
+
+        $agent = new Agent($platform, $model, [], [], $name);
+
+        $this->assertSame($name, $agent->getName());
     }
 }

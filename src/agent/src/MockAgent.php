@@ -46,8 +46,10 @@ final class MockAgent implements AgentInterface
     /**
      * @param array<string, string|MockResponse|\Closure> $responses Predefined responses for specific inputs
      */
-    public function __construct(array $responses = [])
-    {
+    public function __construct(
+        array $responses = [],
+        private string $name = 'mock',
+    ) {
         $this->responses = $responses;
     }
 
@@ -240,5 +242,10 @@ final class MockAgent implements AgentInterface
         $this->calls = [];
 
         return $this;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
     }
 }

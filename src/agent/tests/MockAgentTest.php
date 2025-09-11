@@ -410,4 +410,18 @@ final class MockAgentTest extends TestCase
         $this->assertSame('tracked', $calls[0]['input']);
         $this->assertSame('Tracked: tracked', $calls[0]['response']);
     }
+
+    public function testGetNameReturnsDefaultName()
+    {
+        $agent = new MockAgent();
+
+        $this->assertSame('mock', $agent->getName());
+    }
+
+    public function testGetNameReturnsProvidedName()
+    {
+        $agent = new MockAgent(name: 'custom');
+
+        $this->assertSame('custom', $agent->getName());
+    }
 }
