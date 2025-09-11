@@ -26,7 +26,7 @@ $model = new Gpt(Gpt::GPT_4O_MINI);
 $mapbox = new Mapbox(http_client(), env('MAPBOX_ACCESS_TOKEN'));
 $toolbox = new Toolbox([$mapbox], logger: logger());
 $processor = new AgentProcessor($toolbox);
-$agent = new Agent($platform, $model, [$processor], [$processor], logger());
+$agent = new Agent($platform, $model, [$processor], [$processor], logger: logger());
 
 $messages = new MessageBag(Message::ofUser('What are the coordinates of Brandenburg Gate in Berlin?'));
 $result = $agent->call($messages);

@@ -20,7 +20,7 @@ require_once __DIR__.'/bootstrap.php';
 $platform = PlatformFactory::create(env('GOOGLE_CLOUD_LOCATION'), env('GOOGLE_CLOUD_PROJECT'), adc_aware_http_client());
 
 $model = new Model(Model::GEMINI_2_5_PRO, ['server_tools' => ['url_context' => true]]);
-$agent = new Agent($platform, $model, [], [], logger());
+$agent = new Agent($platform, $model, [], [], logger: logger());
 
 $messages = new MessageBag(
     Message::ofUser(
