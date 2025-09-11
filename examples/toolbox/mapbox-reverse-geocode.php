@@ -26,7 +26,7 @@ $model = new Gpt(Gpt::GPT_4O_MINI);
 $mapbox = new Mapbox(http_client(), env('MAPBOX_ACCESS_TOKEN'));
 $toolbox = new Toolbox([$mapbox], logger: logger());
 $processor = new AgentProcessor($toolbox);
-$agent = new Agent($platform, $model, [$processor], [$processor], logger());
+$agent = new Agent($platform, $model, [$processor], [$processor], logger: logger());
 
 $messages = new MessageBag(Message::ofUser('What address is at coordinates longitude -73.985131, latitude 40.758895?'));
 $result = $agent->call($messages);
