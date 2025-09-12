@@ -34,7 +34,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $store = new Store(
     (new Codewithkyrian\ChromaDB\Factory())
         ->withHost(env('CHROMADB_HOST'))
-        ->withPort(env('CHROMADB_PORT'))
+        ->withPort((int) env('CHROMADB_PORT'))
         ->connect(),
     'movies',
 );
