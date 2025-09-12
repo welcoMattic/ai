@@ -33,5 +33,3 @@ try {
 } catch(InvalidArgumentException $e) {
     echo $e->getMessage() . "\nMaybe use a different model?\n";
 }
-
-echo $response;
