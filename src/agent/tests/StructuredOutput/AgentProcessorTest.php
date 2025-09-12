@@ -56,7 +56,7 @@ final class AgentProcessorTest extends TestCase
         $processor = new AgentProcessor(new ConfigurableResponseFormatFactory());
 
         $model = new Model('gpt-4', [Capability::OUTPUT_STRUCTURED]);
-        $input = new Input($model, new MessageBag(), []);
+        $input = new Input($model, new MessageBag());
 
         $processor->processInput($input);
 
@@ -162,7 +162,7 @@ final class AgentProcessorTest extends TestCase
         $model = self::createMock(Model::class);
         $result = new TextResult('');
 
-        $output = new Output($model, $result, new MessageBag(), []);
+        $output = new Output($model, $result, new MessageBag());
 
         $processor->processOutput($output);
 
