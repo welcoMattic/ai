@@ -33,6 +33,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $store = new InMemoryStore();
 
 // create embeddings and documents
+$documents = [];
 foreach (Movies::all() as $i => $movie) {
     $documents[] = new TextDocument(
         id: Uuid::v4(),

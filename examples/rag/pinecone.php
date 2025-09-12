@@ -34,6 +34,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $store = new Store(Pinecone::client(env('PINECONE_API_KEY'), env('PINECONE_HOST')));
 
 // create embeddings and documents
+$documents = [];
 foreach (Movies::all() as $movie) {
     $documents[] = new TextDocument(
         id: Uuid::v4(),

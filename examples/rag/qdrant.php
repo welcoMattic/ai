@@ -41,6 +41,7 @@ $store = new Store(
 $store->setup();
 
 // create embeddings and documents
+$documents = [];
 foreach (Movies::all() as $movie) {
     $documents[] = new TextDocument(
         id: Uuid::v4(),

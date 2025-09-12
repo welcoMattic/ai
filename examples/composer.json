@@ -30,9 +30,17 @@
         "symfony/process": "^6.4 || ^7.0",
         "symfony/var-dumper": "^6.4 || ^7.0"
     },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1"
+    },
     "autoload": {
         "psr-4": {
             "Symfony\\AI\\Fixtures\\": "../fixtures/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Symfony\\AI\\PHPStan\\": "../.phpstan/"
         }
     },
     "config": {

@@ -65,3 +65,7 @@ jobs:
                   source .github/workflows/.utils.sh
 
                   echo "$PACKAGES" | xargs -n1 | parallel -j +3 "_run_task {} '(cd src/{} && $COMPOSER_UP && $PHPSTAN)'"
+
+            - name: Run PHPStan on examples
+              run: |
+                  cd examples/ && $COMPOSER_UP && $PHPSTAN
