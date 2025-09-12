@@ -18,8 +18,7 @@ use Symfony\AI\Platform\Message\MessageBag;
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = PlatformFactory::create(env('OLLAMA_HOST_URL'), http_client());
-$ollamaModel = $_SERVER['OLLAMA_MODEL'] ?? '';
-$model = new Ollama($ollamaModel);
+$model = new Ollama($_SERVER['OLLAMA_MODEL'] ?? '');
 
 $agent = new Agent($platform, $model, logger: logger());
 $messages = new MessageBag(
@@ -33,5 +32,3 @@ try {
 } catch(InvalidArgumentException $e) {
     echo $e->getMessage() . "\nMaybe use a different model?\n";
 }
-
-echo $response;
