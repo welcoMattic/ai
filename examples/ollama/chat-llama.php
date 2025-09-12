@@ -29,9 +29,9 @@ $messages = new MessageBag(
 
 try {
     $result = $agent->call($messages);
-    $response = $result->getContent().\PHP_EOL;
+    echo $result->getContent().\PHP_EOL;
 } catch(InvalidArgumentException $e) {
-    $response = $e->getMessage() . "\nMaybe use a different model?\n";
+    echo $e->getMessage() . "\nMaybe use a different model?\n";
 }
 
 echo $response;
