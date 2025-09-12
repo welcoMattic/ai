@@ -6,10 +6,12 @@
     "require": {
         "php": ">=8.2",
         "ext-pdo": "*",
+        "async-aws/bedrock-runtime": "^1.1",
         "codewithkyrian/chromadb-php": "^0.4.0",
         "codewithkyrian/transformers": "^0.6.1",
         "doctrine/dbal": "^3.3 || ^4.0",
         "google/auth": "^1.47",
+        "mongodb/mongodb": "^2.1",
         "mrmysql/youtube-transcript": "^0.0.5",
         "php-http/discovery": "^1.20",
         "probots-io/pinecone-php": "^1.0",
