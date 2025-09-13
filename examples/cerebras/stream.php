@@ -23,7 +23,7 @@ $messages = new MessageBag(
     Message::ofUser('What are the top three destinations in France?'),
 );
 
-$result = $platform->invoke(new Model(), $messages, [
+$result = $platform->invoke(new Model(Model::LLAMA3_1_8B), $messages, [
     'stream' => true,
 ]);
 

@@ -22,6 +22,6 @@ $messages = new MessageBag(
     Message::forSystem('You are a helpful assistant.'),
     Message::ofUser('How is the weather in Tokyo today?'),
 );
-$result = $platform->invoke(new Model(), $messages);
+$result = $platform->invoke(new Model(Model::LLAMA3_1_8B), $messages);
 
 echo $result->getResult()->getContent().\PHP_EOL;

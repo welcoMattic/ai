@@ -54,8 +54,8 @@ $store->setup(['dimensions' => 768]);
 
 // create embeddings for documents
 $platform = PlatformFactory::create(env('GEMINI_API_KEY'), http_client());
-$embeddings = new Embeddings(options: ['dimensions' => 768, 'task_type' => TaskType::SemanticSimilarity]);
-$vectorizer = new Vectorizer($platform, $embeddings = new Embeddings(), logger());
+$embeddings = new Embeddings(Embeddings::GEMINI_EMBEDDING_EXP_03_07, ['dimensions' => 768, 'task_type' => TaskType::SemanticSimilarity]);
+$vectorizer = new Vectorizer($platform, $embeddings, logger());
 $indexer = new Indexer(new InMemoryLoader($documents), $vectorizer, $store, logger: logger());
 $indexer->index($documents);
 
