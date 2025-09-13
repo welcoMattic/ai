@@ -63,7 +63,9 @@ final readonly class SystemPromptInputProcessor implements InputProcessorInterfa
             $message = <<<PROMPT
                 {$this->systemPrompt}
 
-                # Available tools
+                # Tools
+
+                The following tools are available to assist you in completing the user's request:
 
                 {$tools}
                 PROMPT;

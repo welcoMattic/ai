@@ -140,7 +140,9 @@ final class SystemPromptInputProcessorTest extends TestCase
         $this->assertSame(<<<PROMPT
             This is a system prompt
 
-            # Available tools
+            # Tools
+
+            The following tools are available to assist you in completing the user's request:
 
             ## tool_no_params
             A tool without parameters
@@ -180,7 +182,9 @@ final class SystemPromptInputProcessorTest extends TestCase
         $this->assertSame(<<<PROMPT
             My dynamic system prompt.
 
-            # Available tools
+            # Tools
+
+            The following tools are available to assist you in completing the user's request:
 
             ## tool_no_params
             A tool without parameters
