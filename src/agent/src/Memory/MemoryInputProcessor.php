@@ -52,7 +52,7 @@ final readonly class MemoryInputProcessor implements InputProcessorInterface
 
         $memory = '';
         foreach ($this->memoryProviders as $provider) {
-            $memoryMessages = $provider->loadMemory($input);
+            $memoryMessages = $provider->load($input);
 
             if (0 === \count($memoryMessages)) {
                 continue;

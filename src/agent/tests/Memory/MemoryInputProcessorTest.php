@@ -64,12 +64,12 @@ final class MemoryInputProcessorTest extends TestCase
     {
         $firstMemoryProvider = $this->createMock(MemoryProviderInterface::class);
         $firstMemoryProvider->expects($this->once())
-            ->method('loadMemory')
+            ->method('load')
             ->willReturn([new Memory('First memory content')]);
 
         $secondMemoryProvider = $this->createMock(MemoryProviderInterface::class);
         $secondMemoryProvider->expects($this->once())
-            ->method('loadMemory')
+            ->method('load')
             ->willReturn([]);
 
         $memoryInputProcessor = new MemoryInputProcessor(
@@ -106,7 +106,7 @@ final class MemoryInputProcessorTest extends TestCase
     {
         $firstMemoryProvider = $this->createMock(MemoryProviderInterface::class);
         $firstMemoryProvider->expects($this->once())
-            ->method('loadMemory')
+            ->method('load')
             ->willReturn([new Memory('First memory content')]);
 
         $memoryInputProcessor = new MemoryInputProcessor($firstMemoryProvider);
@@ -136,7 +136,7 @@ final class MemoryInputProcessorTest extends TestCase
     {
         $firstMemoryProvider = $this->createMock(MemoryProviderInterface::class);
         $firstMemoryProvider->expects($this->once())
-            ->method('loadMemory')
+            ->method('load')
             ->willReturn([new Memory('First memory content'), new Memory('Second memory content')]);
 
         $memoryInputProcessor = new MemoryInputProcessor($firstMemoryProvider);
@@ -167,7 +167,7 @@ final class MemoryInputProcessorTest extends TestCase
     {
         $firstMemoryProvider = $this->createMock(MemoryProviderInterface::class);
         $firstMemoryProvider->expects($this->once())
-            ->method('loadMemory')
+            ->method('load')
             ->willReturn([]);
 
         $memoryInputProcessor = new MemoryInputProcessor($firstMemoryProvider);
