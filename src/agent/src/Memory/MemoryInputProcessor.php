@@ -70,13 +70,15 @@ final readonly class MemoryInputProcessor implements InputProcessorInterface
         }
 
         $systemMessage = $input->messages->getSystemMessage()->content ?? '';
+
+        $combinedMessage = self::MEMORY_PROMPT_MESSAGE.$memory;
         if ('' !== $systemMessage) {
-            $systemMessage .= \PHP_EOL.\PHP_EOL;
+            $combinedMessage .= \PHP_EOL.\PHP_EOL.'# System Prompt'.\PHP_EOL.\PHP_EOL.$systemMessage;
         }
 
         $messages = $input->messages
             ->withoutSystemMessage()
-            ->prepend(Message::forSystem($systemMessage.self::MEMORY_PROMPT_MESSAGE.$memory));
+            ->prepend(Message::forSystem($combinedMessage));
 
         $input->messages = $messages;
     }
