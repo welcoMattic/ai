@@ -4,6 +4,7 @@ CHANGELOG
 0.1
 ---
 
+ * Add support for union types and polymorphic types via DiscriminatorMap
  * Add Agent class as central orchestrator for AI interactions through the Platform component
  * Add input/output processing pipeline:
    - `InputProcessorInterface` for pre-processing messages and options
