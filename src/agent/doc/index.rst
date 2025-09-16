@@ -70,7 +70,7 @@ Tool calling can be enabled by registering the processors in the agent::
 
     $yourTool = new YourTool();
 
-    $toolbox = Toolbox::create($yourTool);
+    $toolbox = new Toolbox([$yourTool]);
     $toolProcessor = new AgentProcessor($toolbox);
 
     $agent = new Agent($platform, $model, inputProcessors: [$toolProcessor], outputProcessors: [$toolProcessor]);
@@ -157,7 +157,7 @@ To leverage JSON Schema validation rules, configure the ``#[With]`` attribute on
 
 See attribute class ``Symfony\AI\Platform\Contract\JsonSchema\Attribute\With`` for all available options.
 
-**Automatic Enum Validation** 
+**Automatic Enum Validation**
 
 For PHP backed enums, Symfony AI provides automatic validation without requiring any ``#[With]`` attributes::
 
@@ -340,7 +340,7 @@ messages will be added to your MessageBag::
 
     $yourTool = new YourTool();
 
-    $toolbox = Toolbox::create($yourTool);
+    $toolbox = new Toolbox([$yourTool]);
     $toolProcessor = new AgentProcessor($toolbox, keepToolMessages: true);
 
     $agent = new Agent($platform, $model, inputProcessor: [$toolProcessor], outputProcessor: [$toolProcessor]);
@@ -378,7 +378,7 @@ more accurate and context-aware results. Therefore, the component provides a bui
     // Initialize Platform & Models
 
     $similaritySearch = new SimilaritySearch($model, $store);
-    $toolbox = Toolbox::create($similaritySearch);
+    $toolbox = new Toolbox([$similaritySearch]);
     $processor = new Agent($toolbox);
     $agent = new Agent($platform, $model, [$processor], [$processor]);
 
@@ -635,7 +635,7 @@ It provides predictable responses without making external API calls and includes
 
     $messages = new MessageBag(Message::ofUser('What is Symfony?'));
     $result = $agent->call($messages);
-    
+
     echo $result->getContent(); // "Symfony is a PHP web framework"
 
 Call Tracking and Assertions::
@@ -643,11 +643,11 @@ Call Tracking and Assertions::
     // Verify agent interactions
     $agent->assertCallCount(1);
     $agent->assertCalledWith('What is Symfony?');
-    
+
     // Get detailed call information
     $calls = $agent->getCalls();
     $lastCall = $agent->getLastCall();
-    
+
     // Reset call tracking
     $agent->reset();
 
@@ -670,35 +670,35 @@ Callable Responses
 Like ``MockHttpClient``, ``MockAgent`` supports callable responses for dynamic behavior::
 
     $agent = new MockAgent();
-    
+
     // Dynamic response based on input and context
     $agent->addResponse('weather', function ($messages, $options, $input) {
         $messageCount = count($messages->getMessages());
         return "Weather info (context: {$messageCount} messages)";
     });
-    
+
     // Callable can return string or MockResponse
     $agent->addResponse('complex', function ($messages, $options, $input) {
         return new MockResponse("Complex response for: {$input}");
     });
-    
+
 
 Service Testing Example
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Testing a service that uses an agent::
 
-    class ChatServiceTest extends TestCase 
+    class ChatServiceTest extends TestCase
     {
         public function testChatResponse(): void
         {
             $agent = new MockAgent([
                 'Hello' => 'Hi there! How can I help?',
             ]);
-            
+
             $chatService = new ChatService($agent);
             $response = $chatService->processMessage('Hello');
-            
+
             $this->assertSame('Hi there! How can I help?', $response);
             $agent->assertCallCount(1);
             $agent->assertCalledWith('Hello');
