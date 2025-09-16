@@ -43,11 +43,11 @@ foreach (Movies::all() as $i => $movie) {
 
 // create embeddings for documents
 $platform = PlatformFactory::create(env('OLLAMA_HOST_URL'), http_client());
-$vectorizer = new Vectorizer($platform, $embeddings = new Ollama(Ollama::NOMIC_EMBED_TEXT), logger());
+$vectorizer = new Vectorizer($platform, $embeddings = new Ollama(env('OLLAMA_EMBEDDINGS')), logger());
 $indexer = new Indexer(new InMemoryLoader($documents), $vectorizer, $store, logger: logger());
 $indexer->index($documents);
 
-$model = new Ollama();
+$model = new Ollama(env('OLLAMA_LLM'));
 
 $similaritySearch = new SimilaritySearch($vectorizer, $store);
 $toolbox = new Toolbox([$similaritySearch], logger: logger());

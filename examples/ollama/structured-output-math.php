@@ -20,7 +20,7 @@ use Symfony\AI\Platform\Message\MessageBag;
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = PlatformFactory::create(env('OLLAMA_HOST_URL'), http_client());
-$model = new Ollama(Ollama::LLAMA_3_2);
+$model = new Ollama(env('OLLAMA_LLM'));
 
 $processor = new AgentProcessor();
 $agent = new Agent($platform, $model, [$processor], [$processor], logger: logger());
