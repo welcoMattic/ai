@@ -20,7 +20,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = PlatformFactory::create(env('AIMLAPI_API_KEY'), http_client());
 $model = new Completions(
-    name: 'google/gemma-3-27b-it',
+    name: Completions::GOOGLE_GEMMA_3_27B_IT,
     capabilities: [...Completions::DEFAULT_CAPABILITIES, Capability::INPUT_IMAGE]
 );
 
