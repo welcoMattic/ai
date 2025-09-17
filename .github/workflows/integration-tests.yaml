@@ -96,11 +96,15 @@ jobs:
             - name: Install demo dependencies
               uses: ramsey/composer-install@v3
               with:
+                  composer-options: "--no-scripts"
                   working-directory: demo
 
             - name: Link demo
               working-directory: demo
               run: ../link
+
+            - run: composer run-script auto-scripts --no-interaction
+              working-directory: demo
 
             - name: Run demo tests
               working-directory: demo
