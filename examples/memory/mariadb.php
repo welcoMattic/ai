@@ -34,7 +34,6 @@ $store = Store::fromDbal(
     connection: DriverManager::getConnection((new DsnParser())->parse($_ENV['MARIADB_URI'])),
     tableName: 'my_table_memory',
     indexName: 'my_index',
-    vectorFieldName: 'embedding',
 );
 
 // our data
