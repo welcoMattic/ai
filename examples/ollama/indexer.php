@@ -22,7 +22,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = PlatformFactory::create(env('OLLAMA_HOST_URL'), http_client());
 $store = new InMemoryStore();
-$vectorizer = new Vectorizer($platform, $embeddings = new Ollama(env('OLLAMA_EMBEDDINGS')), logger());;
+$vectorizer = new Vectorizer($platform, $embeddings = new Ollama(env('OLLAMA_EMBEDDINGS')), logger());
 $indexer = new Indexer(
     loader: new TextFileLoader(),
     vectorizer: $vectorizer,
