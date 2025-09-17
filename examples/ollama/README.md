@@ -11,20 +11,26 @@ To get started with Ollama please check their [Quickstart guide](https://github.
 To run the examples you will need to download [Llama 3.2](https://ollama.com/library/llama3.2)
 and [nomic-embed-text](https://ollama.com/library/nomic-embed-text) models.
 
-Once models are downloaded you can run them with
+You can do this by running the following commands:
 ```bash
-ollama run <model-name>
-```
-for example
-
-```bash
-ollama run llama3.2
+ollama pull llama3.2
+ollama pull nomic-embed-text
 ```
 
-#### Configuration
-To run Ollama examples you will need to provide a OLLAMA_HOST_URL key in your env.local file.
+Then you can start the Ollama server by running:
+```bash
+ollama serve
+```
+
+### Configuration
+By default, the examples expect Ollama to be run on `localhost:11434`, but you can customize this in your `.env.local`
+file - as well as the models to be used:
 
 For example
 ```bash
 OLLAMA_HOST_URL=http://localhost:11434
+OLLAMA_LLM=llama3.2
+OLLAMA_EMBEDDINGS=nomic-embed-text
 ```
+
+You can find more models in the [Ollama model library](https://ollama.com/library).
