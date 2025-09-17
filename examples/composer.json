@@ -3,7 +3,6 @@
     "description": "Example scripts about using Symfony AI",
     "license": "MIT",
     "type": "project",
-    "minimum-stability": "dev",
     "require": {
         "php": ">=8.2",
         "ext-pdo": "*",
@@ -35,6 +34,7 @@
     "require-dev": {
         "phpstan/phpstan": "^2.1"
     },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Symfony\\AI\\Fixtures\\": "../fixtures/"
