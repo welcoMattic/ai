@@ -41,7 +41,8 @@ jobs:
             - uses: actions/checkout@v5
 
             - name: Up the examples services
-              run: cd examples && docker compose up -d
+              working-directory: examples
+              run: docker compose up -d
 
             - name: Configure environment
               run: |
@@ -78,13 +79,17 @@ jobs:
               uses: ramsey/composer-install@v3
 
             - name: Install examples dependencies
-              run: cd examples && composer install && ../link
+              working-directory: examples
+              run: composer install && ../link
 
             - name: Run commands examples
               run: php examples/commands/stores.php
 
     demo:
         runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: demo
 
         steps:
             - uses: actions/checkout@v5
@@ -110,7 +115,7 @@ jobs:
                       ${{ runner.os }}-composer-demo-8.4
 
             - name: Install demo dependencies
-              run: cd demo && composer install --no-progress --no-interaction --ansi
+              run: composer install --no-progress --no-interaction --ansi
 
             - name: Run demo tests
-              run: cd demo && vendor/bin/phpunit
+              run: vendor/bin/phpunit
