@@ -79,9 +79,6 @@ jobs:
 
     demo:
         runs-on: ubuntu-latest
-        defaults:
-            run:
-                working-directory: demo
 
         steps:
             - uses: actions/checkout@v5
@@ -93,10 +90,18 @@ jobs:
                   tools: flex
                   extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
 
+            - name: Install root dependencies
+              uses: ramsey/composer-install@v3
+
             - name: Install demo dependencies
               uses: ramsey/composer-install@v3
               with:
                   working-directory: demo
 
+            - name: Link demo
+              working-directory: demo
+              run: ../link
+
             - name: Run demo tests
+              working-directory: demo
               run: vendor/bin/phpunit
