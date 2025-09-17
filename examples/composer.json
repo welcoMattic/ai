@@ -3,6 +3,7 @@
     "description": "Example scripts about using Symfony AI",
     "license": "MIT",
     "type": "project",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=8.2",
         "ext-pdo": "*",
