@@ -66,8 +66,13 @@ jobs:
               uses: ramsey/composer-install@v3
 
             - name: Install examples dependencies
+              uses: ramsey/composer-install@v3
+              with:
+                  working-directory: examples
+
+            - name: Link examples
               working-directory: examples
-              run: composer install && ../link
+              run: ../link
 
             - name: Run commands examples
               run: php examples/commands/stores.php
