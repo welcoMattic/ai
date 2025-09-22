@@ -11,9 +11,6 @@
 
 namespace Symfony\AI\Agent\Tests\Memory;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Input;
 use Symfony\AI\Agent\Memory\Memory;
@@ -23,14 +20,6 @@ use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\Model;
 
-#[CoversClass(MemoryInputProcessor::class)]
-#[UsesClass(MemoryProviderInterface::class)]
-#[UsesClass(Input::class)]
-#[UsesClass(MessageBag::class)]
-#[UsesClass(Model::class)]
-#[UsesClass(Memory::class)]
-#[UsesClass(Message::class)]
-#[Small]
 final class MemoryInputProcessorTest extends TestCase
 {
     public function testItIsDoingNothingOnInactiveMemory()

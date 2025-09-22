@@ -11,9 +11,7 @@
 
 namespace Symfony\AI\Agent\Tests\StructuredOutput;
 
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Exception\MissingModelSupportException;
 use Symfony\AI\Agent\Input;
@@ -36,14 +34,6 @@ use Symfony\AI\Platform\Result\ObjectResult;
 use Symfony\AI\Platform\Result\TextResult;
 use Symfony\Component\Serializer\SerializerInterface;
 
-#[CoversClass(AgentProcessor::class)]
-#[UsesClass(Input::class)]
-#[UsesClass(Output::class)]
-#[UsesClass(MessageBag::class)]
-#[UsesClass(MissingModelSupportException::class)]
-#[UsesClass(TextResult::class)]
-#[UsesClass(ObjectResult::class)]
-#[UsesClass(Model::class)]
 final class AgentProcessorTest extends TestCase
 {
     public function testProcessInputWithOutputStructure()

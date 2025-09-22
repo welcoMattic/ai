@@ -11,13 +11,11 @@
 
 namespace Symfony\AI\Agent\Tests\Toolbox;
 
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\ToolResultConverter;
 use Symfony\AI\Fixtures\StructuredOutput\UserWithConstructor;
 
-#[CoversClass(ToolResultConverter::class)]
 final class ToolResultConverterTest extends TestCase
 {
     #[DataProvider('provideResults')]

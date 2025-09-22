@@ -11,9 +11,6 @@
 
 namespace Symfony\AI\Agent\Tests\Memory;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Input;
 use Symfony\AI\Agent\Memory\Memory;
@@ -21,12 +18,6 @@ use Symfony\AI\Agent\Memory\StaticMemoryProvider;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\Model;
 
-#[CoversClass(StaticMemoryProvider::class)]
-#[UsesClass(Input::class)]
-#[UsesClass(Memory::class)]
-#[UsesClass(MessageBag::class)]
-#[UsesClass(Model::class)]
-#[Small]
 final class StaticMemoryProviderTest extends TestCase
 {
     public function testItsReturnsNullWhenNoFactsAreProvided()

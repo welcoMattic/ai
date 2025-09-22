@@ -11,14 +11,12 @@
 
 namespace Symfony\AI\Agent\Tests\Toolbox\Tool;
 
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Tool\Brave;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\JsonMockResponse;
 use Symfony\Component\HttpClient\Response\MockResponse;
 
-#[CoversClass(Brave::class)]
 final class BraveTest extends TestCase
 {
     public function testReturnsSearchResults()

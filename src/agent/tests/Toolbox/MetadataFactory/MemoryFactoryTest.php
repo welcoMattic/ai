@@ -11,26 +11,13 @@
 
 namespace Symfony\AI\Agent\Tests\Toolbox\MetadataFactory;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
-use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
 use Symfony\AI\Agent\Toolbox\Exception\ToolException;
 use Symfony\AI\Agent\Toolbox\ToolFactory\MemoryToolFactory;
 use Symfony\AI\Fixtures\Tool\ToolNoAttribute1;
 use Symfony\AI\Fixtures\Tool\ToolNoAttribute2;
-use Symfony\AI\Platform\Contract\JsonSchema\DescriptionParser;
-use Symfony\AI\Platform\Contract\JsonSchema\Factory;
-use Symfony\AI\Platform\Tool\ExecutionReference;
 use Symfony\AI\Platform\Tool\Tool;
 
-#[CoversClass(MemoryToolFactory::class)]
-#[UsesClass(AsTool::class)]
-#[UsesClass(Tool::class)]
-#[UsesClass(ExecutionReference::class)]
-#[UsesClass(ToolException::class)]
-#[UsesClass(Factory::class)]
-#[UsesClass(DescriptionParser::class)]
 final class MemoryFactoryTest extends TestCase
 {
     public function testGetMetadataWithoutTools()

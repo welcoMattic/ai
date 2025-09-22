@@ -11,7 +11,6 @@
 
 namespace Symfony\AI\Agent\Tests\Toolbox\Tool;
 
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Tool\SimilaritySearch;
 use Symfony\AI\Platform\Vector\Vector;
@@ -21,7 +20,6 @@ use Symfony\AI\Store\Document\VectorizerInterface;
 use Symfony\AI\Store\StoreInterface;
 use Symfony\Component\Uid\Uuid;
 
-#[CoversClass(SimilaritySearch::class)]
 final class SimilaritySearchTest extends TestCase
 {
     public function testSearchWithResults()

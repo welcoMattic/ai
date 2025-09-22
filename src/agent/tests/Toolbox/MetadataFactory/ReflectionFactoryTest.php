@@ -11,29 +11,15 @@
 
 namespace Symfony\AI\Agent\Tests\Toolbox\MetadataFactory;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
-use Symfony\AI\Agent\Toolbox\Exception\ToolConfigurationException;
 use Symfony\AI\Agent\Toolbox\Exception\ToolException;
 use Symfony\AI\Agent\Toolbox\ToolFactory\ReflectionToolFactory;
 use Symfony\AI\Fixtures\Tool\ToolMultiple;
 use Symfony\AI\Fixtures\Tool\ToolRequiredParams;
 use Symfony\AI\Fixtures\Tool\ToolWrong;
-use Symfony\AI\Platform\Contract\JsonSchema\DescriptionParser;
-use Symfony\AI\Platform\Contract\JsonSchema\Factory;
-use Symfony\AI\Platform\Tool\ExecutionReference;
 use Symfony\AI\Platform\Tool\Tool;
 
-#[CoversClass(ReflectionToolFactory::class)]
-#[UsesClass(AsTool::class)]
-#[UsesClass(Tool::class)]
-#[UsesClass(ExecutionReference::class)]
-#[UsesClass(Factory::class)]
-#[UsesClass(DescriptionParser::class)]
-#[UsesClass(ToolConfigurationException::class)]
-#[UsesClass(ToolException::class)]
 final class ReflectionFactoryTest extends TestCase
 {
     private ReflectionToolFactory $factory;
