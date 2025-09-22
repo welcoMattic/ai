@@ -24,11 +24,9 @@ $messages = new MessageBag(
     Message::ofUser('Tina has one brother and one sister. How many sisters do Tina\'s siblings have?'),
 );
 
-// Stream the response
 $result = $platform->invoke($model, $messages, ['stream' => true]);
-// Emit each chunk as it is received
 
-foreach ($result->getResult()->getContent() as $chunk) {
-    echo $chunk;
+foreach ($result->getResult()->getContent() as $word) {
+    echo $word;
 }
 echo \PHP_EOL;
