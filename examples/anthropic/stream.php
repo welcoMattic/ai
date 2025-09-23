@@ -17,7 +17,7 @@ use Symfony\AI\Platform\Message\MessageBag;
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = PlatformFactory::create(env('ANTHROPIC_API_KEY'), httpClient: http_client());
-$model = new Claude();
+$model = new Claude(Claude::SONNET_37);
 
 $messages = new MessageBag(
     Message::forSystem('You are a thoughtful philosopher.'),
