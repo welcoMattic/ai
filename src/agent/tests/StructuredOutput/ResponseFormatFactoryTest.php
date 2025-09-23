@@ -11,17 +11,10 @@
 
 namespace Symfony\AI\Agent\Tests\StructuredOutput;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\StructuredOutput\ResponseFormatFactory;
 use Symfony\AI\Fixtures\StructuredOutput\User;
-use Symfony\AI\Platform\Contract\JsonSchema\DescriptionParser;
-use Symfony\AI\Platform\Contract\JsonSchema\Factory;
 
-#[CoversClass(ResponseFormatFactory::class)]
-#[UsesClass(DescriptionParser::class)]
-#[UsesClass(Factory::class)]
 final class ResponseFormatFactoryTest extends TestCase
 {
     public function testCreate()

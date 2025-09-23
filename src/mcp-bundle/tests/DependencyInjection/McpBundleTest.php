@@ -11,7 +11,6 @@
 
 namespace Symfony\AI\McpBundle\Tests\DependencyInjection;
 
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\McpBundle\McpBundle;
@@ -21,7 +20,6 @@ use Symfony\AI\McpSdk\Server\RequestHandler\ToolListHandler;
 use Symfony\AI\McpSdk\Server\RequestHandlerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-#[CoversClass(McpBundle::class)]
 class McpBundleTest extends TestCase
 {
     public function testDefaultConfiguration()

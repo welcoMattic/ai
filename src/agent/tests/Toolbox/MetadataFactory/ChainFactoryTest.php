@@ -11,9 +11,6 @@
 
 namespace Symfony\AI\Agent\Tests\Toolbox\MetadataFactory;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Medium;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Exception\ToolConfigurationException;
 use Symfony\AI\Agent\Toolbox\Exception\ToolException;
@@ -26,11 +23,6 @@ use Symfony\AI\Fixtures\Tool\ToolNoAttribute1;
 use Symfony\AI\Fixtures\Tool\ToolOptionalParam;
 use Symfony\AI\Fixtures\Tool\ToolRequiredParams;
 
-#[CoversClass(ChainFactory::class)]
-#[Medium]
-#[UsesClass(MemoryToolFactory::class)]
-#[UsesClass(ReflectionToolFactory::class)]
-#[UsesClass(ToolException::class)]
 final class ChainFactoryTest extends TestCase
 {
     private ChainFactory $factory;

@@ -11,9 +11,6 @@
 
 namespace Symfony\AI\Agent\Tests;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\AI\Agent\Agent;
@@ -41,15 +38,6 @@ use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\HttpExceptionInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface as HttpResponseInterface;
 
-#[CoversClass(Agent::class)]
-#[UsesClass(Input::class)]
-#[UsesClass(Output::class)]
-#[UsesClass(MessageBag::class)]
-#[UsesClass(UserMessage::class)]
-#[UsesClass(Text::class)]
-#[UsesClass(Audio::class)]
-#[UsesClass(Image::class)]
-#[Small]
 final class AgentTest extends TestCase
 {
     public function testConstructorInitializesWithDefaults()

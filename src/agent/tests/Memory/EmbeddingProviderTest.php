@@ -11,9 +11,6 @@
 
 namespace Symfony\AI\Agent\Tests\Memory;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Input;
 use Symfony\AI\Agent\Memory\EmbeddingProvider;
@@ -29,16 +26,6 @@ use Symfony\AI\Platform\Result\VectorResult;
 use Symfony\AI\Platform\Vector\Vector;
 use Symfony\AI\Store\StoreInterface;
 
-#[UsesClass(Text::class)]
-#[UsesClass(ImageUrl::class)]
-#[UsesClass(Message::class)]
-#[UsesClass(Input::class)]
-#[UsesClass(MessageBag::class)]
-#[UsesClass(StoreInterface::class)]
-#[UsesClass(Model::class)]
-#[UsesClass(PlatformInterface::class)]
-#[CoversClass(EmbeddingProvider::class)]
-#[Small]
 final class EmbeddingProviderTest extends TestCase
 {
     public function testItIsDoingNothingWithEmptyMessageBag()

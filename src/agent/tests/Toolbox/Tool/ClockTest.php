@@ -11,12 +11,10 @@
 
 namespace Symfony\AI\Agent\Tests\Toolbox\Tool;
 
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Toolbox\Tool\Clock;
 use Symfony\Component\Clock\MockClock;
 
-#[CoversClass(Clock::class)]
 class ClockTest extends TestCase
 {
     public function testInvokeReturnsCurrentDateTime()

@@ -11,8 +11,6 @@
 
 namespace Symfony\AI\Agent\Tests\Toolbox;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\AgentInterface;
 use Symfony\AI\Agent\Exception\MissingModelSupportException;
@@ -30,16 +28,6 @@ use Symfony\AI\Platform\Result\ToolCallResult;
 use Symfony\AI\Platform\Tool\ExecutionReference;
 use Symfony\AI\Platform\Tool\Tool;
 
-#[CoversClass(AgentProcessor::class)]
-#[UsesClass(Input::class)]
-#[UsesClass(Output::class)]
-#[UsesClass(Tool::class)]
-#[UsesClass(ToolCall::class)]
-#[UsesClass(ToolCallResult::class)]
-#[UsesClass(ExecutionReference::class)]
-#[UsesClass(MessageBag::class)]
-#[UsesClass(MissingModelSupportException::class)]
-#[UsesClass(Model::class)]
 class AgentProcessorTest extends TestCase
 {
     public function testProcessInputWithoutRegisteredToolsWillResultInNoOptionChange()

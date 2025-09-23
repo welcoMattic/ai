@@ -11,14 +11,10 @@
 
 namespace Symfony\AI\Agent\Tests;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Small;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\MockResponse;
 use Symfony\AI\Platform\Result\TextResult;
 
-#[CoversClass(MockResponse::class)]
-#[Small]
 final class MockResponseTest extends TestCase
 {
     public function testConstructorWithContent()

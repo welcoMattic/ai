@@ -11,9 +11,6 @@
 
 namespace Symfony\AI\Agent\Tests\InputProcessor;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Small;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\Input;
 use Symfony\AI\Agent\InputProcessor\SystemPromptInputProcessor;
@@ -21,7 +18,6 @@ use Symfony\AI\Agent\Toolbox\ToolboxInterface;
 use Symfony\AI\Fixtures\Tool\ToolNoParams;
 use Symfony\AI\Fixtures\Tool\ToolRequiredParams;
 use Symfony\AI\Platform\Bridge\OpenAi\Gpt;
-use Symfony\AI\Platform\Message\Content\Text;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\Message\SystemMessage;
@@ -31,17 +27,6 @@ use Symfony\AI\Platform\Tool\ExecutionReference;
 use Symfony\AI\Platform\Tool\Tool;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-#[CoversClass(SystemPromptInputProcessor::class)]
-#[UsesClass(Gpt::class)]
-#[UsesClass(Message::class)]
-#[UsesClass(MessageBag::class)]
-#[UsesClass(Input::class)]
-#[UsesClass(SystemMessage::class)]
-#[UsesClass(UserMessage::class)]
-#[UsesClass(Text::class)]
-#[UsesClass(Tool::class)]
-#[UsesClass(ExecutionReference::class)]
-#[Small]
 final class SystemPromptInputProcessorTest extends TestCase
 {
     public function testProcessInputAddsSystemMessageWhenNoneExists()

@@ -11,11 +11,8 @@
 
 namespace Symfony\AI\Agent\Tests\Toolbox;
 
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
-use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
 use Symfony\AI\Agent\Toolbox\Exception\ToolConfigurationException;
 use Symfony\AI\Agent\Toolbox\Exception\ToolExecutionException;
 use Symfony\AI\Agent\Toolbox\Exception\ToolExecutionExceptionInterface;
@@ -32,25 +29,10 @@ use Symfony\AI\Fixtures\Tool\ToolNoAttribute1;
 use Symfony\AI\Fixtures\Tool\ToolNoParams;
 use Symfony\AI\Fixtures\Tool\ToolOptionalParam;
 use Symfony\AI\Fixtures\Tool\ToolRequiredParams;
-use Symfony\AI\Platform\Contract\JsonSchema\DescriptionParser;
-use Symfony\AI\Platform\Contract\JsonSchema\Factory;
 use Symfony\AI\Platform\Result\ToolCall;
 use Symfony\AI\Platform\Tool\ExecutionReference;
 use Symfony\AI\Platform\Tool\Tool;
 
-#[CoversClass(Toolbox::class)]
-#[UsesClass(ToolCall::class)]
-#[UsesClass(AsTool::class)]
-#[UsesClass(Tool::class)]
-#[UsesClass(ExecutionReference::class)]
-#[UsesClass(ReflectionToolFactory::class)]
-#[UsesClass(MemoryToolFactory::class)]
-#[UsesClass(ChainFactory::class)]
-#[UsesClass(Factory::class)]
-#[UsesClass(DescriptionParser::class)]
-#[UsesClass(ToolConfigurationException::class)]
-#[UsesClass(ToolNotFoundException::class)]
-#[UsesClass(ToolExecutionException::class)]
 final class ToolboxTest extends TestCase
 {
     private Toolbox $toolbox;

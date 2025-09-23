@@ -11,8 +11,6 @@
 
 namespace Symfony\AI\Agent\Tests;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Small;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\MockAgent;
 use Symfony\AI\Agent\MockResponse;
@@ -20,8 +18,6 @@ use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\Result\TextResult;
 
-#[CoversClass(MockAgent::class)]
-#[Small]
 final class MockAgentTest extends TestCase
 {
     public function testConstructorWithDefaultValues()
