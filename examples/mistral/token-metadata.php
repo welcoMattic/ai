@@ -19,7 +19,7 @@ use Symfony\AI\Platform\Message\MessageBag;
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = PlatformFactory::create(env('MISTRAL_API_KEY'), http_client());
-$model = new Mistral();
+$model = new Mistral(Mistral::MISTRAL_LARGE);
 
 $agent = new Agent($platform, $model, outputProcessors: [new TokenOutputProcessor()], logger: logger());
 

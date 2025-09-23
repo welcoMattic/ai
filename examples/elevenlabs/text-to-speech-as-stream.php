@@ -19,7 +19,7 @@ $platform = PlatformFactory::create(
     apiKey: env('ELEVEN_LABS_API_KEY'),
     httpClient: http_client(),
 );
-$model = new ElevenLabs(options: [
+$model = new ElevenLabs(ElevenLabs::ELEVEN_MULTILINGUAL_V2, [
     'voice' => 'Dslrhjl3ZpzrctukrQSN', // Brad (https://elevenlabs.io/app/voice-library?voiceId=Dslrhjl3ZpzrctukrQSN)
     'stream' => true,
 ]);
