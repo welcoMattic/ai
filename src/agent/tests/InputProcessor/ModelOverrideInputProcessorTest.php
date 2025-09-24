@@ -48,7 +48,7 @@ final class ModelOverrideInputProcessorTest extends TestCase
     public function testProcessInputWithInvalidModelOption()
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Option "model" must be an instance of "'.Model::class.'".');
+        $this->expectExceptionMessage(\sprintf('Option "model" must be an instance of "%s".', Model::class));
 
         $gpt = new Gpt(Gpt::GPT_4O);
         $model = new MessageBag();
