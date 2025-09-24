@@ -8,6 +8,7 @@
     "require-dev": {
         "php": ">=8.2",
         "php-cs-fixer/shim": "^3.75",
+        "phpstan/phpstan-strict-rules": "^2.0",
         "symfony/filesystem": "^7.3|^8.0",
         "symfony/finder": "^7.3|^8.0"
     },
