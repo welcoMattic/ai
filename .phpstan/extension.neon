@@ -1,3 +1,4 @@
 rules:
     - Symfony\AI\PHPStan\ForbidDeclareStrictTypesRule
     - Symfony\AI\PHPStan\ForbidNativeExceptionRule
+    - Symfony\AI\PHPStan\ForbidTestCoverageAttributesRule
