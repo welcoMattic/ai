@@ -117,7 +117,7 @@ final class AgentProcessor implements InputProcessorInterface, OutputProcessorIn
             $output->result->getMetadata()->set($originalResult->getMetadata()->all());
         }
 
-        if (!empty($originalResult->getRawResult())) {
+        if (null !== $originalResult->getRawResult()) {
             $output->result->setRawResult($originalResult->getRawResult());
         }
     }
