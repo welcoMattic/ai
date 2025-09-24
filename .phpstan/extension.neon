@@ -1,5 +1,20 @@
-rules:
-    - Symfony\AI\PHPStan\ForbidDeclareStrictTypesRule
-    - Symfony\AI\PHPStan\ForbidNativeExceptionRule
-    - Symfony\AI\PHPStan\ForbidTestCoverageAttributesRule
-    - Symfony\AI\PHPStan\ForbidEmptyRule
+parameters:
+    customRulesetUsed: true
+
+services:
+    -
+        class: PHPStan\Rules\DisallowedConstructs\DisallowedEmptyRule
+        tags:
+            - phpstan.rules.rule
+    -
+        class: Symfony\AI\PHPStan\ForbidDeclareStrictTypesRule
+        tags:
+            - phpstan.rules.rule
+    -
+        class: Symfony\AI\PHPStan\ForbidNativeExceptionRule
+        tags:
+            - phpstan.rules.rule
+    -
+        class: Symfony\AI\PHPStan\ForbidTestCoverageAttributesRule
+        tags:
+            - phpstan.rules.rule
