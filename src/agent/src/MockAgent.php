@@ -174,7 +174,7 @@ final class MockAgent implements AgentInterface
      */
     public function getLastCall(): array
     {
-        if (empty($this->calls)) {
+        if (0 === \count($this->calls)) {
             throw new LogicException('No calls have been made yet.');
         }
 
