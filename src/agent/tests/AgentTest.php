@@ -92,7 +92,7 @@ final class AgentTest extends TestCase
         $invalidProcessor = new \stdClass();
 
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Processor "stdClass" must implement "'.InputProcessorInterface::class.'".');
+        $this->expectExceptionMessage(\sprintf('Processor "stdClass" must implement "%s".', InputProcessorInterface::class));
 
         /* @phpstan-ignore-next-line */
         new Agent($platform, $model, [$invalidProcessor]);
@@ -105,7 +105,7 @@ final class AgentTest extends TestCase
         $invalidProcessor = new \stdClass();
 
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Processor "stdClass" must implement "'.OutputProcessorInterface::class.'".');
+        $this->expectExceptionMessage(\sprintf('Processor "stdClass" must implement "%s".', OutputProcessorInterface::class));
 
         /* @phpstan-ignore-next-line */
         new Agent($platform, $model, [], [$invalidProcessor]);

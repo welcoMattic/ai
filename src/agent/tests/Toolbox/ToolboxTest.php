@@ -154,7 +154,7 @@ final class ToolboxTest extends TestCase
     public function testExecuteWithMisconfiguredTool()
     {
         $this->expectException(ToolConfigurationException::class);
-        $this->expectExceptionMessage('Method "foo" not found in tool "'.ToolMisconfigured::class.'".');
+        $this->expectExceptionMessage(\sprintf('Method "foo" not found in tool "%s".', ToolMisconfigured::class));
 
         $toolbox = new Toolbox([new ToolMisconfigured()], new ReflectionToolFactory());
 
