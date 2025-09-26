@@ -13,14 +13,12 @@ namespace Symfony\AI\Agent\Toolbox;
 
 use Symfony\AI\Agent\AgentAwareInterface;
 use Symfony\AI\Agent\AgentAwareTrait;
-use Symfony\AI\Agent\Exception\MissingModelSupportException;
 use Symfony\AI\Agent\Input;
 use Symfony\AI\Agent\InputProcessorInterface;
 use Symfony\AI\Agent\Output;
 use Symfony\AI\Agent\OutputProcessorInterface;
 use Symfony\AI\Agent\Toolbox\Event\ToolCallsExecuted;
 use Symfony\AI\Agent\Toolbox\StreamResult as ToolboxStreamResponse;
-use Symfony\AI\Platform\Capability;
 use Symfony\AI\Platform\Message\AssistantMessage;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Result\ResultInterface;
@@ -46,10 +44,6 @@ final class AgentProcessor implements InputProcessorInterface, OutputProcessorIn
 
     public function processInput(Input $input): void
     {
-        if (!$input->model->supports(Capability::TOOL_CALLING)) {
-            throw MissingModelSupportException::forToolCalling($input->model::class);
-        }
-
         $toolMap = $this->toolbox->getTools();
         if ([] === $toolMap) {
             return;

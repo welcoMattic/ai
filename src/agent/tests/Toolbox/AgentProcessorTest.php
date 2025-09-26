@@ -13,7 +13,6 @@ namespace Symfony\AI\Agent\Tests\Toolbox;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Agent\AgentInterface;
-use Symfony\AI\Agent\Exception\MissingModelSupportException;
 use Symfony\AI\Agent\Input;
 use Symfony\AI\Agent\Output;
 use Symfony\AI\Agent\Toolbox\AgentProcessor;
@@ -74,17 +73,6 @@ class AgentProcessorTest extends TestCase
         $processor->processInput($input);
 
         $this->assertSame(['tools' => [$tool2]], $input->getOptions());
-    }
-
-    public function testProcessInputWithUnsupportedToolCallingWillThrowException()
-    {
-        $this->expectException(MissingModelSupportException::class);
-
-        $model = new Model('gpt-3');
-        $processor = new AgentProcessor($this->createStub(ToolboxInterface::class));
-        $input = new Input($model, new MessageBag());
-
-        $processor->processInput($input);
     }
 
     public function testProcessOutputWithToolCallResponseKeepingMessages()
