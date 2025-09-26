@@ -24,7 +24,4 @@ $result = $platform->invoke($model, $messages, [
     'stream' => true,
 ]);
 
-foreach ($result->getResult()->getContent() as $word) {
-    echo $word;
-}
-echo \PHP_EOL;
+print_stream($result);

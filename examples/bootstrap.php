@@ -130,3 +130,11 @@ function perplexity_print_citations(Metadata $metadata): void
         echo \PHP_EOL;
     }
 }
+
+function print_stream(ResultPromise $result): void
+{
+    foreach ($result->getResult()->getContent() as $word) {
+        echo $word;
+    }
+    echo \PHP_EOL;
+}
