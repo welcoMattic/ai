@@ -25,6 +25,7 @@ use Symfony\AI\Platform\Message\UserMessage;
 use Symfony\AI\Platform\Result\ToolCall;
 use Symfony\AI\Platform\Tool\ExecutionReference;
 use Symfony\AI\Platform\Tool\Tool;
+use Symfony\Component\Translation\TranslatableMessage;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class SystemPromptInputProcessorTest extends TestCase
@@ -91,7 +92,7 @@ final class SystemPromptInputProcessorTest extends TestCase
     public function testIncludeToolDefinitions()
     {
         $processor = new SystemPromptInputProcessor(
-            'This is a',
+            new TranslatableMessage('This is a'),
             new class implements ToolboxInterface {
                 public function getTools(): array
                 {
@@ -115,7 +116,6 @@ final class SystemPromptInputProcessorTest extends TestCase
                 }
             },
             $this->getTranslator(),
-            true,
         );
 
         $input = new Input(new Gpt(Gpt::GPT_4O), new MessageBag(Message::ofUser('This is a user message')));
@@ -181,7 +181,7 @@ final class SystemPromptInputProcessorTest extends TestCase
 
     public function testWithTranslatedSystemPrompt()
     {
-        $processor = new SystemPromptInputProcessor('This is a', null, $this->getTranslator(), true);
+        $processor = new SystemPromptInputProcessor(new TranslatableMessage('This is a'), null, $this->getTranslator());
 
         $input = new Input(new Gpt(Gpt::GPT_4O), new MessageBag(Message::ofUser('This is a user message')), []);
         $processor->processInput($input);
@@ -196,11 +196,9 @@ final class SystemPromptInputProcessorTest extends TestCase
     public function testWithTranslationDomainSystemPrompt()
     {
         $processor = new SystemPromptInputProcessor(
-            'This is a',
+            new TranslatableMessage('This is a', domain: 'prompts'),
             null,
             $this->getTranslator(),
-            true,
-            'prompts'
         );
 
         $input = new Input(new Gpt(Gpt::GPT_4O), new MessageBag(), []);
@@ -214,13 +212,12 @@ final class SystemPromptInputProcessorTest extends TestCase
 
     public function testWithMissingTranslator()
     {
-        $this->expectExceptionMessage('Prompt translation is enabled but no translator was provided');
+        $this->expectExceptionMessage('Translatable system prompt is not supported when no translator is provided.');
 
         new SystemPromptInputProcessor(
-            'This is a',
+            new TranslatableMessage('This is a'),
             null,
             null,
-            true,
         );
     }
 
