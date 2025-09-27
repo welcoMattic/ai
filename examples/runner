@@ -120,7 +120,6 @@ $app = (new SingleCommandApplication('Symfony AI Example Runner'))
             if (!$run['process']->isSuccessful()) {
                 $io->section('Error in ' . $run['example']->getRelativePathname());
                 $io->text($run['process']->getOutput());
-                $io->text($run['process']->getErrorOutput());
             }
         }
 
