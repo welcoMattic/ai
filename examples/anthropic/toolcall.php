@@ -10,9 +10,9 @@
  */
 
 use Symfony\AI\Agent\Agent;
+use Symfony\AI\Agent\Bridge\Wikipedia\Wikipedia;
 use Symfony\AI\Agent\Toolbox\AgentProcessor;
 use Symfony\AI\Agent\Toolbox\Source\Source;
-use Symfony\AI\Agent\Toolbox\Tool\Wikipedia;
 use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Platform\Bridge\Anthropic\PlatformFactory;
 use Symfony\AI\Platform\Message\Message;

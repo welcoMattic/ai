@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\AI\Agent\Toolbox\Tool;
+namespace Symfony\AI\Agent\Bridge\SimilaritySearch;
 
 use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
 use Symfony\AI\Store\Document\VectorDocument;

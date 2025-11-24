@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\AI\Agent\Toolbox\Tool;
+namespace Symfony\AI\Agent\Bridge\Scraper;
 
 use Symfony\AI\Agent\Exception\RuntimeException;
 use Symfony\AI\Agent\Toolbox\Attribute\AsTool;

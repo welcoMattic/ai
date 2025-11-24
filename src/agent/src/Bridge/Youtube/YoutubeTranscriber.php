@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\AI\Agent\Toolbox\Tool;
+namespace Symfony\AI\Agent\Bridge\Youtube;
 
 use MrMySQL\YoutubeTranscript\TranscriptListFetcher;
 use Symfony\AI\Agent\Exception\LogicException;
@@ -21,7 +21,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
  * @author Christopher Hertel <mail@christopher-hertel.de>
  */
 #[AsTool('youtube_transcript', 'Fetches the transcript of a YouTube video')]
-final class YouTubeTranscriber
+final class YoutubeTranscriber
 {
     public function __construct(
         private readonly HttpClientInterface $client,

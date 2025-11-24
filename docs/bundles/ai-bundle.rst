@@ -75,7 +75,7 @@ Advanced Example with Multiple Agents
                     include_tools: true # Include tool definitions at the end of the system prompt
                 tools:
                     # Referencing a service with #[AsTool] attribute
-                    - 'Symfony\AI\Agent\Toolbox\Tool\SimilaritySearch'
+                    - 'Symfony\AI\Agent\Bridge\SimilaritySearch\SimilaritySearch'
 
                     # Referencing a service without #[AsTool] attribute
                     - service: 'App\Agent\Tool\CompanyName'
@@ -91,7 +91,7 @@ Advanced Example with Multiple Agents
                 platform: 'ai.platform.anthropic'
                 model: 'claude-3-7-sonnet'
                 tools: # If undefined, all tools are injected into the agent, use "tools: false" to disable tools.
-                    - 'Symfony\AI\Agent\Toolbox\Tool\Wikipedia'
+                    - 'Symfony\AI\Agent\Bridge\Wikipedia\Wikipedia'
                 fault_tolerant_toolbox: false # Disables fault tolerant toolbox, default is true
             search_agent:
                 platform: 'ai.platform.perplexity'
@@ -776,13 +776,18 @@ The following tools can be installed as dedicated packages, no configuration is 
 .. code-block:: terminal
 
     $ composer require symfony/ai-brave-tool
+    $ composer require symfony/ai-clock-tool
     $ composer require symfony/ai-firecrawl-tool
     $ composer require symfony/ai-mapbox-tool
     $ composer require symfony/ai-open-meteo-tool
+    $ composer require symfony/ai-scraper-tool
     $ composer require symfony/ai-serp-api-tool
+    $ composer require symfony/ai-similarity-search-tool
     $ composer require symfony/ai-tavily-tool
+    $ composer require symfony/ai-wikipedia-tool
+    $ composer require symfony/ai-youtube-tool
 
-For tools not available as dedicated packages (those in the ``Toolbox\Tool`` namespace), register them manually as services:
+Some tools may require additional configuration even when installed as dedicated packages. For example, the SimilaritySearch tool requires a vectorizer and store:
 
 .. code-block:: yaml
 
@@ -791,10 +796,9 @@ For tools not available as dedicated packages (those in the ``Toolbox\Tool`` nam
             autowire: true
             autoconfigure: true
 
-        Symfony\AI\Agent\Toolbox\Tool\Clock: ~
-        Symfony\AI\Agent\Toolbox\Tool\SimilaritySearch: ~
-        Symfony\AI\Agent\Toolbox\Tool\Wikipedia: ~
-        Symfony\AI\Agent\Toolbox\Tool\YouTubeTranscriber: ~
+        Symfony\AI\Agent\Bridge\SimilaritySearch\SimilaritySearch:
+            $vectorizer: '@ai.vectorizer.openai'
+            $store: '@ai.store.main'
 
 Creating Custom Tools
 ---------------------

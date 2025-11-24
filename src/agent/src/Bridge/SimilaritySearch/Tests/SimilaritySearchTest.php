@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\AI\Agent\Tests\Toolbox\Tool;
+namespace Symfony\AI\Agent\Bridge\SimilaritySearch\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\AI\Agent\Toolbox\Tool\SimilaritySearch;
+use Symfony\AI\Agent\Bridge\SimilaritySearch\SimilaritySearch;
 use Symfony\AI\Platform\Vector\Vector;
 use Symfony\AI\Store\Document\Metadata;
 use Symfony\AI\Store\Document\VectorDocument;
