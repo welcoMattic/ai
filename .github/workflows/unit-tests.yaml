@@ -74,6 +74,10 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-composer-packages-${{ matrix.php-version }}-${{ matrix.dependency-version }}-${{ matrix.symfony-version }}
 
+            - name: Remove deptrac/deptrac for Symfony 8
+              if: matrix.symfony-version == '8.0.*'
+              run: composer remove deptrac/deptrac --dev --no-update
+
             - name: Install root dependencies
               uses: ramsey/composer-install@v3
 
