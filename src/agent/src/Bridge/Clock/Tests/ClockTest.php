@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\AI\Agent\Tests\Toolbox\Tool;
+namespace Symfony\AI\Agent\Bridge\Clock\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\AI\Agent\Toolbox\Tool\Clock;
+use Symfony\AI\Agent\Bridge\Clock\Clock;
 use Symfony\Component\Clock\MockClock;
 
 class ClockTest extends TestCase

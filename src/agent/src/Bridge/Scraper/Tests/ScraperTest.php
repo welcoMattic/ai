@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\AI\Agent\Tests\Toolbox\Tool;
+namespace Symfony\AI\Agent\Bridge\Scraper\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\AI\Agent\Toolbox\Tool\Scraper;
+use Symfony\AI\Agent\Bridge\Scraper\Scraper;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
 
@@ -20,7 +20,7 @@ final class ScraperTest extends TestCase
 {
     public function testInvoke()
     {
-        $htmlContent = file_get_contents(__DIR__.'/../../Fixtures/Tool/scraper-page.html');
+        $htmlContent = file_get_contents(__DIR__.'/Fixtures/page.html');
         $response = new MockResponse($htmlContent);
         $httpClient = new MockHttpClient($response);
 
@@ -37,7 +37,7 @@ final class ScraperTest extends TestCase
 
     public function testSourceIsAdded()
     {
-        $htmlContent = file_get_contents(__DIR__.'/../../Fixtures/Tool/scraper-page.html');
+        $htmlContent = file_get_contents(__DIR__.'/Fixtures/page.html');
         $response = new MockResponse($htmlContent);
         $httpClient = new MockHttpClient($response);
 
