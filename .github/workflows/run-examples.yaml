@@ -30,6 +30,8 @@ jobs:
             - name: Run OpenAI examples
               id: run-examples
               run: ./runner openai
+              env:
+                  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
             - name: Remove label
               if: always()
