@@ -3,7 +3,13 @@
     "description": "Wikipedia AI tool bridge for Symfony applications.",
     "license": "MIT",
     "type": "symfony-ai-tool",
-    "keywords": ["ai", "bridge", "wikipedia", "agent", "tool"],
+    "keywords": [
+        "ai",
+        "bridge",
+        "wikipedia",
+        "agent",
+        "tool"
+    ],
     "authors": [
         {
             "name": "Christopher Hertel",
@@ -22,6 +28,7 @@
     "require-dev": {
         "phpunit/phpunit": "^11.5.13"
     },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Symfony\\AI\\Agent\\Bridge\\Wikipedia\\": ""
@@ -43,6 +50,5 @@
             "name": "symfony/ai",
             "url": "https://github.com/symfony/ai"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
