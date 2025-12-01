@@ -39,7 +39,7 @@ final class SimilaritySearch
     public function __invoke(string $searchTerm): string
     {
         $vector = $this->vectorizer->vectorize($searchTerm);
-        $this->usedDocuments = $this->store->query($vector);
+        $this->usedDocuments = iterator_to_array($this->store->query($vector));
 
         if ([] === $this->usedDocuments) {
             return 'No results found';
