@@ -89,8 +89,8 @@ than the default catalog::
     use Symfony\AI\Platform\Message\Message;
     use Symfony\AI\Platform\Message\MessageBag;
 
-    $platform = PlatformFactory::create('http://127.0.0.11434', HttpClient::create(), new OllamaApiCatalog(
-        'http://127.0.0.11434',
+    $platform = PlatformFactory::create('http://127.0.0.1:11434', HttpClient::create(), new OllamaApiCatalog(
+        'http://127.0.0.1:11434',
         HttpClient::create(),
     ));
 
