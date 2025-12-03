@@ -309,6 +309,7 @@ Code Examples
 
 * `Embeddings with OpenAI`_
 * `Embeddings with Voyage`_
+* `Multimodal embeddings with Voyage`_
 * `Embeddings with Mistral`_
 
 Structured Output
@@ -555,7 +556,8 @@ Code Examples
 .. _`Image URL Input with GPT`: https://github.com/symfony/ai/blob/main/examples/openai/image-input-url.php
 .. _`Audio Input with GPT`: https://github.com/symfony/ai/blob/main/examples/openai/audio-input.php
 .. _`Embeddings with OpenAI`: https://github.com/symfony/ai/blob/main/examples/openai/embeddings.php
-.. _`Embeddings with Voyage`: https://github.com/symfony/ai/blob/main/examples/voyage/embeddings.php
+.. _`Embeddings with Voyage`: https://github.com/symfony/ai/blob/main/examples/voyage/text-embeddings.php
+.. _`Multimodal embeddings with Voyage`: https://github.com/symfony/ai/blob/main/examples/voyage/multimodal-embeddings.php
 .. _`Embeddings with Mistral`: https://github.com/symfony/ai/blob/main/examples/mistral/embeddings.php
 .. _`Structured Output with PHP class`: https://github.com/symfony/ai/blob/main/examples/openai/structured-output-math.php
 .. _`Structured Output with array`: https://github.com/symfony/ai/blob/main/examples/openai/structured-output-clock.php
