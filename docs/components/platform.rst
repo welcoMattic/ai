@@ -1498,6 +1498,25 @@ This platform can also be configured when using the bundle::
 Testing Tools
 -------------
 
+The component ships more than one test double, and which one fits depends on *how much of the
+platform the test should keep running*. They cut the pipeline at different depths, from replacing
+everything down to replacing nothing but the network:
+
+* :class:`Symfony\\AI\\Platform\\Test\\InMemoryPlatform` replaces the whole platform. Routing, model
+  catalog, contract, ``ModelClient`` and ``ResultConverter`` are all skipped, and the answer is a
+  string or closure you write. Use it to test *your* code against a given answer.
+* :class:`Symfony\\AI\\Platform\\Test\\MockPlatformFactory` keeps the real ``Platform``, ``Provider``,
+  routing and contract, and fakes only the ``ModelClient`` and ``ResultConverter``. Use it when the
+  test is about the platform itself: model routing and resolution, non-text result types, or
+  asserting on the payload the platform built.
+* :class:`Symfony\\AI\\Platform\\Test\\Replay\\CassetteHttpClient` replaces nothing but the network.
+  Contract, ``ModelClient`` and ``ResultConverter`` all run for real, against bytes recorded from the
+  provider once. Use it when the test is about a bridge's internals.
+
+The lower a tool cuts, the more of the library a test actually covers, and the more setup it needs.
+A second axis runs across that: the first two return an answer you wrote by hand, while a cassette
+returns what a provider really sent, which is what makes it drift-checkable.
+
 For unit or integration testing, you can use the :class:`Symfony\\AI\\Platform\\Test\\InMemoryPlatform`,
 which implements :class:`Symfony\\AI\\Platform\\PlatformInterface` without calling external APIs.
 
@@ -1654,6 +1673,48 @@ explicit models instead::
     ]));
     // $provider->supports('mock-model') === true
     // $provider->supports('gpt-4o') === false
+
+Recording Real Responses
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+To exercise a bridge's *internals* (its Contract normalizers, ``ModelClient`` payload building and
+``ResultConverter``) against realistic data without a network, record a real HTTP response once and
+replay it offline. :class:`Symfony\\AI\\Platform\\Test\\Replay\\CassetteHttpClient` is an
+``HttpClientInterface`` you pass to any real bridge ``Factory``; because replay serves a real
+``MockResponse``, the **real** converter runs on replay (unlike the mocks above, which bypass it).
+
+By default the mode follows the cassette file: record when it is missing, replay when it exists
+(override with an explicit ``record:`` argument). Record once with a real API key, commit the
+generated cassette, and replay it in CI::
+
+    use Symfony\AI\Platform\Bridge\Mistral\Factory;
+    use Symfony\AI\Platform\Message\Message;
+    use Symfony\AI\Platform\Message\MessageBag;
+    use Symfony\AI\Platform\Test\Replay\CassetteHttpClient;
+    use Symfony\AI\Platform\Test\Replay\HttpCassette;
+    use Symfony\Component\HttpClient\HttpClient;
+
+    $cassette = new HttpCassette(__DIR__.'/fixtures/mistral_chat.json');
+
+    // cassette missing (+ real key) -> hits the live API and writes the cassette (secrets redacted)
+    // cassette exists -> serves the recorded response; the real Mistral ResultConverter runs
+    $http = new CassetteHttpClient($cassette, HttpClient::create());
+
+    $platform = Factory::createPlatform($apiKey, $http);
+    $result = $platform->invoke('mistral-large-latest', new MessageBag(Message::ofUser('Hello')));
+
+    echo $result->asText(); // produced by the real converter from the recorded bytes
+
+Recorded interactions replay first-in-first-out (like ``MockHttpClient`` with an array of responses).
+A streamed response is stored with its raw Server-Sent Event body, so the bridge's stream parser frames
+it on replay exactly as it would on the wire, while headers describing the live transfer
+(``content-length``, ``content-encoding``, ...) are dropped because they would contradict the replayed
+body. Credentials (``Authorization``, ``x-api-key``, ``x-goog-api-key``, the ``auth_bearer`` shorthand,
+cookies and provider account identifiers) are replaced with ``[redacted]`` in both request and response
+headers before the cassette is written, so a cassette is safe to commit. Per-request trace headers
+(``date``, ``cf-ray``, correlation and request ids, proxy latencies) are dropped on write, so that
+re-recording a cassette produces a diff of what the provider actually changed instead of noise;
+rate limiting headers are kept, because the converters read them.
 
 Code Examples
 ~~~~~~~~~~~~~
