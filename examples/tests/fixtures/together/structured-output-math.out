@@ -1,0 +1,46 @@
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {
+  +steps: array:10 [
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "We want to isolate the variable x on one side of the equation. The equation is:"
+      +output: "8x + 7 = -23"
+    }
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "First, get rid of the constant term that is added to the term with x. Subtract 7 from both sides:"
+      +output: "8x + 7 - 7 = -23 - 7"
+    }
+    2 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "Simplify both sides:"
+      +output: "8x = -30"
+    }
+    3 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "Now divide both sides by the coefficient of x, which is 8, to solve for x:"
+      +output: "8x ÷ 8 = -30 ÷ 8"
+    }
+    4 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "Simplify the division:"
+      +output: "x = -\frac{30}{8}"
+    }
+    5 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "Reduce the fraction by dividing numerator and denominator by their greatest common divisor (2):"
+      +output: "x = -\frac{15}{4}"
+    }
+    6 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "If you prefer a decimal, divide 15 by 4:"
+      +output: "x = -3.75"
+    }
+    7 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "Check the solution by substituting x = -\frac{15}{4} back into the original equation:"
+      +output: "8\left(-\frac{15}{4}\right) + 7 = -23"
+    }
+    8 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "Calculate the left‑hand side:"
+      +output: "8 \times -\frac{15}{4} = -30; \; -30 + 7 = -23"
+    }
+    9 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "Both sides match, confirming the solution is correct."
+      +output: "x = -\frac{15}{4} \;(or \; -3.75)"
+    }
+  ]
+  +finalAnswer: "x = -\frac{15}{4} \;\text{(or} \; -3.75\text{)}"
+  +result: -3.75
+}
