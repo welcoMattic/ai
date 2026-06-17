@@ -1,0 +1,93 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.fireworks.ai/v1/accounts/fireworks/models/kimi-k2p6",
+                "signature": "31cd94b2f736c17d0d00717f9c34d87d",
+                "signature_v2": "891fa0bd2bc7ff55f9dd7f30a2f8bac7",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "grpc-metadata-content-type": [
+                        "application/grpc"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "via": [
+                        "1.1 google"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"baseModelDetails\": {\n    \"checkpointFormat\": \"HUGGINGFACE\",\n    \"defaultPrecision\": \"FP8\",\n    \"huggingfaceFiles\": [\n      \".gitattributes\",\n      \"LICENSE\",\n      \"README.md\",\n      \"chat_template.jinja\",\n      \"config.json\",\n      \"configuration_deepseek.py\",\n      \"configuration_kimi_k25.py\",\n      \"generation_config.json\",\n      \"kimi_k25_processor.py\",\n      \"kimi_k25_vision_processing.py\",\n      \"media_utils.py\",\n      \"model-00001-of-000065.safetensors\",\n      \"model-00002-of-000065.safetensors\",\n      \"model-00003-of-000065.safetensors\",\n      \"model-00004-of-000065.safetensors\",\n      \"model-00005-of-000065.safetensors\",\n      \"model-00006-of-000065.safetensors\",\n      \"model-00007-of-000065.safetensors\",\n      \"model-00008-of-000065.safetensors\",\n      \"model-00009-of-000065.safetensors\",\n      \"model-00010-of-000065.safetensors\",\n      \"model-00011-of-000065.safetensors\",\n      \"model-00012-of-000065.safetensors\",\n      \"model-00013-of-000065.safetensors\",\n      \"model-00014-of-000065.safetensors\",\n      \"model-00015-of-000065.safetensors\",\n      \"model-00016-of-000065.safetensors\",\n      \"model-00017-of-000065.safetensors\",\n      \"model-00018-of-000065.safetensors\",\n      \"model-00019-of-000065.safetensors\",\n      \"model-00020-of-000065.safetensors\",\n      \"model-00021-of-000065.safetensors\",\n      \"model-00022-of-000065.safetensors\",\n      \"model-00023-of-000065.safetensors\",\n      \"model-00024-of-000065.safetensors\",\n      \"model-00025-of-000065.safetensors\",\n      \"model-00026-of-000065.safetensors\",\n      \"model-00027-of-000065.safetensors\",\n      \"model-00028-of-000065.safetensors\",\n      \"model-00029-of-000065.safetensors\",\n      \"model-00030-of-000065.safetensors\",\n      \"model-00031-of-000065.safetensors\",\n      \"model-00032-of-000065.safetensors\",\n      \"model-00033-of-000065.safetensors\",\n      \"model-00034-of-000065.safetensors\",\n      \"model-00035-of-000065.safetensors\",\n      \"model-00036-of-000065.safetensors\",\n      \"model-00037-of-000065.safetensors\",\n      \"model-00038-of-000065.safetensors\",\n      \"model-00039-of-000065.safetensors\",\n      \"model-00040-of-000065.safetensors\",\n      \"model-00041-of-000065.safetensors\",\n      \"model-00042-of-000065.safetensors\",\n      \"model-00043-of-000065.safetensors\",\n      \"model-00044-of-000065.safetensors\",\n      \"model-00045-of-000065.safetensors\",\n      \"model-00046-of-000065.safetensors\",\n      \"model-00047-of-000065.safetensors\",\n      \"model-00048-of-000065.safetensors\",\n      \"model-00049-of-000065.safetensors\",\n      \"model-00050-of-000065.safetensors\",\n      \"model-00051-of-000065.safetensors\",\n      \"model-00052-of-000065.safetensors\",\n      \"model-00053-of-000065.safetensors\",\n      \"model-00054-of-000065.safetensors\",\n      \"model-00055-of-000065.safetensors\",\n      \"model-00056-of-000065.safetensors\",\n      \"model-00057-of-000065.safetensors\",\n      \"model-00058-of-000065.safetensors\",\n      \"model-00059-of-000065.safetensors\",\n      \"model-00060-of-000065.safetensors\",\n      \"model-00061-of-000065.safetensors\",\n      \"model-00062-of-000065.safetensors\",\n      \"model-00063-of-000065.safetensors\",\n      \"model-00064-of-000065.safetensors\",\n      \"model-00065-of-000065.safetensors\",\n      \"model.safetensors.index.json\",\n      \"modeling_deepseek.py\",\n      \"modeling_kimi_k25.py\",\n      \"preprocessor_config.json\",\n      \"tiktoken.model\",\n      \"tokenization_kimi.py\",\n      \"tokenizer_config.json\",\n      \"tool_declaration_ts.py\",\n      \"vllm.patch\"\n    ],\n    \"modelType\": \"kimi_k25\",\n    \"moe\": true,\n    \"parameterCount\": \"1028542417904\",\n    \"supportsFireattention\": true,\n    \"supportsMtp\": true,\n    \"tunable\": true,\n    \"worldSize\": 1\n  },\n  \"calibrated\": false,\n  \"cluster\": \"\",\n  \"contextLength\": 262144,\n  \"conversationConfig\": {\n    \"style\": \"\",\n    \"system\": \"\",\n    \"template\": \"\"\n  },\n  \"createTime\": \"2026-04-17T19:54:54.434998Z\",\n  \"defaultDraftModel\": \"\",\n  \"defaultDraftTokenCount\": 0,\n  \"defaultSamplingParams\": {},\n  \"deployedModelRefs\": [],\n  \"deprecationDate\": null,\n  \"description\": \"Kimi K2.6 is an open-source, native multimodal agentic model that advances practical capabilities in long-horizon coding, coding-driven design, proactive autonomous execution, and swarm-based task orchestration.\",\n  \"displayName\": \"Kimi K2.6\",\n  \"enableVisionEncoderTuning\": false,\n  \"encryptionState\": \"ENCRYPTION_STATE_UNSPECIFIED\",\n  \"fineTuningJob\": \"\",\n  \"githubUrl\": \"\",\n  \"huggingFaceUrl\": \"https://huggingface.co/moonshotai/Kimi-K2.6\",\n  \"importedFrom\": \"\",\n  \"kind\": \"HF_BASE_MODEL\",\n  \"name\": \"accounts/fireworks/models/kimi-k2p6\",\n  \"peftDetails\": {\n    \"baseModel\": \"\",\n    \"baseModelType\": \"\",\n    \"mergeAddonModelName\": \"\",\n    \"r\": 0,\n    \"targetModules\": []\n  },\n  \"public\": true,\n  \"rlLoraTunable\": true,\n  \"rlTunable\": true,\n  \"serverlessModes\": [],\n  \"snapshotType\": \"FULL_SNAPSHOT\",\n  \"state\": \"READY\",\n  \"status\": {\n    \"code\": \"OK\",\n    \"message\": \"\"\n  },\n  \"supervisedLoraTunable\": true,\n  \"supportsImageInput\": true,\n  \"supportsLora\": false,\n  \"supportsServerless\": true,\n  \"supportsTools\": true,\n  \"teftDetails\": null,\n  \"trainingContextLength\": 65536,\n  \"updateTime\": \"2026-08-28T22:31:48.375402Z\",\n  \"useHfApplyChatTemplate\": true,\n  \"useTrainingV2\": true\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.fireworks.ai/inference/v1/chat/completions",
+                "signature": "5d04e8c869969ee767df879defee530b",
+                "signature_v2": "ba0b76ee0f6ee79ad26b028393793533",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"system\",\"content\":\"You are a pirate and you write funny.\"},{\"role\":\"user\",\"content\":\"What is the Symfony framework? Answer in a few sentences.\"}],\"model\":\"accounts\\/fireworks\\/models\\/kimi-k2p6\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "1756"
+                    ],
+                    "fireworks-cached-prompt-tokens": [
+                        "32"
+                    ],
+                    "fireworks-prompt-tokens": [
+                        "33"
+                    ],
+                    "fireworks-sampling-options": [
+                        "{\"max_tokens\": 32768, \"temperature\": 1.0, \"top_k\": 0, \"top_p\": 0.95, \"min_p\": 0.0, \"typical_p\": 1.0, \"frequency_penalty\": 0.0, \"presence_penalty\": 0.0, \"repetition_penalty\": 1.0, \"mirostat_target\": null, \"mirostat_lr\": 0.1, \"cycle_multiplier\": 0.0, \"cycle_base\": 0.0, \"cycle_allowed_length\": 0, \"cycle_sequence_breakers\": []}"
+                    ],
+                    "fireworks-server-processing-time": [
+                        "4.804"
+                    ],
+                    "fireworks-server-time-to-first-token": [
+                        "0.235"
+                    ],
+                    "fireworks-speculation-prompt-matched-tokens": [
+                        "0"
+                    ],
+                    "server": [
+                        "istio-envoy"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "x-ratelimit-over-limit": [
+                        "no"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"chatcmpl-d63ba8a469074103a0063a355ee5bf72\",\"object\":\"chat.completion\",\"created\":1789867995,\"model\":\"accounts/fireworks/models/kimi-k2p6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Arr, Symfony be a mighty PHP framework, matey! 'Tis a treasure chest of reusable bits and bobs—called components—that let ye build sturdy web applications faster than a cannonball flies. Built by French buccaneers at SensioLabs, it be the trusty vessel for many an enterprise ship sailin' the digital seas!\",\"reasoning_content\":\"The user wants a short explanation of the Symfony framework, but written in the voice of a pirate who writes funny. Constraints:\\n- Few sentences (concise)\\n- Pirate persona (arr, matey, ye, etc.)\\n- Funny tone\\n- Accurate information about Symfony (PHP framework, reusable components, web apps, enterprise, etc.)\\n\\nLet me draft something:\\n\\n\\\"Arr, Symfony be a mighty PHP framework, matey! 'Tis a treasure chest of reusable bits and bobs—called components—that let ye build sturdy web applications faster than a cannonball flies. Built by French buccaneers at SensioLabs, it be the trusty vessel for many an enterprise ship sailin' the digital seas!\\\"\\n\\nCheck:\\n- Accurate? Yes, PHP framework, components, web apps, SensioLabs (French), enterprise use.\\n- Pirate voice? Yes (Arr, matey, be, 'tis, ye, buccaneers, vessel, seas).\\n- Funny? A bit whimsical.\\n- Few sentences? 3 sentences. Good.\\n\\nFinal polish: ensure it's readable and hits the mark.\",\"tools\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":33,\"total_tokens\":331,\"completion_tokens\":298,\"prompt_tokens_details\":{\"cached_tokens\":32},\"completion_tokens_details\":{\"reasoning_tokens\":226},\"output_tokens_details\":{\"reasoning_tokens\":226}}}"
+            }
+        }
+    ]
+}

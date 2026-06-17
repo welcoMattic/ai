@@ -1,0 +1,87 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.fireworks.ai/v1/accounts/fireworks/models/qwen3-reranker-8b",
+                "signature": "3ab2f27ec9eb571a3b68e01b4557b45c",
+                "signature_v2": "7a0643f51bcb5ee4d3625d8c2b7fcc49",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "grpc-metadata-content-type": [
+                        "application/grpc"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "via": [
+                        "1.1 google"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"baseModelDetails\": {\n    \"checkpointFormat\": \"HUGGINGFACE\",\n    \"defaultPrecision\": \"BF16\",\n    \"huggingfaceFiles\": [\n      \".gitattributes\",\n      \"README.md\",\n      \"config.json\",\n      \"generation_config.json\",\n      \"merges.txt\",\n      \"model-00001-of-00005.safetensors\",\n      \"model-00002-of-00005.safetensors\",\n      \"model-00003-of-00005.safetensors\",\n      \"model-00004-of-00005.safetensors\",\n      \"model-00005-of-00005.safetensors\",\n      \"model.safetensors.index.json\",\n      \"tokenizer.json\",\n      \"tokenizer_config.json\",\n      \"vocab.json\"\n    ],\n    \"modelType\": \"qwen3\",\n    \"moe\": false,\n    \"parameterCount\": \"8188548096\",\n    \"supportsFireattention\": true,\n    \"supportsMtp\": false,\n    \"tunable\": false,\n    \"worldSize\": 1\n  },\n  \"calibrated\": false,\n  \"cluster\": \"\",\n  \"contextLength\": 40960,\n  \"conversationConfig\": {\n    \"style\": \"jinja\",\n    \"system\": \"\",\n    \"template\": \"{%- if tools %}\\n    {{- '\\u003c|im_start|\\u003esystem\\\\n' }}\\n    {%- if messages[0].role == 'system' %}\\n        {{- messages[0].content + '\\\\n\\\\n' }}\\n    {%- endif %}\\n    {{- \\\"# Tools\\\\n\\\\nYou may call one or more functions to assist with the user query.\\\\n\\\\nYou are provided with function signatures within \\u003ctools\\u003e\\u003c/tools\\u003e XML tags:\\\\n\\u003ctools\\u003e\\\" }}\\n    {%- for tool in tools %}\\n        {{- \\\"\\\\n\\\" }}\\n        {{- tool | tojson }}\\n    {%- endfor %}\\n    {{- \\\"\\\\n\\u003c/tools\\u003e\\\\n\\\\nFor each function call, return a json object with function name and arguments within \\u003ctool_call\\u003e\\u003c/tool_call\\u003e XML tags:\\\\n\\u003ctool_call\\u003e\\\\n{\\\\\\\"name\\\\\\\": \\u003cfunction-name\\u003e, \\\\\\\"arguments\\\\\\\": \\u003cargs-json-object\\u003e}\\\\n\\u003c/tool_call\\u003e\\u003c|im_end|\\u003e\\\\n\\\" }}\\n{%- else %}\\n    {%- if messages[0].role == 'system' %}\\n        {{- '\\u003c|im_start|\\u003esystem\\\\n' + messages[0].content + '\\u003c|im_end|\\u003e\\\\n' }}\\n    {%- endif %}\\n{%- endif %}\\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\\n{%- for message in messages[::-1] %}\\n    {%- set index = (messages|length - 1) - loop.index0 %}\\n    {%- if ns.multi_step_tool and message.role == \\\"user\\\" and not(message.content.startswith('\\u003ctool_response\\u003e') and message.content.endswith('\\u003c/tool_response\\u003e')) %}\\n        {%- set ns.multi_step_tool = false %}\\n        {%- set ns.last_query_index = index %}\\n    {%- endif %}\\n{%- endfor %}\\n{%- for message in messages %}\\n    {%- if (message.role == \\\"user\\\") or (message.role == \\\"system\\\" and not loop.first) %}\\n        {{- '\\u003c|im_start|\\u003e' + message.role + '\\\\n' + message.content + '\\u003c|im_end|\\u003e' + '\\\\n' }}\\n    {%- elif message.role == \\\"assistant\\\" %}\\n        {%- set content = message.content %}\\n        {%- set reasoning_content = '' %}\\n        {%- if message.reasoning_content is defined and message.reasoning_content is not none %}\\n            {%- set reasoning_content = message.reasoning_content %}\\n        {%- else %}\\n            {%- if '\\u003c/think\\u003e' in message.content %}\\n                {%- set content = message.content.split('\\u003c/think\\u003e')[-1].lstrip('\\\\n') %}\\n                {%- set reasoning_content = message.content.split('\\u003c/think\\u003e')[0].rstrip('\\\\n').split('\\u003cthink\\u003e')[-1].lstrip('\\\\n') %}\\n            {%- endif %}\\n        {%- endif %}\\n        {%- if loop.index0 \\u003e ns.last_query_index %}\\n            {%- if loop.last or (not loop.last and reasoning_content) %}\\n                {{- '\\u003c|im_start|\\u003e' + message.role + '\\\\n\\u003cthink\\u003e\\\\n' + reasoning_content.strip('\\\\n') + '\\\\n\\u003c/think\\u003e\\\\n\\\\n' + content.lstrip('\\\\n') }}\\n            {%- else %}\\n                {{- '\\u003c|im_start|\\u003e' + message.role + '\\\\n' + content }}\\n            {%- endif %}\\n        {%- else %}\\n            {{- '\\u003c|im_start|\\u003e' + message.role + '\\\\n' + content }}\\n        {%- endif %}\\n        {%- if message.tool_calls %}\\n            {%- for tool_call in message.tool_calls %}\\n                {%- if (loop.first and content) or (not loop.first) %}\\n                    {{- '\\\\n' }}\\n                {%- endif %}\\n                {%- if tool_call.function %}\\n                    {%- set tool_call = tool_call.function %}\\n                {%- endif %}\\n                {{- '\\u003ctool_call\\u003e\\\\n{\\\"name\\\": \\\"' }}\\n                {{- tool_call.name }}\\n                {{- '\\\", \\\"arguments\\\": ' }}\\n                {%- if tool_call.arguments is string %}\\n                    {{- tool_call.arguments }}\\n                {%- else %}\\n                    {{- tool_call.arguments | tojson }}\\n                {%- endif %}\\n                {{- '}\\\\n\\u003c/tool_call\\u003e' }}\\n            {%- endfor %}\\n        {%- endif %}\\n        {{- '\\u003c|im_end|\\u003e\\\\n' }}\\n    {%- elif message.role == \\\"tool\\\" %}\\n        {%- if loop.first or (messages[loop.index0 - 1].role != \\\"tool\\\") %}\\n            {{- '\\u003c|im_start|\\u003euser' }}\\n        {%- endif %}\\n        {{- '\\\\n\\u003ctool_response\\u003e\\\\n' }}\\n        {{- message.content }}\\n        {{- '\\\\n\\u003c/tool_response\\u003e' }}\\n        {%- if loop.last or (messages[loop.index0 + 1].role != \\\"tool\\\") %}\\n            {{- '\\u003c|im_end|\\u003e\\\\n' }}\\n        {%- endif %}\\n    {%- endif %}\\n{%- endfor %}\\n{%- if add_generation_prompt %}\\n    {{- '\\u003c|im_start|\\u003eassistant\\\\n' }}\\n    {%- if enable_thinking is defined and enable_thinking is false %}\\n        {{- '\\u003cthink\\u003e\\\\n\\\\n\\u003c/think\\u003e\\\\n\\\\n' }}\\n    {%- endif %}\\n{%- endif %}\"\n  },\n  \"createTime\": \"2025-10-07T19:24:05.905021Z\",\n  \"defaultDraftModel\": \"\",\n  \"defaultDraftTokenCount\": 0,\n  \"defaultSamplingParams\": {},\n  \"deployedModelRefs\": [],\n  \"deprecationDate\": null,\n  \"description\": \"significant advancements in multiple text embedding and ranking tasks, including text retrieval, code retrieval, text classification, text clustering, and bitext mining\",\n  \"displayName\": \"Qwen3 Reranker 8B\",\n  \"enableVisionEncoderTuning\": false,\n  \"encryptionState\": \"ENCRYPTION_STATE_UNSPECIFIED\",\n  \"fineTuningJob\": \"\",\n  \"githubUrl\": \"\",\n  \"huggingFaceUrl\": \"\",\n  \"importedFrom\": \"\",\n  \"kind\": \"EMBEDDING_MODEL\",\n  \"name\": \"accounts/fireworks/models/qwen3-reranker-8b\",\n  \"peftDetails\": {\n    \"baseModel\": \"\",\n    \"baseModelType\": \"\",\n    \"mergeAddonModelName\": \"\",\n    \"r\": 0,\n    \"targetModules\": []\n  },\n  \"public\": true,\n  \"rlLoraTunable\": false,\n  \"rlTunable\": false,\n  \"serverlessModes\": [],\n  \"snapshotType\": \"FULL_SNAPSHOT\",\n  \"state\": \"READY\",\n  \"status\": {\n    \"code\": \"OK\",\n    \"message\": \"\"\n  },\n  \"supervisedLoraTunable\": false,\n  \"supportsImageInput\": false,\n  \"supportsLora\": false,\n  \"supportsServerless\": true,\n  \"supportsTools\": false,\n  \"teftDetails\": null,\n  \"trainingContextLength\": 131072,\n  \"updateTime\": \"2026-08-28T22:31:48.375402Z\",\n  \"useHfApplyChatTemplate\": false,\n  \"useTrainingV2\": false\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.fireworks.ai/inference/v1/rerank",
+                "signature": "471b83750f410ed926ff2bae7c5c5c6d",
+                "signature_v2": "ed8732a91f5564970807f5ab54228551",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"accounts\\/fireworks\\/models\\/qwen3-reranker-8b\",\"query\":\"What is machine learning?\",\"documents\":[\"Machine learning is a field of study that gives computers the ability to learn without being explicitly programmed.\",\"Cooking is the art of preparing food with heat.\",\"Deep learning is a subset of machine learning based on artificial neural networks.\",\"The weather today is sunny with a light breeze.\"]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "770"
+                    ],
+                    "fireworks-cached-prompt-tokens": [
+                        "353"
+                    ],
+                    "fireworks-prompt-tokens": [
+                        "361"
+                    ],
+                    "fireworks-server-processing-time": [
+                        "0.090"
+                    ],
+                    "fireworks-server-time-to-first-token": [
+                        "0.048"
+                    ],
+                    "fireworks-speculation-prompt-matched-tokens": [
+                        "0"
+                    ],
+                    "server": [
+                        "istio-envoy"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"object\": \"list\", \"model\": \"accounts/fireworks/models/qwen3-reranker-8b\", \"data\": [{\"index\": 0, \"relevance_score\": 0.9765625, \"document\": \"Machine learning is a field of study that gives computers the ability to learn without being explicitly programmed.\"}, {\"index\": 2, \"relevance_score\": 0.0634765625, \"document\": \"Deep learning is a subset of machine learning based on artificial neural networks.\"}, {\"index\": 1, \"relevance_score\": 2.1457672119140625e-05, \"document\": \"Cooking is the art of preparing food with heat.\"}, {\"index\": 3, \"relevance_score\": 2.868473529815674e-07, \"document\": \"The weather today is sunny with a light breeze.\"}], \"usage\": {\"prompt_tokens\": 361, \"total_tokens\": 361, \"completion_tokens\": 0, \"prompt_tokens_details\": {\"cached_tokens\": 353}}}"
+            }
+        }
+    ]
+}
