@@ -1834,7 +1834,45 @@ cookies and provider account identifiers) are replaced with ``[redacted]`` in bo
 headers before the cassette is written, so a cassette is safe to commit. Per-request trace headers
 (``date``, ``cf-ray``, correlation and request ids, proxy latencies) are dropped on write, so that
 re-recording a cassette produces a diff of what the provider actually changed instead of noise;
-rate limiting headers are kept, because the converters read them.
+rate limiting headers are kept, because the converters read them. Binary response bodies (generated
+images, audio, ...) are not stored byte-for-byte: the cassette keeps a metadata stub (status, headers,
+byte size) and replay serves a small placeholder body, so the real converter still runs without
+committing opaque bytes.
+
+For a bridge test suite with several recorded scenarios, extend
+:class:`Symfony\\AI\\Platform\\Test\\Replay\\AbstractBridgeReplayTestCase`: implement
+``createPlatform()`` to build the bridge's platform around the injected replay client and
+``cassetteDirectory()`` to point at the committed ``<scenario>.json`` cassettes, then call
+``$this->platformForCassette('scenario')`` in each test. A scenario without a cassette is skipped
+instead of failing, so tests can be written before the recording exists; cassettes can also be
+hand-seeded to pin a specific response shape::
+
+    use Symfony\AI\Platform\Bridge\Mistral\Factory;
+    use Symfony\AI\Platform\PlatformInterface;
+    use Symfony\AI\Platform\Test\Replay\AbstractBridgeReplayTestCase;
+    use Symfony\Contracts\HttpClient\HttpClientInterface;
+
+    final class ReplayTest extends AbstractBridgeReplayTestCase
+    {
+        public function testText()
+        {
+            $platform = $this->platformForCassette('text');
+
+            $result = $platform->invoke('mistral-large-latest', new MessageBag(Message::ofUser('Hello')));
+
+            $this->assertSame('Hello! How can I help you today?', $result->asText());
+        }
+
+        protected function createPlatform(HttpClientInterface $httpClient): PlatformInterface
+        {
+            return Factory::createPlatform('test-key', $httpClient);
+        }
+
+        protected function cassetteDirectory(): string
+        {
+            return __DIR__.'/Fixtures/cassettes';
+        }
+    }
 
 Code Examples
 ~~~~~~~~~~~~~
