@@ -21,6 +21,30 @@ AI Bundle
 
    The default (`false`, tool messages are preserved) is unchanged.
 
+Platform
+--------
+
+ * `Result\Stream\ListenerInterface` gained an `onError()` method, dispatched with the new
+   `Result\Stream\ErrorEvent`. Listeners not extending
+   `AbstractStreamListener` must add the method:
+
+   ```diff
+   +use Symfony\AI\Platform\Result\Stream\ErrorEvent;
+
+    final class MyStreamListener implements ListenerInterface
+    {
+        public function onComplete(CompleteEvent $event): void
+        {
+            // ...
+        }
+   +
+   +    public function onError(ErrorEvent $event): void
+   +    {
+   +        // ...
+   +    }
+    }
+   ```
+
 UPGRADE FROM 0.11 to 0.12
 =========================
 
