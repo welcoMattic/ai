@@ -165,11 +165,24 @@ It contains two important files:
 Extensions Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+``mate/extensions.php`` records which extensions are enabled, plus the state of every Agent Skill
+they ship. Mate maintains it for you, so reach for a command before the editor:
+
+.. code-block:: terminal
+
+    $ vendor/bin/mate discover        # register newly installed extensions and install their skills
+    $ vendor/bin/mate skills:install  # rebuild the generated skill folders from the recorded state
+    $ vendor/bin/mate skills:list     # show which skills are enabled and how they are installed
+    $ vendor/bin/mate skills:validate # check the generated folders against the recorded state
+
+Editing the file is for the settings that express your intent: whether an extension is enabled, and
+the ``enabled`` and ``mode`` keys of a skill (see `Skills`_). Every other key is rewritten on the
+next install::
 
     // mate/extensions.php
-    // This file is managed by 'mate discover'
-    // You can manually edit to enable/disable extensions
+    // This file is managed by Mate - use `discover` or `skills:*` commands
+    // over manual editing. Only changes to `mode` or `enabled` are kept,
+    // every other key is overwritten by Mate.
 
     return [
         'vendor/package-name' => ['enabled' => true],
@@ -432,14 +445,61 @@ You usually do not run anything: ``mate discover`` (which also runs automaticall
 ``mate skills:install``.
 
 Each skill is installed under a ``mate-`` prefixed directory name (e.g. ``mate-demo-skill``) to
-avoid clashing with skills you maintain from other sources, in two locations:
+avoid clashing with skills you maintain from other sources; the ``name`` in the installed
+``SKILL.md`` is rewritten to match. Skills land in two locations:
 
 * ``.agents/skills/`` is the source of truth, read directly by Codex, OpenCode and GitHub Copilot.
-* ``.claude/skills/`` is symlinked to ``.agents/skills/`` for Claude Code, which only reads its own
-  directory.
+* ``.claude/skills/`` mirrors ``.agents/skills/`` via relative symlinks for Claude Code, which only
+  reads its own directory.
 
-Skills are symlinked into ``.agents/skills/`` so they auto-update on ``composer update`` (the link
-points into the gitignored ``vendor/`` directory, so this requires symlink privileges on Windows).
+Both folders are generated output: ``skills:install`` is an idempotent reconciler that rebuilds them
+from source on every run and prunes skills that are gone or disabled. Do not edit them by hand — your
+changes are overwritten on the next run and reported as errors by ``mate skills:validate``.
+
+Skills are **copied, never symlinked into** ``vendor/``. What your agent loads is a real file you can
+open and diff, and a package update cannot silently change it underneath you. Mate does not touch
+your ``.gitignore``: committing the generated folders is recommended, because it turns an upstream
+skill change into a reviewable diff instead of something that lands silently.
+
+All skill state lives in ``mate/extensions.php``. Two keys per skill carry your intent:
+
+* ``enabled`` controls whether the skill is installed at all.
+* ``mode`` is either ``managed``, where Mate builds the skill from the package, or ``override``,
+  which hands ownership to you: Mate then builds from your own ``mate/skills/<name>/`` copy and
+  never writes into ``mate/skills/``.
+
+The ``skills:*`` commands set both for you, which is the recommended way to change them — they also
+reinstall, so the recorded state below never falls out of step with your intent. Editing the two keys
+by hand works as well; the next install picks the change up.
+
+Everything else is written by Mate and rewritten on every install — the resulting ``state``
+(``managed``, ``override`` or ``disabled``), the ``source`` it was built from, the ``source_hash``
+and ``hash`` pair used to detect drift, and the generated ``targets``::
+
+    // mate/extensions.php
+    return [
+        'vendor/package' => [
+            'enabled' => true,
+            'skills' => [
+                'demo-skill' => [
+                    'enabled' => true,
+                    'mode' => 'managed',
+                    'state' => 'managed',
+                    'source' => 'vendor/vendor/package/skills/demo-skill',
+                    'source_hash' => 'sha256:...',
+                    'hash' => 'sha256:...',
+                    'targets' => [
+                        '.agents/skills/mate-demo-skill',
+                        '.claude/skills/mate-demo-skill',
+                    ],
+                ],
+            ],
+        ],
+    ];
+
+Use ``mate skills:list`` for an overview, and ``mate skills:validate`` to check the generated folders
+against that record: it reports hand-edited content, missing folders, and sources that moved on since
+the last install. ``mate skills:prune`` removes leftover ``mate-*`` folders.
 
 The core package itself ships a ``system-information`` skill describing how to inspect the PHP
 runtime and installed package versions via the ``server-info`` tool.
@@ -463,6 +523,19 @@ Commands
     Install the Agent Skills shipped by your enabled extensions so your coding agent can use
     them. This runs automatically as part of ``mate discover``; use it for an explicit re-sync.
     See `Skills`_.
+
+``mate skills:list``
+    List declared and installed skills with their enabled, mode, state and status information.
+    Read-only diagnostic. See `Skills`_.
+
+``mate skills:validate``
+    Check the generated skill folders against the state recorded in ``mate/extensions.php``. Exits
+    with a non-zero status when a skill is broken; pass ``--strict`` to fail on warnings too.
+    Read-only. See `Skills`_.
+
+``mate skills:prune``
+    Remove generated ``mate-*`` folders that no longer belong to any skill. Pass ``--dry-run`` to
+    see what would be removed. See `Skills`_.
 
 ``mate serve``
     Start the MCP server with stdio transport.
