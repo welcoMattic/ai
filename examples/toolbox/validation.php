@@ -10,7 +10,6 @@
  */
 
 use Symfony\AI\Agent\Agent;
-use Symfony\AI\Agent\Toolbox\AgentProcessor;
 use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
 use Symfony\AI\Agent\Toolbox\Event\ToolCallArgumentsResolved;
 use Symfony\AI\Agent\Toolbox\EventListener\ValidateToolCallArgumentsListener;
@@ -61,8 +60,7 @@ $eventDispatcher->addListener(ToolCallArgumentsResolved::class, new ValidateTool
 $toolbox = new FaultTolerantToolbox(
     new Toolbox([new GetOrder()], logger: logger(), eventDispatcher: $eventDispatcher),
 );
-$processor = new AgentProcessor($toolbox, eventDispatcher: $eventDispatcher);
-$agent = new Agent($platform, 'gpt-5-mini', [$processor], [$processor]);
+$agent = new Agent($platform, 'gpt-5-mini', toolbox: $toolbox, eventDispatcher: $eventDispatcher);
 
 $messages = new MessageBag(Message::ofUser('Look up the order with reference "ORD-2026-0042", shipping to Berlin, DE.'));
 $result = $agent->call($messages);

@@ -1,12 +1,29 @@
 UPGRADE FROM 0.12 to 0.13
 =========================
 
+Agent
+-----
+
+ * `Toolbox\AgentProcessor` has been removed. Tool calling is no longer wired as an input/output processor pair;
+   the `Agent` drives the tool-calling loop itself. Pass the toolbox and its settings to the `Agent` instead:
+
+   ```diff
+   -$processor = new AgentProcessor($toolbox, includeSources: true, maxToolCalls: 75);
+   -$agent = new Agent($platform, $model, [$processor], [$processor]);
+   +$agent = new Agent($platform, $model, toolbox: $toolbox, maxToolCalls: 75, includeSources: true);
+   ```
+
+   The `excludeToolMessages`, `includeSources`, `maxToolCalls` and `eventDispatcher` settings moved from the
+   processor to the `Agent` constructor unchanged. Which tool calls get executed is now delegated to the new
+   `Toolbox\ToolExecutorInterface` (default: `SequentialToolExecutor`), so a custom execution strategy can be
+   plugged in via the `toolExecutor` argument.
+
 AI Bundle
 ---------
 
  * The `keep_tool_messages` agent option has been renamed to `exclude_tool_messages` to match the
-   `excludeToolMessages` argument of `AgentProcessor` it configures. The option name was inverted
-   against its behavior since the `AgentProcessor` argument was flipped in 0.4, so `keep_tool_messages: true`
+   `excludeToolMessages` argument of the `Agent` it configures. The option name was inverted
+   against its behavior since that argument was flipped in 0.4, so `keep_tool_messages: true`
    was in fact *excluding* tool messages from the conversation history. Rename the option to keep the
    current behavior:
 
