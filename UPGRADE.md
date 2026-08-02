@@ -1,3 +1,26 @@
+UPGRADE FROM 0.12 to 0.13
+=========================
+
+AI Bundle
+---------
+
+ * The `keep_tool_messages` agent option has been renamed to `exclude_tool_messages` to match the
+   `excludeToolMessages` argument of `AgentProcessor` it configures. The option name was inverted
+   against its behavior since the `AgentProcessor` argument was flipped in 0.4, so `keep_tool_messages: true`
+   was in fact *excluding* tool messages from the conversation history. Rename the option to keep the
+   current behavior:
+
+   ```diff
+    # config/packages/ai.yaml
+    ai:
+        agent:
+            my_agent:
+   -            keep_tool_messages: true
+   +            exclude_tool_messages: true
+   ```
+
+   The default (`false`, tool messages are preserved) is unchanged.
+
 UPGRADE FROM 0.11 to 0.12
 =========================
 
