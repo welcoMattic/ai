@@ -685,6 +685,35 @@ from the visible deltas::
     when streamed. Wrap the consumption loop in a ``try``/``catch`` when you need to handle truncation
     of a streamed response.
 
+Custom Tool Calls (Provider Extensions)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some providers report sub-calls of their own built-in tools as a ``custom_tool_call`` output
+item -- not part of the official OpenAI Responses specification, but an extension some
+providers use for tools they resolve entirely server-side (e.g. xAI's ``x_search`` reporting
+the searches it ran as ``x_keyword_search``/``x_semantic_search`` calls). Since the provider
+has already executed the call by the time it is reported, the OpenResponses bridge converts it
+into a :class:`Symfony\\AI\\Platform\\Result\\CustomToolCallResult` rather than a ``ToolCall`` --
+the application is not expected to answer it::
+
+    use Symfony\AI\Platform\Result\CustomToolCallResult;
+    use Symfony\AI\Platform\Result\MultiPartResult;
+
+    $result = $platform->invoke($model, $messages);
+
+    if ($result instanceof MultiPartResult) {
+        foreach ($result->getContent() as $part) {
+            if ($part instanceof CustomToolCallResult) {
+                // $part->getName(), $part->getInput(), $part->getStatus()
+            }
+        }
+    }
+
+.. note::
+
+    Like the other built-in server-side tool results, ``custom_tool_call`` items are only
+    available on non-streamed responses.
+
 Streaming in a Symfony Controller
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
