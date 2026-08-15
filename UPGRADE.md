@@ -38,6 +38,104 @@ AI Bundle
 
    The default (`false`, tool messages are preserved) is unchanged.
 
+MCP Bundle
+----------
+
+ * The bundle now supports several MCP servers per application, so every server-related option moved
+   under a named entry in `mcp.servers`. **Capabilities are no longer exposed automatically**: each
+   server declares what it exposes, and `['*']` is the explicit "everything of that kind" — that is the
+   1:1 migration of the previous behavior:
+
+   ```diff
+    # config/packages/mcp.yaml
+    mcp:
+   -    app: 'my-app'
+   -    version: '1.0.0'
+   -    description: 'My MCP server'
+   -    instructions: 'Use this server for time calculations.'
+   -    pagination_limit: 50
+   -    client_transports:
+   -        stdio: true
+   -        http: true
+   -    http:
+   -        path: /_mcp
+   -        allowed_hosts: ['example.com']
+   -        session:
+   -            store: cache
+   -    apps:
+   -        enabled: true
+   +    servers:
+   +        default:
+   +            name: 'my-app'
+   +            version: '1.0.0'
+   +            description: 'My MCP server'
+   +            instructions: 'Use this server for time calculations.'
+   +            pagination_limit: 50
+   +            transports:
+   +                stdio: true
+   +                http: true
+   +            http:
+   +                path: /_mcp
+   +                allowed_hosts: ['example.com']
+   +            session:
+   +                store: cache
+   +            registry: '*'
+   ```
+
+   Option by option: `app` became `servers.<name>.name` (defaulting to the configuration key),
+   `client_transports` became `servers.<name>.transports` (its `http` option now defaults to `true`),
+   `http.session` moved up to `servers.<name>.session` (it was never HTTP-specific — a STDIO server
+   uses it too), and `apps.enabled` was replaced by the `servers.<name>.registry.apps` list
+   (`enabled: false` → omit it, the auto/`true` modes → `apps: ['*']`).
+
+   `http.path` now defaults to `/mcp/<name>` instead of `/_mcp`. The default is always derived from the
+   server name, so that adding a second server can never move an existing endpoint; set `http.path`
+   explicitly to keep the old URL.
+
+   The required `registry:` option decides what a server exposes. Give it one list to cover every kind
+   of capability, or a map to narrow each kind separately. Entries match a service id, a class name, or
+   a namespace prefix (written with a trailing backslash):
+
+   ```yaml
+   mcp:
+       servers:
+           public:
+               http: { path: /mcp }
+               registry:
+                   tools: ['App\Mcp\Public\']
+                   resources: ['*']
+           editors:
+               http: { path: /mcp/editors }
+               registry: '*'
+           reporting:
+               http: { path: /mcp/reporting }
+               registry: ['App\Mcp\Reporting\']   # every kind, from one namespace
+   ```
+
+   A pattern that matches no service *at all* on its server is a compile-time error — practically
+   always a typo. Matching only some kinds is fine, which is what makes the single-list form usable:
+   few applications carry all five kinds under one namespace. The reverse is allowed on purpose too —
+   a service carrying an MCP attribute that no server lists is simply not exposed, and `debug:mcp`
+   reports those under "Not exposed by any server".
+
+ * The per-server services replace their singleton counterparts: `mcp.registry`, `mcp.server.builder`,
+   `mcp.server`, `mcp.session.store`, `mcp.middleware_factory` and `mcp.server.controller` became
+   `mcp.server.<name>.registry`, `mcp.server.<name>.builder`, `mcp.server.<name>`,
+   `mcp.server.<name>.session.store`, `mcp.server.<name>.middleware_factory` and
+   `mcp.server.<name>.controller`. Autowire a specific server with `Mcp\Server $<name>Server`.
+
+   Session storage is now isolated per server by default (`%kernel.cache_dir%/mcp-sessions/<name>` and
+   the `mcp-<name>-` cache prefix), and two servers resolving to the same storage is rejected at compile
+   time: session ids are not namespaced by server, so a shared store would let a session created on a
+   public server be accepted by a firewalled one.
+
+ * The route name `_mcp_endpoint` became `_mcp_endpoint_<name>`. The `config/routes.yaml` entry
+   (`resource: .`, `type: mcp`) is unchanged.
+
+ * `mcp:server` gained an optional server argument (`bin/console mcp:server editors`), required as soon
+   as more than one server enables the STDIO transport — one process can serve only one of them.
+   `debug:mcp` gained a `--server` option to restrict its output to a single server.
+
 Platform
 --------
 
