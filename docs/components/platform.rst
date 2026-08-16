@@ -1505,6 +1505,9 @@ everything down to replacing nothing but the network:
 * :class:`Symfony\\AI\\Platform\\Test\\InMemoryPlatform` replaces the whole platform. Routing, model
   catalog, contract, ``ModelClient`` and ``ResultConverter`` are all skipped, and the answer is a
   string or closure you write. Use it to test *your* code against a given answer.
+* :class:`Symfony\\AI\\Platform\\Test\\Recording\\RecordingProvider` replaces one provider, keeping the
+  real ``Platform``, routing and model catalog. The answer is a real result captured once. Use it when
+  a test needs a realistic answer but does not care how the bridge produced it.
 * :class:`Symfony\\AI\\Platform\\Test\\MockPlatformFactory` keeps the real ``Platform``, ``Provider``,
   routing and contract, and fakes only the ``ModelClient`` and ``ResultConverter``. Use it when the
   test is about the platform itself: model routing and resolution, non-text result types, or
@@ -1514,8 +1517,9 @@ everything down to replacing nothing but the network:
   provider once. Use it when the test is about a bridge's internals.
 
 The lower a tool cuts, the more of the library a test actually covers, and the more setup it needs.
-A second axis runs across that: the first two return an answer you wrote by hand, while a cassette
-returns what a provider really sent, which is what makes it drift-checkable.
+A second axis runs across that: ``InMemoryPlatform`` and ``MockPlatformFactory`` return an answer you
+wrote by hand, while the two recorders return what a provider really sent, which is what makes them
+drift-checkable.
 
 For unit or integration testing, you can use the :class:`Symfony\\AI\\Platform\\Test\\InMemoryPlatform`,
 which implements :class:`Symfony\\AI\\Platform\\PlatformInterface` without calling external APIs.
@@ -1673,6 +1677,56 @@ explicit models instead::
     ]));
     // $provider->supports('mock-model') === true
     // $provider->supports('gpt-4o') === false
+
+Recording Real Provider Results
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a test only needs a realistic, deterministic answer from a provider, wrap a real provider in
+:class:`Symfony\\AI\\Platform\\Test\\Recording\\RecordingProvider`. The first run, when the cassette
+file does not exist yet, calls the real provider and captures its result into the cassette; commit
+the cassette and later runs replay it offline, so the real provider is never called and needs no API
+key. Delete the cassette to re-record::
+
+    use Symfony\AI\Platform\Bridge\Anthropic\Factory;
+    use Symfony\AI\Platform\Test\Recording\Cassette;
+    use Symfony\AI\Platform\Test\Recording\RecordingProvider;
+
+    $provider = new RecordingProvider(
+        Factory::createProvider($_SERVER['ANTHROPIC_API_KEY'] ?? 'no-key-needed-on-replay'),
+        new Cassette(__DIR__.'/fixtures/weather.json'),
+    );
+
+    $result = $provider->invoke('claude-sonnet-4-5', $messages);
+
+By default the mode follows the cassette file: record when it is missing, replay when it exists. Pass
+the third constructor argument to force a mode - for example ``record: false`` in CI to fail loudly
+instead of issuing a real request when a cassette is missing::
+
+    // force replay (never call the real provider)
+    $provider = new RecordingProvider($realProvider, $cassette, record: false);
+
+The recorded interaction is matched by a signature derived from the model, input and options, so a
+replayed call must use the same arguments. An input that legitimately differs between runs, such as
+a timestamp or retrieved context, would otherwise miss its own recording; pass a ``signature``
+closure to normalize those parts before hashing::
+
+    $provider = new RecordingProvider($realProvider, $cassette, signature: fn ($model, $input, $options) => hash(
+        'xxh128',
+        preg_replace('/\d{4}-\d{2}-\d{2}/', '<date>', json_encode([$model, $input, $options])),
+    ));
+
+Supported result types are text, structured output (``ObjectResult``), embeddings (``VectorResult``),
+tool calls (``ToolCallResult``) and text streams; result metadata and token usage are not preserved.
+
+A cassette stores the model name, the signature and the result. The input itself is never written,
+only its hash, but a recorded answer can still repeat back what the prompt contained, so treat a
+cassette like any other committed fixture.
+
+.. note::
+
+    On replay the recorded result is returned verbatim, so the bridge ``ResultConverter`` runs only
+    at record time. To exercise bridge internals offline, record at the HTTP boundary with
+    :class:`Symfony\\AI\\Platform\\Test\\Replay\\CassetteHttpClient` instead, described next.
 
 Recording Real Responses
 ~~~~~~~~~~~~~~~~~~~~~~~~
