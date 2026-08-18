@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.13
+----
+
+ * Add `orqai` platform configuration for the Orq.ai bridge
+
 0.11
 ----
 

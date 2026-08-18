@@ -319,6 +319,7 @@ class BridgeConfigCompilationTest extends TestCase
         yield 'openai' => ['openai', ['api_key' => 'k'], 'ai.platform.openai'];
         yield 'openresponses' => ['openresponses', ['inst' => ['base_url' => 'http://localhost:8080']], 'ai.platform.openresponses.inst'];
         yield 'openrouter' => ['openrouter', ['api_key' => 'k'], 'ai.platform.openrouter'];
+        yield 'orqai' => ['orqai', ['api_key' => 'k'], 'ai.platform.orqai'];
         yield 'ovh' => ['ovh', ['api_key' => 'k'], 'ai.platform.ovh'];
         yield 'perplexity' => ['perplexity', ['api_key' => 'k'], 'ai.platform.perplexity'];
         yield 'scaleway' => ['scaleway', ['api_key' => 'k'], 'ai.platform.scaleway'];

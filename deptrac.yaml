@@ -229,6 +229,10 @@ deptrac:
       collectors:
         - type: classLike
           value: Symfony\\AI\\Platform\\Bridge\\OpenRouter\\.*
+    - name: OrqAiPlatform
+      collectors:
+        - type: classLike
+          value: Symfony\\AI\\Platform\\Bridge\\OrqAi\\.*
     - name: OvhPlatform
       collectors:
         - type: classLike
@@ -514,6 +518,9 @@ deptrac:
     OpenResponsesPlatform:
       - PlatformComponent
     OpenRouterPlatform:
+      - PlatformComponent
+      - GenericPlatform
+    OrqAiPlatform:
       - PlatformComponent
       - GenericPlatform
     OvhPlatform:

@@ -62,6 +62,8 @@ Advanced Example with Multiple Agents
                 api_key: '%env(ELEVEN_LABS_API_KEY)%'
             gemini:
                 api_key: '%env(GEMINI_API_KEY)%'
+            orqai:
+                api_key: '%env(ORQ_API_KEY)%'
             perplexity:
                 api_key: '%env(PERPLEXITY_API_KEY)%'
             # VertexAI with project-scoped endpoint (requires google/auth)

@@ -54,6 +54,7 @@
         "symfony/ai-open-responses-platform": "^0.12",
         "symfony/ai-open-router-platform": "^0.12",
         "symfony/ai-open-search-store": "^0.12",
+        "symfony/ai-orq-ai-platform": "^0.12",
         "symfony/ai-perplexity-platform": "^0.12",
         "symfony/ai-pinecone-store": "^0.12",
         "symfony/ai-pogocache-message-store": "^0.12",

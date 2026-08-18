@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.13
+----
+
+ * Add `Orq.ai` bridge for the OpenAI-compatible AI gateway router, supporting completions and embeddings
+
 0.12
 ----
 

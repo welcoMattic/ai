@@ -49,6 +49,7 @@ To use a specific AI platform, install the corresponding bridge package:
 | OpenAI              | `symfony/ai-open-ai-platform`             |
 | Open Responses      | `symfony/ai-open-responses-platform`      |
 | OpenRouter          | `symfony/ai-open-router-platform`         |
+| Orq.ai              | `symfony/ai-orq-ai-platform`              |
 | OVH                 | `symfony/ai-ovh-platform`                 |
 | Perplexity          | `symfony/ai-perplexity-platform`          |
 | Replicate           | `symfony/ai-replicate-platform`           |

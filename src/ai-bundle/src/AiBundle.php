@@ -83,6 +83,8 @@ use Symfony\AI\Platform\Bridge\OpenAi\Factory as OpenAiFactory;
 use Symfony\AI\Platform\Bridge\OpenResponses\Factory as OpenResponsesFactory;
 use Symfony\AI\Platform\Bridge\OpenResponses\FallbackModelCatalog as OpenResponsesFallbackModelCatalog;
 use Symfony\AI\Platform\Bridge\OpenRouter\Factory as OpenRouterFactory;
+use Symfony\AI\Platform\Bridge\OrqAi\Factory as OrqAiFactory;
+use Symfony\AI\Platform\Bridge\OrqAi\ModelApiCatalog as OrqAiModelApiCatalog;
 use Symfony\AI\Platform\Bridge\Ovh\Factory as OvhFactory;
 use Symfony\AI\Platform\Bridge\Perplexity\Factory as PerplexityFactory;
 use Symfony\AI\Platform\Bridge\Scaleway\Factory as ScalewayFactory;
@@ -893,6 +895,43 @@ final class AiBundle extends AbstractBundle
                     new Reference('event_dispatcher'),
                 ])
                 ->addTag('ai.platform', ['name' => 'openrouter']);
+
+            $container->setDefinition($platformId, $definition);
+
+            return;
+        }
+
+        if ('orqai' === $type) {
+            if (!ContainerBuilder::willBeAvailable('symfony/ai-orq-ai-platform', OrqAiFactory::class, ['symfony/ai-bundle'])) {
+                throw new RuntimeException('Orq.ai platform configuration requires "symfony/ai-orq-ai-platform" package. Try running "composer require symfony/ai-orq-ai-platform".');
+            }
+
+            $container->setDefinition('ai.platform.model_catalog.orqai', (new Definition(OrqAiModelApiCatalog::class))
+                ->setLazy(true)
+                ->setArguments([
+                    new Reference($platform['http_client'], ContainerInterface::NULL_ON_INVALID_REFERENCE),
+                    $platform['api_key'],
+                    $platform['base_url'],
+                ])
+                ->addTag('proxy', ['interface' => ModelCatalogInterface::class])
+            );
+
+            $platformId = 'ai.platform.orqai';
+            $definition = (new Definition(Platform::class))
+                ->setFactory(OrqAiFactory::class.'::createPlatform')
+                ->setLazy(true)
+                ->addTag('proxy', ['interface' => PlatformInterface::class])
+                ->setArguments([
+                    $platform['api_key'],
+                    new Reference($platform['http_client'], ContainerInterface::NULL_ON_INVALID_REFERENCE),
+                    new Reference('ai.platform.model_catalog.orqai'),
+                    null, // $contract
+                    new Reference('event_dispatcher'),
+                    'orqai',
+                    null, // $modelRouter
+                    $platform['base_url'],
+                ])
+                ->addTag('ai.platform', ['name' => 'orqai']);
 
             $container->setDefinition($platformId, $definition);
 

@@ -137,6 +137,7 @@ Supported Models & Platforms
   * `Mistral's Mistral`_ with `Mistral`_ and `OpenRouter`_ as Platform
   * `Albert API`_ models with `Albert`_ as Platform (French government's sovereign AI gateway)
   * `LiteLLM`_ as unified Platform
+  * `Orq.ai`_ as unified Platform (AI gateway with fallbacks, retries, caching and load balancing)
 * **Embeddings Models**
   * `Gemini Text Embeddings`_ with `Google`_ and `OpenRouter`_
   * `Vertex AI Text Embeddings`_ with `Vertex AI`_
@@ -195,6 +196,65 @@ model catalogs.
 
 See :doc:`platform/model-catalogs` for keeping catalogs current, adding custom
 models, or bypassing the catalog.
+
+Orq.ai
+~~~~~~
+
+`Orq.ai`_ is an AI gateway routing to 300+ models from a single API. It ships a
+dedicated bridge that already points at its OpenAI-compatible router, so only an API
+key is needed::
+
+    use Symfony\AI\Platform\Bridge\OrqAi\Factory;
+    use Symfony\AI\Platform\Message\Message;
+    use Symfony\AI\Platform\Message\MessageBag;
+
+    $platform = Factory::createPlatform(env('ORQ_API_KEY'));
+
+    $messages = new MessageBag(Message::ofUser('What is the Symfony framework?'));
+    $result = $platform->invoke('openai/gpt-4o-mini', $messages);
+
+    echo $result->asText();
+
+Models are addressed with the gateway's ``provider/model`` identifiers, and any model
+name is accepted by default: an identifier containing ``embed`` is routed to the
+embeddings endpoint, everything else to the chat completions endpoint. Embedding models
+named otherwise, such as ``jina/jina-clip-v2``, need an explicit
+:class:`Symfony\\AI\\Platform\\Bridge\\Generic\\ModelCatalog` entry. To restrict the
+platform to the models enabled for the workspace, pass a
+:class:`Symfony\\AI\\Platform\\Bridge\\OrqAi\\ModelApiCatalog`, which discovers them from
+the gateway and fails fast on a model nobody enabled. This is what the AI Bundle
+configures::
+
+    use Symfony\AI\Platform\Bridge\OrqAi\ModelApiCatalog;
+    use Symfony\Component\HttpClient\HttpClient;
+
+    $platform = Factory::createPlatform(
+        env('ORQ_API_KEY'),
+        modelCatalog: new ModelApiCatalog(HttpClient::create(), env('ORQ_API_KEY')),
+    );
+
+Depending on the upstream provider, the router reports ``finish_reason: "stop"`` even when
+the model asked for a tool call, instead of the ``"tool_calls"`` value the OpenAI schema
+defines, so the bridge keys the conversion on the presence of the tool calls themselves.
+Running a full agent loop needs care though: some reasoning models, Gemini 3 among them,
+require a thought signature on the follow-up request, and the router does not populate the
+``thought_signature`` field of its own schema, which makes the second round trip fail
+upstream.
+
+Gateway features like retries, caching or load balancing are request body fields of
+the router, so they are passed as regular invocation options::
+
+    $result = $platform->invoke('openai/gpt-4o-mini', $messages, [
+        'retry' => ['count' => 3, 'on_codes' => [429, 500, 502, 503, 504]],
+        'cache' => ['type' => 'exact_match', 'ttl' => 3600],
+        'load_balancer' => [
+            'type' => 'weight_based',
+            'models' => [
+                ['model' => 'openai/gpt-4o-mini', 'weight' => 0.7],
+                ['model' => 'anthropic/claude-haiku-4-5', 'weight' => 0.3],
+            ],
+        ],
+    ]);
 
 Providers and Multi-Provider Platforms
 --------------------------------------
@@ -1662,6 +1722,8 @@ Code Examples
 * `Parallel Embeddings Calls`_
 * `Cerebras Chat`_
 * `Cerebras Streaming`_
+* `Orq.ai Chat`_
+* `Orq.ai Streaming`_
 
 .. note::
 
@@ -1694,6 +1756,9 @@ Code Examples
 .. _`Vertex AI`: https://cloud.google.com/vertex-ai/generative-ai/docs
 .. _`Google`: https://ai.google.dev/
 .. _`OpenRouter`: https://www.openrouter.ai/
+.. _`Orq.ai`: https://orq.ai/
+.. _`Orq.ai Chat`: https://github.com/symfony/ai/blob/main/examples/orqai/chat.php
+.. _`Orq.ai Streaming`: https://github.com/symfony/ai/blob/main/examples/orqai/stream.php
 .. _`DeepSeek's R1`: https://www.deepseek.com/
 .. _`Amazon's Nova`: https://nova.amazon.com
 .. _`Mistral's Mistral`: https://www.mistral.ai/
