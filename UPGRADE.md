@@ -41,6 +41,26 @@ AI Bundle
 Platform
 --------
 
+ * The Gemini and VertexAI bridges now yield a single `ToolCallComplete` delta at the end of a stream,
+   carrying all function calls of the response, instead of one `ToolCallComplete` per streamed
+   `functionCall` part. Consumers collecting tool calls across several deltas can rely on the single
+   batch instead:
+
+   ```diff
+   -$toolCalls = [];
+    foreach ($result->asStream() as $delta) {
+        if ($delta instanceof ToolCallComplete) {
+   -        $toolCalls = array_merge($toolCalls, $delta->getToolCalls());
+   +        $toolCalls = $delta->getToolCalls();
+        }
+    }
+   ```
+
+   Multi-candidate responses (`candidateCount` > 1) are the exception and keep their previous shape: their
+   deltas are wrapped in a `ChoiceDelta`, carrying one `ToolCallComplete` per function call, without
+   `ToolCallStart` and without a terminal batch. A consumer walking `ChoiceDelta::getDeltas()` still has to
+   merge those.
+
  * `Result\Stream\ListenerInterface` gained an `onError()` method, dispatched with the new
    `Result\Stream\ErrorEvent`. Listeners not extending
    `AbstractStreamListener` must add the method:

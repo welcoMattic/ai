@@ -609,6 +609,23 @@ The following delta types are available:
 * :class:`Symfony\\AI\\Platform\\Result\\Stream\\Delta\\ChoiceDelta` -- a choice delta (e.g. multiple completions)
 * :class:`Symfony\\AI\\Platform\\Result\\Stream\\Delta\\BinaryDelta` -- a chunk of binary data
 
+Tool calls follow a fixed shape across bridges: every call is announced with a
+``ToolCallStart`` at the position it appears in the response, its arguments follow as
+``ToolInputDelta`` chunks if the provider streams them, and one final ``ToolCallComplete``
+carries all calls of the response ready for execution. The position of a ``ToolCallStart``
+relative to the surrounding text and thinking deltas is what the provider generated, which
+matters when the assistant message is sent back on a later turn.
+
+.. note::
+
+    A provider that does not identify its tool calls before they are complete only emits
+    ``ToolCallComplete``. Consumers should therefore treat ``ToolCallStart`` and
+    ``ToolInputDelta`` as optional, and ``ToolCallComplete`` as the authoritative one.
+
+    Multi-candidate responses are the exception to the single terminal ``ToolCallComplete``: the
+    Gemini and VertexAI bridges wrap each chunk's candidates in a ``ChoiceDelta`` that carries one
+    ``ToolCallComplete`` per function call, without ``ToolCallStart``.
+
 Finish Reason
 ~~~~~~~~~~~~~
 
