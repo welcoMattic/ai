@@ -1,0 +1,28 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/realtime/client_secrets",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"session\":{\"model\":\"gpt-4o-realtime-preview\",\"type\":\"realtime\",\"output_modalities\":[\"text\",\"audio\"],\"audio\":{\"output\":{\"voice\":\"alloy\"}},\"instructions\":\"You are a friendly assistant. Keep your answers short.\"}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"client_secret\":{\"value\":\"ek_test_secret_1234567890\",\"expires_at\":1795000000},\"session\":{\"id\":\"sess_test_12345\",\"object\":\"realtime.session\",\"model\":\"gpt-4o-realtime-preview\",\"output_modalities\":[\"text\",\"audio\"],\"instructions\":\"You are a friendly assistant. Keep your answers short.\",\"audio\":{\"output\":{\"voice\":\"alloy\"}}}}"
+            }
+        }
+    ]
+}
