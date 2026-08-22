@@ -221,6 +221,9 @@ To remove all documents from a store without dropping it, use ``bin/console ai:s
             chromadb:
                 symfonycon:
                     collection: 'symfony_blog'
+                    # optional, a service implementing Codewithkyrian\ChromaDB\Embeddings\EmbeddingFunction.
+                    # Required to query the store with a TextQuery, which ChromaDB embeds client-side.
+                    embedding_function: 'app.chromadb.embedding_function'
 
 .. code-block:: terminal
 
