@@ -1762,7 +1762,27 @@ closure to normalize those parts before hashing::
     ));
 
 Supported result types are text, structured output (``ObjectResult``), embeddings (``VectorResult``),
-tool calls (``ToolCallResult``) and text streams; result metadata and token usage are not preserved.
+tool calls (``ToolCallResult``) and text streams.
+
+Result metadata is recorded too, so a replayed result can be asserted on for what the provider
+reported alongside the answer - most usefully token usage::
+
+    $result = $provider->invoke('claude-sonnet-4-5', $messages);
+
+    // read the result first: a DeferredResult copies the metadata up when it resolves,
+    // so getMetadata() is empty until asText() (or another as*() call) has run
+    $result->asText();
+
+    $result->getMetadata()->get('token_usage')->getTotalTokens();
+    $result->getMetadata()->get('finish_reason')->getCase();
+
+Metadata is preserved for the values a provider reports at this boundary: scalars, ``null``,
+:class:`Symfony\\AI\\Platform\\FinishReason\\FinishReason` and token usage
+(:class:`Symfony\\AI\\Platform\\TokenUsage\\TokenUsage` and
+:class:`Symfony\\AI\\Platform\\TokenUsage\\TokenUsageAggregation`), plus arrays nesting any of
+those to any depth. Values keep their type across a round trip, floats included. Anything else
+throws while recording rather than being dropped silently, so a cassette never claims to hold
+something it lost.
 
 A cassette stores the model name, the signature and the result. The input itself is never written,
 only its hash, but a recorded answer can still repeat back what the prompt contained, so treat a
