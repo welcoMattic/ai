@@ -136,6 +136,29 @@ MCP Bundle
    as more than one server enables the STDIO transport — one process can serve only one of them.
    `debug:mcp` gained a `--server` option to restrict its output to a single server.
 
+ * A configured MCP client is autowired under its own name, not under `<name>Client`. Rename the
+   argument to match:
+
+   ```diff
+    public function __construct(
+   -    private McpClientInterface $researchClient,
+   +    private McpClientInterface $research,
+    ) {
+    }
+   ```
+
+   The same alias backs `#[Target('research')]`, which is the form the bundle's documentation shows and
+   the one to use when the argument is named for its role rather than for the client:
+
+   ```php
+   public function __construct(
+       #[Target('research')] private McpClientInterface $client,
+   ) {
+   }
+   ```
+
+   A single configured client also answers a plain `McpClientInterface` type hint, unchanged.
+
 Mate
 ----
 
