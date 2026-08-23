@@ -68,16 +68,43 @@ final class MessageStoreTest extends TestCase
 
         $this->assertArrayHasKey('_id', $payload);
 
+        $documents = null;
+
         $collection = $this->createMock(Collection::class);
-        $collection->expects($this->once())->method('insertMany')->with([
-            $payload,
-        ]);
+        $collection->expects($this->once())->method('insertMany')->with($this->callback(
+            /**
+             * @param list<array<string, mixed>> $insertedDocuments
+             */
+            static function (array $insertedDocuments) use (&$documents): bool {
+                $documents = $insertedDocuments;
+
+                return true;
+            },
+        ));
 
         $client = $this->createMock(Client::class);
         $client->expects($this->once())->method('getCollection')->willReturn($collection);
 
         $messageStore = new MessageStore($client, 'foo', 'bar', $serializer);
+
+        $before = (new \DateTimeImmutable())->getTimestamp();
         $messageStore->save($bag);
+        $after = (new \DateTimeImmutable())->getTimestamp();
+
+        $this->assertIsArray($documents);
+        $this->assertCount(1, $documents);
+
+        $document = $documents[0];
+
+        // The normalizer stamps "addedAt" on every call, so it cannot equal the expectation built above.
+        $this->assertArrayHasKey('addedAt', $document);
+        $this->assertIsInt($document['addedAt']);
+        $this->assertGreaterThanOrEqual($before, $document['addedAt']);
+        $this->assertLessThanOrEqual($after, $document['addedAt']);
+
+        unset($document['addedAt'], $payload['addedAt']);
+
+        $this->assertSame($payload, $document);
     }
 
     public function testMessageStoreCanLoad()
