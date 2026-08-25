@@ -528,7 +528,15 @@ and ``hash`` pair used to detect drift, and the generated ``targets``::
 
 Use ``mate skills:list`` for an overview, and ``mate skills:validate`` to check the generated folders
 against that record: it reports hand-edited content, missing folders, and sources that moved on since
-the last install. ``mate skills:prune`` removes leftover ``mate-*`` folders.
+the last install. It also looks at the installed content itself: it warns when a Markdown link points
+at a file that is not part of the skill, and suggests a better description when it is too short or
+never says when the skill applies, because that description is all an agent has when it decides
+whether to load the skill. Those description findings are suggestions, not warnings: they are printed
+but never change the exit code, not even with ``--strict``. ``mate skills:prune`` removes leftover
+``mate-*`` folders.
+
+To see what an install would do before it does it, run ``mate skills:install --dry-run``: the same
+reconciler runs and reports what it would install, rebuild or remove, but nothing is written.
 
 The core package itself ships a ``system-information`` skill describing how to inspect the PHP
 runtime and installed package versions via the ``server-info`` tool.
@@ -551,16 +559,18 @@ Commands
 ``mate skills:install``
     Install the Agent Skills shipped by your enabled extensions so your coding agent can use
     them. This runs automatically as part of ``mate discover``; use it for an explicit re-sync.
-    See `Skills`_.
+    Pass ``--dry-run`` to see what a run would install, rebuild or remove without writing
+    anything. See `Skills`_.
 
 ``mate skills:list``
     List declared and installed skills with their enabled, mode, state and status information.
     Read-only diagnostic. See `Skills`_.
 
 ``mate skills:validate``
-    Check the generated skill folders against the state recorded in ``mate/extensions.php``. Exits
-    with a non-zero status when a skill is broken; pass ``--strict`` to fail on warnings too.
-    Read-only. See `Skills`_.
+    Check the generated skill folders against the state recorded in ``mate/extensions.php``, and the
+    installed content itself for dead links and descriptions an agent cannot act on. Exits with a
+    non-zero status when a skill is broken; pass ``--strict`` to fail on warnings too. Suggestions
+    about a description never affect the exit code. Read-only. See `Skills`_.
 
 ``mate skills:prune``
     Remove generated ``mate-*`` folders that no longer belong to any skill. Pass ``--dry-run`` to
