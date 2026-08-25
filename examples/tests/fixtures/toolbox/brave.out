@@ -1,0 +1,32 @@
+- Title: So You Received a Security Report. Now What?
+- Publication date: August 19, 2026
+- Short summary: A practical, step-by-step guide for PHP project maintainers from the PHP Foundation Ecosystem Security Team on handling vulnerability reports. It stresses coordinated disclosure (keep reports private), quick acknowledgement, careful triage, safe reproduction in isolated environments, privately preparing fixes (temporary private forks), writing and publishing a proper GitHub Security Advisory (with correct Composer/package metadata), coordinating releases (merge → tag → publish → notify FriendsOfPHP), and post-release wrap-up. The post also covers Composer’s advisory enforcement, ways to improve project security posture (SECURITY.md, private reporting, CI hardening, MFA, workflow hygiene), and how to get help from the Ecosystem Security Team.
+
++-------------------------------------------------------+----------------- Tool Sources --------------------------------------------------------------------------+
+| Name (Reference)                                      | Content                                                                                                 |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| The PHP Foundation: "New on the PHP Foundation blo... | New on the PHP Foundation blog: We’re highlighting Manychat, a Silver sponsor helping us move PHP ...   |
+| https://phpc.social/@thephpf/114494155624781671       |                                                                                                         |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| Best PHP Blogs 2026: Top Sites for Developers         | Senior developers and architects: Prioritize Stitcher.io for PHP version adoption data and language ... |
+| https://draft.dev/learn/php-blogs                     |                                                                                                         |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| The PHP Foundation Launches an Ecosystem Security ... | For the full announcement and more on what the team is planning, read the post on The PHP Foundation... |
+| https://laravel-news.com/the-php-foundation-launch... |                                                                                                         |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| Meet Manychat: A PHP Foundation Sponsor Sharing Th... | banner text stub The PHP Foundation Who we are What we do News Talks Contact php.net Sponsor The PHP... |
+| https://thephp.foundation/blog/2025/05/09/manychat... |                                                                                                         |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| News — The PHP Foundation — Supporting, Advanc...     | banner text stub The PHP Foundation Who we are What we do News Talks Contact php.net Sponsor The PHP... |
+| https://thephp.foundation/blog/                       |                                                                                                         |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| So You Received a Security Report. Now What? — T...   | If the report came from the PHP Foundation Ecosystem Security Team, <strong>it has already been thro... |
+| https://thephp.foundation/blog/2026/08/19/so-you-r... |                                                                                                         |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| The PHP Podcast 2026.08.20 | PHP Architect            | Now what?” is <strong>a jump-around reference for application developers rather than a front-to-ba...   |
+| https://www.phparch.com/podcast/the-php-podcast-20... |                                                                                                         |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| So You Received a Security Report. Now What? — T...   | banner text stub The PHP Foundation Who we are What we do News Talks Contact php.net Sponsor The PHP... |
+| https://thephp.foundation/blog/2026/08/19/so-you-r... |                                                                                                         |
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------+---------------------------------------------------------------------------------------------------------+

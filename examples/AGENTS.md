@@ -57,3 +57,28 @@ Uses `@dev` versions:
 - Runner executes in parallel for platform verification
 - Demonstrates both sync and async patterns
 - Platform-specific client configurations
+
+## Record & replay (offline integration tests)
+
+`bootstrap.php`'s `http_client()` is record/replay aware via the `CASSETTE` environment
+variable (`record` or `replay`, unset = real APIs), turning the example corpus into
+deterministic, credential-free integration tests for the bridge pipeline. The variable
+is set implicitly — `./runner --record` injects it into every example process, and the
+PHPUnit replay tests set `CASSETTE=replay` themselves:
+
+- `./runner --record openai`: runs the examples live (API keys required), captures every
+  HTTP interaction (credentials redacted, binary bodies elided to metadata stubs) into
+  `tests/fixtures/<path>.json`, then replays each fresh cassette and freezes its output
+  as the golden `tests/fixtures/<path>.out`.
+- `vendor/bin/phpunit`: replays every example that has a cassette and compares its
+  output to the committed golden; this is what CI runs, without keys.
+
+Recording is a local maintainer task — CI has no credentials for the providers, so it
+only ever replays. To refresh a single cassette (golden refresh included), narrow the
+record run with a filter:
+
+```bash
+./runner --record --filter=chat openai
+```
+
+See `README.md` for the full workflow.

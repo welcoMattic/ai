@@ -17,6 +17,7 @@ use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Platform\Bridge\OpenAi\Factory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
+use Symfony\AI\Platform\Result\MultiPartResult;
 use Symfony\Component\Clock\Clock as SymfonyClock;
 
 require_once dirname(__DIR__).'/bootstrap.php';
@@ -30,13 +31,15 @@ $toolbox = new Toolbox([$brave, $clock, $crawler], logger: logger());
 $agent = new Agent($platform, 'gpt-5-mini', toolbox: $toolbox, includeSources: true);
 
 $prompt = <<<PROMPT
-    Summarize the latest game of the Dallas Cowboys. When and where was it? Who was the opponent, what was the result,
-    and how was the game and the weather in the city. Use tools for the research and only answer based on information
-    given in the context - don't make up information.
+    What is the latest blog post of the PHP Foundation about? Give its title, publication date and a short summary
+    of its content. Use tools for the research and only answer based on information given in the context - don't
+    make up information.
     PROMPT;
 
 $result = $agent->call(new MessageBag(Message::ofUser($prompt)));
 
-echo $result->getContent().\PHP_EOL.\PHP_EOL;
+// Reasoning models answer with a MultiPartResult (reasoning + message parts).
+$content = $result instanceof MultiPartResult ? $result->asText() : $result->getContent();
+echo $content.\PHP_EOL.\PHP_EOL;
 
 print_sources($result->getMetadata()->get('sources'));
