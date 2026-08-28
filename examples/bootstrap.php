@@ -16,7 +16,14 @@ use Symfony\AI\Agent\Toolbox\Source\SourceCollection;
 use Symfony\AI\Platform\Exception\ExceptionInterface as PlatformException;
 use Symfony\AI\Platform\FinishReason\FinishReason;
 use Symfony\AI\Platform\FinishReason\FinishReasonCase;
+use Symfony\AI\Platform\Message\AssistantMessage;
+use Symfony\AI\Platform\Message\Content\Text;
+use Symfony\AI\Platform\Message\Content\Thinking;
+use Symfony\AI\Platform\Message\MessageBag;
+use Symfony\AI\Platform\Message\MessageInterface;
+use Symfony\AI\Platform\Message\ToolCallMessage;
 use Symfony\AI\Platform\Result\DeferredResult;
+use Symfony\AI\Platform\Result\ToolCall;
 use Symfony\AI\Platform\Test\Replay\CassetteHttpClient;
 use Symfony\AI\Platform\Test\Replay\HttpCassette;
 use Symfony\AI\Platform\TokenUsage\TokenUsageAggregation;
@@ -198,6 +205,52 @@ function print_token_usage(?TokenUsageInterface $tokenUsage): void
     if ($tokenUsage instanceof TokenUsageAggregation) {
         output()->writeln(sprintf('<comment>Aggregated token usage from %d calls.</comment>', $tokenUsage->count()));
     }
+}
+
+/**
+ * Renders what each message is made of rather than what it says, which keeps the recorded
+ * golden stable across re-records.
+ */
+function print_conversation_shape(MessageBag $messages): void
+{
+    $table = new Table(output());
+    $table->setHeaderTitle('Conversation Shape');
+    $table->setHeaders(['#', 'Role', 'Content parts']);
+
+    foreach ($messages->getMessages() as $index => $message) {
+        $table->addRow([$index, $message->getRole()->value, implode(' + ', describe_message_parts($message))]);
+    }
+
+    $table->render();
+}
+
+/**
+ * @return list<string>
+ */
+function describe_message_parts(MessageInterface $message): array
+{
+    if ($message instanceof ToolCallMessage) {
+        return [sprintf('ToolResult(%s)', $message->getToolCall()->getName())];
+    }
+
+    if (!$message instanceof AssistantMessage) {
+        return ['Text'];
+    }
+
+    $parts = [];
+    foreach ($message->getContent() as $part) {
+        $parts[] = match (true) {
+            $part instanceof Thinking => sprintf(
+                'Thinking(%s)',
+                null === $part->getSignature() ? '<error>unsigned</error>' : '<info>signed</info>',
+            ),
+            $part instanceof ToolCall => sprintf('ToolCall(%s)', $part->getName()),
+            $part instanceof Text => 'Text',
+            default => (new ReflectionClass($part))->getShortName(),
+        };
+    }
+
+    return [] === $parts ? ['<error>empty</error>'] : $parts;
 }
 
 function print_finish_reason(?FinishReason $finishReason): void

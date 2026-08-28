@@ -176,6 +176,20 @@ Tool calling can be enabled by passing a toolbox to the agent::
 
     $agent = new Agent($platform, $model, toolbox: $toolbox);
 
+When the model calls a tool, the agent runs the tool loop and appends the exchange to the
+message bag: the assistant turn the provider produced - its text, thinking blocks and tool
+calls as one message - followed by the tool results.
+
+Carry the final answer into the next turn by passing the result itself to
+:method:`Symfony\\AI\\Platform\\Message\\Message::ofAssistant`, which keeps the thinking
+blocks and signatures providers validate when the conversation is replayed::
+
+    $execution = $agent->call($messages);
+
+    $messages->add(Message::ofAssistant($execution->getResult()));
+
+Streamed results work the same way, see :doc:`the Platform component </components/platform>`.
+
 Custom tools can basically be any class, but must configure by the :class:`Symfony\\AI\\Agent\\Toolbox\\Attribute\\AsTool` attribute::
 
     use Symfony\AI\Agent\Toolbox\Attribute\AsTool;
