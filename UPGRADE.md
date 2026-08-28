@@ -213,6 +213,34 @@ MCP Bundle
 
    A single configured client also answers a plain `McpClientInterface` type hint, unchanged.
 
+ * **Every HTTP server now also serves the 2026-07-28 revision**, on the endpoint it already had. The
+   SDK builds a dispatcher per era and the transport routes each request, so no configuration turns
+   this on — and an existing server gets it by upgrading. That revision removed server-initiated
+   requests, so a tool, prompt or resource handler calling `$gateway->sample()` or
+   `$gateway->listRoots()` now fails for clients speaking it ("This protocol revision has no
+   server-initiated requests"), while continuing to work for handshake-era clients on the same
+   endpoint. Take what those handlers need through tool arguments, resource URIs or server
+   configuration instead, or guard the calls with `$gateway->supportsSampling()` /
+   `$gateway->supportsRoots()`.
+
+   Until the handlers are ready, list only handshake-era revisions to refuse the modern era outright:
+
+   ```yaml
+   # config/packages/mcp.yaml
+   mcp:
+       servers:
+           api:
+               protocol_versions: ['2025-11-25'] # handshake era only
+               registry: '*'
+   ```
+
+   Elicitation survived, as a multi round-trip request: `$gateway->elicit()` keeps working unchanged.
+   A handler that elicits *more than once* now needs `servers.<name>.request_state.key` (at least 32
+   bytes), because without a session the answers to the earlier asks travel through the client and are
+   signed. Roots, sampling and MCP logging are deprecated by the same revision (SEP-2577), and
+   `mcp/sdk` 0.8 triggers a deprecation for each configured handler — including the one behind
+   `clients.<name>.forward_server_logs`, which defaults to `true`.
+
 Mate
 ----
 
