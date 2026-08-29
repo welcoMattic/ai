@@ -160,7 +160,7 @@ All four accept ``--format``. Use ``--format=json`` when the result is parsed, a
 .. note::
 
     ``mate init`` asks which command your agent should use and records it as ``mate.invocation``
-    in ``mate/config.php``, together with the PHP version it was initialized under. See
+    in ``mate/config.php``, together with the PHP version that command runs under. See
     `Choosing the interpreter`_.
 
 Add Custom Tools
@@ -248,7 +248,11 @@ does not just fail, it reports on something that is not the application under te
     is the plain ``vendor/bin/mate`` and nothing is prefixed anywhere.
 
 ``mate.php_version``
-    The PHP version the project runs on, recorded as ``major.minor``. Mate refuses to start under a
+    The PHP version the project runs on, recorded as ``major.minor``. When ``mate.invocation``
+    wraps the binary, ``mate init`` runs ``php`` through that wrapper to find out which
+    interpreter it really reaches, rather than recording the one that happened to run ``init``.
+    If the wrapper cannot be reached, ``init`` warns and falls back to the current process, and
+    you should check the value by hand. Mate refuses to start under a
     different one and points at ``mate.invocation`` in the error:
 
     .. code-block:: terminal
