@@ -646,20 +646,8 @@ but never change the exit code, not even with ``--strict``. ``mate skills:prune`
 To see what an install would do before it does it, run ``mate skills:install --dry-run``: the same
 reconciler runs and reports what it would install, rebuild or remove, but nothing is written.
 
-The core package ships six skills:
-
-``symfony-profiler-debugging``
-    Diagnose a request that errored or was slow, through the profiler: which profile to find, which
-    collectors to read, and in what order depending on the symptom.
-
-``symfony-log-investigation``
-    Investigate trends across requests in the Monolog log files, rather than one failed request.
-
-``symfony-request-triage``
-    Decide which of the other skills a given symptom calls for.
-
-``symfony-service-inspection``
-    Inspect the compiled DI container when the wiring, not the code, is the suspect.
+A skill ships with the extension whose tools it drives, so a project only ever installs skills it
+can actually follow. The core package ships two:
 
 ``php-environment-check``
     Establish whether a failing tool is the PHP runtime rather than the application.
@@ -667,6 +655,23 @@ The core package ships six skills:
 ``system-information``
     Resolve which dependency versions are actually installed, via ``composer show`` and
     ``composer.lock``.
+
+The Symfony extension adds three:
+
+``symfony-profiler-debugging``
+    Diagnose a request that errored or was slow, through the profiler: which profile to find, which
+    collectors to read, and in what order depending on the symptom.
+
+``symfony-request-triage``
+    Decide which of the other skills a given symptom calls for.
+
+``symfony-service-inspection``
+    Inspect the compiled DI container when the wiring, not the code, is the suspect.
+
+And the Monolog extension one:
+
+``symfony-log-investigation``
+    Investigate trends across requests in the Monolog log files, rather than one failed request.
 
 Commands
 --------
