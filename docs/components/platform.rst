@@ -1254,7 +1254,7 @@ top this example uses the feature through the agent to leverage tool calling::
         ],
     ]]);
 
-    dump($result->getContent()); // returns an array
+    dump($result->asObject()); // returns an array
 
 Populating Existing Object Instances
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
