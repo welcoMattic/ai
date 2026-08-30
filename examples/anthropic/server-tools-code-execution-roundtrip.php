@@ -50,4 +50,4 @@ echo \PHP_EOL;
 output()->writeln('<info>====== Turn 2 ======</info>');
 $messages->add(Message::ofUser('What number did your snippet print? Answer with the number only.'));
 $result = $agent->call($messages, ['tools' => $tools]);
-output()->writeln('<comment>Assistant:</comment> '.$result->getContent());
+output()->writeln('<comment>Assistant:</comment> '.$result->asText());

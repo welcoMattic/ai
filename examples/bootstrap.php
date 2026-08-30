@@ -142,6 +142,18 @@ function logger(): LoggerInterface
     };
 }
 
+/**
+ * Whether the example writes to an interactive terminal.
+ *
+ * Live re-rendering with escape sequences like a clear screen only works there: when the
+ * output is captured - by the example runner, a pipe or a replay golden - those sequences
+ * would garble it, so examples fall back to printing the final state once.
+ */
+function is_interactive(): bool
+{
+    return defined('STDOUT') && stream_isatty(\STDOUT);
+}
+
 function output(): ConsoleOutput
 {
     $verbosity = match ($_SERVER['argv'][1] ?? null) {
