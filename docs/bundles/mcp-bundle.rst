@@ -986,7 +986,7 @@ Configuration
                     name: 'acme-research' # (default: the configuration key)
                     version: '1.0.0'
                     description: null
-                protocol_version: null # MCP protocol version to negotiate (default: the SDK default)
+                # protocol_version: '2026-07-28' # MCP protocol version to negotiate (default: the SDK default)
                 capabilities:
                     roots_list_changed: false # The "roots" capability itself follows the handler below
                 roots: null # Service id implementing RootsCallbackInterface; enables the capability
@@ -1006,7 +1006,7 @@ Configuration
                         headers:
                             Authorization: 'Bearer %env(GITHUB_MCP_TOKEN)%'
                         http_client: null # Service id of a PSR-18 client (default: psr18.http_client)
-                        max_sse_buffer_bytes: null # Bytes buffered per SSE event (default: the SDK value)
+                        # max_sse_buffer_bytes: 1048576 # Bytes buffered per SSE event (default: the SDK value)
                         request_timeout: 300 # Overrides the client-level value
 
                     filesystem:
@@ -1017,7 +1017,7 @@ Configuration
                         env: # Environment variables for the child process
                             LOG_LEVEL: 'debug'
                         inherit_env: true # Merge "env" over the current environment instead of replacing it
-                        max_buffer_size: null # Bytes buffered per line (default: the SDK value)
+                        # max_buffer_size: 1048576 # Bytes buffered per line (default: the SDK value)
 
 Logging Configuration
 ---------------------
