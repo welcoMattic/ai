@@ -32,7 +32,9 @@ $agent = new Agent($platform, 'gpt-5-mini', toolbox: $toolbox);
 $messages = new MessageBag(Message::ofUser('What date and time is it? Answer in one sentence.'));
 
 // call() returns a lazy execution: every step the agent takes is yielded as an update
-foreach ($agent->call($messages, ['stream' => true]) as $update) {
+$execution = $agent->call($messages, ['stream' => true]);
+
+foreach ($execution as $update) {
     if ($update instanceof Progress) {
         echo match ($update->getStage()) {
             // the answer is streamed token by token
@@ -43,6 +45,6 @@ foreach ($agent->call($messages, ['stream' => true]) as $update) {
     }
 
     if ($update instanceof Result) {
-        echo \PHP_EOL.\PHP_EOL.'Final result: '.$update->getResult()->getContent().\PHP_EOL;
+        echo \PHP_EOL.\PHP_EOL.'Final result: '.$execution->asText().\PHP_EOL;
     }
 }
