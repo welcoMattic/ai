@@ -64,6 +64,9 @@ Agent
    Code relying on the `StreamResult` type specifically — `instanceof StreamResult`, `addListener()` — must be
    reworked to consume the execution instead (as the `Chat` component's `stream()` now does).
 
+ * A tool-calling round adds one assistant message per turn — text, thinking blocks and tool calls
+   together — instead of splitting it. Code asserting on the message bag's shape needs updating.
+
 AI Bundle
 ---------
 
@@ -91,6 +94,9 @@ Chat
    streamed deltas and persists the assistant message, including the result metadata, once the stream is complete.
    Since `AgentInterface::call()` no longer returns a `StreamResult` (see the Agent section), there is no stream to
    attach the listener to anymore.
+
+ * `Chat::stream()` persists the assistant turn whole — a `Thinking` part now survives where plain text
+   was stored. Code reading persisted history must expect structured content.
 
 MCP Bundle
 ----------

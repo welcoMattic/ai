@@ -904,6 +904,34 @@ so a result that contains a :class:`Symfony\\AI\\Platform\\Result\\ThinkingResul
 followed by a :class:`Symfony\\AI\\Platform\\Result\\TextResult` (and any tool
 calls) is replayed in the same order on the next turn.
 
+Replaying a Streamed Turn
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A streamed response carries the assistant turn as deltas.
+:method:`Symfony\\AI\\Platform\\Message\\Message::ofAssistant` accepts a streamed result
+just like a buffered one and returns the turn the provider produced - text, thinking
+blocks with their signatures, and tool calls, in order::
+
+    $result = $platform->invoke($model, $messages, ['stream' => true])->getResult();
+    \assert($result instanceof StreamResult);
+
+    foreach ($result->getContent() as $delta) {
+        echo $delta;
+    }
+
+    $messages->add(Message::ofAssistant($result));
+
+The turn is collected while the stream is read;
+:method:`Symfony\\AI\\Platform\\Result\\StreamResult::getAssistantMessage` returns it
+directly, draining a stream that was never iterated.
+:class:`Symfony\\AI\\Platform\\Result\\Stream\\AssistantMessageStreamListener` performs
+the reassembly and can be used on its own.
+
+.. caution::
+
+    Read the turn *after* the deltas, as above. A stream is read once, so asking for the
+    turn first drains it and the deltas never reach the loop that follows.
+
 Checking for Thinking Support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
