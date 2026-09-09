@@ -83,6 +83,62 @@ Actions that can be executed::
         }
     }
 
+Request Context
+^^^^^^^^^^^^^^^
+
+MCP tools can inject ``Mcp\Server\RequestContext`` to access information
+about the current request and session, or communicate with the MCP client.
+
+::
+
+    namespace App\Mcp;
+
+    use Mcp\Capability\Attribute\McpTool;
+    use Mcp\Server\RequestContext;
+
+    final class ClientInfoTool
+    {
+        #[McpTool(name: 'client-info')]
+        public function getClientInfo(RequestContext $context): string
+        {
+            $context->getClientLogger()->info('Handling client-info tool.');
+
+            return 'Request context is available.';
+        }
+    }
+
+The ``RequestContext`` is created for each request and must not be reused
+between requests.
+
+It provides access to request-specific information through methods such as:
+
+* ``getRequest()`` — the current JSON-RPC request;
+* ``getSession()`` — the current MCP session;
+* ``getClientGateway()`` — the gateway for communicating with the MCP client;
+* ``getClientLogger()`` — a logger for sending log messages to the client.
+
+Use ``RequestContext`` only when a tool needs request- or client-specific
+information. Regular tool arguments should be used for application data.
+
+.. note::
+
+    ``_session`` and ``_request`` are reserved parameter names.
+
+    Do not use ``_session`` or ``_request`` as parameter names for tool
+    arguments. The ``SchemaGenerator`` rejects these names during tool
+    discovery, which can prevent the tool from being registered.
+
+    Use ``RequestContext`` when you need access to the current MCP request
+    or session:
+
+::
+
+        #[McpTool]
+        public function myTool(RequestContext $context): string
+        {
+            // ...
+        }
+
 Prompts
 ^^^^^^^
 
