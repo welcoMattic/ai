@@ -1,0 +1,18 @@
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {#456
+  +steps: array:3 [
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#481
+      +explanation: "Subtract 7 from both sides to isolate the term with x."
+      +output: "8x = -23 - 7"
+    }
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#475
+      +explanation: "Simplify the right‑hand side."
+      +output: "8x = -30"
+    }
+    2 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#472
+      +explanation: "Divide both sides by 8 to solve for x."
+      +output: "x = -30 ÷ 8"
+    }
+  ]
+  +finalAnswer: "x = -15/4"
+  +result: -3.75
+}

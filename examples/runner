@@ -180,7 +180,8 @@ $app = (new SingleCommandApplication('Symfony AI Example Runner'))
                     continue;
                 }
 
-                $replay = new Process(['php', $run['example']->getRealPath()], env: ['CASSETTE' => 'replay']);
+                // Same environment as the replay tests: Xdebug shifts the object ids in dumped output.
+                $replay = new Process(['php', $run['example']->getRealPath()], env: ['CASSETTE' => 'replay', 'XDEBUG_MODE' => 'off']);
                 $replay->run();
 
                 if (!$replay->isSuccessful()) {
@@ -189,7 +190,8 @@ $app = (new SingleCommandApplication('Symfony AI Example Runner'))
                     continue;
                 }
 
-                file_put_contents(sprintf('%s/tests/fixtures/%s.out', __DIR__, $relative), $replay->getOutput());
+                // Paths are stored relative to the repository, so the golden matches on any checkout.
+                file_put_contents(sprintf('%s/tests/fixtures/%s.out', __DIR__, $relative), str_replace(dirname(__DIR__).'/', '', $replay->getOutput()));
                 $io->writeln(sprintf(' <info>✓</info> %s', $run['example']->getRelativePathname()));
             }
         }

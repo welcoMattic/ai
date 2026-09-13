@@ -1,0 +1,91 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://router.huggingface.co/hf-inference/models/facebook/bart-large-mnli",
+                "signature": "ae6373163de2174e0824070065e8d771",
+                "signature_v2": "edf5421793142f21a1dd693d48dc1aab",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"inputs\":\"Hi, I recently bought a device from your company but it is not working as advertised and I would like to get reimbursed!\",\"parameters\":{\"candidate_labels\":[\"refund\",\"legal\",\"faq\"]},\"candidate_labels\":[\"refund\",\"legal\",\"faq\"]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "138"
+                    ],
+                    "x-inference-provider": [
+                        "hf-inference"
+                    ],
+                    "x-powered-by": [
+                        "huggingface-moon"
+                    ],
+                    "cross-origin-opener-policy": [
+                        "same-origin"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers, origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-inference-id": [
+                        "a8c2f235-bf71-4f65-ba93-7a932d74fb19"
+                    ],
+                    "x-proxied-host": [
+                        "http://10.109.131.100"
+                    ],
+                    "x-proxied-path": [
+                        "/"
+                    ],
+                    "x-proxied-replica": [
+                        "gskhk5bn-qjpd5"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 25caf7ddbe5cc1b13bee94fe7993749e.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "ggDCKa16EIJLClagaLVRHNEIEZ_EigbnYX75h4nhN6kBdiQPsFx_4g=="
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ]
+                },
+                "body_format": "json",
+                "body": "[{\"label\":\"refund\",\"score\":0.8777873516082764},{\"label\":\"faq\",\"score\":0.10522671788930893},{\"label\":\"legal\",\"score\":0.016985908150672913}]"
+            }
+        }
+    ]
+}

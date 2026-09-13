@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "d94b654067779a147ddd54e6b8de8ce4",
+                "signature_v2": "452f2d5ae50588a11dacff8967f7e7b0",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Can you explain what dependency injection is?\"}],\"instructions\":\"You are a helpful and knowledgeable assistant. Your goal is to provide accurate, concise, and useful responses to user queries.\\n\\nGuidelines:\\n- Be clear and direct in your responses\\n- Provide examples when appropriate\\n- If you\\u0027re unsure about something, say so\\n- Be respectful and professional at all times\\n- Break down complex topics into understandable explanations\\n\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999321"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "4ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_069bf6093fe7ef2f006aa6ffc7d01087d2b2326c626f907263\",\n  \"object\": \"response\",\n  \"created_at\": 1789329351,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329363,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a helpful and knowledgeable assistant. Your goal is to provide accurate, concise, and useful responses to user queries.\\n\\nGuidelines:\\n- Be clear and direct in your responses\\n- Provide examples when appropriate\\n- If you're unsure about something, say so\\n- Be respectful and professional at all times\\n- Break down complex topics into understandable explanations\\n\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_069bf6093fe7ef2f006aa6ffc8201887d2a7625052de1b1b7d\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv_TcD4oRCaXe9DCJP5M9FaVfGtE49QL4pFmU76v0nKvs6eIVr-hwZbFI3FxAVmm1KTUfda7LGNzLzbbTsMrhVVcPkonuJsqlsNkdWKXKeuOS5RsqHoo8SRhv9laDnZvNpGhsBLSTAz9lE_bkMRGf3afa2_tIJRAzrnVAydzwYprNaYXnZojDS76_9eXIIBfrYGvwkYVp8lsNd7J8Afli1ygCsOEbTScKg1QmnkTGBd8hSgVRbQY6J6HC9ulRBmMtVIKR2Z8nbRTMpnNio3U9BVSFU8gRmSgf-QFTJHMWJiM1ReIRIRVtX7nJtAII4nAbIpIGfM334c7Hjw7K3Izb-7icahjJ7-x2R8URq1WWbph4Idaap1xbrakHcVL1UG-wfYynLL88sRfl9j3i_vApRC60LBCLUT2cww31M7CzZBZzx0NzRhyLDTeTAfVrw1Rfqo_Noe1jXLrQt-tKz5Kvx6EeqRmW_OFQWdtKU2tH_iomtyzLwF6RxwPFplR6V21nfrKKadbB25EUp3OtDneEc1aaA2-F2lw3s8SoWZsIJ2AX6x9O_3BdX9vCF-OWfEB2dNOcGN78iQ1E0YqFJZyhaxmGEuJ52P4NoASGoCaNss3iochutddjzk2OPzyaxoJeLy2MOSMbgneWf_CVPmJRy_fhes5HHP173NCwGwUpCur2anzol17sh9gaQO5T54eAIvfkjIsdTJ1BW6euP4HAXaaVD9nQmvJT2HW7AiBSu91xhSc1od1yA1QtKBIyKLtYrMbp5nK2oQzS76B386ZVhvIn2rkoxfDWbHHqwjROGP_nzy7JhDR-oIvihQ3aXp26n8L5S6VWBiZOEF0fyfe8Xtfmh_m1XVbFGoHbJhwaLeu9MAVL9Z2HWL_6y5khdRhwA2HrOB-Jow2QL9fIYUEG4V4gs9H-HmPj9QYZ6V2-_4QTl0-nSzh5cO-WadhMYh7GryhWhKMr1VPs2nPV_UplGPqNoDIKr5o8q2YTBfG1vESthupKjMNSfvnE_VPEO-m7kPPz88-fKXf79zFGagjX1QtGvj_PsvHxMJ8z3Wd0AkNFUsOUSJzVRWS55KwLHmkKaOAtWRsw0dKxxz6lGCQQzhiiie9cxxOLFT4n_mHd99LL_UPTecMccp1hMgCytUX_DDWvS-1RgJSSmDSXHO4Gfoc943Nkz8WnTJUf4XpOhHCsNfiLK3R1CT9niFnlzXKrXaZ4a1gLiX_1sRs-ws94gGwADImadrCuO6tOQgzm03M50Uy_HjyBQ24SPwCK4l42ZnF2LzkJ0KLurYT3Y6WObTuTQuaJL36oL_o04Lz8tMzerWGbTlkZc-kc0FbpPwDgedMFNT_5pMYuBc9_u6V17h0Z4DkCHKqh-NZJSVsZ5qagPoI3JmChpIjBg788maRlAbox8GZvxPaGSlIS4zEU-bNktka34oqHxjU3YeIRgiwMhLrstuFPaJLuiNEp-rwoqQbDVmlY0cKoj_fr2ZWuVxeqKLGcajbw5GEA1BO5FtDz7yEhkFfymMaCyd15n2Dn1ZtVPqzaaLLmMC4jp7qLM1_J5yKASDucWjWFaDTW67AzidrVxzTVAlhxGoRpW0JvSG7deG_kgxb1vp4Md8NG84UoljA4S_y2Gq_pY-JlJ1W6jUGFpx2D9fu26qsmyz9Y1XDkFU7dPTdY3mlo1pC_llKo9FOHKsCoplGqH9yonkM4SLVBeRTrR34uOTMLtbmC16GYMeZkh6sHAuS3ZHGpaIp42kep-U4KaL6nLMieMEdlqBpRURQLGejGliWnSgr1S0nT2HOrwNZcHt69-YRe6u_gXX87CpBas8asnh69by5uul7sCw3v2kJ0axqBqzqHbUlm-r-G142JOKkxga6R8oysZI1il0NyUtliBmf7s4VDQFjrLqmE7ytYeVGcp8eqyxOUekOcT_aAD69CUetHW7c1n0qqtot6a7iuCmU34nejOUzDxM_W0YJQ-JHfPELE4vEy6jODBHKMygFsbAUtIZrAL9Bn70HsgoBPiaOFyjOX4ES2a0jJZcSZyklxGV3LJDcdnTyvBJhUzCPoziRoZzAiagNNihOxDIh8fV_LRE3fq9ODjL2VdbaI3o6OWa2lv57-qcIMwp1uEWUXQHg5GBZj30FNcm7rUnOHKWQP37-zjhiiS9sMG_7-C0fS8RavZWB9-Lg9p7ruQ4HRdO4rcGvfbZ_JnAbVr9HpJg-XDSyDcw6RJOGRTq7l3WQZF1kzDb3VvNd6EUTTWszvG4dVMGeNbaR8J3zSK04VtgVw4V1nNUhygVRkJgOv8GJFMAI2wJQNsdxRrcDl0_gvryIb3XltkfX_Kde1hxR4lYEZ_TWlobt9zNglPy1n3Meh-fNvAdhn_xtvvn1tBDAJ_S4xtM6vA-fpHJMWkbNbhR0Xkk35jz6s8wpriM5Zfy2Y9AgsdDomOxd5zTFbP2XhSqjy1iK_96U4WaF3vRqp4vgb7JGIW0hpLVNlbfXxA-zwxFsGn8z4dzScxqyG8TZSVQSZ4AGUsJsoxaSj91YgMJUuuF85u0D3oND0JnypuDWiRwpSR3xkAtbbaBtTOIWZ-wmg0SskE2kYnY8Hnz0QaOz3uoLO0JUXKEqRiRrTqlDmeD58wEvuJ9orZfI9ca3fked1VHWBhUbo41hW1rNUniJXuj1cii0JEFPPVT-G6H0XKZMeY4QT7xsDMONIweBrZVzj-XiKq_50UucaxjHC4lmniADQKieK-_bMpLj0bc8DYeM28uY_DVOQyXzXp4BHdvgsfFCYu8SbYLgSKHDtLOFu7Aok4rF317YPrD0HMOA_TQtUJmb5HDDnPKZGcq6nsUSXvU-mQgLEHoS1hbpKRhVNLn3T24cQGH5tIPiv8N3Kiuye8FV8V0CyAEmqa3kMkgj7pms4HtJt5CZleDusVPB4yEfq7Ya45sBST2AZHwOYSTNi-o4a_qBbwu5TP4jTFJ_ew8Kq3X1J1FOqBcBRCs0okA0ri56uEjAVQdr3e72NeBi5vVeEcPWecXtvP-yV8NpRLiPE4g6czsVXtdS33wdmyx6BI1V15o-yDBRP7x7yX-S84FA2lJVf2MdoId-55Qm1d_GAf5FgQgeRgZwiGzuFvMQpysb4-DV1r2nFLKndvatnZaxOaZ4Xd_uJ3dwbFMIvGDXcwAJC0AKZz0qqAMie0Kgbyzdf2WlZPrHCb4z5zqYAqdNSoxJsqcJos4fPqDomJqi3UqAE8qxXwI3ruykjuGqQGK4yQb9qZlK4JRWvGSUquYscfdC-V2K_qqGGle4QjGtbVarXh6zfrlwkPkjifpBYtxwGQ6vgEbQMNjGW3riMCq7lMZRQi1CKZ1T7vGvkp3y1_7hEhvp7eR-TpBrny_tDA1BhtfWc1kdzSLipWpAn42p\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_069bf6093fe7ef2f006aa6ffcb446487d2a30f640e9a70e6b0\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"Dependency Injection (DI) is a design pattern that helps decouple components by providing their dependencies from the outside rather than having them construct or find those dependencies themselves.\\n\\nCore idea\\n- A \\\"dependency\\\" is any object a class needs to do its work (e.g., a repository, service, logger).\\n- Instead of a class creating or locating its dependencies, the dependencies are \\\"injected\\\" into the class (passed in), typically via the constructor, a setter method, or an interface.\\n- This is an application of Inversion of Control (IoC): the class relinquishes control over how dependencies are obtained.\\n\\nWhy use DI\\n- Testability: you can pass in mock or fake dependencies in unit tests.\\n- Modularity: components depend on abstractions (interfaces) rather than concrete implementations.\\n- Flexibility: swapping implementations (e.g., different data sources) is easy.\\n- Single responsibility: classes focus on behavior, not wiring.\\n\\nSimple example (without DI)\\n- class Car creates its own Engine: Car() { engine = new GasEngine(); }\\n  - Hard to replace Engine for tests or alternate implementations.\\n\\nWith DI (constructor injection)\\n- class Car { Car(Engine engine) { this.engine = engine; } }\\n  - Engine is provided from outside (caller, factory, or DI container).\\n\\nTypes of injection\\n- Constructor injection: dependencies passed through the constructor (preferred for mandatory dependencies).\\n- Setter (or property) injection: dependencies set via setter methods (optional or changeable dependencies).\\n- Interface injection: the dependency provides an injector method defined by an interface (rare in practice).\\n\\nDI containers / frameworks\\n- Frameworks (Spring, Guice, Dagger, .NET Core DI) can automatically construct object graphs and inject dependencies based on configuration or annotations.\\n- Containers are useful for large apps, but introduce runtime configuration and a learning curve.\\n\\nDI vs Service Locator\\n- Service Locator pattern pulls dependencies from a central registry inside the class (the class asks for them).\\n- DI favors having dependencies provided to the class, which keeps classes unaware of the container and easier to test.\\n\\nRelation to SOLID\\n- DI supports the Dependency Inversion Principle (DIP): depend on abstractions, not concretions.\\n\\nDrawbacks / cautions\\n- Overuse or excessive abstraction can make code harder to understand.\\n- DI containers add complexity and can hide where objects come from.\\n- Improper configuration can cause runtime errors.\\n\\nBest practices\\n- Prefer constructor injection for required dependencies.\\n- Use interfaces (or abstract types) to depend on abstractions.\\n- Keep wiring code separate from business logic (composition root).\\n- Inject small, focused dependencies\\u2014avoid large \\\"god\\\" services.\\n\\nIf you want, I can show a short concrete example in Java, C#, or JavaScript (with and without a DI container). Which language would you like?\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 88,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 896,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 256\n    },\n    \"total_tokens\": 984\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

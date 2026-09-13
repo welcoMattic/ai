@@ -193,7 +193,7 @@ See :doc:`/components/agent` for a full RAG integration example.
 .. _`Open-Meteo API`: https://open-meteo.com/
 .. _`Weather Example`: https://github.com/symfony/ai/blob/main/examples/toolbox/weather-event.php
 .. _`Wikipedia Example`: https://github.com/symfony/ai/blob/main/examples/openai/toolcall-stream.php
-.. _`YouTube Transcriber Example`: https://github.com/symfony/ai/blob/main/examples/openai/toolcall.php
+.. _`YouTube Transcriber Example`: https://github.com/symfony/ai/blob/main/examples/toolbox/youtube.php
 .. _`Ollama`: https://ollama.com/
 .. _`Ollama Web Search Example`: https://github.com/symfony/ai/blob/main/examples/toolbox/ollama-web-search.php
 .. _`Ollama Webpage Fetch Example`: https://github.com/symfony/ai/blob/main/examples/toolbox/ollama-webpage-fetch.php

@@ -1,0 +1,97 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.anthropic.com/v1/messages",
+                "signature": "67f276dc70a286ea61843d8cd6b933ca",
+                "signature_v2": "ebbf3dd8611e5b211841d5e11efbb4b8",
+                "headers": {
+                    "x-api-key": [
+                        "[redacted]"
+                    ],
+                    "anthropic-version": [
+                        "2023-06-01"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"max_tokens\":1000,\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"What is the Symfony framework?\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"system\":[{\"type\":\"text\",\"text\":\"You are a helpful assistant.\",\"cache_control\":{\"type\":\"ephemeral\"}}],\"model\":\"claude-haiku-4-5\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "anthropic-ratelimit-input-tokens-limit": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-remaining": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-reset": [
+                        "2026-09-13T19:55:51Z"
+                    ],
+                    "anthropic-ratelimit-output-tokens-limit": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-remaining": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-reset": [
+                        "2026-09-13T19:55:55Z"
+                    ],
+                    "anthropic-ratelimit-requests-limit": [
+                        "5000"
+                    ],
+                    "anthropic-ratelimit-requests-remaining": [
+                        "4999"
+                    ],
+                    "anthropic-ratelimit-requests-reset": [
+                        "2026-09-13T19:55:51Z"
+                    ],
+                    "anthropic-ratelimit-tokens-limit": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-remaining": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-reset": [
+                        "2026-09-13T19:55:51Z"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "anthropic-organization-id": [
+                        "152d88d9-0d18-4cae-80c9-c425a5bf4e25"
+                    ],
+                    "anthropic-workspace-id": [
+                        "wrkspc_01Eo1YZvq8sNWFRAfhfjg7gS"
+                    ],
+                    "traceresponse": [
+                        "00-bfd51acf44d186da9ac7001aa3c8300e-f7b87df295ae1a14-01"
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "content-security-policy": [
+                        "default-src 'none'; frame-ancestors 'none'"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"model\":\"claude-haiku-4-5-20251001\",\"id\":\"msg_011Cf22Winm4sWhyEUk16xFs\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"# Symfony Framework\\n\\nSymfony is a **popular, open-source PHP web application framework** used for building modern web applications and APIs. Here are its key characteristics:\\n\\n## Core Features\\n\\n- **MVC Architecture**: Follows the Model-View-Controller pattern for organized code structure\\n- **Component-Based**: Built from reusable, decoupled components that can be used independently\\n- **Routing System**: Flexible URL routing for mapping requests to controllers\\n- **Template Engine**: Twig templating engine for rendering views\\n- **ORM Support**: Works seamlessly with Doctrine for database abstraction\\n\\n## Key Advantages\\n\\n✅ **Modularity** - Use only what you need  \\n✅ **Flexibility** - Suitable for small projects to large enterprise applications  \\n✅ **Performance** - Optimized and scalable  \\n✅ **Security** - Built-in security features and best practices  \\n✅ **Documentation** - Excellent and extensive documentation  \\n✅ **Community** - Large, active developer community  \\n\\n## Common Uses\\n\\n- RESTful APIs\\n- Full-stack web applications\\n- Microservices\\n- Progressive web apps\\n- E-commerce platforms\\n\\n## Versions\\n\\nCurrent versions include **Symfony 6.x** and **Symfony 7.x**, with long-term support (LTS) versions available for enterprise use.\\n\\n## Related Tools\\n\\nSymfony often works with tools like **Composer** (dependency management), **Doctrine** (database ORM), and **Twig** (templating).\\n\\nSymfony is ideal for developers who need a powerful, flexible framework without the overhead of monolithic frameworks.\"}],\"container\":null,\"stop_reason\":\"end_turn\",\"stop_sequence\":null,\"stop_details\":null,\"usage\":{\"input_tokens\":20,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"cache_creation\":{\"ephemeral_5m_input_tokens\":0,\"ephemeral_1h_input_tokens\":0},\"output_tokens\":367,\"service_tier\":\"standard\",\"inference_geo\":\"not_available\"}}"
+            }
+        }
+    ]
+}

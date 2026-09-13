@@ -1,0 +1,13 @@
+Symfony\AI\Platform\Bridge\HuggingFace\Output\TableQuestionAnsweringResult {#32
+  -answer: "2008"
+  -coordinates: array:1 [
+    0 => array:2 [
+      0 => 4
+      1 => 0
+    ]
+  ]
+  -cells: array:1 [
+    0 => "2008"
+  ]
+  -aggregator: "NONE"
+}

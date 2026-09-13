@@ -1,0 +1,2996 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.minimax.io/v1/video_generation",
+                "signature": "c7bf7776f2ca7fd1aa9a37688a27a5dd",
+                "signature_v2": "3091116a9db019cba3378d9b6927ddd7",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"duration\":6,\"resolution\":\"768P\",\"model\":\"MiniMax-Hailuo-02\",\"prompt\":\"A cat playing the piano on a stage, cinematic lighting\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "82"
+                    ],
+                    "trace-id": [
+                        "06f63e65e526af0f3bd10f7d41007bd7"
+                    ],
+                    "minimax-request-id": [
+                        "51b87df1f4fe5806b296fc6ad4bb05db"
+                    ],
+                    "alb_receive_time": [
+                        "1789332325.179"
+                    ],
+                    "alb_request_id": [
+                        "0c3f02a50724a3e9dc01e98b24d07fd591218cbc"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:25 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e6518aff32bb3aeb31067c65344"
+                    ],
+                    "minimax-request-id": [
+                        "253a9c2cea4705aa8e975e99dba37dce"
+                    ],
+                    "alb_receive_time": [
+                        "1789332325.535"
+                    ],
+                    "alb_request_id": [
+                        "4b2bb289f7b7183d6b6af003c7d239ccc640687f"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:25 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e6610b0ff97ff2d5397a931a327"
+                    ],
+                    "minimax-request-id": [
+                        "bd511ed32f7e67f79da5e8af53392fd9"
+                    ],
+                    "alb_receive_time": [
+                        "1789332326.678"
+                    ],
+                    "alb_request_id": [
+                        "eef6f778361e1d696c31ba261807b59592a3a3c9"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:26 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e688e4bd598a8da7f80901488de"
+                    ],
+                    "minimax-request-id": [
+                        "9d9d0e43b3e56f7908507d1d61be567c"
+                    ],
+                    "alb_receive_time": [
+                        "1789332328.018"
+                    ],
+                    "alb_request_id": [
+                        "8dc1a53a9574b719523c836f88dc329681614e1e"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:28 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e69ddd9f94e8be78785c39e6c98"
+                    ],
+                    "minimax-request-id": [
+                        "0165af76114f996f7b9643949a347ff1"
+                    ],
+                    "alb_receive_time": [
+                        "1789332329.416"
+                    ],
+                    "alb_request_id": [
+                        "ec1830d3fe2af09e4bbdf4ff3354add8fa98a062"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:29 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e6a549d4cc219ba72b0dd67799f"
+                    ],
+                    "minimax-request-id": [
+                        "d32f01dbac82e266bdf08af51a766316"
+                    ],
+                    "alb_receive_time": [
+                        "1789332330.686"
+                    ],
+                    "alb_request_id": [
+                        "4b666b53f7dca02d493150c4133201cf47c41311"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:30 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e6b4d3a9e415e772b60437ac1f7"
+                    ],
+                    "minimax-request-id": [
+                        "07321794076444fb26843d94f636e26e"
+                    ],
+                    "alb_receive_time": [
+                        "1789332331.838"
+                    ],
+                    "alb_request_id": [
+                        "4ed03be5a8e8ce2d1b728ffce06ef2e2d5fbe4fc"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:31 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e6daf6ccd248b51b78b501c6dd5"
+                    ],
+                    "minimax-request-id": [
+                        "20e8346a22f20c5b35dd318eb11ffbd3"
+                    ],
+                    "alb_receive_time": [
+                        "1789332333.295"
+                    ],
+                    "alb_request_id": [
+                        "5196b4e73f39eadabad9e7e548d3df972e3ffabe"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:33 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e6e00715b65dfd29ed6db66a0f1"
+                    ],
+                    "minimax-request-id": [
+                        "76cbb2240d503bba242182684bbb462b"
+                    ],
+                    "alb_receive_time": [
+                        "1789332334.619"
+                    ],
+                    "alb_request_id": [
+                        "1fe9f523ac3f5038e3a7c78fa69585596038411a"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:34 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e6fd8330ddea9d03cdf388394d4"
+                    ],
+                    "minimax-request-id": [
+                        "ac4636ac45e464e7e47b0bfa6bf3f5e0"
+                    ],
+                    "alb_receive_time": [
+                        "1789332335.988"
+                    ],
+                    "alb_request_id": [
+                        "735672cdb4ff4e79d7f5023c838be8aff5e31c87"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:36 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e71e251a5e4c1d77cb2d6f4c58a"
+                    ],
+                    "minimax-request-id": [
+                        "1f1fcdad9fd23e19d87f7f8d811f7d50"
+                    ],
+                    "alb_receive_time": [
+                        "1789332337.538"
+                    ],
+                    "alb_request_id": [
+                        "1e24b986c6fe5802ef43c71e6db24ea5adef6dfe"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:37 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e72cd4724db5296477b4f312ed7"
+                    ],
+                    "minimax-request-id": [
+                        "c83ac83806dfea13d171a53e1e61ae94"
+                    ],
+                    "alb_receive_time": [
+                        "1789332338.731"
+                    ],
+                    "alb_request_id": [
+                        "1ae36d935d9ade0e97d13be900b7da973898cbd3"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:38 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "149"
+                    ],
+                    "trace-id": [
+                        "06f63e73caa79767896d39f5590f5b72"
+                    ],
+                    "minimax-request-id": [
+                        "8628c90bfd5f5e79646974b19553934b"
+                    ],
+                    "alb_receive_time": [
+                        "1789332339.864"
+                    ],
+                    "alb_request_id": [
+                        "5cf4442806eafb73e1329549d9879b2a161d4ee8"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:39 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Preparing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e75716f8a148b058062ef507e7c"
+                    ],
+                    "minimax-request-id": [
+                        "1aef6a1242afdb68862d81f5d1a6c2ae"
+                    ],
+                    "alb_receive_time": [
+                        "1789332341.216"
+                    ],
+                    "alb_request_id": [
+                        "17e034927d5d4c7daf8bf2a12231936a1dc0ef2e"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:41 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e76302235edefebd484bd36eafc"
+                    ],
+                    "minimax-request-id": [
+                        "f6b72295429693b4cafbec919430ad60"
+                    ],
+                    "alb_receive_time": [
+                        "1789332342.62"
+                    ],
+                    "alb_request_id": [
+                        "67eeb3b1af213cf9462bbd0e53feb340433484cb"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:42 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e789fe8cb73a5cb4fe6761b7ecd"
+                    ],
+                    "minimax-request-id": [
+                        "f1b0d7677613143e03338010e8a4a738"
+                    ],
+                    "alb_receive_time": [
+                        "1789332344.012"
+                    ],
+                    "alb_request_id": [
+                        "b42852e2ab5387c1e3e4e20ca09a25f99ce4849d"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:44 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e791f308bec84c2248e5dc89b2a"
+                    ],
+                    "minimax-request-id": [
+                        "0fb9361bdac0a67846151de178a3909f"
+                    ],
+                    "alb_receive_time": [
+                        "1789332345.451"
+                    ],
+                    "alb_request_id": [
+                        "9c9bb9cfc170ce45bcd25c991225d8ab1f87d8f3"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:45 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e7a8d1a5d78931d1888db8963a1"
+                    ],
+                    "minimax-request-id": [
+                        "7223d8ad5ba28dff0bc5f995b93740e3"
+                    ],
+                    "alb_receive_time": [
+                        "1789332346.835"
+                    ],
+                    "alb_request_id": [
+                        "67d4ea7ea087378a2c6a2382eb17b17bb3865b4d"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:47 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e7cbe89a1c5e0f85e07d16442c1"
+                    ],
+                    "minimax-request-id": [
+                        "ce55a19bef0120e788770f0ac2928d56"
+                    ],
+                    "alb_receive_time": [
+                        "1789332348.466"
+                    ],
+                    "alb_request_id": [
+                        "3fe9c786b18b7218a8b5c6bc3859756133ff49ce"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:48 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e7d89e830d55a113adf7d93b538"
+                    ],
+                    "minimax-request-id": [
+                        "3aeb3616c7850110581753253b7f399c"
+                    ],
+                    "alb_receive_time": [
+                        "1789332349.828"
+                    ],
+                    "alb_request_id": [
+                        "90bf6e2194bc03356d53aa69984b45540ee542f2"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:50 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e7f433270a951305f18ce663be9"
+                    ],
+                    "minimax-request-id": [
+                        "dbb8b6c0d439ff9636b93b068d5f3340"
+                    ],
+                    "alb_receive_time": [
+                        "1789332351.175"
+                    ],
+                    "alb_request_id": [
+                        "bc87028826693e8d6364661484af84c2df3e2b1f"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:51 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e80fc0f90b02aafdf04af952e91"
+                    ],
+                    "minimax-request-id": [
+                        "8868e33feb314a86cf4e0b9a8293c1d3"
+                    ],
+                    "alb_receive_time": [
+                        "1789332352.716"
+                    ],
+                    "alb_request_id": [
+                        "45874e58732116c1c855009133d67e9071d5532d"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:52 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e82b82c50883d33aa2a4edae9d6"
+                    ],
+                    "minimax-request-id": [
+                        "b4b5bbd928240a1a7858eb3e13d7f83a"
+                    ],
+                    "alb_receive_time": [
+                        "1789332354.407"
+                    ],
+                    "alb_request_id": [
+                        "4b8740f8b5d40777106f76588b5c3c8ee4590d85"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:54 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e83b16ac6476b01cb31fca36eec"
+                    ],
+                    "minimax-request-id": [
+                        "851d4c820b9073f2652fdb34b91991ed"
+                    ],
+                    "alb_receive_time": [
+                        "1789332355.787"
+                    ],
+                    "alb_request_id": [
+                        "e9fca5f007bf5afb75c3da25339445632b52560d"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:56 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e85f9cab1832cec94a1d6701dca"
+                    ],
+                    "minimax-request-id": [
+                        "21f6349de3be2c489c0df62eb01d2ba9"
+                    ],
+                    "alb_receive_time": [
+                        "1789332357.153"
+                    ],
+                    "alb_request_id": [
+                        "08b795a152b855dc8d414eb6b385086313b23a1f"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:57 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e86154e7517fecac929cbd62eb7"
+                    ],
+                    "minimax-request-id": [
+                        "e642444cdf589dc2eba54e4b9658a39f"
+                    ],
+                    "alb_receive_time": [
+                        "1789332358.503"
+                    ],
+                    "alb_request_id": [
+                        "1eaa062dffa615410c0769cc8925d02d0c06153a"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:45:58 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e8754a678776b6b82ccc3164deb"
+                    ],
+                    "minimax-request-id": [
+                        "f33111d75417bf985cbec99f49bebf24"
+                    ],
+                    "alb_receive_time": [
+                        "1789332359.846"
+                    ],
+                    "alb_request_id": [
+                        "e2338faed8a90f9df1a6bd3181c42549a4affc81"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:00 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e89547aca281901c373f2f9d2ba"
+                    ],
+                    "minimax-request-id": [
+                        "a9ffb98e4a02bb49e8e82947657a659b"
+                    ],
+                    "alb_receive_time": [
+                        "1789332361.259"
+                    ],
+                    "alb_request_id": [
+                        "8587f1384805154b36fc10f1c085f8c85f4d7d48"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:01 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e8afa9503a4eb49b8bedb61d45d"
+                    ],
+                    "minimax-request-id": [
+                        "c39188d57914aead7e655f5a0f43e0cc"
+                    ],
+                    "alb_receive_time": [
+                        "1789332362.611"
+                    ],
+                    "alb_request_id": [
+                        "26841510e74f955e52a37be3fdc70c29067b28d1"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:02 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e8c901c79cecd4ee929ee3236cd"
+                    ],
+                    "minimax-request-id": [
+                        "85c184dd5ddf1b27afc8d8067efb48f2"
+                    ],
+                    "alb_receive_time": [
+                        "1789332364.027"
+                    ],
+                    "alb_request_id": [
+                        "f153167a0030792f4f3f3fa67137a5ac69653a1f"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:04 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e8df30841a5c2a2e9c00d6a9161"
+                    ],
+                    "minimax-request-id": [
+                        "eb9b75e73cddd7b4771dafd3e09988f2"
+                    ],
+                    "alb_receive_time": [
+                        "1789332365.461"
+                    ],
+                    "alb_request_id": [
+                        "5d6f0b85a31bfd3ef32b22d84b3bc277f9036ef7"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:05 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e8e4626440ef5519bba337658b1"
+                    ],
+                    "minimax-request-id": [
+                        "daba1195870b533f765137b15b59007b"
+                    ],
+                    "alb_receive_time": [
+                        "1789332366.857"
+                    ],
+                    "alb_request_id": [
+                        "04526b53754dabf65e9fa63605c0e5b55c634edf"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:07 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e90072f9cb71ad766b9a9d2e0d2"
+                    ],
+                    "minimax-request-id": [
+                        "185b4aa7623712be1cf5641ff17ea145"
+                    ],
+                    "alb_receive_time": [
+                        "1789332368.517"
+                    ],
+                    "alb_request_id": [
+                        "1032eb2664475deff6e97fcfc329f190ed1cbcff"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:08 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e914dce04f7aad23cb6dd4afc96"
+                    ],
+                    "minimax-request-id": [
+                        "a0dfa301c3310bd6c6c8a5c744e3db34"
+                    ],
+                    "alb_receive_time": [
+                        "1789332369.884"
+                    ],
+                    "alb_request_id": [
+                        "3a61f007bfc1553a3672031ea050247401a1afa2"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:10 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e934f5c7de177b2acaedf84b483"
+                    ],
+                    "minimax-request-id": [
+                        "fba47589d2b315ad0b73c66721357591"
+                    ],
+                    "alb_receive_time": [
+                        "1789332371.257"
+                    ],
+                    "alb_request_id": [
+                        "17fe3e38d7709cea41c83a90004ffee3a0b43e5a"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:11 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e9482d3f817ab4e91a71376c6be"
+                    ],
+                    "minimax-request-id": [
+                        "2738767eae6994d73c5f0b7cc5415a27"
+                    ],
+                    "alb_receive_time": [
+                        "1789332372.66"
+                    ],
+                    "alb_request_id": [
+                        "f93f65c987377ea9227bb248f72b0eef44c7ae88"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:12 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e96d47cd53f0894b4d870e74009"
+                    ],
+                    "minimax-request-id": [
+                        "1caf27c7cb0a9dc8c248d3927075229a"
+                    ],
+                    "alb_receive_time": [
+                        "1789332374.008"
+                    ],
+                    "alb_request_id": [
+                        "135cae0a029bed80627c337da321e944b24f1664"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:14 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e97ce86b971d92177180cd02896"
+                    ],
+                    "minimax-request-id": [
+                        "7c3c929bb2dc81a1ff71f139b3895ad5"
+                    ],
+                    "alb_receive_time": [
+                        "1789332375.331"
+                    ],
+                    "alb_request_id": [
+                        "94e088fe338bf3df3d5298c78aa1d79fcb202b73"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:15 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e98ada66352dd5738c5cf36e9bc"
+                    ],
+                    "minimax-request-id": [
+                        "51c48a9a4ff0f857aeb0cf51fbd50780"
+                    ],
+                    "alb_receive_time": [
+                        "1789332376.722"
+                    ],
+                    "alb_request_id": [
+                        "db8342e47ef06207387538402d06e0ca271f2ac2"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:17 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e9a5a0f571bd72a69dd693a91c2"
+                    ],
+                    "minimax-request-id": [
+                        "a20657db01d8bc681898041d8b8b3378"
+                    ],
+                    "alb_receive_time": [
+                        "1789332378.111"
+                    ],
+                    "alb_request_id": [
+                        "1548d88f397020e9d0093f3470541625be88c1fd"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:18 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e9b3c0d74944583125680480119"
+                    ],
+                    "minimax-request-id": [
+                        "75d88afe7d2f49f945175c72f3dcedc3"
+                    ],
+                    "alb_receive_time": [
+                        "1789332379.471"
+                    ],
+                    "alb_request_id": [
+                        "9b0bfbc5f1d97c146c8f96b339f6d488fdb49db6"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:19 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e9c2a23c43be6c90857bcdd84c1"
+                    ],
+                    "minimax-request-id": [
+                        "bcc5562cb361a70e1750aeb619d38b49"
+                    ],
+                    "alb_receive_time": [
+                        "1789332380.836"
+                    ],
+                    "alb_request_id": [
+                        "19125018ec3ec17295975e17bf8cac65f77f3101"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:21 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e9e3f902b11fcf19ff71a9d7e45"
+                    ],
+                    "minimax-request-id": [
+                        "ee3c36dd29351aa7c324ac36d2d0d60c"
+                    ],
+                    "alb_receive_time": [
+                        "1789332382.174"
+                    ],
+                    "alb_request_id": [
+                        "3ac4f4bbddb394ad917b496ed66aa8e68e1b9b84"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:22 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63e9fe7e60bdf38e8ba49f024058a"
+                    ],
+                    "minimax-request-id": [
+                        "03ff9aaea0462fc4d3d991ee02dd7644"
+                    ],
+                    "alb_receive_time": [
+                        "1789332383.554"
+                    ],
+                    "alb_request_id": [
+                        "e22709a20b04fb2da86e6606d11d80a85de3c76d"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:23 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63ea065d98872eb4b6854cc860fdb"
+                    ],
+                    "minimax-request-id": [
+                        "fe07a1fa387bb0d63c7cd59bf9592eda"
+                    ],
+                    "alb_receive_time": [
+                        "1789332384.904"
+                    ],
+                    "alb_request_id": [
+                        "d69d39169249bc7f49d19a5cf628de2f91b8228c"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:25 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63ea26271e6b5d2fcab833bf2c88b"
+                    ],
+                    "minimax-request-id": [
+                        "b8288a48b047afb9dfb31360e7c7aedd"
+                    ],
+                    "alb_receive_time": [
+                        "1789332386.254"
+                    ],
+                    "alb_request_id": [
+                        "7d1c4dbebf4f41d07b2760b2d9fddb5fb74e6ce4"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:26 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63ea37eee10f33529b785ea40b828"
+                    ],
+                    "minimax-request-id": [
+                        "c3cdf390861183ec008d4cd8a6a493ef"
+                    ],
+                    "alb_receive_time": [
+                        "1789332387.589"
+                    ],
+                    "alb_request_id": [
+                        "220f971d3cf321efacdaa551ceae0655ac81d7df"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:27 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63ea4d2c4cdd900886e88eb5c4980"
+                    ],
+                    "minimax-request-id": [
+                        "d0a5255dbe37aa8c699a261a8aa6445b"
+                    ],
+                    "alb_receive_time": [
+                        "1789332388.944"
+                    ],
+                    "alb_request_id": [
+                        "6f8d286c035062c9253d8331004e9396f609be05"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:29 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63ea61f072df89931783cb8fc44d7"
+                    ],
+                    "minimax-request-id": [
+                        "9e5a44fd71aa50ea1dcc560bbcf0d106"
+                    ],
+                    "alb_receive_time": [
+                        "1789332390.308"
+                    ],
+                    "alb_request_id": [
+                        "1966f8b221ca04dedb54c91aa16d3c16d776d3b0"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:30 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63ea78a282bb88588ead83407cd87"
+                    ],
+                    "minimax-request-id": [
+                        "3f0b4889a17af76af8a2e19af7ee7c34"
+                    ],
+                    "alb_receive_time": [
+                        "1789332391.678"
+                    ],
+                    "alb_request_id": [
+                        "066c8606af241ea2c6fb57a20c3f24faf897192d"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:31 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63ea95674e773e0a4839562619a39"
+                    ],
+                    "minimax-request-id": [
+                        "a0cf4b174eae8247790c09b41ee44cef"
+                    ],
+                    "alb_receive_time": [
+                        "1789332393.044"
+                    ],
+                    "alb_request_id": [
+                        "e11731e329f6e0b94c76113dc73945c01e8b720c"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:33 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63eaaee063856b887eb542f203680"
+                    ],
+                    "minimax-request-id": [
+                        "9153d17808db42f8dc2cdb47269fcbf1"
+                    ],
+                    "alb_receive_time": [
+                        "1789332394.426"
+                    ],
+                    "alb_request_id": [
+                        "f64da62dcfd255577238050f60265056cf362815"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:34 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "150"
+                    ],
+                    "trace-id": [
+                        "06f63eab5da1ed56255573e8a89a4ab2"
+                    ],
+                    "minimax-request-id": [
+                        "cda981a8c908e73bc868d44d03b2bbf7"
+                    ],
+                    "alb_receive_time": [
+                        "1789332395.773"
+                    ],
+                    "alb_request_id": [
+                        "e2b274636ba7f5493574d3dcacada5be10be8464"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:36 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Processing\",\"file_id\":\"\",\"video_width\":0,\"video_height\":0,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/query/video_generation?task_id=441464884859075",
+                "signature": "75eaba6ef6686e503d4dc9145b074ad7",
+                "signature_v2": "faf452efbeb8e8ab9bdde87f1bc74826",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "167"
+                    ],
+                    "trace-id": [
+                        "06f63ead8d330b1d0b86ef91cdedc5cb"
+                    ],
+                    "minimax-request-id": [
+                        "a6e1e166b46f50757016b3695ac9b4b3"
+                    ],
+                    "alb_receive_time": [
+                        "1789332397.204"
+                    ],
+                    "alb_request_id": [
+                        "2b92eee6644ed7128008c6f0c8602135ca378daf"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:41 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task_id\":\"441464884859075\",\"status\":\"Success\",\"file_id\":\"441464653033559\",\"video_width\":1366,\"video_height\":768,\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.minimax.io/v1/files/retrieve?file_id=441464653033559",
+                "signature": "e360c23c07ebc03aaaf1c9bd27213857",
+                "signature_v2": "bfbd860f13484324c208c9b25a1968ad",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "323"
+                    ],
+                    "trace-id": [
+                        "06f63eb1aca4fa1475fb5157ac417fb3"
+                    ],
+                    "minimax-request-id": [
+                        "f308458052f522fcb36701422ce123ea"
+                    ],
+                    "alb_receive_time": [
+                        "1789332401.313"
+                    ],
+                    "alb_request_id": [
+                        "84cc867be9ebf3f43e667ffec259b1773bd1f33f"
+                    ],
+                    "expires": [
+                        "Sun, 13 Sep 2026 20:46:41 GMT"
+                    ],
+                    "cache-control": [
+                        "max-age=0, no-cache, no-store"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-from": [
+                        "ak"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"file\":{\"file_id\":441464653033559,\"bytes\":0,\"created_at\":1789332401,\"filename\":\"output_aigc.mp4\",\"purpose\":\"video_generation\",\"download_url\":\"https://video-product.cdn.minimax.io/inference_output/video/2026-09-14/ad58e4b8-d0fc-4ebd-869e-244eeaae4de4/output_aigc.mp4\"},\"base_resp\":{\"status_code\":0,\"status_msg\":\"success\"}}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://video-product.cdn.minimax.io/inference_output/video/2026-09-14/ad58e4b8-d0fc-4ebd-869e-244eeaae4de4/output_aigc.mp4",
+                "signature": "dd300e69bd73546d21895de6fbb50d3b",
+                "signature_v2": "6479364c4636a26809a704a211c45a73"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "server": [
+                        "AliyunOSS"
+                    ],
+                    "content-type": [
+                        "video/mp4"
+                    ],
+                    "content-length": [
+                        "326209"
+                    ],
+                    "x-oss-request-id": [
+                        "6AA70BB2838A6831338E0CDB"
+                    ],
+                    "accept-ranges": [
+                        "bytes"
+                    ],
+                    "etag": [
+                        "\"1374F57B83739C9C966ECD24648611ED\""
+                    ],
+                    "last-modified": [
+                        "Sun, 13 Sep 2026 20:46:41 GMT"
+                    ],
+                    "x-oss-object-type": [
+                        "Normal"
+                    ],
+                    "x-oss-hash-crc64ecma": [
+                        "11052380701348472250"
+                    ],
+                    "x-oss-storage-class": [
+                        "Standard"
+                    ],
+                    "x-oss-ec": [
+                        "0048-00000113"
+                    ],
+                    "content-disposition": [
+                        "attachment"
+                    ],
+                    "x-oss-force-download": [
+                        "true"
+                    ],
+                    "content-md5": [
+                        "E3T1e4NznJyWbs0kZIYR7Q=="
+                    ],
+                    "x-oss-server-time": [
+                        "1"
+                    ],
+                    "cache-control": [
+                        "max-age=604800"
+                    ],
+                    "expires": [
+                        "Sun, 20 Sep 2026 20:46:42 GMT"
+                    ],
+                    "from": [
+                        "ak"
+                    ],
+                    "akamai-cache-status": [
+                        "Miss from child, Miss from parent"
+                    ]
+                },
+                "body_format": "binary",
+                "body": null,
+                "body_size": 326209
+            }
+        }
+    ]
+}

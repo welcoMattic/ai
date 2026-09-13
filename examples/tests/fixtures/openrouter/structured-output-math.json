@@ -1,0 +1,58 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://openrouter.ai/api/v1/chat/completions",
+                "signature": "9aa895a63791d12d0dee2da5f7df920c",
+                "signature_v2": "51616b32fbc1de050196743de41e804e",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"response_format\":{\"type\":\"json_schema\",\"json_schema\":{\"name\":\"MathReasoning\",\"schema\":{\"type\":\"object\",\"properties\":{\"steps\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"explanation\":{\"type\":\"string\"},\"output\":{\"type\":\"string\"}},\"required\":[\"explanation\",\"output\"],\"additionalProperties\":false}},\"finalAnswer\":{\"type\":\"string\"},\"result\":{\"type\":\"number\"}},\"required\":[\"steps\",\"finalAnswer\",\"result\"],\"additionalProperties\":false},\"strict\":true}},\"messages\":[{\"role\":\"system\",\"content\":\"You are a helpful math tutor. Guide the user through the solution step by step.\"},{\"role\":\"user\",\"content\":\"how can I solve 8x + 7 = -23\"}],\"model\":\"openai\\/gpt-5-mini\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-generation-id": [
+                        "gen-1789329453-TGTBGOFJmyzJNNpYjZXo"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Generation-Id,X-Provider-Name,request-id,cf-ray"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "permissions-policy": [
+                        "payment=(self \"https://checkout.stripe.com\" \"https://connect-js.stripe.com\" \"https://js.stripe.com\" \"https://*.js.stripe.com\" \"https://hooks.stripe.com\")"
+                    ],
+                    "referrer-policy": [
+                        "no-referrer, strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ]
+                },
+                "body_format": "json",
+                "body": "\n         \n\n         \n{\"id\":\"gen-1789329453-TGTBGOFJmyzJNNpYjZXo\",\"object\":\"chat.completion\",\"created\":1789329453,\"model\":\"openai/gpt-5-mini\",\"provider\":\"OpenAI\",\"system_fingerprint\":null,\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"completed\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"steps\\\":[{\\\"explanation\\\":\\\"Start with the equation 8x + 7 = -23. To isolate x, first remove 7 from the left by subtracting 7 from both sides (doing the same operation to both sides keeps the equality true).\\\",\\\"output\\\":\\\"8x + 7 - 7 = -23 - 7 → 8x = -30\\\"},{\\\"explanation\\\":\\\"Now divide both sides by 8 to solve for x.\\\",\\\"output\\\":\\\"8x/8 = -30/8 → x = -30/8 = -15/4 = -3.75\\\"}],\\\"finalAnswer\\\":\\\"x = -15/4 = -3.75\\\",\\\"result\\\":-3.75}\",\"refusal\":null,\"reasoning\":\"**Solving linear equations step-by-step**\\n\\nThe user wants to solve the linear equation \\\\(8x + 7 = -23\\\\). I need to break it down step-by-step using the MathReasoning JSON schema. \\n\\nFirst, I’ll subtract 7 from both sides, resulting in \\\\(8x = -30\\\\). Next, I’ll divide both sides by 8, simplifying to \\\\(x = -30/8\\\\), which reduces to \\\\(-15/4\\\\) or \\\\(-3.75\\\\). \\n\\nSo, my final answer will be “x = -15/4 = -3.75,” and I'll format it nicely according to the schema.**Clarifying operations and equality**\\n\\nI need to use plain language to explain how operations preserve equality. This is really about showing that whatever you do to one side of the equation must also be done to the other side to keep it balanced. I’ll make sure the explanation is clear and straightforward so that the user can follow along easily. It's important to communicate this concept effectively! That's my main focus here.\",\"reasoning_details\":[{\"type\":\"reasoning.summary\",\"summary\":\"**Solving linear equations step-by-step**\\n\\nThe user wants to solve the linear equation \\\\(8x + 7 = -23\\\\). I need to break it down step-by-step using the MathReasoning JSON schema. \\n\\nFirst, I’ll subtract 7 from both sides, resulting in \\\\(8x = -30\\\\). Next, I’ll divide both sides by 8, simplifying to \\\\(x = -30/8\\\\), which reduces to \\\\(-15/4\\\\) or \\\\(-3.75\\\\). \\n\\nSo, my final answer will be “x = -15/4 = -3.75,” and I'll format it nicely according to the schema.**Clarifying operations and equality**\\n\\nI need to use plain language to explain how operations preserve equality. This is really about showing that whatever you do to one side of the equation must also be done to the other side to keep it balanced. I’ll make sure the explanation is clear and straightforward so that the user can follow along easily. It's important to communicate this concept effectively! That's my main focus here.\",\"format\":\"openai-responses-v1\",\"index\":0},{\"type\":\"reasoning.encrypted\",\"data\":\"gAAAAABqpwAxJdx9T_yDPPfftj8wyXdb8LHdFL8GbtrZKxh7C8brD2IfYnhwKigYDqA82Pm5If7v4gRF_8chNF8aGlaIrFaV8zj-8o_6nTFV3MxiutvmSyh_XlX-R-JBx6NYV-uNxU25zMLYI6ciu4AURk9XCUrWJFuc6NsilrRgwIZ1_EMwhPA-0eCYu1D2wmwwXiUPf1mqwnYns-gYMiOosO9TvhnILBkAHkrm-YKZG3WV3t7fPfh-gRPiGMWNwEs-vQsk0P_dWahIzwSvI0FsF5KH7jXnrgnijdglx2gvTy-Zat4dUXwxWfUrbwq3lmJE9JRS7JmM1JFd9t76KYSucL-3zMkF9nV3wsjidqPGqXFYwqQixE4B0G2rMakmkI4O7b_1hINQh3RzmPz-19kBFGuCK39f-1LRMX0MB1eK5FZOp8C90IBeCGR7EPQ8DqTWJIYbeKliJHOwEAXRbyeD9Lihe0QOrue0h1Pi_aG2aJqH5I81lnSiqo-lWDzpHPrNPmL-aq1h0lnljYRIoBDjrtOHihX009s9c0lD62iX-XXKozLll9p701C803A7ya2ejtmNOEed11pDnJnhGpJPhpsekKawJYGoETyzcOl3vPfBkwoADUWWgV4XyHy8S3xUG-Tt-dvC8Iztv6xGXfFaNmRqAPYoFJ0NEF3ff1IGhyqe3cKvoRpvxyb53EUt9u3p2J33AQuu0AsjCp077J3OdSWnkTRbbzpAs5pHniSYczqn2-zk_JxxMzhFIPm8kta2T9uNGj125noGrcCA1sjUfByphG5rDQGNIAFzX9tN9lLgwikk-6kFvRTjLiNSPxgDWvNrfc9YrIzLsJAtOcbbhZ4aTWy9G9SBUGFKqMxbsH5zJU7l6MNEoIGqGKhaOwjp9X8PgvJ94Hc_XMcSa7-7WxvfoG-l4_1JJh-U91p-wZdfJj_O0Dr9DfA7VZN8Yg2BnBPmSWpFHZmNsURacpk3r_Bw4_3wAZFegMdg7kyoiyX-L6G03dIKxB1ky2SEQQXdcKs5BA2YgSmI-nPoU8mLkKAUiyEnzOe7X1ritfIdpBsxBQsvLb-VH5AJCaUqJRWNtiy4dO1gCj0bvFPkgyFFXnqP65hIPU4gT1-P5l9NEDf7Fpqy6_o-wlag8Ic8IFiUcR5eQfqaQgj5771XlbbMphVeWtDNM_nprpWDSIDymRswvHInNJB39326h9sGmDD2BaZo7rhz4QmgIt8RiP7XdiO3oHt1vc0i9g1mw-SfVh3nqKA89YfHP6EmB2R6A49FSSjIvDGv48m4AqWT1MwoJGZ8BDgRoATxSAHRfdjCaaf8mIp1vv1TM0JX8tGevpVOzhnXLnl08dJ4fDC-_0W7D2DpC7r3ZlRuy3WRMTL8YRIQVMyh7EwUYPkSguJzHC9r5gB2GlB12blkaBUP9DGfsYIreIWCUfySeROd53ndcqyQUzTX0ETUsZvTVgj1OOZL8X6bzi6hUK0Dtp--DhwQRNWzD7cpP6Ayz_wQACG4NPKjkdNPM-WjQABQSwfW6dS-aswCb2__DBzl8WmzcmV1nDQ0gdPqdDZE5E4HsX1dgBNkyHvS-9CvEqo7cidZ4fQ0KnZksWbYojYCR2n5i9zzWJplnD-VsgrQKmDxtxCNZB6i2F_DPJazNRFVyhoDH3KsVUrcpQ-hgYsdvPt7JUeWbMFYzCyUBAm3U_859LEGxsXOFdtVxE0HKZEPAlOPdmakqrDrdjG6egCcYvrZIFAZZb7lcFHEyb-Pgnzv2JvXDbKdzAL-6eCzdGB1TSK8a_s25Z_zu49oGlLO20JR_48JXU0w8MLgAWExt__WSAp0p92k04PoM8Wx2dSNi--M3zyt7u1EXh0rWp1782Ed0SYlRmZxxeL4Alp6vYu7kzCRyn-szZCGB-zsGtse9q4ejxzdor_6Kotr4LbfZcOcKOLNtZQxja-QAVl7upkzNwOPqdMPX3CZIKlWJOPUtdf-UKgWgOS07oyrEQyMBPdQxAKHYoXhSnMBA872ri91a_rJWAwY_r2I3eM-PKC_uGTXPF2yujZUlQ7RRH1FPVRjXnEsb76bSLmsIjDZWtfp7h2CnPfUyrmt6cVXAewwHYOhZyRqV2oweKfjj3fDH8C82RSkLnRalaKJ4SCjPlv4-2xjjZ0j3hgV6dSv1rVCAKGdbya9ZDI2zwKrNBUtS7IYhbCt-MUOFhsp608RJZ9EVNgkt7qbVkXpTUpcVKp1WCH8yeaT5VlVQpgAIytw1DLNpvoRTm8HjHtBfuDH3KZl70vzQoo7bZ00r7GH3Xk9NY9poVTf9FqzvoWry6LgQgZT0cKZiqKDVmOvBgXQ-YBNEA5g0asf9wmDY9i4TT9w32hSm4BrlCr6pbNKk79RPDYvhe08FCQ37A3k_Qlx4XxaG60OdSr2ocrPaeQPJqS-svGwAVhUFYNL3T3E3ehy8XW3-XWPsqmZ44knXa1nEZR3bUBSEZTwwoYwUDzSPmtlji75ChsSMFOZRRmM02OmbO4hRp2iHEtO9o9u6QQde2jUJEk1kSwJWZKR8j9c_qYZSeTFPE24yICfXhRPfeNUlIpWojHIlNu_GRkaZ1-nLUGO8ryixI_ppN-K4Jb49rAeWLTrPmqQngflYhRoc4dLtGsqukKJpht8UpYtrQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC01LW1pbmktMjAyNS0wOC0wN3xvcGVuYWkifQ\",\"format\":\"openai-responses-v1\",\"id\":\"rs_0e94d07c1b993772016aa7002e0d2887d1a2137a905bdb9e0b\",\"index\":1}]}}],\"usage\":{\"prompt_tokens\":101,\"completion_tokens\":409,\"total_tokens\":510,\"cost\":0.00084325,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.00084325,\"upstream_inference_prompt_cost\":0.00002525,\"upstream_inference_completions_cost\":0.000818},\"completion_tokens_details\":{\"reasoning_tokens\":192,\"image_tokens\":0,\"audio_tokens\":0}}}"
+            }
+        }
+    ]
+}

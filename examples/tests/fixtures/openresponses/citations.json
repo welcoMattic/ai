@@ -1,0 +1,79 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.x.ai/v1/responses",
+                "signature": "bcb67896af592d969d770070e7368fef",
+                "signature_v2": "44085675dc5ec5c61a5547df94b22ac3",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"web_search\"}],\"model\":\"grok-4-fast\",\"input\":[{\"role\":\"user\",\"content\":\"What is xAI?\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "1800"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "1800"
+                    ],
+                    "x-zero-data-retention": [
+                        "false"
+                    ],
+                    "x-data-retention": [
+                        "general"
+                    ],
+                    "x-metrics-ttft-ms": [
+                        "202.2"
+                    ],
+                    "x-metrics-e2e-ms": [
+                        "9097.7"
+                    ],
+                    "traceparent": [
+                        "00-83e6af55f79d4ab77ac428d94cdede3a-58dec45300002bd3-01"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "*"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"created_at\":1789329462,\"completed_at\":1789329462,\"id\":\"835310dd-00e4-9af0-ade3-0175f6fa0f05\",\"max_output_tokens\":null,\"model\":\"grok-4.3\",\"object\":\"response\",\"output\":[{\"id\":\"rs_835310dd-00e4-9af0-ade3-0175f6fa0f05\",\"summary\":[{\"text\":\"The question is \\\"What is xAI?\\\" I need to provide an accurate, up-to-date answer. xAI is Elon Musk's AI company, founded to understand the universe.\\n\",\"type\":\"summary_text\"}],\"type\":\"reasoning\",\"status\":\"completed\"},{\"id\":\"ws_835310dd-00e4-9af0-ade3-0175f6fa0f05_call-944943bb-6b95-47f4-b73f-56d397c8dca6-0\",\"type\":\"web_search_call\",\"status\":\"completed\",\"action\":{\"type\":\"search\",\"query\":\"xAI company\",\"sources\":[{\"type\":\"url\",\"url\":\"https://x.ai/company/\"},{\"type\":\"url\",\"url\":\"https://www.revenuememo.com/p/who-owns-xai\"},{\"type\":\"url\",\"url\":\"https://www.theverge.com/ai-artificial-intelligence/925469/xai-is-becoming-spacexai\"},{\"type\":\"url\",\"url\":\"https://www.britannica.com/money/xAI\"},{\"type\":\"url\",\"url\":\"https://www.altis.vc/research/companies/xai\"},{\"type\":\"url\",\"url\":\"https://ventureatlas.org/company/xai\"},{\"type\":\"url\",\"url\":\"https://www.pcmag.com/encyclopedia/term/xai\"},{\"type\":\"url\",\"url\":\"https://dealroom.co/companies/spacex-xai/\"},{\"type\":\"url\",\"url\":\"https://theworldofai.org/companies/7c0fded7/\"},{\"type\":\"url\",\"url\":\"https://getlatka.com/companies/xai\"}]}},{\"id\":\"ws_835310dd-00e4-9af0-ade3-0175f6fa0f05_call-944943bb-6b95-47f4-b73f-56d397c8dca6-1\",\"type\":\"web_search_call\",\"status\":\"completed\",\"action\":{\"type\":\"search\",\"query\":\"xAI official website\",\"sources\":[{\"type\":\"url\",\"url\":\"https://x.ai/about?ref=labelbox.ghost.io\"},{\"type\":\"url\",\"url\":\"https://x.ai/?ref=herminal.com\"},{\"type\":\"url\",\"url\":\"https://linktr.ee/xai_official\"},{\"type\":\"url\",\"url\":\"https://benchlm.ai/providers/xai\"},{\"type\":\"url\",\"url\":\"https://x.ai/\"},{\"type\":\"url\",\"url\":\"https://x.com/benjitaylor/status/2057882844295532722\"},{\"type\":\"url\",\"url\":\"https://xaillc.com/\"},{\"type\":\"url\",\"url\":\"https://theworldofai.org/companies/7c0fded7/\"},{\"type\":\"url\",\"url\":\"https://www.x.ai/\"},{\"type\":\"url\",\"url\":\"https://www.linkedin.com/company/xai/\"}]}},{\"id\":\"ws_835310dd-00e4-9af0-ade3-0175f6fa0f05_call-944943bb-6b95-47f4-b73f-56d397c8dca6-2\",\"type\":\"web_search_call\",\"status\":\"completed\",\"action\":{\"type\":\"search\",\"query\":\"what is xAI Elon Musk\",\"sources\":[{\"type\":\"url\",\"url\":\"https://www.pcmag.com/encyclopedia/term/xai\"},{\"type\":\"url\",\"url\":\"https://arstechnica.com/tech-policy/2025/03/elon-musks-x-has-a-new-owner-elon-musks-xai\"},{\"type\":\"url\",\"url\":\"https://www.theverge.com/tech/872619/elon-musk-merges-spacex-with-xai-and-x\"},{\"type\":\"url\",\"url\":\"https://builtin.com/artificial-intelligence/what-is-xai\"},{\"type\":\"url\",\"url\":\"/question/What-is-xAI-and-who-founded-it\"}]}},{\"id\":\"tco_835310dd-00e4-9af0-ade3-0175f6fa0f05_call-944943bb-6b95-47f4-b73f-56d397c8dca6-0\",\"summary\":[],\"type\":\"reasoning\",\"status\":\"completed\"},{\"id\":\"tco_835310dd-00e4-9af0-ade3-0175f6fa0f05_call-944943bb-6b95-47f4-b73f-56d397c8dca6-1\",\"summary\":[],\"type\":\"reasoning\",\"status\":\"completed\"},{\"id\":\"tco_835310dd-00e4-9af0-ade3-0175f6fa0f05_call-944943bb-6b95-47f4-b73f-56d397c8dca6-2\",\"summary\":[],\"type\":\"reasoning\",\"status\":\"completed\"},{\"id\":\"ws_835310dd-00e4-9af0-ade3-0175f6fa0f05_call-944943bb-6b95-47f4-b73f-56d397c8dca6-3\",\"type\":\"web_search_call\",\"status\":\"completed\",\"action\":{\"type\":\"open_page\",\"url\":\"https://x.ai/\"}},{\"id\":\"ws_835310dd-00e4-9af0-ade3-0175f6fa0f05_call-944943bb-6b95-47f4-b73f-56d397c8dca6-4\",\"type\":\"web_search_call\",\"status\":\"completed\",\"action\":{\"type\":\"open_page\",\"url\":\"https://x.ai/company/\"}},{\"id\":\"tco_835310dd-00e4-9af0-ade3-0175f6fa0f05_call-944943bb-6b95-47f4-b73f-56d397c8dca6-3\",\"summary\":[],\"type\":\"reasoning\",\"status\":\"completed\"},{\"id\":\"tco_835310dd-00e4-9af0-ade3-0175f6fa0f05_call-944943bb-6b95-47f4-b73f-56d397c8dca6-4\",\"summary\":[],\"type\":\"reasoning\",\"status\":\"completed\"},{\"content\":[{\"type\":\"output_text\",\"text\":\"**xAI (now operating as SpaceXAI) is an artificial intelligence company founded by Elon Musk in March 2023.** Its mission is to \\\"understand the true nature of the universe\\\" (or accelerate human scientific discovery) by building advanced AI systems that advance human knowledge and capabilities, with an emphasis on truth-seeking, reasoning from first principles, and ambitious goals.[[1]](https://x.ai/)\\n\\n### Key Background and Evolution\\n- **Founding and Early Focus**: Launched publicly in July 2023, it was created in part to offer an alternative to other AI labs (like OpenAI, which Musk co-founded earlier), prioritizing less \\\"politically correct\\\" or \\\"woke\\\" responses and more maximally truthful AI. It recruited talent from places like DeepMind, Google Brain, and OpenAI. The flagship product is the **Grok** family of AI models/chatbots, known for wit, real-time knowledge (via integration with the X platform), and capabilities in reasoning, coding, image/video generation, voice, and tool use.[[2]](https://www.britannica.com/money/xAI)\\n- **Products and Infrastructure**: Grok models (latest as of mid-2026 include versions like Grok 4.6) power chat interfaces (grok.com, apps, X integration), an API for developers, and enterprise tools. The company has built massive compute infrastructure, including the Colossus supercluster (hundreds of thousands of GPUs). Grok is available to X Premium+ subscribers and via API.[[1]](https://x.ai/)\\n- **Major Corporate Changes (by 2026)**: \\n  - In 2025, xAI acquired the social platform X (formerly Twitter).\\n  - In February 2026, SpaceX acquired xAI in a large all-stock deal (valued around $250 billion for xAI at the time).\\n  - It was rebranded/dissolved as a standalone entity and integrated as **SpaceXAI**, the AI division of SpaceX (which itself went public). The official site (x.ai) now prominently brands as SpaceXAI.[[3]](https://www.revenuememo.com/p/who-owns-xai)\\n\\nToday, it operates with offices including Palo Alto (headquarters area), Seattle, Memphis (for Colossus), and London, emphasizing in-person collaboration. It continues to release frontier models, APIs, and enterprise features while pursuing its core scientific mission.[[4]](https://x.ai/company/)\\n\\nIn short, xAI/SpaceXAI is Elon Musk’s AI venture, best known for Grok, with a cosmic-scale ambition now folded into the broader SpaceX ecosystem. For the most current details, visit [x.ai](https://x.ai/).\",\"logprobs\":[],\"annotations\":[{\"type\":\"url_citation\",\"url\":\"https://x.ai/\",\"start_index\":383,\"end_index\":403,\"title\":\"1\"},{\"type\":\"url_citation\",\"url\":\"https://www.britannica.com/money/xAI\",\"start_index\":1001,\"end_index\":1044,\"title\":\"2\"},{\"type\":\"url_citation\",\"url\":\"https://x.ai/\",\"start_index\":1426,\"end_index\":1446,\"title\":\"1\"},{\"type\":\"url_citation\",\"url\":\"https://www.revenuememo.com/p/who-owns-xai\",\"start_index\":1875,\"end_index\":1924,\"title\":\"3\"},{\"type\":\"url_citation\",\"url\":\"https://x.ai/company/\",\"start_index\":2195,\"end_index\":2223,\"title\":\"4\"}]}],\"id\":\"msg_835310dd-00e4-9af0-ade3-0175f6fa0f05\",\"role\":\"assistant\",\"type\":\"message\",\"status\":\"completed\"}],\"parallel_tool_calls\":true,\"previous_response_id\":null,\"reasoning\":{\"effort\":\"low\",\"summary\":\"detailed\"},\"temperature\":0.7,\"text\":{\"format\":{\"type\":\"text\"}},\"tool_choice\":\"auto\",\"tools\":[{\"type\":\"web_search\",\"search_context_size\":\"medium\"}],\"top_p\":0.95,\"usage\":{\"input_tokens\":32070,\"input_tokens_details\":{\"cached_tokens\":15936},\"output_tokens\":1171,\"output_tokens_details\":{\"reasoning_tokens\":607},\"total_tokens\":33241,\"num_sources_used\":0,\"num_server_side_tools_used\":5,\"cost_in_usd_ticks\":512822000,\"server_side_tool_usage_details\":{\"web_search_calls\":5,\"x_search_calls\":0,\"code_interpreter_calls\":0,\"file_search_calls\":0,\"mcp_calls\":0,\"document_search_calls\":0,\"image_generation_calls\":0},\"context_details\":{\"input_tokens\":17128,\"output_tokens\":725}},\"user\":null,\"incomplete_details\":null,\"status\":\"completed\",\"store\":true,\"metadata\":{\"system_fingerprint\":\"fp_eb3c003fc66c14ed\"},\"background\":false,\"service_tier\":\"default\",\"truncation\":\"disabled\",\"top_logprobs\":0,\"presence_penalty\":0.0,\"frequency_penalty\":0.0,\"prompt_cache_key\":null,\"max_tool_calls\":null,\"safety_identifier\":null,\"error\":null,\"instructions\":null}"
+            }
+        }
+    ]
+}

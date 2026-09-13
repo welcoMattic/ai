@@ -1,0 +1,1 @@
+{"name": "perform a web search", "parameters": {"query": "Ollama", "maxResults": 10}}

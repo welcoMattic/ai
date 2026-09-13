@@ -1,0 +1,91 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://router.huggingface.co/hf-inference/models/ProsusAI/finbert",
+                "signature": "812b6925469595cc89b4cb6bf52ed297",
+                "signature_v2": "2b56e348eb17215ca0ee902c6408aab2",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"inputs\":\"I like you. I love you.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "148"
+                    ],
+                    "x-inference-provider": [
+                        "hf-inference"
+                    ],
+                    "x-powered-by": [
+                        "huggingface-moon"
+                    ],
+                    "cross-origin-opener-policy": [
+                        "same-origin"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers, origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-inference-id": [
+                        "636612c5-ac67-4bb1-866b-22f8be0d759a"
+                    ],
+                    "x-proxied-host": [
+                        "http://10.109.1.38"
+                    ],
+                    "x-proxied-path": [
+                        "/"
+                    ],
+                    "x-proxied-replica": [
+                        "zd5tmjxc-5ztmk"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 585caab32986cfd6caf0ef1746a721a0.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "K8ZRfDaZAzN0Xvx0XYSFe8BAIQZTi_khf-9Q6ZqjNcW0xLtxuB1bWw=="
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ]
+                },
+                "body_format": "json",
+                "body": "[[{\"label\":\"neutral\",\"score\":0.8697618842124939},{\"label\":\"positive\",\"score\":0.10953819751739502},{\"label\":\"negative\",\"score\":0.02069992944598198}]]"
+            }
+        }
+    ]
+}

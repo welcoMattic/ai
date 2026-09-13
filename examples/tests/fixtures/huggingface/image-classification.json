@@ -1,0 +1,91 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://router.huggingface.co/hf-inference/models/google/vit-base-patch16-224",
+                "signature": "5cfd1fc1b1e11df718dc74431843bc1e",
+                "signature_v2": "cffcca72c2ed9ab277d7bb5044232edb",
+                "headers": {
+                    "content-type": [
+                        "image/jpeg"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "[binary body, 60085 bytes, xxh128 72ef23e2fc2a8858174b377a422d262d]"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "283"
+                    ],
+                    "x-inference-provider": [
+                        "hf-inference"
+                    ],
+                    "x-powered-by": [
+                        "huggingface-moon"
+                    ],
+                    "cross-origin-opener-policy": [
+                        "same-origin"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers, origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-inference-id": [
+                        "bfba6714-1233-444f-84ac-607e72764451"
+                    ],
+                    "x-proxied-host": [
+                        "http://10.109.32.89"
+                    ],
+                    "x-proxied-path": [
+                        "/"
+                    ],
+                    "x-proxied-replica": [
+                        "aszozrgu-ea15b4bm4"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 49118071d6afcb9b4734f6f604fc6c5e.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "_7sQSoKsqqap5xu66XvGitd5V_RaoklYCUdyWspqIhvSGBoGzdvT6g=="
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ]
+                },
+                "body_format": "json",
+                "body": "[{\"label\":\"balloon\",\"score\":0.10644098371267319},{\"label\":\"ocarina, sweet potato\",\"score\":0.0999196469783783},{\"label\":\"spotlight, spot\",\"score\":0.0990779846906662},{\"label\":\"theater curtain, theatre curtain\",\"score\":0.09523820877075195},{\"label\":\"stage\",\"score\":0.0725359320640564}]"
+            }
+        }
+    ]
+}

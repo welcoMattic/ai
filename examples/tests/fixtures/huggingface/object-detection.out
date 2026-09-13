@@ -1,0 +1,20 @@
+Symfony\AI\Platform\Bridge\HuggingFace\Output\ObjectDetectionResult {#34
+  -objects: array:2 [
+    0 => Symfony\AI\Platform\Bridge\HuggingFace\Output\DetectedObject {#65
+      -label: "chair"
+      -score: 0.99398636817932
+      -xmin: 0.0
+      -ymin: 414.0
+      -xmax: 179.0
+      -ymax: 846.0
+    }
+    1 => Symfony\AI\Platform\Bridge\HuggingFace\Output\DetectedObject {#82
+      -label: "person"
+      -score: 0.9996577501297
+      -xmin: 210.0
+      -ymin: 89.0
+      -xmax: 721.0
+      -ymax: 844.0
+    }
+  ]
+}

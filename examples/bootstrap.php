@@ -11,7 +11,6 @@
 
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
-use Symfony\AI\Agent\Bridge\Clock\Clock as ClockTool;
 use Symfony\AI\Agent\Exception\ExceptionInterface as AgentException;
 use Symfony\AI\Agent\Toolbox\Source\SourceCollection;
 use Symfony\AI\Platform\Exception\ExceptionInterface as PlatformException;
@@ -31,6 +30,7 @@ use Symfony\AI\Platform\TokenUsage\TokenUsageAggregation;
 use Symfony\AI\Platform\TokenUsage\TokenUsageInterface;
 use Symfony\AI\Store\Exception\ExceptionInterface as StoreException;
 use Symfony\Component\Clock\Clock as SymfonyClock;
+use Symfony\Component\Clock\ClockInterface;
 use Symfony\Component\Clock\MockClock;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Helper\TableSeparator;
@@ -41,18 +41,16 @@ use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 require_once __DIR__.'/vendor/autoload.php';
-(new Dotenv())->loadEnv(__DIR__.'/.env');
+// Replay runs use the placeholder values of .env.test, which are also what recordings store.
+(new Dotenv())->loadEnv(__DIR__.'/.env', defaultEnv: 'replay' === ($_SERVER['CASSETTE'] ?? null) ? 'test' : 'dev');
 
 const RECORDED_CLOCK_OUTPUT_PATTERN = '/Current date is (?<date>\d{4}-\d{2}-\d{2}) \(YYYY-MM-DD\) and the time is (?<time>\d{2}:\d{2}:\d{2}) \(HH:MM:SS\)\./';
+const RECORDED_DATETIME_OUTPUT_PATTERN = '/(?<datetime>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2})/';
 
 function env(string $var): string
 {
     if (isset($_SERVER[$var]) && '' !== $_SERVER[$var]) {
         return $_SERVER[$var];
-    }
-
-    if (is_replay()) {
-        return 'sk-replay-'.strtolower($var);
     }
 
     output()->writeln(sprintf('<error>Please set the "%s" environment variable to run this example.</error>', $var));
@@ -79,35 +77,48 @@ function cassette_path(): string
     return __DIR__.'/tests/fixtures/'.preg_replace('/\.php$/', '', $relative).'.json';
 }
 
-function clock_tool(): ClockTool
+function clock(): ClockInterface
 {
     if (is_replay()) {
-        $recordedAt = recorded_clock_time(cassette_path());
-        if (null !== $recordedAt) {
-            return new ClockTool(new MockClock(new DateTimeImmutable($recordedAt, new DateTimeZone('UTC'))));
-        }
+        return new MockClock(recorded_clock_time(cassette_path()) ?? 'now');
     }
 
-    return new ClockTool(new SymfonyClock());
+    if (is_record()) {
+        return new MockClock();
+    }
+
+    return new SymfonyClock();
 }
 
-function recorded_clock_time(string $cassettePath): ?string
+function recorded_clock_time(string $cassettePath): ?DateTimeImmutable
 {
     if (!is_file($cassettePath)) {
         return null;
     }
 
-    $cassette = file_get_contents($cassettePath);
-    if (false === $cassette) {
+    $cassette = json_decode((string) file_get_contents($cassettePath), true);
+    if (!is_array($cassette)) {
         return null;
     }
 
-    $matches = [];
-    if (1 !== preg_match(RECORDED_CLOCK_OUTPUT_PATTERN, $cassette, $matches)) {
-        return null;
+    // Only request bodies carry tool results; responses hold unrelated provider timestamps.
+    foreach ($cassette['interactions'] ?? [] as $interaction) {
+        $body = $interaction['request']['body'] ?? null;
+        if (!is_string($body)) {
+            $body = (string) json_encode($body);
+        }
+
+        $matches = [];
+        if (1 === preg_match(RECORDED_CLOCK_OUTPUT_PATTERN, $body, $matches)) {
+            return new DateTimeImmutable($matches['date'].' '.$matches['time'], new DateTimeZone('UTC'));
+        }
+
+        if (1 === preg_match(RECORDED_DATETIME_OUTPUT_PATTERN, $body, $matches)) {
+            return new DateTimeImmutable($matches['datetime']);
+        }
     }
 
-    return $matches['date'].' '.$matches['time'];
+    return null;
 }
 
 function http_client(): HttpClientInterface
@@ -135,10 +146,35 @@ function http_client(): HttpClientInterface
             unlink($path);
         }
 
-        return $cassetteClient = new CassetteHttpClient(new HttpCassette($path), $httpClient, record: true);
+        return $cassetteClient = new CassetteHttpClient(new HttpCassette($path, cassette_replacements()), $httpClient, record: true);
     }
 
     return $httpClient;
+}
+
+/**
+ * Maps the real value of every variable that has a placeholder in .env.test to that placeholder,
+ * so a recording stores exactly what a replay run sends.
+ *
+ * @return array<string, string>
+ */
+function cassette_replacements(): array
+{
+    $placeholders = (new Dotenv())->parse((string) file_get_contents(__DIR__.'/.env.test'), __DIR__.'/.env.test');
+
+    $replacements = [];
+    foreach ($placeholders as $name => $placeholder) {
+        $value = $_SERVER[$name] ?? '';
+
+        // Short values like a deployment name would also match unrelated text.
+        if (!is_string($value) || strlen($value) < 8 || $value === $placeholder) {
+            continue;
+        }
+
+        $replacements[$value] = $placeholder;
+    }
+
+    return $replacements;
 }
 
 function logger(): LoggerInterface

@@ -1199,7 +1199,7 @@ Code Examples
 .. _`Tavily Tool`: https://github.com/symfony/ai/blob/main/examples/toolbox/tavily.php
 .. _`Weather Tool with Event Listener`: https://github.com/symfony/ai/blob/main/examples/toolbox/weather-event.php
 .. _`Wikipedia Tool`: https://github.com/symfony/ai/blob/main/examples/openai/toolcall-stream.php
-.. _`YouTube Transcriber Tool`: https://github.com/symfony/ai/blob/main/examples/openai/toolcall.php
+.. _`YouTube Transcriber Tool`: https://github.com/symfony/ai/blob/main/examples/toolbox/youtube.php
 .. _`Store Component`: https://github.com/symfony/ai-store
 .. _`RAG with MongoDB`: https://github.com/symfony/ai/blob/main/examples/rag/mongodb.php
 .. _`RAG with Pinecone`: https://github.com/symfony/ai/blob/main/examples/rag/pinecone.php

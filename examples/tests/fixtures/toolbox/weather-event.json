@@ -1,0 +1,105 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "e1ace841631ced626acf06a8718e8de7",
+                "signature_v2": "a369bda7f90d91db9be6766de0e3a9f4",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"weather_current\",\"description\":\"get current weather for a location\",\"parameters\":{\"type\":\"object\",\"properties\":{\"latitude\":{\"type\":\"number\",\"description\":\"the latitude of the location\"},\"longitude\":{\"type\":\"number\",\"description\":\"the longitude of the location\"}},\"required\":[\"latitude\",\"longitude\"],\"additionalProperties\":false}},{\"type\":\"function\",\"name\":\"weather_forecast\",\"description\":\"get weather forecast for a location\",\"parameters\":{\"type\":\"object\",\"properties\":{\"latitude\":{\"type\":\"number\",\"description\":\"the latitude of the location\"},\"longitude\":{\"type\":\"number\",\"description\":\"the longitude of the location\"},\"days\":{\"type\":\"integer\",\"description\":\"the number of days to forecast\",\"minimum\":1,\"maximum\":16}},\"required\":[\"latitude\",\"longitude\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"How is the weather currently in Berlin?\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_06e969030d421a35006aa7006ae26c87d2ac56f7e6d2d66c4f\",\n  \"object\": \"response\",\n  \"created_at\": 1789329514,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329516,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_06e969030d421a35006aa7006b323887d2a54d54804884bcaa\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwBslO-y_7yYjuvrirSt3T_i9dmic3BP7UXSRqA5QrpcWBo1bwCLUlt_1m8BR-fgHqnkKff04VXA4OMI62nlpHQ5_SYYUuD-bTvhHBMOfgtLG8hp0UHFje_VIZhvJ-cYstFHTl5RqKgAB01VfmaZPpax7oDOakPzPjzVcS4tMZegMnMSube_Yog7L1FtWPf1RpjnXFkzGMkbGvVtLxGd9K-ay4cizr82SJPN3GyidZRFWfsrrdMW7F_Qy4QGt6lx2bfBIwa97054vKfrU5LLuqiizOTikqMOgMM6Qu4c5YkEHE_5DWMpf7lG1FSJPIBfkQYs47x11ZcP1tHNkRBGKVZ82KyqIgZiVAxbervnfjTuPJR33xeLe8HAdu1JsiWIRzlVlrYkYGxqV9QNsvOr8Iiam-k6c0xC-R56S_vePEzab0Jxly7u0-oTo-5KPoYA0_eslfs8gfONIW3amcUKQyFHT_COXzg_9UHk3krYexlMmCWzLBzUMNa5IHpmKz6Q56rle2XiegJN4NB6MF_QpkoLFeB5JodZ8O2HtBZcWtgrxHStnfXbCNFoO79zwstqDNFFJsTKLh6eCnmRV5bwTEauFOa_3UvK_KktY5AtZyreuX-HUwVSz7FUQptA0Ty36ylO7RZh_LKLrGVI4PBl6pQIzta2TV6R7E8nCWq0EU1-f9fLop2Y-AWwLT6k5C4yvZjQQYhg1g-rT3Cg8_gMnCugsVD_l_GeUHLmH9CCn42b-3VXSTNrYZiBsXjUWcitXvo_YWUd5ZwwELx3CKLqsQRY7Q0QDckfI22BUdH80Dm1dNs8z5iBByc1Qv45ZlrG_rvDKtmJlML43_5Vftx1Q_IS-dWvak6bQbIjn53UbkOIzqAvpCSmPskljE3NIzSvitZ2K6fDK8n0Wkifa9gG05XIuNpdTstiX6mZCY6GOOSrF5MV_uFi4Jp0aZDrwWbmzbyBPdcOeALu_9gSvCesqtzvkJJR-DbhEKiFz7A3kHWh8auD3REFg7-9gai_az6Pu7JrKCTiiOCV7wSboGEx_ymH2oegR-6dZWwlhYYpCO7dJZ9wjNV30p0v3M4ZtUrP6M5urfqnqtktY-Iwil_tHyUQikLF5wmLc8RNkUWc0H4t_Dn6htLyzQOiaGttjtPeDXzzL71yC6R9OcRsdmbVSdpfv_-V3ooLByuJSCN2F56wA7H6gilUa_0tGop0qQ8rgmnJi6S2ZSdOqKJCq6HbSSzcS6Y5sEnnt1h5c3dFpwIDoFu4qZeZ4NU2Nwupn0vBAcJCg3kBfd7bkzZ83i-lhedw0PUns84w1nHCNI2vMDJF2I5VvbcmOOZDJMTQTSGEZDN_4JhO2HmZDBqScRNa1md_hdzZF_A38EtrnPDGq9gOkIIkeeAuWP9XW7n1QmcTBh_cUKG6EN-b5E81jEcw0ns8PQ==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"fc_06e969030d421a35006aa7006bea9087d28d5eee4b0fc8d863\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{\\\"latitude\\\":52.52,\\\"longitude\\\":13.405}\",\n      \"call_id\": \"call_6QM3AKOxxnXtrzBILKjTJZAo\",\n      \"name\": \"weather_current\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"get current weather for a location\",\n      \"name\": \"weather_current\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"latitude\": {\n            \"type\": \"number\",\n            \"description\": \"the latitude of the location\"\n          },\n          \"longitude\": {\n            \"type\": \"number\",\n            \"description\": \"the longitude of the location\"\n          }\n        },\n        \"required\": [\n          \"latitude\",\n          \"longitude\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    {\n      \"type\": \"function\",\n      \"description\": \"get weather forecast for a location\",\n      \"name\": \"weather_forecast\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"latitude\": {\n            \"type\": \"number\",\n            \"description\": \"the latitude of the location\"\n          },\n          \"longitude\": {\n            \"type\": \"number\",\n            \"description\": \"the longitude of the location\"\n          },\n          \"days\": {\n            \"type\": \"integer\",\n            \"description\": \"the number of days to forecast\",\n            \"minimum\": 1,\n            \"maximum\": 16\n          }\n        },\n        \"required\": [\n          \"latitude\",\n          \"longitude\",\n          \"days\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 129,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 79,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 208\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.open-meteo.com/v1/forecast",
+                "signature": "602274139bae5fdf654fe14b4c4ac549",
+                "signature_v2": "0a20acbf2106c206ddc97e7f6bdce67a"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "transfer-encoding": [
+                        "chunked"
+                    ],
+                    "connection": [
+                        "keep-alive"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"latitude\":52.52,\"longitude\":13.4,\"generationtime_ms\":0.06377696990966797,\"utc_offset_seconds\":0,\"timezone\":\"GMT\",\"timezone_abbreviation\":\"GMT\",\"elevation\":37.0,\"current_units\":{\"time\":\"iso8601\",\"interval\":\"seconds\",\"weather_code\":\"wmo code\",\"temperature_2m\":\"°C\",\"wind_speed_10m\":\"km/h\"},\"current\":{\"time\":\"2026-09-13T19:45\",\"interval\":900,\"weather_code\":61,\"temperature_2m\":18.0,\"wind_speed_10m\":5.9}}"
+            }
+        }
+    ]
+}

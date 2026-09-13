@@ -25,7 +25,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('OPENAI_API_KEY'), http_client());
 $store = new InMemoryStore();
-$vectorizer = new Vectorizer($platform, 'text-embedding-3-small', includeText: true);
+$vectorizer = new Vectorizer($platform, 'text-embedding-3-small?dimensions=256', includeText: true);
 
 // Sample documents with some unwanted content
 $documents = [
@@ -80,7 +80,7 @@ foreach ($results as $i => $document) {
     $category = $document->getMetadata()['category'] ?? 'Unknown';
     echo sprintf("%d. %s [%s]\n", $i + 1, $title, $category);
     echo sprintf("   Content: %s\n", substr($document->getMetadata()->getText() ?? 'No content', 0, 80).'...');
-    echo sprintf("   ID: %s\n\n", substr($document->getId(), 0, 8).'...');
+    echo \PHP_EOL;
     ++$filteredDocuments;
 }
 

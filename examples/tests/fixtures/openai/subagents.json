@@ -1,0 +1,300 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "c77ec6675ed08bead0fca3d1f4e4396f",
+                "signature_v2": "4618ab4d8b2d4319605e84abdf579a5a",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"calculate\",\"description\":\"Performs mathematical calculations. Use this when you need to solve math problems or do arithmetic.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\",\"description\":\"the message to pass to the subagent\"}},\"required\":[\"message\"],\"additionalProperties\":false}},{\"type\":\"function\",\"name\":\"convert_units\",\"description\":\"Converts values between units of measurement (e.g. km to miles, kg to pounds, Celsius to Fahrenheit).\",\"parameters\":{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\",\"description\":\"the message to pass to the subagent\"}},\"required\":[\"message\"],\"additionalProperties\":false}}],\"model\":\"gpt-4o-mini\",\"input\":[{\"role\":\"user\",\"content\":\"I drove 150 kilometers. How many miles is that? Also, what is 150 divided by 8?\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999657"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "2ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_01e128eba186f131006aa6fff116b487d29546129e89d53849\",\n  \"object\": \"response\",\n  \"created_at\": 1789329393,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329393,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-4o-mini-2024-07-18\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"fc_01e128eba186f131006aa6fff1e4a487d29ca41fd1b60db1df\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{\\\"message\\\":\\\"Convert 150 kilometers to miles.\\\"}\",\n      \"call_id\": \"call_5Szo3RiI3PA0yjVexdg8PnPo\",\n      \"name\": \"convert_units\"\n    },\n    {\n      \"id\": \"fc_01e128eba186f131006aa6fff1e4b887d29e4710d6b17016ec\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{\\\"message\\\":\\\"150 divided by 8\\\"}\",\n      \"call_id\": \"call_dGjwAhdQGBMy5vMNuYnp8Rgp\",\n      \"name\": \"calculate\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": null,\n    \"effort\": null,\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Performs mathematical calculations. Use this when you need to solve math problems or do arithmetic.\",\n      \"name\": \"calculate\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"message\": {\n            \"type\": \"string\",\n            \"description\": \"the message to pass to the subagent\"\n          }\n        },\n        \"required\": [\n          \"message\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    {\n      \"type\": \"function\",\n      \"description\": \"Converts values between units of measurement (e.g. km to miles, kg to pounds, Celsius to Fahrenheit).\",\n      \"name\": \"convert_units\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"message\": {\n            \"type\": \"string\",\n            \"description\": \"the message to pass to the subagent\"\n          }\n        },\n        \"required\": [\n          \"message\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 126,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 54,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 180\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "5f4595f01b83467eaad1ff9ce856d682",
+                "signature_v2": "38a04d2b16bb8e2a6616f3e1dc022e62",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-4o-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Convert 150 kilometers to miles.\"}],\"instructions\":\"You are a unit conversion specialist. Convert values between different units of measurement and return the result with a brief explanation.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999940"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0d4eda0f0a0c89a2006aa6fff23ecc87d2a3d2387d962cbc7b\",\n  \"object\": \"response\",\n  \"created_at\": 1789329394,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329395,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a unit conversion specialist. Convert values between different units of measurement and return the result with a brief explanation.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-4o-mini-2024-07-18\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"msg_0d4eda0f0a0c89a2006aa6fff3282087d284320adaf0bea538\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"To convert kilometers to miles, you can use the conversion factor: \\\\( 1 \\\\text{ kilometer} \\\\approx 0.621371 \\\\text{ miles} \\\\).\\n\\nSo for 150 kilometers:\\n\\n\\\\[\\n150 \\\\text{ km} \\\\times 0.621371 \\\\text{ miles/km} \\\\approx 93.205 \\\\text{ miles}\\n\\\\]\\n\\nTherefore, **150 kilometers is approximately 93.21 miles**.\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": null,\n    \"effort\": null,\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 41,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 90,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 131\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "76e79eadd6fe5511da13194fd35c0757",
+                "signature_v2": "0b6bc6ef2f6a40060c6cfa20fdaf99a1",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-4o-mini\",\"input\":[{\"role\":\"user\",\"content\":\"150 divided by 8\"}],\"instructions\":\"You are a mathematical calculator. When given a math problem, solve it and return only the numerical result with a brief explanation.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999940"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_000b3c58b1a4d92c006aa6fff4230c87d2be16c2199dd962c1\",\n  \"object\": \"response\",\n  \"created_at\": 1789329396,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329397,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a mathematical calculator. When given a math problem, solve it and return only the numerical result with a brief explanation.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-4o-mini-2024-07-18\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"msg_000b3c58b1a4d92c006aa6fff4c69c87d2a87a51555be85408\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"150 divided by 8 equals 18.75. \\n\\nThis is calculated by performing the division operation: \\\\( 150 \\\\div 8 = 18.75 \\\\).\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": null,\n    \"effort\": null,\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 41,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 36,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 77\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "dd3e35da4c0483fc599d1210b70393a3",
+                "signature_v2": "da2f9faa8bdb054b476cb55d6b65cbd5",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"calculate\",\"description\":\"Performs mathematical calculations. Use this when you need to solve math problems or do arithmetic.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\",\"description\":\"the message to pass to the subagent\"}},\"required\":[\"message\"],\"additionalProperties\":false}},{\"type\":\"function\",\"name\":\"convert_units\",\"description\":\"Converts values between units of measurement (e.g. km to miles, kg to pounds, Celsius to Fahrenheit).\",\"parameters\":{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\",\"description\":\"the message to pass to the subagent\"}},\"required\":[\"message\"],\"additionalProperties\":false}}],\"model\":\"gpt-4o-mini\",\"input\":[{\"role\":\"user\",\"content\":\"I drove 150 kilometers. How many miles is that? Also, what is 150 divided by 8?\"},{\"arguments\":\"{\\u0022message\\u0022:\\u0022Convert 150 kilometers to miles.\\u0022}\",\"call_id\":\"call_5Szo3RiI3PA0yjVexdg8PnPo\",\"name\":\"convert_units\",\"type\":\"function_call\"},{\"arguments\":\"{\\u0022message\\u0022:\\u0022150 divided by 8\\u0022}\",\"call_id\":\"call_dGjwAhdQGBMy5vMNuYnp8Rgp\",\"name\":\"calculate\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_5Szo3RiI3PA0yjVexdg8PnPo\",\"output\":\"To convert kilometers to miles, you can use the conversion factor: \\\\( 1 \\\\text{ kilometer} \\\\approx 0.621371 \\\\text{ miles} \\\\).\\n\\nSo for 150 kilometers:\\n\\n\\\\[\\n150 \\\\text{ km} \\\\times 0.621371 \\\\text{ miles\\/km} \\\\approx 93.205 \\\\text{ miles}\\n\\\\]\\n\\nTherefore, **150 kilometers is approximately 93.21 miles**.\"},{\"type\":\"function_call_output\",\"call_id\":\"call_dGjwAhdQGBMy5vMNuYnp8Rgp\",\"output\":\"150 divided by 8 equals 18.75. \\n\\nThis is calculated by performing the division operation: \\\\( 150 \\\\div 8 = 18.75 \\\\).\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999485"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "3ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0957fad7531384d4006aa6fff5bb8487d299bd8aa2029d6c61\",\n  \"object\": \"response\",\n  \"created_at\": 1789329397,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329398,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-4o-mini-2024-07-18\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"msg_0957fad7531384d4006aa6fff60aa887d2aa271756eb8dbc97\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"- **150 kilometers is approximately 93.21 miles.**\\n- **150 divided by 8 equals 18.75.**\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": null,\n    \"effort\": null,\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Performs mathematical calculations. Use this when you need to solve math problems or do arithmetic.\",\n      \"name\": \"calculate\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"message\": {\n            \"type\": \"string\",\n            \"description\": \"the message to pass to the subagent\"\n          }\n        },\n        \"required\": [\n          \"message\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    {\n      \"type\": \"function\",\n      \"description\": \"Converts values between units of measurement (e.g. km to miles, kg to pounds, Celsius to Fahrenheit).\",\n      \"name\": \"convert_units\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"message\": {\n            \"type\": \"string\",\n            \"description\": \"the message to pass to the subagent\"\n          }\n        },\n        \"required\": [\n          \"message\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 298,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 29,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 327\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

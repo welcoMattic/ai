@@ -33,7 +33,7 @@ $modelCatalog = new ModelCatalog([
 ]);
 
 $platform = Factory::createPlatform(
-    env('LITELLM_HOST_URL'),
+    'http://127.0.0.1:4000',
     env('LITELLM_API_KEY'),
     http_client(),
     $modelCatalog,

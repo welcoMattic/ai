@@ -1,0 +1,8 @@
+Initiating parallel embeddings calls to platform ...
+ - Request for model ADA initiated.
+ - Request for model Small initiated.
+ - Request for model Large initiated.
+Waiting for the responses ...
+Dimensions: 1536
+Dimensions: 1536
+Dimensions: 3072

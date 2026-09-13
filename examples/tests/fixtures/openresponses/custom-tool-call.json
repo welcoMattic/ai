@@ -1,0 +1,79 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.x.ai/v1/responses",
+                "signature": "76271817045387dced53aa79064b2a1f",
+                "signature_v2": "e07506ed9e28c1b4d52d613528480c9a",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"x_search\"}],\"model\":\"grok-4-fast\",\"input\":[{\"role\":\"user\",\"content\":\"What is the current sentiment on X about the Symfony framework?\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "1800"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "1800"
+                    ],
+                    "x-zero-data-retention": [
+                        "false"
+                    ],
+                    "x-data-retention": [
+                        "general"
+                    ],
+                    "x-metrics-ttft-ms": [
+                        "226.4"
+                    ],
+                    "x-metrics-e2e-ms": [
+                        "13194.0"
+                    ],
+                    "traceparent": [
+                        "00-0cc12c93d5a3ffce90135bf5b644c11a-344197dc000117a6-01"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "*"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"created_at\":1789329466,\"completed_at\":1789329466,\"id\":\"c3bc2dee-0d33-943d-b4ea-8cd82be5b8e1\",\"max_output_tokens\":null,\"model\":\"grok-4.3\",\"object\":\"response\",\"output\":[{\"id\":\"rs_c3bc2dee-0d33-943d-b4ea-8cd82be5b8e1\",\"summary\":[{\"text\":\"The question is: \\\"What is the current sentiment on X about the Symfony framework?\\\"\\n\",\"type\":\"summary_text\"}],\"type\":\"reasoning\",\"status\":\"completed\"},{\"call_id\":\"xs_call-d2d549c7-2ba2-4b43-958b-f80de6b8634e-0\",\"input\":\"{\\\"query\\\":\\\"Symfony framework sentiment opinions\\\",\\\"limit\\\":\\\"10\\\",\\\"from_date\\\":\\\"2026-08-01\\\"}\",\"name\":\"x_semantic_search\",\"type\":\"custom_tool_call\",\"id\":\"ctc_c3bc2dee-0d33-943d-b4ea-8cd82be5b8e1_call-d2d549c7-2ba2-4b43-958b-f80de6b8634e-0\",\"status\":\"completed\"},{\"call_id\":\"xs_call-d2d549c7-2ba2-4b43-958b-f80de6b8634e-1\",\"input\":\"{\\\"query\\\":\\\"Symfony (framework OR php) -filter:replies\\\",\\\"limit\\\":\\\"10\\\",\\\"mode\\\":\\\"Latest\\\"}\",\"name\":\"x_keyword_search\",\"type\":\"custom_tool_call\",\"id\":\"ctc_c3bc2dee-0d33-943d-b4ea-8cd82be5b8e1_call-d2d549c7-2ba2-4b43-958b-f80de6b8634e-1\",\"status\":\"completed\"},{\"id\":\"tco_c3bc2dee-0d33-943d-b4ea-8cd82be5b8e1_call-d2d549c7-2ba2-4b43-958b-f80de6b8634e-0\",\"summary\":[],\"type\":\"reasoning\",\"status\":\"completed\"},{\"id\":\"tco_c3bc2dee-0d33-943d-b4ea-8cd82be5b8e1_call-d2d549c7-2ba2-4b43-958b-f80de6b8634e-1\",\"summary\":[],\"type\":\"reasoning\",\"status\":\"completed\"},{\"content\":[{\"type\":\"output_text\",\"text\":\"**Overall sentiment on X (as of mid-September 2026) about the Symfony framework is predominantly positive**, with developers and the official SensioLabs account highlighting its strengths in scalability, security, developer productivity, and ecosystem tools. Recent posts focus on practical benefits, updates, and tutorials rather than criticism.[[1]](https://x.com/sensiolabs/status/2097719756887364032)\\n\\n### Key Positive Themes\\n- **Migration and modernization**: SensioLabs actively promotes Symfony as a solution for legacy PHP code, emphasizing gains in scalability, security, reliability, and speed.[[1]](https://x.com/sensiolabs/status/2097719756887364032)\\n- **Developer tools and productivity**: Posts praise features like `make:crud`, PHPStan integration with Symfony extensions, and compiled containers for error-free development. One user highlights how the official Symfony LSP server catches issues instantly.[[2]](https://x.com/yOyO38/status/2099170182656614818)\\n- **Ecosystem updates and releases**: Recent activity includes PHP 8.6 beta testing for Symfony libs, new bundle releases (e.g., LeaptCoreBundle), weekly Symfony/PHP/AI roundups, and clean-code series tailored to Symfony users.[[3]](https://x.com/Pentiminax/status/2099042135819350522)\\n- **Tutorials and best practices**: Multiple threads share clean-code tips explicitly tagged with Symfony (alongside PHP and Laravel), positioning it as a go-to framework for professional development.[[4]](https://x.com/rajkbnp/status/2099197285552820463)\\n\\n### Neutral or Indirect Mentions\\nA few posts discuss frameworks in general (e.g., abstraction layers or performance in PHP tools like Composer), but they don't single out Symfony negatively. One satirical thread references Symfony's productivity features in a light-hearted way about developer fears of automation.[[5]](https://x.com/LiiorC/status/2089205691487531331)\\n\\nNo widespread complaints, controversies, or strong negative sentiment appear in the latest relevant posts. Activity remains steady from developers, agencies, and the core team, centered on real-world use cases and ongoing improvements. If you're evaluating Symfony, the current X conversation reinforces it as a mature, reliable choice in the PHP ecosystem.\",\"logprobs\":[],\"annotations\":[{\"type\":\"url_citation\",\"url\":\"https://x.com/sensiolabs/status/2097719756887364032\",\"start_index\":346,\"end_index\":404,\"title\":\"1\"},{\"type\":\"url_citation\",\"url\":\"https://x.com/sensiolabs/status/2097719756887364032\",\"start_index\":604,\"end_index\":662,\"title\":\"1\"},{\"type\":\"url_citation\",\"url\":\"https://x.com/yOyO38/status/2099170182656614818\",\"start_index\":921,\"end_index\":975,\"title\":\"2\"},{\"type\":\"url_citation\",\"url\":\"https://x.com/Pentiminax/status/2099042135819350522\",\"start_index\":1203,\"end_index\":1261,\"title\":\"3\"},{\"type\":\"url_citation\",\"url\":\"https://x.com/rajkbnp/status/2099197285552820463\",\"start_index\":1462,\"end_index\":1517,\"title\":\"4\"},{\"type\":\"url_citation\",\"url\":\"https://x.com/LiiorC/status/2089205691487531331\",\"start_index\":1833,\"end_index\":1887,\"title\":\"5\"}]}],\"id\":\"msg_c3bc2dee-0d33-943d-b4ea-8cd82be5b8e1\",\"role\":\"assistant\",\"type\":\"message\",\"status\":\"completed\"}],\"parallel_tool_calls\":true,\"previous_response_id\":null,\"reasoning\":{\"effort\":\"low\",\"summary\":\"detailed\"},\"temperature\":0.7,\"text\":{\"format\":{\"type\":\"text\"}},\"tool_choice\":\"auto\",\"tools\":[{\"type\":\"x_search\"}],\"top_p\":0.95,\"usage\":{\"input_tokens\":7945,\"input_tokens_details\":{\"cached_tokens\":3008},\"output_tokens\":1355,\"output_tokens_details\":{\"reasoning_tokens\":932},\"total_tokens\":9300,\"num_sources_used\":0,\"num_server_side_tools_used\":2,\"cost_in_usd_ticks\":201603500,\"server_side_tool_usage_details\":{\"web_search_calls\":0,\"x_search_calls\":2,\"code_interpreter_calls\":0,\"file_search_calls\":0,\"mcp_calls\":0,\"document_search_calls\":0,\"image_generation_calls\":0},\"context_details\":{\"input_tokens\":6396,\"output_tokens\":950}},\"user\":null,\"incomplete_details\":null,\"status\":\"completed\",\"store\":true,\"metadata\":{\"system_fingerprint\":\"fp_eb3c003fc66c14ed\"},\"background\":false,\"service_tier\":\"default\",\"truncation\":\"disabled\",\"top_logprobs\":0,\"presence_penalty\":0.0,\"frequency_penalty\":0.0,\"prompt_cache_key\":null,\"max_tool_calls\":null,\"safety_identifier\":null,\"error\":null,\"instructions\":null}"
+            }
+        }
+    ]
+}

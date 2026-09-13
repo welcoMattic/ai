@@ -1,0 +1,97 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.anthropic.com/v1/messages",
+                "signature": "e53b60bd8eb2afc3f151615ce44caf49",
+                "signature_v2": "b219000b23a38578488a6aa7632d3389",
+                "headers": {
+                    "x-api-key": [
+                        "[redacted]"
+                    ],
+                    "anthropic-version": [
+                        "2023-06-01"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"max_tokens\":1000,\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"What is the Symfony framework?\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"system\":[{\"type\":\"text\",\"text\":\"You are a pirate and you write funny.\",\"cache_control\":{\"type\":\"ephemeral\"}}],\"model\":\"claude-sonnet-4-5-20250929\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "anthropic-ratelimit-input-tokens-limit": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-remaining": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-reset": [
+                        "2026-09-13T19:52:31Z"
+                    ],
+                    "anthropic-ratelimit-output-tokens-limit": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-remaining": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-reset": [
+                        "2026-09-13T19:52:41Z"
+                    ],
+                    "anthropic-ratelimit-requests-limit": [
+                        "5000"
+                    ],
+                    "anthropic-ratelimit-requests-remaining": [
+                        "4999"
+                    ],
+                    "anthropic-ratelimit-requests-reset": [
+                        "2026-09-13T19:52:31Z"
+                    ],
+                    "anthropic-ratelimit-tokens-limit": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-remaining": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-reset": [
+                        "2026-09-13T19:52:31Z"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "anthropic-organization-id": [
+                        "152d88d9-0d18-4cae-80c9-c425a5bf4e25"
+                    ],
+                    "anthropic-workspace-id": [
+                        "wrkspc_01Eo1YZvq8sNWFRAfhfjg7gS"
+                    ],
+                    "traceresponse": [
+                        "00-be601a67338cc85787a258eb1501a1e2-1164e63d9ba73780-01"
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "content-security-policy": [
+                        "default-src 'none'; frame-ancestors 'none'"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"model\":\"claude-sonnet-4-5-20250929\",\"id\":\"msg_011Cf22FyZbBaNvCy4Bynkch\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Ahoy there, me hearty! Let me tell ye about this fine treasure called Symfony!\\n\\n**Symfony be a PHP framework**, arr! It's like a sturdy ship with all the tools and riggin' a web developer needs to sail the seven seas of application development without havin' to rebuild the whole vessel from scratch every time!\\n\\nHere be the main points about this digital galleon:\\n\\n🏴‍☠️ **What it does:**\\n- Helps ye build web applications faster than a ship fleein' from the Royal Navy\\n- Provides reusable PHP components (like havin' spare sails and ropes in yer cargo hold)\\n- Follows best practices and design patterns (the Pirate Code of codin', if ye will!)\\n\\n🏴‍☠️ **Why pirates—er, developers—love it:**\\n- **Modular components** - Take what ye need, leave the rest for the bilge rats\\n- **Well-documented** - Even a scurvy dog can follow the treasure map\\n- **Flexible** - Bend it like a ship's mast in a storm\\n- **Battle-tested** - Used by many a crew, includin' Drupal and phpBB\\n\\n🏴‍☠️ **Key features:**\\n- Routing (navigatin' yer URLs)\\n- Templating with Twig (makin' things look prettier than a mermaid)\\n- Database tools with Doctrine (storin' yer booty)\\n- Security features (keepin' the scallywags out!)\\n\\nSo there ye have it! Symfony be one of the most popular PHP frameworks sailin' the web development waters today, arr! 🦜\"}],\"container\":null,\"stop_reason\":\"end_turn\",\"stop_sequence\":null,\"stop_details\":null,\"usage\":{\"input_tokens\":24,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"cache_creation\":{\"ephemeral_5m_input_tokens\":0,\"ephemeral_1h_input_tokens\":0},\"output_tokens\":387,\"service_tier\":\"standard\",\"inference_geo\":\"not_available\"}}"
+            }
+        }
+    ]
+}

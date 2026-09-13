@@ -1,0 +1,88 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cerebras.ai/v1/chat/completions",
+                "signature": "ece41e7e82577d540e00eba7117210d7",
+                "signature_v2": "98f5388aa2d9a8c1414f4443fc90e3e6",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"system\",\"content\":\"You are a helpful assistant.\"},{\"role\":\"user\",\"content\":\"What is the capital of Japan?\"}],\"model\":\"gpt-oss-120b\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-ratelimit-remaining-requests-minute": [
+                        "998"
+                    ],
+                    "x-ratelimit-remaining-requests-hour": [
+                        "59998"
+                    ],
+                    "x-ratelimit-remaining-requests-day": [
+                        "1439998"
+                    ],
+                    "x-ratelimit-remaining-tokens-minute": [
+                        "467192"
+                    ],
+                    "x-ratelimit-remaining-tokens-hour": [
+                        "89967192"
+                    ],
+                    "x-ratelimit-remaining-tokens-day": [
+                        "719967192"
+                    ],
+                    "x-ratelimit-limit-requests-minute": [
+                        "1000"
+                    ],
+                    "x-ratelimit-limit-requests-hour": [
+                        "60000"
+                    ],
+                    "x-ratelimit-limit-requests-day": [
+                        "1440000"
+                    ],
+                    "x-ratelimit-limit-tokens-minute": [
+                        "500000"
+                    ],
+                    "x-ratelimit-limit-tokens-hour": [
+                        "30000000"
+                    ],
+                    "x-ratelimit-limit-tokens-day": [
+                        "720000000"
+                    ],
+                    "inference-id": [
+                        "chatcmpl-5588ac54-a783-4c5d-bd7c-5fee45c5442d"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"chatcmpl-5588ac54-a783-4c5d-bd7c-5fee45c5442d\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"The capital of Japan is **Tokyo**.\",\"reasoning\":\"The user asks a simple factual question: \\\"What is the capital of Japan?\\\" Answer: Tokyo. Provide answer.\",\"role\":\"assistant\"}}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_752b9cb17e04d95d05c3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":129,\"completion_tokens\":42,\"completion_tokens_details\":{\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0,\"reasoning_tokens\":23},\"prompt_tokens\":87,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"time_info\":{\"created\":1789329168.5580895,\"queue_time\":0.432155165,\"prompt_time\":0.0024497380000000346,\"completion_time\":0.012362353,\"total_time\":0.4485585689544678}}"
+            }
+        }
+    ]
+}

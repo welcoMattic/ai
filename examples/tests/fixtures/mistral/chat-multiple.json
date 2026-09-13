@@ -1,0 +1,70 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.mistral.ai/v1/chat/completions",
+                "signature": "2782bf810017ab5aac30e021c0cb8273",
+                "signature_v2": "d3c03f03eff201005c15b4c37f8a5a9a",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "accept": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"temperature\":1.5,\"n\":5,\"messages\":[{\"role\":\"system\",\"content\":\"Just give short answers.\"},{\"role\":\"user\",\"content\":\"What is your favorite color?\"}],\"model\":\"mistral-small-latest\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "x-max-retry-attempts-reached": [
+                        "false"
+                    ],
+                    "x-ratelimit-limit-tokens-minute": [
+                        "100000"
+                    ],
+                    "x-ratelimit-remaining-tokens-minute": [
+                        "99959"
+                    ],
+                    "x-ratelimit-tokens-query-cost": [
+                        "41"
+                    ],
+                    "x-ratelimit-limit-req-minute": [
+                        "100"
+                    ],
+                    "x-ratelimit-remaining-req-minute": [
+                        "98"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"403239244083404b908f995b35f04fff\",\"created\":1789328711,\"model\":\"mistral-small-latest\",\"usage\":{\"prompt_tokens\":28,\"total_tokens\":41,\"completion_tokens\":13,\"prompt_tokens_details\":{\"cached_tokens\":0},\"service_tier\":\"standard\"},\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"tool_calls\":null,\"content\":\"Blue.\"}},{\"index\":1,\"finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"tool_calls\":null,\"content\":\"Blue\"}},{\"index\":2,\"finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"tool_calls\":null,\"content\":\"Blue.\"}},{\"index\":3,\"finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"tool_calls\":null,\"content\":\"Blue\"}},{\"index\":4,\"finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"tool_calls\":null,\"content\":\"Blue.\"}}]}"
+            }
+        }
+    ]
+}

@@ -1,0 +1,289 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/audio/transcriptions",
+                "signature": "147c93f552a710ef72086a949edfdcba",
+                "signature_v2": "30727249f8e13238c7271f09e98631e2",
+                "headers": {
+                    "content-type": [
+                        "multipart/form-data"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "model": "whisper-1",
+                    "file": "[resource audio.mp3, 51019 bytes]"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "via": [
+                        "envoy-router-86bf8679b4-56d5g"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "7500"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "7499"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "8ms"
+                    ],
+                    "x-openai-proxy-wasm": [
+                        "v0.1"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"text\":\"Wishing you a Merry Christmas and a Happy New Year.\",\"usage\":{\"type\":\"duration\",\"seconds\":3}}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "562b1702a82ed8a1faade5346750b4e7",
+                "signature_v2": "ef63f46f58e1a84e3fb6991c38386ea2",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-4o\",\"input\":[{\"role\":\"user\",\"content\":\"Wishing you a Merry Christmas and a Happy New Year.\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "2000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "1999962"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "1ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0e787f86d584be06006aa70c1b36a487d2b3776cd67da373fd\",\n  \"object\": \"response\",\n  \"created_at\": 1789332507,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789332508,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-4o-2024-08-06\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"msg_0e787f86d584be06006aa70c1c3f6087d2ad6ceb1a5506ad00\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"Thank you! Wishing you a joyful holiday season and a wonderful New Year filled with happiness and success!\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": null,\n    \"effort\": null,\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 19,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 22,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 41\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.elevenlabs.io/v1/models",
+                "signature": "9819461af8629d560f6c644ebf7dd305",
+                "signature_v2": "d91ccd3bfb5cf1202d7edcac7c6329a8",
+                "headers": {
+                    "xi-api-key": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "vary": [
+                        "Accept-Language, Accept-Encoding"
+                    ],
+                    "access-control-allow-headers": [
+                        "*"
+                    ],
+                    "access-control-allow-methods": [
+                        "POST, PATCH, OPTIONS, DELETE, GET, PUT"
+                    ],
+                    "access-control-max-age": [
+                        "600"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=1800;"
+                    ],
+                    "x-trace-id": [
+                        "bb34427dffdb9520f1e67efc3b347362"
+                    ],
+                    "x-region": [
+                        "us-central1"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "via": [
+                        "1.1 google"
+                    ]
+                },
+                "body_format": "json",
+                "body": "[{\"model_id\":\"eleven_v3\",\"name\":\"Eleven v3\",\"can_be_finetuned\":false,\"can_do_text_to_speech\":true,\"can_do_voice_conversion\":false,\"can_use_style\":false,\"can_use_speaker_boost\":false,\"serves_pro_voices\":false,\"token_cost_factor\":1.0,\"description\":\"The most expressive model. Supports 70+ languages. Requires more prompt engineering than our previous models.\",\"requires_alpha_access\":false,\"max_characters_request_free_user\":5000,\"max_characters_request_subscribed_user\":5000,\"maximum_text_length_per_request\":5000,\"languages\":[{\"language_id\":\"af\",\"name\":\"Afrikaans\"},{\"language_id\":\"ar\",\"name\":\"Arabic\"},{\"language_id\":\"hy\",\"name\":\"Armenian\"},{\"language_id\":\"as\",\"name\":\"Assamese\"},{\"language_id\":\"az\",\"name\":\"Azerbaijani\"},{\"language_id\":\"be\",\"name\":\"Belarusian\"},{\"language_id\":\"bn\",\"name\":\"Bengali\"},{\"language_id\":\"bs\",\"name\":\"Bosnian\"},{\"language_id\":\"bg\",\"name\":\"Bulgarian\"},{\"language_id\":\"ca\",\"name\":\"Catalan\"},{\"language_id\":\"ceb\",\"name\":\"Cebuano\"},{\"language_id\":\"ny\",\"name\":\"Chichewa\"},{\"language_id\":\"hr\",\"name\":\"Croatian\"},{\"language_id\":\"cs\",\"name\":\"Czech\"},{\"language_id\":\"da\",\"name\":\"Danish\"},{\"language_id\":\"nl\",\"name\":\"Dutch\"},{\"language_id\":\"en\",\"name\":\"English\"},{\"language_id\":\"et\",\"name\":\"Estonian\"},{\"language_id\":\"fil\",\"name\":\"Filipino\"},{\"language_id\":\"fi\",\"name\":\"Finnish\"},{\"language_id\":\"fr\",\"name\":\"French\"},{\"language_id\":\"gl\",\"name\":\"Galician\"},{\"language_id\":\"ka\",\"name\":\"Georgian\"},{\"language_id\":\"de\",\"name\":\"German\"},{\"language_id\":\"el\",\"name\":\"Greek\"},{\"language_id\":\"gu\",\"name\":\"Gujarati\"},{\"language_id\":\"ha\",\"name\":\"Hausa\"},{\"language_id\":\"he\",\"name\":\"Hebrew\"},{\"language_id\":\"hi\",\"name\":\"Hindi\"},{\"language_id\":\"hu\",\"name\":\"Hungarian\"},{\"language_id\":\"is\",\"name\":\"Icelandic\"},{\"language_id\":\"id\",\"name\":\"Indonesian\"},{\"language_id\":\"ga\",\"name\":\"Irish\"},{\"language_id\":\"it\",\"name\":\"Italian\"},{\"language_id\":\"ja\",\"name\":\"Japanese\"},{\"language_id\":\"jv\",\"name\":\"Javanese\"},{\"language_id\":\"kn\",\"name\":\"Kannada\"},{\"language_id\":\"kk\",\"name\":\"Kazakh\"},{\"language_id\":\"ky\",\"name\":\"Kirghiz\"},{\"language_id\":\"ko\",\"name\":\"Korean\"},{\"language_id\":\"lv\",\"name\":\"Latvian\"},{\"language_id\":\"ln\",\"name\":\"Lingala\"},{\"language_id\":\"lt\",\"name\":\"Lithuanian\"},{\"language_id\":\"lb\",\"name\":\"Luxembourgish\"},{\"language_id\":\"mk\",\"name\":\"Macedonian\"},{\"language_id\":\"ms\",\"name\":\"Malay\"},{\"language_id\":\"ml\",\"name\":\"Malayalam\"},{\"language_id\":\"zh\",\"name\":\"Mandarin Chinese\"},{\"language_id\":\"mr\",\"name\":\"Marathi\"},{\"language_id\":\"ne\",\"name\":\"Nepali\"},{\"language_id\":\"no\",\"name\":\"Norwegian\"},{\"language_id\":\"ps\",\"name\":\"Pashto\"},{\"language_id\":\"fa\",\"name\":\"Persian\"},{\"language_id\":\"pl\",\"name\":\"Polish\"},{\"language_id\":\"pt\",\"name\":\"Portuguese\"},{\"language_id\":\"pa\",\"name\":\"Punjabi\"},{\"language_id\":\"ro\",\"name\":\"Romanian\"},{\"language_id\":\"ru\",\"name\":\"Russian\"},{\"language_id\":\"sr\",\"name\":\"Serbian\"},{\"language_id\":\"sd\",\"name\":\"Sindhi\"},{\"language_id\":\"sk\",\"name\":\"Slovak\"},{\"language_id\":\"sl\",\"name\":\"Slovenian\"},{\"language_id\":\"so\",\"name\":\"Somali\"},{\"language_id\":\"es\",\"name\":\"Spanish\"},{\"language_id\":\"sw\",\"name\":\"Swahili\"},{\"language_id\":\"sv\",\"name\":\"Swedish\"},{\"language_id\":\"ta\",\"name\":\"Tamil\"},{\"language_id\":\"te\",\"name\":\"Telugu\"},{\"language_id\":\"th\",\"name\":\"Thai\"},{\"language_id\":\"tr\",\"name\":\"Turkish\"},{\"language_id\":\"uk\",\"name\":\"Ukrainian\"},{\"language_id\":\"ur\",\"name\":\"Urdu\"},{\"language_id\":\"vi\",\"name\":\"Vietnamese\"},{\"language_id\":\"cy\",\"name\":\"Welsh\"}],\"model_rates\":{\"character_cost_multiplier\":1.0,\"cost_discount_multiplier\":1.0},\"concurrency_group\":\"standard\"},{\"model_id\":\"eleven_v3_conversational\",\"name\":\"Eleven v3 Conversational\",\"can_be_finetuned\":false,\"can_do_text_to_speech\":true,\"can_do_voice_conversion\":false,\"can_use_style\":false,\"can_use_speaker_boost\":true,\"serves_pro_voices\":false,\"token_cost_factor\":1.0,\"description\":\"The most expressive model, optimized for natural dialogue in conversational agents. Supports 70+ languages. Requires more prompt engineering than our previous models.\",\"requires_alpha_access\":false,\"max_characters_request_free_user\":5000,\"max_characters_request_subscribed_user\":5000,\"maximum_text_length_per_request\":5000,\"languages\":[{\"language_id\":\"af\",\"name\":\"Afrikaans\"},{\"language_id\":\"ar\",\"name\":\"Arabic\"},{\"language_id\":\"hy\",\"name\":\"Armenian\"},{\"language_id\":\"as\",\"name\":\"Assamese\"},{\"language_id\":\"az\",\"name\":\"Azerbaijani\"},{\"language_id\":\"be\",\"name\":\"Belarusian\"},{\"language_id\":\"bn\",\"name\":\"Bengali\"},{\"language_id\":\"bs\",\"name\":\"Bosnian\"},{\"language_id\":\"bg\",\"name\":\"Bulgarian\"},{\"language_id\":\"ca\",\"name\":\"Catalan\"},{\"language_id\":\"ceb\",\"name\":\"Cebuano\"},{\"language_id\":\"ny\",\"name\":\"Chichewa\"},{\"language_id\":\"hr\",\"name\":\"Croatian\"},{\"language_id\":\"cs\",\"name\":\"Czech\"},{\"language_id\":\"da\",\"name\":\"Danish\"},{\"language_id\":\"nl\",\"name\":\"Dutch\"},{\"language_id\":\"en\",\"name\":\"English\"},{\"language_id\":\"et\",\"name\":\"Estonian\"},{\"language_id\":\"fil\",\"name\":\"Filipino\"},{\"language_id\":\"fi\",\"name\":\"Finnish\"},{\"language_id\":\"fr\",\"name\":\"French\"},{\"language_id\":\"gl\",\"name\":\"Galician\"},{\"language_id\":\"ka\",\"name\":\"Georgian\"},{\"language_id\":\"de\",\"name\":\"German\"},{\"language_id\":\"el\",\"name\":\"Greek\"},{\"language_id\":\"gu\",\"name\":\"Gujarati\"},{\"language_id\":\"ha\",\"name\":\"Hausa\"},{\"language_id\":\"he\",\"name\":\"Hebrew\"},{\"language_id\":\"hi\",\"name\":\"Hindi\"},{\"language_id\":\"hu\",\"name\":\"Hungarian\"},{\"language_id\":\"is\",\"name\":\"Icelandic\"},{\"language_id\":\"id\",\"name\":\"Indonesian\"},{\"language_id\":\"ga\",\"name\":\"Irish\"},{\"language_id\":\"it\",\"name\":\"Italian\"},{\"language_id\":\"ja\",\"name\":\"Japanese\"},{\"language_id\":\"jv\",\"name\":\"Javanese\"},{\"language_id\":\"kn\",\"name\":\"Kannada\"},{\"language_id\":\"kk\",\"name\":\"Kazakh\"},{\"language_id\":\"ky\",\"name\":\"Kirghiz\"},{\"language_id\":\"ko\",\"name\":\"Korean\"},{\"language_id\":\"lv\",\"name\":\"Latvian\"},{\"language_id\":\"ln\",\"name\":\"Lingala\"},{\"language_id\":\"lt\",\"name\":\"Lithuanian\"},{\"language_id\":\"lb\",\"name\":\"Luxembourgish\"},{\"language_id\":\"mk\",\"name\":\"Macedonian\"},{\"language_id\":\"ms\",\"name\":\"Malay\"},{\"language_id\":\"ml\",\"name\":\"Malayalam\"},{\"language_id\":\"zh\",\"name\":\"Mandarin Chinese\"},{\"language_id\":\"mr\",\"name\":\"Marathi\"},{\"language_id\":\"ne\",\"name\":\"Nepali\"},{\"language_id\":\"no\",\"name\":\"Norwegian\"},{\"language_id\":\"ps\",\"name\":\"Pashto\"},{\"language_id\":\"fa\",\"name\":\"Persian\"},{\"language_id\":\"pl\",\"name\":\"Polish\"},{\"language_id\":\"pt\",\"name\":\"Portuguese\"},{\"language_id\":\"pa\",\"name\":\"Punjabi\"},{\"language_id\":\"ro\",\"name\":\"Romanian\"},{\"language_id\":\"ru\",\"name\":\"Russian\"},{\"language_id\":\"sr\",\"name\":\"Serbian\"},{\"language_id\":\"sd\",\"name\":\"Sindhi\"},{\"language_id\":\"sk\",\"name\":\"Slovak\"},{\"language_id\":\"sl\",\"name\":\"Slovenian\"},{\"language_id\":\"so\",\"name\":\"Somali\"},{\"language_id\":\"es\",\"name\":\"Spanish\"},{\"language_id\":\"sw\",\"name\":\"Swahili\"},{\"language_id\":\"sv\",\"name\":\"Swedish\"},{\"language_id\":\"ta\",\"name\":\"Tamil\"},{\"language_id\":\"te\",\"name\":\"Telugu\"},{\"language_id\":\"th\",\"name\":\"Thai\"},{\"language_id\":\"tr\",\"name\":\"Turkish\"},{\"language_id\":\"uk\",\"name\":\"Ukrainian\"},{\"language_id\":\"ur\",\"name\":\"Urdu\"},{\"language_id\":\"vi\",\"name\":\"Vietnamese\"},{\"language_id\":\"cy\",\"name\":\"Welsh\"}],\"model_rates\":{\"character_cost_multiplier\":0.5,\"cost_discount_multiplier\":1.0},\"concurrency_group\":\"standard_eleven_v3\"},{\"model_id\":\"eleven_multilingual_v2\",\"name\":\"Eleven Multilingual v2\",\"can_be_finetuned\":true,\"can_do_text_to_speech\":true,\"can_do_voice_conversion\":false,\"can_use_style\":true,\"can_use_speaker_boost\":true,\"serves_pro_voices\":false,\"token_cost_factor\":1.0,\"description\":\"Our most life-like, emotionally rich mode in 29 languages. Best for voice overs, audiobooks, post-production, or any other content creation needs.\",\"requires_alpha_access\":false,\"max_characters_request_free_user\":10000,\"max_characters_request_subscribed_user\":10000,\"maximum_text_length_per_request\":10000,\"languages\":[{\"language_id\":\"en\",\"name\":\"English\"},{\"language_id\":\"ja\",\"name\":\"Japanese\"},{\"language_id\":\"zh\",\"name\":\"Chinese\"},{\"language_id\":\"de\",\"name\":\"German\"},{\"language_id\":\"hi\",\"name\":\"Hindi\"},{\"language_id\":\"fr\",\"name\":\"French\"},{\"language_id\":\"ko\",\"name\":\"Korean\"},{\"language_id\":\"pt\",\"name\":\"Portuguese\"},{\"language_id\":\"it\",\"name\":\"Italian\"},{\"language_id\":\"es\",\"name\":\"Spanish\"},{\"language_id\":\"id\",\"name\":\"Indonesian\"},{\"language_id\":\"nl\",\"name\":\"Dutch\"},{\"language_id\":\"tr\",\"name\":\"Turkish\"},{\"language_id\":\"fil\",\"name\":\"Filipino\"},{\"language_id\":\"pl\",\"name\":\"Polish\"},{\"language_id\":\"sv\",\"name\":\"Swedish\"},{\"language_id\":\"bg\",\"name\":\"Bulgarian\"},{\"language_id\":\"ro\",\"name\":\"Romanian\"},{\"language_id\":\"ar\",\"name\":\"Arabic\"},{\"language_id\":\"cs\",\"name\":\"Czech\"},{\"language_id\":\"el\",\"name\":\"Greek\"},{\"language_id\":\"fi\",\"name\":\"Finnish\"},{\"language_id\":\"hr\",\"name\":\"Croatian\"},{\"language_id\":\"ms\",\"name\":\"Malay\"},{\"language_id\":\"sk\",\"name\":\"Slovak\"},{\"language_id\":\"da\",\"name\":\"Danish\"},{\"language_id\":\"ta\",\"name\":\"Tamil\"},{\"language_id\":\"uk\",\"name\":\"Ukrainian\"},{\"language_id\":\"ru\",\"name\":\"Russian\"}],\"model_rates\":{\"character_cost_multiplier\":1.0,\"cost_discount_multiplier\":1.0},\"concurrency_group\":\"standard\"},{\"model_id\":\"eleven_flash_v2_5\",\"name\":\"Eleven Flash v2.5\",\"can_be_finetuned\":true,\"can_do_text_to_speech\":true,\"can_do_voice_conversion\":false,\"can_use_style\":false,\"can_use_speaker_boost\":false,\"serves_pro_voices\":false,\"token_cost_factor\":1.0,\"description\":\"Our ultra low latency model in 32 languages. Ideal for conversational use cases.\",\"requires_alpha_access\":false,\"max_characters_request_free_user\":40000,\"max_characters_request_subscribed_user\":40000,\"maximum_text_length_per_request\":40000,\"languages\":[{\"language_id\":\"en\",\"name\":\"English\"},{\"language_id\":\"ja\",\"name\":\"Japanese\"},{\"language_id\":\"zh\",\"name\":\"Chinese\"},{\"language_id\":\"de\",\"name\":\"German\"},{\"language_id\":\"hi\",\"name\":\"Hindi\"},{\"language_id\":\"fr\",\"name\":\"French\"},{\"language_id\":\"ko\",\"name\":\"Korean\"},{\"language_id\":\"pt\",\"name\":\"Portuguese\"},{\"language_id\":\"it\",\"name\":\"Italian\"},{\"language_id\":\"es\",\"name\":\"Spanish\"},{\"language_id\":\"ru\",\"name\":\"Russian\"},{\"language_id\":\"id\",\"name\":\"Indonesian\"},{\"language_id\":\"nl\",\"name\":\"Dutch\"},{\"language_id\":\"tr\",\"name\":\"Turkish\"},{\"language_id\":\"fil\",\"name\":\"Filipino\"},{\"language_id\":\"pl\",\"name\":\"Polish\"},{\"language_id\":\"sv\",\"name\":\"Swedish\"},{\"language_id\":\"bg\",\"name\":\"Bulgarian\"},{\"language_id\":\"ro\",\"name\":\"Romanian\"},{\"language_id\":\"ar\",\"name\":\"Arabic\"},{\"language_id\":\"cs\",\"name\":\"Czech\"},{\"language_id\":\"el\",\"name\":\"Greek\"},{\"language_id\":\"fi\",\"name\":\"Finnish\"},{\"language_id\":\"hr\",\"name\":\"Croatian\"},{\"language_id\":\"ms\",\"name\":\"Malay\"},{\"language_id\":\"sk\",\"name\":\"Slovak\"},{\"language_id\":\"da\",\"name\":\"Danish\"},{\"language_id\":\"ta\",\"name\":\"Tamil\"},{\"language_id\":\"uk\",\"name\":\"Ukrainian\"},{\"language_id\":\"hu\",\"name\":\"Hungarian\"},{\"language_id\":\"no\",\"name\":\"Norwegian\"},{\"language_id\":\"vi\",\"name\":\"Vietnamese\"}],\"model_rates\":{\"character_cost_multiplier\":0.5,\"cost_discount_multiplier\":1.0},\"concurrency_group\":\"turbo\"},{\"model_id\":\"eleven_turbo_v2_5\",\"name\":\"Eleven Turbo v2.5\",\"can_be_finetuned\":true,\"can_do_text_to_speech\":true,\"can_do_voice_conversion\":false,\"can_use_style\":false,\"can_use_speaker_boost\":false,\"serves_pro_voices\":false,\"token_cost_factor\":1.0,\"description\":\"Our high quality, low latency model in 32 languages. Best for developer use cases where speed matters and you need non-English languages.\",\"requires_alpha_access\":false,\"max_characters_request_free_user\":40000,\"max_characters_request_subscribed_user\":40000,\"maximum_text_length_per_request\":40000,\"languages\":[{\"language_id\":\"en\",\"name\":\"English\"},{\"language_id\":\"ja\",\"name\":\"Japanese\"},{\"language_id\":\"zh\",\"name\":\"Chinese\"},{\"language_id\":\"de\",\"name\":\"German\"},{\"language_id\":\"hi\",\"name\":\"Hindi\"},{\"language_id\":\"fr\",\"name\":\"French\"},{\"language_id\":\"ko\",\"name\":\"Korean\"},{\"language_id\":\"pt\",\"name\":\"Portuguese\"},{\"language_id\":\"it\",\"name\":\"Italian\"},{\"language_id\":\"es\",\"name\":\"Spanish\"},{\"language_id\":\"ru\",\"name\":\"Russian\"},{\"language_id\":\"id\",\"name\":\"Indonesian\"},{\"language_id\":\"nl\",\"name\":\"Dutch\"},{\"language_id\":\"tr\",\"name\":\"Turkish\"},{\"language_id\":\"fil\",\"name\":\"Filipino\"},{\"language_id\":\"pl\",\"name\":\"Polish\"},{\"language_id\":\"sv\",\"name\":\"Swedish\"},{\"language_id\":\"bg\",\"name\":\"Bulgarian\"},{\"language_id\":\"ro\",\"name\":\"Romanian\"},{\"language_id\":\"ar\",\"name\":\"Arabic\"},{\"language_id\":\"cs\",\"name\":\"Czech\"},{\"language_id\":\"el\",\"name\":\"Greek\"},{\"language_id\":\"fi\",\"name\":\"Finnish\"},{\"language_id\":\"hr\",\"name\":\"Croatian\"},{\"language_id\":\"ms\",\"name\":\"Malay\"},{\"language_id\":\"sk\",\"name\":\"Slovak\"},{\"language_id\":\"da\",\"name\":\"Danish\"},{\"language_id\":\"ta\",\"name\":\"Tamil\"},{\"language_id\":\"uk\",\"name\":\"Ukrainian\"},{\"language_id\":\"vi\",\"name\":\"Vietnamese\"},{\"language_id\":\"no\",\"name\":\"Norwegian\"},{\"language_id\":\"hu\",\"name\":\"Hungarian\"}],\"model_rates\":{\"character_cost_multiplier\":0.5,\"cost_discount_multiplier\":1.0},\"concurrency_group\":\"turbo\"},{\"model_id\":\"eleven_turbo_v2\",\"name\":\"Eleven Turbo v2\",\"can_be_finetuned\":true,\"can_do_text_to_speech\":true,\"can_do_voice_conversion\":false,\"can_use_style\":false,\"can_use_speaker_boost\":false,\"serves_pro_voices\":false,\"token_cost_factor\":1.0,\"description\":\"Our English-only, low latency model. Best for developer use cases where speed matters and you only need English. Performance is on par with Turbo v2.5.\",\"requires_alpha_access\":false,\"max_characters_request_free_user\":30000,\"max_characters_request_subscribed_user\":30000,\"maximum_text_length_per_request\":30000,\"languages\":[{\"language_id\":\"en\",\"name\":\"English\"}],\"model_rates\":{\"character_cost_multiplier\":0.5,\"cost_discount_multiplier\":1.0},\"concurrency_group\":\"turbo\"},{\"model_id\":\"eleven_flash_v2\",\"name\":\"Eleven Flash v2\",\"can_be_finetuned\":true,\"can_do_text_to_speech\":true,\"can_do_voice_conversion\":false,\"can_use_style\":false,\"can_use_speaker_boost\":false,\"serves_pro_voices\":false,\"token_cost_factor\":1.0,\"description\":\"Our ultra low latency model in english. Ideal for conversational use cases.\",\"requires_alpha_access\":false,\"max_characters_request_free_user\":30000,\"max_characters_request_subscribed_user\":30000,\"maximum_text_length_per_request\":30000,\"languages\":[{\"language_id\":\"en\",\"name\":\"English\"}],\"model_rates\":{\"character_cost_multiplier\":0.5,\"cost_discount_multiplier\":1.0},\"concurrency_group\":\"turbo\"},{\"model_id\":\"eleven_english_sts_v2\",\"name\":\"Eleven English v2\",\"can_be_finetuned\":false,\"can_do_text_to_speech\":false,\"can_do_voice_conversion\":true,\"can_use_style\":true,\"can_use_speaker_boost\":true,\"serves_pro_voices\":false,\"token_cost_factor\":1.0,\"description\":\"Our state-of-the-art speech to speech model suitable for scenarios where you need maximum control over the content and prosody of your generations.\",\"requires_alpha_access\":false,\"max_characters_request_free_user\":5000,\"max_characters_request_subscribed_user\":5000,\"maximum_text_length_per_request\":5000,\"languages\":[{\"language_id\":\"en\",\"name\":\"English\"}],\"model_rates\":{\"character_cost_multiplier\":1.0,\"cost_discount_multiplier\":1.0},\"concurrency_group\":\"standard_eleven_english_sts_v2\"},{\"model_id\":\"eleven_multilingual_sts_v2\",\"name\":\"Eleven Multilingual v2\",\"can_be_finetuned\":true,\"can_do_text_to_speech\":false,\"can_do_voice_conversion\":true,\"can_use_style\":true,\"can_use_speaker_boost\":true,\"serves_pro_voices\":false,\"token_cost_factor\":1.0,\"description\":\"Our cutting-edge, multilingual speech-to-speech model is designed for situations that demand unparalleled control over both the content and the prosody of the generated speech across various languages.\",\"requires_alpha_access\":false,\"max_characters_request_free_user\":10000,\"max_characters_request_subscribed_user\":10000,\"maximum_text_length_per_request\":10000,\"languages\":[{\"language_id\":\"en\",\"name\":\"English\"},{\"language_id\":\"ja\",\"name\":\"Japanese\"},{\"language_id\":\"zh\",\"name\":\"Chinese\"},{\"language_id\":\"de\",\"name\":\"German\"},{\"language_id\":\"hi\",\"name\":\"Hindi\"},{\"language_id\":\"fr\",\"name\":\"French\"},{\"language_id\":\"ko\",\"name\":\"Korean\"},{\"language_id\":\"pt\",\"name\":\"Portuguese\"},{\"language_id\":\"it\",\"name\":\"Italian\"},{\"language_id\":\"es\",\"name\":\"Spanish\"},{\"language_id\":\"ru\",\"name\":\"Russian\"},{\"language_id\":\"id\",\"name\":\"Indonesian\"},{\"language_id\":\"nl\",\"name\":\"Dutch\"},{\"language_id\":\"tr\",\"name\":\"Turkish\"},{\"language_id\":\"fil\",\"name\":\"Filipino\"},{\"language_id\":\"pl\",\"name\":\"Polish\"},{\"language_id\":\"sv\",\"name\":\"Swedish\"},{\"language_id\":\"bg\",\"name\":\"Bulgarian\"},{\"language_id\":\"ro\",\"name\":\"Romanian\"},{\"language_id\":\"ar\",\"name\":\"Arabic\"},{\"language_id\":\"cs\",\"name\":\"Czech\"},{\"language_id\":\"el\",\"name\":\"Greek\"},{\"language_id\":\"fi\",\"name\":\"Finnish\"},{\"language_id\":\"hr\",\"name\":\"Croatian\"},{\"language_id\":\"ms\",\"name\":\"Malay\"},{\"language_id\":\"sk\",\"name\":\"Slovak\"},{\"language_id\":\"da\",\"name\":\"Danish\"},{\"language_id\":\"ta\",\"name\":\"Tamil\"},{\"language_id\":\"uk\",\"name\":\"Ukrainian\"}],\"model_rates\":{\"character_cost_multiplier\":1.0,\"cost_discount_multiplier\":1.0},\"concurrency_group\":\"standard_eleven_multilingual_sts_v2\"}]"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.elevenlabs.io/v1/text-to-speech/pqHfZKP75CvOlQylNhV4",
+                "signature": "9ea958e6332a2a32da7e5c550027b7c4",
+                "signature_v2": "c43b671c1116560377b056e380d624e1",
+                "headers": {
+                    "xi-api-key": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "text": "Thank you! Wishing you a joyful holiday season and a wonderful New Year filled with happiness and success!",
+                    "model_id": "eleven_multilingual_v2"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "access-control-expose-headers": [
+                        "request-id, history-item-id, character-cost, regeneration-count, generation-info, current-concurrent-requests, maximum-concurrent-requests, quality-check-attempts, quality-check-passed, quality-check-failure-reason"
+                    ],
+                    "history-item-id": [
+                        "MidLDrYHHErZ5laZ8O3m"
+                    ],
+                    "current-concurrent-requests": [
+                        "1"
+                    ],
+                    "workspace-concurrent-requests": [
+                        "1"
+                    ],
+                    "maximum-concurrent-requests": [
+                        "2"
+                    ],
+                    "character-cost": [
+                        "106"
+                    ],
+                    "tts-latency-ms": [
+                        "1175"
+                    ],
+                    "content-length": [
+                        "131701"
+                    ],
+                    "content-type": [
+                        "audio/mpeg"
+                    ],
+                    "vary": [
+                        "Accept-Language"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-allow-headers": [
+                        "*"
+                    ],
+                    "access-control-allow-methods": [
+                        "POST, PATCH, OPTIONS, DELETE, GET, PUT"
+                    ],
+                    "access-control-max-age": [
+                        "600"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=1800;"
+                    ],
+                    "x-trace-id": [
+                        "0dc8aaf12f83c038f1e67efc3b347347"
+                    ],
+                    "x-region": [
+                        "europe-west4"
+                    ],
+                    "via": [
+                        "1.1 google"
+                    ]
+                },
+                "body_format": "binary",
+                "body": null,
+                "body_size": 131701
+            }
+        }
+    ]
+}

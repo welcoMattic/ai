@@ -1,0 +1,13 @@
+array:4 [
+  "name" => "Premium Wireless Bluetooth Headphones with Noise Cancellation"
+  "price" => 129.99
+  "rating" => 4.3
+  "tags" => array:6 [
+    0 => "wireless"
+    1 => "bluetooth"
+    2 => "noise-canceling"
+    3 => "over-ear"
+    4 => "comfortable"
+    5 => "rechargeable"
+  ]
+]

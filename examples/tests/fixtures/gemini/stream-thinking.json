@@ -1,0 +1,51 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+                "signature": "32a70e9e2183759c187aa640fac3d587",
+                "signature_v2": "5276c43a4e7c6bf23bde0e84a68fde22",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"generationConfig\":{\"thinkingConfig\":{\"includeThoughts\":true}},\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"If a train travels 60 km in 45 minutes, what is its average speed in km\\/h?\"}]}],\"system_instruction\":{\"parts\":[{\"text\":\"You are a helpful assistant that reasons step by step.\"}]}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "text/event-stream"
+                    ],
+                    "content-disposition": [
+                        "attachment"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "sse",
+                "body": "data: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"**Defining the Task**\\n\\nOkay, I'm starting by zeroing in on the goal: determining average speed, expressed in kilometers per hour. I've successfully recalled the core formula: speed equals distance divided by time. Now, I'm focusing on extracting the necessary distance data from the problem description.\\n\\n\\n\",\"thought\": true}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"totalTokenCount\": 101,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"thoughtsTokenCount\": 65,\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash\",\"responseId\": \"Rf-maoPmHM6NxN8P2oGAiQw\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"**Calculating the Answer**\\n\\nI've got the necessary components in place now. First, the core formula for speed is: speed = distance / time. The knowns are distance = 60 km and time = 45 minutes, but the time units are off. I need km/h, not km/minute. So, I must convert minutes to hours, finding that 45 minutes is 0.75 hours (or 3/4 hours). Finally, I will plug these figures into the formula, and perform the division to obtain the final speed.\\n\\n\\n\",\"thought\": true}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"totalTokenCount\": 491,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"thoughtsTokenCount\": 455,\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash\",\"responseId\": \"Rf-maoPmHM6NxN8P2oGAiQw\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"**Analyzing the Approach**\\n\\nI've broken down the solution process into clear steps: understanding the goal, recalling the formula, identifying the given information (distance and time), and verifying the units. The issue was that time needed to be in hours, not minutes, which I've correctly converted. Applying the formula now appears straightforward. The final calculation is next, but I've already anticipated the final answer should be 80 km/h.\\n\\n\\n\",\"thought\": true}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"totalTokenCount\": 493,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"thoughtsTokenCount\": 457,\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash\",\"responseId\": \"Rf-maoPmHM6NxN8P2oGAiQw\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"To find the average speed in km/h, we first need to convert the time from minutes to hours.\\n\\n1.  **Convert time to hours:**\\n    There are 60 minutes in an hour.\\n    4\"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"candidatesTokenCount\": 44,\"totalTokenCount\": 537,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"thoughtsTokenCount\": 457,\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash\",\"responseId\": \"Rf-maoPmHM6NxN8P2oGAiQw\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"5 minutes = 45/60 hours = 3/4 hours = 0.75 hours\\n\\n2.  **Calculate average speed:**\\n    Average speed = Distance / Time\\n    Average speed = 60 km /\"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"candidatesTokenCount\": 94,\"totalTokenCount\": 587,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"thoughtsTokenCount\": 457,\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash\",\"responseId\": \"Rf-maoPmHM6NxN8P2oGAiQw\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" 0.75 hours\\n    Average speed = 80 km/h\\n\\nThe average speed of the train is **80 km/h**.\"}],\"role\": \"model\"},\"finishReason\": \"STOP\",\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"candidatesTokenCount\": 125,\"totalTokenCount\": 618,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"thoughtsTokenCount\": 457,\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash\",\"responseId\": \"Rf-maoPmHM6NxN8P2oGAiQw\"}\r\n\r\n"
+            }
+        }
+    ]
+}

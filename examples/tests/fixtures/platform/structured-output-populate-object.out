@@ -1,0 +1,17 @@
+Initial object state:
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\City {#344
+  +name: "Berlin"
+  +population: null
+  +country: null
+  +mayor: null
+}
+
+Populated object state:
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\City {#344
+  +name: "Berlin"
+  +population: 3645000
+  +country: "Germany"
+  +mayor: "Kai Wegner"
+}
+
+Object identity preserved: true

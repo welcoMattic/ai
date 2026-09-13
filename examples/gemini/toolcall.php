@@ -20,7 +20,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('GEMINI_API_KEY'), http_client());
 
-$toolbox = new Toolbox([new Clock()], logger: logger());
+$toolbox = new Toolbox([new Clock(clock())], logger: logger());
 $agent = new Agent($platform, 'gemini-2.5-flash', toolbox: $toolbox);
 
 $messages = new MessageBag(Message::ofUser('What time is it?'));

@@ -1,0 +1,64 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.deepseek.com/chat/completions",
+                "signature": "be7b77b27217712d9121aeb9504e3064",
+                "signature_v2": "4da22ce784916d9bda80b4e5c77c2aa4",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"system\",\"content\":\"You are an elementary school teacher.\"},{\"role\":\"user\",\"content\":\"Why can I see the moon at night?\"}],\"model\":\"deepseek-reasoner\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "elb"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "x-ds-trace-id": [
+                        "8ef21c3d29f070d3223f5e38e40b42e4"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 07612651e03eef4292eed033ad965d0e.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P4"
+                    ],
+                    "x-amz-cf-id": [
+                        "kJFqhmI2jyhDtAUw7BU-luomrSzsPj2asllOLXTmnfiVJvJ24PYiyw=="
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"f6a854af-10c3-4a89-a3f7-6012e5282324\",\"object\":\"chat.completion\",\"created\":1789329203,\"model\":\"deepseek-flash\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Great question! The Moon doesn’t make its own light. It’s like a big rocky mirror in space. Sunlight hits the Moon, and some of that light bounces off the Moon and travels to your eyes.\\n\\nAt night, your side of the Earth is turned away from the Sun, so the sky is dark. If the Moon is above you in the sky then, you can see its sunlit side easily. That’s why it looks bright and silvery.\\n\\nThe Moon isn’t only out at night, though. Sometimes it’s in the daytime sky too! But during the day the sky is so bright that it can be harder to see.\\n\\nSo: **Sun shines on the Moon → Moon reflects sunlight → your night sky is dark → you can see the Moon.** It doesn’t glow by itself.\",\"reasoning_content\":\"We need answer as elementary school teacher. Need explain why can see moon at night. Need likely child asking. We need simple, accurate. We can say Moon doesn't make its own light; it reflects sunlight. At night, when our side of Earth faces away from Sun, the Moon can still be in our sky and sunlight hits it. Sometimes Moon is visible in daytime too. Why at night? Because Moon orbits Earth, sometimes it's on our night side. It shines by reflected sunlight. Also stars are suns far away. Need maybe address \\\"why can I see the moon at night\\\" maybe because it's bright enough against dark sky. We can explain phases? Keep simple. Maybe mention Earth rotates, day/night. At night sky is dark, so Moon and stars stand out. The Moon doesn't only come out at night; it's up in daytime sometimes too, but sunlight makes sky bright so harder to see. Also Moon's light is reflected sunlight. Need maybe if they ask \\\"why can I see moon at night\\\" maybe answer: The Moon is like a giant mirror for the Sun's light. At night, the part of Earth where you live is turned away from the Sun, so it's dark. If the Moon is up in your sky, sunlight hits it and bounces to your eyes. That's why you can see it. The Moon is not a lamp. It is always there, orbiting Earth. Sometimes it is in the daytime sky too, but the blue sky is brighter, so it can be hard to see. \\n\\nWe can include a small analogy: shine flashlight on a ball in dark room; you see ball. The Sun is flashlight, Moon is ball. \\n\\nNeed maybe answer in teacher tone. \\\"Great question!\\\" Then maybe simple. Desired oververbosity 5. We can do maybe 2-4 paragraphs. Could mention \\\"night\\\" is Earth's shadow? Actually night is when your side of Earth faces away from Sun. Moon can be anywhere in orbit. If it is above horizon at night, you see it. It reflects sunlight. The Moon can be seen at night because the Sun lights it up, and our sky is dark enough. It can also be seen during the day. \\n\\nNeed ensure no misconception: Moon doesn't emit light. It reflects sunlight. Night side of Earth doesn't mean Moon is in Earth's shadow? Sometimes lunar eclipse, but generally Moon is lit by Sun. If Moon is between Earth and Sun (new moon), it's not visible at night because it's near Sun in daytime sky. Full moon is opposite Sun, so rises at sunset and visible all night. That might be extra. Could mention phases? Maybe not necessary but could be useful: The Moon changes shape because we see different parts of its sunlit side. But question specifically why can see at night. We can say \\\"The Moon can be up at night because it travels around Earth. On some nights it's in the sky; on others it's in the daytime sky or not visible because it's in the Sun's glare.\\\" \\n\\nNeed maybe answer \\\"Why can I see the moon at night?\\\" If child asks, maybe they wonder why moon visible only at night? We should clarify it's not only night. \\n\\nLet's craft final with simple explanation. Use \\\"You can see the Moon at night because...\\\" and maybe \\\"Try this\\\" activity? As elementary teacher, could include a tiny activity: shine flashlight on ball. But final answer should answer. We can include \\\"So: 1. Sun lights Moon. 2. Moon bounces light to Earth. 3. At night, your sky is dark, so you notice it. 4. Moon is sometimes up at night and sometimes in day.\\\" \\n\\nNeed maybe avoid saying \\\"the Moon comes out\\\" because it doesn't. \\\"It is always in the sky somewhere.\\\" \\n\\nLet's produce. Ensure not too long. Could be about 150-200 words. Oververbosity 5. \\n\\nPotential final:\\n\\nGreat question! The Moon doesn’t make its own light. It’s like a big rocky mirror. Sunlight hits the Moon, and some of that light bounces off the Moon and travels to your eyes.\\n\\nAt night, your side of the Earth is turned away from the Sun, so the sky is dark. If the Moon is above you in the sky at that time, you can see its sunlit side easily. That’s why the Moon looks bright and silvery.\\n\\nThe Moon isn’t only out at night. It’s actually up in the daytime sometimes too! But during the day the sky is so bright that the Moon may be harder to spot.\\n\\nSo: Sun shines on Moon → Moon reflects light → your night sky is dark → you can see the Moon. It doesn’t glow by itself. \\n\\nMaybe add phases? \\\"Sometimes you see a full round Moon; sometimes a thin crescent, because we see different parts of its sunlit side.\\\" Could include if wanted. But question only why can see at night. Maybe include at end: \\\"And the shape changes because...\\\" Might be extra. Desired oververbosity 5. Maybe include one sentence. \\n\\nLet's final with teacher tone.\"},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":46,\"completion_tokens\":1239,\"total_tokens\":1285,\"prompt_tokens_details\":{\"cached_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":1068},\"prompt_cache_hit_tokens\":0,\"prompt_cache_miss_tokens\":46},\"system_fingerprint\":\"aeb56401ca74e127821c4f9126dcb669\"}"
+            }
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "130fbb6387fd0fb064b679e8ff6e2169",
+                "signature_v2": "88c44be11bec7ac417dd1fc956f77652",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":[{\"type\":\"input_text\",\"text\":\"I need help with\"},{\"type\":\"input_text\",\"text\":\" debugging\"}]}],\"instructions\":\"You are a helpful assistant.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9998844"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "6ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0f554153561719d6006aa7003b88b087d2995cb54c0ce0e745\",\n  \"object\": \"response\",\n  \"created_at\": 1789329467,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329479,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a helpful assistant.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0f554153561719d6006aa7003bd74887d29bc0259d2c2853d9\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwBHPbcQkuvUcsAUBV7pGTQbJ9CcqNsyoFzJZhK-Sga09Z80VIrMTQKvNKO8gk6hKsJDEBFZ3Kur7dVSzVn5gmaE00pTF5QC4CmifNNXcY5Uaxz4MK3FBkZThJkW0iVtv06stqypQO9AtsStNXRW0yf7YUqEwgAQZhHXQH7lm4RvNSHrMdrqnGKf18N8V82s1el5hFJY1rp2nIlGJTMm7j_5eSKZGn6WYA2r29WD8bLbA6ZjcTrFV0UXb5AzkiQbJ884ZsWIJ9WLJO3JEV9fLsd3H4G3-p9iK2Jp6qMMcrfU33BLFemFscOr9UFFf-MPjUqMmxYP1gh7BuFM91sdpZnbL6zs6rSeh2PC7mW-9R4HDAjl-ldLfD961CD5uvFH2xCXEjoHZN5m-QxeFfTTKBarOsKgVyomQPe1cGTA8BBflErTuLDpiuGiMJLb99JXL0JogW7piGis0s19z9jSkYEJbtXcWlQ9e-GlY04o-FKtsSOXNsMb-uKKmWaOtmz8Sq3yea0w01ugtN8dqOqzC5KUM28Zhz46KgwgSuF3p-2n3_PfnRb6mxZmL43XKDJzKva1RUf2-p8xm7i0e_J2fW2vQY0Fnq3k6RM5zntEVvyzEMziHhvSv3uNJblsp8-sXlPzynGYn7BqlaAGSf5E1b1k_JX7fwOyd97LAg5VPO5ZD8cTVwuqEEMKw9by8gWtqUDucnUZgTsWBacL5XTVmfBST_9cghybEAq_0oaKmI_a0Td9rRPCUhPMKe1JFp2RaWhKa09n_hR7DMTJXbIZBQp-0KiE2jh4k6l14v3cWVs3TiYAQQ-sRLzuPq8fudncom0Gx0neh53lV0sL7Lc2Oy_A4CEtNvcqDDstyNu3Fo_70UqjiTo4-DtfheJDCcGoJPe9T3SZemoBwww9dDzI11ZdPbGrtQSvMDN2viDVpWOLbHe03R9hld9oq-k0bfGXbEiGBhE-8R2ZNEUsdx4iHcDe82YK8VDlcYnhkLTtQoU2w3fBz2x1qdf3H4tPMJzld7jVzW9C1noegpuxIA1G8wQLz2ZTQ-jiZrwUi6aUNdkVINDHJtcvYG0U_WtE9dEvuRrJmb8o1YVOipHtktkbNU4WWhBYNfYGM2MLiVLPHUIJfmtBR8mQHxTlYM8WVXLj-taGUQJ97fYOYA8fcJK3GGP19PhjIMYtsZGB4wqZLhWGUeRSWmCebfti73cs_KnD1KoU6UkEar1EGoltd2WafFLsK3E7O3SDXkghToE_DHVIsF2QonOGIWqE68NToFY-q-7T6RYDKEQNLQV-08GamMmPA3pjaJWHNkmMxEF-xNHiKKhP6AVOqCXQvzgG4v75zvosZzAcfGivXHmUB1ZKr2XggQwfKSb8LT1JMJwNmgL9xhaaaLYORYsTkAf0H_d3XElQQAS7zdrO2AiruNcF0qBD0kwaR-28PLW73m6iom0IPkA9j1z8gFgS9ffozipcjOOcjFx26IF5hovIK53EI7zAJJX7mquEf9IAKLePzRP0NPq0wSA_1ugE1os9j7dklwl6tbkVw-DsEH829bpPPernSIPkvdEmBI3gAzGim0Zdk5ZJgOp5VsbpJ53H4SMb2gKbs0KFG68iJ91aHRx4LVLyPbJrJjLcljSkY3zf2FctI6OoDvK12ucXWBTia16WIb_-zsItdJtf_T9EHbk5UMgDQRNs3Sdmk5Y0P4czodG7vbxk1cv8Nhs2HL2FXN9axnaCNs14_Xbi2nVIauJEhPRp2vDra0KAO7fwH7zZpewc4UH24M0pOgb2P0ChVL6a97n8ko-esI2MYsACAc9cI97_ThR3juKv301lwpJKW-0UTydaKp-76lxFUAKet9rWSuanzXjNcoBsmp_fvUfQUUdH1qfbRiHUY_2bQZmxw0PA5jpmk95QqYfZBPeJZL0VftqmC2vVUiMTS1LKpvykuP2JCW_1YYmFzH9LC8ySM0hilyAn-O8uQwQlWGmar4Gq_kTdaB36piDKQ5Q5iq9dB2wim1kKUQhms3BbROSBgkOiSm8iTnh1UTjbXhcH2T7vJ_F3h9XWOMUz8PS2AvaFdvqYpBNiClQ_JHryw-xSCtOc_BCz8GhIDyuDWe_1Z3jmgHUqYZ-ZVqJAiAj3c0MNacr9J4F1UaDT1IrBIrUAk9K1naA5-B1Dyk4Bqwdb20VsqadrVj8TlilMHNUbt8dLuEHnrhNPvA3FbJL04WYk3aF8N-H_VQOrpK_Xgs-E-9dm-sqzsBIIHz_N0sA6MHSXHE72M-OK0ODeQUMQ7a-P7OxbivBnvgpQnD1ezuxOhQggsv27YzTP9FEveTq34CWKtll6TGlrIa9FmVGzM2U04D-tJDBveUHAng8Pl2onWy6eXmQGyimMTD5LxOf6E1-xIv72G6aKKRU8c9mX_VdDmJe8muW1xOBdsiah0J0udUkBkss3PrvXEh2fsTtqq7tRTZcMq7-zPlOiXRj7TvoxTi_xPAL6gjfTaSr-qKzOi_ZA8jDvW7lau2vUD6WZDehqx1WvUf33AwsMULZus4hxuuP23ZOu01eUCGxyiaKNIhHsFThUoVKS1QZ9Rnm6FhGVsUZ64zShcJqGm0_fbdIW2wMUyJHcEguIpUywzcpqMUYJ3VixFjeK6OaXLb0lv8UCsGzKyACNgKABU9W-LUFrkemQGUqz0SRlNxzDp_8-s_Hx1RQqy6_x0O9VxrTm9GajxJHN0k7ODb1HQwGiNxJ0IxMr2Lap9eY6MRsLWahS_vHy0L69VIuACyao14utGi1a8zOxRGGErwT_sb6qDLgem_BTqEm-M6UilUApKV3urgns9LjvJV3gUjFwql2hfXEtMdZ0MrSGHY2bHOZ2n_-nlrIiH5Z8GI3QT0QgtuPdowsYvgLcYYpWfMsbAj8B9LhugKtm8IY46k3Fh3oM9JZGpboJS1JgmvvvwHsoCvM-eBRYM_OVkTToH_RZIgzi25aHdAmTQJddJ7zT5aguCEP3JFvlK4nmseVoWiG8KRMKR9X20zJEHx3Xw3kghLGb4vkXnWDZRChio848gIlkoA8SuuZALUlJ2ilqetVsqE1yPzxSGBZ8c3B6suf-Z--BzXFAPwNf4Oh5i4iqj3zqOnBIfh_PJdU0k2KAMZIhJKKUa3y6ggMuEhB6lHoUN-SKXWsQbG4xLRlOBBEBwcP0_WJci_-hdxoXEyHrafjq9ar9x4nvLPxLCZ7A1VtRpk8hbtbu8o-nW6fZ0JjocoqRadyEM7CiXTJZLuk2OrBlZnRkRmjSVwnkbK3P5Px73ZcsM6UXNIowLwE04RBDYXRztDgqObOfWJgCrgIukQP4Zr42Y1PxPU52nzYy0sTFAPn0P-ZV6NdynlX3uEXZ7Uk-xV2tSdZghcGFxfZM_WtI05_x59jVY1BGpxkvq9ydu8gFAgUR0-TG-oCG2cTkURzs_kyQ6GACP4wqNxV6UAsjmHmYfF1LUz3LCUSZdax61QHYitbyiVh1sdlgsJ0m4RSMkxDErXi4zHKz-AGCV_pNWT1GnExrzG9E\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0f554153561719d6006aa7003efb3c87d2a41857d5ac375b7e\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"I can help \\u2014 tell me more so I can give specific steps. Quick questions:\\n- What language/framework/environment (Python, JS/Node, Java, C/C++, Go, Rust, mobile, web, Docker, etc.)?\\n- What are the symptoms (error messages, wrong output, crash, hang, slow)?\\n- Exact error text/stack trace and relevant code (or a minimal reproducible example).\\n- How to reproduce it (commands, inputs, steps).\\n- What you\\u2019ve already tried and results.\\n\\nWhile you prepare that, here\\u2019s a short, practical debugging checklist and common tools/commands you can try now.\\n\\nGeneral step-by-step debugging checklist\\n1. Reproduce reliably\\n   - Make the bug happen consistently. If intermittent, capture logs and simplify inputs.\\n2. Get the exact failure info\\n   - Copy full error message, stack trace, runtime logs, timestamps.\\n3. Reduce to a minimal reproducible example\\n   - Remove unrelated code until the bug still appears. This often reveals the cause.\\n4. Read the stack trace and follow the call path\\n   - Look at the topmost frames in your code (not library code) and inspect variables/arguments.\\n5. Inspect state with prints/logging or an interactive debugger\\n   - Print inputs/outputs, or set breakpoints to examine variables and flow.\\n6. Isolate via binary search\\n   - Comment out or bypass half the logic to narrow where the fault appears.\\n7. Check assumptions and edge cases\\n   - Nulls, async timing, off-by-one, wrong units, encoding, permissions, environment differences.\\n8. Add unit/integration tests to lock the failure and prevent regressions.\\n9. Use specialized tools for memory, concurrency, or performance bugs\\n   - Sanitizers, race detectors, profilers, leak detectors.\\n10. If all else fails, git bisect to find the commit that introduced the bug.\\n\\nCommon language-specific tools/commands\\n\\n- Python\\n  - Run tests: pytest -q\\n  - Debugger: python -m pdb script.py or use ipdb; in VS Code / PyCharm set breakpoints.\\n  - Print traceback: import traceback; traceback.print_exc()\\n  - Check types: mypy (optional)\\n  - Profiling: cProfile, py-spy\\n- JavaScript / Node\\n  - Console/logging: console.log\\n  - Node inspector: node --inspect-brk script.js and open Chrome DevTools\\n  - Browser: DevTools (breakpoints, network, performance)\\n  - Linting: eslint\\n- C / C++\\n  - Compile with debug symbols: -g\\n  - Run in gdb: gdb --args ./app\\n  - ASan/TSan: compile with -fsanitize=address,thread\\n  - Valgrind: valgrind --leak-check=full ./app\\n- Go\\n  - Race detector: go run -race or go test -race\\n  - Debugger: dlv (Delve)\\n  - Profiling: pprof\\n- Java\\n  - Stack traces from exceptions indicate class/method/line.\\n  - jstack for thread dumps, VisualVM for profiling.\\n- Rust\\n  - cargo test, cargo run\\n  - Backtraces: RUST_BACKTRACE=1\\n  - Miri for undefined behavior, AddressSanitizer support via rustflags\\n- Containers / K8s\\n  - docker logs <container>, docker exec -it <container> /bin/sh\\n  - kubectl logs/pods, describe pod, kubectl exec\\n\\nTips for specific categories of bugs\\n- Crashes / segfaults: enable debug symbols, run under gdb/valgrind/ASan, inspect core, check dangling pointers and buffer bounds.\\n- Memory leaks: use Valgrind, heap profilers, or language-specific leak detectors.\\n- Concurrency/race: use thread sanitizer / race detector, reproduce with stress tests, add logging of thread ids.\\n- Performance regressions: use profilers (perf, pprof, py-spy, Chrome DevTools) to find hotspots.\\n- Network/API errors: capture HTTP requests (curl -v, Postman, tcpdump, browser network tab); check timeouts and auth headers.\\n- Database issues: enable query logging, check indexes, run EXPLAIN, confirm environment (staging vs prod) credentials.\\n\\nHow to share useful debug info here\\n- Minimal reproducible code snippet (as small as possible)\\n- Exact error/stack trace and the line it points to\\n- Environment info: OS, runtime version (python --version / node --version / go version), dependencies/versions\\n- Steps/commands to reproduce\\n\\nIf you paste the minimal code and the error/stack trace now, I\\u2019ll walk through it and suggest concrete fixes and commands to run.\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 21,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 1373,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 320\n    },\n    \"total_tokens\": 1394\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

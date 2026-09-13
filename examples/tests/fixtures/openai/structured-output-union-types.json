@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "0087338e73757542d94b036e34855026",
+                "signature_v2": "be79a77866324cfb0deb72e1d698123e",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"text\":{\"format\":{\"name\":\"UnionTypeDto\",\"schema\":{\"type\":\"object\",\"properties\":{\"time\":{\"anyOf\":[{\"type\":\"object\",\"properties\":{\"readableTime\":{\"type\":\"string\"}},\"required\":[\"readableTime\"],\"additionalProperties\":false},{\"type\":\"object\",\"properties\":{\"timestamp\":{\"type\":\"integer\"}},\"required\":[\"timestamp\"],\"additionalProperties\":false},{\"type\":\"null\"}]}},\"required\":[\"time\"],\"additionalProperties\":false},\"strict\":true,\"type\":\"json_schema\"}},\"model\":\"gpt-4o-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What is the current time?\"}],\"instructions\":\"    You are a time assistant! You can provide time either as a unix timestamp or as a human readable time format.\\n    If you don\\u0027t know the time, return null.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999871"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_05d0e5742ebaf8ff006aa6fff11d5887d2840c34d182ab162a\",\n  \"object\": \"response\",\n  \"created_at\": 1789329393,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329393,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"    You are a time assistant! You can provide time either as a unix timestamp or as a human readable time format.\\n    If you don't know the time, return null.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-4o-mini-2024-07-18\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"msg_05d0e5742ebaf8ff006aa6fff1842c87d2ab23579abd9d8008\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"{\\\"time\\\":{\\\"timestamp\\\":1697175723}}\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": null,\n    \"effort\": null,\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"json_schema\",\n      \"description\": null,\n      \"name\": \"UnionTypeDto\",\n      \"schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"time\": {\n            \"anyOf\": [\n              {\n                \"type\": \"object\",\n                \"properties\": {\n                  \"readableTime\": {\n                    \"type\": \"string\"\n                  }\n                },\n                \"required\": [\n                  \"readableTime\"\n                ],\n                \"additionalProperties\": false\n              },\n              {\n                \"type\": \"object\",\n                \"properties\": {\n                  \"timestamp\": {\n                    \"type\": \"integer\"\n                  }\n                },\n                \"required\": [\n                  \"timestamp\"\n                ],\n                \"additionalProperties\": false\n              },\n              {\n                \"type\": \"null\"\n              }\n            ]\n          }\n        },\n        \"required\": [\n          \"time\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 110,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 11,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 121\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

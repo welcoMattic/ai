@@ -1,0 +1,6 @@
+Symfony\AI\Platform\Bridge\HuggingFace\Output\QuestionAnsweringResult {#32
+  -answer: "Paris"
+  -startIndex: 0
+  -endIndex: 5
+  -score: 0.45111060142517
+}

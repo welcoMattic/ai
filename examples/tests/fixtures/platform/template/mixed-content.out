@@ -1,0 +1,82 @@
+UserMessage with mixed content
+==============================
+
+UserMessage: 'Plain text' + Template('{task}')
+Variables: ['task' => 'debugging']
+Response: I can help — tell me more so I can give specific steps. Quick questions:
+- What language/framework/environment (Python, JS/Node, Java, C/C++, Go, Rust, mobile, web, Docker, etc.)?
+- What are the symptoms (error messages, wrong output, crash, hang, slow)?
+- Exact error text/stack trace and relevant code (or a minimal reproducible example).
+- How to reproduce it (commands, inputs, steps).
+- What you’ve already tried and results.
+
+While you prepare that, here’s a short, practical debugging checklist and common tools/commands you can try now.
+
+General step-by-step debugging checklist
+1. Reproduce reliably
+   - Make the bug happen consistently. If intermittent, capture logs and simplify inputs.
+2. Get the exact failure info
+   - Copy full error message, stack trace, runtime logs, timestamps.
+3. Reduce to a minimal reproducible example
+   - Remove unrelated code until the bug still appears. This often reveals the cause.
+4. Read the stack trace and follow the call path
+   - Look at the topmost frames in your code (not library code) and inspect variables/arguments.
+5. Inspect state with prints/logging or an interactive debugger
+   - Print inputs/outputs, or set breakpoints to examine variables and flow.
+6. Isolate via binary search
+   - Comment out or bypass half the logic to narrow where the fault appears.
+7. Check assumptions and edge cases
+   - Nulls, async timing, off-by-one, wrong units, encoding, permissions, environment differences.
+8. Add unit/integration tests to lock the failure and prevent regressions.
+9. Use specialized tools for memory, concurrency, or performance bugs
+   - Sanitizers, race detectors, profilers, leak detectors.
+10. If all else fails, git bisect to find the commit that introduced the bug.
+
+Common language-specific tools/commands
+
+- Python
+  - Run tests: pytest -q
+  - Debugger: python -m pdb script.py or use ipdb; in VS Code / PyCharm set breakpoints.
+  - Print traceback: import traceback; traceback.print_exc()
+  - Check types: mypy (optional)
+  - Profiling: cProfile, py-spy
+- JavaScript / Node
+  - Console/logging: console.log
+  - Node inspector: node --inspect-brk script.js and open Chrome DevTools
+  - Browser: DevTools (breakpoints, network, performance)
+  - Linting: eslint
+- C / C++
+  - Compile with debug symbols: -g
+  - Run in gdb: gdb --args ./app
+  - ASan/TSan: compile with -fsanitize=address,thread
+  - Valgrind: valgrind --leak-check=full ./app
+- Go
+  - Race detector: go run -race or go test -race
+  - Debugger: dlv (Delve)
+  - Profiling: pprof
+- Java
+  - Stack traces from exceptions indicate class/method/line.
+  - jstack for thread dumps, VisualVM for profiling.
+- Rust
+  - cargo test, cargo run
+  - Backtraces: RUST_BACKTRACE=1
+  - Miri for undefined behavior, AddressSanitizer support via rustflags
+- Containers / K8s
+  - docker logs <container>, docker exec -it <container> /bin/sh
+  - kubectl logs/pods, describe pod, kubectl exec
+
+Tips for specific categories of bugs
+- Crashes / segfaults: enable debug symbols, run under gdb/valgrind/ASan, inspect core, check dangling pointers and buffer bounds.
+- Memory leaks: use Valgrind, heap profilers, or language-specific leak detectors.
+- Concurrency/race: use thread sanitizer / race detector, reproduce with stress tests, add logging of thread ids.
+- Performance regressions: use profilers (perf, pprof, py-spy, Chrome DevTools) to find hotspots.
+- Network/API errors: capture HTTP requests (curl -v, Postman, tcpdump, browser network tab); check timeouts and auth headers.
+- Database issues: enable query logging, check indexes, run EXPLAIN, confirm environment (staging vs prod) credentials.
+
+How to share useful debug info here
+- Minimal reproducible code snippet (as small as possible)
+- Exact error/stack trace and the line it points to
+- Environment info: OS, runtime version (python --version / node --version / go version), dependencies/versions
+- Steps/commands to reproduce
+
+If you paste the minimal code and the error/stack trace now, I’ll walk through it and suggest concrete fixes and commands to run.

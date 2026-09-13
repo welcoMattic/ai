@@ -1,0 +1,267 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "5ca3dfdfd2b57c643a7bb156ac576392",
+                "signature_v2": "a9f28fa56befe7224c51e438655c5493",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"max_output_tokens\":16,\"model\":\"gpt-4o-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Explain the history of the Roman Empire in great detail.\"}],\"instructions\":\"You are an encyclopedia.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999954"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0e19175cc86a0b16006aa6ffc6daf887d2b2c86a09bbcc9658\",\n  \"object\": \"response\",\n  \"created_at\": 1789329350,\n  \"status\": \"incomplete\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": null,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": {\n    \"reason\": \"max_output_tokens\"\n  },\n  \"instructions\": \"You are an encyclopedia.\",\n  \"max_output_tokens\": 16,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-4o-mini-2024-07-18\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"msg_0e19175cc86a0b16006aa6ffc7d06487d2b18e31b024e05a49\",\n      \"type\": \"message\",\n      \"status\": \"incomplete\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"The history of the Roman Empire is one of the most influential narratives in Western civilization\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": null,\n    \"effort\": null,\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 27,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 16,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 43\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.anthropic.com/v1/messages",
+                "signature": "c5aff3ed8b421c05f5e777d4452e2b13",
+                "signature_v2": "71f1a24db6cf52a4cdb24db1b070fde2",
+                "headers": {
+                    "x-api-key": [
+                        "[redacted]"
+                    ],
+                    "anthropic-version": [
+                        "2023-06-01"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"max_tokens\":16,\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"Explain the history of the Roman Empire in great detail.\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"system\":[{\"type\":\"text\",\"text\":\"You are an encyclopedia.\",\"cache_control\":{\"type\":\"ephemeral\"}}],\"model\":\"claude-sonnet-4-5-20250929\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "anthropic-ratelimit-input-tokens-limit": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-remaining": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-reset": [
+                        "2026-09-13T19:55:53Z"
+                    ],
+                    "anthropic-ratelimit-output-tokens-limit": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-remaining": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-reset": [
+                        "2026-09-13T19:55:53Z"
+                    ],
+                    "anthropic-ratelimit-requests-limit": [
+                        "5000"
+                    ],
+                    "anthropic-ratelimit-requests-remaining": [
+                        "4999"
+                    ],
+                    "anthropic-ratelimit-requests-reset": [
+                        "2026-09-13T19:55:52Z"
+                    ],
+                    "anthropic-ratelimit-tokens-limit": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-remaining": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-reset": [
+                        "2026-09-13T19:55:53Z"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "anthropic-organization-id": [
+                        "152d88d9-0d18-4cae-80c9-c425a5bf4e25"
+                    ],
+                    "anthropic-workspace-id": [
+                        "wrkspc_01Eo1YZvq8sNWFRAfhfjg7gS"
+                    ],
+                    "traceresponse": [
+                        "00-c836c96d96d6acfdc5eb307e814b32a8-3d200bbea07cbace-01"
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "content-security-policy": [
+                        "default-src 'none'; frame-ancestors 'none'"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"model\":\"claude-sonnet-4-5-20250929\",\"id\":\"msg_011Cf22WpQqcqau5Tyvgxn5s\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"# The History of the Roman Empire: A Comprehensive Overview\\n\\n## I.\"}],\"container\":null,\"stop_reason\":\"max_tokens\",\"stop_sequence\":null,\"stop_details\":null,\"usage\":{\"input_tokens\":24,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"cache_creation\":{\"ephemeral_5m_input_tokens\":0,\"ephemeral_1h_input_tokens\":0},\"output_tokens\":16,\"service_tier\":\"standard\",\"inference_geo\":\"not_available\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.anthropic.com/v1/messages",
+                "signature": "93a7db3843d622e326bce9478d1d0ae6",
+                "signature_v2": "f03dfe6871b84c63cd848cfd8b5b1c41",
+                "headers": {
+                    "x-api-key": [
+                        "[redacted]"
+                    ],
+                    "anthropic-version": [
+                        "2023-06-01"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"max_tokens\":100,\"stream\":true,\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"Reply with a single short sentence.\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"model\":\"claude-sonnet-4-5-20250929\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "text/event-stream; charset=utf-8"
+                    ],
+                    "cache-control": [
+                        "no-cache"
+                    ],
+                    "anthropic-ratelimit-input-tokens-limit": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-remaining": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-reset": [
+                        "2026-09-13T19:55:53Z"
+                    ],
+                    "anthropic-ratelimit-output-tokens-limit": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-remaining": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-reset": [
+                        "2026-09-13T19:55:53Z"
+                    ],
+                    "anthropic-ratelimit-requests-limit": [
+                        "5000"
+                    ],
+                    "anthropic-ratelimit-requests-remaining": [
+                        "4999"
+                    ],
+                    "anthropic-ratelimit-requests-reset": [
+                        "2026-09-13T19:55:53Z"
+                    ],
+                    "anthropic-ratelimit-tokens-limit": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-remaining": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-reset": [
+                        "2026-09-13T19:55:53Z"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "anthropic-organization-id": [
+                        "152d88d9-0d18-4cae-80c9-c425a5bf4e25"
+                    ],
+                    "anthropic-workspace-id": [
+                        "wrkspc_01Eo1YZvq8sNWFRAfhfjg7gS"
+                    ],
+                    "traceresponse": [
+                        "00-36d71abf796999140808650a9f53572e-64fe9e6e0de78dcd-01"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "content-security-policy": [
+                        "default-src 'none'; frame-ancestors 'none'"
+                    ]
+                },
+                "body_format": "sse",
+                "body": "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"model\":\"claude-sonnet-4-5-20250929\",\"id\":\"msg_011Cf22WvViqt2GkEVkJTetA\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[],\"container\":null,\"stop_reason\":null,\"stop_sequence\":null,\"stop_details\":null,\"usage\":{\"input_tokens\":14,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"cache_creation\":{\"ephemeral_5m_input_tokens\":0,\"ephemeral_1h_input_tokens\":0},\"output_tokens\":2,\"service_tier\":\"standard\",\"inference_geo\":\"not_available\"}}}\n\nevent: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"text\",\"text\":\"\"}      }\n\nevent: ping\ndata: {\"type\": \"ping\"}\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"I'm\"}             }\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\" happy\"}               }\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\" to help you\"}          }\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\" with whatever\"}          }\n\nevent: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\" you need!\"}             }\n\nevent: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0      }\n\nevent: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\",\"stop_sequence\":null,\"stop_details\":null,\"container\":null},\"usage\":{\"input_tokens\":14,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":14} }\n\nevent: message_stop\ndata: {\"type\":\"message_stop\"              }\n\n"
+            }
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "f26d0b8a5724f205c546393012340a9d",
+                "signature_v2": "b58a9420f7bbfeea1df91dcd5f7dd27c",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Tina has one brother and one sister. How many sisters do Tina\\u0027s siblings have?\"}],\"instructions\":\"You are a helpful assistant.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999208"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "4ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0a1fc99ed6ab84ba006aa70bed64dc87d294e5033855654de6\",\n  \"object\": \"response\",\n  \"created_at\": 1789332461,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789332471,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a helpful assistant.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0a1fc99ed6ab84ba006aa70bee715887d28675a26a9c4c1b2f\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwv4zHKsfVgzRcPNsXa8eY0EKk_LTp9Zu5fPZ3Di8GLJNFdtx5uoZbLiL8D34a3EDbOguxeMVgH0sGCnrUSeOnLy-qLgLRAMAsOVQ9Tn-lhw5OwUVX5fyAIKw0YDkL6G3n-6PGL4JFSrUUMAj5uZ_jbtj3vSiaz4s63_yMdvrefMA6i234n2XWiO_BC66oKjuqx0-mACVDqUtyT4QTdS0di48Pg9Q_sfQndWK1c7slSDzNadauUqUp3MX6QdjiqnA94VrTRy3hGHCLsGQ5pH4cAAIeV3OWxbWrSyFzuUgsVsYxPXmYIglFmH5YSRAM29md_nsBcdyYe76QQnmKReRenDZZxCQhUR9vtEqcT6QQQGPNiUksj_ArLKjnJOC4nFubZKRsjmA_mHQV30QA4PzxRxPhNp0rylxN4aF34JiJmdyd-GgmUxZqsOtUzjIiMnqBZMFdxCY0TfJ1mjLV14QDNhLdvoR84VsdJTh24EwXYtZRvh5GVLUPUecJOYYRh7D1EgsJ38J_nTZiVFOKNXZ81giZVXQ-5mwIHi2NKDUabnPab6_DqPpW2Y3uByjO8cTCyydHtKuQ2iu4CysMpdrnkfFBTCDQtR4xecllsQtonkqRhg5oPMjJx2dsrT4XT6ESyoSvaU-3sojeFNt3uZP_V7BTi5hQSvrEFSf5aZSdZoy5xhHQm8Lq0hQiT7IbDsiUfmmfCbubo6pywC2nF-TDD_XuVYZPLUKzoNCKk5XKCJiCEtTkjcqih8-Hg_BeH-iSLje3sE9gG2PTtmGceB2mlS0qTr11F_jnCe8U_PHBXf3VZxaUE4_NPXft4Qmla3gtd8rSGvFBMWxQEFK3bQQecHvODPwi5NOZFLEc9oyjpj_w1AwHL1h41BA6cSFsW6F2tRuZWjhFrcKYx5pKjznUW2qIOTM8l0Ylux2sefFV5lAd_KBV2RC6L-Vhfv__19VqpS2jX_mOSkCIUOvFOhpNmqwUYuzulDDOWU09uFGOBvbG_rKTa5rrAa1J3-Qu1P_ENpuWp8ExSzFDkwDTUzR7Sz_q2EYtSiHB4hEN3ha0BZwmkgiMs5EGAuObmq6psdU7APOvrZNrZ4NbLUTTMCWsF0glB7f33DrUrpofDghzgDZ6I2HveHg1ljSb4qz4BGHYfkvMBOD_G3GbyP4E5qlpJ2zd-yV_gjamjmYhrsfQJQHRfGALJXjFKvGPxqepF7MeHrywKEXW4k5oaxeLZGlI2lPsFJNxeEm6IuqLbBB6-G3mv0tsA1XEjlPoaUctGJgIBgI5HuHrhq1y4r98ykDj2vhuwzUZ7F3f-m8LlSo6hq5mO4Nwzoj3o1GoXI5EsneuKWuv9-u1P4RxsgNBtGW2yb4yOMC6hvfkMp_sPjvd_svNAPms7ARGx-DzL6kRt63gZAHBF9RJAaJWzpkvkqv3WTn7ePZd0Qz8JkEZpQG0tBS1jiOVkIPS4Zt14KSc8zKNmjL0SZtYyi20_bWJWY-A-yYVnyZNWUEwSsDEPbIMCR6x42AuGoTlYGwMAZKL9r56LS7DyLtq4SyGOIV6VNAjgvSd7tP-ZT14kk8sxkl1c565FIJGA4mpijn0TWloO4Ng9xSthHcIG-WlPCACW_bk8h1uaNI36a7m7TlXxlj1k-kOR0-_BomqysYzWDXatWvcMQlHoxdFv2uItNsdNzcnXmAguz7__G6ia_ajwOaCZeiTxb0qFq80gTV1F-PE5Vm4hfVEEvyNY9B8B4j_M-29Fs2NgaqqGyJQq7Du_7sJIG6C7UYmjjIEFw7qnG_JbuIg2lZOegNKikeE-TscHzP6YehAgSqrV2LJF0mWJ9YLqSamUp0eYkTp57Lk00cKPaksRsxTcZgUtdUStzBgxShgiJQBvux2KWK4HVmrWPX9Qu7qKQYs0tJdTp4H7awJZIF9fEnYsnNWI8KU7dbOar3PFuXDovzV7glRzKrGe2iIPi0Eg1pAHYRGp6zSodjxvO0JVXOL9WpmUOP2FchNcsOKqXdySNe_7vn17sjtJHd7PFgKe_Vjwikiw3LjfKKPQK3EmDAtBJ6fAef_G6S2N9ujvPm2iMOOHEczkzvYZqMLuEhXMG5v3h1mvhMJbL4IY4wC_TvtwcMD6LGI9go7B0ML8PGKsZ84Wx9JrDx1gGJOIq8W1ZZTPdVLFQIyMUxkz5CS4rziL0KRscMoSWYTWXRV6Lf136753Qy7znVKyB7XL7jD1pSUZUKAIoOcObIdqA5zZ9fEq20DXqcH_cInh5k8NuGIs_u3XF95-MlYshThUC_LZ73tlXx1DSweWKAEPst0bWy544iiY3YQ4XirRhGsONAw5wqT7rlfx2Qa1LeMVdSqSmHw1AUkbnR69rxRM9zJaYmBDgbnFiGIFkuKBm0U67aODvHRNmRpd0NFD-ld_ef7RkvtJ2R65JsdJIut7qmHin4Ui6BxRlCU1h-U_j5DXu1bSA-RfFpm-rAZe08wvfp_DFcr_hgVHCTpf97E8BaOQRe_IDKmtt5-Sa1djX84lsui5uPh1bTW8Osrltf0vwFlEG-crj6RgrShTC4XA3LfC_NWWSEGc_qVXCMsw-NEBwd06ioivJQSYVvUXRnFFFu3vfXnumk93EEIMPr8B6rq_w-sNBvrUuZ9vbycpF3otI_-eDqpyTbNWG_Ti9vogdseEC-PAx6vYWFHgUVbzIV90V83hMN0q0ZF8ZeRW4JcCF1UcHj3FBRujzvU2rKaiGA1R5vfuqRPoYIqSxsFxOH2G7APJxSsiYiNVOLM3pNYitcRrirGDmJ_syg3pnAlYzrM2GqrlasWdl76C-vm7YLbX9IHNj5hS9gq6rdJ5NhF1SeJK0dHr8GhEdEiGsSLCilB9IL6T2om4W1ZU2ItX4_LIoGG5mzTAZA1tgbtqRqclb2V0d5EjIjpq7BsVgDFxxsBKtdx4efWulkObqLuAg5e9aY2lDbJ9knNj9yVDvaC2A9IZYm7TRJbjz3rck5c-vP1RQqW4OWIcTZ-fAQ2VxNfabKNfmuBGwFnNGNGIyank5l45_TVvoAAU05wjHL3-t75kW13Y4i1En470gGmXPJrRNNGwuxR09eWB_z1uGdIpgAO0defH_1Caii63JiDu4DzHcp0fRPlJLRf7ZnxL3pNHBSM3oKDjWo8eSyyNWoKKLPgtJz_wlEXmQ2wU-MCmmPEdqs6Fh326gGEbn-pYWy-EnR1Dd-2ckFsMgdOmOPMsJIGzrQ0dGBnibD7RnaZZr7pi8XmE_M_KiIuHJ2DBPgKJtl99gVGOXYfbiOk9klmzCBv59fl0TvK7rtkb4xQF4_3WBKYB95u2Vjti8r2g8ZCnRz8NnC0Uzr9Pwt-LUU_A_IKMYrXLN4dHzA75JT4hr6QuPHkmkEgSbupGp3_Dz2iPz1mncSpMew2ePGjljvNoMuB_pRdiBphJtBhzHUO7wOjqqD_RZm47J0326JNjXr5utUymijPc9N92ik_3gIMyMA2AftZ6HbSLY1Xj4L12LweUlWcKe8gRDbxW1a0Lgwmz3ewg0dn4-CJgDZsKfFDj9Ek13AWbHTxUzVna4yyeJRkmWqfkEtKYUDO8Zb0de4Kko8DrQywV34XSRNebGmbCI9eIoyafZXyADBShTdkB48xryhq9XOO5oQ0zV0QbjPneErfdhxj574t3a2FMUyXIpOqZBkTAd5QA4i7c2FrpDnedqE3e18PqBqeviLwPsA6mAHdOF_IMsT32AKpRheFPgj8mk0HZfKim0OwGGF8TovKKufP50IOE4-HDDMJhs6dhE3Atf_XHFtf59ME7OMbwFr8K64DDMdxXNJbrWmwXYC8IEYiS3-cNM9ErD5rMs6Z-UIa0bHbCcFIRZBaKSt2xK3OnusHeB96B_bRvwCXh7TPF_pigv8cSBeO4fxDDUSINkty1mg2ZmU3386KdNx5Bk4llqBlnrR-vf8yW6yq5n_ULHT4xGLYiLHxnpRjhrme_Ajw4iA95GDqfCXSBjoQnxG7szc79JI-kv3MwmBKltcupNHiEmGuh6cGQ8FZJidWll-oHd8DC8VsK9hLO5JhSn2wYdoKgClx7Ck6VAf-umDZiegUGe9_OMqScmC5-NO9xz2qnBL2s7OOGuiw1Ir0j-mJXAk-JMBaq6fM5yRTWaOj-sjbIZsGTMltnWLy-CzhZ4SXGQXjRZ-lt3CWZxJ4_RrXmARH48MJae8ODGma48kPPYQqya6Z_vzu0tWqflW-hmEdp9icZTkXlqlaZcK7RRhYlBRllSr19ape7vQJhgeB_L4zC-Smef6nRXLsyWrjUg62w8xiEgQlRmdoq1rzr5GGn3AMjow2tnL6VDyNQIUUYwp-nR7_Rs6IYn6hV8hAkBWas4LsHJ14WqlPo-iICxIjOeZavicSFhWqsq3zahxeUVpjlrV1uRzcXUP4qv6BECHS0mtQPYsAyLHth8NZR5ZwRojIvhrfSGSqsUQAEm6DcldEPl0HVfHwpPURXs4RkIA6m-1DHUN-PZBf4oQucQngNI6JJVkQM7TpAOiOna_xcypIBIn8onblNOHCaf8VoGCN8_1KHkfe4nBZoH74IIu_VzRKJIQAseZIcsAQEjUv0WZj4axce7X_-xrLMvG0DEVAagGixvgVut-E3Ll6Mr_2ZLxjfd7-lmccR9cndTTvXW0a0mc9FOFnbL_KlOyX6wTSd91_m-w4j__JcViJqaVlYeNtCxBLjM27moBGMiIYxQF3TfqIibFUDhoRhvvePMjQID8gC7wiuqdyB1WKVC_sTs5XLf4esY2Uu5wCgSNEs7kCTa_m9_MMwwolvPPhFS51KASQLWEdBiKZhm45141t7YJWY6MQqSHVcGD96TWhcLWvlskPRhpjAWAJizmpbOyMHhkpCTzyZkDnQo6j1iGsQdeSOwIiGphuQYCkj5ydYL9-V5MtxemV7OadEnZ6TnoaETlRKjwdFB67KOM_gE3xKccrZMCFP-QxsHJsG-HPqjXrGEcGFhnZBHfPMH5U9sJ1_DzqLQo8A9T4x3FKVqyJVtZDtfvbt14J-mjmLH7D9PSWS0d1QYIw2LEBkX84fOtIoXmQO0K6mPYb1SaBxq1oMdD4sIkP7NBrQcFkM-L0JNHCztylgktNDPj8_Y2DVXRMwu2TzI4wpZ-7nnnTTo7ZZprRfAgc6HmP9daSoX3kFlyWasmrDLt2UuHserUn649nAcFsF8rSmHwKv-Ubd1i4OfZILfmngQSgIZ5fCRExuHH7zlcaKQNwfX9jVFan1fDc9ebdGglpJKKvfS1DXsrxm8deUuZiLPLmUVgRahPD36evrAU0woYQTYlB5Jcr20n_BHinC5ZxhqpEQBeOaPa2sfZwaBGcXd8a6bvuZhlJE1k9IzDMR5jSzhWgwTkHUGNxPNbggke1x0fN0usV6NCDKkJKKo8QhohCDkYD8GNOfmbtAkRFYRAicNn-Hm7jSr2v87hd-AnXaRA1_WfgnC8Rwh9rsczZ_dCjZi_oqCR8pK5bwRvOlGkrdGyEwBM_IOE7PVZPj8Vo5Y2SDA9bSHMwvRVjE7ERU-4_aV3R6Ql5VqRpuk63ouodmBxFZMA4j_FAw7EqOZLYKAxp81P3ou5lcFjtoGatSsOnodGV_v5z0zf2iWEN8cLsFQphNbFOKgzmKClT5YfdsSdVASzYwRkMni1SVyndsshnWsRskrhMzRy6COVRO4RO4b0g5GcnxrQm4Ek23T5BUDrF5TRyHec_PivK1cFtnE8frLy1Cl78N_441BgJQx-23IX-nh4-yo8INYE4yOXyG5ukAaANcDx95WFshgyYOdn83Mc3wjZrlYwRMQq8Fv2DuYTZ1dmmnlsk_uvkgv2mPo21e9vHYNy8pW-VKCWUPv1Ufe56JuhM4H130fWRLsnd2Ir_RRcJXUP3UpbtnmUJKwkp2yYy68mfI0BOlbbFzoujRNR9Jy5zRBRfBUdbCEsTtnGz1wFPmm19969eXPZQCpdnGkhrsVjVCBmtmDqvxhbOrfnsDJzTgAN7h4TiwCP45NJ-KhSZ0hYIMeBxhiS0ou_yh0ufDhTyj_8nM8YK8fdA0rVE6sf2EN74LnhdL_rII3BIs-nBHO22R5YjwWrMnbw9lm8xtRiKBxj1Nr-5ZRZ_QUZ6vq1fhF8T89O4U9_iTy1ohurUFkn9woCfz2bASKq-_03ypmk88UQZw8UACxL7ltgKs2k0It7uUiPXe0pVr9Md5wh0CDVmtLGQvpgZdEf5BHaEBH_HmB8_M3SErqgunq8ub51VnBT6BvHoEtJCO0pZsgkO0lRsLjNq01dcOKUCWdZq9yKMwT_pbMjNBb8hLdivA-lXQv6_MIckIgZR_yxbP0Gpo4CShSC8MbHvAyoJzALKUhvXt6mWtEC19ejVsS3rZbrUh0iiblWgrk671KhMSnSqDaiN2G-NNfayJNxiYVu6fSy-iIPJS14pIrDEvxH4wiLDHGFPBuukcjx6uwP8mXXgvKtiB_XEhLK1YlkKb5TrS3z3cUWxo3Rusi6eypN862ZNaMuSjBfgKvjsuttjKEKWduRhHHZspA17b69-u2Riy1nTbMUykYxFnWxCKwPe8u7kHSG-4bdzma2IC9UTBq8380yLWrgrav1bd_XDzHItKTAts6NK9WDKFZVZymp16zA5s=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0a1fc99ed6ab84ba006aa70bf6c96487d288928c8a4feb00d9\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"Interpretation 1 (distinct sisters): 2.  \\nTina's siblings are her brother and her sister; the siblings' sisters are Tina and Tina's sister \\u2014 two different people.\\n\\nIf you mean per sibling: the brother has 2 sisters (Tina and the sister); the sister has 1 sister (Tina).\\n\\n(If you summed the numbers per sibling you get 3 sister-relationships: 2 + 1 = 3.)\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 34,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 1009,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 896\n    },\n    \"total_tokens\": 1043\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

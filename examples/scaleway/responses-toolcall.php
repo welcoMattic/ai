@@ -10,21 +10,17 @@
  */
 
 use Symfony\AI\Agent\Agent;
+use Symfony\AI\Agent\Bridge\Clock\Clock;
 use Symfony\AI\Agent\Toolbox\Toolbox;
-use Symfony\AI\Agent\Toolbox\ToolFactory\MemoryToolFactory;
 use Symfony\AI\Platform\Bridge\Scaleway\Factory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
-use Symfony\Component\Clock\Clock;
 
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('SCALEWAY_SECRET_KEY'), http_client());
 
-// Create a simple clock tool for demonstration
-$metadataFactory = (new MemoryToolFactory())
-    ->addTool(Clock::class, 'clock', 'Get the current date and time', 'now');
-$toolbox = new Toolbox([new Clock()], $metadataFactory, logger: logger());
+$toolbox = new Toolbox([new Clock(clock())], logger: logger());
 
 // gpt-oss-120b uses the Open Responses bridge which supports function calling
 $agent = new Agent($platform, 'gpt-oss-120b', toolbox: $toolbox);

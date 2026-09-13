@@ -1,0 +1,34 @@
+Symfony\AI\Platform\Bridge\HuggingFace\Output\FillMaskResult {#32
+  -fills: array:5 [
+    0 => Symfony\AI\Platform\Bridge\HuggingFace\Output\MaskFill {#63
+      -token: 54543
+      -tokenStr: "fashion"
+      -sequence: "Hello I'm a fashion model."
+      -score: 0.10563842952251
+    }
+    1 => Symfony\AI\Platform\Bridge\HuggingFace\Output\MaskFill {#80
+      -token: 3525
+      -tokenStr: "new"
+      -sequence: "Hello I'm a new model."
+      -score: 0.080152086913586
+    }
+    2 => Symfony\AI\Platform\Bridge\HuggingFace\Output\MaskFill {#74
+      -token: 3299
+      -tokenStr: "model"
+      -sequence: "Hello I'm a model model."
+      -score: 0.033412870019674
+    }
+    3 => Symfony\AI\Platform\Bridge\HuggingFace\Output\MaskFill {#70
+      -token: 92265
+      -tokenStr: "French"
+      -sequence: "Hello I'm a French model."
+      -score: 0.03021757863462
+    }
+    4 => Symfony\AI\Platform\Bridge\HuggingFace\Output\MaskFill {#82
+      -token: 17473
+      -tokenStr: "sexy"
+      -sequence: "Hello I'm a sexy model."
+      -score: 0.026435889303684
+    }
+  ]
+}

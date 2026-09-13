@@ -1,0 +1,70 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://your-deployment.swedencentral.models.ai.azure.com/chat/completions",
+                "signature": "2ca3d183083326e35ce35676997eba35",
+                "signature_v2": "efd97423c9f5511712290d5d5ddc799a",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"max_tokens\":2048,\"temperature\":0.8,\"top_p\":0.1,\"presence_penalty\":0,\"frequency_penalty\":0,\"messages\":[{\"role\":\"user\",\"content\":\"I am going to Paris, what should I see?\"}],\"model\":\"llama-3.3-70B-Instruct\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "transfer-encoding": [
+                        "chunked"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "x-ms-rai-invoked": [
+                        "true"
+                    ],
+                    "azureml-ms-model-error-comprehensive": [
+                        "--"
+                    ],
+                    "azureml-destination-model-group": [
+                        "llama-33-70b-spd-mss"
+                    ],
+                    "azureml-destination-region": [
+                        "swedencentral"
+                    ],
+                    "azureml-destination-deployment": [
+                        "d20260807070741-c428aec0"
+                    ],
+                    "azureml-destination-endpoint": [
+                        "spd3370b-sec-h1-oai-oe-wphm54"
+                    ],
+                    "x-ms-client-request-id": [
+                        "358067b6-3120-4ee2-9f16-f96d14952ad7"
+                    ],
+                    "request-context": [
+                        "appId=cid-v1:bf86afeb-6735-4630-a419-996fd98375c2"
+                    ],
+                    "azureml-model-session": [
+                        "d20260807070741-c428aec0"
+                    ],
+                    "azureml-model-group": [
+                        "llama-33-70b-spd-mss"
+                    ],
+                    "x-ms-inference-retry-history": [
+                        "{\"v\":1,\"entries\":[{\"service_id\":\"mir.frontdoor\",\"layer\":\"regional\",\"role\":\"direct\",\"retries\":0}]}"
+                    ],
+                    "azureml-served-by-cluster": [
+                        "hyena-swedencentral-02"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"9dc9c7d9555742d7a40e5bf6df4ec3cf\",\"model\":\"Llama-3.3-70B-Instruct\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Paris, the City of Light! There's so much to see and experience in this beautiful city. Here are some of the top attractions and landmarks to consider:\\n\\n**Iconic Landmarks:**\\n\\n1. **The Eiffel Tower** (La Tour Eiffel): The most iconic symbol of Paris, offering stunning views of the city.\\n2. **The Arc de Triomphe**: A monumental arch honoring the soldiers who fought and died for France.\\n3. **Notre-Dame Cathedral** (Cathédrale Notre-Dame de Paris): A beautiful and historic cathedral that was built in the 12th century.\\n\\n**Museums:**\\n\\n1. **The Louvre** (Musée du Louvre): One of the world's largest and most famous museums, housing an impressive collection of art and artifacts, including the Mona Lisa.\\n2. **Orsay Museum** (Musée d'Orsay): Home to an extensive collection of Impressionist and Post-Impressionist art.\\n3. **Rodin Museum** (Musée Rodin): Dedicated to the works of French sculptor Auguste Rodin.\\n\\n**Neighborhoods and Markets:**\\n\\n1. **Montmartre**: A charming, historic neighborhood with narrow streets, artist studios, and stunning views of the city.\\n2. **Le Marais**: A trendy neighborhood with fashionable boutiques, art galleries, and a vibrant nightlife.\\n3. **Champs-Élysées**: A famous avenue lined with cafes, restaurants, and high-end shops.\\n4. **Marché aux Puces de Saint-Ouen** (Flea Market): A vast market with a wide range of vintage and antique goods.\\n\\n**Gardens and Parks:**\\n\\n1. **Luxembourg Gardens** (Jardin du Luxembourg): A beautiful park with fountains, statues, and stunning views of the city.\\n2. **Tuileries Garden** (Jardin des Tuileries): A tranquil park with beautiful gardens, fountains, and walking paths.\\n3. **Champ de Mars**: A park with great views of the Eiffel Tower and a popular spot for picnics.\\n\\n**Other Attractions:**\\n\\n1. **Seine River Cruise**: A great way to see the city's landmarks and bridges while learning about its history and culture.\\n2. **Palace of Versailles** (Château de Versailles): A former royal palace with stunning gardens, fountains, and architecture (located just outside of Paris).\\n3. **Moulin Rouge**: A world-famous cabaret with spectacular shows and a rich history.\\n\\n**Tips and Recommendations:**\\n\\n* Consider purchasing a Paris Museum Pass, which grants you entry to many of the city's top attractions and museums.\\n* Take a guided tour to get a deeper understanding of the city's history and culture.\\n* Be prepared for crowds and long lines at popular attractions, especially during peak season.\\n* Don't forget to indulge in French cuisine and wine, and try some of the city's famous bakeries and cafes.\\n\\nBon voyage et bon séjour à Paris! (Have a good trip and a good stay in Paris!)\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":46,\"completion_tokens\":640,\"total_tokens\":686,\"audio_prompt_tokens\":0},\"created\":1789349430,\"object\":\"chat.completion\",\"prompt_filter_results\":null}"
+            }
+        }
+    ]
+}

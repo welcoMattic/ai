@@ -1,0 +1,70 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.mistral.ai/v1/chat/completions",
+                "signature": "ce7743ab7c8aaa6fc5cbbb4f6f2306cf",
+                "signature_v2": "b6c0b188dd42485375ed350cd0f4c35d",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "accept": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"temperature\":0.7,\"messages\":[{\"role\":\"user\",\"content\":\"What is the best French cheese?\"}],\"model\":\"mistral-large-latest\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "x-max-retry-attempts-reached": [
+                        "true"
+                    ],
+                    "x-ratelimit-limit-tokens-minute": [
+                        "400000"
+                    ],
+                    "x-ratelimit-remaining-tokens-minute": [
+                        "398968"
+                    ],
+                    "x-ratelimit-tokens-query-cost": [
+                        "1032"
+                    ],
+                    "x-ratelimit-limit-req-minute": [
+                        "15"
+                    ],
+                    "x-ratelimit-remaining-req-minute": [
+                        "12"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"e7af2c0d463c40d1af9bf3ee72d7af16\",\"created\":1789328711,\"model\":\"mistral-large-latest\",\"usage\":{\"prompt_tokens\":10,\"total_tokens\":1032,\"completion_tokens\":1022,\"prompt_tokens_details\":{\"cached_tokens\":0},\"service_tier\":\"standard\"},\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"tool_calls\":null,\"content\":\"The \\\"best\\\" French cheese is highly subjective and depends on personal taste, but France is home to over **1,000 varieties**, each with its own unique character. Here are some of the most celebrated and iconic French cheeses, often considered among the best in the world:\\n\\n### **Top French Cheeses (By Category)**\\n\\n#### **1. Soft & Creamy (Bloomy Rind)**\\n- **Brie de Meaux (AOP)** – The \\\"Queen of Cheeses,\\\" buttery, mushroomy, and slightly tangy. A classic from Île-de-France.\\n- **Camembert de Normandie (AOP)** – Earthy, creamy, and pungent, with a rich, buttery texture. The most famous French cheese worldwide.\\n- **Saint-Marcellin** – A small, ultra-creamy cheese from the Rhône-Alpes, with a mild, nutty flavor.\\n\\n#### **2. Washed-Rind (Pungent & Bold)**\\n- **Époisses de Bourgogne (AOP)** – One of the strongest cheeses in the world, washed in Marc de Bourgogne brandy. Creamy, salty, and intensely aromatic.\\n- **Munster (AOP)** – From Alsace, with a sticky orange rind and a powerful, meaty flavor.\\n- **Pont-l'Évêque (AOP)** – A square, buttery, slightly tangy cheese from Normandy, with a smooth, creamy texture.\\n\\n#### **3. Blue Cheeses (Bold & Tangy)**\\n- **Roquefort (AOP)** – The \\\"King of Blue Cheeses,\\\" made from sheep’s milk and aged in the natural caves of Roquefort-sur-Soulzon. Rich, salty, and complex.\\n- **Bleu d'Auvergne (AOP)** – A cow’s milk blue with a creamy texture and a sharp, peppery kick.\\n- **Fourme d'Ambert (AOP)** – A milder, creamier blue from the Auvergne region, with a cylindrical shape.\\n\\n#### **4. Hard & Aged (Nutty & Crumbly)**\\n- **Comté (AOP)** – A nutty, caramel-like Alpine cheese, aged for months (or years) in massive wheels. One of France’s most beloved cheeses.\\n- **Beaufort (AOP)** – A rich, buttery Alpine cheese with a smooth, slightly fruity taste.\\n- **Mimolette** – A hard, caramel-colored cheese with a nutty, slightly sweet flavor (often aged for years).\\n\\n#### **5. Goat Cheeses (Fresh & Tangy)**\\n- **Crottin de Chavignol (AOP)** – A small, cylindrical goat cheese from the Loire Valley, with a creamy center and a tangy finish.\\n- **Sainte-Maure de Touraine (AOP)** – A log-shaped goat cheese with a straw running through it, offering a balanced, slightly acidic taste.\\n- **Chabichou du Poitou (AOP)** – A soft, creamy goat cheese with a mild, nutty flavor.\\n\\n#### **6. Unique & Rare**\\n- **Reblochon (AOP)** – The cheese used in **tartiflette** (a decadent potato and bacon dish). Soft, creamy, and slightly fruity.\\n- **Morbier (AOP)** – Recognizable by its black ash line, this semi-soft cheese has a mild, buttery taste.\\n- **Tomme de Savoie** – A rustic, semi-hard cheese with a nutty, slightly earthy flavor.\\n\\n### **How to Choose the \\\"Best\\\" French Cheese?**\\n- **For a cheese board:** Pair **Brie de Meaux, Roquefort, Comté, and Crottin de Chavignol** for a balance of textures and flavors.\\n- **For cooking:** **Reblochon (tartiflette), Comté (fondue), or Camembert (baked in bread)**.\\n- **For strong flavors:** **Époisses, Munster, or Roquefort**.\\n- **For mild & creamy:** **Saint-Marcellin, Brie, or Camembert**.\\n\\n### **Final Verdict?**\\nIf forced to pick **one** as the \\\"best,\\\" many cheese experts would choose:\\n✅ **Comté (AOP)** – For its versatility, depth of flavor, and aging potential.\\n✅ **Roquefort (AOP)** – For its legendary status as the finest blue cheese.\\n✅ **Brie de Meaux (AOP)** – For its historical prestige and buttery elegance.\\n\\nBut the real answer? **Try them all!** France’s cheese culture is about exploration—visit a **fromagerie**, ask for recommendations, and enjoy the journey.\\n\\n**What’s your favorite French cheese?** 🧀🇫🇷\"}}]}"
+            }
+        }
+    ]
+}

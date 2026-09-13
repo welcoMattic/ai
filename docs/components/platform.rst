@@ -1930,8 +1930,12 @@ response is stored with its raw Server-Sent Event body, so the bridge's stream p
 replay exactly as it would on the wire, while headers describing the live transfer (``content-length``,
 ``content-encoding``, ...) are dropped because they would contradict the replayed body. Credentials
 (``Authorization``, ``x-api-key``, ``x-goog-api-key``, the ``auth_bearer`` shorthand, cookies and
-provider account identifiers) are replaced with ``[redacted]`` in both request and response headers
-before the cassette is written, so a cassette is safe to commit. Per-request trace headers (``date``,
+provider account identifiers) are replaced with ``[redacted]`` in both request and response headers,
+as are credentials sent as body or query parameters (``api_key``, ``access_token``), before the
+cassette is written, so a cassette is safe to commit. Values that only the recording environment
+knows, like a real endpoint or key, can be passed as ``$replacements`` to ``HttpCassette``: they are
+swapped for their placeholders everywhere in the recorded requests and responses, so a replay run
+using the placeholders matches the recording. Per-request trace headers (``date``,
 ``cf-ray``, correlation and request ids, proxy latencies) are dropped on write, so that re-recording
 a cassette produces a diff of what the provider actually changed instead of noise; rate limiting
 headers are kept, because the converters read them. Binary response bodies (generated images, audio,
@@ -1943,14 +1947,7 @@ Verification is unconditional: it is what turns a replay test from a fixed-respo
 check of the payload the bridge actually builds, so there is no flag to switch it off. The
 consequence is that anything non-deterministic in a request body invalidates the signature on the
 next run. A tool returning the current time is the common case: record the timestamp once and
-replay it, rather than letting the tool produce a new value on every run. ``examples/bootstrap.php``
-ships ``clock_tool()`` for exactly this, reading the recorded timestamp back out of the cassette::
-
-    // examples/agent/multi-turn-thinking.php
-    $toolbox = new Toolbox([clock_tool()], logger: logger());
-
-An example whose tool output cannot be pinned this way does not belong in the replayed harness;
-a signature mismatch there means the request genuinely changed, which is the point.
+replay it, rather than letting the tool produce a new value on every run.
 
 For a bridge test suite with several recorded scenarios, extend
 :class:`Symfony\\AI\\Platform\\Test\\Replay\\AbstractBridgeReplayTestCase`: implement

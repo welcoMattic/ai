@@ -1,0 +1,12 @@
++-------------- Token Usage ---------------+
+| Model                   | deepseek-flash |
+| Prompt tokens           | 20             |
+| Completion tokens       | 351            |
+| Thinking tokens         | n/a            |
+| Tool tokens             | n/a            |
+| Cached tokens           | 0              |
+| Remaining tokens minute | n/a            |
+| Remaining tokens month  | n/a            |
+| Remaining tokens        | n/a            |
+| Total tokens            | 371            |
++-------------------------+----------------+

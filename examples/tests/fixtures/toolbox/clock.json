@@ -1,0 +1,152 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "c85b2dafa14a487d45295083bd7b6454",
+                "signature_v2": "7b588c111919534498c138acce9bc28e",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"clock\",\"description\":\"Get the current date and time\"}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What date and time is it?\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0332c498f87b4bb1006aa7006ad73c87d2af29ee1593cdcb3e\",\n  \"object\": \"response\",\n  \"created_at\": 1789329514,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329515,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0332c498f87b4bb1006aa7006b2c6087d29bc96c2912ab012d\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwBsj36GmdVAv5VE65h6OW2MyQ1VKR0bjaDGHMW6SGh94OfHRju2h2AxL9jqC48ktSyJjKhyXRjAgn6NAo-4fuow-alD4rq_DINarYxLFePXnfO0e-YT6F13TsVHjzkRHGoDq5a4XejK0HjRSb3nD-2vGq-dyAuUe8PCneYBuix_suX6SBD2X1U47WeP-KsmHBDH8q0VsV8ztO36p8CKi-0gkhegMMEN1v0YdtFUC26yTB4-yOcMNpjF0OYFjC3yr9_6RsP-WMjIDHonlYC35-c8q2ZqKq9t0P53m3whbgYj4Fne07a1ZwcfskdHD1xU-WCmo7xHD4R7zaU1vxmPqQ2eC7qFaaXrzBDVAQeb3zP51OFbv7uC9O41vXK5uS01RVGJ-z9e5ForSGvHbRc0TurHNHirRDLgds1jMnF1JHaHwmI8j8TUeboLog4pF8oK5F0oP1amX1uUxpRQjcBnDq0gFW7FVheJsPiu_mPN7L3OInNvu1UI1SoDQI9LatY18M9Zs-_trJTq8g1N2i2irVBNBytXh1n0d3zSmKcizpc4pWxlNqVcCwsWB5c8mfAOm-mBZUtd5XTMSiW3aBWm8kbmWyzeb2dOAc17CYy660dwa3R-Cylljw2jC5N4hg2FXmUiqLR2PzgzgfLwEKOO69KGQX3FXDGFENrONs706zI76rYHcwVD4Jw6wA0DrN05Z4RSG0b3L6MaJouFU4c_xWLhyk3PRyr1KpSzkbzKIBH6kmj9CYvnhgCu1JvDegxLS8M0mYyLe08EPIrJ_DBik3DZeXkeX-uze1Vn6t760ROhsO1jEZE8hHjhLAJyM05Ij_D_dDZ73DlxVmn64jjGDg5Gu3kZUcX-_4lDI2Jk5NM34DapQ6FRiU58MqvL26QzF2PM1YvRLeZTFF8aRJ5zrPbJMRy9QEAsNZezXe45IrY_Gmi8ICPd1pWQuqcYrbg1qb0uf5zPwdz1T7HPQ7Su1i6ugxxyeT6UH3MYfCzCwKcezwo7eQvfmryLXx_8-tL8n1aHOYXbZ8nY1mRP30yUvTUgfwFOeQ09eLDlOxj_2__ChVTXgRYUfwgHsJfQKykvM5xuW-F5J0dfbKdxxcnE-aY-OExldIb3vAyiAzV-SIOu9XuW2yUJSsqJTxVe22-MPEuMcWWs7Za355bjXhuEHRnYPnUN7NLiQuC-VpDhfq4pC__qtapBVDOz05fruaFG6zYNyPZIdbDJmhjzcW45v84mdYgCDZNxvkLp-25StClweT2CcRwpZYKI-g6hPozBo-TgVi7crlq4dZNTiqvQnK1zJT9hLiC1qKvW9nPoEXD3Y7KTcEfAgB6T1lod2XBNcJOetX2spJWNMqiIPgO5UhBOI8y71NyIS5FAAtuHOUgeExj8WwLz4v_4IoFmO3gGrH8bPOCJ5KbSkmtIoUbGGurJmDN0sWL41l6Nz300qLUaegoEYeOBYRExhKCvLvnO8xCVgRlYb3d3dU0c2ksgr4RlzEpEHq8c6-B4HCY2_Zw-snlaALX6fCyk3RPnpL8DlU86jhh9P9_y7HQrzUKlqUmkZUQcM5ez8yhPdNpYNmfuqlYetB14KWVQdF016UQjYOC2\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"fc_0332c498f87b4bb1006aa7006bc5a887d292caba64b99ff892\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{}\",\n      \"call_id\": \"call_QXhDLwtGzh2wS5zhE8USbcyy\",\n      \"name\": \"clock\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Get the current date and time\",\n      \"name\": \"clock\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"additionalProperties\": false,\n        \"type\": \"object\",\n        \"properties\": {},\n        \"required\": []\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 43,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 76,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 119\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "2b0d6c95610c5659fa0832fe46b32414",
+                "signature_v2": "5e560bf4745c99ae3a76efb23399f47e",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"clock\",\"description\":\"Get the current date and time\"}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What date and time is it?\"},{\"id\":\"rs_0332c498f87b4bb1006aa7006b2c6087d29bc96c2912ab012d\",\"type\":\"reasoning\",\"content\":[],\"encrypted_content\":\"gAAAAABqpwBsj36GmdVAv5VE65h6OW2MyQ1VKR0bjaDGHMW6SGh94OfHRju2h2AxL9jqC48ktSyJjKhyXRjAgn6NAo-4fuow-alD4rq_DINarYxLFePXnfO0e-YT6F13TsVHjzkRHGoDq5a4XejK0HjRSb3nD-2vGq-dyAuUe8PCneYBuix_suX6SBD2X1U47WeP-KsmHBDH8q0VsV8ztO36p8CKi-0gkhegMMEN1v0YdtFUC26yTB4-yOcMNpjF0OYFjC3yr9_6RsP-WMjIDHonlYC35-c8q2ZqKq9t0P53m3whbgYj4Fne07a1ZwcfskdHD1xU-WCmo7xHD4R7zaU1vxmPqQ2eC7qFaaXrzBDVAQeb3zP51OFbv7uC9O41vXK5uS01RVGJ-z9e5ForSGvHbRc0TurHNHirRDLgds1jMnF1JHaHwmI8j8TUeboLog4pF8oK5F0oP1amX1uUxpRQjcBnDq0gFW7FVheJsPiu_mPN7L3OInNvu1UI1SoDQI9LatY18M9Zs-_trJTq8g1N2i2irVBNBytXh1n0d3zSmKcizpc4pWxlNqVcCwsWB5c8mfAOm-mBZUtd5XTMSiW3aBWm8kbmWyzeb2dOAc17CYy660dwa3R-Cylljw2jC5N4hg2FXmUiqLR2PzgzgfLwEKOO69KGQX3FXDGFENrONs706zI76rYHcwVD4Jw6wA0DrN05Z4RSG0b3L6MaJouFU4c_xWLhyk3PRyr1KpSzkbzKIBH6kmj9CYvnhgCu1JvDegxLS8M0mYyLe08EPIrJ_DBik3DZeXkeX-uze1Vn6t760ROhsO1jEZE8hHjhLAJyM05Ij_D_dDZ73DlxVmn64jjGDg5Gu3kZUcX-_4lDI2Jk5NM34DapQ6FRiU58MqvL26QzF2PM1YvRLeZTFF8aRJ5zrPbJMRy9QEAsNZezXe45IrY_Gmi8ICPd1pWQuqcYrbg1qb0uf5zPwdz1T7HPQ7Su1i6ugxxyeT6UH3MYfCzCwKcezwo7eQvfmryLXx_8-tL8n1aHOYXbZ8nY1mRP30yUvTUgfwFOeQ09eLDlOxj_2__ChVTXgRYUfwgHsJfQKykvM5xuW-F5J0dfbKdxxcnE-aY-OExldIb3vAyiAzV-SIOu9XuW2yUJSsqJTxVe22-MPEuMcWWs7Za355bjXhuEHRnYPnUN7NLiQuC-VpDhfq4pC__qtapBVDOz05fruaFG6zYNyPZIdbDJmhjzcW45v84mdYgCDZNxvkLp-25StClweT2CcRwpZYKI-g6hPozBo-TgVi7crlq4dZNTiqvQnK1zJT9hLiC1qKvW9nPoEXD3Y7KTcEfAgB6T1lod2XBNcJOetX2spJWNMqiIPgO5UhBOI8y71NyIS5FAAtuHOUgeExj8WwLz4v_4IoFmO3gGrH8bPOCJ5KbSkmtIoUbGGurJmDN0sWL41l6Nz300qLUaegoEYeOBYRExhKCvLvnO8xCVgRlYb3d3dU0c2ksgr4RlzEpEHq8c6-B4HCY2_Zw-snlaALX6fCyk3RPnpL8DlU86jhh9P9_y7HQrzUKlqUmkZUQcM5ez8yhPdNpYNmfuqlYetB14KWVQdF016UQjYOC2\",\"summary\":[]},{\"arguments\":\"{}\",\"call_id\":\"call_QXhDLwtGzh2wS5zhE8USbcyy\",\"name\":\"clock\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_QXhDLwtGzh2wS5zhE8USbcyy\",\"output\":\"\\u00222026-09-13T19:58:36+00:00\\u0022\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0332c498f87b4bb1006aa7006c3fe887d2bae523bc7d7331aa\",\n  \"object\": \"response\",\n  \"created_at\": 1789329516,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329518,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0332c498f87b4bb1006aa7006c8e0487d296b9de78ca4a7ec8\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwBuah0U01k5rM-D_pVObCKEdjqmuzqvLhgx7IE1vmFlhgDUi3WSZ4qSxEwfVkQMFRnJ0Q-NGbtL1O11RB8GiA-3wxR1Aw9PAa-RQck0Qk8U3XtV9GZ-6YbIx4VlNv64wTVPsfZZB3sFy-clWNudh3qI_-ijxLEtLWNQVY8vQFf1qUe-2mX-Jj0uIG9hDPT5z9AxEaPUSBJqzWW5rrW45nhGZ5tvN0Cf9zbkwwZDhhmRtWW3Jf0uSw1bcRaNSSzdvHAzVDjcELsrywJwMwBX0YzzHed9zsDfEfp0B2jCNcTY3wiB4u87z79VO09s4MutodGatnntHAVU4J4KMgk7b4rUXH1Qs3-MIk0y6YgM1Q1Ihpr6POjfjnnMJba7ipzOmvYBxgrP_1ojhu9l1EIhv03P8c6DX4UtTf0-sa-tgMZ7NlfzVCEWLeUrt8sdNZaHmZXPZu4F3gqt_Obe2DwAn3ZwtB_KqVA-6VpdnRv_aJFapxN8JDVvaj9D_rSMAE-P37-fzJKpwDhfCMDJ-8Mdk5RjWOnk8-IyG4DdmnDWov-nU0O3C4-pzllf2_EEH9Jq6w-pFL8S5sNLx5fcyNAV6YhD8ZQ0fg5VywTAzdInM8-spCgjfyQkQkG9Mf9A94fptOvm3s7945AOxJkWPggDdjQ47Yv_rOJ9LyUoe-OyJH7UDv5mONk3DR7bDP-bHjWXUKJjBAsl3wV2Vnyt4Bi2er_fOo3dtvnkQ8lQC1AISkgGBHzlGk20ZcoksSOeeX81pqE9bGvhow8pPjegsHiPkRVgB2lPAQwZBbgLiKg8HdPi_rvE0dJqFOK7OolSarLd0tHzGV0ICDFWSZBArQLrJjvYHqKlR22HlIjIKIiPf-psbAaAPj3qj2AB15dY1xqJ-40harXYxHq-W-FCvPOQ3K-mnble20WjuoPMxn4ytgqis6IAc1gI_p16Z9wI83dRNkDUBjWXsKKH8_X8V3mYrTx5WJe809I0fC_NLIbn2iPOqjAqqKd5D32Ukn3KQ3ltqg9ychVDsZZzrmM0dBpAMioN5YIdss5rhDo4ZOw8zMrfoXPmS08hyMCFEtfCOqFpibDluJdOIs5K66W_ttIPr2HFNH5iAd-nAdMyFFP7RaZ8zXi1XkBmHRVhG3yjgCuw5CF-mQnZDDrlPFgn3ZvyWVCC31OpJNHZlLpfaWW8mOeQxD82IKILnjbQsK8fG08QM1uuZqBTc7bONcFo49x3QaSwI0-gkbDck_KZfAc2pwJGWrA-lF1fnIMB-6-llzJEesRO9vBxB1GymQ3PQOguURGzVY5fwVBbsrYOOkNm52gppNEOBSX3HHGYpQ3Octl15bXl6dcXtmALCksNAy03DfRQbtkw4jHrNV-otKM46OJVKIprO4TbWUJmBsW_4eaWXhawrNTTOwOgs1UVRY7nS7V4Nizc7Qw21vqimC2_rgv8U0LlRdnwyK6Yr_HI0PBkyDZBJxpm3bhO0UyWy8CPcqu3KBVSDnae7AWcgJawZvHxEM1Ir4OloqtdFMkcVrsBPmzijf6xrata5NRqBlhvySspepFRlVAnA92CGaLsS5t_BApptKTjVXvWttMJC8SpPV_P9PEh12TXUeTHkPJwhXcbx9dHpxYpt2Y8Q16FV73ofY64yb3sNGawhuzZ2xPz0PuyYxC8yXBEC2arfxlvWdR7P-vTwyd88Q07PUpObT9y93GPnscsj9wy4qqjGFi5GTtrIVP8JHDxMYPLjuWQGph_wnBCwgE6khlxLqdVmEvt-gy0tF1b2zMSFUr44n5U8IG6xkDBNaUaWDw3rII5txwe3P5PaOTmbLXMoFohBleUuLFSryVyKtzuaD57LcMCc9zPDEQujiiNfH5bGISi-Zmr4w==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0332c498f87b4bb1006aa7006dbc6487d28479ee3da7240ddd\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"The current date and time is 2026-09-13 19:58:36 UTC (ISO: 2026-09-13T19:58:36+00:00). \\n\\nWould you like this converted to a specific time zone or your local time?\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Get the current date and time\",\n      \"name\": \"clock\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"additionalProperties\": false,\n        \"type\": \"object\",\n        \"properties\": {},\n        \"required\": []\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 144,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 192,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 128\n    },\n    \"total_tokens\": 336\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

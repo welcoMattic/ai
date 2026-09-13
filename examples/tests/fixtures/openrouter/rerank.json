@@ -1,0 +1,64 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://openrouter.ai/api/v1/rerank",
+                "signature": "9f3b3379d0cc2f5bf6e3b45c3134007c",
+                "signature_v2": "7fd97462cf2a89a73f623ca8cbfab7d9",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "model": "cohere/rerank-4-fast",
+                    "query": "What is artificial intelligence?",
+                    "documents": [
+                        "Artificial intelligence is the simulation of human intelligence processes by machines.",
+                        "The weather today is sunny with a high of 75 degrees.",
+                        "Machine learning is a subset of AI that enables systems to learn from data.",
+                        "The best recipe for chocolate cake requires cocoa powder and butter."
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Generation-Id,X-Provider-Name,request-id,cf-ray"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "permissions-policy": [
+                        "payment=(self \"https://checkout.stripe.com\" \"https://connect-js.stripe.com\" \"https://js.stripe.com\" \"https://*.js.stripe.com\" \"https://hooks.stripe.com\")"
+                    ],
+                    "referrer-policy": [
+                        "no-referrer, strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"gen-rerank-1789329453-oUkN5Zi8BNfqdGij8a2R\",\"model\":\"rerank-v4.0-fast\",\"results\":[{\"index\":0,\"relevance_score\":0.8560799,\"document\":{\"text\":\"Artificial intelligence is the simulation of human intelligence processes by machines.\"}},{\"index\":2,\"relevance_score\":0.47229403,\"document\":{\"text\":\"Machine learning is a subset of AI that enables systems to learn from data.\"}},{\"index\":1,\"relevance_score\":0.18808526,\"document\":{\"text\":\"The weather today is sunny with a high of 75 degrees.\"}},{\"index\":3,\"relevance_score\":0.15693003,\"document\":{\"text\":\"The best recipe for chocolate cake requires cocoa powder and butter.\"}}],\"usage\":{\"search_units\":1,\"cost\":0.002},\"provider\":\"Cohere\"}"
+            }
+        }
+    ]
+}

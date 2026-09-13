@@ -1,0 +1,110 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+                "signature": "baa2dd0a845bc157f9444de64ade8124",
+                "signature_v2": "87b606f0ab3bb5c35425df81acc75b82",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"generationConfig\":{\"responseMimeType\":\"application\\/json\",\"responseJsonSchema\":{\"type\":\"object\",\"properties\":{\"date\":{\"type\":\"string\",\"description\":\"The current date in the format YYYY-MM-DD.\"},\"time\":{\"type\":\"string\",\"description\":\"The current time in the format HH:MM:SS.\"}},\"required\":[\"date\",\"time\"],\"additionalProperties\":false}},\"tools\":[{\"functionDeclarations\":[{\"description\":\"Provides the current date and time.\",\"name\":\"clock\",\"parameters\":null}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"What date and time is it?\"}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "917"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"functionCall\": {\n              \"name\": \"clock\",\n              \"args\": {},\n              \"id\": \"call_3534268\"\n            },\n            \"thoughtSignature\": \"EtcDCtQDARFNMg//m2o961lfc1SoZx8f9MhJymh+GMWtwKZhS9ThqEya6s9xETABO0RRG+EenBjBHIbrY/qDeSP8JpCwAtzlGexD75lyDrDrR8Xsv/sZ4wxMYIi3zqnrzMg0WQKDcBXlx1lupZAxXjwZpZFxYfh1PCs6itTnhc38MZXaL89h0PBbh4/JeTUVNor22khjIcxJDkij+fdm11ZWbRA7s3j6sQcqT8t8iYiM45MSuSRnJDWZeP9gGeTQ6cgEGzRVJFcZte2FaMF0usdCaiaNtRzNmw5NbFe6ZhHLHBS0q+d8Hb/s3LEzX3bqKd/s0bTD8jwW9w4wVrNhlZWNxnC5g5iaIyW98Qw9UMAU3/TQGPzsyNYHzGkG+X7/2IxbcKhv6tmkX/uxyOnM6X47RsuWlSOr4kXMtW04NVZP2lJecPPMDb4u8kHSyhJLsCp8yvvS2gT0qnPMFeo4AFmRxuNl9KCdDgyqmJ4oijIOrV7xGI8w37nxhIr1x2NIodjLLwTZHkg4PaoFQcbE9XcecPUcd/stZna0lZvcfbPwi5mm2cURtbhAgxWSQbvvPYeCVc4XHIn1bU982AZxXpw/P2yR30wykje/tf1iGUm6yn9ul+YKDSLJ\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0,\n      \"finishMessage\": \"Model generated function call(s).\"\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 26,\n    \"candidatesTokenCount\": 8,\n    \"totalTokenCount\": 125,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 26\n      }\n    ],\n    \"thoughtsTokenCount\": 91,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-3.1-pro-preview\",\n  \"responseId\": \"Rf-matWTI5eZ3boPjpeEmAc\"\n}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+                "signature": "82d7fe35de35d1cdd5893b49ff2fc62a",
+                "signature_v2": "61ba33bf00f924fef95b7a77155a81cb",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"generationConfig\":{\"responseMimeType\":\"application\\/json\",\"responseJsonSchema\":{\"type\":\"object\",\"properties\":{\"date\":{\"type\":\"string\",\"description\":\"The current date in the format YYYY-MM-DD.\"},\"time\":{\"type\":\"string\",\"description\":\"The current time in the format HH:MM:SS.\"}},\"required\":[\"date\",\"time\"],\"additionalProperties\":false}},\"tools\":[{\"functionDeclarations\":[{\"description\":\"Provides the current date and time.\",\"name\":\"clock\",\"parameters\":null}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"What date and time is it?\"}]},{\"role\":\"model\",\"parts\":[{\"functionCall\":{\"id\":\"call_3534268\",\"name\":\"clock\"},\"thoughtSignature\":\"EtcDCtQDARFNMg\\/\\/m2o961lfc1SoZx8f9MhJymh+GMWtwKZhS9ThqEya6s9xETABO0RRG+EenBjBHIbrY\\/qDeSP8JpCwAtzlGexD75lyDrDrR8Xsv\\/sZ4wxMYIi3zqnrzMg0WQKDcBXlx1lupZAxXjwZpZFxYfh1PCs6itTnhc38MZXaL89h0PBbh4\\/JeTUVNor22khjIcxJDkij+fdm11ZWbRA7s3j6sQcqT8t8iYiM45MSuSRnJDWZeP9gGeTQ6cgEGzRVJFcZte2FaMF0usdCaiaNtRzNmw5NbFe6ZhHLHBS0q+d8Hb\\/s3LEzX3bqKd\\/s0bTD8jwW9w4wVrNhlZWNxnC5g5iaIyW98Qw9UMAU3\\/TQGPzsyNYHzGkG+X7\\/2IxbcKhv6tmkX\\/uxyOnM6X47RsuWlSOr4kXMtW04NVZP2lJecPPMDb4u8kHSyhJLsCp8yvvS2gT0qnPMFeo4AFmRxuNl9KCdDgyqmJ4oijIOrV7xGI8w37nxhIr1x2NIodjLLwTZHkg4PaoFQcbE9XcecPUcd\\/stZna0lZvcfbPwi5mm2cURtbhAgxWSQbvvPYeCVc4XHIn1bU982AZxXpw\\/P2yR30wykje\\/tf1iGUm6yn9ul+YKDSLJ\"}]},{\"role\":\"user\",\"parts\":[{\"functionResponse\":{\"name\":\"clock\",\"response\":{\"result\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 19:53:43 (HH:MM:SS).\"},\"id\":\"call_3534268\"}}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "725"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"{\\n  \\\"date\\\": \\\"2026-09-13\\\",\\n  \\\"time\\\": \\\"19:53:43\\\"\\n} \",\n            \"thoughtSignature\": \"Er4CCrsCARFNMg+6Wx+xEAYYPWQL3LsIgzxiFboSkLYsacKeuSEzWCI+plR4PIONyJhTiRO4Oj1mTS6UnvlU6G+GAGwf8xTAueBOo9cTMJtnjwI/xkDlsV4/aQh4in+94/LJotrYLCvK38n/5LXeXXFDG0FVC6B9eQFZMuRHtopYnqX1rcth0c5MFqnpb8WFJP/+t2VrKgTVlU3a66sQr9Q6vO5+jKA1WaOYNlXq+7MWzi8d3bw9ZpeGH6ivf32dbjFbEkbz/++tKPUFKWQ6De9sDVBgFFKIVdMMLeDtxGVelv5RHIeXITIsXtBHjIHOoXiO6w3rvU8UwvssnralFl5Fya+Wwm1m/kzwlyTqP6GEjDY/OiN81lLPQj2W3QSJzB4+oR1EEUX2I5EWks1l4ghrrkOwmUPIk3IKAn/IqxPG\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 177,\n    \"candidatesTokenCount\": 36,\n    \"totalTokenCount\": 277,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 177\n      }\n    ],\n    \"thoughtsTokenCount\": 64,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-3.1-pro-preview\",\n  \"responseId\": \"R_-masH4LPGDkdUPm8fPqQY\"\n}\n"
+            }
+        }
+    ]
+}

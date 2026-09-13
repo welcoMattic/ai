@@ -1,0 +1,38 @@
+# Symfony Framework
+
+Symfony is a **popular, open-source PHP web application framework** used for building modern web applications and APIs. Here are its key characteristics:
+
+## Core Features
+
+- **MVC Architecture**: Follows the Model-View-Controller pattern for organized code structure
+- **Component-Based**: Built from reusable, decoupled components that can be used independently
+- **Routing System**: Flexible URL routing for mapping requests to controllers
+- **Template Engine**: Twig templating engine for rendering views
+- **ORM Support**: Works seamlessly with Doctrine for database abstraction
+
+## Key Advantages
+
+✅ **Modularity** - Use only what you need  
+✅ **Flexibility** - Suitable for small projects to large enterprise applications  
+✅ **Performance** - Optimized and scalable  
+✅ **Security** - Built-in security features and best practices  
+✅ **Documentation** - Excellent and extensive documentation  
+✅ **Community** - Large, active developer community  
+
+## Common Uses
+
+- RESTful APIs
+- Full-stack web applications
+- Microservices
+- Progressive web apps
+- E-commerce platforms
+
+## Versions
+
+Current versions include **Symfony 6.x** and **Symfony 7.x**, with long-term support (LTS) versions available for enterprise use.
+
+## Related Tools
+
+Symfony often works with tools like **Composer** (dependency management), **Doctrine** (database ORM), and **Twig** (templating).
+
+Symfony is ideal for developers who need a powerful, flexible framework without the overhead of monolithic frameworks.

@@ -1,0 +1,61 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.aimlapi.com/v1/chat/completions",
+                "signature": "d7cd35593cf2fe44ed0b9258763e164b",
+                "signature_v2": "897597bb09da97d3dc2bcfab9c64838c",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"max_tokens\":500,\"messages\":[{\"role\":\"system\",\"content\":\"You are a pirate and you write funny.\"},{\"role\":\"user\",\"content\":\"What is the Symfony framework?\"}],\"model\":\"gemini-2.5-flash\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "access-control-expose-headers": [
+                        "x-inference-id, x-aimlapi-provider, x-aimlapi-credits-used, x-aimlapi-usd-spent"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "x-aimlapi-credits-used": [
+                        "3237"
+                    ],
+                    "x-aimlapi-provider": [
+                        "google"
+                    ],
+                    "x-aimlapi-usd-spent": [
+                        "0.001618500"
+                    ],
+                    "x-inference-id": [
+                        "nqdc6OAUKQDE2J7sAhpEy"
+                    ],
+                    "x-powered-by": [
+                        "Express"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"choices\":[{\"finish_reason\":\"length\",\"index\":0,\"logprobs\":null,\"message\":{\"content\":\"Arrr, landlubber! Ye be askin' 'bout Symfony, eh\",\"role\":\"assistant\"}}],\"created\":1789329099,\"id\":\"y_6marq9I7LAm9IPseHGiAI\",\"model\":\"google/gemini-2.5-flash\",\"object\":\"chat.completion\",\"system_fingerprint\":\"\",\"usage\":{\"completion_tokens\":496,\"completion_tokens_details\":{\"reasoning_tokens\":479},\"extra_properties\":{\"google\":{\"traffic_type\":\"ON_DEMAND\"}},\"prompt_tokens\":15,\"total_tokens\":511},\"meta\":{\"provider\":\"google\",\"usage\":{\"credits_used\":3237,\"usd_spent\":0.0016185},\"metrics\":{\"duration_ms\":3391,\"ttft_ms\":3391,\"tps\":146.27}}}"
+            }
+        }
+    ]
+}

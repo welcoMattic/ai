@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/audio/transcriptions",
+                "signature": "283ba23c63c60b21154f308a608c44ec",
+                "signature_v2": "a879aed2dc477897f0bc625527f36b9b",
+                "headers": {
+                    "content-type": [
+                        "multipart/form-data"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "response_format": "verbose_json",
+                    "model": "whisper-1",
+                    "file": "[resource audio.mp3, 51019 bytes]"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "via": [
+                        "envoy-router-78df78bdfc-t7phc"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "7500"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "7499"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "8ms"
+                    ],
+                    "x-openai-proxy-wasm": [
+                        "v0.1"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"task\":\"transcribe\",\"language\":\"english\",\"duration\":2.5899999141693115,\"text\":\"Wishing you a Merry Christmas and a Happy New Year.\",\"segments\":[{\"id\":0,\"seek\":0,\"start\":0.0,\"end\":2.880000114440918,\"text\":\" Wishing you a Merry Christmas and a Happy New Year.\",\"tokens\":[50364,343,3807,291,257,26572,5272,293,257,389,569,8200,1873,10289,13,50508],\"temperature\":0.0,\"avg_logprob\":-0.4828247129917145,\"compression_ratio\":0.8793103694915771,\"no_speech_prob\":0.008174204267561436}],\"usage\":{\"type\":\"duration\",\"seconds\":3}}"
+            }
+        }
+    ]
+}

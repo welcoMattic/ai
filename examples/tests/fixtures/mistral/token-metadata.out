@@ -1,0 +1,12 @@
++----------------- Token Usage ------------------+
+| Model                   | mistral-large-latest |
+| Prompt tokens           | 26                   |
+| Completion tokens       | 57                   |
+| Thinking tokens         | n/a                  |
+| Tool tokens             | n/a                  |
+| Cached tokens           | 0                    |
+| Remaining tokens minute | 400000               |
+| Remaining tokens month  | n/a                  |
+| Remaining tokens        | n/a                  |
+| Total tokens            | 83                   |
++-------------------------+----------------------+

@@ -1,0 +1,79 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cohere.com/v2/chat",
+                "signature": "548fdbc25be891d35838e11492fd7266",
+                "signature_v2": "89d964570393d42018178d807726b2f0",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"temperature\":0.7,\"messages\":[{\"role\":\"user\",\"content\":\"What is the largest ocean on Earth?\"}],\"model\":\"command-a-03-2025\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "access-control-expose-headers": [
+                        "X-Debug-Trace-ID"
+                    ],
+                    "cache-control": [
+                        "no-cache, no-store, no-transform, must-revalidate, private, max-age=0"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "expires": [
+                        "Thu, 01 Jan 1970 00:00:00 GMT"
+                    ],
+                    "num_chars": [
+                        "2613"
+                    ],
+                    "num_tokens": [
+                        "117"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "vary": [
+                        "Origin,Accept-Encoding"
+                    ],
+                    "x-accel-expires": [
+                        "0"
+                    ],
+                    "x-debug-trace-id": [
+                        "69fbdf619db675c1b3cb4d01a2c0b1fc"
+                    ],
+                    "x-endpoint-monthly-call-limit": [
+                        "1000"
+                    ],
+                    "x-trial-endpoint-call-limit": [
+                        "20"
+                    ],
+                    "x-trial-endpoint-call-remaining": [
+                        "19"
+                    ],
+                    "content-length": [
+                        "467"
+                    ],
+                    "server": [
+                        "envoy"
+                    ],
+                    "via": [
+                        "1.1 google"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"cd17be3f-c27f-4436-b528-4eee6b23d3b9\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"The largest ocean on Earth is the **Pacific Ocean**. It covers approximately 63,800,000 square miles (165,250,000 square kilometers), which is about 46% of Earth's water surface and more than all of the land area combined. The Pacific Ocean extends from the Arctic in the north to the Antarctic in the south and is largely located between Asia and the Americas. It is known for its vast depth, including the Mariana Trench, the deepest point on Earth.\"}]},\"finish_reason\":\"COMPLETE\",\"usage\":{\"billed_units\":{\"input_tokens\":8,\"output_tokens\":109},\"tokens\":{\"input_tokens\":503,\"output_tokens\":112},\"cached_tokens\":448}}"
+            }
+        }
+    ]
+}

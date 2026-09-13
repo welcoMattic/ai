@@ -20,7 +20,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('ANTHROPIC_API_KEY'), httpClient: http_client());
 
-$toolbox = new Toolbox([new Clock()], logger: logger());
+$toolbox = new Toolbox([new Clock(clock())], logger: logger());
 $agent = new Agent($platform, 'claude-sonnet-4-5-20250929', toolbox: $toolbox);
 
 $messages = new MessageBag(

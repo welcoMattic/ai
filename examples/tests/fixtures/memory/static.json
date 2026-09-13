@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "28b0b2c219c7021c778ab4c6f7d33507",
+                "signature_v2": "b8b63ce510c2f3ce58a002a98b550fbd",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What do we do today?\"}],\"instructions\":\"# Conversation Memory\\nThis is the memory I have found for this conversation. The memory has more weight to answer user input,\\nso try to answer utilizing the memory as much as possible. Your answer must be changed to fit the given\\nmemory. If the memory is irrelevant, ignore it. Do not reply to the this section of the prompt and do not\\nreference it as this is just for your reference.\\n\\n## Static Memory\\n\\n- My name is Wilhelm Tell\\n- I wish to be a swiss national hero\\n- I am struggling with hitting apples but want to be professional with the bow and arrow\\n\\n# System Prompt\\n\\nYou are a professional trainer with short, personalized advice and a motivating claim.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999454"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "3ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_071fcd1ad110a448006aa70b1c9f1887d28d59205644d06860\",\n  \"object\": \"response\",\n  \"created_at\": 1789332252,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789332263,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"# Conversation Memory\\nThis is the memory I have found for this conversation. The memory has more weight to answer user input,\\nso try to answer utilizing the memory as much as possible. Your answer must be changed to fit the given\\nmemory. If the memory is irrelevant, ignore it. Do not reply to the this section of the prompt and do not\\nreference it as this is just for your reference.\\n\\n## Static Memory\\n\\n- My name is Wilhelm Tell\\n- I wish to be a swiss national hero\\n- I am struggling with hitting apples but want to be professional with the bow and arrow\\n\\n# System Prompt\\n\\nYou are a professional trainer with short, personalized advice and a motivating claim.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_071fcd1ad110a448006aa70b1cf57487d29b19dbba952a67b6\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwsoRuaOCmnb1jUNXkN1j2a553tLBvYTJ6EcHBOF1FicxKoF5yTL8G7_MoE38vqRCd0MQ3qAXlH2IBKO900wvRaBoQJW52vul0WNIOh-36RTwe6j43J0VyJc6xkxIIhMFsDGmFbsl_pMIXkNY0KsCK4t0NDbbXXbPpgJJ3el7cop55MMqICYGGb-ONfyjxGpiH6eW6gzyISYXSHk66-2a3jlhfjOOlAVitzgbwxcxZ9G3RjnUpbllIW0-XdpAYuvZpy4o2t5VSCiGpMrcROgiOIyVzO2CiOnwh70jSucFUXIHA4EMTbWHMbhx1q9Ouwyx3W61fSXZYeitKQjE8McOKNn2jJJijbBV09S4_nkehbYuSfuZggQegLfnaSUwyAo-KubqtveHQCc8lRD0wUS7qdqFxnhxsIjidWB8HJu5z11pvXxTIEIFAi9OhxqDeveaoOoUVfHBf0jq4EKhPcw-iVhM6KoydSmRCVt54nQutx7JRnrK832t3tZJPvtC7Zrt5oKTyXflli6fncUTWHjCIPeOe-BYm7XCQmF_xsGwHDB0geTKz4DcNvcGA4Ql_rLG3xb_wC29mFSD3ImYz-c5aA0k5yrnfrItz2cuXYpWUy5xpBIItzQ0luqgzVORTFuwCc3wuFk0TZ9CtRwnA-3r35kDlBTB9wg5cDhV4YUdA5CZfHBXidM9pnzhyAnGrrY4Q5psvWJcAHcmee_-gS1cqwY1Gkg0QZ6OxgoU1ibFNrPmhOjvjbX9ZY7pIR0vvnbFZ2HKHRlFh3uxea34ok3tuJK7amb3HzQTt-b7IPl3QwGt7nH2-P0qvq-jBiKK9LIyi3QcyG3dxNZtHyZ0Kbsvri0hlSf6dxkmQlgDTi4luUjBkJyWocpttEilN307V-y2xXPZJ6shKZ-UM9Z4AgWDfOIuo0J2lHiff51YoxkZRRm6EHrgTLfj2WFsxd6S03UIoetYsfx0oSP9E38SAhZpG6NnbhDnuyoC5ZJbHGUyb7ovXRkuk9cOsPGgjP627BBBA4hKQtwO2zBiXbsXxVlnFmqF7MHdNAYVedKOTmnAW-WfgUrxbtJMQa6_cteYTFHXjqtwjyPLZZDtHR8xMRy0meDFLiaQPghq24n3pmWQ2dU0BgkFO9uljp76XLepKF4bJcD8tNzW8koZGWRtHbyr723qS_gcFoULByJjwJTt5TkJv-IJFx5PRIVKLIkkBaT8rlJWSN_Ja5xMdw54XNSOgufZ-x3O4iA5gpRH7frCamXRl467neCxxqTSwwLxKL6SPirR1_NfOLRDxd7X-T6U_XJGSsH_o33-qnrbUyCrea1QGhJNJbAhAMzgonAk70bwUmByGuvZ9t-Cugw5nvgNnXMhuPLwDFUYxxu-J2z3F-0dHCMLj6sBDhRSVMnTBue2EPJfdWQebsCkb6czaV5uvOgaxZQ1C_YXiKrmHoMrfi4UYVYZLtSlQ0t3WN1FgQpHpW8KuiluyC7pAjA482iqvEZO6E7UQuwg6-YFNTIpfPApgaPJ5Qo8L3ggIrmRYOv0IkPrE-rnbOUeuvL7pbaNtQ8P9ptyySG4Bg2rJ7pVGcx_bHpdepq7fBZhDZw98AcRT3o0vykzSwRTD4u9AazxMY8KLbaXH9uI6JO78my_f8hqCxUGzTEmOYO8GrBpDjTduynEm4MeCDyKqN7omW08c8ItrFpcqDdQZ40uVyU8IP-0tsRLo_03YMGdB46RA9dOdDKfGD68LaRs2HYx5fSDETkLPkjVtrw1r_XkOB6a4-xmHvGek-Lhp6qK3bKtksQGi5ymPQHtoSTVGuVdqTxVweysfPavvKc-T8Hl0ES4d74oB_CZ-CNicYxnh_6ash0TGV_rlvn-XMDX16Zk7nOr6xDmMV3D0TWFnBgL7izlpYBEtxO0GSpdRiafDQM5eDifgyXJeaGP68DNmNBepL_GDRE_AvmuisI2HyqQ21DFocV6vP1rATcQxBIFlIV-Ck9Lfj_itzZUwvSr8bvdOguGrlXX0QM8kZ2lKh0cFZX6xl8wDIMl-_7D_CArX_uIQ7LiRd45nrw_VHd-zExbB5-xHPmx_nn8_i31GaIbCI-atAjVAMfoQEr5DrAIZ3hocOsy8PupO_f9_EYpN9OQdTJTFDqOvgyu_AvmtBk3HLT8bDgKe0F1sNHeL542V1kgRRnzhn88K17KmRyEj27blTsCDtT5c7j2QJtfsa9sU8WmRjdxKVCD8IIkLYV2dyIhp9AnuT38eq3AG_Zv2p2ah-LLUbI-40DGaPC3MDy7wK0mmgiX92RfaLgSQNbVzbAVyBa6RvEnqyltdPWOLPjd0kz8KDKXoOsnvT9BeexLX8zPPu1aYvAbhSSJbFTz6ln-FsE_J_7S9TlArKM3Nk62Q82NVG154lREhcOpg92TA121O4a5j_sCBEyYZfM0ffFP200RGCK_xNH-1LlTv_DpO44mkjOYJUrsGkkS6QOODpESTUPi_DiRGDlmZ0M8GX4wopEAYq0f9Z0KuGUX2c8Ij0d-7UQc-uVFEV2RwK5lWk68xi5ap_ugv-6P-6Zyj45QE2K6Cppj42yWhoZat-dgdlMLvDpGVHd2O_F5PHTYcN0s1C6vrXQkrcMG0DgbnuBe3n45yV3AXcCNnq6MkYIyxvcItWAp0BfyyC0to6ZBqflolWY1pudGBsnmHObiItMP7FZj5JYQqWAx-xia9vjHHxfOz2lIMwN1T3mXL6diSWEi2zxFwXLZ7DHJNiaT2nwuXxY6Ihn-zLeTQT5QlIzJtyO1H1pStVTHEOFeKUTG2B00kFI1zNMWz_M5EL8oDfG3kPsHvXIv5But8Xk5PyR1fQhki8p1PKGhxESM0U3fnhbGnHbzD75yyE0PDhyANELQ97zqOO9jF2vtJIF_lTeupFo0iS6oRK4cdoZWqP5BrUp8t7-w-qVaByCndKWeUFU5SX7USStctW8oR983a2u2ya11r9I5VV8MJx0ZwAMpXQZ0dj06mjUAV6vzAaQHMx-5fYMa5ldmRpl4QdIr_EGXpqYj52Z-SKAjqs_a-Ii_O9sexx74HQTz5ZKlXRsKz03OadLoUlgzZVThtunQ3dLA8nD3mQ7G3U2y-hwG6oA6qwmex6oksaS1Fe7vRujYcOJMAufbiJ_DZld2BSgzcp86x8oGLLVnPPSXYy7znduKmCEX93d5bbectU0VzEn0zu2SDqEo5WQyUER5YQ6Y8Ge9APUt5COk9JNNTDMC-pBjG52UK9_kJIPzijc4HjtbeGjwQ6ASHvOb899Le4v7EVucbKA1tEf1P8mEmCdkffCmsTFFCEfhlHszRrv-AiR41r3iGaRl9d5zLh9TCGLxeW7WhYy64FZ36qvJ0R3v2lInEsIywtBQU8eQhNuqWGzkxVMy0QOOSprSbcXQRWIz-mDC5uo5hyga6xf4xWisHcyNnk7_GqqV2of9teBcEnN45sIN0ankRQhCRNN9NffeWGr5Ti31hOHiJ105N_vo2qeu_eRpCQR3RDff6arv5Myzsdbi8DESNLcuciHo7gq0tQvTWznE_ycLYLjx-5jKTEOCiCD7gdui5SaPSskKyeoTiNXgMosxbcxKkjbfjvnr8gDTvS6jrIf8dA4t0pYygMIJDveS-_nGku-PcKGGlCzvpMS-MnYDMkt-XYKIUBUEaAO_xK6DsOaAmRc812-fjRTYP8gCSz4zDLsG11nyw259KFJ7Wt5q_q0nE-MMu9fdDHHCn1C0fihdIT-4zdCBj-QCc6NrjnwsEAyjTXm7MbDzJgubpMqX_uCS49wDA_RBmI81EAGHYittY9onH0Z9-mKSwtRVLvPuqa3pDf3MKqanVAljwZQl4Q6yZgARtlt0-2ti4k3gx8FXeXmadT4zi6wYfMRRX3bq8M2P2IGVfy9rcqbXHUca5xCNzTnY_0Js0PyyzDGH6QjyZt8QjY7CL87UdkdI6R77Y2w6PozJ1iBK0AH-fY-GmzS-pB0U3MlnADhywZjECOHpd2KDX0wMFeZ-aZWPnEHdLQfaNxcUDY0JgQim74LQ1nQI10vrgfqocxyVpqzVjIxNbHP5KkdgG85J8FLmF_8pj0u88bfmldP-fG_PDzLf1yJU0AQFVnBwp-uBsje4xA_ykF6Kbbtas7ybx6bwKMaRO2ofvZATLp5Qh6ehDpPRCtvwOPC4uzY3cINbIndbAUzPQ==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_071fcd1ad110a448006aa70b23aaec87d28c2a6d667aeb1045\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"Wilhelm \\u2014 short, focused session today to build consistency and confidence with the bow.\\n\\nPlan (60 minutes)\\n- Safety & equipment check (5 min): inspect bow, arrows, string, rest; set a safe target\\u2014never an apple on a person.\\n- Warm-up (10 min): light shoulder/rotator cuff mobility, 20 low-tension draws to groove form.\\n- Fundamentals drill (20 min): 3 sets of 10 shots at 10 m concentrating on stance, relaxed grip, identical anchor point, steady bow arm, smooth release, and full follow-through. After each set, note one thing to correct.\\n- Grouping drill (15 min): aim for tight group \\u2014 5 arrows trying to land within a 10 cm circle; repeat 4 times. If groups scatter, slow down the shot process and breathe.\\n- Cool-down & reflection (10 min): jot what improved, what to fix next session; 5 minutes visualization of a perfect shot.\\n\\nSpecific cue to use: \\\"Stance \\u2014 anchor \\u2014 breath \\u2014 release \\u2014 hold.\\\" Breathe out gently on release.\\n\\nToday's measurable goal: consistent anchor and a 5-arrow group inside 10 cm at 10 m.\\n\\nMotivating claim: Do this today and your consistency will leap forward \\u2014 keep at it and that apple will tremble, Wilhelm Tell.\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 156,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 763,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 448\n    },\n    \"total_tokens\": 919\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

@@ -17,7 +17,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $platform = Factory::createPlatform(
     env('AZURE_OPENAI_BASEURL'),
     env('AZURE_OPENAI_WHISPER_DEPLOYMENT'),
-    env('AZURE_OPENAI_WHISPER_API_VERSION'),
+    '2024-06-01',
     env('AZURE_OPENAI_KEY'),
     http_client(),
 );
@@ -27,4 +27,7 @@ $result = $platform->invoke('whisper-1', $file);
 
 echo $result->asText().\PHP_EOL.\PHP_EOL;
 
-echo 'Duration: '.$result->getMetadata()->get('usage')['seconds'].' seconds'.\PHP_EOL;
+$usage = $result->getMetadata()->get('usage');
+if (null !== $usage) {
+    echo 'Duration: '.$usage['seconds'].' seconds'.\PHP_EOL;
+}

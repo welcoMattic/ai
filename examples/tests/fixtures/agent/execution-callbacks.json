@@ -1,0 +1,152 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "c0ea823b4816ef6a8eb7426abe46279a",
+                "signature_v2": "a119a6d80416397dfacf487eb8f941cc",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What date and time is it? Answer in one sentence.\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_07f8a26b1c67a5ba006aa70a8f684487d2b447789a3c211526\",\n  \"object\": \"response\",\n  \"created_at\": 1789332111,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789332113,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_07f8a26b1c67a5ba006aa70a90114487d2b1f0ed58f82cacba\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwqRx-0m3nhfkbp6Cavy39oCgEFg923G3bPZlHB7KzZ9fDkLQGr0VNN-p51bSD9f7XdmhnQey1riRQOTT3mWwFv6fHKxzqbpTNTy4t2GIlEphr1OfulXOHP1M3q_wVZW4lJX7XTIfJJ7_rENDuZye4abiOKSJ--PANrmea9FFC2hQA_vmgKB7LFWSXBfiYFizlHNjD0-ste1x1fTXqDpREjKsH-oD9HVq_On-7yAqRgm0JnFCMsf2fkzyXcvTOpqjyIAI6n9ZNpWnvTPxClB3wF-DOpDIGeYAlnilOZP8Bi9cXtHKEhhlWB4aqyokq_lljfY_r5LkWK6imb61CcVh3sHSDPtxm-v0fLPH_OlwiRWcxu14YFmQnYgbRDHMX_EiNt7YBsmieoQ6fhcgdR5Em15wO7RRwLuQyQqRrZVccc4JvyWzMsllXfoaSSG-OA3NSgXfEIlHU26XScbJtMBikSkg0qoDYeSSwnM_kgzO4vlQaLax-xiPlZtlR0D5V5QT2XNQwg2scTK-4aPl1wLTBgN2rdr5YgdHInJ9za-2k1RePfIydKDRv1v_5meUe9XUoV-UcSywZVQnlWXSFkIi3WqbzxDXZ0Hv9o4BK7q43hj13DEM1hWbkyOjOiO4zz0REHMaq3xHPiCrXgRahrC9Pe9dmdnjaQAd4SjzJUlxHkBk2VGwPLlgFyHqVyG-B0eRV82FY3yeYt2aOne4tluxl4G4RDNGv-HmzJ8jc9Lb87U_p2632l_p1LRnlqlnix1QR1Q5OKB24jIggJi4GpVHeAd1ss7Ne7Qu0Gpb9QZ7kuySHJSbgWQOs5wB_oGNagIjFjwChWDx4_yY_qvFngwzLf6bUnoZOK2NTzBlL-_YDJwcBa0sTrtpaSwYu54NMV3whDzrgq94G7YufzLbgA-63qBCD-RCH27w_2wzqy8nekB3H8r4rnOYlnKE3ZtmdGSHk3oTnC-6Clu8PXQkGOJXqAzMT-VYw-kkPn5AmI-DQzd_ogop5haH4_q38P7Nut-5egV1MHLTqyWn0mKtEnitXkIt50gHWHwLU0NzdSz8J_5nWikvHRWAtywPIPmJrYilsJYoHJ8uJ4fEmTsQs8mvl8khsFPkfEHahBssjuO-Jc03tAEefdRUnvMzEspvzviRUpOFUjR0eRJTsZfzSvqDhptm38Zy5Nn9oAL_J8_fA8PV1IVZSe6x4wytOCFMgLuqEynSY6Dvf36t_sjKZVac79fJ3nWk3n6uYBw8ynmEHm_Oe52uad8UavHrBJ1_of1Q0aR9IPWi5p9exHog6AvBpCXIcOEHb_-u4gByuMW9Ta8hCCKOkNejR-Qtp-Frou9yPLiWVD1d-zWWnDmVNcsVksLDJbKC_46q1XXtjE2PCSZLdHJ3SL2_uFBAOE4IakgYixPIt80EG3tUp5COCPjHuLnN7gNGaB39fu8clhSf9QnuczKNkAezq7Zv-hILyW4NYG6KwdSII6WG5B8vAvt6x9zLREtWsxRUyBPyE6dyed1rtI_Z0Y624q0nxmQzIk7JBbw-aVggznuVknF9eWWB3Ww-TFBCz-PdG4MaPVIAykOMkLziN-laNo4Ry9g5fIayJ3Y-6aO0r8skCfFkv0OgLIQ6zEP3Fz4bwQM_NZpuGWgeaW95TwjhdcaiUcgs4WuOVJ-Jhl7yrBwX4fh_SGyEJLwQspP_XVWQ7Jeway0phPaT5-U-14lFcbD7jHmbwatUPuVkXs5JxQMj-nUCXQNfadyZ7EZeFzBjq0gCCQREy8LB-K8gutN1qOcDGsthvFtvWpI7QID9BOfUT7X3fs9-4Z7EcnKlBAtHk6sR0Qh_T3tN7WonlEtg_JKaz-7ECWev1_zV7HgymvaZLMQDu3_DiQj0JD_SYTeynTMTrigY5OPrkV4PE-y-6R_1rRK6fOgOOnenWSpKl7Jqaf792KjRhUutmM5gIXUt6ZpjzCS8rOKiiBp6sXFiPkBI1VYJtt3oK5OYH5HGaTAHLW1QNsxUehrVrckUc4QDZBn7LTiKMv6so2EOFXnCTOf3mmDmcqNZ1AJvUmTQR2-7mxM4-YAHCuM4QlhFSMVUgo_f7m7BXLqlkJfNY9v471zTgSHFx8dSki23Uya-3hwfaohCH-fJJtmQg==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"fc_07f8a26b1c67a5ba006aa70a91650887d2b564f8cb73f389c2\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{}\",\n      \"call_id\": \"call_vxOkxHsr87M5fBUPwBPo9nVW\",\n      \"name\": \"clock\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Provides the current date and time.\",\n      \"name\": \"clock\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"additionalProperties\": false,\n        \"type\": \"object\",\n        \"properties\": {},\n        \"required\": []\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 48,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 149,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 128\n    },\n    \"total_tokens\": 197\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "b1edbf84ef84c7c5c3b4c1f7fd4d3a9c",
+                "signature_v2": "02e4ba774ab3ac1794bb4855b01bf97e",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What date and time is it? Answer in one sentence.\"},{\"id\":\"rs_07f8a26b1c67a5ba006aa70a90114487d2b1f0ed58f82cacba\",\"type\":\"reasoning\",\"content\":[],\"encrypted_content\":\"gAAAAABqpwqRx-0m3nhfkbp6Cavy39oCgEFg923G3bPZlHB7KzZ9fDkLQGr0VNN-p51bSD9f7XdmhnQey1riRQOTT3mWwFv6fHKxzqbpTNTy4t2GIlEphr1OfulXOHP1M3q_wVZW4lJX7XTIfJJ7_rENDuZye4abiOKSJ--PANrmea9FFC2hQA_vmgKB7LFWSXBfiYFizlHNjD0-ste1x1fTXqDpREjKsH-oD9HVq_On-7yAqRgm0JnFCMsf2fkzyXcvTOpqjyIAI6n9ZNpWnvTPxClB3wF-DOpDIGeYAlnilOZP8Bi9cXtHKEhhlWB4aqyokq_lljfY_r5LkWK6imb61CcVh3sHSDPtxm-v0fLPH_OlwiRWcxu14YFmQnYgbRDHMX_EiNt7YBsmieoQ6fhcgdR5Em15wO7RRwLuQyQqRrZVccc4JvyWzMsllXfoaSSG-OA3NSgXfEIlHU26XScbJtMBikSkg0qoDYeSSwnM_kgzO4vlQaLax-xiPlZtlR0D5V5QT2XNQwg2scTK-4aPl1wLTBgN2rdr5YgdHInJ9za-2k1RePfIydKDRv1v_5meUe9XUoV-UcSywZVQnlWXSFkIi3WqbzxDXZ0Hv9o4BK7q43hj13DEM1hWbkyOjOiO4zz0REHMaq3xHPiCrXgRahrC9Pe9dmdnjaQAd4SjzJUlxHkBk2VGwPLlgFyHqVyG-B0eRV82FY3yeYt2aOne4tluxl4G4RDNGv-HmzJ8jc9Lb87U_p2632l_p1LRnlqlnix1QR1Q5OKB24jIggJi4GpVHeAd1ss7Ne7Qu0Gpb9QZ7kuySHJSbgWQOs5wB_oGNagIjFjwChWDx4_yY_qvFngwzLf6bUnoZOK2NTzBlL-_YDJwcBa0sTrtpaSwYu54NMV3whDzrgq94G7YufzLbgA-63qBCD-RCH27w_2wzqy8nekB3H8r4rnOYlnKE3ZtmdGSHk3oTnC-6Clu8PXQkGOJXqAzMT-VYw-kkPn5AmI-DQzd_ogop5haH4_q38P7Nut-5egV1MHLTqyWn0mKtEnitXkIt50gHWHwLU0NzdSz8J_5nWikvHRWAtywPIPmJrYilsJYoHJ8uJ4fEmTsQs8mvl8khsFPkfEHahBssjuO-Jc03tAEefdRUnvMzEspvzviRUpOFUjR0eRJTsZfzSvqDhptm38Zy5Nn9oAL_J8_fA8PV1IVZSe6x4wytOCFMgLuqEynSY6Dvf36t_sjKZVac79fJ3nWk3n6uYBw8ynmEHm_Oe52uad8UavHrBJ1_of1Q0aR9IPWi5p9exHog6AvBpCXIcOEHb_-u4gByuMW9Ta8hCCKOkNejR-Qtp-Frou9yPLiWVD1d-zWWnDmVNcsVksLDJbKC_46q1XXtjE2PCSZLdHJ3SL2_uFBAOE4IakgYixPIt80EG3tUp5COCPjHuLnN7gNGaB39fu8clhSf9QnuczKNkAezq7Zv-hILyW4NYG6KwdSII6WG5B8vAvt6x9zLREtWsxRUyBPyE6dyed1rtI_Z0Y624q0nxmQzIk7JBbw-aVggznuVknF9eWWB3Ww-TFBCz-PdG4MaPVIAykOMkLziN-laNo4Ry9g5fIayJ3Y-6aO0r8skCfFkv0OgLIQ6zEP3Fz4bwQM_NZpuGWgeaW95TwjhdcaiUcgs4WuOVJ-Jhl7yrBwX4fh_SGyEJLwQspP_XVWQ7Jeway0phPaT5-U-14lFcbD7jHmbwatUPuVkXs5JxQMj-nUCXQNfadyZ7EZeFzBjq0gCCQREy8LB-K8gutN1qOcDGsthvFtvWpI7QID9BOfUT7X3fs9-4Z7EcnKlBAtHk6sR0Qh_T3tN7WonlEtg_JKaz-7ECWev1_zV7HgymvaZLMQDu3_DiQj0JD_SYTeynTMTrigY5OPrkV4PE-y-6R_1rRK6fOgOOnenWSpKl7Jqaf792KjRhUutmM5gIXUt6ZpjzCS8rOKiiBp6sXFiPkBI1VYJtt3oK5OYH5HGaTAHLW1QNsxUehrVrckUc4QDZBn7LTiKMv6so2EOFXnCTOf3mmDmcqNZ1AJvUmTQR2-7mxM4-YAHCuM4QlhFSMVUgo_f7m7BXLqlkJfNY9v471zTgSHFx8dSki23Uya-3hwfaohCH-fJJtmQg==\",\"summary\":[]},{\"arguments\":\"{}\",\"call_id\":\"call_vxOkxHsr87M5fBUPwBPo9nVW\",\"name\":\"clock\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_vxOkxHsr87M5fBUPwBPo9nVW\",\"output\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 20:41:53 (HH:MM:SS).\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_07f8a26b1c67a5ba006aa70a91e93487d297609fcdf98510f9\",\n  \"object\": \"response\",\n  \"created_at\": 1789332113,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789332114,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"msg_07f8a26b1c67a5ba006aa70a92437c87d28e2f152c54b02c8d\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"The current date and time is 2026-09-13 20:41:53.\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Provides the current date and time.\",\n      \"name\": \"clock\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"additionalProperties\": false,\n        \"type\": \"object\",\n        \"properties\": {},\n        \"required\": []\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 236,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 24,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 260\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://openrouter.ai/api/v1/chat/completions",
+                "signature": "3057cac53b237beddb125081fce8dd5f",
+                "signature_v2": "f523d16c57885db8b84c89b1760985f9",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"system\",\"content\":\"You are a helpful assistant.\"},{\"role\":\"user\",\"content\":\"Tina has one brother and one sister. How many sisters do Tina\\u0027s siblings have?\"}],\"model\":\"google\\/gemini-2.5-flash-lite\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-generation-id": [
+                        "gen-1789329453-H88ND3BU8IbnhU43FuXc"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Generation-Id,X-Provider-Name,request-id,cf-ray"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "permissions-policy": [
+                        "payment=(self \"https://checkout.stripe.com\" \"https://connect-js.stripe.com\" \"https://js.stripe.com\" \"https://*.js.stripe.com\" \"https://hooks.stripe.com\")"
+                    ],
+                    "referrer-policy": [
+                        "no-referrer, strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ]
+                },
+                "body_format": "json",
+                "body": "\n         \n{\"id\":\"gen-1789329453-H88ND3BU8IbnhU43FuXc\",\"object\":\"chat.completion\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"system_fingerprint\":null,\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"STOP\",\"message\":{\"role\":\"assistant\",\"content\":\"Here's how to solve this:\\n\\n* **Tina has one sister.** This means there are two girls in total: Tina and her sister.\\n* **Tina's siblings are her brother and her sister.**\\n* **Tina's sister has one sister (Tina).**\\n\\nTherefore, Tina's siblings have **one** sister.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":24,\"completion_tokens\":71,\"total_tokens\":95,\"cost\":0.0000308,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.0000308,\"upstream_inference_prompt_cost\":0.0000024,\"upstream_inference_completions_cost\":0.0000284},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+            }
+        }
+    ]
+}

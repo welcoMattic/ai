@@ -1,0 +1,92 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-3-medium-diffusers",
+                "signature": "4df315606259ef1bf087255bc2377e93",
+                "signature_v2": "598b87a8741e782d7782dcfcacc49336",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"inputs\":\"Astronaut riding a horse\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "image/jpeg"
+                    ],
+                    "content-length": [
+                        "120776"
+                    ],
+                    "x-proxied-replica": [
+                        "0u4iz9mk-cb63zm7n2"
+                    ],
+                    "x-powered-by": [
+                        "huggingface-moon"
+                    ],
+                    "cross-origin-opener-policy": [
+                        "same-origin"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers, origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-inference-provider": [
+                        "hf-inference"
+                    ],
+                    "x-inference-id": [
+                        "d26da009-366c-4c93-9909-f48a923df045"
+                    ],
+                    "x-proxied-host": [
+                        "http://10.109.79.171"
+                    ],
+                    "x-proxied-path": [
+                        "/"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 b3f288e164adbaabe632e02a62ed3088.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "2X12PsdOftdRe_tWGl5mcbpNqwFafbfFBZN6uBZDlcOaN_RNOHqjPw=="
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ]
+                },
+                "body_format": "binary",
+                "body": null,
+                "body_size": 120776
+            }
+        }
+    ]
+}

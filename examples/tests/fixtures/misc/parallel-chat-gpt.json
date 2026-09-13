@@ -1,0 +1,300 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "a3c00f41707c157a9576630302d88e20",
+                "signature_v2": "ef98dcae2401604befc4549803a1e94f",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"A\"}],\"instructions\":\"You will be given a letter and you answer with only the next letter of the alphabet.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0b15a4c66107ef4f006aa6ffc6dfc487d2865bb56046b40fed\",\n  \"object\": \"response\",\n  \"created_at\": 1789329350,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329352,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You will be given a letter and you answer with only the next letter of the alphabet.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0b15a4c66107ef4f006aa6ffc73a9c87d2b6c520f906f61f9c\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv_IP5YP6cMqR8NXul_zGSbsFSZeluKecL7v9f1pW2LM6Qa23wTxoUN-2t8bQ5xlb3TSpME5oTcFmZsba07EmL3d6AwXWzeypexQ-dARl_P9WS2NB4ZYg8GlY05VfZ2z5tfxoHZIczKguiqHn8G_VqHnEjupL7twVAaRoRevYMYm5Qc1r8YSnGjme5j9eciDVgZc5OZ8e1a4k_CIAiSUbr1SOJm4p1EjYGBA59axyTeLY8Czszk8gMGnLhUxW4eDdndS-LdAlPO7MJQ4IOzPoBtHYubcpxaM5GqvkGhheazOJCRDRqCtl4EJd457eqBAZbL7tNeKnpYx5CzK8n-WUaPV8AaycU7UqTUYanJY6p7fPIw8aHh6DU2OGrmHcNRQ4tEIUDfzdz5KErjzxuRfd7FK5YycTqVnRu9P3IEsbVjUli7bt2MdNi_PKiAxo1Gp3mY2RyqDYtvP4hX2cx1iUWyXbtkCQd2iu6GCDx57CF8kf_cjTjZw9tIrEssw9g7xvtHVUI26k7aOuCi22t0pwToonYWvzV59BXUWLWD9V6UEvC4igJkku6LjgI8KJdDZ3ZJjTwsiW8fNhGLAnhli6xsxOyjt7LHhORmu94PiYoaw4jXDzrtFgIvG6LEzftgr9NiOjtYsZWqPG5J1mgTk60hj0Hbsfi3loJioJCG9-PIqbrqaR090SfK9U4_O-oORejTQtV5Yh_tI5znOiGu4BVGLfxEIqknGf08--Q-ub9pSlAbXEZfkN0ObfxIR_H9BXRbyKnPvD-9rt82kaS6Sg3TP__HRjV8-lJJ6AOmEmtEvuMQp_9MMklvM8ClLcaIcKYzwoQGNQmnPM-7Z7jWY4apdIfaxjnq1IdbBigZ5ypIU7I3TMDWhvSyeK2SwXP1lI81Z2bAHcW9dNlu8eBB916g_2DzGMkyT3xVexzbfpLHMMB6XHCp3HHi1es1yRs4dA6oN1Tj42T9c_MdMX5xxiUzAvfHrw_gyzgJfbGKHY-fTntaUZm4CcUU0H-4M184qzIRzAu2tuq_ZuVQJ4wtKeLMdpF6hMoHvKHyb-OdRsTdMfKs26As5y6y7gtlTA_5QT2GNxmbQBkdLTn0cpESc7VTA6D-LU1obmNuT8gLfwOFH0azQOu-wPBcJ599pYBLJEGwoAKdVZ5QMB939YQH3d4U8oFHdFFsK4js33JstlNCFu6tvzBHX30qzdwpu5EGmpZRBjVz0ScgZzHGWP80Qs7TjNI8GsF_OkVNd_JIC87uVBNm9vBMRpKahHcJRzWwEL00uUDfvSfNkLY-aO1V-E1DRMoCo_0Hd6VMggKFC3ihpm5urQ5RxcPmIXWIBN0Lq5H6AE6gKYvIiJOV86l2yLAU5nwxSAvrwRjVRXEp31mfN5OoKDnPDnwXjNm9MDbwn5Ars8aUjq6ds-NN-NXZ3FawKEEP01pTehL7V_9XCZkshCBSbuDZ7ONvOue7ggswI-aiU7CEDvyybl277xhTQ5Z63X5r_LpdiRqjAIba0ee5-WTKjKbF6YXkkcM9d1IcX6IaylsHjmOEC4YsMVskdLb8hF9vV6RmLpMmka6VfNr_vZZSwHY71qyQHWIBbUB8cZFhe1XxCRigpm0RtHFBpeCUKaohtj_QcGcW6J-Wh7jufdIWFMp2rY0Ya7nUWKBoxWglQ9QmhfddA85FOJ3ERJjh6ji6M0Vl9O5Q9dFRfrvNZpga5S8C5OeacfmpC4gRFe1mY17JCxxvBoT6tgwQ6p1i5_VjxttL7li6igHwRchru9XeQXupaHznB8eysc00AqzMDWoHE8EZ4QVCCrPiDRmcqPrDup6mybj8YzkvaqYUlohRNRHZ7yjklsLQkKl4dFnC96azYhHiy5Rvz9IbTDdXwnw==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0b15a4c66107ef4f006aa6ffc84bcc87d2810fcf848fd36282\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"B\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 29,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 122,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 64\n    },\n    \"total_tokens\": 151\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "6c89da04fb18daafa81e9b2c4fe74709",
+                "signature_v2": "9fa66545b936e0f30ae4bb8df3873202",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"B\"}],\"instructions\":\"You will be given a letter and you answer with only the next letter of the alphabet.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_08518ee704f3527d006aa6ffc8bdec87d285f7c390bb332436\",\n  \"object\": \"response\",\n  \"created_at\": 1789329352,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329353,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You will be given a letter and you answer with only the next letter of the alphabet.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_08518ee704f3527d006aa6ffc9102487d2af9e98cfba516119\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv_KMXB2vMbRhpdMG3shq7JbImLzf5TF7gFdaLByi24ExI08a817uFZ8LWUhlK6vSsqIjYuvr1kGs3uGyu0drugB5sL8H1kakLeTG0EKQi0XShPxJ5BCgN4O2IgprlTUaNoF2rHgOUgawixZtWu6c4qhIryYmpIBIKYhfD2aoSFqR_mPkm2chKvn2TAk2BnVmVdAYQPzeAuT4UGot5xQfki_cmIu8OV3TirmaKeLf-2NjSDPrzbInvppu-t7yenPnmEWfTIQt94pL4JaaAEnvo4Q5bvericlJmvTYqKZ5qmgtvjNup7b5dyBR4WRoVzXNRNDvaodVFNVjZlen1bjJRNovJ0zJqkRv8DDlUf5RystSL7TLm5cgMs-gcj18kGfSslcva9Jp_NEdSSseqJzKhyPkdTrUeJYRcHACSJsAEBuY0ChVDp_gjQOjyYq1su62OU19hbbhqyVKmFZ8s5CRV5D96LcGr_uiUQXfTtzOwL30M95mBSGLjkrPtZBdK7bwy9tkF1yzrZJFnR-hunKWqHbn58S65Jjgqup7jiJFORVx-4JUvILvmd-xL1yR6AQgnNC9t3aSUF6pvleGC-9EuGFWK_DKCyfzuM9HBo63rzLFUds_9Nl-RS2-5d8Q9G9gaNt9pIvD2gr3Mot0bQQEh0Hh7xU3fvDM8T-kMbEg2OXjpAqm3g5dGcBiFRURh5ne3T_CvHODEHdHb0xZQ68MvarI2yvsal7S24bDqYwilXeXaRfLRYNZ3EOoQKpsdFmAEsfSurAzAiQbVHzUoOILjp5k3QDP0s1pQwC-xHANrSehaoSlbh2hpQgCeZRXErwUzZ_D9CJFUnpTyT4UP6WDJ-5mALRaZtyfOW0RhdOsGXwyGQnLzzaAFYU6QGePZHg6LmcNEQLksXpmcyE1IbdUX2auKv_fl7zCWu6ntlgyH8oqTwwzJuCpLOczDccAVduE3CuhwTCDutkBdJ9JhMc7_it2zfOdskCsJPskGfiDrOBUBjPbmH0qU7QMDJvH45NgAVuYN9zUDe5UgewgySvoKj5ajc4bikFyTLSpZoDeDVjhqCCx4PJVGBAcSC52Kt4WSFKwK3GMiWDX_XXil_AzWJwdFhVzU8Y4Rqsxdhn8lZ0fRr69B3hQa0GKn6VM700Qxh_63b47Fz7Rcn_N2iMAZvhsQ5b4XE-Yh6FVQJI_WBR3W6B4KeHiq7Wu-HaSvZ7QVlXPaWi7_GciJDzZFGCQkefQDsywb0c19Tb4gZSGZneS_8MSMzqrDeGvhJry0RBFjPXRg0A0SnwO_zrqH0O0al7e-B_SQARfUTKByVTIus4FSR_2eSCjQ0j37tEkNB5_hln1wjCLqzMg7DtVLK2IgIaQR_hH2lk9YBegw846qGUvHtk5M0OW5FhhQ8jz-NEOIqdXP8cI8CqJpf77MfeYGmEz8VxMYs8eBxkWbm28WBi69Mh0sUw3i5FVQ37-e3K6-YI3WJ7SSf1T-eVrYvbuzgLTGY0RXKPG5QIJJ0uGtFHQSwCWGKJxiA0liQREKuK-ILbevfunQblpSsmXlSiLOJAQRRMydZhQAvGpHrlDTxoaxQYw0qEqK0gHWX2EJ6tev1DcblyvLOinTDseVZ2B-Z6IciqFVQ2wg32IxTNYi3TMlLtzoI_ra6YrZxOFp0ls-lJCHoY8x3vcVNI-iaa954uYYjwvRzQcl_xcmix0IoxzTFndlgI5GLykwIIw9w56hLRLKaRYFqZp98sX0kYaNsle7MUySVH_PbLsssxuEOFU2w=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_08518ee704f3527d006aa6ffc9d4cc87d28828d52064442251\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"C\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 29,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 105,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 64\n    },\n    \"total_tokens\": 134\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "846d44554c8f0ab7af53e17abcab0827",
+                "signature_v2": "2fce9f34f9161c90558737937bd9c9d4",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"C\"}],\"instructions\":\"You will be given a letter and you answer with only the next letter of the alphabet.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0ae1df01a672062e006aa6ffca401087d287fa1ec34f6aadac\",\n  \"object\": \"response\",\n  \"created_at\": 1789329354,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329355,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You will be given a letter and you answer with only the next letter of the alphabet.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0ae1df01a672062e006aa6ffca914487d299bbf68743ba1e44\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv_L6pZLTQKgJVLuWPXFTnYA_-Ncwjujqzp_1CtFe3wCs07XMgpW2vTgiQvX2bu20tfLABAdLCmK0af8CjXZl2o0B4zoTmRQ8omIvAOufmZgY5n8RUtdMeNhUbJTnFsB6mFKB1YQaha2qSKvyPp_EzlWlqT_AFw4j18q5hFHUjvuaOnvlPgkzeNQFVNeVJteOMQaF4rBva2VKURkkRaUmXYvItNB1ANNwwBzOpHai00hZgUZrhFrkK1OsZ3hr5Kw4RVfzRxUgxb3wHKVabN1ri-mscQVUAzsEXbWyJzblH38lsJIZHauWqxauffHO74LKJC5Cv46Pzfp3sSCTr_fTJy9TWJWVkyag4Cjv5Sdtc3VlHYbMqPw9HL1zVP66aBY_iNIeJXxbVwyvoIgyBaVjzeO4M1sEegQvMUZPEqGiBlnQ6xAteZ9i-S08AxXz6wwhYnkh7Zc_Y98R2wr_WcajW3lKwD9P1X2rgYXt2rwOms4LcpxC1bWZ5gWKtJweCL-1MAkaMkHW8Mz1ViBcz60JXiAvsHfb3zP8FpRpq6QyehuE48xQYcYU_PAdpWXrxxAiKY-ReQv-pVag40o_kMOm5RQ4gIzMgFF6W38TCuavrywXKeKB4Oz-uajDzPfu80VueLWkOjE1USWdRt1i1v1AxpsDzEWt1TiMbMcUT363Llg1bIE-BwGuY8ACLH_3sEp98zovgngFNo7qBZ0MywcMPkAT1Rv6iLQg565-GQzYiMD-G-oy0alYUPaDFtVxBVvDvO6AMazz6OeoGwZBZjvS6wR41o5bEoKTXPzLYKNKvY42LaxX52m9yscJVBcZaOESzk3ghXwutTrvIXg31aSxyMyunctv1svlmu1ucYEtQyzXRZr8DCI3doNFFrizXduI_jZ6OVKP4KLb8Uc_sER4Wp6he8778yClaBVxdER6SdtJWoyDikawm5T0qMklc199yrKX44LvQ5Ep5FJpNdrk3rqBKHUTBVnTcakEnxm-nel6Cka6xH7viDS1bgvNDn5m4caTbE5De9BV5yNu7ZTx1OwElOB2hK04m5gBL_pCrTs_FsnseULotfpEq6M_Z1YX0-Thn1VXUIB270HthpGuOYiH_uyYickF3VTMRpZ-hwnDh6ofF_8rTe2ILZp-6JKY4EgSqAMM3MxZu3H1-azxy0O_Hs3bDv6XEaxc_tnL3mpdgfq9_CtcFWj7fr752yFoLN79DwFiDJuS18-6WlPyTr2RVZctCCIpBBxyOpyjHNESlPkm90HsL2iDV8GK-42YWoVphdjDo3K7COPGdsfH77A-Pdi8hvkvOFAvslMo2zY3UURpagtu9t2dhLf5ceyDOcJb_y0LmxgEQxvKyfmNCWXG-zQ3z8qx1zAJ1cJ8Ts23sW8BuaiJyTi3dO8pkMudkjODA0fZAvJJYln6186H9DCO-9qN-U4YMFzLoeMG61FjjIbNtJKEpAqfLcma1Cla6qlI73ju52ooiPGiyvpXrN93duWTDcc7nzNTeij4yjltUEpqacilPBNBFuJzXm9K97Ph5eNq70Zf8n6n1wBplKQqUP2caQ2cZlOp5AgZwBMzJhoQcxkeiEnqJQlbj1yu5X2LSXl3OYFLlQFAixC4M3eB-72KqT2-Lbd7uMiq1zrxlvwef6GF6frmky2xOtbNEMZZVCzGbIWBcsBXCWWDcp4qjqKvTCSKyRioOr8tPF_1lfJbFfpNT83CNjAXOfAydUK\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0ae1df01a672062e006aa6ffcb5ff887d29454e8fa79f83700\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"D\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 29,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 98,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 64\n    },\n    \"total_tokens\": 127\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "ee2ae12f38722b01dfed314adff59908",
+                "signature_v2": "719430a54f8f2b7d437a1697fa5151de",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"D\"}],\"instructions\":\"You will be given a letter and you answer with only the next letter of the alphabet.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_08679ca33c86054f006aa6ffcbc4fc87d29e4ebe2be3989d17\",\n  \"object\": \"response\",\n  \"created_at\": 1789329355,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329356,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You will be given a letter and you answer with only the next letter of the alphabet.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_08679ca33c86054f006aa6ffcc0e2887d2aaed7a6b29cbd132\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv_NGBMcHHXjQ2t6_pV0kRTxZexXvqNExn_vua18m_hu7BxwRgf06qc-Hrwnykn4U99WN1hFJJxD5UG2ZNjtCsVaKM-vKb8OPbkmtj_dJFm5PIGdFUM9JzE-ncVcOotX3tm2CcsqiKH1EV_OaRJsmgtONyRMbS97xZrQnDhUeIiI1WHUy6MLaCc6OXeZe0UbPRpBkLNAOZA1dN4xNhitipdBaJHlj7jyvNgrCJRtwGHP_HL4hwVWNV3zwdXpKZzR6Nn__m_uBzh-9nwFPwZejaCyLQGfmbqb6ADddK3vV4Nug6CQooiVClZeGTMEMC3jIIy0dBo2sVgnKAxpBu7JQ7SK5a2fl9yfzYNLxT5WwovbgIU7RPV_t3JNKmW0JFJUhdIv9nHzT_5CtEdcfxBZi6xkemGL0Jbsn9VTdaHwQU9ukatS6td-f4-uNNpcT-e0aueDUu0TW03sms3qcaTnq1SMeKDKJrbZ1MdgSQQJAFkJJepQu9ZJZbTo7kWUPn-WpBRHc_9OZHY2_zv_M3u14IOGluWOuCAYf5mXJ5VA2zw-OZ2W7TsE6PKqdSNoKBqNDhGxEgpsaLXQreGuJbIP-KG94zHFliexjxzXIxYkMSve2A4IjYc8ygkMffID2ncUCvwuKNoUrTl47mOu2V4dL1HtErZ0nkMBnopRLijLQaB0LDnGh9t-qNEyyY8lHsNiv7Z7cyW2NFKyPU--kUFJTuU7fYWJIyLgaYBghYlDOQZVG9cJuDleiEvDmOlYzMf75wySHLrSMwu8dpq5Rs67rTSJbJkQl2ikr1glbPpLN62rbyKwWs-EGFirng4nhr63eNrD_j6zUVexC7VwwQa-FWMU0M8zYz1J7u6QIZ46-k9yFx_p_0bPj5i-VPmLjKSQ15CWH1zZL_DMU2ZzQgTq1R6tk6x-OebPI2EFhZh05P2gDxM353SQIxmmbirXNmClClUxbi4xmoyNL8gXVqpWdGXKtDcaHBNdfkXJQC2fE5hgOPM6BEmlPRDX-KRjzfmz3YrxHMplDt7wLOJIon63F81KCmludIe-hhyj9Xk7roX29er_37e54UKHfcEOUvJXJ-3bUn0WNUhNFXuTIdZjhyA80J4B1y_0b6vJgJ6PfwSU0d1-J1X5tVp_V6G_MZZiHs-6AILboCZ3pl7tbF3xj1eRwBk_Fv7FQthY5qOfFBtHg5Jct21mSOzroUJEQYW5f72AoubvV6yNtRVG62kLpyU2MFiRePdhqA9GrpekAtYGHDwAxeYKesaOcX_0DbbdD7tWbnP9wCh5o2397C4UMAo7409i8s8872hV1cKwj1VCabRv_M3J0vRYMKurXUo72BDLXJ-jUnDWhEixwL-tiQ7HhMVR8iTO9ZauNPsDWJmaMOJqv_sZQO65OOCZWi_5p5fQimi4pizzIy0ARhVHRBTSz5grBsC-R66jMZsG3wBkmnI5uLjqriq9Ch-9VbIW2MsucbZAh-pQksdvx_EwfiUmhYo8uK2pnr6kM74brCfYSb4E9Yt2HCnm18-Es2B-hmUQYpj4DGdv89wwNJA6f_ai8r6H3JSxztpHfEIgKi_gdZ0NSWegRoCihKLkY4knFziKv-dgkzJT_TIXv3GdwrZAJPKmID-KXEonQnFAN5lyVLgmtOPYKVJ0v8pEKS1PnFZR5mOR0Va07AcOpIjEN46tG5jLZY5BoefC_5FQw7NsV3hkBNCMdbWN2J7we-yzY3lMamzAmnR_6kqt1SenJHAiIxUg_39XBl6U3ajqqozDtz3i2qufxy0MJ3wu0LNLEOHNm85RH7aUET9BH3HDqBPmdOJR7Mm--_q8zCULHooANGA=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_08679ca33c86054f006aa6ffcce5f887d28e1a3b6a663e91a0\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"E\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 29,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 115,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 64\n    },\n    \"total_tokens\": 144\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

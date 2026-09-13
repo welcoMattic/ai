@@ -1,0 +1,226 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "ddaba7cde37b707b840e62a47f152d37",
+                "signature_v2": "27b2375b9426f457ba7f70759bcfa546",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"get_order\",\"description\":\"Get the status of an order by its reference and shipping destination\",\"parameters\":{\"type\":\"object\",\"properties\":{\"reference\":{\"type\":\"string\",\"description\":\"Order reference, e.g. \\u0022ORD-2026-0042\\u0022\",\"pattern\":\"^ORD-\\\\d{4}-\\\\d{4}$\"},\"destination\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"maxLength\":255},\"countryCode\":{\"type\":\"string\",\"pattern\":\"[A-Z]{2}\"}},\"required\":[\"city\",\"countryCode\"],\"additionalProperties\":false}},\"required\":[\"reference\",\"destination\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Look up the order with reference \\u0022ORD-2026-0042\\u0022, shipping to Berlin, DE.\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_04e8cdce44ebc2ac006aa7006ad29c87d293a75d1f37f540de\",\n  \"object\": \"response\",\n  \"created_at\": 1789329514,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329516,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_04e8cdce44ebc2ac006aa7006b1dec87d2b1350e313cd5c4a9\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwBsNEFKole0CwKUm6_bNQ3xy_45IV4yWiXMbfNWsjyRqbDU8lv-8nnyhmjr6ybybGghOFgNhMul-DGiMvKJO1KxSAPECSJBn-8QGyRfRu69sjPT3eprFuqjeyOSURP4Xj4rIIzEZ7WCvES8lxvOPnLSScINOCb5L0a02GcIyjmArrfOJaGaF3y_YPPuqo9j4nPExy0C5bY15TMrOTWZu0damAo_0RejhMQx4mMTw47yrx5kvVJFb7PQfFl5MAMnBRbl4VD8NuyrVF27wCZr1mw5oPkIbBb4Bcq6POX5YUZCc8QUw6haq8a0mNlyvlF7x99IsMp7-O6xLS0oNJimjW8FDDDP0uXhbl09UgN0n9UhbzR5j_VYn3TtSzJ0OXcn2mIJ3tcv1BNEyWQ9SySuNosxv4nCkD2fuIa_ONPqHOSuuTqgdoDBuImwgD83CuJzXdiCDtqxAz_iQO1VtV5j9Z3s5-Cfiy5rqxRnt-Y5oXdEgiT-j_re7QJ0gXqxHHjjv3cn0bB4ph9hwWQLNV_mYRpSJsfrhspDv_BKNMV8VaDPVqQog_BnmUDNZttegJ0olTiFls2x7WEFk9DpBcB_gg3eRKP0fkgtX213CVXHKzarF6ZNxe9UbqeSVzNzaCPFvNwADlCcWCvJWTu9d0cVOSdCqs7w-VZD01U8x6b5o81HX055Lsn6FE3uhgOZHGlbt0RmPAaoeQxgSX9ty0RGhQ-cW5bEjduUrQLNJUs57GTOklQhZrtyib4z6FhkZXleR5Rz6f-SoJ3S3JZzU6DzWUouEZgfxjhYvd7cILCMxtNX8jkCKXAI4hPBvKtv52ROWqaYO0rA7-mjtk6YzgsBjPkR_USyYverph6Z89GIBwEeSUQ0N8uWLEvsDKsXTDCh4qlRY0OPVTkf_Qy525VjC_SqqClVx2sZhaec0fAVP5evqXtGmwd2MJpZSR9_zm9ouOZl5Sv_P_GCKZH9UZX8AvUvr7-B0afiGF8m9F_i8eHGlo8uCQQ0ySYpuJykZhrVKtE_LY5YfwGkoVsCDqQQu-iqQFFYv0vdJ67lIKpcUFtmtiBp7rKT3HUnkZds5LdZ3wC7olmr9W1YwZ98Zq3QtgeVJbNWbUV2Bvza0Ybi0JAeBKY4RRXIk9k-utkEXabpxJrugfAmLvEsrpB9OV2j1Myb2O0H9WDKB5IV6286JBB4rDESaAjNt04OGueJBryJsrDl_wC_0-VaoG0IqQi_Vnty2vM6J8avidHJtXHH5hO0xfx7P9DUxXp23DyHCAd7G61WZ3JNhYkYy6l4cDXr6o-t7gZGWqt1ZIXtwQzcqFyovqb7FOLoEckh8xe447uGqgtuwOpYgbR_hcmdYf3V7LhxfzGAy5MgcSYvpIyR0u-t_jrhM0eTLunYrlKzqUGkpJVTcmYixumcct3tRUVELirMz_sQI_vTIuBONG8hF2GEG0VYCBH_w3gnUSXNH3CFNFXAX82odMJkeuy-IyrKsJo00Yfc5zT3PvUfiS5XNDWWy-MgklhD4Z7yc8L3J5WG5hK5t6HnDsHU0TyWjrzs_S_eKsFFnFJDAsLn5nrvBLF6RmfpVL6rRqjLrzP5_vM9HLCg\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"fc_04e8cdce44ebc2ac006aa7006be15487d2a7b00fa19647aa2b\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{\\\"reference\\\":\\\"ORD-2026-0042\\\",\\\"destination\\\":{\\\"city\\\":\\\"Berlin\\\",\\\"countryCode\\\":\\\"DE\\\"}}\",\n      \"call_id\": \"call_vwxpEcrPit6xPnimJhMI5683\",\n      \"name\": \"get_order\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Get the status of an order by its reference and shipping destination\",\n      \"name\": \"get_order\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"reference\": {\n            \"type\": \"string\",\n            \"description\": \"Order reference, e.g. \\\"ORD-2026-0042\\\"\",\n            \"pattern\": \"^ORD-\\\\d{4}-\\\\d{4}$\"\n          },\n          \"destination\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"city\": {\n                \"type\": \"string\",\n                \"maxLength\": 255\n              },\n              \"countryCode\": {\n                \"type\": \"string\",\n                \"pattern\": \"[A-Z]{2}\"\n              }\n            },\n            \"required\": [\n              \"city\",\n              \"countryCode\"\n            ],\n            \"additionalProperties\": false\n          }\n        },\n        \"required\": [\n          \"reference\",\n          \"destination\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 133,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 107,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 64\n    },\n    \"total_tokens\": 240\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "72cb01bbcfb117df0d0f85289edd8a5a",
+                "signature_v2": "91f263e46b911e00839aeee01148cf96",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"get_order\",\"description\":\"Get the status of an order by its reference and shipping destination\",\"parameters\":{\"type\":\"object\",\"properties\":{\"reference\":{\"type\":\"string\",\"description\":\"Order reference, e.g. \\u0022ORD-2026-0042\\u0022\",\"pattern\":\"^ORD-\\\\d{4}-\\\\d{4}$\"},\"destination\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"maxLength\":255},\"countryCode\":{\"type\":\"string\",\"pattern\":\"[A-Z]{2}\"}},\"required\":[\"city\",\"countryCode\"],\"additionalProperties\":false}},\"required\":[\"reference\",\"destination\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Look up the order with reference \\u0022ORD-2026-0042\\u0022, shipping to Berlin, DE.\"},{\"id\":\"rs_04e8cdce44ebc2ac006aa7006b1dec87d2b1350e313cd5c4a9\",\"type\":\"reasoning\",\"content\":[],\"encrypted_content\":\"gAAAAABqpwBsNEFKole0CwKUm6_bNQ3xy_45IV4yWiXMbfNWsjyRqbDU8lv-8nnyhmjr6ybybGghOFgNhMul-DGiMvKJO1KxSAPECSJBn-8QGyRfRu69sjPT3eprFuqjeyOSURP4Xj4rIIzEZ7WCvES8lxvOPnLSScINOCb5L0a02GcIyjmArrfOJaGaF3y_YPPuqo9j4nPExy0C5bY15TMrOTWZu0damAo_0RejhMQx4mMTw47yrx5kvVJFb7PQfFl5MAMnBRbl4VD8NuyrVF27wCZr1mw5oPkIbBb4Bcq6POX5YUZCc8QUw6haq8a0mNlyvlF7x99IsMp7-O6xLS0oNJimjW8FDDDP0uXhbl09UgN0n9UhbzR5j_VYn3TtSzJ0OXcn2mIJ3tcv1BNEyWQ9SySuNosxv4nCkD2fuIa_ONPqHOSuuTqgdoDBuImwgD83CuJzXdiCDtqxAz_iQO1VtV5j9Z3s5-Cfiy5rqxRnt-Y5oXdEgiT-j_re7QJ0gXqxHHjjv3cn0bB4ph9hwWQLNV_mYRpSJsfrhspDv_BKNMV8VaDPVqQog_BnmUDNZttegJ0olTiFls2x7WEFk9DpBcB_gg3eRKP0fkgtX213CVXHKzarF6ZNxe9UbqeSVzNzaCPFvNwADlCcWCvJWTu9d0cVOSdCqs7w-VZD01U8x6b5o81HX055Lsn6FE3uhgOZHGlbt0RmPAaoeQxgSX9ty0RGhQ-cW5bEjduUrQLNJUs57GTOklQhZrtyib4z6FhkZXleR5Rz6f-SoJ3S3JZzU6DzWUouEZgfxjhYvd7cILCMxtNX8jkCKXAI4hPBvKtv52ROWqaYO0rA7-mjtk6YzgsBjPkR_USyYverph6Z89GIBwEeSUQ0N8uWLEvsDKsXTDCh4qlRY0OPVTkf_Qy525VjC_SqqClVx2sZhaec0fAVP5evqXtGmwd2MJpZSR9_zm9ouOZl5Sv_P_GCKZH9UZX8AvUvr7-B0afiGF8m9F_i8eHGlo8uCQQ0ySYpuJykZhrVKtE_LY5YfwGkoVsCDqQQu-iqQFFYv0vdJ67lIKpcUFtmtiBp7rKT3HUnkZds5LdZ3wC7olmr9W1YwZ98Zq3QtgeVJbNWbUV2Bvza0Ybi0JAeBKY4RRXIk9k-utkEXabpxJrugfAmLvEsrpB9OV2j1Myb2O0H9WDKB5IV6286JBB4rDESaAjNt04OGueJBryJsrDl_wC_0-VaoG0IqQi_Vnty2vM6J8avidHJtXHH5hO0xfx7P9DUxXp23DyHCAd7G61WZ3JNhYkYy6l4cDXr6o-t7gZGWqt1ZIXtwQzcqFyovqb7FOLoEckh8xe447uGqgtuwOpYgbR_hcmdYf3V7LhxfzGAy5MgcSYvpIyR0u-t_jrhM0eTLunYrlKzqUGkpJVTcmYixumcct3tRUVELirMz_sQI_vTIuBONG8hF2GEG0VYCBH_w3gnUSXNH3CFNFXAX82odMJkeuy-IyrKsJo00Yfc5zT3PvUfiS5XNDWWy-MgklhD4Z7yc8L3J5WG5hK5t6HnDsHU0TyWjrzs_S_eKsFFnFJDAsLn5nrvBLF6RmfpVL6rRqjLrzP5_vM9HLCg\",\"summary\":[]},{\"arguments\":\"{\\u0022reference\\u0022:\\u0022ORD-2026-0042\\u0022,\\u0022destination\\u0022:{\\u0022city\\u0022:\\u0022Berlin\\u0022,\\u0022countryCode\\u0022:\\u0022DE\\u0022}}\",\"call_id\":\"call_vwxpEcrPit6xPnimJhMI5683\",\"name\":\"get_order\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_vwxpEcrPit6xPnimJhMI5683\",\"output\":\"Order \\u0022ORD-2026-0042\\u0022 is being shipped to Berlin, DE.\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_04e8cdce44ebc2ac006aa7006c8d8887d2bbdfc5e5fb84cad8\",\n  \"object\": \"response\",\n  \"created_at\": 1789329516,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329520,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_04e8cdce44ebc2ac006aa7006ce4e887d2be707b6ec444cacc\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwBw6cbAVo7BNoi6Wr7A3yDB1RK91mIM0nO0yjwdcem8puPa74aT7PElVsVkL_VsQlgbC8NcaEoZq-WAHRSrpHEHBfrOreurnXY5cBkNZOzgkcp8wKepnym19J7K7ptdJ4Yas2NR7i1tpyK1meJgLlTJo90fe2ut_WRI8qPCbvLglEdJjQIV6YluOKx4vS0qbAW1XbRXfT0_rTjSNpIs8s4lwo9atcvxoi1Xoq1IuFGxAkHrorfQVua2d7cgyel47c58m_TegXD0dAI352mHS4forBErawowKBnPUQo7tSy7Re4wwd-Bqhph9CmMkQ-OIsVzR8liS8fAh32NXBCGno3tmkJ9oSEriy7FcuRIDkBiNa9OmZGOaMIoD8hWZ0FKuDMsLfGaY-YOOuuVYgUudCX2v39LiBuVeZ1y9r3-E4Fx0RUf3-W5x67AX71XMNmVl4WKb-asSk7BwZEXiKskbgGz0tOmz_JPvDMAEs49hZurPl25dKF_OYnHoQFDwhgewo9JPFYjBA-yDPZy9f1_3Xlgm2Pz3BzAyRPztaBlmkp5DKSRmxds1R0W5L2qF9MVXUWxy2o7MaCA1fFKGHThHfT7ZW1FbuE7QtfKN8DzkktPYrpjimOppLFjyz5kgKTwNsWFNwtchDOxQC05y_qGJRsn_mSmF_1beP9BOm_hg4VSNtS5esESRlEhPej69ueO06O3Jj927LTduJ2H0Up-eeLp0pwibmMA-mP__vZr-FvaBsgNp-99L7gscs3fT_3kf3mkkhbZDCM__YSniz0cdwJM6jTSG2QzQm81Yd4feV2JPCFUvcXnbulNlQeyuxwEp-pqFXeVeqrChAhgHXaAL4jqpyWy5pGMMmhSlK5UvKzMqGVA1BlKyermnNfl7Pd4-DMyEJ4T2B9cALDkeAQWqnvP05FG_ckm5Iu1rN9Vug4mxu9DwDN4cfGt7Qn1w2fz_dWJ_5eLQNXW7tUAlZUqyQnZ6k2EU2vW2pjn-I1ofpna3UiLvGWe2f3TDNYvawuDCavkhCcCigd0hsARJRdjF9ttMtutbHHlikxVJ8mCPcjtKrxEWYxTB8Q7kkNQOKRs2ZACBWFp8b831TmmPLdFrX40PGDaCR8p91rkx8qTY6X60opsTXh-2hIyCVBLYw9V27rjvNKdjaTPM9bQQyt68FMe73fAp9hbSEAMQH-z8akTYi4RBafy5IuO8QQ10fzhv5Dz8KJOb-LcWYHbLSODGnyO7axtptXC24XjLAvniOcLaxOuhOMR2UtnThFGrdCtiHuTdhuJRUThYLB1OCUw-yAQpJVntiVeYeKTNs5fbubY2NSf-6oU6Ceh4cu69UWwlFHYp8DMG9w73hTu2gdalvjbIH0nom9BlISDgxrtfuXG20xdJxLWrHhkT4HEjX8RWbyVzJ3X7XloD17Ak8zGwWXqwd1cqyRm8uj_CN4PllevGm82GYoo8_Az3Cv8heb9IG1n8pEOzgtQgLiNYYSA_MrKaKNrwyAbhbFxatlTScRyVHCcjn91LdxSl4dIK9JsAU-24nIBvXhxUyWA_ApX7s5TbVMYgQOKhziMfJGEryX2EW2eYZ5QTtydh77nU3Cwhbvl8xj7rI7zVx3ftGr3Pz5WcU3ZwH2o7rBjuiGFy25u6egCwsmduqU6f0jNjZuYcCwcWRz0FsGpMq8hCDQHkKm77zU9P4EYx-AsPhpsFP8WGRoDIIaML-abPUbpgedbDp6wpGIIgxPogkL6QnTXE7DRedObcCHJNLDGHnRSDJJ7LvMPxNhDjgRsTbccnLtQejffQ-zvsCY8ckXVWKsLcv6yYdyAqGVl8kX8hI8dskass17B_qMN-UkcSC3MORfWTygPn2tCtFg3HKy7EZGByzf21AVpnwcDt8wwbZfAZUpPTE9pkZjbEmkhVcU4jRFIp3aOiOySVh6G9CGe7aKV0WpCKa6UaKjKmDHP85jc2dTinWkN_tR8ji1NEpraO4cGt8nnqFLc4QKx0VSzzQB2oUkN3FfBWTbfZGgDuGbk2bN2Nt0epNk0jLIU3Mo_MU_WwFEcP9aYt06yn6J8PRrLQZkkeEPatfwbYE9Kn_-tRUp9CKTSlxp6oTaemy42eZmT9OAbuVZEu7yXMwthdu6vQD0g_TI-0pMu9_agV_AsCtHXhsRu8ylieu5NtjEKOeeOqLSM2obAP1FNdjz7p--XZqzK3wDtHSLtQYz0Oz-fEWW4rv5Z01E0P4HzwykdjiZOonMNJS_ZyRtIwKIUrgjT9XUMTA7TI2ElNwtVG-6HEg2Ik6WR1MULOFFbHHmKWPfSjVnBqoxCYmVVbvh3yXhs5ymaTEyghkH7HfCBGBZsqAsAARo=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_04e8cdce44ebc2ac006aa7006e85d887d2babc7a379d799adf\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"I found the order ORD-2026-0042 \\u2014 it's being shipped to Berlin, DE.\\n\\nWould you like me to retrieve more details (tracking number and carrier, estimated delivery date, item list, payment status), or take an action (cancel or change shipping)?\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Get the status of an order by its reference and shipping destination\",\n      \"name\": \"get_order\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"reference\": {\n            \"type\": \"string\",\n            \"description\": \"Order reference, e.g. \\\"ORD-2026-0042\\\"\",\n            \"pattern\": \"^ORD-\\\\d{4}-\\\\d{4}$\"\n          },\n          \"destination\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"city\": {\n                \"type\": \"string\",\n                \"maxLength\": 255\n              },\n              \"countryCode\": {\n                \"type\": \"string\",\n                \"pattern\": \"[A-Z]{2}\"\n              }\n            },\n            \"required\": [\n              \"city\",\n              \"countryCode\"\n            ],\n            \"additionalProperties\": false\n          }\n        },\n        \"required\": [\n          \"reference\",\n          \"destination\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 266,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 238,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 128\n    },\n    \"total_tokens\": 504\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "ded7cd3119c4c36b43f74446aacf3961",
+                "signature_v2": "d27d981a49ff163e727760a392a0d1b1",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"get_order\",\"description\":\"Get the status of an order by its reference and shipping destination\",\"parameters\":{\"type\":\"object\",\"properties\":{\"reference\":{\"type\":\"string\",\"description\":\"Order reference, e.g. \\u0022ORD-2026-0042\\u0022\",\"pattern\":\"^ORD-\\\\d{4}-\\\\d{4}$\"},\"destination\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"maxLength\":255},\"countryCode\":{\"type\":\"string\",\"pattern\":\"[A-Z]{2}\"}},\"required\":[\"city\",\"countryCode\"],\"additionalProperties\":false}},\"required\":[\"reference\",\"destination\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Look up the order using exactly this reference, unmodified: \\u0022not-a-valid-reference\\u0022, shipping to Berlin, DE.\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0e871b83c2c6caf3006aa700710b9887d29a05f14ebed9cd60\",\n  \"object\": \"response\",\n  \"created_at\": 1789329521,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329526,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0e871b83c2c6caf3006aa700716b1c87d28676b3f3899a5fd4\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwB2NVdw3N5m5YABy6UOD3PsOl27w2eQNuyUaHJ3r-LpDGuTR9C4ooph_mAcHEpplNFGxWz5oW2rE9Cor_ti6m0HiWGLTVUNvE-ZueENoDKAS6nGarzAVhIyWkqjG3_Ke-D_hHlx-IUkyaqMrBWze_dYpTdu8_QNi_4zYQCU2lPcJ6nCLEJpd-t8R8C761fk0R8uWD5WrtysGy1-qTK7eBLwJe3YHxBT-L8oTPhAkfryjidP2pGSGoUAjYxEHimorfi5BybCHaVootjCN8peHALKJSGuLQFlWNPIIPk-yVqNwUI-OkmTMEGtY2ldD9Ei8NUec2QBRarukNPiUtU0O7a4wkrW1a5BN7LzAq2mv4aIHuIz191O307tEO6qC_ALJ-MxafGsNE0Mk2O5kH15xChDy4jEjGW0fBxfVajIomdbgbzzxo9HWeQwlPFASgGazMVdtUfaKfK1YDMGLd_fss8St3EfNUIGeQBql2mc4Vi353M_CgaRz6AiC4PlkmqB3YiHXg5WkbRZ4Bh4Ot7AIU6C1a8RS0qP97S5QjaEK0CXEt0-E0WZvm3lGLfZ52iERzu4kAJnmvXVM6PqhvZBl381QkibO0LZ-3U9B7553ppKx7cGtdH8P9fDVHH2ePKflBCq-_FRuXx9l3aQZnaMhI5Tjv0xlviny_GCXw2YEa7qnWzfJsN2iZLCbwYIZVxUK6XEvunOGtRDB8_fCk9XYq5QmnX1gFIpLt4uqv1OpPB25OYTN7xF6YwBb5CJoDnZbgB5b98daYfNF7e4u_fLB5l9KaXsRKbcq0RXPMPv-BRbaGLR8hxtaxGBUTWVQFiuItJ4Ek2wx4z5GmVHxdYrtRIwNNOEe0RiqJEk-uqZgXF3FLRCkuRi68lg9XdoHk78JRXkrCtVW3lUIbft3ALllmThGkzWTrgYSA8dhdeTFxMmMi71oQtD3EtbRjo-K20HL4iq2GQc1JmZC9UWPHcDnGVF_wFpAcUXqnaqVylkzPiIM74cCIF1M2Ch8QmPO6RxpQ36t2FfVEjo5l65Yphq2lEkZ98MAEDiDyb8mmeuabR58R_uPnmYQ-HY8ti3ZxBA3mHtbLK9EAael-izKrASTGuliCGPBKiulyydIcR01dZCeHMfsVmqYJzQXC5pvbV6G-udLZPt6sK_BIEtWte39JUcb37_KC_ekm57J2VYCH8PrFvrJYYqH0_IVlQ_VgwEBDW2FZYsMsvrBegxsLighFqW1B4u5THLcq-63DvDWSh8V4uA_3Si_VJff2wgogP1GFrJHoMU5nvaxnOyKDd7cVmECpGlZoGiI1149suP8yAh3SZkQsbS3-wnW-eQyV-k3BJH0wITYZO--9gRv5-0wORgWTFv89HbtHkCyTNe8uzl8eX6koVNUGc0yJFhfJMeiPUoBF-IRl_tc_-dkm9aHNCIf-T-K6F3oRo_61hVAIU-X_knird5-ag91l1BASaGHzz7UDkvAmMdobXEoCduvuX0Vb-rTOf957_sP6fAuLfMnod70XDPCK5s6V6Udxhmp5F2AzHiIRpUrcGBvh2psAvWRdB8Eif98zQrMP8kPU_j66gUDNzaxugL8OYDyB1wImdhhdIsG0YyyHhgXnt60TdCVt21tzvQIQhHq9ZQOqZOVJQIZEtYXJ2pKrDyThmgXpK6oHuhhz3TkKYa2TSlg1qHN2p7XpANZoLUn-6zwADsiLdh2YzhqOOGYD_mLOP8K6Dr7IX4o-Nrn3NCZWBaox7Juy-o7VYMV0hI91qfL8J9MXNbdjM4dqNQlR-BkKZZcK60ujNFiTh52GAo9VVggvSr0av_Hgl26lnqE9Ht-FBIz7_gES08e_8QPDF4VD3jqGCdgumvEoz5hW4aJcYISYNNlwSIzXv4PshDwGq5BL8Kfp-S6z1LGulauU2UoZu3AOPX-ouFvbWFznQaf9NdfECRvl4tRHTReu42T0MHR6AKn-zvC_rt1zcozBdybFfjKBXbha-acb51aoZTz_s2mDX3OUZyiEILEVFHM1-kChoQehIVT-GkXlVLtxt0D5vIx4XAagesFEiCy2OlwlGlFv5f3Yjx5oIijxDhRWiQrhV1GYXCCCbkKGiAfBuVkLgxhwzEazA5Rk8Dy1zksd5pYG8eRP6JILlnarbboXudug63ZTZj6Ldq6iAQmzhyYO0VEx62UFXIXCPlpjzYRWY1UycV43p_zrMD4_qBvT7LJevvYUhMITGdEINU6FoeL5qlIrIJX38Qyh4YYmgVBwQHOqGzBmhQ2Yjq5fTdhSBdZ598pIKZD-NynKR5f76Ay_OMFSaeAyNQaNAqQuZDgwP2QL7Gnfl2q4erHlX5LNhX3MShoxQG_lFBbvYschfoMo8Y0sajE5_AbtH_m_c56ypNFFzInmk2hylYGEkB__RO6NQCErJQaqdGgMFc74wbNwzCT2JvHwrRWeB0_wWIcG_tDwVA16KqIHoqAOd8udnQyitX8QhXuRzuGcO1qwrs5XaM428WwL5DxOqpZyIy7fyvI2mWK71kGU214oRSkOUyBaNExXy-kCNksHB9sE0s0QQFLpPPE_L0uKrsMPUC27zVM8GbI16fZGjVa_mVwuWkanxCJOGkGg_eaXSl-VtbTc77XZ5P29X685cQIsbWjUfhephzAdmfmoVhetrmQ0UV3SUfjs3FdR_2DOyOum6DYqvtYRdMMKsfXttkmFRSdZfevFa_kjlBbAHuM5EJHu0_6-ieEvsnIy52O8AKoZAR7JV8VlwOp6JdWvPJ3u-_jD51i9hpzkYSQda-TmFwoTirWvNyHUD8Mgixc-bYiQtvVI0ACKHxTOQ7xbN6ZQctg713n4cIquoZLg9JlZ9M144KJfABIriFv6fhABd8wBcjv6nXklcnyJ1XS46LLm12M4HDb_YEDWnZrR3fQ8aWyfEVeoJoJILcRMOBAWHbmTCiCWdzMrHpbs5tv-2uwWzEO8646oRBdKafIn6dc7JwOyvd8cA0ierN0O1JO_zPaseUO5syoePF6o1KgWE793YXbw9BsmO718Gfw0iQMdiWoWHh8K9EysCmY-xzk9Ynp1lzg18vq5dxWnE7rmIii9QzHBtK2F_FkGA3n_y_ILcCMB-2foTslwNYpzzfxHlI6fAIDTY9OEQjH78ZKxUuVhWcQb2FbkIX0tar_v9x-SRE7OcpwnuPKo_kSsvx9U1WYDD7N1TjFAhACF_ulI7DSnXplJmj-mJV4awBh-OSsUMjVTJwvB832GWoZRze69QLHhgUMrPY1c0GWecZORJf20B9MXtpgQAyZAJftsAeKyZIbufd5MJNg7idMfW2QpLcOIeqIRPhMwRFsVK0mZYBN5shiAryobsolP372-Pkqfm-aWF7vY5jTJA=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0e871b83c2c6caf3006aa70074ce8c87d2a9eeac5c39b7eb89\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"I can\\u2019t look up that reference as-is because the order-search tool requires the reference to match the format ORD-YYYY-NNNN (example: ORD-2026-0042). The string \\\"not-a-valid-reference\\\" does not match that pattern, so I\\u2019m unable to call the order lookup with it.\\n\\nWhat I can do next:\\n- You can provide the correct order reference in the format ORD-YYYY-NNNN and I\\u2019ll look it up for shipping to Berlin, DE.\\n- Or provide other order-identifying details (customer email, name, order date, or items) and I\\u2019ll try to locate it another way if you\\u2019d like.\\n\\nWhich would you prefer?\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Get the status of an order by its reference and shipping destination\",\n      \"name\": \"get_order\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"reference\": {\n            \"type\": \"string\",\n            \"description\": \"Order reference, e.g. \\\"ORD-2026-0042\\\"\",\n            \"pattern\": \"^ORD-\\\\d{4}-\\\\d{4}$\"\n          },\n          \"destination\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"city\": {\n                \"type\": \"string\",\n                \"maxLength\": 255\n              },\n              \"countryCode\": {\n                \"type\": \"string\",\n                \"pattern\": \"[A-Z]{2}\"\n              }\n            },\n            \"required\": [\n              \"city\",\n              \"countryCode\"\n            ],\n            \"additionalProperties\": false\n          }\n        },\n        \"required\": [\n          \"reference\",\n          \"destination\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 136,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 469,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 320\n    },\n    \"total_tokens\": 605\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

@@ -25,7 +25,7 @@ $app = (new SingleCommandApplication('Albert API Model Listing'))
         $io = new SymfonyStyle($input, $output);
         $io->title('Albert API Model Listing');
 
-        $apiClient = new ApiClient(env('ALBERT_API_URL'), env('ALBERT_API_KEY'), http_client());
+        $apiClient = new ApiClient('https://albert.api.etalab.gouv.fr', env('ALBERT_API_KEY'), http_client());
         $models = $apiClient->getModels();
 
         if (0 === count($models)) {

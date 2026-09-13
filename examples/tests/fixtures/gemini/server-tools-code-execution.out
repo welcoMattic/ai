@@ -1,0 +1,38 @@
+<code>
+P = 100000
+r_annual = 0.01
+n_years = 25
+n_months = n_years * 12
+r_monthly = r_annual / 12
+
+M = P * (r_monthly * (1 + r_monthly)**n_months) / ((1 + r_monthly)**n_months - 1)
+total_paid = M * n_months
+total_interest = total_paid - P
+
+print(f"Monthly payment: {M}")
+print(f"Total paid: {total_paid}")
+print(f"Total interest: {total_interest}")
+
+</code>
+
+Monthly payment: 376.87245423059426
+Total paid: 113061.73626917828
+Total interest: 13061.736269178276
+
+To calculate the total cost of the mortgage, we assume a standard fixed-rate mortgage with monthly repayments. 
+
+Here are the details of the calculation:
+
+*   **Principal amount:** 100,000 €
+*   **Annual interest rate:** 1%
+*   **Term (Maturity):** 25 years (300 months)
+
+First, we find the **monthly payment** using the standard amortization formula:
+**Monthly Payment = ~376.87 €**
+
+Over the course of 25 years (300 months), paying 376.87 € per month:
+
+*   **Total Amount Paid (Principal + Interest):** **113,061.74 €**
+*   **Total Cost of Borrowing (Interest only):** **13,061.74 €**
+
+Therefore, the total cost for borrowing the money (the interest) is **13,061.74 €**, making your total lifetime repayment to the bank **113,061.74 €**.

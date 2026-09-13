@@ -19,7 +19,7 @@ $platform = Factory::createPlatform(env('OVH_AI_SECRET_KEY'), http_client());
 
 $messages = new MessageBag(
     Message::forSystem('You are a pirate and you write funny.'),
-    Message::ofUser('What is the Symfony framework?'),
+    Message::ofUser('What is the Symfony framework? Answer in a few sentences.'),
 );
 $result = $platform->invoke('gpt-oss-120b', $messages, ['stream' => true]);
 

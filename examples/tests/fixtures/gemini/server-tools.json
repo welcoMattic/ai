@@ -1,0 +1,57 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent",
+                "signature": "5670f7c283f6457ab5c5d8fd38e9da22",
+                "signature_v2": "44a35987e9b16173b121a93b7284e7a1",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"generationConfig\":{\"temperature\":1.0},\"tools\":[{\"url_context\":{}}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"What was the 12 month Euribor rate a week ago based on https:\\/\\/www.euribor-rates.eu\\/en\\/current-euribor-rates\\/4\\/euribor-rate-12-months\\/\"}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "593"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"A week ago, on September 7, 2026, the 12-month Euribor rate was 3.116%.\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0,\n      \"groundingMetadata\": {\n        \"groundingChunks\": [\n          {\n            \"web\": {\n              \"uri\": \"https://www.euribor-rates.eu/en/current-euribor-rates/4/euribor-rate-12-months/\",\n              \"title\": \"12 months Euribor rate\"\n            }\n          }\n        ],\n        \"groundingSupports\": [\n          {\n            \"segment\": {\n              \"endIndex\": 70,\n              \"text\": \"A week ago, on September 7, 2026, the 12-month Euribor rate was 3.116%\"\n            },\n            \"groundingChunkIndices\": [\n              0\n            ]\n          }\n        ]\n      },\n      \"urlContextMetadata\": {\n        \"urlMetadata\": [\n          {\n            \"retrievedUrl\": \"https://www.euribor-rates.eu/en/current-euribor-rates/4/euribor-rate-12-months/\",\n            \"urlRetrievalStatus\": \"URL_RETRIEVAL_STATUS_SUCCESS\"\n          }\n        ]\n      }\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 48,\n    \"candidatesTokenCount\": 71,\n    \"totalTokenCount\": 1754,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 48\n      }\n    ],\n    \"toolUsePromptTokenCount\": 1368,\n    \"toolUsePromptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 1368\n      }\n    ],\n    \"thoughtsTokenCount\": 267,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-2.5-pro\",\n  \"responseId\": \"Rf-mav3mIrfl7M8PwpWN0Qc\"\n}\n"
+            }
+        }
+    ]
+}

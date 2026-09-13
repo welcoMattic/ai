@@ -1,0 +1,65 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cartesia.ai/tts/bytes",
+                "signature": "32fd0aed49590064c12d18e1920524e5",
+                "signature_v2": "dc117d480d5e8ed601987bbe5d772e71",
+                "headers": {
+                    "cartesia-version": [
+                        "2025-04-16"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "voice": {
+                        "mode": "id",
+                        "id": "6ccbfb76-1fc6-48f7-b71d-91ac6298247b"
+                    },
+                    "output_format": {
+                        "container": "mp3",
+                        "sample_rate": 48000,
+                        "bit_rate": 192000
+                    },
+                    "model_id": "sonic-3",
+                    "transcript": "Hello world"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "audio/mpeg"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "access-control-expose-headers": [
+                        "Cartesia-Model-Latency"
+                    ],
+                    "cartesia-model-latency": [
+                        "87.72"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 25cea41ad7d46d4db1c5c43579cc21ee.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL50-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "qcopS6c6EMQo_p60iZoIZqlTFvtQWLRBDK7v2j3ku8caDqQNxnbujQ=="
+                    ]
+                },
+                "body_format": "binary",
+                "body": null,
+                "body_size": 27693
+            }
+        }
+    ]
+}

@@ -30,7 +30,7 @@ echo "between semantic (vector) search and full-text search in Meilisearch.\n\n"
 // Initialize the store with a balanced hybrid search (50/50)
 $store = StoreFactory::create(
     indexName: 'movies_hybrid',
-    endpoint: env('MEILISEARCH_HOST'),
+    endpoint: 'http://127.0.0.1:7700',
     apiKey: env('MEILISEARCH_API_KEY'),
     httpClient: http_client(),
     semanticRatio: 0.5, // Balanced hybrid search by default

@@ -1,0 +1,58 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://openrouter.ai/api/v1/chat/completions",
+                "signature": "1953c4eb1ba1e83a089ba7e6f2e9f06b",
+                "signature_v2": "f52f0c51efe7ed081f83e4e371789bdc",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"system\",\"content\":\"Check the web for details that the user ask.\"},{\"role\":\"user\",\"content\":\"Who win the Formula1 GP in Brasilia at 2025-11-09?\"}],\"model\":\"google\\/gemini-2.5-flash-lite:online\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-generation-id": [
+                        "gen-1789329453-7pm5lL3XsEVdGXPjkCV9"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Generation-Id,X-Provider-Name,request-id,cf-ray"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "permissions-policy": [
+                        "payment=(self \"https://checkout.stripe.com\" \"https://connect-js.stripe.com\" \"https://js.stripe.com\" \"https://*.js.stripe.com\" \"https://hooks.stripe.com\")"
+                    ],
+                    "referrer-policy": [
+                        "no-referrer, strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ]
+                },
+                "body_format": "json",
+                "body": "\n         \n{\"id\":\"gen-1789329453-7pm5lL3XsEVdGXPjkCV9\",\"object\":\"chat.completion\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"system_fingerprint\":null,\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"STOP\",\"message\":{\"role\":\"assistant\",\"content\":\"Lando Norris won the Formula 1 Grand Prix in São Paulo (Brasilia) on November 9, 2025 [formula1.com, fia.com, bbc.com, apnews.com].\",\"refusal\":null,\"reasoning\":null,\"annotations\":[{\"type\":\"url_citation\",\"url_citation\":{\"url\":\"https://www.formula1.com/\",\"title\":\"Norris wins Sao Paulo GP as Verstappen climbs to third\",\"start_index\":0,\"end_index\":0,\"content\":\"| Nationality | Team\\n...\\n1 | K\\n...\\nMercedes |\\n...\\n| 2 | Lewis\\n...\\nUnited Kingdom | Ferrari\\n...\\n| Mercedes |\\n...\\n75 |\\n...\\nastri PIA | Australia | McLaren |\\n...\\n| 6 | L\\n...\\nNorris NOR | United\\n...\\n| McLaren | 58 |\"}},{\"type\":\"url_citation\",\"url_citation\":{\"url\":\"https://www.fia.com/news/f1-norris-wins-sao-paulo-extend-title-lead-verstappen-goes-pitlane-podium\",\"title\":\"F1 – Norris wins in São Paulo to extend title lead as Verstappen goes from pitlane to podium | Federation Internationale de l'Automobile\",\"start_index\":0,\"end_index\":0,\"content\":\"F\\n\\n...\\n\\nNorris wins in São\\n\\n...\\n\\nto extend title lead as Verstappen goes from pitlane to podium |\\n\\n...\\n\\nInternationale de l\\n\\n...\\n\\nAutom\\n\\n...\\n\\n09.11.25\\n\\n...\\n\\nMcLaren’s Lando Norris converted pole position into a composed São Paulo Grand Prix victory, crossing the line 10 seconds ahead of Mercedes’ Kimi Antonelli, while Red Bull’s Max Verstappen put in another bravura display in Brazil, racing from a pit lane start to third place on the podium at the flag. Title contender Oscar Piastri finished the race in fifth after being handed a 10-second penalty for an early collision with Antonelli.\\n\\n...\\n\\n’\\n\\n...\\n\\n.\\n\\n...\\n\\nIn the championship Norris now leads Piastri by 24 points with three rounds remaining, with Verstappen now 49 points adrift. Hamilton eventually retired from the race and the double DNF for Ferrari means they drop from P2 to P4 in the Constructors’ Championship standings. Mercedes are now second on 398 points with Red Bull Racing on 366, four ahead of the Italian team. 2025 FIA Formula 1 São Paulo Grand Prix – Race 1 Lando Norris McLaren/Mercedes 71 1:32'01.596 2 Kimi Antonelli Mercedes 71 1:32'11.984 10.3883 Max Verstappen Red Bull/Honda RBPT 71 1:32'12.346 10.7504 George Russell Mercedes 71 1:32'16.863 15.2675 Oscar Piastri McLaren/Mercedes 71 1:32'17.345 15.7496 Oliver Bearman Haas/Ferrari 71 1:32'31.226 29.6307 Liam Lawson Racing Bulls/Honda RBPT 71 1:32'54.238 52.6428 Isack Hadjar Racing Bulls/Honda RBPT 71 1:32'54.469 52.8739 Nico Hülkenberg Sauber/Ferrari 71 1:32'54.920 53.32410 Pierre Gasly Alpine/Renault 71 1:32'55.510 53.91411 Alexander Albon Williams/Mercedes 71 1:32'55.780 54.18412 Esteban Ocon Haas/Ferrari 71 1:32'56.292 54.69613 Carlos Sainz Williams/Mercedes 71 1:32'57.016 55.42014 Fernando Alonso Aston Martin/Mercedes 71 1:32'57.362 55.76615 Franco Colapinto Alpine/Renault 71 1:32'59.373 57.77716 Lance Stroll Aston Martin/Mercedes 71 1:32'59.843 58.24717 Yuki Tsunoda Red Bull/Honda RBPT 71 1:33'10.772 1'09.176 Lewis Hamilton Ferrari 37 51'02.289 Accident damage Charles Leclerc Ferrari 5 8'48.420 Accident Gabriel Bortoleto Sauber/Ferrari 0 - Accident\"}},{\"type\":\"url_citation\",\"url_citation\":{\"url\":\"https://www.bbc.com/sport/formula1/articles/cd9kp2421p3o\",\"title\":\"Sao Paulo Grand Prix result: Lando Norris wins with Max Verstappen third after starting in pits - BBC Sport\",\"start_index\":0,\"end_index\":0,\"content\":\"result: Lando Norris wins with Max Verstappen third after starting in pits - BBC Sport\\n...\\nMcLaren's Lando Norris extended his championship lead over team-mate and title rival Oscar Piastri to 24 points with a dominant victory at the Sao Paulo Grand Prix.\"}},{\"type\":\"url_citation\",\"url_citation\":{\"url\":\"https://www.fia.com/system/files/decision-document/2025_sao_paulo_grand_prix_-_final_race_classification.pdf\",\"title\":\"2025 SÃO PAULO GRAND PRIX\",\"start_index\":0,\"end_index\":0,\"content\":\"## 2025 SÃO PAULO GRAND PRIX 07 - 09 November 2025\\n\\n...\\n\\nDocument 69 \\nDate 09 November 2025 \\nTime 18:45\\n\\n...\\n\\nNO DRIVER NAT ENTRANT LAPS TIME GAP INT KM/H FASTEST ON PTS \\n1 4 Lando NORRIS McLaren Formula 1 Team 71 1:32:01.596 199.428 1:13.040 66 25 \\n2 12 Kimi ANTONELLI Mercedes-AMG PETRONAS F1 Team 71 1:32:11.984 10.388 10.388 199.054 1:13.123 52 18 \\n3 1 Max VERSTAPPEN Oracle Red Bull Racing 71 1:32:12.346 10.750 0.362 199.041 1:12.447 56 15 \\n4 63 George RUSSELL Mercedes-AMG PETRONAS F1 Team 71 1:32:16.863 15.267 4.517 198.878 1:13.097 52 12 \\n5 81 Oscar PIASTRI McLaren Formula 1 Team 71 1:32:17.345 15.749 0.482 198.861 1:12.742 54 10\\n\\n...\\n\\n6 87 Oliver BEARMAN MoneyGram Haas F1 Team 71 1:32:31.226 29.630 13.881 198.364 1:13.483 48 8\\n\\n...\\n\\n7 3\\n\\n...\\n\\nLAW\\n\\n...\\n\\nApp Racing\\n\\n...\\n\\nF1 Team 71 1:32:54.238 52.642 23.012 197.545 1:14.029 21 6\\n\\n...\\n\\n8\"}},{\"type\":\"url_citation\",\"url_citation\":{\"url\":\"https://apnews.com/article/brazilian-grand-prix-formula-1-sao-paulo-cff7e727a04df7107c574292855f6b0b\",\"title\":\"McLaren driver Lando Norris wins Formula 1's Brazilian Grand Prix | AP News\",\"start_index\":0,\"end_index\":0,\"content\":\"McLaren driver Lando Norris wins Formula 1's Brazilian Grand Prix | AP News\\n\\n...\\n\\n# Norris wins Formula 1’s Brazilian Grand Prix to extend his lead with 3 races left\\n\\n...\\n\\naren\\n\\n...\\n\\nof Britain celebrates on the podium his first place in the Brazilian Formula One Grand Prix at the Interlagos race track in\\n\\n...\\n\\nPaulo, Sunday, Nov. 9, 2025. (AP Photo/Andre Penner)\\n\\n...\\n\\nSAO PAULO (AP) — McLaren driver Lando Norris significantly extended his lead in the F1 championship after winning the Brazilian Grand Prix on Sunday, with his main rival and teammate Oscar Piastri receiving a 10-second penalty and again failing to make the podium.\\n\\n...\\n\\nNorris, who also won Saturday’s sprint race and started from pole position, earned his first win at Interlagos with Mercedes’ Kimi Antonelli and Red Bull’s Max Verstappen second and third, respectively.\"}}]}}],\"usage\":{\"prompt_tokens\":2118,\"completion_tokens\":48,\"total_tokens\":2166,\"cost\":0.007231,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.000231,\"upstream_inference_prompt_cost\":0.0002118,\"upstream_inference_completions_cost\":0.0000192},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+            }
+        }
+    ]
+}

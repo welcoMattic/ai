@@ -1,0 +1,14 @@
+To find the eighth prime number, we need to list the prime numbers in order until we reach the eighth one.
+
+Here are the first few prime numbers:
+1. 2
+2. 3
+3. 5
+4. 7
+5. 11
+6. 13
+7. 17
+8. 19
+
+So, the eighth prime number is:
+\[ \boxed{19} \]

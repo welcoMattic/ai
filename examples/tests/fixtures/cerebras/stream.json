@@ -1,0 +1,85 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cerebras.ai/v1/chat/completions",
+                "signature": "9f58c6136c4f67c36fe779164a452ce6",
+                "signature_v2": "f75dbc7891cb35a42df5bd2a879dc4b8",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"system\",\"content\":\"You are an expert in places and geography who always responds concisely.\"},{\"role\":\"user\",\"content\":\"What are the top three destinations in France?\"}],\"model\":\"gpt-oss-120b\",\"stream\":true}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "text/event-stream; charset=utf-8"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-ratelimit-remaining-requests-minute": [
+                        "997"
+                    ],
+                    "x-ratelimit-remaining-requests-hour": [
+                        "59997"
+                    ],
+                    "x-ratelimit-remaining-requests-day": [
+                        "1439997"
+                    ],
+                    "x-ratelimit-remaining-tokens-minute": [
+                        "450779"
+                    ],
+                    "x-ratelimit-remaining-tokens-hour": [
+                        "89950779"
+                    ],
+                    "x-ratelimit-remaining-tokens-day": [
+                        "719950779"
+                    ],
+                    "x-ratelimit-limit-requests-minute": [
+                        "1000"
+                    ],
+                    "x-ratelimit-limit-requests-hour": [
+                        "60000"
+                    ],
+                    "x-ratelimit-limit-requests-day": [
+                        "1440000"
+                    ],
+                    "x-ratelimit-limit-tokens-minute": [
+                        "500000"
+                    ],
+                    "x-ratelimit-limit-tokens-hour": [
+                        "30000000"
+                    ],
+                    "x-ratelimit-limit-tokens-day": [
+                        "720000000"
+                    ],
+                    "inference-id": [
+                        "chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ]
+                },
+                "body_format": "sse",
+                "body": "data: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"role\":\"assistant\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\"We\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\" need to answer concisely, as an expert\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\" in places and geography, top three destinations in France.\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\" Likely Paris, French Riviera (Nice\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\"/Côte d'Azur), and Provence (or maybe\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\" Loire Valley or Mont Saint\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\"-Michel). The question: \\\"top three destinations\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\" in\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\" France\\\". Could be based on popularity: Paris, Nice (Côte d'Azur), and Lyon? Or\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\" maybe Disneyland Paris? But typical top tourist\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\" destinations: Paris, French Riviera (Nice\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\", Cannes, Monaco), and Loire\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"reasoning\":\" Valley (chateaux). Provide concise answer.\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\"**Top three French destinations**\\n\\n|\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\" Rank | Destination | Why it’s a must‑see |\\n|------|-------------\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\"|---------------------|\\n| 1 | **Paris** – the capital\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\" city | Iconic landmarks (Eiffel Tower, Louvre, Notre‑Dame\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\"), world‑class museums, culinary scene, and historic neighborhoods\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\". |\\n| 2 | **French Riviera (C\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\"ôte d’Azur)** – Nice, Cannes, Antibes,\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\" Saint‑Tropez | Sun‑kissed Mediterranean coast, glamorous beach\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\" towns, Cannes Film Festival, and vibrant nightlife\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\". |\\n| 3 | **Loire Valley**\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\" – Tours, Amboise, Chambord |\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\" “Garden of France” with a concentration\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\" of Renaissance châteaux, wine appell\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{\"content\":\"ations, and scenic river landscapes.\"},\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\"}\n\ndata: {\"id\":\"chatcmpl-b8746e83-ac39-4299-9e63-367e508d29cb\",\"choices\":[{\"delta\":{},\"finish_reason\":\"stop\",\"index\":0}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion.chunk\",\"usage\":{\"total_tokens\":375,\"completion_tokens\":277,\"completion_tokens_details\":{\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0,\"reasoning_tokens\":112},\"prompt_tokens\":98,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"time_info\":{\"created\":1789329168.5373008,\"queue_time\":0.003076856,\"prompt_time\":0.002701391,\"completion_time\":0.132349092,\"total_time\":0.13982319831848145}}\n\ndata: [DONE]\n\n"
+            }
+        }
+    ]
+}

@@ -10,7 +10,7 @@
  */
 
 use Symfony\AI\Agent\Agent;
-use Symfony\AI\Agent\Bridge\Youtube\YoutubeTranscriber;
+use Symfony\AI\Agent\Bridge\Wikipedia\Wikipedia;
 use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Platform\Bridge\Scaleway\Factory;
 use Symfony\AI\Platform\Message\Message;
@@ -21,11 +21,11 @@ require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('SCALEWAY_SECRET_KEY'), http_client());
 
-$transcriber = new YoutubeTranscriber(http_client());
-$toolbox = new Toolbox([$transcriber], logger: logger());
+$wikipedia = new Wikipedia(http_client());
+$toolbox = new Toolbox([$wikipedia], logger: logger());
 $agent = new Agent($platform, 'gpt-oss-120b', toolbox: $toolbox);
 
-$messages = new MessageBag(Message::ofUser('Please summarize this video for me: https://www.youtube.com/watch?v=6uXW-ulpj0s'));
+$messages = new MessageBag(Message::ofUser('Who is the current chancellor of Germany?'));
 $result = $agent->call($messages, ['stream' => true]);
 
 foreach ($result->getContent() as $delta) {

@@ -13,7 +13,7 @@ use Symfony\AI\Platform\Bridge\Albert\Factory;
 
 require_once dirname(__DIR__).'/bootstrap.php';
 
-$platform = Factory::createPlatform(env('ALBERT_API_KEY'), env('ALBERT_API_URL'), http_client());
+$platform = Factory::createPlatform(env('ALBERT_API_KEY'), 'https://albert.api.etalab.gouv.fr', http_client());
 
 $response = $platform->invoke('openweight-embeddings', <<<TEXT
     Once upon a time, there was a country called Japan. It was a beautiful country with a lot of mountains and rivers.

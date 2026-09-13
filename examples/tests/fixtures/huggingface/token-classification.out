@@ -1,0 +1,25 @@
+Symfony\AI\Platform\Bridge\HuggingFace\Output\TokenClassificationResult {#32
+  -tokens: array:3 [
+    0 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Token {#63
+      -entityGroup: "PER"
+      -score: 0.99951434
+      -word: "John Smith"
+      -start: 0
+      -end: 10
+    }
+    1 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Token {#80
+      -entityGroup: "ORG"
+      -score: 0.9995158
+      -word: "Microsoft"
+      -start: 20
+      -end: 29
+    }
+    2 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Token {#74
+      -entityGroup: "LOC"
+      -score: 0.99869776
+      -word: "London"
+      -start: 33
+      -end: 39
+    }
+  ]
+}

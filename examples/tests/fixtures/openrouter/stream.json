@@ -1,0 +1,58 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://openrouter.ai/api/v1/chat/completions",
+                "signature": "113b87f4e6710038e05cd4046e1dc8d3",
+                "signature_v2": "32d458182472f105ce92180cfcbcc266",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"stream\":true,\"stream_options\":{\"include_usage\":true},\"messages\":[{\"role\":\"user\",\"content\":\"List the first 50 prime number?\"}],\"model\":\"google\\/gemini-2.5-flash-lite\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "text/event-stream"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "cache-control": [
+                        "no-cache"
+                    ],
+                    "x-generation-id": [
+                        "gen-1789329453-C2I1hkiR4mh2cFb7CX3G"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Generation-Id,X-Provider-Name,request-id,cf-ray"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "permissions-policy": [
+                        "payment=(self \"https://checkout.stripe.com\" \"https://connect-js.stripe.com\" \"https://js.stripe.com\" \"https://*.js.stripe.com\" \"https://hooks.stripe.com\")"
+                    ],
+                    "referrer-policy": [
+                        "no-referrer, strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ]
+                },
+                "body_format": "sse",
+                "body": "data: {\"id\":\"gen-1789329453-C2I1hkiR4mh2cFb7CX3G\",\"object\":\"chat.completion.chunk\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"Here\",\"role\":\"assistant\"},\"finish_reason\":null,\"native_finish_reason\":null}]}\n\ndata: {\"id\":\"gen-1789329453-C2I1hkiR4mh2cFb7CX3G\",\"object\":\"chat.completion.chunk\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" are the first 5\",\"role\":\"assistant\"},\"finish_reason\":null,\"native_finish_reason\":null}]}\n\ndata: {\"id\":\"gen-1789329453-C2I1hkiR4mh2cFb7CX3G\",\"object\":\"chat.completion.chunk\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"0 prime numbers:\\n\\n2, 3, 5, 7, 1\",\"role\":\"assistant\"},\"finish_reason\":null,\"native_finish_reason\":null}]}\n\ndata: {\"id\":\"gen-1789329453-C2I1hkiR4mh2cFb7CX3G\",\"object\":\"chat.completion.chunk\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"1, 13, 17, 19, 23,\",\"role\":\"assistant\"},\"finish_reason\":null,\"native_finish_reason\":null}]}\n\ndata: {\"id\":\"gen-1789329453-C2I1hkiR4mh2cFb7CX3G\",\"object\":\"chat.completion.chunk\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" 29, 31, 37, 41, 43, 47, 53, 59, 61\",\"role\":\"assistant\"},\"finish_reason\":null,\"native_finish_reason\":null}]}\n\ndata: {\"id\":\"gen-1789329453-C2I1hkiR4mh2cFb7CX3G\",\"object\":\"chat.completion.chunk\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\", 67, 71, 73, 79, 83, 89, 97, 101, 1\",\"role\":\"assistant\"},\"finish_reason\":null,\"native_finish_reason\":null}]}\n\ndata: {\"id\":\"gen-1789329453-C2I1hkiR4mh2cFb7CX3G\",\"object\":\"chat.completion.chunk\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"03, 107, 109, 113, 127, 131, 137, 139, 149, 151,\",\"role\":\"assistant\"},\"finish_reason\":null,\"native_finish_reason\":null}]}\n\ndata: {\"id\":\"gen-1789329453-C2I1hkiR4mh2cFb7CX3G\",\"object\":\"chat.completion.chunk\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" 157, 163, 167, 173, 179, 181, 191, 193, 197, 19\",\"role\":\"assistant\"},\"finish_reason\":null,\"native_finish_reason\":null}]}\n\ndata: {\"id\":\"gen-1789329453-C2I1hkiR4mh2cFb7CX3G\",\"object\":\"chat.completion.chunk\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"9, 211, 223, 227, 229\",\"role\":\"assistant\"},\"finish_reason\":null,\"native_finish_reason\":null}]}\n\ndata: {\"id\":\"gen-1789329453-C2I1hkiR4mh2cFb7CX3G\",\"object\":\"chat.completion.chunk\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"role\":\"assistant\"},\"finish_reason\":\"stop\",\"native_finish_reason\":\"STOP\"}]}\n\ndata: {\"id\":\"gen-1789329453-C2I1hkiR4mh2cFb7CX3G\",\"object\":\"chat.completion.chunk\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"role\":\"assistant\"},\"finish_reason\":\"stop\",\"native_finish_reason\":\"STOP\"}],\"usage\":{\"prompt_tokens\":9,\"completion_tokens\":230,\"total_tokens\":239,\"cost\":0.0000929,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.0000929,\"upstream_inference_prompt_cost\":9e-7,\"upstream_inference_completions_cost\":0.000092},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}\n\ndata: [DONE]\n\n"
+            }
+        }
+    ]
+}

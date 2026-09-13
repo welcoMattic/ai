@@ -1,0 +1,91 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://router.huggingface.co/hf-inference/models/google/tapas-base-finetuned-wtq",
+                "signature": "d4fe97c3673c818780b19b934b5c684e",
+                "signature_v2": "ec1b31abcb7f8e8f4ba63b1af4a08e2a",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"inputs\":{\"query\":\"select year where city = beijing\",\"table\":{\"year\":[\"1896\",\"1900\",\"1904\",\"2004\",\"2008\",\"2012\"],\"city\":[\"athens\",\"paris\",\"st. louis\",\"athens\",\"beijing\",\"london\"]}}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "76"
+                    ],
+                    "x-inference-provider": [
+                        "hf-inference"
+                    ],
+                    "x-powered-by": [
+                        "huggingface-moon"
+                    ],
+                    "cross-origin-opener-policy": [
+                        "same-origin"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers, origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-inference-id": [
+                        "8f09b36a-a243-47ce-8a32-9eb1f7d4ea8e"
+                    ],
+                    "x-proxied-host": [
+                        "http://10.109.118.250"
+                    ],
+                    "x-proxied-path": [
+                        "/"
+                    ],
+                    "x-proxied-replica": [
+                        "n2bwby22-2148r6hfh"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 6822dfa8db680b7a0bf038c5e3b66404.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "H16JtNEkqFbOFAsM2hKRDLsgBRZkRdmBq1wxxSilAWSH31JKOjGUow=="
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"answer\":\"2008\",\"coordinates\":[[4,0]],\"cells\":[\"2008\"],\"aggregator\":\"NONE\"}"
+            }
+        }
+    ]
+}

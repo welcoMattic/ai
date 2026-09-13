@@ -1,0 +1,355 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "d7a700c98aea157ec9144351485c59f0",
+                "signature_v2": "993ede578ffcdb06be94227675755c45",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"geocode\",\"description\":\"Convert addresses to coordinates using Mapbox Geocoding API\",\"parameters\":{\"type\":\"object\",\"properties\":{\"address\":{\"type\":\"string\",\"description\":\"The address to geocode (e.g., \\u00221600 Pennsylvania Ave, Washington DC\\u0022)\"},\"limit\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return (1-10)\",\"minimum\":1,\"maximum\":10}},\"required\":[\"address\"],\"additionalProperties\":false}},{\"type\":\"function\",\"name\":\"reverse_geocode\",\"description\":\"Convert coordinates to addresses using Mapbox Reverse Geocoding API\",\"parameters\":{\"type\":\"object\",\"properties\":{\"longitude\":{\"type\":\"number\",\"description\":\"The longitude coordinate\"},\"latitude\":{\"type\":\"number\",\"description\":\"The latitude coordinate\"},\"limit\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return (1-5)\",\"minimum\":1,\"maximum\":5}},\"required\":[\"longitude\",\"latitude\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What are the coordinates of Brandenburg Gate in Berlin?\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0f6b72f039a7fae1006aa70c12ce1887d2bb51a102a7768f16\",\n  \"object\": \"response\",\n  \"created_at\": 1789332498,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789332499,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0f6b72f039a7fae1006aa70c13219c87d2ac223b5c35114883\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwwUrdneQUi0nKnlD41xGHqC0cEFo5pZCGHq_8SsB6D4CPMuPuTUbmZATkbobH0eU5ZUWA7oC-2iKMO-exenWK9S4R2d8SjkHHTr9H61BjJW9E5I3T5T5gzzcxz5UWgG_UypluB7zD3ypuVXC5G_h4RNq7eKfZx3poGu4xK7B_jH5-8QlRP0x0sO2uyd7_Tp0G6tmFloblsaQO18e0dPbhfeRG5lbC15P8Kgu2qSTldhRnMIY5UZR60xNP5INbviEl4XpCTdb5rEBZmKOb_YQrh3rsNNnl3HwjR9EPivXFoozrsBfoeH3nR6o2O79yYAdIqwVT-p1wvV2ObOazdGhDqiIempHFr-LKEld6Mt9biSg-tdGHQAAI5hV78pABRr8PvG7BdKTz6IIamNvyBFXxj6lETM6AEkED6OSv5hOoCg9SQg1Dp9BYnWMUqn4CzCdTVLNCzxKLX2_sAXJeYCyH1apLcdthG49TYI1_UaK-tuLkN1to2JLjggrZd061XPvUgrRbtvRqvLNT3JWTE-WyTyXsH_6jEwHDTqYc95BXKf-KCn3vmLrByN4BFKh3vKxz1bG5WCqp0s_8SlKl2hXw7Y3djY9o2enZuJ9eLXjZ3JKE3r2LmljloUVWGzW4MtfSVk_V9YOZQVGfAZKW65EKNw_PXdV8On-StJ1nSOPfDN6NpD5U5ghqw_ixLlBndCJ1y4N4djYqcaoQMLefRbpI_VU8DWcectYOngPOMLC_ogkrvzN8P_bf-vw93gQ6ySUScFy1NqitXii7yvOa4czZ9aMUYoQCDRpw7o1iiOgSnpwZSO4BFsAKzUQqHedBlviNcGiwk-n_gmtp0HFnSPqRAEJ-jGIt47M3qDd6fzMGtr_YFFubydRVfe-vriplxEjidUahwluN8gFsUZedKnxGda7ZyhneQOtBlvMcsXWypDvKA_--Jge1ujqEgoBiGMnSjgibrBLZYIZcH5X8xCrrOwnVH1_UBZpsdpa8KgWG5abVjPDmSxYL82oxYqldpuv0z2zLw3pZq5WtLp3alYtDBHCo_83ABSnCTLrD88gh12DlPVyI-5ojkL0RzQBPDFozN7dSlFSDMJRT4SBpqfg_RVQW59BMSOp05tr-UrL55BuFN9WeFcg-Xpj06XkVDViJVm0nkQxGwMDzrSPiLLorC_UyfbndgEJh5o9tiqMvIpCl-UvMpwPdvJXg_9GOAoYiGOrXigrHdakYbUlblw4EnPb0Bn4zi1yKxZqBbM3AYjuNUF-N3VwobECLGLulS4B_If_RIS8KlpoAunrqkuRkqXK65MADPCTcBJcC3Y8xLGzOg6AW2WEmIDUzYgzkRCiwo4drpwc7fD3nAekIV1pSuF0lz4s9VF9ruYbjHIYTkl76j5_RdCsni9WNhvpIQES1nJty7vVezQhiWyk56UKIfZODNtfRf2FJmg-EBMdwzzawByHEhaI5oefU9L3br04OdfqShpLk2w4FD9skrF41h3ADcOZ4dQN29KiTxQHuS_4KKlYtS5i-isw0w_tPnZG9R0nyx_l2Uv5_ip7cFe2ucp_au0HF0CCa4zBXCM6hhTxPgJQlprTH99P1yp2QIXSyM_0vU1uym2lEAqSJu6CwpNKr9ai5aMrOo0Emtz74m4q98=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"fc_0f6b72f039a7fae1006aa70c13c71487d2b7dae4febe4a3137\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{\\\"address\\\":\\\"Brandenburg Gate, Berlin, Germany\\\",\\\"limit\\\":1}\",\n      \"call_id\": \"call_aj9XTGuEvJWEoQ9VXDo1tnOF\",\n      \"name\": \"geocode\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Convert addresses to coordinates using Mapbox Geocoding API\",\n      \"name\": \"geocode\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"address\": {\n            \"type\": \"string\",\n            \"description\": \"The address to geocode (e.g., \\\"1600 Pennsylvania Ave, Washington DC\\\")\"\n          },\n          \"limit\": {\n            \"type\": \"integer\",\n            \"description\": \"Maximum number of results to return (1-10)\",\n            \"minimum\": 1,\n            \"maximum\": 10\n          }\n        },\n        \"required\": [\n          \"address\",\n          \"limit\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    {\n      \"type\": \"function\",\n      \"description\": \"Convert coordinates to addresses using Mapbox Reverse Geocoding API\",\n      \"name\": \"reverse_geocode\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"longitude\": {\n            \"type\": \"number\",\n            \"description\": \"The longitude coordinate\"\n          },\n          \"latitude\": {\n            \"type\": \"number\",\n            \"description\": \"The latitude coordinate\"\n          },\n          \"limit\": {\n            \"type\": \"integer\",\n            \"description\": \"Maximum number of results to return (1-5)\",\n            \"minimum\": 1,\n            \"maximum\": 5\n          }\n        },\n        \"required\": [\n          \"longitude\",\n          \"latitude\",\n          \"limit\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 170,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 101,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 64\n    },\n    \"total_tokens\": 271\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.mapbox.com/geocoding/v5/mapbox.places/Brandenburg+Gate%2C+Berlin%2C+Germany.json",
+                "signature": "af7adcc37b6dfa2c35ebbc2c38c5d16f",
+                "signature_v2": "99030eae3ba006e3fd6634fe9fe5cae2"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/vnd.geo+json; charset=utf-8"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "x-powered-by": [
+                        "Express"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "x-rate-limit-interval,x-rate-limit-limit,x-rate-limit-remaining,x-rate-limit-reset,ip-proximity"
+                    ],
+                    "cache-control": [
+                        "max-age=432000,stale-while-revalidate=600,stale-if-error=86400"
+                    ],
+                    "x-rate-limit-limit": [
+                        "600"
+                    ],
+                    "x-rate-limit-interval": [
+                        "60"
+                    ],
+                    "x-rate-limit-reset": [
+                        "1789329576"
+                    ],
+                    "last-modified": [
+                        "Thu, 10 Sep 2026 17:40:20 GMT"
+                    ],
+                    "etag": [
+                        "\"6d2283d630cc20b3cbdc3eb1f2dfb201\""
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "x-cache": [
+                        "Hit from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 11928875e072fa46f6185840ed222a20.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL50-P1"
+                    ],
+                    "x-amz-cf-id": [
+                        "0kL-f84L3-HduhJYyst4Nrq55-HB2X-fdMb76RVmssiWXvFnPfEtuw=="
+                    ],
+                    "age": [
+                        "2984"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"type\":\"FeatureCollection\",\"query\":[\"brandenburg\",\"gate\",\"berlin\",\"germany\"],\"features\":[{\"id\":\"place.115770\",\"type\":\"Feature\",\"place_type\":[\"region\",\"place\"],\"relevance\":0.592593,\"properties\":{\"mapbox_id\":\"dXJuOm1ieHBsYzpBY1E2\",\"wikidata\":\"Q64\",\"short_code\":\"DE-BE\"},\"text\":\"Berlin\",\"place_name\":\"Berlin, Germany\",\"bbox\":[13.08836,52.338261,13.760906,52.675502],\"center\":[13.395131,52.517389],\"geometry\":{\"type\":\"Point\",\"coordinates\":[13.395131,52.517389]},\"context\":[{\"id\":\"country.8762\",\"mapbox_id\":\"dXJuOm1ieHBsYzpJam8\",\"wikidata\":\"Q183\",\"short_code\":\"de\",\"text\":\"Germany\"}]}],\"attribution\":\"NOTICE: © 2026 Mapbox and its suppliers. All rights reserved. Use of this data is subject to the Mapbox Terms of Service (https://www.mapbox.com/about/maps/). This response and the information it contains may not be retained.\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "9d30113e35c81fbef53bfeb098bf443d",
+                "signature_v2": "0f24e8513f2b040522dccc851eb69b0c",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"geocode\",\"description\":\"Convert addresses to coordinates using Mapbox Geocoding API\",\"parameters\":{\"type\":\"object\",\"properties\":{\"address\":{\"type\":\"string\",\"description\":\"The address to geocode (e.g., \\u00221600 Pennsylvania Ave, Washington DC\\u0022)\"},\"limit\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return (1-10)\",\"minimum\":1,\"maximum\":10}},\"required\":[\"address\"],\"additionalProperties\":false}},{\"type\":\"function\",\"name\":\"reverse_geocode\",\"description\":\"Convert coordinates to addresses using Mapbox Reverse Geocoding API\",\"parameters\":{\"type\":\"object\",\"properties\":{\"longitude\":{\"type\":\"number\",\"description\":\"The longitude coordinate\"},\"latitude\":{\"type\":\"number\",\"description\":\"The latitude coordinate\"},\"limit\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return (1-5)\",\"minimum\":1,\"maximum\":5}},\"required\":[\"longitude\",\"latitude\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What are the coordinates of Brandenburg Gate in Berlin?\"},{\"id\":\"rs_0f6b72f039a7fae1006aa70c13219c87d2ac223b5c35114883\",\"type\":\"reasoning\",\"content\":[],\"encrypted_content\":\"gAAAAABqpwwUrdneQUi0nKnlD41xGHqC0cEFo5pZCGHq_8SsB6D4CPMuPuTUbmZATkbobH0eU5ZUWA7oC-2iKMO-exenWK9S4R2d8SjkHHTr9H61BjJW9E5I3T5T5gzzcxz5UWgG_UypluB7zD3ypuVXC5G_h4RNq7eKfZx3poGu4xK7B_jH5-8QlRP0x0sO2uyd7_Tp0G6tmFloblsaQO18e0dPbhfeRG5lbC15P8Kgu2qSTldhRnMIY5UZR60xNP5INbviEl4XpCTdb5rEBZmKOb_YQrh3rsNNnl3HwjR9EPivXFoozrsBfoeH3nR6o2O79yYAdIqwVT-p1wvV2ObOazdGhDqiIempHFr-LKEld6Mt9biSg-tdGHQAAI5hV78pABRr8PvG7BdKTz6IIamNvyBFXxj6lETM6AEkED6OSv5hOoCg9SQg1Dp9BYnWMUqn4CzCdTVLNCzxKLX2_sAXJeYCyH1apLcdthG49TYI1_UaK-tuLkN1to2JLjggrZd061XPvUgrRbtvRqvLNT3JWTE-WyTyXsH_6jEwHDTqYc95BXKf-KCn3vmLrByN4BFKh3vKxz1bG5WCqp0s_8SlKl2hXw7Y3djY9o2enZuJ9eLXjZ3JKE3r2LmljloUVWGzW4MtfSVk_V9YOZQVGfAZKW65EKNw_PXdV8On-StJ1nSOPfDN6NpD5U5ghqw_ixLlBndCJ1y4N4djYqcaoQMLefRbpI_VU8DWcectYOngPOMLC_ogkrvzN8P_bf-vw93gQ6ySUScFy1NqitXii7yvOa4czZ9aMUYoQCDRpw7o1iiOgSnpwZSO4BFsAKzUQqHedBlviNcGiwk-n_gmtp0HFnSPqRAEJ-jGIt47M3qDd6fzMGtr_YFFubydRVfe-vriplxEjidUahwluN8gFsUZedKnxGda7ZyhneQOtBlvMcsXWypDvKA_--Jge1ujqEgoBiGMnSjgibrBLZYIZcH5X8xCrrOwnVH1_UBZpsdpa8KgWG5abVjPDmSxYL82oxYqldpuv0z2zLw3pZq5WtLp3alYtDBHCo_83ABSnCTLrD88gh12DlPVyI-5ojkL0RzQBPDFozN7dSlFSDMJRT4SBpqfg_RVQW59BMSOp05tr-UrL55BuFN9WeFcg-Xpj06XkVDViJVm0nkQxGwMDzrSPiLLorC_UyfbndgEJh5o9tiqMvIpCl-UvMpwPdvJXg_9GOAoYiGOrXigrHdakYbUlblw4EnPb0Bn4zi1yKxZqBbM3AYjuNUF-N3VwobECLGLulS4B_If_RIS8KlpoAunrqkuRkqXK65MADPCTcBJcC3Y8xLGzOg6AW2WEmIDUzYgzkRCiwo4drpwc7fD3nAekIV1pSuF0lz4s9VF9ruYbjHIYTkl76j5_RdCsni9WNhvpIQES1nJty7vVezQhiWyk56UKIfZODNtfRf2FJmg-EBMdwzzawByHEhaI5oefU9L3br04OdfqShpLk2w4FD9skrF41h3ADcOZ4dQN29KiTxQHuS_4KKlYtS5i-isw0w_tPnZG9R0nyx_l2Uv5_ip7cFe2ucp_au0HF0CCa4zBXCM6hhTxPgJQlprTH99P1yp2QIXSyM_0vU1uym2lEAqSJu6CwpNKr9ai5aMrOo0Emtz74m4q98=\",\"summary\":[]},{\"arguments\":\"{\\u0022address\\u0022:\\u0022Brandenburg Gate, Berlin, Germany\\u0022,\\u0022limit\\u0022:1}\",\"call_id\":\"call_aj9XTGuEvJWEoQ9VXDo1tnOF\",\"name\":\"geocode\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_aj9XTGuEvJWEoQ9VXDo1tnOF\",\"output\":\"{\\u0022results\\u0022:[{\\u0022address\\u0022:\\u0022Berlin, Germany\\u0022,\\u0022coordinates\\u0022:{\\u0022longitude\\u0022:13.395131,\\u0022latitude\\u0022:52.517389},\\u0022relevance\\u0022:0.592593,\\u0022place_type\\u0022:[\\u0022region\\u0022,\\u0022place\\u0022]}],\\u0022count\\u0022:1}\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0f6b72f039a7fae1006aa70c1466b087d2b2b17efc911e5d0a\",\n  \"object\": \"response\",\n  \"created_at\": 1789332500,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789332501,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0f6b72f039a7fae1006aa70c14ce2887d2829c4aa6fa511794\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwwVGZxGuCNb-x-lFc5n1uYIvhXpSYt2iwqbu7JNrckZjR9jIp3seBZVzTvhQZjwN3zubX3G3nzI3iHXdThl4eY7pGfsbuOK5AlcIh2Uh8v7UD_oXPAAVsaQcnWyKHnbtDQF-0RwjVJfMNuODpt9tzCfoNIw6mWm1VjkE8720NUF-X5t91yjBzwxcuAMVDc5HpGsgAzSggtwe0JkNo3syCwB2MAGxnmR2eC9WPaLB2iTiNCZRU_brGrX3TxPJeK32GPkpEyk3Mnjab48iiccFtYmPf1WnjpIU_T_WaEoUyOMFJsozIbD30OGvLzyAb9UHtVXUOPedCq33729pfFEUIQnIYexXyarMXorB2aWWeHy2lE-Qjbnwc-zc1HBOMktieufnvuicAcjT8rjSKVzd_vPseaFsoL6-zkWRoJDRTnvKX4R5jhRmVka7ETrS7rVpjl5Qv-e0U92Q7MdHcIaLM1Ch8uPvCR3rFfIEcpG4P-36suEekJsjG094siGmZbrWqX1ML6QnHe_VpBsrGmMbDGcLH1cnu8KYQWkzrgTpciSD8OZfgoHWRUZJ8N6yf6jUY-SV8yXuMRjbMz4u39WUNqL7L65K8nyfIfXnKKXvx_2oH2U7b0v8xhdwo8YHZxYK0Rd6ecPDkjuBvO97JMbor49bBoz2BPuPPUTVcgxyfM9LvEW_hnb-SgyuqiG4YsywpUJ6RbPKXy7GcCHXR3q6nc6uQmYyugv_yqFTWbfLjyo9lCFkhlmlFGPQ975He7_Zy3b2liVgaCZiiPOtG0eQm3HHX2ufypMqnpyJpEjWQLlngpLPyZT9ZNXmoCtXYsTbuMXxjG0qgxq-Wy5CuMfcxIZlg_GVvPf1jvxAki1FSm0bQsEjawIOeQb6znEkpEpegB-zkQjz8W4Rab4CjN0nfQn3yiaTpq1Hle1P8EaWzYtrzgaAe2btsJegAoq-_052rpyrrpyk0J2-VuIbi-jvxXwe-6II4d-9fwIOUNUN6AdT01OIOWJa5Jz1sNEEPafGhd854fwKwcTIhBetc0rjfrs6MtxZqMZmBymzuSd3vDq8VQE7ohL7PYki-ISHZSeggTnWB-RquYPxJRMhRHRv-SK1Vie1b6Ox5pg2t4O_68IVehOrQtpW54K3vSnCuinzg7Zi3jPEmWCr2T2ZuAeB0EqZT3mtfcwcZJKQHs99GdWTdLYnIsVCQ0QRBA3_hl0xZkWIWC8EwWOfZSSJmHt44Ymx_bi1h0fF5gzc6Xi3ZqC7iAyJN6svY7ky5ZgYiy7jyg1dHhQTAQ9aRIZlkS0b6jxST2h2NrPvamzkxXaapnwgjTS0e2LrfrWpPkVlWppf62jZucEBYJxp1qKIiVSsxuRRF33flYT9E6AA7fg1FGls5XFyfSpMdWSjd9zPJ4NpkJIc60wbh2ll8dVsU3obzezfaTwm4ZlrAQ1l3V83h_dKiID3syahiPkz4xMPHAvTMOXOL_7vDKpDa6SGpOHPxR8vlgyuBylu-MDxt-kKnVeLZyYoEogm2pdB9-MQ_Qs4F9Lq6rM7HYAgO4BW_8jaFoK9M-W7ko7qlhdhwkcHkDwTBUCDSJJG00uMaRi8dku6hGR_uQtxrU-8ZJA_Y23Pqgr2g==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"fc_0f6b72f039a7fae1006aa70c158e3487d28acbd7f2ff22fc6e\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{\\\"address\\\":\\\"Brandenburger Tor, Pariser Platz, 10117 Berlin, Germany\\\",\\\"limit\\\":1}\",\n      \"call_id\": \"call_l5sQFqF5RzBIzWH1kG8ctBdI\",\n      \"name\": \"geocode\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Convert addresses to coordinates using Mapbox Geocoding API\",\n      \"name\": \"geocode\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"address\": {\n            \"type\": \"string\",\n            \"description\": \"The address to geocode (e.g., \\\"1600 Pennsylvania Ave, Washington DC\\\")\"\n          },\n          \"limit\": {\n            \"type\": \"integer\",\n            \"description\": \"Maximum number of results to return (1-10)\",\n            \"minimum\": 1,\n            \"maximum\": 10\n          }\n        },\n        \"required\": [\n          \"address\",\n          \"limit\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    {\n      \"type\": \"function\",\n      \"description\": \"Convert coordinates to addresses using Mapbox Reverse Geocoding API\",\n      \"name\": \"reverse_geocode\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"longitude\": {\n            \"type\": \"number\",\n            \"description\": \"The longitude coordinate\"\n          },\n          \"latitude\": {\n            \"type\": \"number\",\n            \"description\": \"The latitude coordinate\"\n          },\n          \"limit\": {\n            \"type\": \"integer\",\n            \"description\": \"Maximum number of results to return (1-5)\",\n            \"minimum\": 1,\n            \"maximum\": 5\n          }\n        },\n        \"required\": [\n          \"longitude\",\n          \"latitude\",\n          \"limit\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 326,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 120,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 64\n    },\n    \"total_tokens\": 446\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.mapbox.com/geocoding/v5/mapbox.places/Brandenburger+Tor%2C+Pariser+Platz%2C+10117+Berlin%2C+Germany.json",
+                "signature": "1af25a4717e6b3cb8430e5767ff0b0fb",
+                "signature_v2": "66c6dc6f0022fbfe295b3eb66bb19494"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/vnd.geo+json; charset=utf-8"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "x-powered-by": [
+                        "Express"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "x-rate-limit-interval,x-rate-limit-limit,x-rate-limit-remaining,x-rate-limit-reset,ip-proximity"
+                    ],
+                    "cache-control": [
+                        "max-age=432000,stale-while-revalidate=600,stale-if-error=86400"
+                    ],
+                    "x-rate-limit-limit": [
+                        "600"
+                    ],
+                    "x-rate-limit-interval": [
+                        "60"
+                    ],
+                    "x-rate-limit-reset": [
+                        "1789332562"
+                    ],
+                    "last-modified": [
+                        "Thu, 10 Sep 2026 17:40:20 GMT"
+                    ],
+                    "etag": [
+                        "\"b210408ff49685e8290f393ac6e940e7\""
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 11928875e072fa46f6185840ed222a20.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL50-P1"
+                    ],
+                    "x-amz-cf-id": [
+                        "BCN47EkHnb9GKDX_4kcPosedBJYG240MkS6nUzenMeg2aaTyPZuVdg=="
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"type\":\"FeatureCollection\",\"query\":[\"brandenburger\",\"tor\",\"pariser\",\"platz\",\"10117\",\"berlin\",\"germany\"],\"features\":[{\"id\":\"address.1097289339146990\",\"type\":\"Feature\",\"place_type\":[\"address\"],\"relevance\":0.761905,\"properties\":{\"accuracy\":\"street\",\"mapbox_id\":\"dXJuOm1ieGFkci1zdHI6MWI2M2UxOTgtM2IwZS00Nzc1LTk2Y2QtODlhY2NjOTI3ZDdh\"},\"text\":\"Pariser Platz\",\"place_name\":\"Pariser Platz, 10117 Berlin, Germany\",\"center\":[13.378199,52.516532],\"geometry\":{\"type\":\"Point\",\"coordinates\":[13.378199,52.516532]},\"context\":[{\"id\":\"postcode.5115450\",\"mapbox_id\":\"dXJuOm1ieHBsYzpUZzQ2\",\"text\":\"10117\"},{\"id\":\"locality.215001658\",\"mapbox_id\":\"dXJuOm1ieHBsYzpETkNxT2c\",\"wikidata\":\"Q2013767\",\"text\":\"Mitte\"},{\"id\":\"place.115770\",\"mapbox_id\":\"dXJuOm1ieHBsYzpBY1E2\",\"wikidata\":\"Q64\",\"short_code\":\"DE-BE\",\"text\":\"Berlin\"},{\"id\":\"country.8762\",\"mapbox_id\":\"dXJuOm1ieHBsYzpJam8\",\"wikidata\":\"Q183\",\"short_code\":\"de\",\"text\":\"Germany\"}]}],\"attribution\":\"NOTICE: © 2026 Mapbox and its suppliers. All rights reserved. Use of this data is subject to the Mapbox Terms of Service (https://www.mapbox.com/about/maps/). This response and the information it contains may not be retained.\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "9f7aa214e62f652a946638afd618e6b5",
+                "signature_v2": "7359a9b90a6f08510fab5438c90d7b18",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"geocode\",\"description\":\"Convert addresses to coordinates using Mapbox Geocoding API\",\"parameters\":{\"type\":\"object\",\"properties\":{\"address\":{\"type\":\"string\",\"description\":\"The address to geocode (e.g., \\u00221600 Pennsylvania Ave, Washington DC\\u0022)\"},\"limit\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return (1-10)\",\"minimum\":1,\"maximum\":10}},\"required\":[\"address\"],\"additionalProperties\":false}},{\"type\":\"function\",\"name\":\"reverse_geocode\",\"description\":\"Convert coordinates to addresses using Mapbox Reverse Geocoding API\",\"parameters\":{\"type\":\"object\",\"properties\":{\"longitude\":{\"type\":\"number\",\"description\":\"The longitude coordinate\"},\"latitude\":{\"type\":\"number\",\"description\":\"The latitude coordinate\"},\"limit\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return (1-5)\",\"minimum\":1,\"maximum\":5}},\"required\":[\"longitude\",\"latitude\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What are the coordinates of Brandenburg Gate in Berlin?\"},{\"id\":\"rs_0f6b72f039a7fae1006aa70c13219c87d2ac223b5c35114883\",\"type\":\"reasoning\",\"content\":[],\"encrypted_content\":\"gAAAAABqpwwUrdneQUi0nKnlD41xGHqC0cEFo5pZCGHq_8SsB6D4CPMuPuTUbmZATkbobH0eU5ZUWA7oC-2iKMO-exenWK9S4R2d8SjkHHTr9H61BjJW9E5I3T5T5gzzcxz5UWgG_UypluB7zD3ypuVXC5G_h4RNq7eKfZx3poGu4xK7B_jH5-8QlRP0x0sO2uyd7_Tp0G6tmFloblsaQO18e0dPbhfeRG5lbC15P8Kgu2qSTldhRnMIY5UZR60xNP5INbviEl4XpCTdb5rEBZmKOb_YQrh3rsNNnl3HwjR9EPivXFoozrsBfoeH3nR6o2O79yYAdIqwVT-p1wvV2ObOazdGhDqiIempHFr-LKEld6Mt9biSg-tdGHQAAI5hV78pABRr8PvG7BdKTz6IIamNvyBFXxj6lETM6AEkED6OSv5hOoCg9SQg1Dp9BYnWMUqn4CzCdTVLNCzxKLX2_sAXJeYCyH1apLcdthG49TYI1_UaK-tuLkN1to2JLjggrZd061XPvUgrRbtvRqvLNT3JWTE-WyTyXsH_6jEwHDTqYc95BXKf-KCn3vmLrByN4BFKh3vKxz1bG5WCqp0s_8SlKl2hXw7Y3djY9o2enZuJ9eLXjZ3JKE3r2LmljloUVWGzW4MtfSVk_V9YOZQVGfAZKW65EKNw_PXdV8On-StJ1nSOPfDN6NpD5U5ghqw_ixLlBndCJ1y4N4djYqcaoQMLefRbpI_VU8DWcectYOngPOMLC_ogkrvzN8P_bf-vw93gQ6ySUScFy1NqitXii7yvOa4czZ9aMUYoQCDRpw7o1iiOgSnpwZSO4BFsAKzUQqHedBlviNcGiwk-n_gmtp0HFnSPqRAEJ-jGIt47M3qDd6fzMGtr_YFFubydRVfe-vriplxEjidUahwluN8gFsUZedKnxGda7ZyhneQOtBlvMcsXWypDvKA_--Jge1ujqEgoBiGMnSjgibrBLZYIZcH5X8xCrrOwnVH1_UBZpsdpa8KgWG5abVjPDmSxYL82oxYqldpuv0z2zLw3pZq5WtLp3alYtDBHCo_83ABSnCTLrD88gh12DlPVyI-5ojkL0RzQBPDFozN7dSlFSDMJRT4SBpqfg_RVQW59BMSOp05tr-UrL55BuFN9WeFcg-Xpj06XkVDViJVm0nkQxGwMDzrSPiLLorC_UyfbndgEJh5o9tiqMvIpCl-UvMpwPdvJXg_9GOAoYiGOrXigrHdakYbUlblw4EnPb0Bn4zi1yKxZqBbM3AYjuNUF-N3VwobECLGLulS4B_If_RIS8KlpoAunrqkuRkqXK65MADPCTcBJcC3Y8xLGzOg6AW2WEmIDUzYgzkRCiwo4drpwc7fD3nAekIV1pSuF0lz4s9VF9ruYbjHIYTkl76j5_RdCsni9WNhvpIQES1nJty7vVezQhiWyk56UKIfZODNtfRf2FJmg-EBMdwzzawByHEhaI5oefU9L3br04OdfqShpLk2w4FD9skrF41h3ADcOZ4dQN29KiTxQHuS_4KKlYtS5i-isw0w_tPnZG9R0nyx_l2Uv5_ip7cFe2ucp_au0HF0CCa4zBXCM6hhTxPgJQlprTH99P1yp2QIXSyM_0vU1uym2lEAqSJu6CwpNKr9ai5aMrOo0Emtz74m4q98=\",\"summary\":[]},{\"arguments\":\"{\\u0022address\\u0022:\\u0022Brandenburg Gate, Berlin, Germany\\u0022,\\u0022limit\\u0022:1}\",\"call_id\":\"call_aj9XTGuEvJWEoQ9VXDo1tnOF\",\"name\":\"geocode\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_aj9XTGuEvJWEoQ9VXDo1tnOF\",\"output\":\"{\\u0022results\\u0022:[{\\u0022address\\u0022:\\u0022Berlin, Germany\\u0022,\\u0022coordinates\\u0022:{\\u0022longitude\\u0022:13.395131,\\u0022latitude\\u0022:52.517389},\\u0022relevance\\u0022:0.592593,\\u0022place_type\\u0022:[\\u0022region\\u0022,\\u0022place\\u0022]}],\\u0022count\\u0022:1}\"},{\"id\":\"rs_0f6b72f039a7fae1006aa70c14ce2887d2829c4aa6fa511794\",\"type\":\"reasoning\",\"content\":[],\"encrypted_content\":\"gAAAAABqpwwVGZxGuCNb-x-lFc5n1uYIvhXpSYt2iwqbu7JNrckZjR9jIp3seBZVzTvhQZjwN3zubX3G3nzI3iHXdThl4eY7pGfsbuOK5AlcIh2Uh8v7UD_oXPAAVsaQcnWyKHnbtDQF-0RwjVJfMNuODpt9tzCfoNIw6mWm1VjkE8720NUF-X5t91yjBzwxcuAMVDc5HpGsgAzSggtwe0JkNo3syCwB2MAGxnmR2eC9WPaLB2iTiNCZRU_brGrX3TxPJeK32GPkpEyk3Mnjab48iiccFtYmPf1WnjpIU_T_WaEoUyOMFJsozIbD30OGvLzyAb9UHtVXUOPedCq33729pfFEUIQnIYexXyarMXorB2aWWeHy2lE-Qjbnwc-zc1HBOMktieufnvuicAcjT8rjSKVzd_vPseaFsoL6-zkWRoJDRTnvKX4R5jhRmVka7ETrS7rVpjl5Qv-e0U92Q7MdHcIaLM1Ch8uPvCR3rFfIEcpG4P-36suEekJsjG094siGmZbrWqX1ML6QnHe_VpBsrGmMbDGcLH1cnu8KYQWkzrgTpciSD8OZfgoHWRUZJ8N6yf6jUY-SV8yXuMRjbMz4u39WUNqL7L65K8nyfIfXnKKXvx_2oH2U7b0v8xhdwo8YHZxYK0Rd6ecPDkjuBvO97JMbor49bBoz2BPuPPUTVcgxyfM9LvEW_hnb-SgyuqiG4YsywpUJ6RbPKXy7GcCHXR3q6nc6uQmYyugv_yqFTWbfLjyo9lCFkhlmlFGPQ975He7_Zy3b2liVgaCZiiPOtG0eQm3HHX2ufypMqnpyJpEjWQLlngpLPyZT9ZNXmoCtXYsTbuMXxjG0qgxq-Wy5CuMfcxIZlg_GVvPf1jvxAki1FSm0bQsEjawIOeQb6znEkpEpegB-zkQjz8W4Rab4CjN0nfQn3yiaTpq1Hle1P8EaWzYtrzgaAe2btsJegAoq-_052rpyrrpyk0J2-VuIbi-jvxXwe-6II4d-9fwIOUNUN6AdT01OIOWJa5Jz1sNEEPafGhd854fwKwcTIhBetc0rjfrs6MtxZqMZmBymzuSd3vDq8VQE7ohL7PYki-ISHZSeggTnWB-RquYPxJRMhRHRv-SK1Vie1b6Ox5pg2t4O_68IVehOrQtpW54K3vSnCuinzg7Zi3jPEmWCr2T2ZuAeB0EqZT3mtfcwcZJKQHs99GdWTdLYnIsVCQ0QRBA3_hl0xZkWIWC8EwWOfZSSJmHt44Ymx_bi1h0fF5gzc6Xi3ZqC7iAyJN6svY7ky5ZgYiy7jyg1dHhQTAQ9aRIZlkS0b6jxST2h2NrPvamzkxXaapnwgjTS0e2LrfrWpPkVlWppf62jZucEBYJxp1qKIiVSsxuRRF33flYT9E6AA7fg1FGls5XFyfSpMdWSjd9zPJ4NpkJIc60wbh2ll8dVsU3obzezfaTwm4ZlrAQ1l3V83h_dKiID3syahiPkz4xMPHAvTMOXOL_7vDKpDa6SGpOHPxR8vlgyuBylu-MDxt-kKnVeLZyYoEogm2pdB9-MQ_Qs4F9Lq6rM7HYAgO4BW_8jaFoK9M-W7ko7qlhdhwkcHkDwTBUCDSJJG00uMaRi8dku6hGR_uQtxrU-8ZJA_Y23Pqgr2g==\",\"summary\":[]},{\"arguments\":\"{\\u0022address\\u0022:\\u0022Brandenburger Tor, Pariser Platz, 10117 Berlin, Germany\\u0022,\\u0022limit\\u0022:1}\",\"call_id\":\"call_l5sQFqF5RzBIzWH1kG8ctBdI\",\"name\":\"geocode\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_l5sQFqF5RzBIzWH1kG8ctBdI\",\"output\":\"{\\u0022results\\u0022:[{\\u0022address\\u0022:\\u0022Pariser Platz, 10117 Berlin, Germany\\u0022,\\u0022coordinates\\u0022:{\\u0022longitude\\u0022:13.378199,\\u0022latitude\\u0022:52.516532},\\u0022relevance\\u0022:0.761905,\\u0022place_type\\u0022:[\\u0022address\\u0022]}],\\u0022count\\u0022:1}\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0f6b72f039a7fae1006aa70c16445887d2b4b71b203daf8111\",\n  \"object\": \"response\",\n  \"created_at\": 1789332502,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789332504,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0f6b72f039a7fae1006aa70c169f9487d28174d8c38bcc8b48\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwwZuXvlDEbEIryPwaEubFzNBHoa5HDQSoZ27_Qg6BmyqpOXjLalqmfnfiwJkC7-oUcBpZSbXuYqXa3lF7hcp1GbryPTUt7m-L0z4p0cUJngt2D4Mc-7JBvE78FfT-o0Z2NEdWHvOOf352wD_e1w3QoGuwfuJC4pZGHYxQXlTpUptSnaG6FSHNmQ_98FqT8pnKlr3uN3WffT5fD_UbDEDME-2i0dTVvVPNGayRpkFA0-NR-bsZFihszu8vLvBqJ3poUX7SXi5_Q7Zkfi2KCjqVIYcIutuE3McWCHxWu2ftthiQAGJqj0b-W-HQq9t01O7xdsu0Lop4cQzmu4vu4ho2QRQo2qpOIcBFudhmK_v6Uy-v3e_L5xp_EWMIOpSXjjeQRFtSDOA4ss6v2CNgeMwf7sxuiU6JKiqbyx2s7c3vGzl4kqYYbNfmcxz58Vk4rlfvuXYR2F5gk9btH4b4OfWhDruV0e7Zx4Qk_yoSXOCW4KPCUmeaAnAZmXo7vbys4okEncZu0B_PF1-W8bhE_OtZJUkL6Oxf8hwN-6jAF9k5ht4cw_yqQYmDsILxvkXOCKV0LuTFO_CCLbo0EVi5b9ynZMtsPFTLkjyy8J_VKc-Mh807JoAhaW_U29Q_h0pXI5bwNOOQ87tvtc8RvP9_mQCgdmT54jmM-jkvuGpEhp7pyVL8K9VNbwsdniBvgqYkP8q03VBy1mE5K-tvKGPxq4e7owYIYta38DrXoPteYE8hjGgen-7CTa8VYSLv4m4PuCV4YOrNRksSvgV_7LIZyaXDXJwEVAncv3PqBfQqb6xyx8fGbeyapun8vPwRn1kxJpqthDyj_TElDPXFCMgjTm7enwI9rUWbVZZ3V_Vc9KDbSVC8ZHTolJV-4idl0day6guf85KxZtF18VW7V4FYDXrTrR2ZXWMwn2Sidi2PkiKFQvPgfE3L3c1TAhyWfMPFdR_GoagkXWWhX-3WWx0f2_5WXo4L1tO4IjIy2P7o_q9tcDKr7N41H0z-z6ikRI_7vm5M6ATusHK5szH2VeWrPfcdtSdam0aZi19GuPsFMkpDocyQtcxK1rMJc3Y5poEGLUj1qLWiagTE4hwGOsXIRLrM7hHaGzE42mv6iZEsN0J8YwcyjgOpQb9qbdqHm2RV-6TSoeAYv0m75I1FYmPLScFVnmb-8JYCqaglQ52h3QeQHUirn61REfkHU_S3fJqxE6fY6qT-WsBB1PekLNT8HXOfsLAtEC0xQxnNbQMJWp7jzR2daLFAW2l-eVlsV3so7Zi3MGeTJIcfJ8YoJXVMN8fxuv4hGACUfoV4OZzn98zoNh0BZnFPqTH4vTPJ6dzrSxaq3WQJAou4fDcQO6Bqb4EVEOeyrscrRxo05I0BBbBWSte043oF9LUTIxKloaKz3bQEqQ4bObo-9iO4I9Rjc6BG0bSN2AlGNRKH6RctPFmNXbslsJq9yk_8jwrVLPyRu8lydydDKjRxUq59KNLo51bY5u4SNdIxJuU0uyomU83dpqNOGYCoAx8P0hQIaZidR83Z54Rtr2u8oPMQzBLBIdOPo14vijthEOtPALc_5iBpFbXRwgXJG8M72oUG42jMGhHgDAmzVAx-smMM1wqU0abH1VPms8kesroo3hzf2BVBswz7yJ7a0YmL1g1pHjuFmUj_A-MWdLUz-ZS-JzVCjvg3Ma1CPNrgXrac0Wl1UGAjrWJka_J_NoWhlO53YRYK_FKMT6t4C7A5QPevgDg06DXkA2qNLOB1BtCrxppp7dAdRjV6Tx8sLQB-3_vLaSFaVmX6blbVkgVzYAs5lvaR3Q57w6ESveh4sKnDR5y6bu7CzOrMFgP7MiCP_GbDhP7bJksPD8M3ybbe43_SgzTcA2OfhjK3Z2kW99Csihzf_dyebT2_uTR76f8vVa1LZz97Vz4oDJ3SEmaxRPDZ6j7duguuJC3PO63ca4mmkT31FuiMrCcPYDhl0WuleoOPoKCnKcvhRWzdPqNYg1Jer_sA8A2YNViXOVjlOR7k2Gp674uUqi0SKl23nBe1hZkeS5BsoM3NIFlxb_xRAhRE4W--nCoQAYGHDXSIdE3Il0WphRAbjOfDNziRba_axN6Qq15XYZX1JZ0S_dOb3fGnb_CLk6IsGfVVcljDNtHyoMmaSPuxC78JzMgxfvm0D_xySj2iCKqh71OEH8Bb-3UdsZ5ri7-w6f2yWyA75m_VmgzotDvWieGsqg973kdzqhBQonnUWKxI_U3XIneDxwik_Fx1gBEZHlhTTzlkY9N-VxhWRQxZ1EQbo4ihxk18Xl-NIgXizPiGy8hjt6tVLT9rjo-69eVkBIl5TcJeyswBh8Y-oG6eKtcyxKZigDMyCI262zeK5AzLyM4If7LpZPeITsccbK5tUQQw==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0f6b72f039a7fae1006aa70c18777c87d284e32001f0108e9e\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"Brandenburg Gate (Pariser Platz), Berlin \\u2014 approx. coordinates:\\nLatitude: 52.516532\\u00b0 N\\nLongitude: 13.378199\\u00b0 E\\n\\n(Decimal degrees)\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Convert addresses to coordinates using Mapbox Geocoding API\",\n      \"name\": \"geocode\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"address\": {\n            \"type\": \"string\",\n            \"description\": \"The address to geocode (e.g., \\\"1600 Pennsylvania Ave, Washington DC\\\")\"\n          },\n          \"limit\": {\n            \"type\": \"integer\",\n            \"description\": \"Maximum number of results to return (1-10)\",\n            \"minimum\": 1,\n            \"maximum\": 10\n          }\n        },\n        \"required\": [\n          \"address\",\n          \"limit\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    {\n      \"type\": \"function\",\n      \"description\": \"Convert coordinates to addresses using Mapbox Reverse Geocoding API\",\n      \"name\": \"reverse_geocode\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"longitude\": {\n            \"type\": \"number\",\n            \"description\": \"The longitude coordinate\"\n          },\n          \"latitude\": {\n            \"type\": \"number\",\n            \"description\": \"The latitude coordinate\"\n          },\n          \"limit\": {\n            \"type\": \"integer\",\n            \"description\": \"Maximum number of results to return (1-5)\",\n            \"minimum\": 1,\n            \"maximum\": 5\n          }\n        },\n        \"required\": [\n          \"longitude\",\n          \"latitude\",\n          \"limit\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 506,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 262,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 192\n    },\n    \"total_tokens\": 768\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

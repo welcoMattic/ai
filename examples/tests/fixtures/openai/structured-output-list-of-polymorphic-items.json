@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "170926ae70f62de17e19873d2236600b",
+                "signature_v2": "c9434ca6281b3e85dff3f172bfc58142",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"text\":{\"format\":{\"name\":\"ListOfPolymorphicTypesDto\",\"schema\":{\"type\":\"object\",\"properties\":{\"items\":{\"type\":\"array\",\"items\":{\"anyOf\":[{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"type\":{\"type\":\"string\",\"pattern\":\"^name$\",\"enum\":[\"name\"]}},\"required\":[\"name\",\"type\"],\"additionalProperties\":false},{\"type\":\"object\",\"properties\":{\"age\":{\"type\":\"integer\"},\"type\":{\"type\":\"string\",\"pattern\":\"^age$\",\"enum\":[\"age\"]}},\"required\":[\"age\",\"type\"],\"additionalProperties\":false}]}}},\"required\":[\"items\"],\"additionalProperties\":false},\"strict\":true,\"type\":\"json_schema\"}},\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Hi! My name is John Doe, I am 30 years old and I live in Paris.\"}],\"instructions\":\"You are a persona data collector! Return all the data you can gather from the user input.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999822"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "1ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_023c1301891cb7d3006aa6fff1182887d2873b2c7d281a286b\",\n  \"object\": \"response\",\n  \"created_at\": 1789329393,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329398,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a persona data collector! Return all the data you can gather from the user input.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_023c1301891cb7d3006aa6fff18b1487d2a6fa8cb1b9cadead\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv_2CP51ZkxxHeVYdkgVQloxFccXkFYliiUocF7CCRP-vF_LFp6_TVulS7mcYdlq-acMKIPT4fD1vOVD4yUArG0412dauFeiZCVp-w02tCShzIwXltPswcHHxweNQ9kImj5gENLrCo2wkS8R0FApO-0ET2_nwMvlgmvF0zFcLi7SJUVV7kUeNR5npTNPzLnvjrFiC41uwVNC2nHnFypKC5SZbFyq3Eff6ma7sGdXmVrK1dxVNejwCe6_VE7-raGRSTdwrKWvphCxRsnvkKNyVkqe6yc3Rcbbb-zNszZPwXx_H6hywZ4GYtrr22zQflIEwiB10KQIhm8qVBRb3vhpLRwGB9_1uQp3Imu8xFrHZBZZ1fkFskzLIJXGLXG3vx6Al4IpV2oPIfL_f20NII1gXPf3V3xPYHa2TRIlKX-5Ofaf4KpSmI8lPIZQJtOMy1AR36d-7ae5sCJUTKfkcu6nOf3Ys1NCKfqAwwQfgIaHBwslqwJ8MvbYooZNl8NYZIJ8iUF7AS1GNNzkUJtNttgUnbGVYy6YuGAO0RaQuIOv5hVBcmgdSTkLf0tx8aPtqAHhZnru5e2Yl8376NQTwnQ5nGK25cXpayPQqWWrv8wyLdqmejpQPWv_avZWe4oD91qthgR-qRC5wr5HWa4UzNtH_u7XxiNkS-n5mXcISN7NoWaHd8lJijTsVmj8LGegkYrWdGTng6Wou196aS7Nui1YIgInBK7Qp-vWYuJkuLzNkHBMgQUich34eF-ExYmGo-qPGl97nNYivSn98MfSFUcH2yo_M7SX_KSpI8TbQSKUyFqZEIeOWBESUBK4MPLmtc7_F6WXY3ZxUbeROZJ3W5eyW0FffsPBr2qT97IKVBe75RG2o0WajsxFGarg44UzN0IF9K4Ilhvc1hARt825DqXz6pZojLpCe4-48GyNHlpIwPGXWERzz0bnnEaNumSNRaxfTtgMLjoyrHJliETjSvBRaNGeWCASde_7km0DYWDMz2aQGpjaEUjQCvTXmeAlK-JRbQhL7a9xSU25VO6nc5GOymKPQ_l2Jx0YyWQeR7Vo-nSiQ2RrqhZQ3et4kMd7pDGeTxkLUORBMxxftS7zuA_snhH-iyNkE6eHSicJZ4mqzfNQczC9JQuhQLh4EA0Xhl-aMLqg4qjLcxrv3iAL5ZZ00JlMIVV4_lRfQTYOqfq34OYzH3AachFHbeQAJgpt_ItmVetNgsUWJh8N91h5_Mtpl3pydxHlcAJMRFnHAX9KQUzfcnoNsSbfC4TN9Z2_bHiYKeKenudWZ2kHc-Qc8QcQIQscTQP7-L9Hbj8k4qgBBD0OsKD7Fsri0JgULEwNrPQPDI-56uKAFx0_19BPR19k4cjo0bsGkrP6qna4ptwhlg_NOvJ8acNOWoIhzaSOjKnXPerfGZlDzY4P3HPk56pwc9mUyXtFAcFJK2EUTEMizuSIdJ5E5hIM3k4D08O6YLYgsR4DsQ7BCvHyNDof80LFHUmF3eBIxwCzv7idmFyI-oZZEj_jwETZaQ-ma0jIAbHeDiVyIAq3n_FnT2OWAypOPl3gsEYt7ajNSCUMZzyNykfESr0CGp_jtdezckFlJKm2grQ6tSjlB8rpoHcgTR437FW95Y1TRpbtLfwkQFjSBq-YrC3H2TiKnQmm7Mi9OWVSgzHDQNs6ppxySeuwNFUBBI_fCMArUnYsoiDQYCrsZJfEvR75hzlbKVCG14Ym3mEXpuea33778B_lf9H3mfrTmlLWl0U4kORHFBRivTP8Ya0sfC4kq0kLOi3ND-X3daBmyzgPTB13_Q1raQQ2c4UmwBQ3wMIEUyZacVVBtZ1XXcCO7-81jgeNKGtYWIdVDdmsvUQZJ4SpnFo02nyfwRQeh0GfJotBBK8Jwg4uz1vaYbeI2cFp961-_cxp7VM_6mmWdYgwreBbIYa8QyCHqcZENGPH7mTasSOmB1L6QqzIshWpPBfNAzKjSiI9jDzCSkiEIj1PU-2fjqfAXzsEjn6HM2V6Q3KJsoxhPp8CcHoQgF9oR1UocieleG-E4CqdbmgwX66537NZmyzo_Ee2QhCg-aUoylHIhAdw2LlI30yhLKdroyVs0vt51zYhdLDm_HHSgzuK2T_qp0sWVVpkv8-Qrd5ZimF5ejlTEUaFgEcvqa5L2MqUBB3tysWhM8AY_h5EkOpE5RFn7OgHaq110Eqb9ByOrPBJsZ9cwe4UKJaXbheT8LVvdkcyEfZDlCOjlqDt_2eoK-AaQ_-6ckLuauur4khKYoylAUx60oxTDAOFFuLcdiIWMqTDftmOPT1Hqig2JPoq5mVl-8GXrFeFsamCYc_y6Xoc6q0_Gf5Qg1-K06nq4uP5_LrB8NCJAgJXFPhvb6nLc_WsnwqJ54fFPlhwJNuhiA4hS3BMjQ6fUjFkYwv_AhDI3LKxgfwKG1i37Ssj9o3_4USbwUxq1sClvooJj_nfhFKzJ1Xflz9bN6vAo4APA4aLLTLrofdEL7BAr2Aa9eaO6nVUjIs-SpNWQs00sk6vtv58PioH_vS5gNdRv1pH-y6wldBhquTNl-03YsWq0fUiW1TBPuSIsjtpWBFkolp5R2Vf5_kmVjoHEzz0OlJHiZN289efYvT5MHgR3UCQDsVG6rlmmWPUNH7HgBrGyT94cZ7hvbnDHBZbCGKKWVXx0MY37UUwrTDlfAEJ5hpA1WwP9DVuTWI8qsiIWx1eQrAC2Tp9k914wPmb93v4-U1dP3zYM7z3fiOKDXLoSMFAdvff86ydc-RzJuJZgxG5elOkYKUsLt3FyTz--qI7_7pgFDDlxCHk8iS_ioJFpYiGe3F_6K4-lQJdEpHBmvBaT3RfJVKVCnuH9cXXdxkfiOM0weAWmXtiSvVZ1kqOu0eAF911vwBrTcjDK8zngZlWtDHhEai0L6cF0_x73OeQxBU9WvksiFnXbeTm1UBGFs8HfxDj52I7HqRns5p32VI1TnBZKAOR3yjtYZnkp00hc8HZUzzbif0CTV0jq3fjSJxwuCPur3WVHoSYy3HN1kM5gUoF8VDE_oGHLyyOeVSfvsHha3ENK2EH9pABKFDYiuSFYF8h-sJDLa5Sy3P9XHevH-sCtZDUzB-IzOwXT6yfncoQgFFByZHiRpxxM2unLr53golShDw2ILAOSpvWzXNb5Iw8NxOjWqANrcAtIrbX-9kNL_X4vKf8ToK2WFx1ZbXyAcI9PgDNsT9eVf0SosPlZdlGu6p_IPpMGY9n9lbfoAQe3RJcwbXhBTfuGloBB66I-rj5sFhHCoE2oC-HChredngJG3AbEfjs2DnBDbEEfNYcnDkZJJ8pg3K4_hr7OH7E-rNd\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_023c1301891cb7d3006aa6fff5fd7487d2ac7fcb7b328b818e\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"{\\\"items\\\":[{\\\"name\\\":\\\"John Doe\\\",\\\"type\\\":\\\"name\\\"},{\\\"age\\\":30,\\\"type\\\":\\\"age\\\"}]}\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"json_schema\",\n      \"description\": null,\n      \"name\": \"ListOfPolymorphicTypesDto\",\n      \"schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"items\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"anyOf\": [\n                {\n                  \"type\": \"object\",\n                  \"properties\": {\n                    \"name\": {\n                      \"type\": \"string\"\n                    },\n                    \"type\": {\n                      \"type\": \"string\",\n                      \"pattern\": \"^name$\",\n                      \"enum\": [\n                        \"name\"\n                      ]\n                    }\n                  },\n                  \"required\": [\n                    \"name\",\n                    \"type\"\n                  ],\n                  \"additionalProperties\": false\n                },\n                {\n                  \"type\": \"object\",\n                  \"properties\": {\n                    \"age\": {\n                      \"type\": \"integer\"\n                    },\n                    \"type\": {\n                      \"type\": \"string\",\n                      \"pattern\": \"^age$\",\n                      \"enum\": [\n                        \"age\"\n                      ]\n                    }\n                  },\n                  \"required\": [\n                    \"age\",\n                    \"type\"\n                  ],\n                  \"additionalProperties\": false\n                }\n              ]\n            }\n          }\n        },\n        \"required\": [\n          \"items\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 133,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 395,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 320\n    },\n    \"total_tokens\": 528\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}
