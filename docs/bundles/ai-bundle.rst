@@ -1246,6 +1246,11 @@ The profiler panel provides insights into the agent's execution:
 .. image:: images/profiler-ai.png
    :alt: Profiler Panel
 
+Agent calls, platform invocations and tool executions also show up in the performance timeline of
+the profiler, in the ``ai`` category. A platform invocation spans until its result is converted, or
+until its stream is fully consumed, so it includes the time waiting for the model's response. An
+agent call spans the consumption of its execution, since the agent only runs while it is consumed.
+
 Testing agents
 ~~~~~~~~~~~~~~
 
