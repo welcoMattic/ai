@@ -258,6 +258,24 @@ If ``http.path`` is not set, it defaults to ``/mcp/<name>``. That default is alw
 server's name rather than from how many servers exist, so adding a second server can never silently move
 the first one's endpoint.
 
+OAuth 2.1 Authorization
+.......................
+
+MCP clients such as Claude and Cursor expect the server to speak `MCP Authorization
+<https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization>`_: RFC 8414/9728 discovery,
+a ``WWW-Authenticate`` challenge pointing at protected-resource metadata, and dynamic client registration.
+``mcp/sdk`` and the MCP Bundle deliberately stop at being a resource server: validating a bearer token and
+loading the corresponding user is plain Symfony Security, wired like any other firewall.
+
+For the authorization-server role itself, issuing tokens, running consent, registering clients, delegate
+to a dedicated OAuth server rather than hand-rolling one:
+
+- `API Platform's guide <https://api-platform.com/docs/core/mcp/#securing-the-mcp-server-with-oauth2-symfony>`_
+  covers the resource-server side against an external IdP (Keycloak, Auth0, Entra, Okta).
+- `omouren/mcp-oauth-bundle <https://github.com/omouren/mcp-oauth-bundle>`_ layers MCP's discovery, CIMD
+  and resource-bound tokens on top of the MCP Bundle and ``league/oauth2-server-bundle``, for servers that
+  need to run their own authorization server.
+
 Attribute Placement Patterns
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
