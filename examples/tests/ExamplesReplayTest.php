@@ -32,7 +32,8 @@ final class ExamplesReplayTest extends TestCase
     #[DataProvider('provideRecordedExamples')]
     public function testExampleReplaysDeterministically(string $examplePath, ?string $fixture)
     {
-        $process = new Process(['php', $examplePath], self::examplesDirectory(), ['CASSETTE' => 'replay']);
+        // Xdebug allocates objects of its own, which shifts the object ids in dumped output.
+        $process = new Process(['php', $examplePath], self::examplesDirectory(), ['CASSETTE' => 'replay', 'XDEBUG_MODE' => 'off']);
         $process->run();
 
         $this->assertSame(
@@ -81,6 +82,8 @@ final class ExamplesReplayTest extends TestCase
 
     private function normalize(string $output): string
     {
+        $output = str_replace(\dirname(self::examplesDirectory()).'/', '', $output);
+
         return rtrim(str_replace("\r\n", "\n", $output))."\n";
     }
 }

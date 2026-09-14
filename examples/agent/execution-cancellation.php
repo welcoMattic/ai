@@ -26,7 +26,7 @@ if (!function_exists('pcntl_signal')) {
 $platform = Factory::createPlatform(env('OPENAI_API_KEY'), http_client());
 $agent = new Agent($platform, 'gpt-5-mini');
 
-$messages = new MessageBag(Message::ofUser('Tell me a long story about a lighthouse keeper.'));
+$messages = new MessageBag(Message::ofUser('Tell me a story about a lighthouse keeper in about 150 words.'));
 
 $execution = $agent->call($messages, ['stream' => true]);
 

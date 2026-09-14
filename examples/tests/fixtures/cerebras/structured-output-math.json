@@ -1,0 +1,88 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cerebras.ai/v1/chat/completions",
+                "signature": "abedc37ab90576202efa6647da067db6",
+                "signature_v2": "e9b97602f9cdbd5b587ad467fc15a1e0",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"system\",\"content\":\"You are a helpful math tutor. Guide the user through the solution step by step.\"},{\"role\":\"user\",\"content\":\"how can I solve 8x + 7 = -23\"}],\"model\":\"gpt-oss-120b\",\"response_format\":{\"type\":\"json_schema\",\"json_schema\":{\"name\":\"MathReasoning\",\"schema\":{\"type\":\"object\",\"properties\":{\"steps\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"explanation\":{\"type\":\"string\"},\"output\":{\"type\":\"string\"}},\"required\":[\"explanation\",\"output\"],\"additionalProperties\":false}},\"finalAnswer\":{\"type\":\"string\"},\"result\":{\"type\":\"number\"}},\"required\":[\"steps\",\"finalAnswer\",\"result\"],\"additionalProperties\":false},\"strict\":true}}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-ratelimit-remaining-requests-minute": [
+                        "999"
+                    ],
+                    "x-ratelimit-remaining-requests-hour": [
+                        "59999"
+                    ],
+                    "x-ratelimit-remaining-requests-day": [
+                        "1439999"
+                    ],
+                    "x-ratelimit-remaining-tokens-minute": [
+                        "483590"
+                    ],
+                    "x-ratelimit-remaining-tokens-hour": [
+                        "89983590"
+                    ],
+                    "x-ratelimit-remaining-tokens-day": [
+                        "719983590"
+                    ],
+                    "x-ratelimit-limit-requests-minute": [
+                        "1000"
+                    ],
+                    "x-ratelimit-limit-requests-hour": [
+                        "60000"
+                    ],
+                    "x-ratelimit-limit-requests-day": [
+                        "1440000"
+                    ],
+                    "x-ratelimit-limit-tokens-minute": [
+                        "500000"
+                    ],
+                    "x-ratelimit-limit-tokens-hour": [
+                        "30000000"
+                    ],
+                    "x-ratelimit-limit-tokens-day": [
+                        "720000000"
+                    ],
+                    "inference-id": [
+                        "chatcmpl-38da2d25-6833-4fc4-935c-8e7d4551179e"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"chatcmpl-38da2d25-6833-4fc4-935c-8e7d4551179e\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"steps\\\":[{\\\"explanation\\\":\\\"Subtract 7 from both sides to isolate the term with x.\\\",\\\"output\\\":\\\"8x = -23 - 7\\\"},{\\\"explanation\\\":\\\"Simplify the right‑hand side.\\\",\\\"output\\\":\\\"8x = -30\\\"},{\\\"explanation\\\":\\\"Divide both sides by 8 to solve for x.\\\",\\\"output\\\":\\\"x = -30 ÷ 8\\\"}],\\\"finalAnswer\\\":\\\"x = -15/4\\\",\\\"result\\\":-3.75}\",\"reasoning\":\"We need to output in MathReasoning format JSON with steps, finalAnswer, result. Solve equation 8x + 7 = -23. Steps: subtract 7, then divide by 8. Compute: -23 - 7 = -30, then x = -30/8 = -15/4 = -3.75. Provide steps with explanation and output. finalAnswer string maybe \\\"x = -15/4\\\". result number maybe -3.75. Provide JSON.\",\"role\":\"assistant\"}}],\"created\":1789329168,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":496,\"completion_tokens\":204,\"completion_tokens_details\":{\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0,\"reasoning_tokens\":101},\"prompt_tokens\":292,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"time_info\":{\"created\":1789329168.5132194,\"queue_time\":0.003474599,\"prompt_time\":0.005430565,\"completion_time\":0.086859883,\"total_time\":0.09763288497924805}}"
+            }
+        }
+    ]
+}

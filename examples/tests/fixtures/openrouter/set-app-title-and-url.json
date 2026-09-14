@@ -1,0 +1,58 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://openrouter.ai/api/v1/chat/completions",
+                "signature": "c97d83e80444b397668b71450216369f",
+                "signature_v2": "e75a74147f0b64e8832ecb5dd3374c55",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"system\",\"content\":\"Output two sentences related to the user topic.\"},{\"role\":\"user\",\"content\":\"Chess\"}],\"model\":\"google\\/gemini-2.5-flash-lite\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-generation-id": [
+                        "gen-1789329453-Frs3w3o8doQZJmWGSmkM"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Generation-Id,X-Provider-Name,request-id,cf-ray"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "permissions-policy": [
+                        "payment=(self \"https://checkout.stripe.com\" \"https://connect-js.stripe.com\" \"https://js.stripe.com\" \"https://*.js.stripe.com\" \"https://hooks.stripe.com\")"
+                    ],
+                    "referrer-policy": [
+                        "no-referrer, strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"gen-1789329453-Frs3w3o8doQZJmWGSmkM\",\"object\":\"chat.completion\",\"created\":1789329453,\"model\":\"google/gemini-2.5-flash-lite\",\"provider\":\"Google\",\"system_fingerprint\":null,\"service_tier\":\"default\",\"choices\":[{\"index\":0,\"logprobs\":null,\"finish_reason\":\"stop\",\"native_finish_reason\":\"STOP\",\"message\":{\"role\":\"assistant\",\"content\":\"Chess is a strategic board game for two players, often referred to as \\\"the royal game.\\\" It involves moving pieces with unique abilities across a checkered board with the ultimate goal of checkmating the opponent's king.\",\"refusal\":null,\"reasoning\":null}}],\"usage\":{\"prompt_tokens\":10,\"completion_tokens\":44,\"total_tokens\":54,\"cost\":0.0000186,\"is_byok\":false,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":0,\"audio_tokens\":0,\"video_tokens\":0},\"cost_details\":{\"upstream_inference_cost\":0.0000186,\"upstream_inference_prompt_cost\":0.000001,\"upstream_inference_completions_cost\":0.0000176},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"image_tokens\":0,\"audio_tokens\":0}}}"
+            }
+        }
+    ]
+}

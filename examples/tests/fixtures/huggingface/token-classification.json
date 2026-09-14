@@ -1,0 +1,91 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://router.huggingface.co/hf-inference/models/dbmdz/bert-large-cased-finetuned-conll03-english",
+                "signature": "ea68256f84d933aac2b745d2d2c16293",
+                "signature_v2": "4825a1d827c60e6cb8bb95665c9cfd18",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"inputs\":\"John Smith works at Microsoft in London.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "240"
+                    ],
+                    "x-inference-provider": [
+                        "hf-inference"
+                    ],
+                    "x-powered-by": [
+                        "huggingface-moon"
+                    ],
+                    "cross-origin-opener-policy": [
+                        "same-origin"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers, origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-inference-id": [
+                        "055fe191-5844-42f9-a5cd-fd9aa53f8662"
+                    ],
+                    "x-proxied-host": [
+                        "http://10.109.10.195"
+                    ],
+                    "x-proxied-path": [
+                        "/"
+                    ],
+                    "x-proxied-replica": [
+                        "kwdf3nmv-b132tkpkl"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 ee13f760742dff149869edf4eaefde7e.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "7PyZtnS6ygjR5BDP5wgj2gfB6urLQ0htkI7podZE2DQ3B3ADJ2P1lg=="
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ]
+                },
+                "body_format": "json",
+                "body": "[{\"entity_group\":\"PER\",\"score\":0.99951434,\"word\":\"John Smith\",\"start\":0,\"end\":10},{\"entity_group\":\"ORG\",\"score\":0.9995158,\"word\":\"Microsoft\",\"start\":20,\"end\":29},{\"entity_group\":\"LOC\",\"score\":0.99869776,\"word\":\"London\",\"start\":33,\"end\":39}]"
+            }
+        }
+    ]
+}

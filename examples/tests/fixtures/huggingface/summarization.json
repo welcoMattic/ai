@@ -1,0 +1,91 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://router.huggingface.co/hf-inference/models/facebook/bart-large-cnn",
+                "signature": "386c2618016222af0fb60ed652a8a65c",
+                "signature_v2": "b1cbc75529dbd77f3c933eea258a64c2",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"inputs\":\"The tower is 324 metres (1,063 ft) tall, about the same height as an 81-storey building, and the tallest structure\\nin Paris. Its base is square, measuring 125 metres (410 ft) on each side. During its construction, the Eiffel Tower\\nsurpassed the Washington Monument to become the tallest man-made structure in the world, a title it held for 41\\nyears until the Chrysler Building in New York City was finished in 1930. It was the first structure to reach a\\nheight of 300 metres. Due to the addition of a broadcasting aerial at the top of the tower in 1957, it is now taller\\nthan the Chrysler Building by 5.2 metres (17 ft). Excluding transmitters, the Eiffel Tower is the second tallest\\nfree-standing structure in France after the Millau Viaduct.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "296"
+                    ],
+                    "x-inference-provider": [
+                        "hf-inference"
+                    ],
+                    "x-powered-by": [
+                        "huggingface-moon"
+                    ],
+                    "cross-origin-opener-policy": [
+                        "same-origin"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers, origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-inference-id": [
+                        "bc2da80e-541e-4c46-9b57-0b6714c1ea44"
+                    ],
+                    "x-proxied-host": [
+                        "http://10.109.115.172"
+                    ],
+                    "x-proxied-path": [
+                        "/"
+                    ],
+                    "x-proxied-replica": [
+                        "cy595xya-96szz"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 ee13f760742dff149869edf4eaefde7e.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "2WOw1npqcDNGR9pp-htuBeb2G8Wr0bjEuDI984nWye0WXQIKHjSNfA=="
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ]
+                },
+                "body_format": "json",
+                "body": "[{\"summary_text\":\"The tower is 324 metres (1,063 ft) tall, about the same height as an 81-storey building. Its base is square, measuring 125 metres (410 ft) on each side. Excluding transmitters, the Eiffel Tower is the second tallest free-standing structure in France after the Millau Viaduct.\"}]"
+            }
+        }
+    ]
+}

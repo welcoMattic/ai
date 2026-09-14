@@ -1,0 +1,124 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.scaleway.ai/v1/responses",
+                "signature": "a28a9010f783468735031e17f70451e3",
+                "signature_v2": "773aaf8de4f32b4fcb39e82521104db6",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}],\"model\":\"gpt-oss-120b\",\"input\":[{\"role\":\"user\",\"content\":\"What date and time is it right now?\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "envoy"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-allow-methods": [
+                        "GET, POST, OPTIONS"
+                    ],
+                    "access-control-allow-headers": [
+                        "User-Agent,X-Requested-With,X-Forwarded-For,If-Modified-Since,Cache-Control,Content-Type, Range,Authorization,Access-Control-Allow-Origin,Referer,X-Stainless-Os,X-Stainless-Runtime, X-Stainless-Runtime-Version,X-Stainless-Arch,X-Stainless-Lang,X-Stainless-Package-Version, X-Stainless-Retry-Count,X-Stainless-Timeout"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "300"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "200ms"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "299"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "200000"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "45ms"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "199848"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"2fd8fe87-4341-4f0a-8066-04deeb11671a\",\"created_at\":1789332511,\"incomplete_details\":null,\"instructions\":null,\"metadata\":null,\"model\":\"gpt-oss-120b\",\"object\":\"response\",\"output\":[{\"id\":\"rs_938a52b412868e1a\",\"summary\":[],\"type\":\"reasoning\",\"content\":[{\"text\":\"User asks for current date and time. Use the tool.\",\"type\":\"reasoning_text\"}],\"encrypted_content\":null,\"status\":null},{\"arguments\":\"{}\",\"call_id\":\"call_a79aebd6fe9c861c\",\"name\":\"clock\",\"type\":\"function_call\",\"id\":\"fc_a79aebd6fe9c861c\",\"status\":null}],\"parallel_tool_calls\":true,\"temperature\":1.0,\"tool_choice\":\"auto\",\"tools\":[{\"name\":\"clock\",\"parameters\":null,\"strict\":null,\"type\":\"function\",\"description\":\"Provides the current date and time.\"}],\"top_p\":1.0,\"background\":false,\"max_output_tokens\":32768,\"max_tool_calls\":null,\"previous_response_id\":null,\"prompt\":null,\"reasoning\":null,\"service_tier\":\"auto\",\"status\":\"completed\",\"text\":null,\"top_logprobs\":null,\"truncation\":\"disabled\",\"usage\":{\"input_tokens\":121,\"input_tokens_details\":{\"cached_tokens\":0,\"input_tokens_per_turn\":[121],\"cached_tokens_per_turn\":[0]},\"output_tokens\":31,\"output_tokens_details\":{\"reasoning_tokens\":15,\"tool_output_tokens\":0,\"output_tokens_per_turn\":[31],\"tool_output_tokens_per_turn\":[0]},\"total_tokens\":152},\"user\":null,\"input_messages\":null,\"output_messages\":null}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.scaleway.ai/v1/responses",
+                "signature": "4c6372ca55bc45f7de3bf6251ddf16c4",
+                "signature_v2": "89452aa3083e6a62a58171e7a9899972",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}],\"model\":\"gpt-oss-120b\",\"input\":[{\"role\":\"user\",\"content\":\"What date and time is it right now?\"},{\"arguments\":\"{}\",\"call_id\":\"call_a79aebd6fe9c861c\",\"name\":\"clock\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_a79aebd6fe9c861c\",\"output\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 20:48:31 (HH:MM:SS).\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "envoy"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-allow-methods": [
+                        "GET, POST, OPTIONS"
+                    ],
+                    "access-control-allow-headers": [
+                        "User-Agent,X-Requested-With,X-Forwarded-For,If-Modified-Since,Cache-Control,Content-Type, Range,Authorization,Access-Control-Allow-Origin,Referer,X-Stainless-Os,X-Stainless-Runtime, X-Stainless-Runtime-Version,X-Stainless-Arch,X-Stainless-Lang,X-Stainless-Package-Version, X-Stainless-Retry-Count,X-Stainless-Timeout"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "300"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "200ms"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "299"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "200000"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "65ms"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "199781"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"adbd0ae0-efbc-4e88-acb3-9e119e4ab1c3\",\"created_at\":1789332511,\"incomplete_details\":null,\"instructions\":null,\"metadata\":null,\"model\":\"gpt-oss-120b\",\"object\":\"response\",\"output\":[{\"id\":\"rs_9de47c5706a0cc3f\",\"summary\":[],\"type\":\"reasoning\",\"content\":[{\"text\":\"User asks for date and time. We have the info. Provide answer.\",\"type\":\"reasoning_text\"}],\"encrypted_content\":null,\"status\":null},{\"id\":\"msg_a3dde5e6c6e69d6c\",\"content\":[{\"annotations\":[],\"text\":\"The current date and time is **2026‑09‑13 20:48:31** (UTC).\",\"type\":\"output_text\",\"logprobs\":null}],\"role\":\"assistant\",\"status\":\"completed\",\"type\":\"message\",\"phase\":null}],\"parallel_tool_calls\":true,\"temperature\":1.0,\"tool_choice\":\"auto\",\"tools\":[{\"name\":\"clock\",\"parameters\":null,\"strict\":null,\"type\":\"function\",\"description\":\"Provides the current date and time.\"}],\"top_p\":1.0,\"background\":false,\"max_output_tokens\":32768,\"max_tool_calls\":null,\"previous_response_id\":null,\"prompt\":null,\"reasoning\":null,\"service_tier\":\"auto\",\"status\":\"completed\",\"text\":null,\"top_logprobs\":null,\"truncation\":\"disabled\",\"usage\":{\"input_tokens\":171,\"input_tokens_details\":{\"cached_tokens\":0,\"input_tokens_per_turn\":[171],\"cached_tokens_per_turn\":[0]},\"output_tokens\":48,\"output_tokens_details\":{\"reasoning_tokens\":16,\"tool_output_tokens\":0,\"output_tokens_per_turn\":[48],\"tool_output_tokens_per_turn\":[0]},\"total_tokens\":219},\"user\":null,\"input_messages\":null,\"output_messages\":null}"
+            }
+        }
+    ]
+}

@@ -18,16 +18,14 @@ use Symfony\AI\Platform\Bridge\OpenAi\Factory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\Result\Stream\Delta\TextDelta;
-use Symfony\Component\Clock\Clock as SymfonyClock;
 
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('OPENAI_API_KEY'), http_client());
 
-$clock = new Clock(new SymfonyClock());
 $crawler = new Scraper(http_client());
 $serpApi = new SerpApi(http_client(), env('SERP_API_KEY'));
-$toolbox = new Toolbox([$clock, $crawler, $serpApi], logger: logger());
+$toolbox = new Toolbox([new Clock(clock()), $crawler, $serpApi], logger: logger());
 $agent = new Agent($platform, 'gpt-5.2', toolbox: $toolbox, includeSources: true);
 
 $prompt = <<<PROMPT

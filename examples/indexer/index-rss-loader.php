@@ -17,20 +17,19 @@ use Symfony\AI\Store\Indexer\DocumentProcessor;
 use Symfony\AI\Store\Indexer\SourceIndexer;
 use Symfony\AI\Store\InMemory\Store as InMemoryStore;
 use Symfony\AI\Store\Query\VectorQuery;
-use Symfony\Component\HttpClient\HttpClient;
 
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('OPENAI_API_KEY'), http_client());
 $store = new InMemoryStore();
-$vectorizer = new Vectorizer($platform, 'text-embedding-3-small');
+$vectorizer = new Vectorizer($platform, 'text-embedding-3-small?dimensions=256');
 $indexer = new SourceIndexer(
-    loader: new RssFeedLoader(HttpClient::create()),
+    loader: new RssFeedLoader(http_client()),
     processor: new DocumentProcessor(
         vectorizer: $vectorizer,
         store: $store,
         transformers: [
-            new TextSplitTransformer(chunkSize: 500, overlap: 100),
+            new TextSplitTransformer(chunkSize: 2000, overlap: 200),
         ],
         logger: logger(),
     ),
@@ -38,11 +37,10 @@ $indexer = new SourceIndexer(
 
 $indexer->index([
     'https://feeds.feedburner.com/symfony/blog',
-    'https://www.tagesschau.de/index~rss2.xml',
 ]);
 
 $vector = $vectorizer->vectorize('Week of Symfony');
 $results = $store->query(new VectorQuery($vector));
 foreach ($results as $i => $document) {
-    echo sprintf("%d. %s\n", $i + 1, substr($document->getId(), 0, 40).'...');
+    echo sprintf("%d. %s\n", $i + 1, $document->getMetadata()['title']);
 }

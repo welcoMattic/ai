@@ -1,0 +1,41 @@
+<thinking>
+The user wants me to:
+1. Define "unicorn" in 30 words
+2. Look up Irish history on Wikipedia and summarize it in 2 sentences
+3. Tell them before I call tools
+
+So I should:
+1. First provide the definition of unicorn
+2. Tell them I'm about to search Wikipedia for Irish history
+3. Then make the Wikipedia call
+4. Summarize what I find in 2 sentences
+
+Let me start with the unicorn definition and tell them what I'm going to do.
+</thinking>
+I'll help you with both tasks!
+
+**Unicorn definition (30 words):**
+A unicorn is a mythical creature typically depicted as a white horse with a single, spiraling horn projecting from its forehead. It symbolizes purity, grace, and magic in various cultural traditions and folklore.
+
+**Before searching Wikipedia:**
+I'm now going to search Wikipedia for information about Irish history to provide you with a 2-sentence summary.<thinking>
+Good, I found several articles. The most relevant one appears to be "History of Ireland". Let me retrieve that article.
+</thinking>
+<thinking>
+Wow, that's a very long and comprehensive article about Irish history. Now I need to condense this into just 2 sentences as the user requested. I should try to capture the main themes and broad sweep of Irish history.
+
+Key themes I see:
+- Ancient prehistoric and Celtic origins
+- Viking invasions
+- Norman/English conquest starting in 1169
+- 800+ years of English/British rule with various rebellions
+- Religious conflicts (Catholic vs Protestant)
+- The Great Famine
+- Independence movement and partition in 1920s
+- Modern economic development
+
+Let me create 2 sentences that capture this sweep:
+</thinking>
+**Irish History Summary (2 sentences):**
+
+Ireland's history spans from prehistoric settlements around 10,500 BC through Celtic, Viking, and Norman periods, followed by over 800 years of English and British political and military involvement beginning with the Norman invasion of 1169, marked by recurring conflicts, rebellions, and the devastating Great Famine of 1845-1852. After centuries of struggle for independence, Ireland was partitioned in 1922 into the Irish Free State (later the Republic of Ireland) comprising 26 counties and Northern Ireland (6 counties remaining in the UK), with the latter experiencing decades of sectarian conflict known as "the Troubles" until the 1998 Good Friday Agreement brought relative peace.

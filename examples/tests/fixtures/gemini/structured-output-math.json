@@ -1,0 +1,57 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "signature": "ec54bb39e6892d29b7148e0450d68f93",
+                "signature_v2": "2757c17f74cd59e426b0969693b89085",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"generationConfig\":{\"responseMimeType\":\"application\\/json\",\"responseJsonSchema\":{\"type\":\"object\",\"properties\":{\"steps\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"explanation\":{\"type\":\"string\"},\"output\":{\"type\":\"string\"}},\"required\":[\"explanation\",\"output\"],\"additionalProperties\":false}},\"finalAnswer\":{\"type\":\"string\"},\"result\":{\"type\":\"number\"}},\"required\":[\"steps\",\"finalAnswer\",\"result\"],\"additionalProperties\":false}},\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"how can I solve 8x + 7 = -23\"}]}],\"system_instruction\":{\"parts\":[{\"text\":\"You are a helpful math tutor. Guide the user through the solution step by step.\"}]}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "657"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"{\\\"steps\\\": [{\\\"explanation\\\": \\\"The goal is to isolate the variable 'x'. First, we need to get rid of the constant term on the left side of the equation. To do this, subtract 7 from both sides of the equation.\\\", \\\"output\\\": \\\"8x + 7 - 7 = -23 - 7\\\"}, {\\\"explanation\\\": \\\"Perform the subtraction on both sides.\\\", \\\"output\\\": \\\"8x = -30\\\"}, {\\\"explanation\\\": \\\"Now, to isolate 'x', we need to get rid of the coefficient 8. Since 8 is multiplying 'x', we divide both sides of the equation by 8.\\\", \\\"output\\\": \\\"8x / 8 = -30 / 8\\\"}, {\\\"explanation\\\": \\\"Perform the division on both sides. The fraction -30/8 can be simplified by dividing both the numerator and the denominator by their greatest common divisor, which is 2.\\\", \\\"output\\\": \\\"x = -15/4\\\"}], \\\"finalAnswer\\\": \\\"x = -15/4\\\", \\\"result\\\": -3.75}\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 32,\n    \"candidatesTokenCount\": 225,\n    \"totalTokenCount\": 441,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 32\n      }\n    ],\n    \"thoughtsTokenCount\": 184,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"Rf-maveOG_CW3boP9dixgQ8\"\n}\n"
+            }
+        }
+    ]
+}

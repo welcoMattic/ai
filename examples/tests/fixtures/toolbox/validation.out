@@ -1,0 +1,10 @@
+I found the order ORD-2026-0042 — it's being shipped to Berlin, DE.
+
+Would you like me to retrieve more details (tracking number and carrier, estimated delivery date, item list, payment status), or take an action (cancel or change shipping)?
+I can’t look up that reference as-is because the order-search tool requires the reference to match the format ORD-YYYY-NNNN (example: ORD-2026-0042). The string "not-a-valid-reference" does not match that pattern, so I’m unable to call the order lookup with it.
+
+What I can do next:
+- You can provide the correct order reference in the format ORD-YYYY-NNNN and I’ll look it up for shipping to Berlin, DE.
+- Or provide other order-identifying details (customer email, name, order date, or items) and I’ll try to locate it another way if you’d like.
+
+Which would you prefer?

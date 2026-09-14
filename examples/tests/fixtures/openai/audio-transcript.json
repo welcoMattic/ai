@@ -1,0 +1,77 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/audio/transcriptions",
+                "signature": "147c93f552a710ef72086a949edfdcba",
+                "signature_v2": "30727249f8e13238c7271f09e98631e2",
+                "headers": {
+                    "content-type": [
+                        "multipart/form-data"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "model": "whisper-1",
+                    "file": "[resource audio.mp3, 51019 bytes]"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "via": [
+                        "envoy-router-86bf8679b4-z2c4x"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "7500"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "7499"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "8ms"
+                    ],
+                    "x-openai-proxy-wasm": [
+                        "v0.1"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"text\":\"Wishing you a Merry Christmas and a Happy New Year.\",\"usage\":{\"type\":\"duration\",\"seconds\":3}}"
+            }
+        }
+    ]
+}

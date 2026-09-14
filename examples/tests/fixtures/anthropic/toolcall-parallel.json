@@ -1,0 +1,190 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.anthropic.com/v1/messages",
+                "signature": "a9fa131ed6e20b7309513d5b0f0c87f3",
+                "signature_v2": "1bcb196677dfe6fb201cda4a6c795bce",
+                "headers": {
+                    "x-api-key": [
+                        "[redacted]"
+                    ],
+                    "anthropic-version": [
+                        "2023-06-01"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"max_tokens\":1000,\"tools\":[{\"name\":\"get_temperature\",\"description\":\"Returns the current temperature in degrees Celsius for a city.\",\"input_schema\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\"}},\"required\":[\"city\"],\"additionalProperties\":false},\"cache_control\":{\"type\":\"ephemeral\"}}],\"tool_choice\":{\"type\":\"auto\"},\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"What is the temperature in Berlin, Paris and Rome?\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"system\":[{\"type\":\"text\",\"text\":\"Use the available tool to answer. Call it once per city, in a single turn.\",\"cache_control\":{\"type\":\"ephemeral\"}}],\"model\":\"claude-sonnet-4-5-20250929\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "anthropic-ratelimit-input-tokens-limit": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-remaining": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-reset": [
+                        "2026-09-13T19:52:31Z"
+                    ],
+                    "anthropic-ratelimit-output-tokens-limit": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-remaining": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-reset": [
+                        "2026-09-13T19:52:32Z"
+                    ],
+                    "anthropic-ratelimit-requests-limit": [
+                        "5000"
+                    ],
+                    "anthropic-ratelimit-requests-remaining": [
+                        "4993"
+                    ],
+                    "anthropic-ratelimit-requests-reset": [
+                        "2026-09-13T19:52:31Z"
+                    ],
+                    "anthropic-ratelimit-tokens-limit": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-remaining": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-reset": [
+                        "2026-09-13T19:52:31Z"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "anthropic-organization-id": [
+                        "152d88d9-0d18-4cae-80c9-c425a5bf4e25"
+                    ],
+                    "anthropic-workspace-id": [
+                        "wrkspc_01Eo1YZvq8sNWFRAfhfjg7gS"
+                    ],
+                    "traceresponse": [
+                        "00-52e8bf4fcfd1737394d0715bf0cdf23c-a66b459755b7688e-01"
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "content-security-policy": [
+                        "default-src 'none'; frame-ancestors 'none'"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"model\":\"claude-sonnet-4-5-20250929\",\"id\":\"msg_011Cf22FyqUJ3oh9fjmUErKY\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"I'll check the current temperature in Berlin, Paris, and Rome for you.\"},{\"type\":\"tool_use\",\"id\":\"toolu_01LTT8rSVJf3L4KxSLHHZQh5\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Berlin\"},\"caller\":{\"type\":\"direct\"}},{\"type\":\"tool_use\",\"id\":\"toolu_01CREW2FSPUXAs9zh6Tx1o17\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Paris\"},\"caller\":{\"type\":\"direct\"}},{\"type\":\"tool_use\",\"id\":\"toolu_01WCTKEeXsYXhA4TtuA6HvfM\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Rome\"},\"caller\":{\"type\":\"direct\"}}],\"container\":null,\"stop_reason\":\"tool_use\",\"stop_sequence\":null,\"stop_details\":null,\"usage\":{\"input_tokens\":599,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"cache_creation\":{\"ephemeral_5m_input_tokens\":0,\"ephemeral_1h_input_tokens\":0},\"output_tokens\":142,\"service_tier\":\"standard\",\"inference_geo\":\"not_available\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.anthropic.com/v1/messages",
+                "signature": "155fe30282380e82c08648a10cebfee1",
+                "signature_v2": "13525b9fb94bcbd2683d4c74cf30d878",
+                "headers": {
+                    "x-api-key": [
+                        "[redacted]"
+                    ],
+                    "anthropic-version": [
+                        "2023-06-01"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"max_tokens\":1000,\"tools\":[{\"name\":\"get_temperature\",\"description\":\"Returns the current temperature in degrees Celsius for a city.\",\"input_schema\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\"}},\"required\":[\"city\"],\"additionalProperties\":false},\"cache_control\":{\"type\":\"ephemeral\"}}],\"tool_choice\":{\"type\":\"auto\"},\"messages\":[{\"role\":\"user\",\"content\":\"What is the temperature in Berlin, Paris and Rome?\"},{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"I\\u0027ll check the current temperature in Berlin, Paris, and Rome for you.\"},{\"type\":\"tool_use\",\"id\":\"toolu_01LTT8rSVJf3L4KxSLHHZQh5\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Berlin\"}},{\"type\":\"tool_use\",\"id\":\"toolu_01CREW2FSPUXAs9zh6Tx1o17\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Paris\"}},{\"type\":\"tool_use\",\"id\":\"toolu_01WCTKEeXsYXhA4TtuA6HvfM\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Rome\"}}]},{\"role\":\"user\",\"content\":[{\"type\":\"tool_result\",\"tool_use_id\":\"toolu_01LTT8rSVJf3L4KxSLHHZQh5\",\"content\":\"12\\u00b0C\"}]},{\"role\":\"user\",\"content\":[{\"type\":\"tool_result\",\"tool_use_id\":\"toolu_01CREW2FSPUXAs9zh6Tx1o17\",\"content\":\"15\\u00b0C\"}]},{\"role\":\"user\",\"content\":[{\"type\":\"tool_result\",\"tool_use_id\":\"toolu_01WCTKEeXsYXhA4TtuA6HvfM\",\"content\":\"19\\u00b0C\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"system\":[{\"type\":\"text\",\"text\":\"Use the available tool to answer. Call it once per city, in a single turn.\",\"cache_control\":{\"type\":\"ephemeral\"}}],\"model\":\"claude-sonnet-4-5-20250929\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "anthropic-ratelimit-input-tokens-limit": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-remaining": [
+                        "4999000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-reset": [
+                        "2026-09-13T19:52:34Z"
+                    ],
+                    "anthropic-ratelimit-output-tokens-limit": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-remaining": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-reset": [
+                        "2026-09-13T19:52:34Z"
+                    ],
+                    "anthropic-ratelimit-requests-limit": [
+                        "5000"
+                    ],
+                    "anthropic-ratelimit-requests-remaining": [
+                        "4999"
+                    ],
+                    "anthropic-ratelimit-requests-reset": [
+                        "2026-09-13T19:52:33Z"
+                    ],
+                    "anthropic-ratelimit-tokens-limit": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-remaining": [
+                        "5999000"
+                    ],
+                    "anthropic-ratelimit-tokens-reset": [
+                        "2026-09-13T19:52:34Z"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "anthropic-organization-id": [
+                        "152d88d9-0d18-4cae-80c9-c425a5bf4e25"
+                    ],
+                    "anthropic-workspace-id": [
+                        "wrkspc_01Eo1YZvq8sNWFRAfhfjg7gS"
+                    ],
+                    "traceresponse": [
+                        "00-01842dc1f551048c9c2ce446f22736b4-f92fe9cb2dfb65c4-01"
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "content-security-policy": [
+                        "default-src 'none'; frame-ancestors 'none'"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"model\":\"claude-sonnet-4-5-20250929\",\"id\":\"msg_011Cf22G8rgnYZhGiFzHw2ho\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"The current temperatures are:\\n- **Berlin**: 12°C\\n- **Paris**: 15°C\\n- **Rome**: 19°C\"}],\"container\":null,\"stop_reason\":\"end_turn\",\"stop_sequence\":null,\"stop_details\":null,\"usage\":{\"input_tokens\":838,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"cache_creation\":{\"ephemeral_5m_input_tokens\":0,\"ephemeral_1h_input_tokens\":0},\"output_tokens\":35,\"service_tier\":\"standard\",\"inference_geo\":\"not_available\"}}"
+            }
+        }
+    ]
+}

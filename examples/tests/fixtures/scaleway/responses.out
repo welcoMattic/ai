@@ -1,0 +1,78 @@
+## Symfony AI – What’s new in the latest releases (Symfony 7 + the 2.x AI packages)
+
+Symfony AI is the umbrella name for three pieces that landed in the Symfony ecosystem over the last two years:
+
+| Piece | Where it lives | What it does |
+|------|----------------|--------------|
+| **AI Component** (`symfony/ai`) | Core component, bundled with Symfony 7.0+ | Low‑level PHP client that knows how to talk to the major LLM providers (OpenAI, Anthropic, Ollama, Gemini…) and to handle streaming, function‑calling, tool‑use, embeddings, moderation, etc. |
+| **AI Bundle** (`symfony/ai-bundle`) | Optional bundle, installable on any Symfony version | Service‑container integration, config files, auto‑wired factories, Symfony‑style logger & event subscribers, Symfony Messenger & Console helpers. |
+| **Symfony UX AI** (`symfony/ux-ai`) | Stimulus‑controller front‑end library | Ready‑made UI components (chat window, “Ask me anything” input, streaming autocomplete, “AI‑generated form” helper) that work out‑of‑the‑box with the AI Bundle. |
+
+Below is a concise rundown of **what’s new** in each part as of the current stable releases (Symfony 7.1, `symfony/ai` 2.4, `symfony/ai-bundle` 2.4, `symfony/ux‑ai` 2.2 – released June 2024).  
+
+---
+
+## 1️⃣ AI Component (`symfony/ai`)
+
+| New Feature | Description | Why it matters |
+|-------------|-------------|----------------|
+| **Unified Provider Interface** (`AiProviderInterface`) | All providers implement the same methods (`chat`, `complete`, `embed`, `moderate`, `image`, `audio`) and expose a consistent request/response model. | Switch from OpenAI ↔ Anthropic ↔ Ollama without touching your business code. |
+| **Tool‑Calling / Function‑Calling Support** | `AiTool`, `AiFunction`, `AiFunctionResult` objects let you describe PHP callables that the LLM can invoke (even with JSON schema validation). | Write “AI‑augmented” workflows where the model decides to run a PHP function (e.g. fetch a price, send an email) and you get the result automatically injected back into the conversation. |
+| **Streaming & Server‑Sent Events** | `AiChatResponse::stream()` now yields `AiChunk` objects; dedicated `AiStreamListenerInterface` to react to each chunk. | Build real‑time “ChatGPT‑style” UI without writing low‑level cURL loops. |
+| **Embeddings & Vector Store Helpers** | Built‑in `AiEmbedding` request + `VectorStoreInterface` abstraction (in‑memory, Doctrine, or any PSR‑6 cache). | Turn the component into a tiny semantic‑search engine in a few lines. |
+| **Batch & Parallel Requests** | `AiBatch` request object + `AiClient::executeBatch()` that runs up to 5 concurrent HTTP calls (configurable). | Speed up bulk summarisation, translation, or multi‑modal pipelines. |
+| **Structured Output (JSON Mode)** | `AiChatOptions::responseFormat('json')` plus a `JsonSchemaValidator` trait that validates the model’s output against an OpenAPI‑style schema. | Guarantees typed data from the LLM and reduces parsing errors. |
+| **Open‑source Provider – Ollama** | First‑class support for self‑hosted LLMs via Ollama (including GPU‑off‑load and multi‑modal). | Gives you a privacy‑first alternative to cloud APIs. |
+| **Test‑Double (`FakeAiClient`)** | In‑memory fake client that lets you pre‑define responses or echo the prompt. Works with Symfony’s `test` environment. | Write deterministic unit/integration tests for AI‑driven services. |
+| **PSR‑17/PSR‑18 Compliance** | The component can be swapped for any HTTP client that implements the standard interfaces (Guzzle, Symfony HttpClient, Symfony’s `HttpClientInterface`). | No lock‑in to the internal HttpClient. |
+| **Improved Error Model** (`AiException` hierarchy) | `AiRateLimitException`, `AiAuthenticationException`, `AiProviderException` – all expose `getProviderName()`, `getPayload()`, `getRetryAfter()`. | Better handling of provider‑specific failures in production. |
+
+### Quick code example (Chat + tool calling)
+
+```php
+use Symfony\Component\Ai\AIAssistant;
+use Symfony\Component\Ai\Tool\AiTool;
+use Symfony\Component\Ai\Tool\AiFunction;
+
+// 1️⃣ Declare a PHP function you want the model to be able to call
+function getWeather(string $city): string {
+    // …call a weather API…
+    return '🌤️ 23 °C in '.$city;
+}
+
+// 2️⃣ Wrap it into an AiTool definition (type, description, schema)
+$weatherTool = AiTool::fromCallable(
+    fn (string $city) => getWeather($city),
+    description: 'Get the current weather for a city',
+    parameters: [
+        'city' => ['type' => 'string', 'description' => 'Name of the city']
+    ]
+);
+
+// 3️⃣ Use the AI client (auto‑wired by the bundle)
+$assistant = new AIAssistant($aiClient);
+$assistant->addTool($weatherTool);
+
+$response = $assistant->chat(
+    messages: [
+        ['role' => 'user', 'content' => 'What’s the weather in Paris?']
+    ],
+    options: ['model' => 'gpt-4o-mini']
+);
+
+// 4️⃣ The assistant will automatically invoke the PHP function, wait for its result
+//    and return a final message with the answer.
+echo $response->content();   // → "It’s currently 23 °C and sunny in Paris."
+```
+
+---
+
+## 2️⃣ AI Bundle (`symfony/ai-bundle`)
+
+| New Feature | Description | Usage tip |
+|-------------|-------------|-----------|
+| **Native Configuration (`config/packages/ai.yaml`)** | Provider credentials, default model, timeout, cache, batch‑size, streaming options all in one file. | Example: <br>`openai:`<br>`  api_key: '%env(APP_OPENAI_KEY)%'`<br>`  default_model: 'gpt-4o-mini'` |
+| **Auto‑Wiring of Provider Clients** | Register `OpenAiClient`, `AnthropicClient`, `OllamaClient`, `GeminiClient` as services (`ai.openai_client`, …). | Inject them via type‑hint (`OpenAiClient $openAi`) or use the generic `AiClientInterface`. |
+| **Messenger Integration** | `AiMessage` and `AiMessageHandler` let you push LLM calls to the queue (`messenger.transport.ai`). | Perfect for heavy summarisation jobs that should run asynchronously. |
+| **Console “Ask” Command** | `bin/console ai:ask "Summarise this article"` – auto‑detects the default provider and streams output to the terminal. | Handy for debugging or rapid prototyping. |
+| **Event System** (`AiEvents::PRE_REQUEST`, `POST_RESPONSE`, `ERROR`) | Subscribe to log raw payloads, inject custom headers, or implement a “fallback provider” strategy. | Example: on `ERROR` if a rate‑limit occurs, switch

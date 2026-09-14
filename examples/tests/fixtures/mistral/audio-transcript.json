@@ -1,0 +1,71 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.mistral.ai/v1/audio/transcriptions",
+                "signature": "42492190d7358a0baf7279422af795ce",
+                "signature_v2": "ba20a3bbf0530d989a541fa8a6956232",
+                "headers": {
+                    "content-type": [
+                        "multipart/form-data"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "language": "en",
+                    "model": "voxtral-mini-latest",
+                    "file": "[resource audio.mp3, 51019 bytes]"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "x-max-retry-attempts-reached": [
+                        "false"
+                    ],
+                    "x-ratelimit-limit-audio-seconds-minute": [
+                        "7200"
+                    ],
+                    "x-ratelimit-remaining-audio-seconds-minute": [
+                        "7195"
+                    ],
+                    "x-ratelimit-audio-seconds-query-cost": [
+                        "2"
+                    ],
+                    "x-ratelimit-limit-req-minute": [
+                        "360"
+                    ],
+                    "x-ratelimit-remaining-req-minute": [
+                        "358"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"model\":\"voxtral-mini-latest\",\"text\":\"Wishing you a Merry Christmas and a Happy New Year.\",\"language\":null,\"segments\":[],\"usage\":{\"prompt_audio_seconds\":2,\"prompt_tokens\":5,\"total_tokens\":393,\"completion_tokens\":13,\"prompt_tokens_details\":{\"cached_tokens\":0,\"audio_tokens\":375},\"service_tier\":\"standard\"},\"finish_reason\":null}"
+            }
+        }
+    ]
+}

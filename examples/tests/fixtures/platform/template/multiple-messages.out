@@ -1,0 +1,7 @@
+Multiple messages with templates
+=================================
+
+System template: You are a {domain} assistant.
+User template: Calculate {operation}
+Variables: ['domain' => 'math', 'operation' => '2 + 2']
+Response: 2 + 2 = 4

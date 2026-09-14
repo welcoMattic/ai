@@ -1,0 +1,91 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://router.huggingface.co/hf-inference/models/FacebookAI/xlm-roberta-base",
+                "signature": "be5cd1a34e2b50ce4ffcabb0113c4207",
+                "signature_v2": "ffbbf328cd5cedbc3c86d75b794a664e",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"inputs\":\"Hello I\\u0027m a \\u003Cmask\\u003E model.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "510"
+                    ],
+                    "x-inference-provider": [
+                        "hf-inference"
+                    ],
+                    "x-powered-by": [
+                        "huggingface-moon"
+                    ],
+                    "cross-origin-opener-policy": [
+                        "same-origin"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers, origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-inference-id": [
+                        "5d9b173e-5e87-449e-a521-0f03fa9de057"
+                    ],
+                    "x-proxied-host": [
+                        "http://10.109.117.45"
+                    ],
+                    "x-proxied-path": [
+                        "/"
+                    ],
+                    "x-proxied-replica": [
+                        "bta2v1ny-59vzx"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 39bfdef5214f9c839a46e8b9d63b9046.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "Ms2vaE2Y52789V9oQZhTtW0Y4FBO-v2qKv2pSL9elQjS7Jz08rj1WA=="
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ]
+                },
+                "body_format": "json",
+                "body": "[{\"score\":0.10563842952251434,\"token\":54543,\"token_str\":\"fashion\",\"sequence\":\"Hello I'm a fashion model.\"},{\"score\":0.08015208691358566,\"token\":3525,\"token_str\":\"new\",\"sequence\":\"Hello I'm a new model.\"},{\"score\":0.0334128700196743,\"token\":3299,\"token_str\":\"model\",\"sequence\":\"Hello I'm a model model.\"},{\"score\":0.030217578634619713,\"token\":92265,\"token_str\":\"French\",\"sequence\":\"Hello I'm a French model.\"},{\"score\":0.026435889303684235,\"token\":17473,\"token_str\":\"sexy\",\"sequence\":\"Hello I'm a sexy model.\"}]"
+            }
+        }
+    ]
+}

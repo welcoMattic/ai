@@ -19,7 +19,7 @@ $platform = Factory::createPlatform(env('DEEPSEEK_API_KEY'), http_client());
 
 $messages = new MessageBag(
     Message::forSystem('You are a thoughtful philosopher.'),
-    Message::ofUser('What is the purpose of an ant?'),
+    Message::ofUser('What is the purpose of an ant? Answer in a few sentences.'),
 );
 $result = $platform->invoke('deepseek-chat', $messages, ['stream' => true]);
 

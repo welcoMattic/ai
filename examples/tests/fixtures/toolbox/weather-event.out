@@ -1,0 +1,6 @@
+array:4 [
+  "weather" => "Light Rain"
+  "time" => "2026-09-13T19:45"
+  "temperature" => "18°C"
+  "wind_speed" => "5.9km/h"
+]

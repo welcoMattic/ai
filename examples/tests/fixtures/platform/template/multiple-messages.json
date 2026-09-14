@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "dd9a9e95e80e420dd95880167fab14ea",
+                "signature_v2": "917122b3b12721f6d0b34b7da5eaab40",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Calculate 2 + 2\"}],\"instructions\":\"You are a math assistant.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_027552062a342189006aa7003b8c2087d2945ed765110356f5\",\n  \"object\": \"response\",\n  \"created_at\": 1789329467,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329468,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a math assistant.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_027552062a342189006aa7003bf58487d2b880d8937c9ca809\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwA8InNcvjwy6EjRDo7jROEMo1iVo6OVD0eNAn2JeBCvhtcLZIE4UhX4L5J2s7YQrVjhOLK5YhuDXk5IBvaVNIkTp9kRKQKrehCN8pG6sFFLgvJKWH2QvQi9RwK7FpQpY9VHlorurvCBBoaxlFzxZfhHLRgbOdGavvYS4JxF_7Mn7iOMpuj-bket5CLv31ZIVzLFJcGeKB2m1akPSHwzGHBkvBV2wg1-snxjzNJv-EORhTQeOIEpgXTD9P0NFCBcs6ENksEVtE-bBMWZr1di-U5Bqvhx3FNmgMPjjN_4Va-rbZrd0ZFdeDfd6j6OrJwvH1c6lhdmMr73GMDXTLGguegn2KQ7joOIUUsyZ8kSoLCPOyNQE9YtM8__YrU4zbXVsjoOstsfnhSZYhLwVheWbCCpwDNPMW9uehcuJD2P45tTL5GfI90KrLnxPZpRZfgefmurvaFUYte14NgdCoRBUFVTtImenKnLjkrLAvrZ55tkx4iVBePNQjzjEzktZ8C0Hc-H5yjOVscxgNSI4_0EQPkX7TjLHpQtIU_892JUVKSzG2wMJoxC9z4Sb3FQYVwANoOa3AL1YQaUy1I3i2-bWUerEmZxYhteargZDS4fTwm5a_aJX1V5Z5w8hRMERZ2fifXb9CwhAza7IpSG_RGJALljhvVBIyUr-6jQ6VlGcWImiYG1oh33-Q0DVo7PI4c3ay94aWMnRS9QSLUiqaUAX6NQAnSqtvEakpc73DO8lgz2gImrg3gIPDs_hU79z6cWm_mWKFqQPDTKXJhjRGYAZVQenjprCb98N3uYspS_OjKJm2Jz48s9rEiBDi2XCvXpwbrNy76bkjs8uWHSWSnUtF5K_nnLi35fbasgk6mobYaIJCgCZCofJGtihwsCfc3giLKNu3zNXLJ-fTHcPTa6JJrT_8I11mblgep5nti5dM8BnEfM07TSb0f2m0H_x2SWLUFhVJWOl3LChxbVTe6DHTb7buL74kdzfsHFs1rhNOgKrEXrpVIIxa3neJS-ckZsAmQHmt3hvMB5p_Vpxg3C8Zp33t_H9fla_O9KXYMiUSq3gwEm-aezJrgHPG-xSQKQCuHoMX9ygvge13Qqj5CjEg4oMH_y12U4iqtXEOesiry74SKMNb23J7mXdFUdOgbiVa_s9Adt7my95HKMw6btgJ0DbSy09qZN3ILHAFOS2Vq362Svn_yqEPURr4M8UDU0nE3SZsRvJaexRerTDYOOLiAq3pQ6ke_lyOM9JSR3x_vJxDQ0vMNXsVuOTTJTTQpvwMhyU5MTdBlIwr6Zy6oiEquDQf4Dpd4hasQsmtxHBAD7IiP89ByERPxWMhgP9MeyEgB0F8eXFK8yAdXCTK7k2TchmlM-DXerShgxfcI9Rdo4azo=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_027552062a342189006aa7003c531887d292fc2f51fca506e6\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"2 + 2 = 4\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 22,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 53,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 75\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

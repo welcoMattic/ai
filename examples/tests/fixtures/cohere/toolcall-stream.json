@@ -1,0 +1,130 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cohere.com/v2/chat",
+                "signature": "11cf5d5b62a1ff3e14020e9781c90362",
+                "signature_v2": "52e7384870b10337bea61b0eb6825623",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"stream\":true,\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}}],\"messages\":[{\"role\":\"user\",\"content\":\"What time is it? Please tell me the current time.\"}],\"model\":\"command-a-03-2025\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "access-control-expose-headers": [
+                        "X-Debug-Trace-ID"
+                    ],
+                    "cache-control": [
+                        "no-cache, no-store, no-transform, must-revalidate, private, max-age=0"
+                    ],
+                    "content-type": [
+                        "text/event-stream"
+                    ],
+                    "expires": [
+                        "Thu, 01 Jan 1970 00:00:00 GMT"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "x-accel-expires": [
+                        "0"
+                    ],
+                    "x-debug-trace-id": [
+                        "4dacabfad6990774d78f02ce75dd0ca5"
+                    ],
+                    "x-endpoint-monthly-call-limit": [
+                        "1000"
+                    ],
+                    "x-trial-endpoint-call-limit": [
+                        "20"
+                    ],
+                    "x-trial-endpoint-call-remaining": [
+                        "18"
+                    ],
+                    "server": [
+                        "envoy"
+                    ],
+                    "via": [
+                        "1.1 google"
+                    ]
+                },
+                "body_format": "sse",
+                "body": "event: message-start\ndata: {\"id\":\"891d0005-d347-4559-935d-2d176a40f1ec\",\"type\":\"message-start\",\"delta\":{\"message\":{\"role\":\"assistant\",\"content\":[],\"tool_plan\":\"\",\"tool_calls\":[],\"citations\":[]}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\"I\"}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\" will\"}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\" use\"}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\" the\"}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\" clock\"}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\" tool\"}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\" to\"}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\" find\"}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\" the\"}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\" current\"}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\" time\"}}}\n\nevent: tool-plan-delta\ndata: {\"type\":\"tool-plan-delta\",\"delta\":{\"message\":{\"tool_plan\":\".\"}}}\n\nevent: tool-call-start\ndata: {\"type\":\"tool-call-start\",\"index\":0,\"delta\":{\"message\":{\"tool_calls\":{\"id\":\"clock_3h7xy7gpymmb\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"\"}}}}}\n\nevent: tool-call-end\ndata: {\"type\":\"tool-call-end\",\"index\":0}\n\nevent: message-end\ndata: {\"type\":\"message-end\",\"delta\":{\"finish_reason\":\"TOOL_CALL\",\"usage\":{\"billed_units\":{\"input_tokens\":32,\"output_tokens\":14},\"tokens\":{\"input_tokens\":1428,\"output_tokens\":44},\"cached_tokens\":992}}}\n\ndata: [DONE]\n\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cohere.com/v2/chat",
+                "signature": "109bea3228d63ea395364d2f1269c976",
+                "signature_v2": "828f1aed936ca368acbfc774a50eff64",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"stream\":true,\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}}],\"messages\":[{\"role\":\"user\",\"content\":\"What time is it? Please tell me the current time.\"},{\"role\":\"assistant\",\"content\":null,\"tool_calls\":[{\"id\":\"clock_3h7xy7gpymmb\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"content\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 20:42:33 (HH:MM:SS).\",\"tool_call_id\":\"clock_3h7xy7gpymmb\"}],\"model\":\"command-a-03-2025\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "access-control-expose-headers": [
+                        "X-Debug-Trace-ID"
+                    ],
+                    "cache-control": [
+                        "no-cache, no-store, no-transform, must-revalidate, private, max-age=0"
+                    ],
+                    "content-type": [
+                        "text/event-stream"
+                    ],
+                    "expires": [
+                        "Thu, 01 Jan 1970 00:00:00 GMT"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "x-accel-expires": [
+                        "0"
+                    ],
+                    "x-debug-trace-id": [
+                        "ff03acd9884646f4922f4b1175def146"
+                    ],
+                    "x-endpoint-monthly-call-limit": [
+                        "1000"
+                    ],
+                    "x-trial-endpoint-call-limit": [
+                        "20"
+                    ],
+                    "x-trial-endpoint-call-remaining": [
+                        "17"
+                    ],
+                    "server": [
+                        "envoy"
+                    ],
+                    "via": [
+                        "1.1 google"
+                    ]
+                },
+                "body_format": "sse",
+                "body": "event: message-start\ndata: {\"id\":\"6e94078f-8cdf-4991-aefe-690d1d7ec690\",\"type\":\"message-start\",\"delta\":{\"message\":{\"role\":\"assistant\",\"content\":[],\"tool_plan\":\"\",\"tool_calls\":[],\"citations\":[]}}}\n\nevent: content-start\ndata: {\"type\":\"content-start\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"type\":\"text\",\"text\":\"\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\"The\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\" current\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\" time\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\" is\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\" \"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\"2\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\"0\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\":\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\"4\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\"2\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\":\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\"3\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\"3\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\" (\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\"HH\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\":\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\"MM\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\":\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\"SS\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\")\"}}}}\n\nevent: content-delta\ndata: {\"type\":\"content-delta\",\"index\":0,\"delta\":{\"message\":{\"content\":{\"text\":\".\"}}}}\n\nevent: citation-start\ndata: {\"type\":\"citation-start\",\"index\":0,\"delta\":{\"message\":{\"citations\":{\"start\":20,\"end\":39,\"text\":\"20:42:33 (HH:MM:SS)\",\"sources\":[{\"type\":\"tool\",\"id\":\"clock_3h7xy7gpymmb:0\",\"tool_output\":{\"content\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 20:42:33 (HH:MM:SS).\"}}],\"type\":\"TEXT_CONTENT\"}}}}\n\nevent: citation-end\ndata: {\"type\":\"citation-end\",\"index\":0}\n\nevent: content-end\ndata: {\"type\":\"content-end\",\"index\":0}\n\nevent: message-end\ndata: {\"type\":\"message-end\",\"delta\":{\"finish_reason\":\"COMPLETE\",\"usage\":{\"billed_units\":{\"input_tokens\":75,\"output_tokens\":20},\"tokens\":{\"input_tokens\":1547,\"output_tokens\":33},\"cached_tokens\":992}}}\n\ndata: [DONE]\n\n"
+            }
+        }
+    ]
+}

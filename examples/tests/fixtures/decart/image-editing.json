@@ -1,0 +1,56 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.decart.ai/v1/generate/lucy-pro-i2i",
+                "signature": "e197847f4f0dd77c37eaceefd9dcc479",
+                "signature_v2": "fc2fde524a80df03fe46e0911a58bc97",
+                "headers": {
+                    "x-api-key": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "prompt": "Colorize the walls",
+                    "data": "[resource accordion.jpg, 139216 bytes]"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "image/png"
+                    ],
+                    "content-length": [
+                        "1153467"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains"
+                    ],
+                    "job_id": [
+                        "18e977ed-f3ed-4ca8-be10-14a2dda58abb"
+                    ],
+                    "x-decart-rgn": [
+                        "il"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 07612651e03eef4292eed033ad965d0e.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P4"
+                    ],
+                    "x-amz-cf-id": [
+                        "NPkZo4dDsgypQNV-JJPErmexVbHH8n5E2_KsySLWvXlkA5CTLwW18g=="
+                    ]
+                },
+                "body_format": "binary",
+                "body": null,
+                "body_size": 1153467
+            }
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "11a89677bf15df7457866876f5c03ddd",
+                "signature_v2": "2dd34b41d07320132b9000ee872de590",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"text\":{\"format\":{\"name\":\"IssueQuery\",\"schema\":{\"type\":\"object\",\"properties\":{\"category\":{\"type\":\"string\",\"description\":\"Category of the issue\",\"enum\":[\"bug\",\"feature\",\"docs\",\"chore\"]}},\"required\":[\"category\"],\"additionalProperties\":false},\"strict\":true,\"type\":\"json_schema\"}},\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"I found a typo in the README.\"}],\"instructions\":\"Classify the user request into a category.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_02489b8e45f6caca006aa6fff11be887d2a2deda3fa99b0050\",\n  \"object\": \"response\",\n  \"created_at\": 1789329393,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329393,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"Classify the user request into a category.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_02489b8e45f6caca006aa6fff16e4887d28aead03eb9edeac8\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv_yCFiFb1eHsjtJ3BUF2qrb8eDgrSIcFSjDsAstp_2f23vSvU8jV1-vxIl1akQ5W4dwwFKvHaXqS_x6V9fDlnHCN1eSHWfKtPJM1v6uoHx6TVbrt8MZCWVvR3khDk-rkupqzRhXO0szJRC68N93N8GYXmHJqxGRJbxD8XgenP0ve_ZXKxj2uNj1fubR0AM5BNNQ-_ALX-8U16q0huudMwFFORtkslaDGPpHEVuabiJlxY7OJd8siTxBdrR271u8ouIBIqeLxjm7_c6ADYZ3AGVYCQbAHEwigUUYGZ0qerPBhGXpnZ7ks4D40rBn2XiSp2TA6gpSiGOxM4kTbuhLeCSHI6TjWJ4fB8U7fb77kn78Ek9RjbdTEcb6IqatjwK55XkVBqFxE_h-pHchXpaFTjRG33S6TBSVPT6IVw6QKJ4Cj0LMxcRcnCk-a8kFLqPKExNKlvteP2BXeGiLoGEZH4BbIX4AjavPJPmuLx-DLgVb6bmjir3UhVlTz9ngjw6geKjr0eWisWGfE8hVb620etSR6T2knTALd93GExy7O1_JevQgNRP3eEyIyjXFUzsbSRHMCW5iwVHhvqxd_KRAcYjvp2jzem1SdMkH-IWvcCMB8rhGqNQMTiKRxLM49rSLr_3xyY3CSiUE_ebR2jVqhjdHOUJbd6JJPhQfzCpDR-AvaHAdMhJFZWESVBqYzHSn2UEkJsqKFgs5HV1yAqIjybpwVqYP3jhFTfx313s9jEtQibjSlzgeniFPe01Ginq-ng1_N5qMuRTMFhOJMJoDKvsAE-gg7UBjzxUz6EqbuhIsYcSsVlGBz9FdlWVr0xcPvxF-SkZGp7z4UnjrWDKrFUfrsiHzQy8SPtuiTq_fase-2SPp6GEPKhbsrdlMQhxRilwKGwipDiFkfg6rWJWuA9kG72TJdpLnbU2x5U7TwHkzkQVcD8ssJr7T9WmXPkkBqUcxqh6feiHkfHs7bxyzM6jXw2vJFQvg3Dp6ZZVwzsSAD8oqiOfRjmX-YqekA5VbKMqS7c3NkVb_yYefsG9JhpoSxJO2AOMgpj9fbvcnpKlIp-a7nQ-3RXsVbqa3dSIET3CSfRwgMUIbeuorwkjaly1EmIp0_7rzPVVv6RyKvt9xrL3-IjbjCVyDwdmF7DPYQ7C6b1792GASrgaxq7bYLRPfGC3l4SjHg_JfRqb3wZP0sDdKLLhuQusFRz5DgecRth6bbDcnmUo0GP3U6qMOX2MblddKSeVOcxka4pITmmUya2DmtaljXg7c0MzZDB4q5x9ttk47ZUwwbK0Exyi4ayf9pbqQonArezeztTOufUobX5G0IRW0pVOgTody7DlBXioOD9kKFJXVWK4rli0xXI_z1_PmOyU4o73Q3A2gx2tUzeKVFga_M3KCx1c04jT9DIPEQ-GiV48bkTF1EyFo1m69_lkqUHgkKKVAAcH0kIk1jW4=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_02489b8e45f6caca006aa6fff1e0d887d2bc4e5d6c377976f4\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"{\\\"category\\\":\\\"docs\\\"}\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"json_schema\",\n      \"description\": null,\n      \"name\": \"IssueQuery\",\n      \"schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"category\": {\n            \"type\": \"string\",\n            \"description\": \"Category of the issue\",\n            \"enum\": [\n              \"bug\",\n              \"feature\",\n              \"docs\",\n              \"chore\"\n            ]\n          }\n        },\n        \"required\": [\n          \"category\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 68,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 57,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 125\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

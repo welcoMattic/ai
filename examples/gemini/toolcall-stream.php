@@ -25,7 +25,7 @@ $platform = Factory::createPlatform(env('GEMINI_API_KEY'), http_client());
 
 // The platform is invoked directly instead of via an Agent: the Agent's StreamListener consumes the
 // terminal ToolCallComplete to execute the tools, so the raw stream is what shows the deltas.
-$toolbox = new Toolbox([new Clock(), new EuropeanCapitalsTool()], logger: logger());
+$toolbox = new Toolbox([new Clock(clock()), new EuropeanCapitalsTool()], logger: logger());
 
 $messages = new MessageBag(Message::ofUser(<<<TXT
         What time is it right now, and which European capitals do you know about via your tools?

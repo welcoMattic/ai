@@ -1,0 +1,73 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://your-resource.cognitiveservices.azure.com/openai/deployments/whisper/audio/transcriptions",
+                "signature": "375c739b5a71e79da8a57e785bff3b3e",
+                "signature_v2": "80f0a79ff96b3b0016b53cc7414f7699",
+                "headers": {
+                    "api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "multipart/form-data"
+                    ]
+                },
+                "body": {
+                    "model": "whisper-1",
+                    "file": "[resource audio.mp3, 51019 bytes]"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "azureml-frontdoor"
+                    ],
+                    "content-length": [
+                        "62"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "apim-request-id": [
+                        "42ffd323-54f6-45e5-a4e4-f804f3870b2a"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "csp-billing-usage": [
+                        "CognitiveServices.OpenAI.Whisper=3"
+                    ],
+                    "x-ms-region": [
+                        "Sweden Central"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "2"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "3"
+                    ],
+                    "x-ms-client-request-id": [
+                        "42ffd323-54f6-45e5-a4e4-f804f3870b2a"
+                    ],
+                    "azureml-model-session": [
+                        "d20260721214625-e83c167c"
+                    ],
+                    "x-ms-inference-retry-history": [
+                        "{\"v\":1,\"entries\":[{\"service_id\":\"mir.frontdoor\",\"layer\":\"regional\",\"role\":\"direct\",\"retries\":0}]}"
+                    ],
+                    "x-ms-deployment-name": [
+                        "whisper"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"text\":\"Wishing you a Merry Christmas and a Happy New Year.\"}"
+            }
+        }
+    ]
+}

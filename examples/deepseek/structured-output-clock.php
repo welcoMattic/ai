@@ -16,7 +16,6 @@ use Symfony\AI\Platform\Bridge\DeepSeek\Factory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\StructuredOutput\PlatformSubscriber;
-use Symfony\Component\Clock\Clock as SymfonyClock;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 require_once dirname(__DIR__).'/bootstrap.php';
@@ -26,8 +25,7 @@ $dispatcher->addSubscriber(new PlatformSubscriber());
 
 $platform = Factory::createPlatform(env('DEEPSEEK_API_KEY'), http_client(), eventDispatcher: $dispatcher);
 
-$clock = new Clock(new SymfonyClock());
-$toolbox = new Toolbox([$clock], logger: logger());
+$toolbox = new Toolbox([new Clock(clock())], logger: logger());
 $agent = new Agent($platform, 'deepseek-chat', toolbox: $toolbox);
 
 $messages = new MessageBag(

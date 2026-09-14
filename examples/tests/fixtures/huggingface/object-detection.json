@@ -1,0 +1,91 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://router.huggingface.co/hf-inference/models/facebook/detr-resnet-50",
+                "signature": "2c41b6ab3b1750b892650e9e4410ae90",
+                "signature_v2": "3a8696fe9a123b1cb717326c08de75d9",
+                "headers": {
+                    "content-type": [
+                        "image/jpeg"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "[binary body, 139216 bytes, xxh128 5c1ba83feb9dbe787dbbe7aeafde59c6]"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "193"
+                    ],
+                    "x-inference-provider": [
+                        "hf-inference"
+                    ],
+                    "x-powered-by": [
+                        "huggingface-moon"
+                    ],
+                    "cross-origin-opener-policy": [
+                        "same-origin"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers, origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-inference-id": [
+                        "4a716a90-f9c7-4231-9372-b6e6028bdac3"
+                    ],
+                    "x-proxied-host": [
+                        "http://10.109.102.122"
+                    ],
+                    "x-proxied-path": [
+                        "/"
+                    ],
+                    "x-proxied-replica": [
+                        "bft9yv1c-6lx4l"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 8a9ef9aeac3f8e1b291e5772cbd642ba.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "H7sftiWtNAi-GhMgt7WbH-eyqW3kIED17vb1nynf3n21GYKMl5enEQ=="
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ]
+                },
+                "body_format": "json",
+                "body": "[{\"score\":0.9939863681793213,\"label\":\"chair\",\"box\":{\"xmin\":0,\"ymin\":414,\"xmax\":179,\"ymax\":846}},{\"score\":0.9996577501296997,\"label\":\"person\",\"box\":{\"xmin\":210,\"ymin\":89,\"xmax\":721,\"ymax\":844}}]"
+            }
+        }
+    ]
+}

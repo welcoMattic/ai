@@ -1,0 +1,70 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.mistral.ai/v1/chat/completions",
+                "signature": "7fa4a6a848aefdb1b5089aca4e582bd2",
+                "signature_v2": "55113cb6de96c605b18ef7aa1e8fb47a",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "accept": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"document_url\",\"document_url\":\"https:\\/\\/upload.wikimedia.org\\/wikipedia\\/commons\\/2\\/20\\/Re_example.pdf\"},{\"type\":\"text\",\"text\":\"What is this document about?\"}]}],\"model\":\"mistral-small-latest\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "x-max-retry-attempts-reached": [
+                        "false"
+                    ],
+                    "x-ratelimit-limit-tokens-minute": [
+                        "100000"
+                    ],
+                    "x-ratelimit-remaining-tokens-minute": [
+                        "99518"
+                    ],
+                    "x-ratelimit-tokens-query-cost": [
+                        "482"
+                    ],
+                    "x-ratelimit-limit-req-minute": [
+                        "100"
+                    ],
+                    "x-ratelimit-remaining-req-minute": [
+                        "98"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"40b21497e0e943bf88501185f9ce6c2d\",\"created\":1789328711,\"model\":\"mistral-small-latest\",\"usage\":{\"prompt_tokens\":210,\"total_tokens\":482,\"completion_tokens\":272,\"prompt_tokens_details\":{\"cached_tokens\":0},\"service_tier\":\"standard\"},\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"tool_calls\":null,\"content\":\"The document appears to be a chemical reaction sequence involving compounds with carbon (C), hydrogen (H), nitrogen (N), chlorine (Cl), and carbon monoxide (CO). The notation suggests a series of transformations where:\\n\\n1. A compound labeled as **C_H N** reacts with **Cl** and **CO** to form **C_H CO**.\\n2. **C_H CO** undergoes a transformation labeled **CT** to revert back to **C_H N**.\\n3. The cycle repeats with **C_H N** reacting again with **Cl** and **CO** to form **C_H CO**.\\n4. **C_H CO** then reacts with **CO₂** to form **C_H N** again.\\n5. Finally, **C_H N** reacts with **Cl** and **CO** to produce **C_H CO** and **CO**.\\n\\nThis seems to describe a catalytic or cyclic process, possibly involving the conversion of a nitrogen-containing compound (like an amine) with carbon monoxide and chlorine to form a carbonyl compound (C_H CO), with carbon dioxide and carbon monoxide as byproducts or intermediates.\\n\\nThe exact chemical structures or mechanisms are not provided, but the notation suggests a repetitive or catalytic cycle in organic chemistry. The document URL points to a PDF on Wikimedia Commons, which may contain more detailed information about the reaction or its context.\"}}]}"
+            }
+        }
+    ]
+}

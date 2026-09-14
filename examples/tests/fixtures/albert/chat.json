@@ -1,0 +1,40 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://albert.api.etalab.gouv.fr/v1/chat/completions",
+                "signature": "ee5565acc1452ae0acaddebf71f1b695",
+                "signature_v2": "6e0c510f9f6ba24f1963c067a3d64c8c",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"system\",\"content\":\"You are an AI assistant with access to documents about French AI initiatives. Use the provided context to answer questions accurately.\"},{\"role\":\"user\",\"content\":\"Document: AI Strategy of France\\n\\nFrance has launched a comprehensive national AI strategy with the following key objectives:\\n1. Strengthening the AI ecosystem and attracting talent\\n2. Developing sovereign AI capabilities\\n3. Ensuring ethical and responsible AI development\\n4. Supporting AI adoption in public services\\n5. Investing \\u20ac1.5 billion in AI research and development\\n\\nThe Albert project is part of this strategy, providing a sovereign AI solution for French public administration.\"},{\"role\":\"user\",\"content\":\"Summarize the main objectives of France\\u0027s AI strategy in one sentence.\"}],\"model\":\"openweight-small\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "server": [
+                        "nginx/1.29.3"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"chatcmpl-8540ef321f63a69b\",\"object\":\"chat.completion\",\"created\":1789329098,\"model\":\"openweight-small\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"France’s AI strategy aims to **bolster a sovereign and responsible AI ecosystem** by investing in research, attracting talent, ensuring ethical development, driving public-sector adoption, and allocating **€1.5 billion** to innovation while spearheading projects like *Albert* to empower French public administration.\",\"refusal\":null,\"annotations\":null,\"audio\":null,\"function_call\":null,\"reasoning\":null},\"logprobs\":null,\"finish_reason\":\"stop\",\"stop_reason\":null,\"token_ids\":null,\"routed_experts\":null}],\"service_tier\":null,\"system_fingerprint\":\"vllm-0.25.1-9e7220b0\",\"usage\":{\"prompt_tokens\":129,\"completion_tokens\":58,\"total_tokens\":187,\"cost\":0.0,\"carbon\":{\"kWh\":{\"min\":1.0288076321345294e-05,\"max\":1.0288076321345294e-05},\"kgCO2eq\":{\"min\":4.862293241455536e-07,\"max\":4.862293241455536e-07}},\"impacts\":{\"kWh\":1.0288076321345294e-05,\"kgCO2eq\":4.862293241455536e-07},\"requests\":1},\"prompt_logprobs\":null,\"prompt_token_ids\":null,\"prompt_text\":null,\"kv_transfer_params\":null,\"metrics\":null}"
+            }
+        }
+    ]
+}

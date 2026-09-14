@@ -15,15 +15,15 @@ use Symfony\AI\Agent\Toolbox\ToolFactory\MemoryToolFactory;
 use Symfony\AI\Platform\Bridge\OpenAi\Factory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
-use Symfony\Component\Clock\Clock;
 
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('OPENAI_API_KEY'), http_client());
 
+$clock = clock();
 $metadataFactory = (new MemoryToolFactory())
-    ->addTool(Clock::class, 'clock', 'Get the current date and time', 'now');
-$toolbox = new Toolbox([new Clock()], $metadataFactory, logger: logger());
+    ->addTool($clock, 'clock', 'Get the current date and time', 'now');
+$toolbox = new Toolbox([$clock], $metadataFactory, logger: logger());
 $agent = new Agent($platform, 'gpt-5-mini', toolbox: $toolbox);
 
 $messages = new MessageBag(Message::ofUser('What date and time is it?'));

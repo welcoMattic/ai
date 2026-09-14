@@ -1,0 +1,43 @@
+SystemMessage with template
+===========================
+
+SystemMessage template: You are a {domain} expert assistant.
+Variables: ['domain' => 'programming']
+Response: PHP (officially "PHP: Hypertext Preprocessor") is a widely used, open-source scripting language primarily designed for server-side web development. It’s embedded in HTML, executed on the web server, and used to generate dynamic web pages or APIs.
+
+Key points
+- Server-side scripting language: runs on the server and produces HTML (or JSON, XML, etc.) that the client receives.
+- Syntax and use: code can be mixed directly into HTML with <?php ... ?> tags or used in standalone scripts (CLI).
+- Interpreted and loosely typed: variables start with $; arrays can be indexed or associative; supports procedural and object-oriented programming.
+- Ecosystem: large standard library, database connectors (MySQL, PostgreSQL, SQLite), session handling, file I/O, and many extensions.
+- Popular in content management systems and frameworks: WordPress, Drupal, Joomla; frameworks like Laravel, Symfony, CodeIgniter, and CakePHP.
+
+Simple example
+- Embedded in HTML:
+  <?php
+  echo "Hello, world!";
+  ?>
+- Standalone script (CLI or server):
+  <?php
+  // connect to a database, output JSON, etc.
+  ?>
+
+Performance and versions
+- PHP 7 brought big performance and memory improvements over PHP 5.
+- PHP 8 added JIT compilation, union types, match expressions, and many other language improvements.
+
+Pros
+- Easy to get started for web development.
+- Massive ecosystem, lots of hosting support.
+- Strong community and many prebuilt applications (CMS, libraries).
+
+Cons / caveats
+- Historically had inconsistent function naming and APIs (many improvements in later versions).
+- Security issues if developers don’t follow best practices (always validate/sanitize input, use prepared statements for DB queries, avoid eval-like constructs).
+- Not always ideal for CPU-bound tasks; best for request/response web workloads.
+
+When to use
+- Building server-rendered websites, REST APIs, or working with an existing PHP-based CMS or stack.
+- When you need fast time-to-market using mature frameworks or many available packages.
+
+If you want, I can show a short tutorial (routing, DB access, or a tiny Laravel example) or compare PHP to Node.js/Python for web projects.

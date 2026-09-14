@@ -1,0 +1,124 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.deepseek.com/chat/completions",
+                "signature": "62fa945c103d6e463a3e047f6dbd3e2b",
+                "signature_v2": "3db7d19d9778490f97fe7a5c8eac1f37",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"response_format\":{\"type\":\"json_object\",\"json_object\":{\"name\":\"clock\",\"strict\":true,\"schema\":{\"type\":\"object\",\"properties\":{\"date\":{\"type\":\"string\",\"description\":\"The current date in the format YYYY-MM-DD.\"},\"time\":{\"type\":\"string\",\"description\":\"The current time in the format HH:MM:SS.\"}},\"required\":[\"date\",\"time\"],\"additionalProperties\":false}}},\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}}],\"messages\":[{\"role\":\"system\",\"content\":\"Respond in JSON as instructed in the response format.\"},{\"role\":\"user\",\"content\":\"What date and time is it?\"}],\"model\":\"deepseek-chat\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "elb"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "x-ds-trace-id": [
+                        "d611d348c4c7b1adf8917ebc4acfdcc0"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 64ff1e6af494771d4212cf7d4543447e.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL50-P2"
+                    ],
+                    "x-amz-cf-id": [
+                        "lbDpFGSPcTZGFue52hrPucDeyiUBGV7NA9S_FaZ1kwhB7uAGT6CteQ=="
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"4bc6ef8a-09c2-414a-8cb3-07e01d758999\",\"object\":\"chat.completion\",\"created\":1789332156,\"model\":\"deepseek-flash\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"index\":0,\"id\":\"call_00_K6t52uXr0grIpflepJyl2519\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"}}]},\"logprobs\":null,\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":277,\"completion_tokens\":20,\"total_tokens\":297,\"prompt_tokens_details\":{\"cached_tokens\":0},\"prompt_cache_hit_tokens\":0,\"prompt_cache_miss_tokens\":277},\"system_fingerprint\":\"aeb56401ca74e127821c4f9126dcb669\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.deepseek.com/chat/completions",
+                "signature": "e7657c5c9f4526d8756046b53e2cf67f",
+                "signature_v2": "e33d3b5ef0d491bfa446b8c2a6a1b3c1",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"response_format\":{\"type\":\"json_object\",\"json_object\":{\"name\":\"clock\",\"strict\":true,\"schema\":{\"type\":\"object\",\"properties\":{\"date\":{\"type\":\"string\",\"description\":\"The current date in the format YYYY-MM-DD.\"},\"time\":{\"type\":\"string\",\"description\":\"The current time in the format HH:MM:SS.\"}},\"required\":[\"date\",\"time\"],\"additionalProperties\":false}}},\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}}],\"messages\":[{\"role\":\"system\",\"content\":\"Respond in JSON as instructed in the response format.\"},{\"role\":\"user\",\"content\":\"What date and time is it?\"},{\"role\":\"assistant\",\"content\":null,\"tool_calls\":[{\"id\":\"call_00_K6t52uXr0grIpflepJyl2519\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"content\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 20:42:37 (HH:MM:SS).\",\"tool_call_id\":\"call_00_K6t52uXr0grIpflepJyl2519\"}],\"model\":\"deepseek-chat\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "elb"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-credentials": [
+                        "true"
+                    ],
+                    "x-ds-trace-id": [
+                        "50190e371748e68239a160cc651493b8"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 64ff1e6af494771d4212cf7d4543447e.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL50-P2"
+                    ],
+                    "x-amz-cf-id": [
+                        "EvAT0ANvG-HXnx3l7Sr96216Uyr96oXqXmMmW5deHivu0U1b_JOxhQ=="
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"b30fce31-f591-4e6c-ad91-4d0651cff99b\",\"object\":\"chat.completion\",\"created\":1789332157,\"model\":\"deepseek-flash\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"date\\\": \\\"2026-09-13\\\", \\\"time\\\": \\\"20:42:37\\\", \\\"datetime\\\": \\\"2026-09-13 20:42:37\\\"}\"},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":342,\"completion_tokens\":38,\"total_tokens\":380,\"prompt_tokens_details\":{\"cached_tokens\":128},\"prompt_cache_hit_tokens\":128,\"prompt_cache_miss_tokens\":214},\"system_fingerprint\":\"aeb56401ca74e127821c4f9126dcb669\"}"
+            }
+        }
+    ]
+}

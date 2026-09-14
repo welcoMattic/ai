@@ -23,7 +23,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $store = new InMemoryStore();
 
 $platform = Factory::createPlatform(env('OPENAI_API_KEY'), http_client());
-$vectorizer = new Vectorizer($platform, 'text-embedding-3-small');
+$vectorizer = new Vectorizer($platform, 'text-embedding-3-small?dimensions=256');
 
 $indexer = new SourceIndexer(
     loader: new TextFileLoader(),
@@ -51,7 +51,6 @@ echo "Searching for: 'Roman gladiator revenge'\n\n";
 $results = $retriever->retrieve('Roman gladiator revenge', ['maxItems' => 1]);
 
 foreach ($results as $i => $document) {
-    echo sprintf("%d. Document ID: %s\n", $i + 1, $document->getId());
-    echo sprintf("   Score: %s\n", $document->getScore() ?? 'n/a');
+    echo sprintf("%d. Score: %s\n", $i + 1, $document->getScore() ?? 'n/a');
     echo sprintf("   Source: %s\n\n", $document->getMetadata()->getSource() ?? 'unknown');
 }

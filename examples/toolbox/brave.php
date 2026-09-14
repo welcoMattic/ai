@@ -11,6 +11,7 @@
 
 use Symfony\AI\Agent\Agent;
 use Symfony\AI\Agent\Bridge\Brave\Brave;
+use Symfony\AI\Agent\Bridge\Clock\Clock;
 use Symfony\AI\Agent\Bridge\Scraper\Scraper;
 use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Platform\Bridge\OpenAi\Factory;
@@ -22,9 +23,8 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $platform = Factory::createPlatform(env('OPENAI_API_KEY'), http_client());
 
 $brave = new Brave(http_client(), env('BRAVE_API_KEY'));
-$clock = clock_tool();
 $crawler = new Scraper(http_client());
-$toolbox = new Toolbox([$brave, $clock, $crawler], logger: logger());
+$toolbox = new Toolbox([$brave, new Clock(clock()), $crawler], logger: logger());
 $agent = new Agent($platform, 'gpt-5-mini', toolbox: $toolbox, includeSources: true);
 
 $prompt = <<<PROMPT

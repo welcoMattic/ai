@@ -1,0 +1,49 @@
+Dependency Injection (DI) is a design pattern that helps decouple components by providing their dependencies from the outside rather than having them construct or find those dependencies themselves.
+
+Core idea
+- A "dependency" is any object a class needs to do its work (e.g., a repository, service, logger).
+- Instead of a class creating or locating its dependencies, the dependencies are "injected" into the class (passed in), typically via the constructor, a setter method, or an interface.
+- This is an application of Inversion of Control (IoC): the class relinquishes control over how dependencies are obtained.
+
+Why use DI
+- Testability: you can pass in mock or fake dependencies in unit tests.
+- Modularity: components depend on abstractions (interfaces) rather than concrete implementations.
+- Flexibility: swapping implementations (e.g., different data sources) is easy.
+- Single responsibility: classes focus on behavior, not wiring.
+
+Simple example (without DI)
+- class Car creates its own Engine: Car() { engine = new GasEngine(); }
+  - Hard to replace Engine for tests or alternate implementations.
+
+With DI (constructor injection)
+- class Car { Car(Engine engine) { this.engine = engine; } }
+  - Engine is provided from outside (caller, factory, or DI container).
+
+Types of injection
+- Constructor injection: dependencies passed through the constructor (preferred for mandatory dependencies).
+- Setter (or property) injection: dependencies set via setter methods (optional or changeable dependencies).
+- Interface injection: the dependency provides an injector method defined by an interface (rare in practice).
+
+DI containers / frameworks
+- Frameworks (Spring, Guice, Dagger, .NET Core DI) can automatically construct object graphs and inject dependencies based on configuration or annotations.
+- Containers are useful for large apps, but introduce runtime configuration and a learning curve.
+
+DI vs Service Locator
+- Service Locator pattern pulls dependencies from a central registry inside the class (the class asks for them).
+- DI favors having dependencies provided to the class, which keeps classes unaware of the container and easier to test.
+
+Relation to SOLID
+- DI supports the Dependency Inversion Principle (DIP): depend on abstractions, not concretions.
+
+Drawbacks / cautions
+- Overuse or excessive abstraction can make code harder to understand.
+- DI containers add complexity and can hide where objects come from.
+- Improper configuration can cause runtime errors.
+
+Best practices
+- Prefer constructor injection for required dependencies.
+- Use interfaces (or abstract types) to depend on abstractions.
+- Keep wiring code separate from business logic (composition root).
+- Inject small, focused dependencies—avoid large "god" services.
+
+If you want, I can show a short concrete example in Java, C#, or JavaScript (with and without a DI container). Which language would you like?

@@ -16,15 +16,13 @@ use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Platform\Bridge\OpenAi\Factory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
-use Symfony\Component\Clock\Clock as SymfonyClock;
 
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('OPENAI_API_KEY'), http_client());
 
-$clock = new Clock(new SymfonyClock());
 $tavily = new Tavily(http_client(), env('TAVILY_API_KEY'));
-$toolbox = new Toolbox([$clock, $tavily], logger: logger());
+$toolbox = new Toolbox([new Clock(clock()), $tavily], logger: logger());
 $agent = new Agent($platform, 'gpt-5.2', toolbox: $toolbox, includeSources: true);
 
 $prompt = <<<PROMPT

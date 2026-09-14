@@ -1,0 +1,152 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "034a6543e5f0e41dba5bb637cb6cb2e0",
+                "signature_v2": "2656e72822fa26141f2c75fa52c471f1",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"search_issues\",\"description\":\"Search issues by status\",\"parameters\":{\"type\":\"object\",\"properties\":{\"status\":{\"type\":\"string\",\"enum\":[\"open\",\"in_progress\",\"closed\"]}},\"required\":[\"status\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Search for closed issues\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0cea88645f6e3c97006aa7006ae07887d294fd93ee07bd18fb\",\n  \"object\": \"response\",\n  \"created_at\": 1789329514,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329516,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0cea88645f6e3c97006aa7006b355487d2afb2face71020922\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwBs538EOkmCoNsCWNjrbkLmIn2fd1Q1HUsINcBW4wLhlvWtVj4grCm3UMBkkEFxaWSHF7uN2_KYiOYAw9F78tH_4lrBwToDBXtDz2oxRrZB1ptb4q02EtP-Uhjp7waHXJpzRqPJ1EMd9lotUOL484ftUl3vx-_tr3IFAH5yFcUcdLMgucbZ2C9FUcC6GbYBRBLjr41wWTSGbsrfVF8Mk_-06WMN7TWsNEabbXkPVT58KyWzDS_avKROTx9qg66HcOeRHSxCJ_myIQHP8i_WbDieG-PlG7R005rF_ysZhKvkhfSPmtzsF8jqIRJYlgmRlqO-Nhnt7pkMDegh0-jD8dV48CXxyX74bicOh1aMVOWIS3supyfN2GXRsYZrjN7eDKpDi5nonfZSHU8wSkSp-BPYMIcnrUTT9qRpip2eKyt2bvU6HLDDU9A3IsD3NjlIC-GURNmQpDxnjCybEOkEFH2eF8WvAnIYR72ZdQ9K6Af8XEUJkK3JOuSYWZXXV6BPKIcQp7F_sN1yQuo7LEr1pc309mK60idF7U1Iuo6wEOq4ViFOmIT5IRXryrYV5pwWcAR_ALI9S69rmthoFIPSHrDB2fv4JgiAFQitzQscJMH_0Px54WjyXYI6ZsPrWMLuSspPqhcAejIXFmRkSb7z_XExkClpZGEKJkGj0oEp48B-md9CdEJ376R8m8ZY8CaV3_8-xblt2wDuO668nWr6RZlW-T2IM3F2xrVOj2tzii-4kTQKZOw_BSYw9yLPPW1CGot9DDve1meMQ_NOPWPIm227Awf7KciPQPkawGHaqqDqS3jbUdDoH6WUQwL0-R3UNz2A6pmIqaorwwB-iVpDSYn-B6cYYeICn1b1DaNlGzKERwhG3MxUq1KBUxVMnmT2P4W5PScsySSYXXXuD4XCelz4QAe59Y-ax4YrSNYFFM79FmbT33yjjdOqOUzBAdembIDZquu5h47YbrF7-1QAz_9ooeTUVNe2ZSHLDdDSgIDgbya-AAxDm7UpRxMeIOeaX_YytLE_eP5MNOEmAWu1dI02HQleMUEwHn5-BcO76NPXrBrocP4RY_iK6v_torP0VzMamOH_Pkw_AHef2YUR6s_m8K6IcKP81r0pjW_jp5jFcj-B6qPKWHN8qGpWQ0r4rBXQ_JZTc7jPr0wI13acRBKi-yGfZsnPXiSfjgK4V6prmdjBVHXYmrCKBrDS0SvFrKtcHHobLEQoS_GXOc1i3RjKRxSDzuG2eml4JXASIrCDjsEzFMEFZ2FaIf42o1PpAHNr9pu0etIGge_lApRoGRSH5Jhtf0Pr_BYzc1GJPLysOm7B9n9VewhbJ9JwHUDCScq4a_EZ6c5W_NsaT3ROPyL8kHsNxTJ2Q6X0ecQRU3TVGo57ncej0q1Cfxf-AeCfyxxuaDU6LkDm5mf-hMdejm3pg-eza0D7okJUVFcgInVNvxp_e41WHamp0PJ5gyAWk_dLYUNKtmD3fcUx2DoEgyRwrT2XfeaupQiqMS7SkF3e__ZkTASnscIJM1rJs6W8Lp-pfKwg9CgK_NSkETYotByQWj1cI0DVBd4jJ4IVYPLJgClBDnatTDWJvPdTR2Dh18hZgXfj7UNOwiCCz77fiMTi1XO5vC-r7Aw3nlvVZfaoqFbMKAEtzrOZ0hLOMIdVAaQPopT379BvKiOvP7-d1OEWKmZLV6Fswy4GHGT0TeAsIJSLfX0jmy3Iuy3s-u8qIWl1JzCd7RhJkM01JNjKGr6DAGyi3fWjDAJumeuR-Pien24=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"fc_0cea88645f6e3c97006aa7006c18e887d2bf36bf3705c098e7\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{\\\"status\\\":\\\"closed\\\"}\",\n      \"call_id\": \"call_l8kdgjtyhmTOVhH8UJ7OSg3U\",\n      \"name\": \"search_issues\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Search issues by status\",\n      \"name\": \"search_issues\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"status\": {\n            \"type\": \"string\",\n            \"enum\": [\n              \"open\",\n              \"in_progress\",\n              \"closed\"\n            ]\n          }\n        },\n        \"required\": [\n          \"status\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 57,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 114,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 64\n    },\n    \"total_tokens\": 171\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "653c77f84bcc28d47a1d952859318125",
+                "signature_v2": "7a0672be9c51b617e8281a505dd2591c",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"search_issues\",\"description\":\"Search issues by status\",\"parameters\":{\"type\":\"object\",\"properties\":{\"status\":{\"type\":\"string\",\"enum\":[\"open\",\"in_progress\",\"closed\"]}},\"required\":[\"status\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Search for closed issues\"},{\"id\":\"rs_0cea88645f6e3c97006aa7006b355487d2afb2face71020922\",\"type\":\"reasoning\",\"content\":[],\"encrypted_content\":\"gAAAAABqpwBs538EOkmCoNsCWNjrbkLmIn2fd1Q1HUsINcBW4wLhlvWtVj4grCm3UMBkkEFxaWSHF7uN2_KYiOYAw9F78tH_4lrBwToDBXtDz2oxRrZB1ptb4q02EtP-Uhjp7waHXJpzRqPJ1EMd9lotUOL484ftUl3vx-_tr3IFAH5yFcUcdLMgucbZ2C9FUcC6GbYBRBLjr41wWTSGbsrfVF8Mk_-06WMN7TWsNEabbXkPVT58KyWzDS_avKROTx9qg66HcOeRHSxCJ_myIQHP8i_WbDieG-PlG7R005rF_ysZhKvkhfSPmtzsF8jqIRJYlgmRlqO-Nhnt7pkMDegh0-jD8dV48CXxyX74bicOh1aMVOWIS3supyfN2GXRsYZrjN7eDKpDi5nonfZSHU8wSkSp-BPYMIcnrUTT9qRpip2eKyt2bvU6HLDDU9A3IsD3NjlIC-GURNmQpDxnjCybEOkEFH2eF8WvAnIYR72ZdQ9K6Af8XEUJkK3JOuSYWZXXV6BPKIcQp7F_sN1yQuo7LEr1pc309mK60idF7U1Iuo6wEOq4ViFOmIT5IRXryrYV5pwWcAR_ALI9S69rmthoFIPSHrDB2fv4JgiAFQitzQscJMH_0Px54WjyXYI6ZsPrWMLuSspPqhcAejIXFmRkSb7z_XExkClpZGEKJkGj0oEp48B-md9CdEJ376R8m8ZY8CaV3_8-xblt2wDuO668nWr6RZlW-T2IM3F2xrVOj2tzii-4kTQKZOw_BSYw9yLPPW1CGot9DDve1meMQ_NOPWPIm227Awf7KciPQPkawGHaqqDqS3jbUdDoH6WUQwL0-R3UNz2A6pmIqaorwwB-iVpDSYn-B6cYYeICn1b1DaNlGzKERwhG3MxUq1KBUxVMnmT2P4W5PScsySSYXXXuD4XCelz4QAe59Y-ax4YrSNYFFM79FmbT33yjjdOqOUzBAdembIDZquu5h47YbrF7-1QAz_9ooeTUVNe2ZSHLDdDSgIDgbya-AAxDm7UpRxMeIOeaX_YytLE_eP5MNOEmAWu1dI02HQleMUEwHn5-BcO76NPXrBrocP4RY_iK6v_torP0VzMamOH_Pkw_AHef2YUR6s_m8K6IcKP81r0pjW_jp5jFcj-B6qPKWHN8qGpWQ0r4rBXQ_JZTc7jPr0wI13acRBKi-yGfZsnPXiSfjgK4V6prmdjBVHXYmrCKBrDS0SvFrKtcHHobLEQoS_GXOc1i3RjKRxSDzuG2eml4JXASIrCDjsEzFMEFZ2FaIf42o1PpAHNr9pu0etIGge_lApRoGRSH5Jhtf0Pr_BYzc1GJPLysOm7B9n9VewhbJ9JwHUDCScq4a_EZ6c5W_NsaT3ROPyL8kHsNxTJ2Q6X0ecQRU3TVGo57ncej0q1Cfxf-AeCfyxxuaDU6LkDm5mf-hMdejm3pg-eza0D7okJUVFcgInVNvxp_e41WHamp0PJ5gyAWk_dLYUNKtmD3fcUx2DoEgyRwrT2XfeaupQiqMS7SkF3e__ZkTASnscIJM1rJs6W8Lp-pfKwg9CgK_NSkETYotByQWj1cI0DVBd4jJ4IVYPLJgClBDnatTDWJvPdTR2Dh18hZgXfj7UNOwiCCz77fiMTi1XO5vC-r7Aw3nlvVZfaoqFbMKAEtzrOZ0hLOMIdVAaQPopT379BvKiOvP7-d1OEWKmZLV6Fswy4GHGT0TeAsIJSLfX0jmy3Iuy3s-u8qIWl1JzCd7RhJkM01JNjKGr6DAGyi3fWjDAJumeuR-Pien24=\",\"summary\":[]},{\"arguments\":\"{\\u0022status\\u0022:\\u0022closed\\u0022}\",\"call_id\":\"call_l8kdgjtyhmTOVhH8UJ7OSg3U\",\"name\":\"search_issues\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_l8kdgjtyhmTOVhH8UJ7OSg3U\",\"output\":\"Found 3 issues with status=\\u0022closed\\u0022.\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0cea88645f6e3c97006aa7006c8ed887d2bc48a0f625e20865\",\n  \"object\": \"response\",\n  \"created_at\": 1789329516,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329518,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0cea88645f6e3c97006aa7006ce01887d2adbcae8932cc0cd3\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwBvM3m3yRgLdzZH0gnvtfCET8IHL23qmbB_hhbiDVf7WtsoH2EfaZBA4-af-PvKqbwLE4YnRiFV56nKtk1pNgAnXonulUIAlT5Tm4kmL80oJS05gw3kPZLLHktk1djFxmn733I5gQuaDn5ZARy8M2eL9YUCJvdHBLogIpZucRb6DWUzM3xozvkozP-CAM92F1QewiIVZmU2YbjsjG6Xbau-guFzPGOA7IEqRcT9nxc9MtpUe9WFFV9APCMBLgUbpLaJt5RftPMGo2BdJhxMabVTVEGTnV4ei1VaJUK8G88v7zfv4-SmYRUCOAkKvSlXEEZe__xuxE8T-GRR54taRgaOm98xXP16O0f3J9Wb6KaSedKbV0SgeIrssZbmiOKKX5xxFfiKNjtMAA_eG6GAPk9F7GaJuHIB1M3UipZ3IS74dCBAoL35ya94bMJTzcWykcMJHWxqUlI1iZcFRaoRhJIR8qjBJODvmYPmfy5Fzg2z4rikGjAKaB5zLoPGzFx1z-2hJ_uCZHG91tA9k8cCoyo3Q5G-9crf1ePRWItvhaB0d-0IomclUvAIqTxUsFq-b0DOOs9e2_8jQfbH6sYZyAB7Vxy2xrTk4lbg0o-HhOanWF0Dmguk5hhANLbHqyBSZ5tE6A10UB3YfwbKmgWov44qRwGIJCR9MLA3VEATyShKBV1_cW2z8TUmqj17hpqMEHkgqysVbtRtjQVuWEvMLnHJ7ROdH_kDXPm_SnzQse4HUXuSooT1f2v7WDGai9YyXR__mjw5poefpXTuTb9LBPwYlOQPt1CcBh2Z948duLugOYwICX4CXOvzVYSSff2fKrgjOazw7ZcMMgLkvIejiqGMOZn5wmIa6mz58yG_P71PtAt7jTx0vlxegaZbZPONbrH3nKl1czzR-J3jyQVQABw3P_TpvSm9SR3LazvtzDYi2l_3SHpeDm6qAvrzxh2lEkWXrcJhS0xMxkf246cOmVwgE9IHwZ_dtuO4fO5db7k9HgayQ1JSCTEOMu9i3AQnZeJp1L2oOnbOQsX16fOaxohjeIJ32dzNcytHMyE581jCt6x4CczsM4KK7y6vOzLL3eHYbwsZPtO19TcF6i0ChQfRB6dCBlisCBdqfl0C6a-XvNrB_26ulsMqi8Kj5ooScFDkgivuN1YpWOhoaJOiRwV6ts2-32gMRVtWpxDDdn3Qmvkc4--hSacvRw37DpTtgAt506qyumJanpgxbAUP0d5DfpEnSOHqezoKX_YQ3NRRodmZ8BjioOkgsxRHigxXi1yLGm0l8J0IniOZxN1TrkzrFKTIGRSWjNcnrqVnroalzVqvlQy2HZSF_iTGXr9L5UX4_XBz27cSpS10-K2o6XnoWOCO1Q93R7g3DzoFLplJ0hDOj1wg6Hpavfznh7bMG3WA8YCIPMgd3xj1xgDjVI-jJJtonICsELBFvPvUWsjYydVy0LqVl6UoSsx0X0ioSITrbq6ErWyDMCcRs_j4OQuce2hiZnfLBJ2zSDHGgsXwNiPl16RISRRY0BUgce2l0q4rT1K__TRvzO0VBPFXkAMtZo_l98vweYVOIbrsZPswLnTI0e2_YPU4Gjai63WIW6BGt8BI1vFGaDWDdDXGpblq55o_Tt91cItRbxv9nJ6jls4jfuq0_HFFvvYWrVmy-N5WQ7Y6SjcwE1E_i4t-lcsNhFngZm8QPgDdkA8ER3RPxmnILiBGLdhhPc9Kz2d-37Rvf8ugGbP9wD0HJGzRiu3WePz2R5BpW8k6wFyPhAwlM1dSc8BY2O6sPTXLgXIhDny5995avzz-icx8bIowGkSTpw7yrGMvTfpcx7PgjFhUYvmBstYDr7CtOFXR68n78gVxqeY7lNbqtfTsEJsVxfz_6ykwCDpEPnPywhey9eCytp_Rc8W1u8KNZYgOA3yg6cNnX-QaXVVK70UxUBGQXByV3-leEWPhza-igBLBGl_-3kEdS-LyWVufHw0F0eJ8prtp37jh3yzfY1BEZEsECbshuOc0YFNe1iCNXNxkxv7rDNuNUTljlAkGkf2NTdExWA43RX84xj2l6q6Gg9en2y7NRV4VJOUYidUwNYE-hrBRCC4=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0cea88645f6e3c97006aa7006e571487d2a9acb4157e87462c\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"I found 3 closed issues. Would you like me to:\\n- List their IDs and titles,\\n- Show full details for each,\\n- Reopen any of them, or\\n- Export the list?\\n\\nTell me which action you want.\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Search issues by status\",\n      \"name\": \"search_issues\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"status\": {\n            \"type\": \"string\",\n            \"enum\": [\n              \"open\",\n              \"in_progress\",\n              \"closed\"\n            ]\n          }\n        },\n        \"required\": [\n          \"status\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 189,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 200,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 128\n    },\n    \"total_tokens\": 389\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

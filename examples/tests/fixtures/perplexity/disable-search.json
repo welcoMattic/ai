@@ -1,0 +1,55 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.perplexity.ai/chat/completions",
+                "signature": "c1d868311fd0226f6f7c489415076e94",
+                "signature_v2": "da11bb77a47cbd4ad2d08e2d715af7a1",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"disable_search\":true,\"messages\":[{\"role\":\"user\",\"content\":\"What is 2 + 2?\"}],\"model\":\"sonar\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-ratelimit-limit": [
+                        "1"
+                    ],
+                    "x-ratelimit-remaining": [
+                        "0"
+                    ],
+                    "x-ratelimit-reset": [
+                        "1789332522"
+                    ],
+                    "x-ratelimit-used": [
+                        "1"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"choices\":[{\"delta\":{\"content\":\"\",\"role\":\"assistant\"},\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"2 + 2 = 4.\",\"role\":\"assistant\"}}],\"created\":1789332521,\"id\":\"384b71d2-8bae-477c-a1b2-d7ac22591bd5\",\"model\":\"sonar\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":8,\"cost\":{\"input_tokens_cost\":0.00001,\"output_tokens_cost\":0.00001,\"request_cost\":0.005,\"total_cost\":0.00502},\"prompt_tokens\":8,\"search_context_size\":\"low\",\"total_tokens\":16}}\n"
+            }
+        }
+    ]
+}

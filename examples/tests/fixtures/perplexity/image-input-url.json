@@ -1,0 +1,55 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.perplexity.ai/chat/completions",
+                "signature": "7ed8e0f925a8f064dd8dd49d6c213dcc",
+                "signature_v2": "b7f7cbcdf90ce2bc704f8b704a0be23d",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"system\",\"content\":\"You are an image analyzer bot that helps identify the content of images.\"},{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"Describe the image as a comedian would do it.\"},{\"type\":\"image_url\",\"image_url\":{\"url\":\"https:\\/\\/christopher-hertel.de\\/images\\/projects\\/llmchain.png\"}}]}],\"model\":\"sonar\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-ratelimit-limit": [
+                        "1"
+                    ],
+                    "x-ratelimit-remaining": [
+                        "0"
+                    ],
+                    "x-ratelimit-reset": [
+                        "1789333199"
+                    ],
+                    "x-ratelimit-used": [
+                        "1"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"choices\":[{\"delta\":{\"content\":\"\",\"role\":\"assistant\"},\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"This looks like someone asked, “What if an AI startup launch video had a budget, but only for explosions?”  \\n\\nWe’ve got a giant cyber-elephant stomping through a city like it just found out about rent prices, helicopters doing their best “we are absolutely not prepared for this” impression, and the words **LLM CHAIN** sitting there in the middle like they’re the hero of a movie that clearly got out of hand. It’s basically the tech equivalent of saying, “We’re disrupting the industry,” and then immediately the industry calls security.\",\"role\":\"assistant\"}}],\"created\":1789333198,\"id\":\"db6acec9-7d87-4ead-bb1f-d137ae2754d4\",\"model\":\"sonar\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":115,\"cost\":{\"input_tokens_cost\":0.00002,\"output_tokens_cost\":0.00012,\"request_cost\":0.005,\"total_cost\":0.00514},\"prompt_tokens\":24,\"search_context_size\":\"low\",\"total_tokens\":139}}\n"
+            }
+        }
+    ]
+}

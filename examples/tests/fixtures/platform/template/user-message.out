@@ -1,0 +1,74 @@
+UserMessage with template
+=========================
+
+UserMessage template: Tell me about {topic}
+Variables: ['topic' => 'PHP']
+Response: Briefly: PHP (originally "Personal Home Page", now "PHP: Hypertext Preprocessor") is a widely used, open-source server-side scripting language designed for web development and general-purpose scripting. It’s embedded in HTML, runs on the server, and produces HTML (or JSON, images, etc.) delivered to clients.
+
+Key facts
+- Origin: created by Rasmus Lerdorf in 1994.
+- Engine: runs on the Zend Engine; available as mod_php, PHP-FPM, CLI, and in containers.
+- Files: typically .php files executed by a web server (Apache, Nginx + PHP-FPM) or run from the command line.
+- Ecosystem: Composer (package manager), Packagist (package repository), PHPUnit (testing), PSR standards from PHP-FIG.
+
+What it’s used for
+- Building dynamic web pages and web applications (CMS, e‑commerce, blogs).
+- REST APIs and microservices.
+- Command-line scripts and background jobs.
+- Rapid prototyping and full-scale enterprise apps.
+
+Language evolution and modern features (PHP 8+)
+- Stronger typing: scalar and union types, nullable types, typed properties, return types.
+- Modern syntax: attributes (annotations), constructor property promotion, match expressions, nullsafe operator.
+- Performance improvements: JIT and ongoing engine optimizations in recent 8.x releases.
+- New constructs: enums, readonly properties/classes, fibers (for async-style code), improvements in error handling and deprecations to modernize the language.
+
+Minimal example (PHP 8-style)
+- Hello world:
+  <?php
+  echo "Hello, world!";
+- Function with typing, union type and nullsafe:
+  <?php
+  function greet(string|null $name): string {
+      return $name?->trim() ? "Hello, $name" : "Hello, guest";
+  }
+  echo greet("Alex");
+
+Major frameworks and CMS
+- Frameworks: Laravel, Symfony, Laminas (formerly Zend Framework), CodeIgniter, CakePHP.
+- Popular CMS: WordPress (largest share), Drupal, Joomla.
+
+Deployment and tooling
+- Use PHP-FPM behind Nginx for production; mod_php with Apache is also used.
+- Docker official PHP images are common for containers.
+- Composer manages dependencies; PSR-4 autoloading is the de facto standard.
+
+Security considerations
+- Protect against SQL injection (use prepared statements / PDO), XSS (output escaping), CSRF (tokens), file upload risks, and others.
+- Keep PHP and extensions up to date; follow secure configuration (disable unnecessary functions, proper error handling).
+
+Pros
+- Easy to learn for beginners, especially for web developers.
+- Large ecosystem, many hosting options, huge library and CMS support.
+- Fast development with mature frameworks (e.g., Laravel).
+
+Cons / caveats
+- Historical inconsistencies in function names and parameter order (much improved in modern versions).
+- Large amount of legacy code and older apps can be hard to maintain.
+- Some performance differences vs. compiled languages (though modern PHP is much faster than older releases).
+
+When to choose PHP
+- Building websites or web apps quickly, especially when using established tools like WordPress or Laravel.
+- When you need wide hosting support or a large ecosystem of libraries and CMS plugins.
+- When your team already has PHP expertise.
+
+Where to learn more
+- Official manual: https://www.php.net (excellent documentation and examples).
+- Composer and Packagist docs.
+- Framework docs (Laravel, Symfony).
+- Community tutorials, Laracasts, and books on modern PHP practices.
+
+If you want, I can:
+- Show more code examples (routing, database access with PDO, or a small Laravel snippet).
+- Explain how to deploy a PHP app with Docker and Nginx.
+- Compare PHP to a specific alternative (Node.js, Python, Go) for your use case. Which would you prefer?

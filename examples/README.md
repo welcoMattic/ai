@@ -117,6 +117,10 @@ providers changed since the last recording. Commit cassettes and goldens togethe
 Binary responses (generated images, audio, ...) are not stored byte-for-byte: the cassette keeps a metadata stub
 (content type, byte size) and replay serves a small placeholder body instead.
 
+Recordings never store your credentials or account specific values like an Azure endpoint: every variable of
+`.env.test` whose value in `.env.local` differs is replaced by its placeholder, and replay loads `.env.test` instead of
+`.env.local`. When an example reads a new environment variable, add a placeholder for it to `.env.test`.
+
 To record a single example (or a subset), narrow the record run with a filter — the golden
 refresh is included:
 

@@ -1,0 +1,444 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.anthropic.com/v1/messages",
+                "signature": "a617741e0fbba99f9e12599bf457eb26",
+                "signature_v2": "5f922ad364e57c471d93995afdfe1bec",
+                "headers": {
+                    "x-api-key": [
+                        "[redacted]"
+                    ],
+                    "anthropic-version": [
+                        "2023-06-01"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"max_tokens\":1000,\"tools\":[{\"name\":\"create_shipping_order\",\"description\":\"Create a shipping order with items to ship to an address\",\"input_schema\":{\"type\":\"object\",\"properties\":{\"order\":{\"type\":\"object\",\"properties\":{\"recipientName\":{\"type\":\"string\"},\"priority\":{\"type\":\"string\",\"enum\":[\"standard\",\"express\",\"overnight\"]},\"deliverBy\":{\"type\":\"string\",\"format\":\"date-time\"},\"address\":{\"type\":\"object\",\"properties\":{\"street\":{\"type\":\"string\"},\"city\":{\"type\":\"string\"},\"zip\":{\"type\":\"string\"}},\"required\":[\"street\",\"city\",\"zip\"],\"additionalProperties\":false},\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"quantity\":{\"type\":\"integer\"},\"price\":{\"type\":\"number\"}},\"required\":[\"name\",\"quantity\",\"price\"],\"additionalProperties\":false}}},\"required\":[\"recipientName\",\"priority\",\"deliverBy\",\"address\",\"items\"],\"additionalProperties\":false,\"description\":\"The shipping order to create\"}},\"required\":[\"order\"],\"additionalProperties\":false},\"cache_control\":{\"type\":\"ephemeral\"}}],\"tool_choice\":{\"type\":\"auto\"},\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"Create an express shipping order for John Doe at 123 Main St, Springfield, 62701 to be delivered by 2026-03-15 with 2 items: 3x Widget ($9.99 each) and 1x Gadget ($24.99)\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"system\":[{\"type\":\"text\",\"text\":\"You are a shipping assistant. Help users create shipping orders.\",\"cache_control\":{\"type\":\"ephemeral\"}}],\"model\":\"claude-sonnet-4-5-20250929\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "anthropic-ratelimit-input-tokens-limit": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-remaining": [
+                        "4999000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-reset": [
+                        "2026-09-13T19:51:39Z"
+                    ],
+                    "anthropic-ratelimit-output-tokens-limit": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-remaining": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-reset": [
+                        "2026-09-13T19:51:41Z"
+                    ],
+                    "anthropic-ratelimit-requests-limit": [
+                        "5000"
+                    ],
+                    "anthropic-ratelimit-requests-remaining": [
+                        "4999"
+                    ],
+                    "anthropic-ratelimit-requests-reset": [
+                        "2026-09-13T19:51:38Z"
+                    ],
+                    "anthropic-ratelimit-tokens-limit": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-remaining": [
+                        "5999000"
+                    ],
+                    "anthropic-ratelimit-tokens-reset": [
+                        "2026-09-13T19:51:39Z"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "anthropic-organization-id": [
+                        "152d88d9-0d18-4cae-80c9-c425a5bf4e25"
+                    ],
+                    "anthropic-workspace-id": [
+                        "wrkspc_01Eo1YZvq8sNWFRAfhfjg7gS"
+                    ],
+                    "traceresponse": [
+                        "00-9b18d601799861b30cafd542fbc0947b-4df16c03d9e9203f-01"
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "content-security-policy": [
+                        "default-src 'none'; frame-ancestors 'none'"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"model\":\"claude-sonnet-4-5-20250929\",\"id\":\"msg_011Cf22C8fvTUqbtDYGEzaC7\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[{\"type\":\"tool_use\",\"id\":\"toolu_014CmD9p8szt5dqf9xyJF7hM\",\"name\":\"create_shipping_order\",\"input\":{\"order\":{\"recipientName\":\"John Doe\",\"priority\":\"express\",\"deliverBy\":\"2026-03-15T23:59:59Z\",\"address\":{\"street\":\"123 Main St\",\"city\":\"Springfield\",\"zip\":\"62701\"},\"items\":[{\"name\":\"Widget\",\"quantity\":3,\"price\":9.99},{\"name\":\"Gadget\",\"quantity\":1,\"price\":24.99}]}},\"caller\":{\"type\":\"direct\"}}],\"container\":null,\"stop_reason\":\"tool_use\",\"stop_sequence\":null,\"stop_details\":null,\"usage\":{\"input_tokens\":877,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"cache_creation\":{\"ephemeral_5m_input_tokens\":0,\"ephemeral_1h_input_tokens\":0},\"output_tokens\":208,\"service_tier\":\"standard\",\"inference_geo\":\"not_available\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.anthropic.com/v1/messages",
+                "signature": "fd87be73b9c808b958ac0c84acd993da",
+                "signature_v2": "4d61bd2e41fb2fc27a7fc996de4b9fbf",
+                "headers": {
+                    "x-api-key": [
+                        "[redacted]"
+                    ],
+                    "anthropic-version": [
+                        "2023-06-01"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"max_tokens\":1000,\"tools\":[{\"name\":\"create_shipping_order\",\"description\":\"Create a shipping order with items to ship to an address\",\"input_schema\":{\"type\":\"object\",\"properties\":{\"order\":{\"type\":\"object\",\"properties\":{\"recipientName\":{\"type\":\"string\"},\"priority\":{\"type\":\"string\",\"enum\":[\"standard\",\"express\",\"overnight\"]},\"deliverBy\":{\"type\":\"string\",\"format\":\"date-time\"},\"address\":{\"type\":\"object\",\"properties\":{\"street\":{\"type\":\"string\"},\"city\":{\"type\":\"string\"},\"zip\":{\"type\":\"string\"}},\"required\":[\"street\",\"city\",\"zip\"],\"additionalProperties\":false},\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"quantity\":{\"type\":\"integer\"},\"price\":{\"type\":\"number\"}},\"required\":[\"name\",\"quantity\",\"price\"],\"additionalProperties\":false}}},\"required\":[\"recipientName\",\"priority\",\"deliverBy\",\"address\",\"items\"],\"additionalProperties\":false,\"description\":\"The shipping order to create\"}},\"required\":[\"order\"],\"additionalProperties\":false},\"cache_control\":{\"type\":\"ephemeral\"}}],\"tool_choice\":{\"type\":\"auto\"},\"messages\":[{\"role\":\"user\",\"content\":\"Create an express shipping order for John Doe at 123 Main St, Springfield, 62701 to be delivered by 2026-03-15 with 2 items: 3x Widget ($9.99 each) and 1x Gadget ($24.99)\"},{\"role\":\"assistant\",\"content\":[{\"type\":\"tool_use\",\"id\":\"toolu_014CmD9p8szt5dqf9xyJF7hM\",\"name\":\"create_shipping_order\",\"input\":{\"order\":{\"recipientName\":\"John Doe\",\"priority\":\"express\",\"deliverBy\":\"2026-03-15T23:59:59Z\",\"address\":{\"street\":\"123 Main St\",\"city\":\"Springfield\",\"zip\":\"62701\"},\"items\":[{\"name\":\"Widget\",\"quantity\":3,\"price\":9.99},{\"name\":\"Gadget\",\"quantity\":1,\"price\":24.99}]}}}]},{\"role\":\"user\",\"content\":[{\"type\":\"tool_result\",\"tool_use_id\":\"toolu_014CmD9p8szt5dqf9xyJF7hM\",\"content\":\"Shipping order created.\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"system\":[{\"type\":\"text\",\"text\":\"You are a shipping assistant. Help users create shipping orders.\",\"cache_control\":{\"type\":\"ephemeral\"}}],\"model\":\"claude-sonnet-4-5-20250929\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "anthropic-ratelimit-input-tokens-limit": [
+                        "5000000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-remaining": [
+                        "4999000"
+                    ],
+                    "anthropic-ratelimit-input-tokens-reset": [
+                        "2026-09-13T19:51:42Z"
+                    ],
+                    "anthropic-ratelimit-output-tokens-limit": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-remaining": [
+                        "1000000"
+                    ],
+                    "anthropic-ratelimit-output-tokens-reset": [
+                        "2026-09-13T19:51:43Z"
+                    ],
+                    "anthropic-ratelimit-requests-limit": [
+                        "5000"
+                    ],
+                    "anthropic-ratelimit-requests-remaining": [
+                        "4999"
+                    ],
+                    "anthropic-ratelimit-requests-reset": [
+                        "2026-09-13T19:51:41Z"
+                    ],
+                    "anthropic-ratelimit-tokens-limit": [
+                        "6000000"
+                    ],
+                    "anthropic-ratelimit-tokens-remaining": [
+                        "5999000"
+                    ],
+                    "anthropic-ratelimit-tokens-reset": [
+                        "2026-09-13T19:51:42Z"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "anthropic-organization-id": [
+                        "152d88d9-0d18-4cae-80c9-c425a5bf4e25"
+                    ],
+                    "anthropic-workspace-id": [
+                        "wrkspc_01Eo1YZvq8sNWFRAfhfjg7gS"
+                    ],
+                    "traceresponse": [
+                        "00-b32bc1554cc6f2c0571297802f9970ae-f306c39f13971909-01"
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "content-security-policy": [
+                        "default-src 'none'; frame-ancestors 'none'"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"model\":\"claude-sonnet-4-5-20250929\",\"id\":\"msg_011Cf22CKzoedk4EBHWoH5a9\",\"type\":\"message\",\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"Perfect! I've successfully created an express shipping order with the following details:\\n\\n**Recipient:** John Doe  \\n**Delivery Address:** 123 Main St, Springfield, 62701  \\n**Priority:** Express  \\n**Deliver By:** March 15, 2026  \\n\\n**Items:**\\n- 3x Widget @ $9.99 each\\n- 1x Gadget @ $24.99\\n\\nThe shipping order has been created and is ready for processing.\"}],\"container\":null,\"stop_reason\":\"end_turn\",\"stop_sequence\":null,\"stop_details\":null,\"usage\":{\"input_tokens\":5,\"cache_creation_input_tokens\":1052,\"cache_read_input_tokens\":0,\"cache_creation\":{\"ephemeral_5m_input_tokens\":1052,\"ephemeral_1h_input_tokens\":0},\"output_tokens\":108,\"service_tier\":\"standard\",\"inference_geo\":\"not_available\"}}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "e36cb2617ab7bba581b7635b6ad553cb",
+                "signature_v2": "a52551653e7cbdbc1365b3d93a3fe4ae",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"create_shipping_order\",\"description\":\"Create a shipping order with items to ship to an address\",\"parameters\":{\"type\":\"object\",\"properties\":{\"order\":{\"type\":\"object\",\"properties\":{\"recipientName\":{\"type\":\"string\"},\"priority\":{\"type\":\"string\",\"enum\":[\"standard\",\"express\",\"overnight\"]},\"deliverBy\":{\"type\":\"string\",\"format\":\"date-time\"},\"address\":{\"type\":\"object\",\"properties\":{\"street\":{\"type\":\"string\"},\"city\":{\"type\":\"string\"},\"zip\":{\"type\":\"string\"}},\"required\":[\"street\",\"city\",\"zip\"],\"additionalProperties\":false},\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"quantity\":{\"type\":\"integer\"},\"price\":{\"type\":\"number\"}},\"required\":[\"name\",\"quantity\",\"price\"],\"additionalProperties\":false}}},\"required\":[\"recipientName\",\"priority\",\"deliverBy\",\"address\",\"items\"],\"additionalProperties\":false,\"description\":\"The shipping order to create\"}},\"required\":[\"order\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Create an express shipping order for John Doe at 123 Main St, Springfield, 62701 to be delivered by 2026-03-15 with 2 items: 3x Widget ($9.99 each) and 1x Gadget ($24.99)\"}],\"instructions\":\"You are a shipping assistant. Help users create shipping orders.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0504b37d90150a6a006aa6fecff47487d2abe702835bdc8613\",\n  \"object\": \"response\",\n  \"created_at\": 1789329103,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329108,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a shipping assistant. Help users create shipping orders.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0504b37d90150a6a006aa6fed0b89087d2b42d879a492abf75\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv7UWCJfk4rABObDiceOJpXJ8Ziw8IRr4u5KCuqn8X9RFf4M9j2XticrWAYV1cDkdaVU0ftJyyn5_kaiKYHtttwTjGskBIY963pViysyLne8Ti7YuIOnoc4W2uraBAwU4lJNxocUeR5X7qmROJuhad9TJy2FXUvt3n6-QeN8V8z8Maj0Na-Y7ZwLgni00fuyxm3YtnyqPDA23sBKgFhSKEH_F2U6zqblr7SCGJA9QnKH5MEdCEu5-T8mNB__rMIVsiOG4tJEA8GPGQA4vquoEU7ISaUSHGxSBQ6sMx-NaIghQeggssBlPFIdczRBdtNsgzXgYl_I3_-QzfkdaGotP5EPJq1do5zYZR-U6BK38CIAsuJoPyjQh8nrRmTVXB6uwzlw_mA5icG-APe-eIVZXA2ygPqccqjZ-eTcx8K98sIw1yCkphVqUXb_F0w715maXBds8V0F3Lv6faisZCpxD_oEI4yY3dFLwOy8r0muFhAM8RUdFN9z0PmdFgDoqNAhr3I4aJw6v_c36-ZFnU7BJD_orkhxDx3lQmJZbIzUUFvMhf2Uj-yf1l9vcuTPvlMI8GMYuFzFy3err2O88CZ0B5OeylZE0YOenRfWgH8hXOvMUPRcP7gYVPXiHx4gG0M42sHA62RUjEj8PwvBhIFp5v28labF5cOS9fJ_KLwV8Ic2LyAZWZPq-BCFZJCwL5qdyj5s88w_OXQ4OFRCU3kZFZcLz3b2w7xIfRvNduIo7uYEstmn9SsOQRJaCaMhL54YFlpyiJm21xHKH1Le7l0xXX1CRyuZGJRkmbIsR92ijEIbPfCQyHMwIjn_Gx67NxTC5Fb-O4JcnPhBN2z6Qv9X0ehqq_C8FnLtMN3T14OgRsd04bzqBtbwsIKuF74PwUqGGgnLXIa51WS-qjX-RUq6eo9ZI4emeOdoN4FE7ISqpa3KLGajejWIEUp0BKR21KMnzKrBakNAyU_vaOa67HmiDU2ZRBnovLR2WbEj5Gj_A_fuKGd0cXqYVOEjtCzndppop9_PXdjQPLu57fbyTtJNsIxwMptP-UrbGQptiaXOiJPK2MW9en14adTGcum-jwRfj0ZSbDgvDXdDt0EH2ZI-YsqbhqZB9AyisKKssH00Rdct-J6TiLe1WuHqef421t7WAnks8k1SKFWpJpzrZ906OImG2T-hpmqzb3QM1mvTJe7rifAdHmrX6t3EVH-kj5UNDQWXFU5HjmgWXoqLSMhKIf_xgqKzqWGvmOYix29tbJViTAfofUEsnmMOp4Xt9r4N1mZBVnbEzxGGTJQBQq9Np9sQxMuA0uPdvTabSEpbc4jrljtgpC_bQjz-CWStYlc1KrvhRwfOy0RST2WO0xmqgbNbnqPKeYE4d2KGTc81x6N2_HhLwxNs-uxRY8-ePmFWSvtq8Wr5CKeeb3oS0K3ctTETtHVjS_D3CtTiLNB4GgNBkxi_SDgDNXqL8mY4vBA5UMOOhUEuZ4tJ_lj3DFtUHVIjl1bAisLvRdsoN9j1VHEg0IZsjA3KLiQezQiDT9Zi35AWz2FSO4L78UTazBdmNewkY8GpTZNnpAb9rAGyYBTnB2R_Xmo_MUqBqJcvqYzFePRgN5XE64jYNNdCKVI63ITIWNjMvWp15RFddaNadrFFPb1DWyp0UKFYcdPX6uTjfBQsfL2xhmjz2zAokIP54TwOYNkQfQPAPy1wx_0_XzrmgB9zsM9UB5v4ABV4XHrb3VcT_AYWS-Ps0WbzdSvU7EZZic_Bw2Fa_lHEqZcd8XJ-tqzDHgNQ_fyH6vQmcak_8upQu-ty2GeEXAhGtLnw8CAB657pI2Zl3MjygqOT9N-23rdXGCKncraljJZ3ndl6DYrmxPLFg2WIhFWXK2kR6_8CCP36ZZEXq9eJDcJ93oFOkcK8ONPUqWNCnA9imezfRW9O6mLaTnMjdupe2pexr04dx99gfgSx5-n9fEDIyTRlKJdbYmeaCbuPinqiYkAKkEhOjBRa7z9cPZEecx3BHJ_QiS6rxguRwDS9f43R1G82q7CY-TeTcdrTtGNDweI344AhxxzoxlZM_h7DoT12Ecr_joW92EVcebwbH-LRV2mZRlOhiCE00q0HSOatEE6UD-H0qtc288NqaFrPO8m1w_sdr_Ro1daLVQDrDMUv5uz2FkDSidnVa6vmhMF3cpQLDmsbJRNqzXIgZ9eYEunZfGTkB8vWh34Qtbv6M2tddaRm3ehbGOxpthDrZZs6nB_6IGM_Bglshd_TEmQLzrdEhuaiE2YAIsK-3XZF8r85wvnH-mdo4l-d5ZXGC85Ck5S3SIpIKg3KO1F9JPaEQAFr7TQ4D2ybXJhhhoBfKy7pM5vVGfao06H1OOJgSskXERWVVWGWo-1NStqVUSNDXApEz0cmLpgYJnNZV968Da4SU5OBHal1uVW1ybzdpS3TBnpAQdXU_no2DFsA1x_OsivwhETennkmSP2zmLOM_A7e2_RbDLR7CTyHkyI3AouXnPaLJgkH-wfxpfmEctTWVTIMTNCdfdbqFL2LU5xzpBoVRdGEvlEhMPT1FNe99RQphb1ovMsp4VX6IAxNcu7rko8iTJzjFw==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"fc_0504b37d90150a6a006aa6fed3487887d2bd36ea6989b21717\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{\\n  \\\"order\\\": {\\n    \\\"recipientName\\\": \\\"John Doe\\\",\\n    \\\"priority\\\": \\\"express\\\",\\n    \\\"deliverBy\\\": \\\"2026-03-15T23:59:59Z\\\",\\n    \\\"address\\\": {\\n      \\\"street\\\": \\\"123 Main St\\\",\\n      \\\"city\\\": \\\"Springfield\\\",\\n      \\\"zip\\\": \\\"62701\\\"\\n    },\\n    \\\"items\\\": [\\n      {\\n        \\\"name\\\": \\\"Widget\\\",\\n        \\\"quantity\\\": 3,\\n        \\\"price\\\": 9.99\\n      },\\n      {\\n        \\\"name\\\": \\\"Gadget\\\",\\n        \\\"quantity\\\": 1,\\n        \\\"price\\\": 24.99\\n      }\\n    ]\\n  }\\n}\",\n      \"call_id\": \"call_jEhigvbnoYk7v2Ixf3vR189J\",\n      \"name\": \"create_shipping_order\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Create a shipping order with items to ship to an address\",\n      \"name\": \"create_shipping_order\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"order\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"recipientName\": {\n                \"type\": \"string\"\n              },\n              \"priority\": {\n                \"type\": \"string\",\n                \"enum\": [\n                  \"standard\",\n                  \"express\",\n                  \"overnight\"\n                ]\n              },\n              \"deliverBy\": {\n                \"type\": \"string\",\n                \"format\": \"date-time\"\n              },\n              \"address\": {\n                \"type\": \"object\",\n                \"properties\": {\n                  \"street\": {\n                    \"type\": \"string\"\n                  },\n                  \"city\": {\n                    \"type\": \"string\"\n                  },\n                  \"zip\": {\n                    \"type\": \"string\"\n                  }\n                },\n                \"required\": [\n                  \"street\",\n                  \"city\",\n                  \"zip\"\n                ],\n                \"additionalProperties\": false\n              },\n              \"items\": {\n                \"type\": \"array\",\n                \"items\": {\n                  \"type\": \"object\",\n                  \"properties\": {\n                    \"name\": {\n                      \"type\": \"string\"\n                    },\n                    \"quantity\": {\n                      \"type\": \"integer\"\n                    },\n                    \"price\": {\n                      \"type\": \"number\"\n                    }\n                  },\n                  \"required\": [\n                    \"name\",\n                    \"quantity\",\n                    \"price\"\n                  ],\n                  \"additionalProperties\": false\n                }\n              }\n            },\n            \"required\": [\n              \"recipientName\",\n              \"priority\",\n              \"deliverBy\",\n              \"address\",\n              \"items\"\n            ],\n            \"additionalProperties\": false,\n            \"description\": \"The shipping order to create\"\n          }\n        },\n        \"required\": [\n          \"order\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 189,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 421,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 256\n    },\n    \"total_tokens\": 610\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "ebb0e761fed8f9cadd42c40c05fd1a22",
+                "signature_v2": "7df14b1f572fcafaf1790ff3c4848d15",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"create_shipping_order\",\"description\":\"Create a shipping order with items to ship to an address\",\"parameters\":{\"type\":\"object\",\"properties\":{\"order\":{\"type\":\"object\",\"properties\":{\"recipientName\":{\"type\":\"string\"},\"priority\":{\"type\":\"string\",\"enum\":[\"standard\",\"express\",\"overnight\"]},\"deliverBy\":{\"type\":\"string\",\"format\":\"date-time\"},\"address\":{\"type\":\"object\",\"properties\":{\"street\":{\"type\":\"string\"},\"city\":{\"type\":\"string\"},\"zip\":{\"type\":\"string\"}},\"required\":[\"street\",\"city\",\"zip\"],\"additionalProperties\":false},\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"quantity\":{\"type\":\"integer\"},\"price\":{\"type\":\"number\"}},\"required\":[\"name\",\"quantity\",\"price\"],\"additionalProperties\":false}}},\"required\":[\"recipientName\",\"priority\",\"deliverBy\",\"address\",\"items\"],\"additionalProperties\":false,\"description\":\"The shipping order to create\"}},\"required\":[\"order\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Create an express shipping order for John Doe at 123 Main St, Springfield, 62701 to be delivered by 2026-03-15 with 2 items: 3x Widget ($9.99 each) and 1x Gadget ($24.99)\"},{\"id\":\"rs_0504b37d90150a6a006aa6fed0b89087d2b42d879a492abf75\",\"type\":\"reasoning\",\"content\":[],\"encrypted_content\":\"gAAAAABqpv7UWCJfk4rABObDiceOJpXJ8Ziw8IRr4u5KCuqn8X9RFf4M9j2XticrWAYV1cDkdaVU0ftJyyn5_kaiKYHtttwTjGskBIY963pViysyLne8Ti7YuIOnoc4W2uraBAwU4lJNxocUeR5X7qmROJuhad9TJy2FXUvt3n6-QeN8V8z8Maj0Na-Y7ZwLgni00fuyxm3YtnyqPDA23sBKgFhSKEH_F2U6zqblr7SCGJA9QnKH5MEdCEu5-T8mNB__rMIVsiOG4tJEA8GPGQA4vquoEU7ISaUSHGxSBQ6sMx-NaIghQeggssBlPFIdczRBdtNsgzXgYl_I3_-QzfkdaGotP5EPJq1do5zYZR-U6BK38CIAsuJoPyjQh8nrRmTVXB6uwzlw_mA5icG-APe-eIVZXA2ygPqccqjZ-eTcx8K98sIw1yCkphVqUXb_F0w715maXBds8V0F3Lv6faisZCpxD_oEI4yY3dFLwOy8r0muFhAM8RUdFN9z0PmdFgDoqNAhr3I4aJw6v_c36-ZFnU7BJD_orkhxDx3lQmJZbIzUUFvMhf2Uj-yf1l9vcuTPvlMI8GMYuFzFy3err2O88CZ0B5OeylZE0YOenRfWgH8hXOvMUPRcP7gYVPXiHx4gG0M42sHA62RUjEj8PwvBhIFp5v28labF5cOS9fJ_KLwV8Ic2LyAZWZPq-BCFZJCwL5qdyj5s88w_OXQ4OFRCU3kZFZcLz3b2w7xIfRvNduIo7uYEstmn9SsOQRJaCaMhL54YFlpyiJm21xHKH1Le7l0xXX1CRyuZGJRkmbIsR92ijEIbPfCQyHMwIjn_Gx67NxTC5Fb-O4JcnPhBN2z6Qv9X0ehqq_C8FnLtMN3T14OgRsd04bzqBtbwsIKuF74PwUqGGgnLXIa51WS-qjX-RUq6eo9ZI4emeOdoN4FE7ISqpa3KLGajejWIEUp0BKR21KMnzKrBakNAyU_vaOa67HmiDU2ZRBnovLR2WbEj5Gj_A_fuKGd0cXqYVOEjtCzndppop9_PXdjQPLu57fbyTtJNsIxwMptP-UrbGQptiaXOiJPK2MW9en14adTGcum-jwRfj0ZSbDgvDXdDt0EH2ZI-YsqbhqZB9AyisKKssH00Rdct-J6TiLe1WuHqef421t7WAnks8k1SKFWpJpzrZ906OImG2T-hpmqzb3QM1mvTJe7rifAdHmrX6t3EVH-kj5UNDQWXFU5HjmgWXoqLSMhKIf_xgqKzqWGvmOYix29tbJViTAfofUEsnmMOp4Xt9r4N1mZBVnbEzxGGTJQBQq9Np9sQxMuA0uPdvTabSEpbc4jrljtgpC_bQjz-CWStYlc1KrvhRwfOy0RST2WO0xmqgbNbnqPKeYE4d2KGTc81x6N2_HhLwxNs-uxRY8-ePmFWSvtq8Wr5CKeeb3oS0K3ctTETtHVjS_D3CtTiLNB4GgNBkxi_SDgDNXqL8mY4vBA5UMOOhUEuZ4tJ_lj3DFtUHVIjl1bAisLvRdsoN9j1VHEg0IZsjA3KLiQezQiDT9Zi35AWz2FSO4L78UTazBdmNewkY8GpTZNnpAb9rAGyYBTnB2R_Xmo_MUqBqJcvqYzFePRgN5XE64jYNNdCKVI63ITIWNjMvWp15RFddaNadrFFPb1DWyp0UKFYcdPX6uTjfBQsfL2xhmjz2zAokIP54TwOYNkQfQPAPy1wx_0_XzrmgB9zsM9UB5v4ABV4XHrb3VcT_AYWS-Ps0WbzdSvU7EZZic_Bw2Fa_lHEqZcd8XJ-tqzDHgNQ_fyH6vQmcak_8upQu-ty2GeEXAhGtLnw8CAB657pI2Zl3MjygqOT9N-23rdXGCKncraljJZ3ndl6DYrmxPLFg2WIhFWXK2kR6_8CCP36ZZEXq9eJDcJ93oFOkcK8ONPUqWNCnA9imezfRW9O6mLaTnMjdupe2pexr04dx99gfgSx5-n9fEDIyTRlKJdbYmeaCbuPinqiYkAKkEhOjBRa7z9cPZEecx3BHJ_QiS6rxguRwDS9f43R1G82q7CY-TeTcdrTtGNDweI344AhxxzoxlZM_h7DoT12Ecr_joW92EVcebwbH-LRV2mZRlOhiCE00q0HSOatEE6UD-H0qtc288NqaFrPO8m1w_sdr_Ro1daLVQDrDMUv5uz2FkDSidnVa6vmhMF3cpQLDmsbJRNqzXIgZ9eYEunZfGTkB8vWh34Qtbv6M2tddaRm3ehbGOxpthDrZZs6nB_6IGM_Bglshd_TEmQLzrdEhuaiE2YAIsK-3XZF8r85wvnH-mdo4l-d5ZXGC85Ck5S3SIpIKg3KO1F9JPaEQAFr7TQ4D2ybXJhhhoBfKy7pM5vVGfao06H1OOJgSskXERWVVWGWo-1NStqVUSNDXApEz0cmLpgYJnNZV968Da4SU5OBHal1uVW1ybzdpS3TBnpAQdXU_no2DFsA1x_OsivwhETennkmSP2zmLOM_A7e2_RbDLR7CTyHkyI3AouXnPaLJgkH-wfxpfmEctTWVTIMTNCdfdbqFL2LU5xzpBoVRdGEvlEhMPT1FNe99RQphb1ovMsp4VX6IAxNcu7rko8iTJzjFw==\",\"summary\":[]},{\"arguments\":\"{\\u0022order\\u0022:{\\u0022recipientName\\u0022:\\u0022John Doe\\u0022,\\u0022priority\\u0022:\\u0022express\\u0022,\\u0022deliverBy\\u0022:\\u00222026-03-15T23:59:59Z\\u0022,\\u0022address\\u0022:{\\u0022street\\u0022:\\u0022123 Main St\\u0022,\\u0022city\\u0022:\\u0022Springfield\\u0022,\\u0022zip\\u0022:\\u002262701\\u0022},\\u0022items\\u0022:[{\\u0022name\\u0022:\\u0022Widget\\u0022,\\u0022quantity\\u0022:3,\\u0022price\\u0022:9.99},{\\u0022name\\u0022:\\u0022Gadget\\u0022,\\u0022quantity\\u0022:1,\\u0022price\\u0022:24.99}]}}\",\"call_id\":\"call_jEhigvbnoYk7v2Ixf3vR189J\",\"name\":\"create_shipping_order\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_jEhigvbnoYk7v2Ixf3vR189J\",\"output\":\"Shipping order created.\"}],\"instructions\":\"You are a shipping assistant. Help users create shipping orders.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0504b37d90150a6a006aa6fed5140887d2bb7bf46e738047eb\",\n  \"object\": \"response\",\n  \"created_at\": 1789329109,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329110,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a shipping assistant. Help users create shipping orders.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"msg_0504b37d90150a6a006aa6fed5780c87d2a3e1a1c7c3884284\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"Done \\u2014 your express shipping order has been created.\\n\\nSummary:\\n- Recipient: John Doe\\n- Priority: express\\n- Deliver by: 2026-03-15 (by end of day)\\n- Address: 123 Main St, Springfield, 62701\\n- Items:\\n  - Widget \\u2014 quantity: 3 \\u2014 $9.99 each\\n  - Gadget \\u2014 quantity: 1 \\u2014 $24.99 each\\n\\nIf you need a tracking number, changes to delivery date/time, or to add insurance, let me know.\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Create a shipping order with items to ship to an address\",\n      \"name\": \"create_shipping_order\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"order\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"recipientName\": {\n                \"type\": \"string\"\n              },\n              \"priority\": {\n                \"type\": \"string\",\n                \"enum\": [\n                  \"standard\",\n                  \"express\",\n                  \"overnight\"\n                ]\n              },\n              \"deliverBy\": {\n                \"type\": \"string\",\n                \"format\": \"date-time\"\n              },\n              \"address\": {\n                \"type\": \"object\",\n                \"properties\": {\n                  \"street\": {\n                    \"type\": \"string\"\n                  },\n                  \"city\": {\n                    \"type\": \"string\"\n                  },\n                  \"zip\": {\n                    \"type\": \"string\"\n                  }\n                },\n                \"required\": [\n                  \"street\",\n                  \"city\",\n                  \"zip\"\n                ],\n                \"additionalProperties\": false\n              },\n              \"items\": {\n                \"type\": \"array\",\n                \"items\": {\n                  \"type\": \"object\",\n                  \"properties\": {\n                    \"name\": {\n                      \"type\": \"string\"\n                    },\n                    \"quantity\": {\n                      \"type\": \"integer\"\n                    },\n                    \"price\": {\n                      \"type\": \"number\"\n                    }\n                  },\n                  \"required\": [\n                    \"name\",\n                    \"quantity\",\n                    \"price\"\n                  ],\n                  \"additionalProperties\": false\n                }\n              }\n            },\n            \"required\": [\n              \"recipientName\",\n              \"priority\",\n              \"deliverBy\",\n              \"address\",\n              \"items\"\n            ],\n            \"additionalProperties\": false,\n            \"description\": \"The shipping order to create\"\n          }\n        },\n        \"required\": [\n          \"order\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 566,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 113,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 679\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "signature": "3bc1f9bf067747548f5059e6c83d432b",
+                "signature_v2": "4a1b5de7d5083c9e0bd545de2ec49695",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Create a shipping order with items to ship to an address\",\"name\":\"create_shipping_order\",\"parameters\":{\"type\":\"object\",\"properties\":{\"order\":{\"type\":\"object\",\"properties\":{\"recipientName\":{\"type\":\"string\"},\"priority\":{\"type\":\"string\",\"enum\":[\"standard\",\"express\",\"overnight\"]},\"deliverBy\":{\"type\":\"string\",\"format\":\"date-time\"},\"address\":{\"type\":\"object\",\"properties\":{\"street\":{\"type\":\"string\"},\"city\":{\"type\":\"string\"},\"zip\":{\"type\":\"string\"}},\"required\":[\"street\",\"city\",\"zip\"]},\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"quantity\":{\"type\":\"integer\"},\"price\":{\"type\":\"number\"}},\"required\":[\"name\",\"quantity\",\"price\"]}}},\"required\":[\"recipientName\",\"priority\",\"deliverBy\",\"address\",\"items\"],\"description\":\"The shipping order to create\"}},\"required\":[\"order\"]}}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"Create an express shipping order for John Doe at 123 Main St, Springfield, 62701 to be delivered by 2026-03-15 with 2 items: 3x Widget ($9.99 each) and 1x Gadget ($24.99)\"}]}],\"system_instruction\":{\"parts\":[{\"text\":\"You are a shipping assistant. Help users create shipping orders.\"}]}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "1399"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"functionCall\": {\n              \"name\": \"create_shipping_order\",\n              \"args\": {\n                \"order\": {\n                  \"address\": {\n                    \"zip\": \"62701\",\n                    \"city\": \"Springfield\",\n                    \"street\": \"123 Main St\"\n                  },\n                  \"priority\": \"express\",\n                  \"deliverBy\": \"2026-03-15\",\n                  \"items\": [\n                    {\n                      \"price\": 9.99,\n                      \"name\": \"Widget\",\n                      \"quantity\": 3\n                    },\n                    {\n                      \"quantity\": 1,\n                      \"price\": 24.99,\n                      \"name\": \"Gadget\"\n                    }\n                  ],\n                  \"recipientName\": \"John Doe\"\n                }\n              }\n            },\n            \"thoughtSignature\": \"CvcFARFNMg8/9zPT3mEB2vWc/+cdlliEgHNw25WVWr5HnI1PAzEz5NRpEN0KQLT439vnqV3WPzI5rmTnMWBm9eNDxgA0Y4yynL/50g2hcNdv/NAZU4dCOaTyxov7rBz70JIDHr+R2JImts+2rZzlzWz5Z8KMnecu2OY9X+TIAhV1wQrBaQA+e+GbYEa4uKY4JBOmPF60aDOP05XrIwNCnxB8/qNBeWgEvXO45VxgGb4R/0KZagwcjPSa74BE8dgyXv3yP+MNpiHVdXGDqqn0DT1KYpYZH0+gvBaOTrpPU/6qTdf2MhcWTNaPALpJliMWrAKhaSFG/AWoG0GkInUoGRSOStkgLC3AuUgg8TmeigwzUMOsk7EtxH+pE5aVcdZwxtq+M0PIvkq1nu+5p9pT38snAHyUapEtNn0qn3es/gqzj8fJW+l2w40NVpKBY05t5dIJ6a05mSya9Xalb9kftwiddu+yYC1N3hxhLsI5KpXW7XhOXbazhK3XdUes5V5f0zZ12wAxQX+d1BUX/O/JIgSAA3l9KcqvXRF25e4jlR9hCuJ7XNEqqvtOP54kWYOpITk/H/eNwG/HcVnNn9ju4mkBag4tPcpj2M6vBgWTEDIDcMlo/9PcpX2mn52R/bNUftMFwwo/0L80t/hs1BPcr/rN/MEFLwWoggCze4CsBcwwcw7rlXRCIoITpswnHP4rIc9kVB9VZwgcJNcLa1ymqbu6j1guX7QAayuFWXTPzDlMvmRUCOk6LU1030Chf9UXWme+6XSYuNsJgX3Zyp/VthGsbk9B5M3AoLR0nQ7CaNkL5A4tPod68Kv8Nrswd5Qw98GR7SyI4LdjqLgWo3wZLq/gOXRmfcgFTC9yC2+G7iIMIzhZE/YijY/o687WY+hknYckSQ39mscnnfKeG3PXTccQpsvxBmkpO2OeOiLMPGx7/okZEDV8mo9XntTUtWiJ+pS9jsvpbq5twZn+Q+1/cGtjW4AIpSC9pwDssDlFHUSAkFV5siibnvq1\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0,\n      \"finishMessage\": \"Model generated function call(s).\"\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 368,\n    \"candidatesTokenCount\": 122,\n    \"totalTokenCount\": 731,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 368\n      }\n    ],\n    \"thoughtsTokenCount\": 241,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"1_6masG9BYaT3boPqICUkQg\"\n}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "signature": "d428a93fb0ee20c83b0e056a0df33f15",
+                "signature_v2": "abad6e5e96dabfb8252159dd61ecdab3",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Create a shipping order with items to ship to an address\",\"name\":\"create_shipping_order\",\"parameters\":{\"type\":\"object\",\"properties\":{\"order\":{\"type\":\"object\",\"properties\":{\"recipientName\":{\"type\":\"string\"},\"priority\":{\"type\":\"string\",\"enum\":[\"standard\",\"express\",\"overnight\"]},\"deliverBy\":{\"type\":\"string\",\"format\":\"date-time\"},\"address\":{\"type\":\"object\",\"properties\":{\"street\":{\"type\":\"string\"},\"city\":{\"type\":\"string\"},\"zip\":{\"type\":\"string\"}},\"required\":[\"street\",\"city\",\"zip\"]},\"items\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"quantity\":{\"type\":\"integer\"},\"price\":{\"type\":\"number\"}},\"required\":[\"name\",\"quantity\",\"price\"]}}},\"required\":[\"recipientName\",\"priority\",\"deliverBy\",\"address\",\"items\"],\"description\":\"The shipping order to create\"}},\"required\":[\"order\"]}}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"Create an express shipping order for John Doe at 123 Main St, Springfield, 62701 to be delivered by 2026-03-15 with 2 items: 3x Widget ($9.99 each) and 1x Gadget ($24.99)\"}]},{\"role\":\"model\",\"parts\":[{\"functionCall\":{\"id\":\"\",\"name\":\"create_shipping_order\",\"args\":{\"order\":{\"address\":{\"zip\":\"62701\",\"city\":\"Springfield\",\"street\":\"123 Main St\"},\"priority\":\"express\",\"deliverBy\":\"2026-03-15\",\"items\":[{\"price\":9.99,\"name\":\"Widget\",\"quantity\":3},{\"quantity\":1,\"price\":24.99,\"name\":\"Gadget\"}],\"recipientName\":\"John Doe\"}}},\"thoughtSignature\":\"CvcFARFNMg8\\/9zPT3mEB2vWc\\/+cdlliEgHNw25WVWr5HnI1PAzEz5NRpEN0KQLT439vnqV3WPzI5rmTnMWBm9eNDxgA0Y4yynL\\/50g2hcNdv\\/NAZU4dCOaTyxov7rBz70JIDHr+R2JImts+2rZzlzWz5Z8KMnecu2OY9X+TIAhV1wQrBaQA+e+GbYEa4uKY4JBOmPF60aDOP05XrIwNCnxB8\\/qNBeWgEvXO45VxgGb4R\\/0KZagwcjPSa74BE8dgyXv3yP+MNpiHVdXGDqqn0DT1KYpYZH0+gvBaOTrpPU\\/6qTdf2MhcWTNaPALpJliMWrAKhaSFG\\/AWoG0GkInUoGRSOStkgLC3AuUgg8TmeigwzUMOsk7EtxH+pE5aVcdZwxtq+M0PIvkq1nu+5p9pT38snAHyUapEtNn0qn3es\\/gqzj8fJW+l2w40NVpKBY05t5dIJ6a05mSya9Xalb9kftwiddu+yYC1N3hxhLsI5KpXW7XhOXbazhK3XdUes5V5f0zZ12wAxQX+d1BUX\\/O\\/JIgSAA3l9KcqvXRF25e4jlR9hCuJ7XNEqqvtOP54kWYOpITk\\/H\\/eNwG\\/HcVnNn9ju4mkBag4tPcpj2M6vBgWTEDIDcMlo\\/9PcpX2mn52R\\/bNUftMFwwo\\/0L80t\\/hs1BPcr\\/rN\\/MEFLwWoggCze4CsBcwwcw7rlXRCIoITpswnHP4rIc9kVB9VZwgcJNcLa1ymqbu6j1guX7QAayuFWXTPzDlMvmRUCOk6LU1030Chf9UXWme+6XSYuNsJgX3Zyp\\/VthGsbk9B5M3AoLR0nQ7CaNkL5A4tPod68Kv8Nrswd5Qw98GR7SyI4LdjqLgWo3wZLq\\/gOXRmfcgFTC9yC2+G7iIMIzhZE\\/YijY\\/o687WY+hknYckSQ39mscnnfKeG3PXTccQpsvxBmkpO2OeOiLMPGx7\\/okZEDV8mo9XntTUtWiJ+pS9jsvpbq5twZn+Q+1\\/cGtjW4AIpSC9pwDssDlFHUSAkFV5siibnvq1\"}]},{\"role\":\"user\",\"parts\":[{\"functionResponse\":{\"name\":\"create_shipping_order\",\"response\":{\"result\":\"Shipping order created.\"}}}]}],\"system_instruction\":{\"parts\":[{\"text\":\"You are a shipping assistant. Help users create shipping orders.\"}]}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "421"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"I've created an express shipping order for John Doe at 123 Main St, Springfield, 62701 to be delivered by 2026-03-15 with 3x Widget ($9.99 each) and 1x Gadget ($24.99).\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 510,\n    \"candidatesTokenCount\": 67,\n    \"totalTokenCount\": 577,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 510\n      }\n    ],\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"2P6mao3JO_Wf3boPzIjgwQ4\"\n}\n"
+            }
+        }
+    ]
+}

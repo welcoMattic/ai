@@ -1,0 +1,64 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions",
+                "signature": "385d055f299d697a8d89afd758471439",
+                "signature_v2": "28fe6459114805c168b0cb024eb8a927",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"response_format\":{\"type\":\"json_schema\",\"json_schema\":{\"name\":\"MathReasoning\",\"schema\":{\"type\":\"object\",\"properties\":{\"steps\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"explanation\":{\"type\":\"string\"},\"output\":{\"type\":\"string\"}},\"required\":[\"explanation\",\"output\"],\"additionalProperties\":false}},\"finalAnswer\":{\"type\":\"string\"},\"result\":{\"type\":\"number\"}},\"required\":[\"steps\",\"finalAnswer\",\"result\"],\"additionalProperties\":false},\"strict\":true}},\"messages\":[{\"role\":\"system\",\"content\":\"You are a helpful math tutor. Guide the user through the solution step by step.\"},{\"role\":\"user\",\"content\":\"how can I solve 8x + 7 = -23\"}],\"model\":\"gpt-oss-120b\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "1909"
+                    ],
+                    "inference-id": [
+                        "ecd449009bbd2f2dc8115766d105ea02"
+                    ],
+                    "x-ratelimit-remaining-minute": [
+                        "399"
+                    ],
+                    "ratelimit-reset": [
+                        "27"
+                    ],
+                    "ratelimit-remaining": [
+                        "399"
+                    ],
+                    "ratelimit-limit": [
+                        "400"
+                    ],
+                    "x-ratelimit-limit-minute": [
+                        "400"
+                    ],
+                    "vary": [
+                        "origin, access-control-request-method, access-control-request-headers"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "server": [
+                        "kong/3.9.2"
+                    ],
+                    "via": [
+                        "1.1 kong/3.9.2, 1.1 kong/3.9.3"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"chatcmpl-ad14209a128fa023\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"finalAnswer\\\":\\\"**Step‑by‑step solution**\\\\n\\\\nWe want to find the value of `x` that makes the equation\\\\n\\\\n\\\\\\\\[ 8x + 7 = -23 \\\\\\\\]\\\\n\\\\ntrue.\\\\n\\\\n---\\\\n### 1. Isolate the term with `x`\\\\nFirst get rid of the constant `7` that is added to `8x`.  Since it’s added, **subtract** `7` from **both** sides of the equation:\\\\n\\\\n\\\\\\\\[ 8x + 7 - 7 = -23 - 7 \\\\\\\\]\\\\n\\\\nThe left‑hand side simplifies:\\\\n\\\\n\\\\\\\\[ 8x = -30 \\\\\\\\]\\\\n\\\\n---\\\\n### 2. Solve for `x`\\\\nNow `8x` means \\\\\\\"8 times `x`\\\\\\\". To get `x` alone, divide both sides by `8`:\\\\n\\\\n\\\\\\\\[ \\\\\\\\frac{8x}{8} = \\\\\\\\frac{-30}{8} \\\\\\\\]\\\\n\\\\nThe left side becomes `x`.  Simplify the right side:\\\\n\\\\n\\\\\\\\[ x = -\\\\\\\\frac{30}{8} \\\\\\\\]\\\\n\\\\nBoth numerator and denominator are divisible by 2, so reduce the fraction:\\\\n\\\\n\\\\\\\\[ x = -\\\\\\\\frac{15}{4} \\\\\\\\]\\\\n\\\\n---\\\\n### 3. (Optional) Write as a decimal\\\\n\\\\\\\\[ -\\\\\\\\frac{15}{4} = -3.75 \\\\\\\\]\\\\n\\\\n---\\\\n**Answer:** \\\\\\\\(x = -\\\\\\\\dfrac{15}{4}\\\\\\\\) (or \\\\\\\\(x = -3.75\\\\\\\\)).\\\\n\\\\n---\\\\n### Quick check\\\\nPlug the value back into the original equation:\\\\n\\\\n\\\\\\\\[ 8\\\\\\\\left(-\\\\\\\\frac{15}{4}\\\\\\\\right) + 7 = -30 + 7 = -23 \\\\\\\\]\\\\n\\\\nThe left‑hand side equals the right‑hand side, confirming the solution is correct.\\\\n\\\\n---\\\\n**Takeaway:** To solve a linear equation, *undo* the operations in reverse order: first eliminate addition/subtraction, then eliminate multiplication/division, always performing the same operation on both sides of the equation.\\\" ,\\\"result\\\":0.0,\\\"steps\\\":[]}\",\"reasoning\":\"User asks: \\\"how can I solve 8x + 7 = -23\\\". They want solution step by step. Provide instruction.\",\"tool_calls\":[]},\"finish_reason\":\"stop\"}],\"created\":1789329453,\"model\":\"gpt-oss-120b\",\"object\":\"chat.completion\",\"usage\":{\"prompt_tokens\":101,\"completion_tokens\":523,\"total_tokens\":624}}"
+            }
+        }
+    ]
+}

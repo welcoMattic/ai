@@ -1,0 +1,152 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "ee5c833325f36d65597a745357aae0f0",
+                "signature_v2": "5342ec9bf146f93f86b29675bae2d735",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}],\"text\":{\"format\":{\"name\":\"clock\",\"strict\":true,\"schema\":{\"type\":\"object\",\"properties\":{\"date\":{\"type\":\"string\",\"description\":\"The current date in the format YYYY-MM-DD.\"},\"time\":{\"type\":\"string\",\"description\":\"The current time in the format HH:MM:SS.\"}},\"required\":[\"date\",\"time\"],\"additionalProperties\":false},\"type\":\"json_schema\"}},\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What date and time is it?\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9998"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "11ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_04595e9becda7f60006aa6fff1156487d2a767adc155fa7fd7\",\n  \"object\": \"response\",\n  \"created_at\": 1789329393,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329394,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_04595e9becda7f60006aa6fff16d3c87d2b89ef7e0359846d4\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv_yAoAqKN4eVn1um3WR2hnVIAr7FVl8pLpnuMm_DjmFwuM9n8xpmWKUk5W4nSBxreeVgkXuVU-kDHIMQSWiIIn_xE0-BRalK0kpLfk4xhgtJuC_kzPmN4Wk1a4iS-EA3w85yaDpOdoRzI-Ym6Ol-7fo6qURL-MtUUSVQkH3NO0P_PqvkOLY8y7xJhTma4HVI3HKS87loOsoLWBm1d98LvHWwlmnla3mJ-BNpxO0e-z4w8ZgX1oVk4Wxs5jJXIUAQnz8k1D6trn5YBZJaWteusIvkeGnVxsWu4bKRWY634UPPXeotDAkwZIyVyiNyYt7CSVDnduERDB--jTqK2UMivCRyC2FmcEDQKgcTGCznnJ4HAHz_CZ5pqJKeoY17ir69EJd7O-WChNf9E_UXYudBTniGQWEMijpyrB4VD0EEOOsL6-VMidkzr5jGKNOE-GdYddrzzNKnnrV5NSX2DfIz5cwvn0Z83IrtmxVENdkaqZCBXFpvOcX1sZmTu6E4tIjl9a3XgJi0-MhLx1jKmmWfFerHOyg0zENdzegm03021UvYEp22lfWkmfkkdij4SDl8zfsbGopV4MBMq7KtDeyAPPfMSOmToZfpwlWMXLYUr_DsWwOqEHYp9VDPNP61YkUUDUgqAUZXJ4rUY6TgDHVyqshVAFg114FKQROsWHfA0Z7RtHywbjTtIF5gTMTcKopgenXHHFXjFPHzG_BfNbPw15zixHKSB-hGUNb0gRL9Nq7rkoNyISBzdwob5wZ5femsY6EAVec0ZwAPsFO2GW1P6RhI4Uc0NmIg4eNoEGffIclfarW6S_Y9euuz8cFOkWZMV6XiriLk1IFzTGp0ulOEJR__VLmgn3fbJFsa1P5gUGMVuKCxhBomfIzDuhk_jGGo274XiCUWbdr1RUNRNeku-2ysMZoTNEhdo10L9EXKCUaqQhep5ZP798vYZZ4t83gVH60mQIUI2c_xdAhg3XiBc1Efuts8GANBXnw0zVuEFq1ro5UTE0JmjMuUWLwAC5lA0xvKocKy5XnCSHzPXHDQ-2xLM-TodpYLSzKHFYeFGKfUJrC7sTOauHDZ_Wrb7br3NyF9aFQX_8ODpCtCG5hbKJp224udQHLQGl8KFWU07fbuJ5NG7hGf1Xr0kCD7FOQjTsthNLOYDDWkiN8ZxWcHCeCP0gMBp5HwhnaJodnuhOWs1qkXe43WdYS0IDETcz_o7RSx4eimqnpz62D_WWxrng96mBTP0EsMvU9o0oJLqjKWguZgDsNGARqXP61EPRqSVEaJ7TfPfZwi8I_7S_FUlxdrieMG5z9PlSihHEfq5Q5fFSXHfKaj-cBzu0HiJ2yHOAzxWX7Q4-GjiMMMDRPR_DYTxVm2rvdV5z7H_BogS-4C0-srEg_NnbQ9LAcB1xpsX9z2yJWJTIf_ndevKw7SgQhPyXOuQ6ucbZar7B02pGSJUw1RUL6J8FvidwONFVI8t_GtBB-xSdZBXBdyIjznrSO_5dWPoOpT1PktNJqEwOEQBth58K6H0aQCP9bdQ2zxyv4DRfWo7RVoU4n-QUFyxx2IPgArASrrhE9_8s9mRoiqcohoX0GD6rORURYe5_58Aa2alduJ78SG0YglRTml6x9gWbewP1Y4wuRUmlfWmFeMR7VEnpT9fk2vEzgbhrIMcYv\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"fc_04595e9becda7f60006aa6fff2218c87d2aef726d3d3fc4964\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{}\",\n      \"call_id\": \"call_EsHv44Al8xDxWPe9xzpvB55u\",\n      \"name\": \"clock\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"json_schema\",\n      \"description\": null,\n      \"name\": \"clock\",\n      \"schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"date\": {\n            \"type\": \"string\",\n            \"description\": \"The current date in the format YYYY-MM-DD.\"\n          },\n          \"time\": {\n            \"type\": \"string\",\n            \"description\": \"The current time in the format HH:MM:SS.\"\n          }\n        },\n        \"required\": [\n          \"date\",\n          \"time\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Provides the current date and time.\",\n      \"name\": \"clock\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"additionalProperties\": false,\n        \"type\": \"object\",\n        \"properties\": {},\n        \"required\": []\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 98,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 89,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 64\n    },\n    \"total_tokens\": 187\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "f26462436d7f871a10a7d2ad069820fa",
+                "signature_v2": "d8183adb12d2447aae79859062fd8727",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}],\"text\":{\"format\":{\"name\":\"clock\",\"strict\":true,\"schema\":{\"type\":\"object\",\"properties\":{\"date\":{\"type\":\"string\",\"description\":\"The current date in the format YYYY-MM-DD.\"},\"time\":{\"type\":\"string\",\"description\":\"The current time in the format HH:MM:SS.\"}},\"required\":[\"date\",\"time\"],\"additionalProperties\":false},\"type\":\"json_schema\"}},\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What date and time is it?\"},{\"id\":\"rs_04595e9becda7f60006aa6fff16d3c87d2b89ef7e0359846d4\",\"type\":\"reasoning\",\"content\":[],\"encrypted_content\":\"gAAAAABqpv_yAoAqKN4eVn1um3WR2hnVIAr7FVl8pLpnuMm_DjmFwuM9n8xpmWKUk5W4nSBxreeVgkXuVU-kDHIMQSWiIIn_xE0-BRalK0kpLfk4xhgtJuC_kzPmN4Wk1a4iS-EA3w85yaDpOdoRzI-Ym6Ol-7fo6qURL-MtUUSVQkH3NO0P_PqvkOLY8y7xJhTma4HVI3HKS87loOsoLWBm1d98LvHWwlmnla3mJ-BNpxO0e-z4w8ZgX1oVk4Wxs5jJXIUAQnz8k1D6trn5YBZJaWteusIvkeGnVxsWu4bKRWY634UPPXeotDAkwZIyVyiNyYt7CSVDnduERDB--jTqK2UMivCRyC2FmcEDQKgcTGCznnJ4HAHz_CZ5pqJKeoY17ir69EJd7O-WChNf9E_UXYudBTniGQWEMijpyrB4VD0EEOOsL6-VMidkzr5jGKNOE-GdYddrzzNKnnrV5NSX2DfIz5cwvn0Z83IrtmxVENdkaqZCBXFpvOcX1sZmTu6E4tIjl9a3XgJi0-MhLx1jKmmWfFerHOyg0zENdzegm03021UvYEp22lfWkmfkkdij4SDl8zfsbGopV4MBMq7KtDeyAPPfMSOmToZfpwlWMXLYUr_DsWwOqEHYp9VDPNP61YkUUDUgqAUZXJ4rUY6TgDHVyqshVAFg114FKQROsWHfA0Z7RtHywbjTtIF5gTMTcKopgenXHHFXjFPHzG_BfNbPw15zixHKSB-hGUNb0gRL9Nq7rkoNyISBzdwob5wZ5femsY6EAVec0ZwAPsFO2GW1P6RhI4Uc0NmIg4eNoEGffIclfarW6S_Y9euuz8cFOkWZMV6XiriLk1IFzTGp0ulOEJR__VLmgn3fbJFsa1P5gUGMVuKCxhBomfIzDuhk_jGGo274XiCUWbdr1RUNRNeku-2ysMZoTNEhdo10L9EXKCUaqQhep5ZP798vYZZ4t83gVH60mQIUI2c_xdAhg3XiBc1Efuts8GANBXnw0zVuEFq1ro5UTE0JmjMuUWLwAC5lA0xvKocKy5XnCSHzPXHDQ-2xLM-TodpYLSzKHFYeFGKfUJrC7sTOauHDZ_Wrb7br3NyF9aFQX_8ODpCtCG5hbKJp224udQHLQGl8KFWU07fbuJ5NG7hGf1Xr0kCD7FOQjTsthNLOYDDWkiN8ZxWcHCeCP0gMBp5HwhnaJodnuhOWs1qkXe43WdYS0IDETcz_o7RSx4eimqnpz62D_WWxrng96mBTP0EsMvU9o0oJLqjKWguZgDsNGARqXP61EPRqSVEaJ7TfPfZwi8I_7S_FUlxdrieMG5z9PlSihHEfq5Q5fFSXHfKaj-cBzu0HiJ2yHOAzxWX7Q4-GjiMMMDRPR_DYTxVm2rvdV5z7H_BogS-4C0-srEg_NnbQ9LAcB1xpsX9z2yJWJTIf_ndevKw7SgQhPyXOuQ6ucbZar7B02pGSJUw1RUL6J8FvidwONFVI8t_GtBB-xSdZBXBdyIjznrSO_5dWPoOpT1PktNJqEwOEQBth58K6H0aQCP9bdQ2zxyv4DRfWo7RVoU4n-QUFyxx2IPgArASrrhE9_8s9mRoiqcohoX0GD6rORURYe5_58Aa2alduJ78SG0YglRTml6x9gWbewP1Y4wuRUmlfWmFeMR7VEnpT9fk2vEzgbhrIMcYv\",\"summary\":[]},{\"arguments\":\"{}\",\"call_id\":\"call_EsHv44Al8xDxWPe9xzpvB55u\",\"name\":\"clock\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_EsHv44Al8xDxWPe9xzpvB55u\",\"output\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 19:56:34 (HH:MM:SS).\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_04595e9becda7f60006aa6fff28acc87d28c04025f82b03fc5\",\n  \"object\": \"response\",\n  \"created_at\": 1789329394,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329395,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"msg_04595e9becda7f60006aa6fff33bec87d2af76f1fe18c29403\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"{\\\"date\\\":\\\"2026-09-13\\\",\\\"time\\\":\\\"19:56:34\\\"}\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"json_schema\",\n      \"description\": null,\n      \"name\": \"clock\",\n      \"schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"date\": {\n            \"type\": \"string\",\n            \"description\": \"The current date in the format YYYY-MM-DD.\"\n          },\n          \"time\": {\n            \"type\": \"string\",\n            \"description\": \"The current time in the format HH:MM:SS.\"\n          }\n        },\n        \"required\": [\n          \"date\",\n          \"time\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Provides the current date and time.\",\n      \"name\": \"clock\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"additionalProperties\": false,\n        \"type\": \"object\",\n        \"properties\": {},\n        \"required\": []\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 226,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 25,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 251\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

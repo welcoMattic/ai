@@ -18,7 +18,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $platform = Factory::createPlatform(
     env('AZURE_OPENAI_BASEURL'),
     env('AZURE_OPENAI_GPT_DEPLOYMENT'),
-    env('AZURE_OPENAI_GPT_API_VERSION'),
+    '2025-04-01-preview',
     env('AZURE_OPENAI_KEY'),
     http_client(),
 );

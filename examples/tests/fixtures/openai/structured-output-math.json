@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "25ed08c332348f843a9b15ab806ada0b",
+                "signature_v2": "fa5552ae90a89263aaa5d8af6750bc5f",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"text\":{\"format\":{\"name\":\"MathReasoning\",\"schema\":{\"type\":\"object\",\"properties\":{\"steps\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"explanation\":{\"type\":\"string\"},\"output\":{\"type\":\"string\"}},\"required\":[\"explanation\",\"output\"],\"additionalProperties\":false}},\"finalAnswer\":{\"type\":\"string\"},\"result\":{\"type\":\"number\"}},\"required\":[\"steps\",\"finalAnswer\",\"result\"],\"additionalProperties\":false},\"strict\":true,\"type\":\"json_schema\"}},\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"how can I solve 8x + 7 = -23\"}],\"instructions\":\"You are a helpful math tutor. Guide the user through the solution step by step.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999748"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "1ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0cd6e70a66565986006aa6fff1188087d2a18e89a8bd4b1eb3\",\n  \"object\": \"response\",\n  \"created_at\": 1789329393,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329398,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a helpful math tutor. Guide the user through the solution step by step.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0cd6e70a66565986006aa6fff16ee487d2895462bae3c4d2e0\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv_2pAgzTjOtly4HZH38awDbXOBowpkxYJy5R9TR70sqFNgKL6RjVa1UHIyCj7HLDUPWCQrZXq1pCDcF3D4GAwQyQFeat2RkcbRqxWeecFWK_bhlosDZ0y2SrWWiE69W7RIVO1wUb-trlPQQXvsAmJ6CSUO33PjCPBs6WATsNj1yheue6ZCHAegTQcgOLnvhl37gCl0Zsuz5MtrrvZLiILfHeggtqZaLSsgalKh97IoW2s1jGRJ7AATmfhSnQujeyTWBmfxwK7Y9ydcMkluAhlRlSgBZ5YpqJJIKelQc5TlzHgSRtNuceOj_fMNCiJ8s8SlMQnef4aZQr_mwECBT1sSUKR2WrEI1-Il5iGtoJik6BdLcVN8dknUEtY_rqSnEcbfSgy0otW1fcDQDnQQJbUJ_iGACvOXBfJvk9LICk8nWLBlTgNZaxphh92JM3vUOz_6w_53LI1v5IsEGCPy_BhPiXTR9nya1cfCSwfC8tFmdj4j0uRxIgPvc-AJsARq0YDe8YtN1ZE276OLbcCXDRfgR7_tMSvYbe-eiKo90H8ANxkirjQgtsZYB2OclFlyO7W0v8EqPn_kFRRTVSsuC3sciNxU9O9DaQzWuRCW2yU1wkls7NcPWE1HdtmO_slfiBKym_nB60IOhYkV3lDjU6kZeuZlXmH0CSd0wnxyj4a-j6HEETpvIikp1E6UFaGjs20Mak40XAzLNlUr1NhvM9aUO1CNm81RElnNbkvkI-jxiGJMTJeM5DUwlKIeBHZ3YIKJjUvRT78f4ailkS-RHicjyMLxmTIdumme9PRoPQJiKoYVM5eyI-TLaV-ysmU8Ksj6ngUxQ6RB6DgKzI5-fIAwwZnluQyKTMw1U1S7K9u4SjqiYQhec3chyBwWSPWL5sV_5Lvwhwa15syghzbJ0y3Cbkg8ErnQrqL39kHMLxXZijkpS2N9Zxs99mwSAwzDWLuU7-qBCvmvEBQiBuYqov3OqMclCtZHpdHqRQgCNY2ity1rl2LwXNgWwH_ufJX0-lbnb6EODa1TVnUhU01ZUPc84goSgHIxm-CHU9-uj7nWJs_q_GFK5shOdgj7Z895aySttEMnz-28zSH9fJXk1HKqhDNqoCB-VJW2sjJ37bMM2iN8ntL5zPfT2IPR0v82EVtRe9m-zHGvtJwGBXCMshqJmVlQFgGQwMJrbVRzOWLp2guw763AmbObpg045J_pbklAaVlYZ24_43lFOFYX_VZLtdHDhAjadTv6qeoNNPOKA9yJmToWD9Q1uhNUx8hCqBkaiSAiZh4OLsI63somiMxJNsSRXZR0cdxzPFkpKsU8QUJY0W4R0UIROx86bJ9-ErnmRe35u0vOY57i5wlAfBUCtUhHHOjFKh13i40Q9NlV18vEizudoaQKHSGrF0o9Lf_DcamZR4_ejmfaEGfwhoxHwklgr5qN6LrBpwzVbl8-6FEHgjQ13kn8R9Ltfl8LS-W6olJvgt4g_Xe-HvG5rCX0GQy2oSt9qoXv_D9QC3YxY6PFTzM6cezlZtEv0HI2zUF9mqwv3xp-P27b-S60-BnXvXEj7Ezm4aTisJ1ZoLbxkgohGTy1SxNaTNDbWFI03yUtJohybid7Yw5443bvpPqs3f2wAfOjqRC5-geK4yVP4Xz9VZ7CqWp7o1Lts6DetmU0i2iwqrM9WyjC5pKcTc0-m9wCWE4Ni3Qy1HEnVP7wJ2F7tThvRJcYabMUDLO0pG06DoruNmtzmUcjmU9E8z-PSdqWuNiJWuQIwM1_NbHNlRBzLHq4eyEa8tPlPv37sMeWG2UXV_w3rNy6GipfN4QoCakLcOlSAhz52fju8oHX6ziYHx08IEEO6sqpDAaZGfXjhbZKYoWHFdpGH2OERxIbYA4jE4UwUysKOWSmvYLlGFGL5TO29nKbLYgy_emL2xSZdeLrGBq8kT_f7zXa6RSuxffTb9qTPHUJ8MAuKNyTzfO4SIbQTVxpfcryUCb8GeFvOrtzqC0v3pOalGeOQaS3AM3ZwtAWTYfJvFiS0b9oLZ_sjwn1apxZTbKMbBPu2I7BwZdHfQhpMx5UYBHzOzfnueGUEgsgt5LTAQU5ZuN9GR2BVcpuFrTfx8fxmtpNOkK6qvXIGrEaRWjHWaO3CCp3WIP18oi77maSY4hTVmv94hCYb3tM3UlpmdVenmVdsNbjhXUpInQDCmZ4iHA1jBxFA3mcSDk81j50N5b1BJtfzK3W-hsgjWNfxtbUSI8cRBC9lhG7bl7xrPKNR8SDSOuiq77eOlvbQKKuWF79MEP38BEWHLovUv4doenAHec8gg7a3QLISDWpGBbMvy6e2P5npZNI86dAJhGEAbHbwSKtgebhqKRYFeBp8ZpV-zgKpLyf_AFH-E0njRSJeN_808ifmQ2bIZC1qFNN0NbtTbGZbzvAVFSZ-G6AjAgZsUo35A21xnPNmfyKQMEO7krsdNgFPZFPNUC4FusAnMd_uOuDURSJBu3DVi8Zs0VoEUWVvQHK0rqHTAGNJ0TPLB6AHA9jk9bwR-ajfMZ6xR5kq3g2DZZc=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0cd6e70a66565986006aa6fff4a30487d28eeddcf291357ec5\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"{\\\"steps\\\":[{\\\"explanation\\\":\\\"Start with the equation: 8x + 7 = -23. First isolate the term with x by subtracting 7 from both sides.\\\",\\\"output\\\":\\\"8x = -23 - 7 = -30\\\"},{\\\"explanation\\\":\\\"Now solve for x by dividing both sides by 8.\\\",\\\"output\\\":\\\"x = -30/8 = -15/4 = -3.75\\\"},{\\\"explanation\\\":\\\"Check the solution by plugging x back into the original equation.\\\",\\\"output\\\":\\\"8(-15/4) + 7 = -30 + 7 = -23, which matches the original right-hand side.\\\"}],\\\"finalAnswer\\\":\\\"x = -15/4 = -3.75\\\",\\\"result\\\":-3.75}\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"json_schema\",\n      \"description\": null,\n      \"name\": \"MathReasoning\",\n      \"schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"steps\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"object\",\n              \"properties\": {\n                \"explanation\": {\n                  \"type\": \"string\"\n                },\n                \"output\": {\n                  \"type\": \"string\"\n                }\n              },\n              \"required\": [\n                \"explanation\",\n                \"output\"\n              ],\n              \"additionalProperties\": false\n            }\n          },\n          \"finalAnswer\": {\n            \"type\": \"string\"\n          },\n          \"result\": {\n            \"type\": \"number\"\n          }\n        },\n        \"required\": [\n          \"steps\",\n          \"finalAnswer\",\n          \"result\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 101,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 469,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 256\n    },\n    \"total_tokens\": 570\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

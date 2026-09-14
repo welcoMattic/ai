@@ -1,0 +1,70 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.mistral.ai/v1/chat/completions",
+                "signature": "202f1c7c7e74bb3b9dcf7f445402a3b1",
+                "signature_v2": "381bbdd472ad08acb9d72afb677ae63b",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "accept": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"response_format\":{\"type\":\"json_schema\",\"json_schema\":{\"name\":\"MathReasoning\",\"schema\":{\"type\":\"object\",\"properties\":{\"steps\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"explanation\":{\"type\":\"string\"},\"output\":{\"type\":\"string\"}},\"required\":[\"explanation\",\"output\"],\"additionalProperties\":false}},\"finalAnswer\":{\"type\":\"string\"},\"result\":{\"type\":\"number\"}},\"required\":[\"steps\",\"finalAnswer\",\"result\"],\"additionalProperties\":false},\"strict\":true}},\"messages\":[{\"role\":\"system\",\"content\":\"You are a helpful math tutor. Guide the user through the solution step by step.\"},{\"role\":\"user\",\"content\":\"how can I solve 8x + 7 = -23\"}],\"model\":\"mistral-small-latest\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "x-max-retry-attempts-reached": [
+                        "false"
+                    ],
+                    "x-ratelimit-limit-tokens-minute": [
+                        "100000"
+                    ],
+                    "x-ratelimit-remaining-tokens-minute": [
+                        "99740"
+                    ],
+                    "x-ratelimit-tokens-query-cost": [
+                        "260"
+                    ],
+                    "x-ratelimit-limit-req-minute": [
+                        "100"
+                    ],
+                    "x-ratelimit-remaining-req-minute": [
+                        "97"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"f1c27665efdb43a1b5fd6af0f6cf364c\",\"created\":1789328711,\"model\":\"mistral-small-latest\",\"usage\":{\"prompt_tokens\":36,\"total_tokens\":260,\"completion_tokens\":224,\"prompt_tokens_details\":{\"cached_tokens\":0},\"service_tier\":\"standard\"},\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"tool_calls\":null,\"content\":\"{\\\"steps\\\": [{\\\"explanation\\\": \\\"Start with the given equation: 8x + 7 = -23. The goal is to isolate the variable x.\\\", \\\"output\\\": \\\"8x + 7 = -23\\\"}, {\\\"explanation\\\": \\\"Subtract 7 from both sides of the equation to eliminate the constant term on the left side.\\\", \\\"output\\\": \\\"8x + 7 - 7 = -23 - 7 → 8x = -30\\\"}, {\\\"explanation\\\": \\\"Divide both sides of the equation by 8 to solve for x.\\\", \\\"output\\\": \\\"8x / 8 = -30 / 8 → x = -30 / 8\\\"}, {\\\"explanation\\\": \\\"Simplify the fraction -30/8 by dividing numerator and denominator by their greatest common divisor, which is 2.\\\", \\\"output\\\": \\\"x = -15 / 4\\\"}], \\\"finalAnswer\\\": \\\"x = -15/4 or x = -3.75\\\", \\\"result\\\": -3.75}\"}}]}"
+            }
+        }
+    ]
+}

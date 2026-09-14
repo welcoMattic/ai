@@ -1,0 +1,136 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.mistral.ai/v1/chat/completions",
+                "signature": "737e63850f9932cf026e05b011207f22",
+                "signature_v2": "ad298792ace7a1e9bbbb241bcd55bcf7",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "accept": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\",\"parameters\":{\"type\":\"object\"}}}],\"messages\":[{\"role\":\"user\",\"content\":\"What time is it?\"}],\"model\":\"mistral-large-latest\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "x-max-retry-attempts-reached": [
+                        "true"
+                    ],
+                    "x-ratelimit-limit-tokens-minute": [
+                        "400000"
+                    ],
+                    "x-ratelimit-remaining-tokens-minute": [
+                        "399947"
+                    ],
+                    "x-ratelimit-tokens-query-cost": [
+                        "53"
+                    ],
+                    "x-ratelimit-limit-req-minute": [
+                        "15"
+                    ],
+                    "x-ratelimit-remaining-req-minute": [
+                        "14"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"a1fd4aea02814565be4f285ec0002f25\",\"created\":1789329049,\"model\":\"mistral-large-latest\",\"usage\":{\"prompt_tokens\":48,\"total_tokens\":53,\"completion_tokens\":5,\"prompt_tokens_details\":{\"cached_tokens\":0},\"service_tier\":\"standard\"},\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"finish_reason\":\"tool_calls\",\"message\":{\"role\":\"assistant\",\"tool_calls\":[{\"id\":\"qBGFAHKRf\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"},\"index\":0}],\"content\":\"\"}}]}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.mistral.ai/v1/chat/completions",
+                "signature": "2cc75e0abf39299eb5d56a6518b0d275",
+                "signature_v2": "7afad0c0575db77fcdb0127d37867dfd",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "accept": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\",\"parameters\":{\"type\":\"object\"}}}],\"messages\":[{\"role\":\"user\",\"content\":\"What time is it?\"},{\"role\":\"assistant\",\"content\":null,\"tool_calls\":[{\"id\":\"qBGFAHKRf\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"content\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 19:50:49 (HH:MM:SS).\",\"tool_call_id\":\"qBGFAHKRf\"}],\"model\":\"mistral-large-latest\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "x-max-retry-attempts-reached": [
+                        "true"
+                    ],
+                    "x-ratelimit-limit-tokens-minute": [
+                        "400000"
+                    ],
+                    "x-ratelimit-remaining-tokens-minute": [
+                        "399816"
+                    ],
+                    "x-ratelimit-tokens-query-cost": [
+                        "131"
+                    ],
+                    "x-ratelimit-limit-req-minute": [
+                        "15"
+                    ],
+                    "x-ratelimit-remaining-req-minute": [
+                        "12"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"ea9d8acce0d642c19d2a443bf1093960\",\"created\":1789329049,\"model\":\"mistral-large-latest\",\"usage\":{\"prompt_tokens\":94,\"total_tokens\":131,\"completion_tokens\":37,\"prompt_tokens_details\":{\"cached_tokens\":0},\"service_tier\":\"standard\"},\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"finish_reason\":\"stop\",\"message\":{\"role\":\"assistant\",\"tool_calls\":null,\"content\":\"The current time is **19:50:49 (7:50:49 PM)** on **September 13, 2026**.\"}}]}"
+            }
+        }
+    ]
+}

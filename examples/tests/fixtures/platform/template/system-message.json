@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "46e68e735b383a6608c5f95be30238ac",
+                "signature_v2": "76f5e07494f3cd9a2aadda730177faee",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What is PHP?\"}],\"instructions\":\"You are a programming expert assistant.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999414"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "3ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0b82e01a32b2f0c8006aa7003b885487d29fff4fb8e10937c6\",\n  \"object\": \"response\",\n  \"created_at\": 1789329467,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329475,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a programming expert assistant.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0b82e01a32b2f0c8006aa7003bf06487d29e8cfd5c206a4893\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwBDv7dqcVVuNqr-tCEVTOL1zm-_G8wHHBhozxjg5XbTTyNNvl0SUReqjMz2giJTtCaDcJg5XmFg47UpY7bIsBk1VLChV9SFfV0TdJ84LoqJEkhAAjzeOVkULGrydMf9O6PXQ72ftm_xM5CnV-rBhsZGQ86FL8mYoZeMQAL3IJx6JJpzRGibYTx0UrKWxdI0e22ml5P1KlDb2qZeKQsOKDp0DNnuR0ToLfuzFAauWznUQwQ2EH45FvAvXuJwK4f8j3kGYZd2_j-KM_7D-OhN9zC0njtIpP4gisjobCF322Zf-zB89xMsvOA7ylzMBTFXe0hS-xh3tD3sEXWucVu-LAsMNZwKA79h69CSMb2-D7YL62Ew5yFeju8WKlEaNXZW0MgU5kXfyDqIFy8YlfrZyHBclNWg0tBn7sTW16S963GIwg4zVEM35QqbpH046zkRFby8OfOJ2YsxgdDDlTIT6Nn7zGcd5nn3_-Bs8R3nHXjuQ9uUEG93sEIM6VcRx06HNM8cnjPE0WE0roUwMn72saDlHQKnlcWul5i-Rem9i3dRj4xeyD4pGa0X0AWGBeP2xvkMTAamDJKmhTM62iO3Ul2K82O3YdDLct23aFPziqC-ySlp_GxoLx18OgcRKhp34c8UPQ7QHqnGTPCmvoYYajXVLNpbB7YryBJZ7gcPyz9VuIpuozj9kHglC0q_WkTkxfYHXuaNoNhHlxyTtyAjB9S0NvCqVeTmCm6z2sKvd_BIgbbXom-M10IEGyXhOBkfeVNhKN583Wvrr3vM68WHhmULSELTH7PXwC1gpWbMYdXYNb-sr7BXTFmRsyxtB4YBEz0GEI0ctaQg2D2iPrYwAuJDrn8ytopp3ICLyJZsZI6UEs-QI8o7O--o8SW5TVyxs7rqWcBPMwn-STpjQhG90QpGbyJyFCLfxVhzAn-ho5vinz8Gjetm93OHGtBDPErWnOKckX9pGITKH1872fUSLX5htUJKbOUWFU2z9-ldOKrz-V5Ck2Gx6UkVIPZifVDNhtD2XF1SiF1-IVBVYRMLfOMZeoJw1LHYe2Xc5o14Vtqvmhsr1_j4sSQjDwGvyzPMsGakdDT_erj7QZeL0YpvB95Skh7VQi277MlBVZAmoR7H_eiBT_GKMETX8vCcreS3QTcfb1mH2ssINrjdl34VAVnd1IygDSz9b5uGeIgRw-DtFohCNHnMdFXbVktOz-Jo94IdzSg-nDmMjKCe5Lbsv51VOZ21s7XorBPTCeZ636wrOPz99eAqvXTdIe-SdFvnGVEpDkyFu0FeWfuXm-rdXgnIh2lNNcRvhyHfT8eRyULcppsz9w3eCBhewmlWabueG_mlkzAdAVqsUEVvonBaHvEh9_huhXpAgt_CUdNUyv5eRd3z4liMZ5hMsST629QcM7iPKZ_dYQUNYFMtiz0ZM8MA5eyGVyddCFOsZA6IoVCsJbiU-dgavatDu1zKOGtKeHX02jOthTLYsgDIRGe8hE3ZUitBsa2wXqWnQYcqsESq3Kz8VRwFm56LwKCi-uhSKPnTdXg7X3B-8W-on9CVYd9Qxz7rMOs7Av3qFxQ3UCLQCVTmEPzrFGRHA58ghXYeuAez7knW3idvAUNCOBExRqJBwxJCvtqwar5m73DkKgFSjC7luXaapXEvqwdVMj3X5uEw9fQkkRTRFagGrbUKdk92sfYTfTnL4oY0gRfw0HSYUverT9huUcJWeplywb9h2dX8A2LDNI2yuCDvKiOQLZ61nphgEUFqRzO617dBcfX8P9Mb2BogkaQM3mu5nZd4UnQNq0L3R3CH_0xFMKS0pv8eQqIBnhZ8_afbU8faFHdCAWcrhUuQV-UkJj3f8uCAyqu6Wo6Hv90Oq_7chMkxXxaCvA0oL-7rldT1igTTBfWNJ8ZCtcI_mztU2MxHq-S1Q33g0aJLD-ZDiXqtS3aCFt-6GePnCGA04eS3PfaXdSITokr7n0YsneibI1yrHjhqL5D_Dg7JSpZtCGMN_Shgi-DKs6_nns51tBtBOhlYcUgndWvLkY-p4gbl-kRINYDFc8QGcIKLRxD3vm_geTT73aZchqDzNmaiCvOzNAnkoCVTldW2W4l6Su7oAI6DAiKceHE_UC8j5i5z3r_wLtjCTxAXjEYcUSJVZledINC7UJLBw6HmokZRGKasUuLdp0UoLeyhJ1VlwJm9NkTpXVdbDBmN76NssKkMhuEPzTSRf_EPZ7Nyf7ceDSGTZEP-Nx6v0W1oawX7oKsBoHyn3gYH34GAj_KqtgWgRg5h2ZgbMNAa0uRps5LiCk5kKnmaHoQ-lub6-hT0sJupJC8KZauBAtteBZQJHHExrvKsY5XFHdS7eL4GpftRoINmYwC7aqv0Sbm8YNHqCpG4tqtS2yAC88Ajg9t03XmP5AQHQgd1Wy-N8wl2ugAnCyWz0LzfgIJmwk-QATJPxWu7kZs5xTBu0ps7tUgXXwaXTK1k1lE5hVRnZ5lhZLEM_x25lOCK_V7AmGim-eS9ufpwHLM9WNk5nf44AvCJBJ8NC-pRuWH0b3_UTRVIu4I2lfY8cF3Dcq6mCAwOhyTQVN1BkN4m87GHDN00zbFcVoFnPvwQBJMyH9tF7368mh7BdZ0MmyGBL3-g7fG4akpEuZJwHiTLEFWffNrFwwRLn2UukhT2UmpYoc-rrq7yCUk--v9RBgb5m5Xov_F0ZaCGEj7XPqC9TedmDk9okJHa43HHzLuEWp_usylapP2KbugPNx4cL87aeBceLclumJ0kzO6NYHsKKon1f481koQFz7y6gwA4EH4rZKGj1auxyltN4sK1vMKPMrkMWbKa4hr5gwvOuYntKEbkyON5P2gsOUIhVJ7EpRI7tnPkw5dPKNb2vzMNdelAuqe4Ei5dhzQy9OEIcPZGeRjBIllPH1Ev8JMWNDNXwwVidIBODd5HqWakyZlQL8S_GPN_mcaRzo_9QrnfuEmAqz3xUa8Me0HrvvoRtdlGAjwmvWZIw77HW7FO2N0TkGjyY2u9tyjakOJvWh7ZrB08pTWcJZ2NrO4HvHLiqMeTd_mUTDcplK-QMBlStQpGTOX4ihHIIPB1IDH9Qzt8QCxIeQV51QrCRnS9OfG3OeoVYIH8vzcEV0tBB91PB8V9l49fV-9LgvLcRkoRmIHCnMyIQlr9Fw5Ll6YcGK94pu5s2rDhXGUcc4-Wyr-HeiPFodr-2kDOatpLEv07sscXJJnUxCxirkpIiDcbVCUGAZmQIXQl7-gxkimCcRZ7pN1J9aFWlvtnha8nza7imluydifYi7torJMPsTY4iEAD5OWCvaaurI6ZxwzJiwX9HunN7cC8aX1HvVP1M8TKhbfhMWyrIvmcbsGgM_An7cD-PKWbq1Hg9pX7lLM1H-2rJuVXR5misw3kKqgV\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0b82e01a32b2f0c8006aa7003f2b1487d2b9345feba337307c\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"PHP (officially \\\"PHP: Hypertext Preprocessor\\\") is a widely used, open-source scripting language primarily designed for server-side web development. It\\u2019s embedded in HTML, executed on the web server, and used to generate dynamic web pages or APIs.\\n\\nKey points\\n- Server-side scripting language: runs on the server and produces HTML (or JSON, XML, etc.) that the client receives.\\n- Syntax and use: code can be mixed directly into HTML with <?php ... ?> tags or used in standalone scripts (CLI).\\n- Interpreted and loosely typed: variables start with $; arrays can be indexed or associative; supports procedural and object-oriented programming.\\n- Ecosystem: large standard library, database connectors (MySQL, PostgreSQL, SQLite), session handling, file I/O, and many extensions.\\n- Popular in content management systems and frameworks: WordPress, Drupal, Joomla; frameworks like Laravel, Symfony, CodeIgniter, and CakePHP.\\n\\nSimple example\\n- Embedded in HTML:\\n  <?php\\n  echo \\\"Hello, world!\\\";\\n  ?>\\n- Standalone script (CLI or server):\\n  <?php\\n  // connect to a database, output JSON, etc.\\n  ?>\\n\\nPerformance and versions\\n- PHP 7 brought big performance and memory improvements over PHP 5.\\n- PHP 8 added JIT compilation, union types, match expressions, and many other language improvements.\\n\\nPros\\n- Easy to get started for web development.\\n- Massive ecosystem, lots of hosting support.\\n- Strong community and many prebuilt applications (CMS, libraries).\\n\\nCons / caveats\\n- Historically had inconsistent function naming and APIs (many improvements in later versions).\\n- Security issues if developers don\\u2019t follow best practices (always validate/sanitize input, use prepared statements for DB queries, avoid eval-like constructs).\\n- Not always ideal for CPU-bound tasks; best for request/response web workloads.\\n\\nWhen to use\\n- Building server-rendered websites, REST APIs, or working with an existing PHP-based CMS or stack.\\n- When you need fast time-to-market using mature frameworks or many available packages.\\n\\nIf you want, I can show a short tutorial (routing, DB access, or a tiny Laravel example) or compare PHP to Node.js/Python for web projects.\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 21,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 803,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 320\n    },\n    \"total_tokens\": 824\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

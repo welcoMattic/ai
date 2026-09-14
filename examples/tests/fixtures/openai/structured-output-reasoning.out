@@ -1,0 +1,22 @@
+<reasoning>
+**Solving the linear equation**
+
+I'm acting as a math tutor for the user, who wants help solving the equation 8x + 7 = -23. I need to provide a step-by-step guide using the MathReasoning JSON schema. First, I'll subtract 7 from both sides, which gives 8x = -30. Next, I'll divide both sides by 8 to find x = -30/8, reducing it to -15/4 or -3.75. I'll ensure each step has a clear explanation and proper output format.
+**Continuing the solution process**
+
+In Step 2, I need to divide both sides by 8. The explanation will be: "Solve for x by dividing both sides by 8." After doing the math, I find that x = -30/8, which reduces to -15/4 or -3.75. For the final answer, I’ll state: "x = -15/4 (which equals -3.75)." I'll be sure to format everything correctly for JSON, avoiding any extra keys, while ensuring proper string escaping and matching types.
+</reasoning>
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {#483
+  +steps: array:2 [
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#499
+      +explanation: "Isolate the x-term by subtracting 7 from both sides of the equation 8x + 7 = -23."
+      +output: "8x = -30"
+    }
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#493
+      +explanation: "Solve for x by dividing both sides by 8."
+      +output: "x = -30/8 = -15/4 = -3.75"
+    }
+  ]
+  +finalAnswer: "x = -15/4 (which equals -3.75)"
+  +result: -3.75
+}

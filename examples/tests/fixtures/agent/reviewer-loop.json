@@ -1,0 +1,152 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "026492679bcdb63f874c81e1c7c9f464",
+                "signature_v2": "fecbf372b420235e761992dbc169fd6d",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Write a slogan for this concept: maps made out of egg cartons.\"}],\"instructions\":\"You are a copywriter with ten years of experience and are known for brevity and a dry humor.\\nYou are laser focused on the goal at hand: refining a single slogan of at most eight words\\nuntil it is the best it can be. Consider the art director\\u0027s suggestions when refining it, and\\nreply with the slogan only - no explanation, no alternatives, no chit chat.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999554"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "2ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0fa8f0b622356c19006aa6fecad2ec87d2919dab72ecb517f3\",\n  \"object\": \"response\",\n  \"created_at\": 1789329098,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329106,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a copywriter with ten years of experience and are known for brevity and a dry humor.\\nYou are laser focused on the goal at hand: refining a single slogan of at most eight words\\nuntil it is the best it can be. Consider the art director's suggestions when refining it, and\\nreply with the slogan only - no explanation, no alternatives, no chit chat.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0fa8f0b622356c19006aa6fecb963887d28de08eb3d46e4630\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv7SXyL1AJ5VRrqi77yEYpUeZP2L3IBNXvRMoNMD-_edBF3XoBjXaCGw7DAKy3BO9cpqHL646xb3_UymuKURlJ-ZKMwCvnBB3JCSMlrYwVFIXknaopjv2wrGsE_yjBM6p15YLbzL02vV__J9JL4xR-jmjFxm7NewhDpdeKNBtSBRYxEabXN9e2hBmn1GXarH9fpuFYEhquuuOQKJ_Ph7d0sNF7s_RilTPD6dm0hDvUpTkJ7_xd4YEaJyhWaac_hLZj2lgU5j4EZ7xPW4cPQ308nVaTeoJLWGJbRJC5sjfCMqK8bgwJCHxoEYty-9oYmuWeCRkxzUOhUVjjwMHWRmnFCOqKaCK_mCSiBhYfJGRrcFpiB1_314oADOJqqjqAR7ICQ0RJfiH-kiUyvLgjmjLvYOy1QrB2Xdwx3TBXDVeZzVek0xn0mMAqWw8WefgCG6d4NYfkcLFC7qMrV_x35zOx_w1ok1_d1V51iRqfkC8WA-6upZXB0iKGyd4So25_3sptY4f9mjkWQ2X5j9g3Wr8mAawd4ccqCqqiYiFJDBVplOmnjVrfoFSmpJl-nWEibwCh9QRNzKsCanO9cp49WsTeQhmB7sRgQBHvygqDdZbydt1Yj3PduZmPFjApHUBVaL_g2kMXu_nVHGLdLOFxFxXEuK2VeTNq9vejjhROMZKRj32KuO1eEWLRS9zXr1YQN43CjN0u18eYmEGT1_WStW0P4jgFTzMvhTFScDlk-sRSWpdsMY-8W69cYLdS7nxuN1SiEsNmwVDYBBRr4Lml6k_TVd_QqUzNeQ8ufdKRbWFWTGtQZljce2RU4J3cBgxopGZj509gf5kegpFF8-TL1Z4Om81vsixuOfLO9gLOEp2vq7TjfHFJ5fV59sQ8zrdH5j2tNrr2lWcINebgRiCg688sT2NAsUPG_GRa-nbt6d3ONjH3NJm55f4JMxdT3q0iP--YqTAjuX5NpJCgM6uCxlLvGBywF7B2sXa7gepeL7bEyrb_gI43s927fE2xLvM7uk7NJCHT0CnaYQnBNbQs7FsFQxCCGkbX80L3DTQoO1FTzR4GpWsOAfkdZCjtRT2CjA30pkL9N3vvj42soRzI5EqTMQm36tOs4x96X-s2Kilvpusbqd80xKd6Xy8AZCKt1D0W9tRVaU-lxIeaLXGE9J9ic5F7cgggNQ5IfmXiWsY6rcmtXps5TZcuSTv6AHXWuamEzfV2FixFOyQfBGPeaVPYQkFkFA86uNpu8je7-dc2wggdW67-19d0vU7HAZRnvx6T05d1m59kAWCCK0AMHnYz96c0wRe4pDytnaaO2N_rm9V96ft9reYKN2ib4wyr205gCHmehtDaSjLKjIeekUVV_YhrsH01y_pYUjYVu4UM7pG7a-0277anIdBA68jWpDXJws8aFk_bpyTjlsi0IpGwko5QEsEPvMgAQnYNBYHq3-ZW9TSMpuD412ehMOn-OaYiVfMzeRqFvCgrgcfKMn1NZqhYiS9zQspkXr2Gcp9VFTTVxk6qud9Kzwj8C6AvRNDAAUcX6OYSpJEeuHKfumy-zvw0T4zG1ThX4caxQnRGJt6qHTMEVUQ-M7EIySm8cqVA3q9sLLrueLPjKQfWVlVNB_nX8o2RZbIp-uwMiIPYH3YH1H9g6gZz8w6DLJQLdegt7O1aceKSgvZzj5TBlpVZBpYGvrlQreKlB9BCFPKL7kyewj-flWJ6UbqyZBAZ1cj47Kf2KikYrWKx5esUoOCPXev8q3--53UPcNQ-70Xit6Xq2J2z1Zeid8ML7zlccDxZuTVhfEVz9iOm59JbnkG_z_gqcbkXGO-d3D02O6kIqj5Ah19phuDtzFMuJ8wQ-fTBorK13cCgtYZFOhNDz4IYp_KacPY_Z8RQxB_Ghq8NBeOjKLH1t0t9F-trsrTDhZtPJv6h9Tk4gWm5ayiwPB8MZmumkt608OucTsyt8ddL0XItRwGIVsZjc6Impi8SsDyj344V-gru-M7rWmAJh8g6L4VKZR4ZsxS2Nr64JosSrbOSa3KS_EJxAHmMZ4jFi-lUtFQ_2ol0N97F5rBjsDqesXZvkZRTpBR9bDo_-LVmEF8xp8CGOOoD3AmBj2dpggTLwUtCFcKm_rfbavJ_FR9mPttBfZiWqMVecy5A29DQ5l0eqvoTKFmsJ19u7jouib2vNnslm9c7hFI3TW4r1Q7dGcWoIJZrwTUg7Cb9qEcNGbTSZTGJ3aHs4SDgqyGB2B_4Imd4WNHwT04J8pmTDeRkGWz-YMpCzmQuu3j4ASRX2IeU75EKda1mtZQIlr06tcwMgNvFEg9uY4TVh97hpFFmFv375GH6O5T6xMORty-AVIHXXz6f5IqeCXwQ47uHHpoe_Wfpxq5L_I0U4yqp8R38eCqW4tUVHzknF3BaEdnoqjbQKDFtr0zXgaNU-G6_4Y_233zpvQW6WPlgHFiADMDMPOteGQ-bneFg2K59dx4qrw6tWXfZwZ2Wq0F1WgjsQZEF_GZfarIvx6p1EFIPDvkgUUYAaUr_h_NR5Jikz6I83D8TIGw_0U_bxUEIgVsaztP8_0mrU4-Fox7L8RZEcl4id85ITwTad7webB0AzO2huu-FNlgH8mPeMHfnOG6gWL__fWECnjcA4jBOBKu23klblPk04fSNd_CwzCD7DscoVq4n-hKdZFdeNP-90PjqvFnB9xwiGoLJmV1pN0Rj4LV8mOfSjoZyFHjDZkwcu7BIHPc6Q_MwlHu9Gw1Fo-ITjx5c2uCfAJtYOPO__0o0BmhYBMPKMKqLmRB6-JoG4o5OSNe-oZqcqViWqG-i9FZfuMDH2e1RlOnnUjvp6I57ATTfPsoM666JpT7KNs9MC9x-tYZq6NS9fZin4513c6n7bFIqc9X7wNPJhdd33_Z6mmwkTjkSG8PhvZNmXLEOJotCpxZ4mkS7zBDcBsqjIsDabsjMASp2jh7LIqYKWW6kWoL7UiBUBHX6jsWc6C7Rh1s0PTYsEL1we7Ti7yu3kWFWO1a2fOfms7Fl2WFGTQBAVJtS_LLzQB9inMx2-iqxuLRyu6P2Dl7v30Ul0YAxpOgiKYhRW6XAHJp0dWGLVjja_IUMBe7wxLv9F-ow2BskRmdk-ThQrxLexUKhrN8Vce2YP_x7f1Igi09rrq2TvtPIzA2S-_wqrYegLLINiI728svOtmAblFq2HsVtjtbVwW-ihk1M5Z2LMpmUELm16gRQnc3vFM4j9CTEnsg1IPyH7hMgnny6780EM_TangrnL6eSzYRA5mmLnA8a0LzYzbNVv-z6ggDaCbw6wV__qkfle-8eq7EA3ET49ZMlDcWPbvVV3syttoCl8JSAK4c0KVCVKWOYVyeRO4kA1XKmm-hVQtaoE7i6l0fhSHiM27ZeRKGVuFP63Gn9O0fw6vS_w4WvcSvhEl1N65YM_UXYKvOVQAT1RBqK277107kOO--ptNWgg5AcdSDNVVvcexwsqrQp8GLQssHZgbide-CVCx3AGORfyov5BPZ_0HGyh90dGCkxJixN0a_DaLWkg1HkkJb_KjDSYFVsHiBwEGYq5FAGlpuaB80C_L52-ZyQkd3P78UW5GCuNBuGIebwTbkZu9RDO-y4PIuhRm1RfKpl2qqNMBmsaqsthwKPDP1WDhG7gx_33PUuhYOx_zgO0zZ1an0nY0NFphD9k2f-74nnnTdLg8nIXNqqGyWQRzFWEOoL_GBvrjT4hxbyvkAXatdf6zIinf49Qi3dZxL67EIxnobO1ChJTJjv2S6KPm0evtE6arZjYv_2vyA2WQ1Exz2drA7HWsNZhYfVSC86KOJQdefmmxQg3bVkGhXG-7N4GlfpPezR_wjH7AeIXlS_WqBeIDnCMGVv32fo46Yem2PciwW7dqNQmFWUdpCLBC3tiGMMtQ-CIhvGJE4qypbWFa0aU_1Kcfo37c2TLt1agtXXKW0fSoXkwoiS86kNTpR8wMovCOJOYnl945Mo7ulau-_ttxmy8h_UCU2CWiKiwEJgjxIwRewXPPXGZxPeUkvfyVjWckuvA0iOgDlHn8jd3G5QWcGKaxI1Cw-iISxz80krwuJTJKWfUVKOVRXySoV7yyqIN7f4bINLTRZxJtd3wyBhPflgGZGJZz0Tn8ZktrSQmOBzMfzCFdEmM9BtuxPZ0gM6_-42YX4PM4_8VPa7ieiM-VITGyY_P07fR3A095bxaYeN-AvvYJpsolsHdtwchXtPBCm2SNk6bMoOrE54LorC-G-10GUM3XUKz9lTT5dkevF3sL0-Imz40QIAOQKZZ6F6qu44sVjAp4NirftC81MPlSRE4njCY89bHVg2JX59mS5m9YZ0y8ylv6OCh1vjFoZ9Fhst8PlhBIzFioXNKdHHebwSfJQh5I0Se1yencrUCdMKsR283Lt5st6VGshysVPN9z88tutHpQyCxVhqWoh51wpRphkGxS5oToAtqcwRJyJDFQ3INxvFXVqcKddadalJC5Mw7dRHvXXFbNN2YfixYetuwyGc59sw==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0fa8f0b622356c19006aa6fed1e47c87d2a7ab35e078dbdaf1\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"Cartonography: maps hatched, not drawn.\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 102,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 663,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 640\n    },\n    \"total_tokens\": 765\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "0deee4eee83fc93b792b0ad21d3d9bd9",
+                "signature_v2": "18b6a19e2c0e749f1b2f5997acf4a7b9",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Cartonography: maps hatched, not drawn.\"}],\"instructions\":\"You are an art director who has opinions about copywriting born of a love for David Ogilvy.\\nDecide whether the slogan you are given is acceptable to print: short, memorable and on\\nconcept is enough, do not chase perfection. If it is acceptable, reply with exactly\\n\\u0022APPROVED\\u0022. If it is not, reply with a single sentence of concrete advice on how to refine\\nit - never write the copy yourself.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999815"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "1ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_05defd1af4eda1a5006aa6fed2676887d2bb63c82a4bbc973f\",\n  \"object\": \"response\",\n  \"created_at\": 1789329106,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329110,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are an art director who has opinions about copywriting born of a love for David Ogilvy.\\nDecide whether the slogan you are given is acceptable to print: short, memorable and on\\nconcept is enough, do not chase perfection. If it is acceptable, reply with exactly\\n\\\"APPROVED\\\". If it is not, reply with a single sentence of concrete advice on how to refine\\nit - never write the copy yourself.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_05defd1af4eda1a5006aa6fed2b98c87d293f285522ede56e4\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv7WmwF1PyFR17CNLAFiZbwBj7KAVii1hWP9nbSQY-v2kflbXmO7egZuyA6xixfBbSRQs2xkxjc5_j9JmpolixKhtQplENZ4U1fGbR__odrB1fgflOPub82wtBboB9QkEtv-MzarXGTVfGdlKuPElNnZAD9r-vsYVi1B05naUY00JEcpnkYy_9BgynhHp6gD5yQIJYPMZlks21xxDREHF-IM-0Af5pLRluLPzw7543MqyXdO4nO92xQxvYDv49ca3wZ80Uh-eDHoXyo8n7BPPY_3QtM-dMw_02P_fgk8kS-TME1Yd2cwmD5KO_I4Vfz5bDPEMkpj7dewrKQqEsceHzZ9uSnu0C_QBCJSr0toK1CILcUKnFDhfvWoFoZs301l4pwnA8qAO5GlyyZCqWsszz6CG039UTnMX6yv2sjLGFDdGsoMbAV7uXD3m_InCxZIJ34WrmrX1hrud1RwFxuMu9Ua3oyYIZEeezxneNZUqwFlzHlYnZ5Pp5XdSP3cW8KKNfRUnu2VNDF5J9gP-f6rXhHNf_JsL2tqAlN4R8xKZhGvKt7UungEgDjpQnDxi2RFSMA72sY4xoPN7-ME7aYUQMPXXyMzUeUxlZwiNxCbEYPzHYP7Qc-fDXNP2xrbiaBm4E2lqA5wILoz660QuL-jdBZxTGJLwzLEnjxHPBgku-3zpDhn2cOW9yQZQ9l4rieTAmZBUsnCc13b8umorEg6bib_qMlPRT123k7kCrYcfFXwsnSIjobx0lRVLhmMMzC1DZF8KUsdEWPnauQwKO7FHuUY6cZqDMt-UEkFLm-5ZPGcqDjMt7xa1GhTe5z-tqeSqUBPwjWlI28_MG4n1AmvWR4pGH54gSgrzdKPH4WkVPHlx5G17PvsWcWDjeE-qO__UQlDkiDx3r1o5Ai_BUk7babEdtsQFlf7Xhp37_xU8CsXrqrq6UVtsaBvC0eGT8K0328BO8SDuaEWkoxNNsg3ffdXts3zfKz-yxayfNdhvMxqw1qcjIsSHxueXgzMNA1dBEW69koejaiYSiG-vEd-h4S3MOmbMbXCCfZ3sId9zT_xfaDl01d3TM3NmY1rpVafc5An9yX4B5FsPPkkp5t-eJ_UPrVREPbLtUMCScd92z8N_m1Jgnx6cIWwhHb-3eXVdpp-aFMsKH4nrWVUG4paAYP7Epsm4MRFNwE2lzX5T9gywIfiPbcU_Yitw1zpiitPztbO2qv5nGukDFP0UEo7K-Iuwfe6efwp8Kw_UPAMmRw6uWNWw_UicAfH43VcOxQQm1dbMy3iuitabVRCaQvZ6PcAN-YKNUEnlcij_6iu81xJlM5XwWHjP0xFnjjMLSJzv3amRIcv-U_vXWL3zM3yhR_krDyQ0iRxMpjOl0qpb2AIW2OxhMANAz9Aw9STt7n8mver4xgrdugMEUn4WWpXpHC5BD9il3lOtKBIkhBKBRG43Suh8fYkRXi79p6FF95i1eKB--LCi8m-x5EpZQO8eo5HhFBzcnZDZjY6nB2INQ-VArK5F2BY1eA9L2U97ij070JWNjEjxOXYG1tPdj_Y__PQ5QCRh0KKhjH4JEYhBqR6UJ8jiRvQ7cRRjEDHEHIgPXm7PMBDZPwHiimMnaY1L4VORCOUHBd-IW-rffARMWo_ZsV7kftkJyPHAG9D0gwWICeXVtrI8UvZTlU4UPEcmcPk6Xa1F0_bndyB_P8BykEVxN0OMp2Srvep0LO3s6B3XX8cy8lE-N0PGDAPeSyOF1r_fowxGnFdLOsXzQYE3z0IN8TncEHa-t4Sa-kpMIZHf_nZdHjse84P1PuVN25DScu5udypLEk7c3LX4cXBZeEXBbItQ5vGUPN1SXnQDYXNiKe8t3GwGPBQ4ic5wyKfsXi182ODKbUUwbQv0c1cIZdEelct245qRI3TruNGscy8MpcLnbeC0bKzAzyY7r9KHp8dS_jnAlgT1l9V-HLH7_e97QWdP0WRrqsYBsLtFVlneWtGIoC-WIJupIC-5eNlSj6c6fITPjv8ZowVlQrjC3y1-rzS7_ZTVacr-TxhN_-kjeR7al3LfTzixWOGILNABK2mLXSlNnACj5nVKtsolxil5TaRyqSIGOnS_PDZzRTbiDxR2wQjLs15-ReLkBKorajqsGN0_f57s4Ltfywqhl8HX8bNyj2N9lV1pAuvVrktcoXi0rTHRc1Y-ivo-854hoJ7zz-7myz6jSaBE49Nbtiww_rMA7NTZS212ycNK-4dlK0E5_YrA94oBeqReCpsyxtlmZ4QmXR1Ykps2iadKcLYSopSGm3N6DHt7pILzwMVRnmKzoxMjep_h6_pGUwe0WkZdnDTWSfueZYWuL3Vjkm0xGUSlJ2M3niRc2uxTdU8Vk9cc4NtRhqrJi8zhyIRNNDrZLgQP5QaEKOUEREtw2hkVXn_UBbBWRVXtBIsog1UYVDUNi7mFtpLKo7fA0H1zKrp968C6wEQVpvOW8iFJdTZ3v6MGm0vsp2V05HIcw351GOmNlJvd6QeJUK_BQ93uJbKerTxOFj2Rcz4oxhnqw-Tf1oDliuIyC7KvnJjcLR5_993P6bL5L8eoiT6nTr0P5_46gY88z1YKsv9edVa9a4zaPLC9DydrsUNgcDz9JXeq5xf8mHLVnNkpG2StgRZJ_ItTW8PraNbYgt1QK-Svo1WXHwrAPTr6imiGecO1SHByMJhUHBpzpFv3QauoVC0TuqtRe2HGC12WeIpXieQ0dkaH5o8634kCpQN4LmnXcyjmKlUM-VUnwcLopuj2f7qDkMBWqU1iCxbVkDW76qCG4J740xIjnuCMO_ngxiw5Og2l_TpL9zqiU95VYdRfBjZk9GJ4zjWlaQ0hAU52vSAmeDLs1Oj_wX6yEQPpMUFBBcL-vUHN7SvV8J6DARs5-OvgU-c1Zz6zkShoqHHxNveexqw3Xk4oKKG1J6LBat-qLwd1qXCkH3TpgrEwUsbNJfSvcuR94OhTqqoFWsQ_OXwqxQgwm_OVB0I7G1KH0a86HylAwNIZnMBsumZ9zS8MPcjHhN02AvG5vavyOjsCG9oVOeEfcmRdesFWdN3xE4WETsRkmd6mgKtaN86JzSt21uxD8anp5UvlJ9Tf539inTWgldViIhAoidRzvlvo2FhKLTftm-uVn2lUsCVZ6RkzorgWwCWIxYEtrPUKKz08oppIiuxgRj4edxJEpwsfNIL_2coAhvMtxxG4cLtiifuRcYGR0y0YWtZYtQXs3Is6O23G_z5kzWmM9HbjRpbktTTB4z9cAp_819b8sYE31j3bWQCRX1F_k5B4kerOS7oXf9YACTKM109uTpHzdN4TLgHo2GxIeJDJAMgA8rxp4vFVGL_poj4fE0QRxRgw2o_4gZnRmGP51F3yHSsxc6zmTj9qNPMvkgJNzdikx09COvMuiZJ4wmvNOkgXNnNpLh3elqjyaJ4BNGexCclarxWFLIKWiF2Fq8sqxs0DreEC6MhKTa8dZpHmg==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_05defd1af4eda1a5006aa6fed62ca087d2802cfa505f0342bb\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"APPROVED\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 110,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 402,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 384\n    },\n    \"total_tokens\": 512\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

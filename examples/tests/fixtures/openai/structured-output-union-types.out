@@ -1,0 +1,5 @@
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\UnionType\UnionTypeDto {#415
+  +time: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\UnionType\UnixTimestampUnion {#455
+    +timestamp: 1697175723
+  }
+}

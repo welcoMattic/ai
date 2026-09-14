@@ -1,0 +1,10 @@
+Initiating parallel calls to GPT on platform ...
+ - Request for the letter A initiated.
+ - Request for the letter B initiated.
+ - Request for the letter C initiated.
+ - Request for the letter D initiated.
+Waiting for the responses ...
+Next Letter: B
+Next Letter: C
+Next Letter: D
+Next Letter: E

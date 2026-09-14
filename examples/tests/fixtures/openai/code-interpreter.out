@@ -1,0 +1,26 @@
+The 20th Fibonacci number is **6765**. 
+
+Here’s the code I ran to compute it:
+
+```python
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+
+# Compute the 20th Fibonacci number
+fibonacci_20th = fibonacci(20)
+```
+Feel free to ask if you need further assistance!
+
+--- Code (python) ---
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
+
+# Compute the 20th Fibonacci number
+fibonacci_20th = fibonacci(20)
+fibonacci_20th

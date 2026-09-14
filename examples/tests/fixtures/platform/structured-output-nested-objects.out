@@ -1,0 +1,90 @@
+
+=== Testing with model: claude-sonnet-4-5-20250929 ===
+
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingOrder {#503
+  +recipientName: "John Doe"
+  +priority: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingPriority {#422
+    +name: "Express"
+    +value: "express"
+  }
+  +deliverBy: DateTimeImmutable @1773619199 {#504
+    date: 2026-03-15 23:59:59.0 +00:00
+  }
+  +address: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\Address {#565
+    +street: "123 Main St"
+    +city: "Springfield"
+    +zip: "62701"
+  }
+  +items: array:2 [
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#597
+      +name: "Widget"
+      +quantity: 3
+      +price: 9.99
+    }
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#594
+      +name: "Gadget"
+      +quantity: 1
+      +price: 24.99
+    }
+  ]
+}
+
+=== Testing with model: gpt-5-mini ===
+
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingOrder {#494
+  +recipientName: "John Doe"
+  +priority: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingPriority {#422
+    +name: "Express"
+    +value: "express"
+  }
+  +deliverBy: DateTimeImmutable @1773532800 {#617
+    date: 2026-03-15 00:00:00.0 +00:00
+  }
+  +address: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\Address {#640
+    +street: "123 Main St"
+    +city: "Springfield"
+    +zip: "62701"
+  }
+  +items: array:2 [
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#641
+      +name: "Widget"
+      +quantity: 3
+      +price: 9.99
+    }
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#642
+      +name: "Gadget"
+      +quantity: 1
+      +price: 24.99
+    }
+  ]
+}
+
+=== Testing with model: gemini-2.5-flash ===
+
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingOrder {#620
+  +recipientName: "John Doe"
+  +priority: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingPriority {#422
+    +name: "Express"
+    +value: "express"
+  }
+  +deliverBy: DateTimeImmutable @1773532800 {#629
+    date: 2026-03-15 00:00:00.0 +00:00
+  }
+  +address: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\Address {#638
+    +street: "123 Main St"
+    +city: "Springfield"
+    +zip: "62701"
+  }
+  +items: array:2 [
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#637
+      +name: "Widget"
+      +quantity: 3
+      +price: 9.99
+    }
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#636
+      +name: "Gadget"
+      +quantity: 1
+      +price: 24.99
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cartesia.ai/stt",
+                "signature": "8b43d706837d9890d0634b06be7deb26",
+                "signature_v2": "44a1217fabc4702002ef728f53231901",
+                "headers": {
+                    "cartesia-version": [
+                        "2025-04-16"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "model": "ink-whisper",
+                    "file": "[resource audio.mp3, 51019 bytes]",
+                    "timestamp_granularities[]": "word"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "content-length": [
+                        "602"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "server": [
+                        "istio-envoy"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 25cea41ad7d46d4db1c5c43579cc21ee.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL50-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "jvJcvMh97g0gONHSTQG7DBcoTmxFsO13SSBJjs5yx7F7ofu4ISP_1w=="
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"type\":\"transcript\",\"duration\":2.594125,\"language\":\"en\",\"is_final\":true,\"words\":[{\"word\":\" Wishing\",\"start\":0,\"end\":0.24},{\"word\":\" you\",\"start\":0.24,\"end\":0.4},{\"word\":\" a\",\"start\":0.4,\"end\":0.54},{\"word\":\" Merry\",\"start\":0.54,\"end\":0.74},{\"word\":\" Christmas\",\"start\":0.74,\"end\":1.14},{\"word\":\" and\",\"start\":1.14,\"end\":1.6},{\"word\":\" a\",\"start\":1.6,\"end\":1.72},{\"word\":\" Happy\",\"start\":1.72,\"end\":1.92},{\"word\":\" New\",\"start\":1.92,\"end\":1.98},{\"word\":\" Year.\",\"start\":1.98,\"end\":1.98}],\"request_id\":\"c9ceeebd-6f77-46bc-bd6c-b424ea561b17\",\"text\":\"Wishing you a Merry Christmas and a Happy New Year.\"}\n"
+            }
+        }
+    ]
+}

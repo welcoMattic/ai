@@ -1,0 +1,76 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://router.huggingface.co/nscale/v1/chat/completions",
+                "signature": "bc48f8920469d035aa9261a5daf8eb11",
+                "signature_v2": "8ad12956d871235f2dd66f4b9307bcc4",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"user\",\"content\":\"Hello, how are you doing today?\"}],\"model\":\"meta-llama\\/Llama-3.1-8B-Instruct\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json; charset=utf-8"
+                    ],
+                    "content-length": [
+                        "705"
+                    ],
+                    "x-inference-provider": [
+                        "nscale"
+                    ],
+                    "x-powered-by": [
+                        "huggingface-moon"
+                    ],
+                    "cross-origin-opener-policy": [
+                        "same-origin"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash"
+                    ],
+                    "x-robots-tag": [
+                        "none"
+                    ],
+                    "inference-id": [
+                        "d4946d6b-20db-4dc8-a013-352fcf87263c"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 123136ea2cc2a463fc0f7d5c10776632.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P3"
+                    ],
+                    "x-amz-cf-id": [
+                        "VbKi7FQ3qOtGpFbZBT8FoFKhlseOsThTkHKedzMy09f5pG0rSs2t_Q=="
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"I'm doing well, thank you for asking. I'm a large language model, so I don't have emotions or feelings like humans do, but I'm functioning properly and ready to assist you with any questions or topics you'd like to discuss. How about you? How's your day going so far?\",\"role\":\"assistant\",\"tool_calls\":[]},\"stop_reason\":null}],\"created\":1789329253,\"id\":\"chatcmpl-60b2c470-a575-4612-82cf-e18248cd9cd1\",\"model\":\"meta-llama/Llama-3.1-8B-Instruct\",\"object\":\"chat.completion\",\"prompt_logprobs\":null,\"system_fingerprint\":\"vllm-0.21.0-dbb32ef8\",\"usage\":{\"completion_tokens\":63,\"prompt_tokens\":43,\"prompt_tokens_details\":null,\"total_tokens\":106}}"
+            }
+        }
+    ]
+}

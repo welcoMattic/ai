@@ -1,0 +1,218 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "5ac190107eb2d4dc00bcae8c6f65f447",
+                "signature_v2": "a09f12e9bc7166d41b578807a6ef1681",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"geocode\",\"description\":\"Convert addresses to coordinates using Mapbox Geocoding API\",\"parameters\":{\"type\":\"object\",\"properties\":{\"address\":{\"type\":\"string\",\"description\":\"The address to geocode (e.g., \\u00221600 Pennsylvania Ave, Washington DC\\u0022)\"},\"limit\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return (1-10)\",\"minimum\":1,\"maximum\":10}},\"required\":[\"address\"],\"additionalProperties\":false}},{\"type\":\"function\",\"name\":\"reverse_geocode\",\"description\":\"Convert coordinates to addresses using Mapbox Reverse Geocoding API\",\"parameters\":{\"type\":\"object\",\"properties\":{\"longitude\":{\"type\":\"number\",\"description\":\"The longitude coordinate\"},\"latitude\":{\"type\":\"number\",\"description\":\"The latitude coordinate\"},\"limit\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return (1-5)\",\"minimum\":1,\"maximum\":5}},\"required\":[\"longitude\",\"latitude\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What address is at coordinates longitude -73.985131, latitude 40.758895?\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0639ab4fa8b6210e006aa70c1352c887d2b964d46bf306f6de\",\n  \"object\": \"response\",\n  \"created_at\": 1789332499,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789332501,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0639ab4fa8b6210e006aa70c13e90887d2abc56bd09bfd3daf\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwwV6LWRAb1GskqxJPeN0fquwxEFBfuazZhlEBCAGv4c21FtB4Ao-J2XNZpnjHFw4SHfw_UtOosKvyHYQF9lzSfK9h1exrsrpPRJnKNr_PmKb36NcpjUulvyrzW8qs0u7H4YomqFKvlsOi-gHF8eIsIiZgps6kpRFW500_ngLforzRY2IjdzqV0iyMmlI7hLdWl2H2EO-mGDzH-KRN_Ngmokx4IxgSLgYqgEayCtqN62qHd2SpeucQVRqNHqdQ5Yqz5O9hg3t2-NABlqXxMM4VhT08AuZAIWEYrENsXejO9YXvcM4MUX7_EFASfd5zBeYNyNnjfa12A1QT5wETW44-3yrVOFYw0g0Fis8rIJqztVHFEvHWyiFw-To6YWNJhXxBOC3LSUXz5FyASThrFUyxToC0hEBjuRJpsvz7Ul_vuwbb1DB-n6q6kvMRPlweo2KZdUGZoO8E5lZAb1Rpgd6sGV4bLdhPjoInR5CtQ_lASaUMKQfNjCy4AA6FURFwYWpLsWhWo1ABVHfLERhB0jRpoDzjdv6g5l1kEgyvq4lJJeAou7iXtaStrkkaEqa6jfn7ruLMpwtnjLfeQtAEF9MxkDEafdVF7GpatXZHhNKsTQ85lL0Hr6VsChSwSXjpqLPmWGK-idMgCk5Uwc2pb2tzOafP0RRKFKhaIBHhYYNQ7c7Wvo6GfjAwcgZOspD2Je2-WnTS9yY8lLeAMob_DWfpoYJCM8uVmRKLaAw6PDU0Ac9erKaJjKaOUiI-0Midcp6JN9IN5-MIlIS-P4kj0Dtko4wOPJfSy-_BXgXpcUFBo8gUm4N4Hn7XRtBpZH6zujWlMwF_OGz1O3Yms8ic1cU9zptvCo1lBP150CRQn-78YCGaAUTzkqfRVH6jlqry5tAVPeCA455P56hFsH_rkfB-bx61E4aK7Dg0wRdXWRc7RaNbYCsOuX102kUzuwkr0VcKHOtZ7NevcWmX5yCD4hQnxqzRU3LS9SXWaLzNjaOfjWogbXjYuOmFYN1NZ-14QPI4fHp9oYOFTuOnpWQx4g4T38fcvqw75DkMaOTHvfVU-NKjwq-VJNDBOp4J1mhifcTxLqKGoD6R_0h1dU8l9_UMBE7QkhWnTaoLjblB0x1z8YHQv1mQ0X0FHO0JTd9U9lfpb5oFNWzsorFNsTmpt8uwSQnjNuhJhwteReLKk1CwBw0e7R00JsRCI2H2oLutAygWSFNQu58z-HIJh5DjkW1quMUGHWH-RDMA1-6feC1aFZ1LxnWhUPKTUV9usnfpZrA-jWceKoywX8kwxrTBSBpbwracRPbfr0vR05P-ccK7BEDUtzsc8iCd2b_cyY_43AsWzsfziONSiiN7N0800Yv4Lfui9e2Lm8Yxj4sOItyOL7ZXWN8eC1osbd-o7D9SYEivZnIWk70ka-_tcS_kz5-ctVTaNk6oGxZ9EnUd57GOQ6_slXcUs__a-TO2pmq1A5TuBCdMUzcxJc10HXMn1HxJGZC3ofvTsAY5K-FPD11DqyYn03-A-rUMzVXOd1n1gdIYhFkayXWwvFTjqdpfTaQN3wRmQPzgsV2SwNdzR48Y7uGq_k0itrXHSos-eYqXfbRaMZl_1LxS6XR8FQPfCIF8kalwzUmDv3O6Xm_Ve6Mbs903qIxDwfodqgJIrnEKa15iaxqxGJZdBWbscJ5rFGP3p1tA==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"fc_0639ab4fa8b6210e006aa70c152f5087d2b842c774cecc5153\",\n      \"type\": \"function_call\",\n      \"status\": \"completed\",\n      \"arguments\": \"{\\\"longitude\\\":-73.985131,\\\"latitude\\\":40.758895,\\\"limit\\\":1}\",\n      \"call_id\": \"call_r0RAFQhw7W6XbKQQMoxR8AyL\",\n      \"name\": \"reverse_geocode\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Convert addresses to coordinates using Mapbox Geocoding API\",\n      \"name\": \"geocode\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"address\": {\n            \"type\": \"string\",\n            \"description\": \"The address to geocode (e.g., \\\"1600 Pennsylvania Ave, Washington DC\\\")\"\n          },\n          \"limit\": {\n            \"type\": \"integer\",\n            \"description\": \"Maximum number of results to return (1-10)\",\n            \"minimum\": 1,\n            \"maximum\": 10\n          }\n        },\n        \"required\": [\n          \"address\",\n          \"limit\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    {\n      \"type\": \"function\",\n      \"description\": \"Convert coordinates to addresses using Mapbox Reverse Geocoding API\",\n      \"name\": \"reverse_geocode\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"longitude\": {\n            \"type\": \"number\",\n            \"description\": \"The longitude coordinate\"\n          },\n          \"latitude\": {\n            \"type\": \"number\",\n            \"description\": \"The latitude coordinate\"\n          },\n          \"limit\": {\n            \"type\": \"integer\",\n            \"description\": \"Maximum number of results to return (1-5)\",\n            \"minimum\": 1,\n            \"maximum\": 5\n          }\n        },\n        \"required\": [\n          \"longitude\",\n          \"latitude\",\n          \"limit\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 179,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 119,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 64\n    },\n    \"total_tokens\": 298\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://api.mapbox.com/search/geocode/v6/reverse",
+                "signature": "01401f5d98d6275011cbe8f437c3c595",
+                "signature_v2": "539f87cf09a34a5dead5f75d8d6f5a85"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/vnd.geo+json; charset=utf-8"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "x-powered-by": [
+                        "Express"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "access-control-expose-headers": [
+                        "x-rate-limit-interval,x-rate-limit-limit,x-rate-limit-remaining,x-rate-limit-reset,ip-proximity"
+                    ],
+                    "cache-control": [
+                        "max-age=432000,stale-while-revalidate=600,stale-if-error=86400"
+                    ],
+                    "x-rate-limit-limit": [
+                        "1000"
+                    ],
+                    "x-rate-limit-interval": [
+                        "60"
+                    ],
+                    "x-rate-limit-reset": [
+                        "1789329577"
+                    ],
+                    "last-modified": [
+                        "Thu, 10 Sep 2026 17:40:20 GMT"
+                    ],
+                    "etag": [
+                        "\"c1b85641540ab6f62a2ce437d90dd7f1\""
+                    ],
+                    "vary": [
+                        "Accept-Encoding"
+                    ],
+                    "x-cache": [
+                        "Hit from cloudfront"
+                    ],
+                    "via": [
+                        "1.1 b7fabb5a327e018775ea26a6f65c6e10.cloudfront.net (CloudFront)"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL50-P1"
+                    ],
+                    "x-amz-cf-id": [
+                        "9Iaoc8nsBOZntalzEGwKnxHWt6vqxSLK_fbRsbLwsDqoe5mqQYmbjQ=="
+                    ],
+                    "age": [
+                        "2984"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"id\":\"dXJuOm1ieGFkcjpjMmE0NDcyNy00YWE0LTRiM2ItOGEyYS0wODFjYjZmMDc3Y2Y\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-73.985488,40.758927]},\"properties\":{\"mapbox_id\":\"dXJuOm1ieGFkcjpjMmE0NDcyNy00YWE0LTRiM2ItOGEyYS0wODFjYjZmMDc3Y2Y\",\"feature_type\":\"address\",\"full_address\":\"1553 Broadway, New York, New York 10036, United States\",\"name\":\"1553 Broadway\",\"name_preferred\":\"1553 Broadway\",\"coordinates\":{\"longitude\":-73.985488,\"latitude\":40.758927,\"accuracy\":\"rooftop\",\"routable_points\":[{\"name\":\"default\",\"latitude\":40.758743,\"longitude\":-73.985435}]},\"place_formatted\":\"New York, New York 10036, United States\",\"context\":{\"address\":{\"mapbox_id\":\"dXJuOm1ieGFkcjpjMmE0NDcyNy00YWE0LTRiM2ItOGEyYS0wODFjYjZmMDc3Y2Y\",\"address_number\":\"1553\",\"street_name\":\"Broadway\",\"name\":\"1553 Broadway\"},\"street\":{\"mapbox_id\":\"dXJuOm1ieGFkci1zdHI6YzJhNDQ3MjctNGFhNC00YjNiLThhMmEtMDgxY2I2ZjA3N2Nm\",\"name\":\"Broadway\"},\"neighborhood\":{\"mapbox_id\":\"dXJuOm1ieHBsYzpKa2JzN0E\",\"name\":\"Theater District\",\"wikidata_id\":\"Q2662015\",\"alternate\":{\"mapbox_id\":\"dXJuOm1ieHBsYzpKa2RzN0E\",\"name\":\"Theatre District\"}},\"postcode\":{\"mapbox_id\":\"postcode.4203011031677994\",\"name\":\"10036\"},\"locality\":{\"mapbox_id\":\"dXJuOm1ieHBsYzpGREtLN0E\",\"name\":\"Manhattan\",\"wikidata_id\":\"Q11299\"},\"place\":{\"mapbox_id\":\"dXJuOm1ieHBsYzpEZTVJN0E\",\"name\":\"New York\",\"wikidata_id\":\"Q60\"},\"district\":{\"mapbox_id\":\"dXJuOm1ieHBsYzpBUU5tN0E\",\"name\":\"New York County\",\"wikidata_id\":\"Q500416\"},\"region\":{\"mapbox_id\":\"dXJuOm1ieHBsYzpBYVRz\",\"name\":\"New York\",\"wikidata_id\":\"Q1384\",\"region_code\":\"NY\",\"region_code_full\":\"US-NY\"},\"country\":{\"mapbox_id\":\"dXJuOm1ieHBsYzpJdXc\",\"name\":\"United States\",\"wikidata_id\":\"Q30\",\"country_code\":\"US\",\"country_code_alpha_3\":\"USA\"}}}}],\"attribution\":\"NOTICE: © 2026 Mapbox and its suppliers. All rights reserved. Use of this data is subject to the Mapbox Terms of Service (https://www.mapbox.com/about/maps/). This response and the information it contains may not be retained.\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "64e4bc945f1fe3fdb86cc221ef78cc80",
+                "signature_v2": "12e05d0bc2767c5cba531d1e25f3972b",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"name\":\"geocode\",\"description\":\"Convert addresses to coordinates using Mapbox Geocoding API\",\"parameters\":{\"type\":\"object\",\"properties\":{\"address\":{\"type\":\"string\",\"description\":\"The address to geocode (e.g., \\u00221600 Pennsylvania Ave, Washington DC\\u0022)\"},\"limit\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return (1-10)\",\"minimum\":1,\"maximum\":10}},\"required\":[\"address\"],\"additionalProperties\":false}},{\"type\":\"function\",\"name\":\"reverse_geocode\",\"description\":\"Convert coordinates to addresses using Mapbox Reverse Geocoding API\",\"parameters\":{\"type\":\"object\",\"properties\":{\"longitude\":{\"type\":\"number\",\"description\":\"The longitude coordinate\"},\"latitude\":{\"type\":\"number\",\"description\":\"The latitude coordinate\"},\"limit\":{\"type\":\"integer\",\"description\":\"Maximum number of results to return (1-5)\",\"minimum\":1,\"maximum\":5}},\"required\":[\"longitude\",\"latitude\"],\"additionalProperties\":false}}],\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What address is at coordinates longitude -73.985131, latitude 40.758895?\"},{\"id\":\"rs_0639ab4fa8b6210e006aa70c13e90887d2abc56bd09bfd3daf\",\"type\":\"reasoning\",\"content\":[],\"encrypted_content\":\"gAAAAABqpwwV6LWRAb1GskqxJPeN0fquwxEFBfuazZhlEBCAGv4c21FtB4Ao-J2XNZpnjHFw4SHfw_UtOosKvyHYQF9lzSfK9h1exrsrpPRJnKNr_PmKb36NcpjUulvyrzW8qs0u7H4YomqFKvlsOi-gHF8eIsIiZgps6kpRFW500_ngLforzRY2IjdzqV0iyMmlI7hLdWl2H2EO-mGDzH-KRN_Ngmokx4IxgSLgYqgEayCtqN62qHd2SpeucQVRqNHqdQ5Yqz5O9hg3t2-NABlqXxMM4VhT08AuZAIWEYrENsXejO9YXvcM4MUX7_EFASfd5zBeYNyNnjfa12A1QT5wETW44-3yrVOFYw0g0Fis8rIJqztVHFEvHWyiFw-To6YWNJhXxBOC3LSUXz5FyASThrFUyxToC0hEBjuRJpsvz7Ul_vuwbb1DB-n6q6kvMRPlweo2KZdUGZoO8E5lZAb1Rpgd6sGV4bLdhPjoInR5CtQ_lASaUMKQfNjCy4AA6FURFwYWpLsWhWo1ABVHfLERhB0jRpoDzjdv6g5l1kEgyvq4lJJeAou7iXtaStrkkaEqa6jfn7ruLMpwtnjLfeQtAEF9MxkDEafdVF7GpatXZHhNKsTQ85lL0Hr6VsChSwSXjpqLPmWGK-idMgCk5Uwc2pb2tzOafP0RRKFKhaIBHhYYNQ7c7Wvo6GfjAwcgZOspD2Je2-WnTS9yY8lLeAMob_DWfpoYJCM8uVmRKLaAw6PDU0Ac9erKaJjKaOUiI-0Midcp6JN9IN5-MIlIS-P4kj0Dtko4wOPJfSy-_BXgXpcUFBo8gUm4N4Hn7XRtBpZH6zujWlMwF_OGz1O3Yms8ic1cU9zptvCo1lBP150CRQn-78YCGaAUTzkqfRVH6jlqry5tAVPeCA455P56hFsH_rkfB-bx61E4aK7Dg0wRdXWRc7RaNbYCsOuX102kUzuwkr0VcKHOtZ7NevcWmX5yCD4hQnxqzRU3LS9SXWaLzNjaOfjWogbXjYuOmFYN1NZ-14QPI4fHp9oYOFTuOnpWQx4g4T38fcvqw75DkMaOTHvfVU-NKjwq-VJNDBOp4J1mhifcTxLqKGoD6R_0h1dU8l9_UMBE7QkhWnTaoLjblB0x1z8YHQv1mQ0X0FHO0JTd9U9lfpb5oFNWzsorFNsTmpt8uwSQnjNuhJhwteReLKk1CwBw0e7R00JsRCI2H2oLutAygWSFNQu58z-HIJh5DjkW1quMUGHWH-RDMA1-6feC1aFZ1LxnWhUPKTUV9usnfpZrA-jWceKoywX8kwxrTBSBpbwracRPbfr0vR05P-ccK7BEDUtzsc8iCd2b_cyY_43AsWzsfziONSiiN7N0800Yv4Lfui9e2Lm8Yxj4sOItyOL7ZXWN8eC1osbd-o7D9SYEivZnIWk70ka-_tcS_kz5-ctVTaNk6oGxZ9EnUd57GOQ6_slXcUs__a-TO2pmq1A5TuBCdMUzcxJc10HXMn1HxJGZC3ofvTsAY5K-FPD11DqyYn03-A-rUMzVXOd1n1gdIYhFkayXWwvFTjqdpfTaQN3wRmQPzgsV2SwNdzR48Y7uGq_k0itrXHSos-eYqXfbRaMZl_1LxS6XR8FQPfCIF8kalwzUmDv3O6Xm_Ve6Mbs903qIxDwfodqgJIrnEKa15iaxqxGJZdBWbscJ5rFGP3p1tA==\",\"summary\":[]},{\"arguments\":\"{\\u0022longitude\\u0022:-73.985131,\\u0022latitude\\u0022:40.758895,\\u0022limit\\u0022:1}\",\"call_id\":\"call_r0RAFQhw7W6XbKQQMoxR8AyL\",\"name\":\"reverse_geocode\",\"type\":\"function_call\"},{\"type\":\"function_call_output\",\"call_id\":\"call_r0RAFQhw7W6XbKQQMoxR8AyL\",\"output\":\"{\\u0022results\\u0022:[{\\u0022address\\u0022:\\u0022New York, New York 10036, United States\\u0022,\\u0022coordinates\\u0022:{\\u0022longitude\\u0022:-73.985488,\\u0022latitude\\u0022:40.758927},\\u0022place_type\\u0022:[\\u0022address\\u0022],\\u0022context\\u0022:[{\\u0022id\\u0022:\\u0022dXJuOm1ieGFkcjpjMmE0NDcyNy00YWE0LTRiM2ItOGEyYS0wODFjYjZmMDc3Y2Y\\u0022,\\u0022text\\u0022:\\u00221553 Broadway\\u0022,\\u0022type\\u0022:\\u0022address\\u0022},{\\u0022id\\u0022:\\u0022dXJuOm1ieGFkci1zdHI6YzJhNDQ3MjctNGFhNC00YjNiLThhMmEtMDgxY2I2ZjA3N2Nm\\u0022,\\u0022text\\u0022:\\u0022Broadway\\u0022,\\u0022type\\u0022:\\u0022street\\u0022},{\\u0022id\\u0022:\\u0022dXJuOm1ieHBsYzpKa2JzN0E\\u0022,\\u0022text\\u0022:\\u0022Theater District\\u0022,\\u0022type\\u0022:\\u0022neighborhood\\u0022},{\\u0022id\\u0022:\\u0022postcode.4203011031677994\\u0022,\\u0022text\\u0022:\\u002210036\\u0022,\\u0022type\\u0022:\\u0022postcode\\u0022},{\\u0022id\\u0022:\\u0022dXJuOm1ieHBsYzpGREtLN0E\\u0022,\\u0022text\\u0022:\\u0022Manhattan\\u0022,\\u0022type\\u0022:\\u0022locality\\u0022},{\\u0022id\\u0022:\\u0022dXJuOm1ieHBsYzpEZTVJN0E\\u0022,\\u0022text\\u0022:\\u0022New York\\u0022,\\u0022type\\u0022:\\u0022place\\u0022},{\\u0022id\\u0022:\\u0022dXJuOm1ieHBsYzpBUU5tN0E\\u0022,\\u0022text\\u0022:\\u0022New York County\\u0022,\\u0022type\\u0022:\\u0022district\\u0022},{\\u0022id\\u0022:\\u0022dXJuOm1ieHBsYzpBYVRz\\u0022,\\u0022text\\u0022:\\u0022New York\\u0022,\\u0022type\\u0022:\\u0022region\\u0022},{\\u0022id\\u0022:\\u0022dXJuOm1ieHBsYzpJdXc\\u0022,\\u0022text\\u0022:\\u0022United States\\u0022,\\u0022type\\u0022:\\u0022country\\u0022}]}],\\u0022count\\u0022:1}\"}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "0s"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0639ab4fa8b6210e006aa70c160a5087d293d4f13b86db420a\",\n  \"object\": \"response\",\n  \"created_at\": 1789332502,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789332504,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": null,\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0639ab4fa8b6210e006aa70c16603487d2a91862251ed8a623\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwwYMZDsTnZQi866xWTbbAQ8TwDQGI3xG0YXvRq8iK6radAQbpYdwYMilA7LyCQtVFeOAXAUOxfctn5k5ZLfZ1sbguotiedUh5W5n9iv3J_VctxOampNOuzf2hSD5RSkTb6BA9VLBXAWKVA-NZI2Ws_u96CLYtyiXtFSmzcCxDBi8sEkZ733DIchEhZIv0td7wiB91e8ECKrIopz-mz-mN8HiVOBudqSYnHzk5fgr-AU0ri0HOSltW0XEwkrKhVUz2yw2MYRb3y7u228n26L3RjrNot465H4h1oKUGMjw3TdRYJ_bXqIdmGDP7eX5HKukMiWi8JOYdo_kZbnDA2dz7mwCHu71Xs0ql2D8vkJNoTzJdDGqCHGSEd76deEuP_IwL0OktZTHa-G_-PoavEvcDyz01GSDjxtaEl3ozGKciW6JYwxyJhK-IjykUP_lILm_uEksYWb15Pf-L7j5fsuXIZudkYlyGCX5PCKYdcQSUmIzb8VxYAn4gUcZFn9KMkBOJ1EbqScDdyOJkDF4BPiJoMV4GS2OUQeWOi3FWd39YfvHf5xRE2sEjVLqJY4JIPnu5GAu7EmL_sLgxE1Wo9xpSVrmvv1MuD5I42GJDhrNt5ghxIi945v6KfUuOvSV1LcqNoityHTIyu4h2BiIAen96BriEk-ffgXMwF5OC5G2ciZo85ineakZd_ExMlay9rgKm1u_8dEkH-YJ7ThLhBsQQGGR2w5HFwqOzdPDVKCZNVX2exxAjJb7wb8gKb9eA9GjoyT_RahNt6Atmw4kA_KD328ihbtFMGeWAArRbjNg-ylQ2PkmC3ccntFJcHViwBf9tCA66WJZhr3q_79DFvn4GMRG6W-fc6g39hmzHzCiFpxZEDloImZZf8EyA5KMx-gqaW7DWZ2xZKWiARsT95-RLw46WWp-uLaEaSpBMJFOVSzsHbObxiOHl0tWWs-EoJHVR86K3qo8WWmZjLLJddqNLBbKCVdbXvajUNhoaoBsc6Rx07RcYmPBKsAVD5vRD6ZxjYJGMZJs_4X-TzmALZEId4PjfwvNDOA-EtVbUh42KuRuj0qIDXb53lwTp6mhnCowDB-8L_FFl7qpwCcW1_09Oi88lxMKmIAip4b85cBl96NFtthKIj6hYZVQhfqqS4nH3gqAwOudMLHQhtWk0N1sTrSBs5YKamz4cZcFVcFcAaTsHQHM8Pdd7rk2M0MjRfZlbiDrypZmo1VaFl2lmnE0yyQwfTRMRmt3_3Kxlb6xB3UK3EM1fAfttOp6-gQXCFFO17dyiTOhF7eMWJA6kkFH6QXqc1oz5oM2hE5fKJFWZSbJvRE_t6YF33-fUbWda7yXVQtnFDCu3dHNsJrnfOGnnE1sbk2_-HW3TY1Tdzr82kHqhCXCcWofNgU8L_et8HxUMN04Cl7JxkFk4R6Nrqkk0aVm7DZ8upFxWdWuDolpk11C9EypNySWckscpO2R7y8Pv7E_XlFw7mbHIU9W4Kgyx91DAR8Rao6Ol7vCFZHO46oO834D4sODQ8Ip7_B7_gTgUnbcG65KnC3JZFbA1s4GWI7Qp6FmQ2G3QQRe9tFodr2YM3fqffejk0z-Gevs07IewUgoicSdQWhdDuNUeZ6qpb7odYXdVkCdqeFFn6OzACYr0ww4nlvKW2IePTwx2cSSR4gzIh0Qo2UdyrXabAvmLh2yD_pITukOY_yuPL0ugu9qyWgaFzLVI6-KEt7N6yb3swUZpvDDcB8Gs5VLy3Vrziaala8ebxYesMm3lykq5uNEf3tS7gdaWTF5z2GX7mBmfh7yAOfNvgQeWCE43Rp4wL7y3oTgVc8vZPXdJKpGPrqqsb6Z2HNMhLg3vX6vmcBjU9LuSHKxxuF0_XR0MTquBCxkiDmF8uuDFOHHaWVKAspJOPRJwaB8jQHUNKvvT7Z0jiuNx_zUSNgAjhps5nGA6erGfd0mZsjNcIxDTGxu6bZ8ZnX9gpNcwxlZ2fN_mz9ytyJduB5IOP9xFcQ3MF3wvqnV0Pb8HVdlPZgGRZXWIfyTnDmNC-CG3KXko-wLrC8rtlf2voWl7WoRchayQOD94KqFbWH8kXpxOa3HZM9Hnu3IgraXvTQ2x-0JkyYFYizyK_mN6k2Y1Fp8aKbEvWvK6bevc-MU_0fA6aqcY4GqqLYTeL-2yFbA4vPWUMXL8A6dWBU\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0639ab4fa8b6210e006aa70c17c9e887d2a3fbe6614fc66654\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"The coordinates correspond to: 1553 Broadway, New York, NY 10036, United States (Theater District, Manhattan \\u2014 Times Square area).\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"description\": \"Convert addresses to coordinates using Mapbox Geocoding API\",\n      \"name\": \"geocode\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"address\": {\n            \"type\": \"string\",\n            \"description\": \"The address to geocode (e.g., \\\"1600 Pennsylvania Ave, Washington DC\\\")\"\n          },\n          \"limit\": {\n            \"type\": \"integer\",\n            \"description\": \"Maximum number of results to return (1-10)\",\n            \"minimum\": 1,\n            \"maximum\": 10\n          }\n        },\n        \"required\": [\n          \"address\",\n          \"limit\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    },\n    {\n      \"type\": \"function\",\n      \"description\": \"Convert coordinates to addresses using Mapbox Reverse Geocoding API\",\n      \"name\": \"reverse_geocode\",\n      \"output_schema\": null,\n      \"parameters\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"longitude\": {\n            \"type\": \"number\",\n            \"description\": \"The longitude coordinate\"\n          },\n          \"latitude\": {\n            \"type\": \"number\",\n            \"description\": \"The latitude coordinate\"\n          },\n          \"limit\": {\n            \"type\": \"integer\",\n            \"description\": \"Maximum number of results to return (1-5)\",\n            \"minimum\": 1,\n            \"maximum\": 5\n          }\n        },\n        \"required\": [\n          \"longitude\",\n          \"latitude\",\n          \"limit\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 657,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 203,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 128\n    },\n    \"total_tokens\": 860\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

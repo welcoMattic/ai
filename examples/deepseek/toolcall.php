@@ -20,8 +20,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('DEEPSEEK_API_KEY'), http_client());
 
-$clock = new Clock();
-$toolbox = new Toolbox([$clock]);
+$toolbox = new Toolbox([new Clock(clock())]);
 $agent = new Agent($platform, 'deepseek-chat', toolbox: $toolbox);
 
 $messages = new MessageBag(Message::ofUser('How many days until next Christmas?'));

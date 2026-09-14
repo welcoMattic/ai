@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "aeab94660b266751d8184e5afb3b8440",
+                "signature_v2": "f6309173cf7ad17cc2882d3b6cc16d35",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"max_output_tokens\":2000,\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What is the Symfony framework?\"}],\"instructions\":\"You are a pirate and you write funny.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999495"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "3ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_06979e9d98b8ff35006aa6fff111c087d2b4635242edec8677\",\n  \"object\": \"response\",\n  \"created_at\": 1789329393,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329400,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a pirate and you write funny.\",\n  \"max_output_tokens\": 2000,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_06979e9d98b8ff35006aa6fff15e4087d2a6f1c9b02290fa28\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv_4-_vokTE4lKZxdZkrxrngCeNU4OfDj-IQixg87u09PiRj4RCY2EJGnrb15xRqeKi7Uoe702OFe3gpJ2v3WDHFbmO3QfGW1P7x1QqA8OAltMpkrn9kpBPd1ysSh9vd0jr5jC8l0Rio0SLKVHMqAFmy6yIzr45A_2hrn4LIOYnHLxcjWKg-U-SSFrH00fAhHuReucMcykZhOjpINpqXN_BJg1cm6wm0V9-U8yGVNccd7xAf8X7ABOfGTDOttlaa9C_fc-Xry1boYknRq1d4B7KUU_spmHbQKZotURs9zpJl1ZEYRfcR3q6XMiDd8NhRnO4-5Q863d0AvZUfJE7CAOwdJMyPZbosJaLlnXXuFguLPdmd1bmfCtdquBfiwxSPCTJb1jZ1Z3zHDiDbfFWzvP44YwGdTJsc0rcOtbCqf7VIlrcuAYjl0H3DPEUkcQE1m19-RnUZj0wjyMqBtoY1OOXgtN5J98LKU_XS0QsWMIjvWI9YQ3aXpArFy4B6oViqBmscT6Kufy95plEp49uhfo5T-Ziuc8RkDVO2OuqEO7iGn0v6pj-MDigPEX3mKTR0dIci2jvJQUoaU7fJS9DSYxUGsymNOUFXlrPtriJ3D4GbaTxk_4pSV54fNZqZNl1iPkEnv95N9IZwGehthPY72ZOAMJDafuKkigExbHRW_InxNhgRUBdeJZ26qetDe5tWrlpjmyvxQYwcaya674eWxYP_1CzWE_CfMFhw2L5q9R95G4JU3PyE6mo-O8k2Tn-i6Y3zl8Kb8Mbs5QRCKMipM1m3WqjTH28O2oTyMtsIKCO9901FJwQL1yfjxpbFDfDHXjVcD92U5KuAi7nTr78csnD5Ua07PVlooG9JpA1gvw1taVwHNj-WeEHiphpNMv72J7bE3_goVcawuaNEXUCTUT28jg1Azmb_ChL1SsXgww4pDVmmbmQXVvDe7wNrhXzPWUUwCXkFyuUB7LibAC5jhSBOBa9spdHf5OyXahSw-hRN6AllWsuUKddVfsJLAgyGp6ZnSth5SVofL873D6cwOBwVvDtxg5q0t2zbUzGIyEAlrwZRQsnjcrg3Vxxigg4ltN0Q8tBFl1j-NUPkFRry5GRwfuWQ6RZCZqp7xvBq8_MhNesoc50JGhdQ4vQOg9FBt9zXWyK-S-u0NUH0TmY6vhep6MreL-jFJaHJrr6RBtdFGvuL88D-eL70pmJNENCLyl4odROIGrNLHu9YJC0yBe4SGiBKjDWiOdVHzp9oEorU0w7AgGS8v1Uo2FDatzk1KCtvjiw1SNiqMFN-Qsk8iri3BJS0WRZy3jduXNKAoxWpwhF4BTKUARE5lDGCp_W2kdIXs2JCpDAfRhG725BIuT68lCAaZtniloQ6Ur6rlrKLJ2CcrH8A4datKzbS3tsFJUnQXxW6C2pqNhInTPlEdFeNXGtX0LTk3wrx6xSg5LQCcmNovskBL8hKOjPVUcygg6Sq2yTIdA64HxNoUZ6YLmgUiMJ18_mP-7kWALtYctJaV4QK1SoXg1Hemvb4wUj1Y2pKdPCziVqjUlV-Ffs-05Nw2NuIQV0XTCiqhytTHRrM5H5TXYRtiAGAV_dk3FXzCTVbc9DRtgUvfzDegi35jicVv-Kc_-4kWI67MHU6IJBp2aMFyjEC4NhuICc6Fk_4UoBHpDuRpY1mhnNmSal34PdeAVDAE6en-xUaLZH2a1ugrtIw2OIGROMtro0-HSd8-JIWvln-z3uEMRq0sVAzOCBJJTLX52AkbmxyVtXQyQmmsN86emAczS_z3EQu-mhJ5fb47_G4aCuOxVYF350SHJ2Scm3-U-PEty5OJbBIHYMHjeKGG7xbBaCPJLQWGB6v3c3lJjNpxJ2DqfkBJ9dhktcZQ9lOx5oh2-lzTNDWCZe-SrPPnPVPcLBAtG83cUTVPLhAjugVtqnbxqzI_uOFaIx5qY3vK7pI1QZX_-LIhVwMMUEF-uNLK3Fri47LZKSoKfjsygM26p0W7rPYISOGBGtxx8kSVjwOq3gSF0mjMChCba2hdCGccYboELYBOmTTr-POf-yYXURMUIRXC3kvWInvq7TvzJpw82ZQ9BxUY9hnt1fyM37SoScHFarabvM_otaZurTjsyHYXX7PFuea5dE3X7f5ium18uM0kxTRIejdWW7heuFtjpX0vCot_G-bXPQozwBCzlcbIo9qBXAlWqebEKMQQH8abqjgdYY9NnD4ynE8O7AKZdvDyBzlX-ewMiUqejB8djVrNwkehA9aVLKK9polJktIkm9GCCOOhESpgPEAFTvhhPAKn2K5UxqI9vom04DDjjPk7qoO_ET8gYpjMGJNUOz7lEWglTFt5LsX1_jbs35xMukmvvqSgHOB1zZpdIX6DoBaoNiLriBzaMEhGG4Pf4KfWU0gf2xl3K2yQ6_Zfb6KKk9WMzknbizcYvZEVSyZaDuytfgEryqI3pV4x5_ZoyQDM-6M67W0QauQVcU0jPKh-pvl6_lK6oZLPDuAR73d_ftWrkw9ViUIoubrRkeZXcD6uPvCZ-Y_ftNBwSOqWEuCNjtvm2yER3BA7b-oJ4jOBq4bBPGeMoqNnT9xkdNKOWMoyaWDMwnr9B2Z7HHEj25f5b0BvFkHFc60T2k8Owk0Ny79YT-2dBLhBhsUb52YyOEccqy7CSu7a959pxdPQ-1HhfF-hA6kTak1VTfbTtHLORIk8xFsVYpdLlWB3dsNQiSLRisgKijCo5YvKTnHUm07DQLAwAbZqyXX-dsMBNewSZ27X0r5SehAQOHtcpTBcyspABxV-i4Pw-WLCsEag84fVs2-epEivGvUBpykssp57FsWyiFtDSbVjVEN_DJjAKxmt9iKG1ppIB7UtZtqtLgYydPlr28LzSUaxEDEc7XP9BEUI3tkDuVoDMDuV4KaO_9eBXlS2VAq-q2-cEiLDIsIVSdjDbXcC2dmJJqz\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_06979e9d98b8ff35006aa6fff4549087d2b53e3b644b2070b9\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"Arrr! Gather \\u2019round, landlubber, an\\u2019 I\\u2019ll spin ye a yarn about Symfony \\u2014 the fine PHP framework that helps ye build web applications without walkin\\u2019 the plank o\\u2019 chaos.\\n\\nWhat be Symfony?\\n- Symfony is an open\\u2011source PHP web application framework and a library o\\u2019 reusable components, maintained by SensioLabs and a hearty community.\\n- It follows modern architecture (MVC-style patterns), gives ye a solid structure, and saves ye from reinventin\\u2019 the wheel each voyage.\\n\\nWhy use it? (The treasure map)\\n- Reusable components: HTTPFoundation, Routing, EventDispatcher, DependencyInjection, Console, Security, and many more.\\n- Flexibility: Use the full framework or cherry-pick components for small ships (microservices) or big galleons (enterprise apps).\\n- Stable & maintained: Regular releases and Long Term Support (LTS) versions for production fleets.\\n- Strong ecosystem: Twig templating, Doctrine ORM integration, Symfony CLI, WebProfiler, and Symfony Flex to manage packages and recipes.\\n- Performance & best practices: Encourages testability, decoupled code, and modern PHP patterns.\\n\\nQuick commands (for the curious buccaneer)\\n- Create a new app: symfony new my_app --full\\n- Run dev server: symfony serve\\n- Make a controller: php bin/console make:controller\\n\\nCommon companions\\n- Twig (templating), Doctrine (ORM), Monolog (logging), PHPUnit (testing), API Platform (for APIs).\\n\\nWhen to pick Symfony\\n- Choose Symfony if ye want enterprise-ready structure, great DX (developer experience), extensibility, or if ye be workin\\u2019 on medium-to-large apps or APIs.\\n\\nWhere to learn more (maps & charts)\\n- Official docs: symfony.com/doc\\n- Tutorials & screencasts: SymfonyCasts (formerly KnpUniversity)\\n- Source & packages: packagist.org and github.com/symfony\\n\\nThere ye have it \\u2014 Symfony in a nutshell (or a rum barrel). If ye want, I\\u2019ll chart a course with a tiny example app or show how to scaffold routes and controllers \\u2014 fer free, no mutiny! Arrr!\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 25,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 722,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 256\n    },\n    \"total_tokens\": 747\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

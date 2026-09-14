@@ -1,0 +1,110 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+                "signature": "0f95826a89352b620cc24bd56afc99c7",
+                "signature_v2": "4391287e653e2eb8358decbb245e0dee",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"code_execution\":{}}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"Compute the 10th Fibonacci number using a short Python snippet.\"}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "1898"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"executableCode\": {\n              \"language\": \"PYTHON\",\n              \"code\": \"def fib(n):\\n    a, b = 0, 1\\n    for _ in range(n):\\n        a, b = b, a + b\\n    return a\\n\\nprint(fib(10))\",\n              \"id\": \"call_2820570\"\n            },\n            \"thoughtSignature\": \"Eq4HCqsHARFNMg/5EOoW1OCzb3lAgkQk1M7tq9Xg4qT6pN0aMZ13ZkFsWkYEzUH4pimbHKY54FcuE7mSD8RlYY8ejYWmrryKr37yFzj84utWCX/hNIzjJ5ojoa32WxXUHjAtzo4RywnHQ+joazzYAjDfVZBylfsbwvMXTT+4Ty26675uczjfhC4SwnqrTnvtQcZSAarfKPkVLgu2Py0O6YoRRgAzWkamULSxJxCGAUm0Yea9SWuAYB2BD6crz8bKZrlYTYQEk+GYGu3zNYXjYYrfDp1ObbqtieYDC3W7iiBiirbdNCKJdC5AUw7lNQBZDGA3p2sIuikTJ9MTH4UgU50kfsfaA1nZNpRUp65X7aJuR/6wE91eUlzz2GxZL0jttSaBBoMCAHoHkOOQwH9AZT2wD278EB2UgxMH78G4ProCzSYCeGeoao0K9tezAW6jNFGC/YZcrw4+tMdL+v4MHOxOdCPySQnUcGZI8nBGFdxaXfHh+XzLqV2dpbTPNUe98d/AZxIIPVvZWGM2wU3LqEtZAguVoyQao2dYfifUcjUI5LNUtb9R0CwixBHU50yImGiROzBhT2oVoFOcK9tu9E3eAzC14ZDY7u6DauKpZxudduSPxi+unWP8DKIWYLyY5dNnS8mTRJvqLiU+iOCUTiW+a/83rHJk5UqFUEiDCzDoKBJSSMineDUZgzAnGVppbfKiYhtmerSupNrsUDcCRKYAN833JOboqtZ7M5Xhs37GBO87E/cH35YYdrZb9WgYotjZDAvCPn5kX9dw/N/3VwfPbvXQHE+LRsCsG61qsczxm/uQ/ElnsLtLZUy519ZhnKEJH9ojdDlOx4qxKzC0NTSZi+MuykDtry0jAv4fC45EGAx0dZDAk/lLYpZ7iMQ+xvKfxWXHS3CzuGOgOQG3PPBd+eA8hO0NqpCWAIJrV7EUXcsZ64lPCYgx/nulhYM2TnUZESl3P9SSjOs7vMWZ3vV/dhS2XWq7vLpGNFhhwCYOnvkwTTMqibjZoP4cygz4A7lrVR6leG1bNN1zqjVs6cG54Uw4BApTrVfj/2dTRS/JcVbFru2UuSOm3oY86L6KI7Z6acd6SBKzHhuK76FSyKHFuUQRwKHvB2OJ8+aUPnwi3kKVNzxPUFgPX7pTBU69U84ylFX5WLNX1577jpNMOwb2mdegpj6nEzA27ORfW5x7ndd8rNOFT73FOUzhN/fpxtkAWOcFoD6zG/kNFG/qQa1Wli+UoFxbz2NP3KKE1xSk\"\n          },\n          {\n            \"codeExecutionResult\": {\n              \"outcome\": \"OUTCOME_OK\",\n              \"output\": \"55\\n\",\n              \"id\": \"call_2820570\"\n            }\n          },\n          {\n            \"text\": \"The 10th Fibonacci number is **55**. \\n\\nHere is a short Python snippet you can use to compute it:\\n\\n```python\\ndef fib(n):\\n    a, b = 0, 1\\n    for _ in range(n):\\n        a, b = b, a + b\\n    return a\\n\\nprint(fib(10))  # Output: 55\\n``` \\n\\n*(Note: This assumes the sequence starts with $F_0 = 0$ and $F_1 = 1$.)*\",\n            \"thoughtSignature\": \"ErgBCrUBARFNMg/4zFf/H85ufjqnqr6lpHZaHW+9WgRPa+SAiUSqJUrQ+mFRlTyem1u4UlYTur2D0hTYdxZmL0Xb61yGrzIUI99GLtZt+2ZgU4qy3rMpoj8FGM2/ZgDr3+HF9L35TrTTQ7XwUiXIIqz35DlymcKbm5PF9bZobnKmMjqUyuV77OzO2M0Ez4M3/6lz8pWEGDrSljFEYNVLWCxqrDYVYvhQesUxUEEuz9WekZPQIgTBqFwcYw==\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 315,\n    \"candidatesTokenCount\": 177,\n    \"totalTokenCount\": 1186,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 315\n      }\n    ],\n    \"toolUsePromptTokenCount\": 377,\n    \"toolUsePromptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 377\n      }\n    ],\n    \"thoughtsTokenCount\": 317,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-3.1-pro-preview\",\n  \"responseId\": \"Rf-mapbqIvilxN8Phrnf8Ao\"\n}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+                "signature": "7e7f59f22acca2f05e0d321b7b031463",
+                "signature_v2": "d07bb7028fcb0ae5e5a5ced40fc2246d",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"code_execution\":{}}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"Compute the 10th Fibonacci number using a short Python snippet.\"}]},{\"role\":\"model\",\"parts\":[{\"executableCode\":{\"language\":\"PYTHON\",\"code\":\"def fib(n):\\n    a, b = 0, 1\\n    for _ in range(n):\\n        a, b = b, a + b\\n    return a\\n\\nprint(fib(10))\",\"id\":\"call_2820570\"}},{\"codeExecutionResult\":{\"outcome\":\"OUTCOME_OK\",\"output\":\"55\\n\",\"id\":\"call_2820570\"}},{\"text\":\"The 10th Fibonacci number is **55**. \\n\\nHere is a short Python snippet you can use to compute it:\\n\\n```python\\ndef fib(n):\\n    a, b = 0, 1\\n    for _ in range(n):\\n        a, b = b, a + b\\n    return a\\n\\nprint(fib(10))  # Output: 55\\n``` \\n\\n*(Note: This assumes the sequence starts with $F_0 = 0$ and $F_1 = 1$.)*\",\"thoughtSignature\":\"ErgBCrUBARFNMg\\/4zFf\\/H85ufjqnqr6lpHZaHW+9WgRPa+SAiUSqJUrQ+mFRlTyem1u4UlYTur2D0hTYdxZmL0Xb61yGrzIUI99GLtZt+2ZgU4qy3rMpoj8FGM2\\/ZgDr3+HF9L35TrTTQ7XwUiXIIqz35DlymcKbm5PF9bZobnKmMjqUyuV77OzO2M0Ez4M3\\/6lz8pWEGDrSljFEYNVLWCxqrDYVYvhQesUxUEEuz9WekZPQIgTBqFwcYw==\"}]},{\"role\":\"user\",\"parts\":[{\"text\":\"What number did your snippet print? Answer with the number only.\"}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "887"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"55\",\n            \"thoughtSignature\": \"EoEECv4DARFNMg+a+Bpm4L2EIpJp4gVFGGron5LQ8wI/JQDqyt2tqp1OM2ufZTo6SXk4WdBJ8eCykO8ZogtmoLpNoXlUF5veXRwq4QTljxl2jZ2mziGt0Y/4rjvnbuZezfIDXBCq7ut/G6KZmJZrICU9UgRSGOCWX6/yg0IzKo/3gL+K1Gi/SnTKvDy+x9QV9eC0jSlnFdvVP0f2Am2El0zoNMQbitDbmQbe2PqMdc1TP68oR6X2v1SE8T7parmmjU3JREs4Q9+YtVUshtXlPjj5xSG1hPHWxaRS8A5CA9ww2N0T0a3fWdPM2YdaxtjbMA1EVL9H6bEmrfoplyYwDDDpbcqya5YGC7xRmD1mAOBL/TD3DnudHkIEltilDz6q1ZUFG1jpQnfUM0IU9jBtrM7xG+QtiUJVoXnsqTY0qbLLuKdW9YL6zO4YH9kx5rL8Kyxq3zxzbb5MegfAN+dQb/kjnBsm/RNzPNNtFUe8dsAIjq2f52FpIW1ffALI4ws8h7JEebLfYgMSS9dh2JgN999QX1SkpyhFddmpP/ZXZ1amVAvkWm5k+KFWU5vHcwRGWoIlKFyJWyZ54qvb/d2BItfTxsDpYX4DxT6hUTZ+DeGxq26sty6OSmyuUBUtOAd79SAelOSAO2PJH3vM9hDFtI8GHRMv6DZaSy97ujkm4uoLkDFG\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 147,\n    \"candidatesTokenCount\": 2,\n    \"totalTokenCount\": 247,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 147\n      }\n    ],\n    \"thoughtsTokenCount\": 98,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-3.1-pro-preview\",\n  \"responseId\": \"Uf-mapT5KvSX28oPq769-AY\"\n}\n"
+            }
+        }
+    ]
+}

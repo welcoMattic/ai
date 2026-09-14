@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "a13ad227548449f9151d82b571f37277",
+                "signature_v2": "6605e1b08075d80acd6b88b855780d59",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"web_search\"}],\"model\":\"gpt-4o-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What are the latest developments in quantum computing?\"}],\"instructions\":\"Use the web to answer the user with up-to-date information.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999654"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "2ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_00748b8d6baf0754006aa7002d6de087d2975ca0eae0e23af6\",\n  \"object\": \"response\",\n  \"created_at\": 1789329453,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329457,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"Use the web to answer the user with up-to-date information.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-4o-mini-2024-07-18\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"ws_00748b8d6baf0754006aa7002dc97487d2ab42a5580531cd26\",\n      \"type\": \"web_search_call\",\n      \"status\": \"completed\",\n      \"action\": {\n        \"type\": \"search\",\n        \"queries\": [\n          \"latest developments in quantum computing 2023\"\n        ],\n        \"query\": \"latest developments in quantum computing 2023\"\n      }\n    },\n    {\n      \"id\": \"msg_00748b8d6baf0754006aa7002ea68087d28d72873395cefefd\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [\n            {\n              \"type\": \"url_citation\",\n              \"end_index\": 718,\n              \"start_index\": 500,\n              \"title\": \"'This new system will help you do more quantum computing, faster': IBM says its Nighthawk r2 quantum processor marks a step change in compute capability\",\n              \"url\": \"https://www.itpro.com/infrastructure/this-new-system-will-help-you-do-more-quantum-computing-faster-ibm-says-its-nighthawk-r2-quantum-processor-marks-a-step-change-in-compute-capability?utm_source=openai\"\n            },\n            {\n              \"type\": \"url_citation\",\n              \"end_index\": 1201,\n              \"start_index\": 1069,\n              \"title\": \"Princeton puts quantum computing on the fast track with new qubit\",\n              \"url\": \"https://www.princeton.edu/news/2025/11/05/princeton-puts-quantum-computing-fast-track-new-qubit?utm_source=openai\"\n            },\n            {\n              \"type\": \"url_citation\",\n              \"end_index\": 1556,\n              \"start_index\": 1423,\n              \"title\": \"IonQ | IonQ Achieves Landmark Result, Setting New World Record in Quantum Computing Performance\",\n              \"url\": \"https://www.ionq.com/news/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing?utm_source=openai\"\n            },\n            {\n              \"type\": \"url_citation\",\n              \"end_index\": 2130,\n              \"start_index\": 1948,\n              \"title\": \"Berkeley Lab and NVIDIA Collaboration Accelerates U.S. Leadership in Hybrid Quantum\\u2013Classical Computing - Computing Sciences \\u2013 Computing Sciences\",\n              \"url\": \"https://cs.lbl.gov/news-and-events/news/2026/berkeley-lab-and-nvidia-collaboration-accelerates-u-s-leadership-in-hybrid-quantum-classical-computing/?utm_source=openai\"\n            },\n            {\n              \"type\": \"url_citation\",\n              \"end_index\": 2719,\n              \"start_index\": 2527,\n              \"title\": \"Quantum navigation set to replace GPS as Q-CTRL, US Department of War, and Saab achieve separate successful trials within weeks\",\n              \"url\": \"https://www.techradar.com/pro/quantum-navigation-set-to-replace-gps-as-q-ctrl-us-department-of-war-and-saab-achieve-separate-successful-trials-within-weeks?utm_source=openai\"\n            },\n            {\n              \"type\": \"url_citation\",\n              \"end_index\": 3130,\n              \"start_index\": 3026,\n              \"title\": \"G7 sounds alarm on quantum cyber threats\",\n              \"url\": \"https://www.itpro.com/security/g7-sounds-alarm-on-quantum-cyber-threats?utm_source=openai\"\n            },\n            {\n              \"type\": \"url_citation\",\n              \"end_index\": 3597,\n              \"start_index\": 3293,\n              \"title\": \"Quantum navigation set to replace GPS as Q-CTRL, US Department of War, and Saab achieve separate successful trials within weeks\",\n              \"url\": \"https://www.techradar.com/pro/quantum-navigation-set-to-replace-gps-as-q-ctrl-us-department-of-war-and-saab-achieve-separate-successful-trials-within-weeks?utm_source=openai\"\n            },\n            {\n              \"type\": \"url_citation\",\n              \"end_index\": 3771,\n              \"start_index\": 3638,\n              \"title\": \"G7 sounds alarm on quantum cyber threats\",\n              \"url\": \"https://www.itpro.com/security/g7-sounds-alarm-on-quantum-cyber-threats?utm_source=openai\"\n            },\n            {\n              \"type\": \"url_citation\",\n              \"end_index\": 4168,\n              \"start_index\": 3809,\n              \"title\": \"'This new system will help you do more quantum computing, faster': IBM says its Nighthawk r2 quantum processor marks a step change in compute capability\",\n              \"url\": \"https://www.itpro.com/infrastructure/this-new-system-will-help-you-do-more-quantum-computing-faster-ibm-says-its-nighthawk-r2-quantum-processor-marks-a-step-change-in-compute-capability?utm_source=openai\"\n            }\n          ],\n          \"logprobs\": [],\n          \"text\": \"Quantum computing has seen significant advancements recently, with notable developments across hardware, software, and practical applications.\\n\\n**Hardware Innovations:**\\n\\n- **IBM's Nighthawk r2 Processor:** IBM introduced the Nighthawk r2 quantum processor, featuring 120 programmable qubits and a novel dissipative reset mechanism. This design enables the execution of over 100,000 circuits per second, a 25-fold increase over previous models, and reduces qubit reset times to just one microsecond. ([itpro.com](https://www.itpro.com/infrastructure/this-new-system-will-help-you-do-more-quantum-computing-faster-ibm-says-its-nighthawk-r2-quantum-processor-marks-a-step-change-in-compute-capability?utm_source=openai))\\n\\n- **Princeton's Superconducting Qubits:** Engineers at Princeton University developed superconducting qubits with coherence times exceeding one millisecond, three times longer than the best previous lab settings and nearly fifteen times longer than industry standards. This advancement is crucial for the scalability of practical quantum computers. ([princeton.edu](https://www.princeton.edu/news/2025/11/05/princeton-puts-quantum-computing-fast-track-new-qubit?utm_source=openai))\\n\\n- **IonQ's Two-Qubit Gate Performance:** IonQ achieved a world record with a two-qubit gate fidelity exceeding 99.99%, marking a significant milestone in reducing error rates and enhancing quantum computing performance. ([ionq.com](https://www.ionq.com/news/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing?utm_source=openai))\\n\\n**Software and System Integration:**\\n\\n- **Berkeley Lab and NVIDIA Collaboration:** A partnership between Lawrence Berkeley National Laboratory and NVIDIA aims to integrate quantum processing units (QPUs) with graphics processing units (GPUs) in real-time. This collaboration seeks to address challenges in hybrid quantum-classical computing, enhancing data throughput and reducing latency. ([cs.lbl.gov](https://cs.lbl.gov/news-and-events/news/2026/berkeley-lab-and-nvidia-collaboration-accelerates-u-s-leadership-in-hybrid-quantum-classical-computing/?utm_source=openai))\\n\\n**Practical Applications and Security:**\\n\\n- **Quantum Navigation Trials:** The U.S. Defense Innovation Unit, Q-CTRL, and Saab UK have independently conducted successful trials of quantum navigation technologies. These trials demonstrated significant improvements in location accuracy without relying on satellite-based GPS, offering resilient alternatives amid increasing satellite disruptions. ([techradar.com](https://www.techradar.com/pro/quantum-navigation-set-to-replace-gps-as-q-ctrl-us-department-of-war-and-saab-achieve-separate-successful-trials-within-weeks?utm_source=openai))\\n\\n- **Post-Quantum Cryptography (PQC):** The G7 Cybersecurity Working Group issued a joint advisory highlighting the imminent threat quantum computing poses to current public-key cryptography. Organizations are urged to transition to PQC to safeguard against potential \\\"harvest now, decrypt later\\\" attacks. ([itpro.com](https://www.itpro.com/security/g7-sounds-alarm-on-quantum-cyber-threats?utm_source=openai))\\n\\nThese developments underscore the rapid progress in quantum computing, moving from theoretical research to tangible, real-world applications.\\n\\n\\n## Highlights:\\n- [Quantum navigation set to replace GPS as Q-CTRL, US Department of War, and Saab achieve separate successful trials within weeks](https://www.techradar.com/pro/quantum-navigation-set-to-replace-gps-as-q-ctrl-us-department-of-war-and-saab-achieve-separate-successful-trials-within-weeks?utm_source=openai), Published on Wednesday, September 09\\n- [G7 sounds alarm on quantum cyber threats](https://www.itpro.com/security/g7-sounds-alarm-on-quantum-cyber-threats?utm_source=openai), Published on Monday, September 07\\n- ['This new system will help you do more quantum computing, faster': IBM says its Nighthawk r2 quantum processor marks a step change in compute capability](https://www.itpro.com/infrastructure/this-new-system-will-help-you-do-more-quantum-computing-faster-ibm-says-its-nighthawk-r2-quantum-processor-marks-a-step-change-in-compute-capability?utm_source=openai), Published on Friday, September 04 \"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": null,\n    \"effort\": null,\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 1\n    }\n  },\n  \"tools\": [\n    {\n      \"type\": \"web_search\",\n      \"return_token_budget\": \"default\",\n      \"search_content_types\": [\n        \"text\"\n      ],\n      \"search_context_size\": \"medium\",\n      \"user_location\": {\n        \"type\": \"approximate\",\n        \"city\": null,\n        \"country\": \"US\",\n        \"region\": null,\n        \"timezone\": null\n      }\n    }\n  ],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 8174,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 943,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 0\n    },\n    \"total_tokens\": 9117\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

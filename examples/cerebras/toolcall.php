@@ -20,7 +20,7 @@ require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('CEREBRAS_API_KEY'), http_client());
 
-$toolbox = new Toolbox([new Clock()], logger: logger());
+$toolbox = new Toolbox([new Clock(clock())], logger: logger());
 $agent = new Agent($platform, 'gpt-oss-120b', toolbox: $toolbox);
 
 $messages = new MessageBag(Message::ofUser('How many days until next Christmas?'));

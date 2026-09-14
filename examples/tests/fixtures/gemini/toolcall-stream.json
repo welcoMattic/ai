@@ -1,0 +1,51 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:streamGenerateContent?alt=sse",
+                "signature": "b7a8d18ee3d5589409b174a8e6bd6585",
+                "signature_v2": "9eb503881533bf66768a1478feeef45c",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Provides the current date and time.\",\"name\":\"clock\",\"parameters\":null},{\"description\":\"Returns the capitals of a few European countries.\",\"name\":\"list_european_capitals\",\"parameters\":null}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"    What time is it right now, and which European capitals do you know about via your tools?\\n    Please tell me before you call tools.\"}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "text/event-stream"
+                    ],
+                    "content-disposition": [
+                        "attachment"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "sse",
+                "body": "data: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"I will now check the current time and retrieve the list of European capitals using my\"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 74,\"candidatesTokenCount\": 16,\"totalTokenCount\": 328,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 74}],\"thoughtsTokenCount\": 238,\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-3.1-pro-preview\",\"responseId\": \"Rf-mapyzKYaU3boP2OmD-AY\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" tools.\"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 74,\"candidatesTokenCount\": 18,\"totalTokenCount\": 330,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 74}],\"thoughtsTokenCount\": 238,\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-3.1-pro-preview\",\"responseId\": \"Rf-mapyzKYaU3boP2OmD-AY\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"functionCall\": {\"name\": \"clock\",\"args\": {},\"id\": \"call_3809552\"},\"thoughtSignature\": \"Et0JCtoJARFNMg/WN7FZBrQPlJQdephWDOswwQzizCFl6jSCMWiBVjW3aRUlOjsD3Qr0cwi2BxGaMBQbzVE2hkiI0+v86tcGEa9mIJOrOzvFgk0PMmdn2rfUyT8LyPfFVQsGI/IiGms6Dq3C+IYzEebIEhRTh9Ibh5BxFaTXokbhCXeX0rMVkpAVIIkEoTSbF17yF7ZlZtk2YeSgLIOfyN6uG/FwhlwoFJ/xxrBPSlhxrMjPNTxdYtIQbh6f6+ieMKxDRuf0ECO//m8ut9K+TOI0qLKvVMfWTU4qplXHK9uxOxIhG1NWAx3s2lx5eGy8vEdmXHRFHwkRoO6HJ7JIxRYa03ShREnjBv2zyMYmSv5++rcPHq0TTepV/nCw0SW2RQGsW+HZcOC+dCKGsqwhnEFsH5hcOWtTxVEMFEYCfOVa6ilW5hJ9KK2sRkEGIVy2+a345uNS5+RRvFrOUMHOBCeAuSjSsm78LYg2aqAW90ZELPxOw6vIR3w0QU3i7ltxXirhzLjRYDsl1ktvbZyuvYT4/nMxOxL0/00GK5O8XxLvGY0hvK6ecIP1GB4cdZ/jXg7afsTPA9zW38yCtTWDXw2fZpetMd2vj8ClfpJbZyxrBrkIcqFT5/VOnG50Ec1KoKyfJiDsqz9d59UH2IZlWgu4RODc5V1WFHqqPzMoQojaKIcMU2X3BlfwU8ybUG5Dma5gKy0+a2yqltgyn7TgJoMZhyhtWTsXHPtUxu1an5bmtiIOaBedJMA+dWW/RX4SOmJ0phg4iGKgvH6sQsktYw3TjfRNeGlE4fTAIH9kx52GgAv2aU/bvlGqN5XiRczWBgzysG3anbCE42FWv3GdT3//YUkmebOjFsW86brP2bYwahCB8pr1+OfpVvw3Jp4N2wsVGb2y5wP5dtH7PO2aHrAc48LmZ8WgnWHzyBpQ/dbACHKT1sB7Mxs5/Gf8mPfhUqlpWnO4iVLtMPTOW1UKBmvlzW1WWaExN9zSGDjZxXzskH3niOScfV8HZrTm3bmzJCSgPG+l0WDU3NtY8n5Tu8smGvpEX/o2aJyZ5uQjXnoUydJYi1ALmQk6gNiEcZEPbIE6d5NOEcFZOSmysaHuwHEiy9w3rnb/ZvgSdpft7z9/BeZdSnVrM9E9jUwSuHVVyQIxC5Z1qr+L0hKMnjgVfUZsORH185MMcBwo048OLNscj06lWQoqZEIfan8xfz4dqm5gY2NAl1j6LuSH75xJ4A5H5mefWpe4jeoj3nY/L/6RkaKNw3zy+OYVqh+klAJawIiVD+YmkKeAXHkkRa41QfH9oV4sr49jpr6Z4sPHcIK0NR1pnQDBFAyQ0Ia/mEpTCFM4pltKogP58JeUNiD1xztt9XbdB8WHvsbJcvEurRRhls85TUY9BWP2D6H2JPyAp3A+KnRcE985vgw4R+YSYEAgacCDb7KxcfSWWJVmKUz1z2w1fSueaHlr9Y1kvHjVYy8/FuShe9AQls30n0gRPOCh5Yx6t0g9oszgLcWQOA7ARaxEG+ztQz1ipdjPnPqklnxIQZbtqWSVxSNYuUBd/p95u45qEh9UJ3vf6qeYonOmu4MLtl79cc9/JXliMH0Gi2iX6a3Y6tnWrVANaGIxAKJcBBB/Mmm3mk1pKGK5c0J3yNqk6qXPrrM07CapWv0N\"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 74,\"candidatesTokenCount\": 26,\"totalTokenCount\": 338,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 74}],\"thoughtsTokenCount\": 238,\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-3.1-pro-preview\",\"responseId\": \"Rf-mapyzKYaU3boP2OmD-AY\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"functionCall\": {\"name\": \"list_european_capitals\",\"args\": {},\"id\": \"call_3809560\"}}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 74,\"candidatesTokenCount\": 39,\"totalTokenCount\": 351,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 74}],\"thoughtsTokenCount\": 238,\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-3.1-pro-preview\",\"responseId\": \"Rf-mapyzKYaU3boP2OmD-AY\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"\"}],\"role\": \"model\"},\"finishReason\": \"STOP\",\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 74,\"candidatesTokenCount\": 39,\"totalTokenCount\": 351,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 74}],\"thoughtsTokenCount\": 238,\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-3.1-pro-preview\",\"responseId\": \"Rf-mapyzKYaU3boP2OmD-AY\"}\r\n\r\n"
+            }
+        }
+    ]
+}

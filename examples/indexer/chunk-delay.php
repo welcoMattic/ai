@@ -18,14 +18,13 @@ use Symfony\AI\Store\Indexer\DocumentIndexer;
 use Symfony\AI\Store\Indexer\DocumentProcessor;
 use Symfony\AI\Store\InMemory\Store as InMemoryStore;
 use Symfony\AI\Store\Query\VectorQuery;
-use Symfony\Component\Clock\Clock;
 use Symfony\Component\Uid\Uuid;
 
 require_once dirname(__DIR__).'/bootstrap.php';
 
 $platform = Factory::createPlatform(env('OPENAI_API_KEY'), http_client());
 $store = new InMemoryStore();
-$vectorizer = new Vectorizer($platform, 'text-embedding-3-small');
+$vectorizer = new Vectorizer($platform, 'text-embedding-3-small?dimensions=256');
 
 // Create a batch of documents to demonstrate the chunk delay behavior
 $documents = [
@@ -56,23 +55,25 @@ $documents = [
     ),
 ];
 
+$clock = clock();
+
 $indexer = new DocumentIndexer(
     new DocumentProcessor(
         vectorizer: $vectorizer,
         store: $store,
         transformers: [
-            new ChunkDelayTransformer(new Clock(), 1, 10, logger()),
+            new ChunkDelayTransformer($clock, 1, 10, logger()),
         ],
         logger: logger(),
     ),
 );
 
 echo "Indexing documents with chunk delay...\n";
-$startTime = microtime(true);
+$startTime = $clock->now();
 
 $indexer->index($documents);
 
-$elapsedTime = microtime(true) - $startTime;
+$elapsedTime = (float) $clock->now()->format('U.u') - (float) $startTime->format('U.u');
 echo sprintf("Indexing completed in %.2f seconds.\n\n", $elapsedTime);
 
 $vector = $vectorizer->vectorize('machine learning artificial intelligence');
@@ -80,5 +81,5 @@ $results = $store->query(new VectorQuery($vector));
 
 echo "Search results for 'machine learning artificial intelligence':\n";
 foreach ($results as $i => $document) {
-    echo sprintf("%d. %s\n", $i + 1, substr($document->getId(), 0, 40).'...');
+    echo sprintf("%d. %s\n", $i + 1, $document->getMetadata()['title']);
 }

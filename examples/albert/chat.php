@@ -15,7 +15,7 @@ use Symfony\AI\Platform\Message\MessageBag;
 
 require_once dirname(__DIR__).'/bootstrap.php';
 
-$platform = Factory::createPlatform(env('ALBERT_API_KEY'), env('ALBERT_API_URL'), http_client());
+$platform = Factory::createPlatform(env('ALBERT_API_KEY'), 'https://albert.api.etalab.gouv.fr', http_client());
 
 $documentContext = <<<'CONTEXT'
     Document: AI Strategy of France

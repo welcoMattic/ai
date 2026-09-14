@@ -1,0 +1,110 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "signature": "4437f39fa647ca7a46f02cf170e23f4b",
+                "signature_v2": "de7f1eadaa1bfb787dc101c624704c8d",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Provides the current date and time.\",\"name\":\"clock\",\"parameters\":null}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"What time is it?\"}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "608"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"functionCall\": {\n              \"name\": \"clock\",\n              \"args\": {}\n            },\n            \"thoughtSignature\": \"CswBARFNMg81XRY2B0z0UC1XwV7JqZ4GUe31kwM2dwL66FznVuu4YbaKJhvHDZtwbxu2c3D/EYZactfpL5HQa8zo8Rcl2C9oQDGFrWmotJK0drMcV0swoawu9eHQGXTZT5IT+Q8VX845w3Kck2ZwuURcJS4awprG9LNaolg0E6V5I1spoAWwN6u5sw+k6+DBtJdhwHioRKgkZRe0FdguIkFW6DWFrttOO6GayNwo0JoDiX5GsB1B+WWk0qiSI5yCaF+nZF8xumxn8euVIswU\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0,\n      \"finishMessage\": \"Model generated function call(s).\"\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 32,\n    \"candidatesTokenCount\": 8,\n    \"totalTokenCount\": 78,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 32\n      }\n    ],\n    \"thoughtsTokenCount\": 38,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"Rf-mapuEGrHSxN8Plfrr8Qs\"\n}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "signature": "d087c49b574366340bf4bd546a3f55ea",
+                "signature_v2": "fa5cfa33b6bf652d6bdd6e7bfac8e572",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Provides the current date and time.\",\"name\":\"clock\",\"parameters\":null}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"What time is it?\"}]},{\"role\":\"model\",\"parts\":[{\"functionCall\":{\"id\":\"\",\"name\":\"clock\"},\"thoughtSignature\":\"CswBARFNMg81XRY2B0z0UC1XwV7JqZ4GUe31kwM2dwL66FznVuu4YbaKJhvHDZtwbxu2c3D\\/EYZactfpL5HQa8zo8Rcl2C9oQDGFrWmotJK0drMcV0swoawu9eHQGXTZT5IT+Q8VX845w3Kck2ZwuURcJS4awprG9LNaolg0E6V5I1spoAWwN6u5sw+k6+DBtJdhwHioRKgkZRe0FdguIkFW6DWFrttOO6GayNwo0JoDiX5GsB1B+WWk0qiSI5yCaF+nZF8xumxn8euVIswU\"}]},{\"role\":\"user\",\"parts\":[{\"functionResponse\":{\"name\":\"clock\",\"response\":{\"result\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 19:53:41 (HH:MM:SS).\"}}}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "328"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"The current time is 19:53:41 (HH:MM:SS).\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 93,\n    \"candidatesTokenCount\": 20,\n    \"totalTokenCount\": 113,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 93\n      }\n    ],\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"Rv-mapKlCrLT28oPks2O6QE\"\n}\n"
+            }
+        }
+    ]
+}

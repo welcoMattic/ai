@@ -1,0 +1,77 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cohere.com/v2/audio/transcriptions",
+                "signature": "7b88a317706b335732a661baaaa6bc74",
+                "signature_v2": "15c500a146efe6d86dafc14b0ef800ad",
+                "headers": {
+                    "content-type": [
+                        "multipart/form-data"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "language": "en",
+                    "model": "cohere-transcribe-03-2026",
+                    "file": "[resource audio.mp3, 51019 bytes]"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "access-control-expose-headers": [
+                        "X-Debug-Trace-ID"
+                    ],
+                    "cache-control": [
+                        "no-cache, no-store, no-transform, must-revalidate, private, max-age=0"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "expires": [
+                        "Thu, 01 Jan 1970 00:00:00 GMT"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "vary": [
+                        "Origin,Accept-Encoding"
+                    ],
+                    "x-accel-expires": [
+                        "0"
+                    ],
+                    "x-debug-trace-id": [
+                        "5cfa09d53931fcf21d916e7cf80c8211"
+                    ],
+                    "x-endpoint-monthly-call-limit": [
+                        "1000"
+                    ],
+                    "x-trial-endpoint-call-limit": [
+                        "100"
+                    ],
+                    "x-trial-endpoint-call-remaining": [
+                        "99"
+                    ],
+                    "content-length": [
+                        "87"
+                    ],
+                    "server": [
+                        "envoy"
+                    ],
+                    "via": [
+                        "1.1 google"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"text\":\" Wishing you a Merry Christmas and a Happy New Year.\"}"
+            }
+        }
+    ]
+}

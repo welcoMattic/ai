@@ -1,0 +1,12 @@
++-------------------- Token Usage ---------------------+
+| Model                   | claude-sonnet-4-5-20250929 |
+| Prompt tokens           | 24                         |
+| Completion tokens       | 383                        |
+| Thinking tokens         | n/a                        |
+| Tool tokens             | n/a                        |
+| Cached tokens           | 0                          |
+| Remaining tokens minute | n/a                        |
+| Remaining tokens month  | n/a                        |
+| Remaining tokens        | n/a                        |
+| Total tokens            | n/a                        |
++-------------------------+----------------------------+

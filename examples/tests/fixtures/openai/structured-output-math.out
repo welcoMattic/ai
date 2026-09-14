@@ -1,0 +1,18 @@
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {#473
+  +steps: array:3 [
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#498
+      +explanation: "Start with the equation: 8x + 7 = -23. First isolate the term with x by subtracting 7 from both sides."
+      +output: "8x = -23 - 7 = -30"
+    }
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#492
+      +explanation: "Now solve for x by dividing both sides by 8."
+      +output: "x = -30/8 = -15/4 = -3.75"
+    }
+    2 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#489
+      +explanation: "Check the solution by plugging x back into the original equation."
+      +output: "8(-15/4) + 7 = -30 + 7 = -23, which matches the original right-hand side."
+    }
+  ]
+  +finalAnswer: "x = -15/4 = -3.75"
+  +result: -3.75
+}

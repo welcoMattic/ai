@@ -16,7 +16,6 @@ use Symfony\AI\Platform\Bridge\VertexAi\Factory;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 use Symfony\AI\Platform\StructuredOutput\PlatformSubscriber;
-use Symfony\Component\Clock\Clock as SymfonyClock;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 require_once __DIR__.'/bootstrap.php';
@@ -26,8 +25,7 @@ $dispatcher->addSubscriber(new PlatformSubscriber());
 
 $platform = Factory::createPlatform(env('GOOGLE_CLOUD_LOCATION'), env('GOOGLE_CLOUD_PROJECT'), httpClient: adc_aware_http_client(), eventDispatcher: $dispatcher);
 
-$clock = new Clock(new SymfonyClock());
-$toolbox = new Toolbox([$clock], logger: logger());
+$toolbox = new Toolbox([new Clock(clock())], logger: logger());
 $agent = new Agent($platform, 'gemini-2.5-pro', toolbox: $toolbox);
 
 $messages = new MessageBag(Message::ofUser('What date and time is it?'));

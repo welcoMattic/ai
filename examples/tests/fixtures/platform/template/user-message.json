@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "ffe816d937353ccc4a966abdf23f3b4e",
+                "signature_v2": "75830e921434636201764f89a35ba90b",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"Tell me about PHP\"}],\"instructions\":\"You are a helpful assistant.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9998617"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "8ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_052d2bc15dec68e2006aa7003b884487d293ca3b4b295e5481\",\n  \"object\": \"response\",\n  \"created_at\": 1789329467,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329482,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are a helpful assistant.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_052d2bc15dec68e2006aa7003c018c87d2ae913746a7594475\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwBKur0vx1nad_W5F1JMyktUQuoD4Fpib96IM7Q7Xt8rbUU1AaKJWFoOa8Vh1iCi_RhHGz3ZkPtyv5m-O1eweZ_oxK4COKLfQh4ywdXOVq8X5QF1AovOaBWvs3Ulbf_Bdcx1iy0YEgmA187wHg5-_UbNOwSMAAmuc0Ohdg0oCIOFOtUTERhlwOxiEP527Mq-TWovjeiPqWNUEu6mWohP-awWogafVaDCHS3IcrdMD4F1yBG4GA92HIbMyesHaF1NyY6k-F0WzG1xDLo7ILGbsQJLujB80QLc8oy4_aRWdceDpM2onLmB0m9FGIgLxdhivxNkDeu4Yge6zr1JBXeOf-QMDZ2AvNrI6o-QFKcRBg8SSS9lOOp0itve9XuHg2gbLIZu3Ef_MbgWOK0bhW5DD0hrfvy_MYlT3hrpObNSTzP_Y9QAYvIFvh7h434RxPv9-E1FZEwq4MNOh4vyzDeR_rnxhcmrXJroYQVbLNaSSr5lpDMFoPO3q-3DJVmqVEhr6nL1rgj3-KI508zXbbV11ESY1YW9L0YfW31jevoKGrBth9aeaG5qvzoUg9mxGenbFIrFJvd6DCwaa_xbPu9sWe3agp87Gf-nMdqqITFix_HTNrVqlIxn7ubofDKamci8PrOy_Uql99LjhO-0z1CWp19lldlAp0Y-T1lmTkAfdw6R4Px2CTymOBh5sy5EnxByVLije-sJhTAQvEwjs7JTNBWZQHPmOOwW2ZUavsee5xSNb7h5ib6ZOGy7kyouljkdFXXMKpLpcWIFKZMzkKhISvja5QlovOYTECTjgu5tlMwNjqzh4XJ41q2ymA77AG4G00_QvAwMlODYx0IwMeoYjsgnP6EvTdte7zfc--XjzlAoI5PTsYbUO0n0Dj9Sw5Wpk_9DQIrLx-9uojlJpcJdM3A50ZmUX6CfMKyvrD7yETqyjZkmtpLKjN7PC9LI1dKREqvHzgwOESfTmfLAYpHPH6OcbHVknBWalVIu-1jZ4hC0wtKWyMFfnZBBy19JncAk9NvD2GR1ex_fgzsZivjMIw5_07ylIlRnRqr5Vu3tTNJQp03irBWy3y-JxTTHLeg0AByIFohPyeplmjxXM6MlWItYJkHhYpmZpYwH0MlfXuzIEufVrVnfZpwUowig86kV8YeXj7yfG02kh0DFHzfQWjXK36kXSgkR72DianaFi-OqL_Xe9VxlLzkQoNDS_5G67KdSZsekxOmzLSkbQTjsMhpqciJKSRkOp90faN_odKTSILxGrs0v1JApN_QAwbTNzNiiyo4f7jkTLIuj7n2CkroHK1WXXD40ddyk7j-IZIM4r5nbbmyAXRUbO1I4_W0PAwoIOdBrgexbMXblvyCIWwZsVLyxJJRKcZAZJXLKP-eA6aJtd-ZVCMmwX5G3NY3HlzCSG5dd00hFycxu-Dr_Hi_pLK7zADB-hUpNptNSIRowu7zo_h-CyryRvGWtu2rnS4Bx21YnICGSbSU2jcp-Rym6gjlhE1Fj9D36ctZfNmBLqWYX24ZoErHtvZfQd0xFsdQKV5K7oDMD9XNEFaiGDF1eHgVSfJsNHiUnp54hiqm7-XvhiTPM3xbEYIPr6EDdjBwM43CUpSH4SD7-LoQnIJmhtIvOrm5Ya_OepeYEBJ4a2PiqspLJ1AtdsKG9QRWiUXXsa86ZDVsu47om0w2dnnwSFXINhY8tAiBFW8orEXtFRObSpEEP5AKxggb_5HdMWBcDQ82HPhcv1SsHJ-kjGl2oExCm4VyBk82pTZuJ5I5Ivggg-BWm52zbrku03_UitQTbJABapdlpHIwCL3QWUV08MhVJLR5IA659duHja6sLgBPp0hN-2i7lgo-p1a3OjJUs152nngu6QpOMAuGbmnofv_vbBeLxBzkASCtUm5QhKbbfDygBvhSuUW_5kJvdG3MMJayHNgSG7MwA_BkiiqGZ9uwjvuTdVIVIbt3V7CAF9s2sE3MqY-SFRIWFsS7ZDZS4leZAIprzoSJx2it5pmZxR7g8-NUUtr0G3LHdgU8iAx1DiVSe46wj2nFNVSxzinhFblIY_vi6TAz2mdmiwnaD3lD3Nq4iWJ3rVoSqj2IsqRqtt8B9TT_n-XWKLg5OlkCw2h1h1h7kJgH-vXEyPbFQa8A0A1LyhlES4oo6Qv9GMOsjdNkVk-s6PpGcrt4eOaw1S_yotAL2Vn8i-FHO24U5mbEZaK5QhuJYhDHSuirTluaJAgwBGXgvct7cAc-QNEbvgAZzMVGJ6Z4ndxw98B_dXAk0KVKfMQpR2GVM7sa4o2TMxjHwZ4y1IjbHUofBb70aP9ha_y3TGyM3GfztDA4fbIIKLMgj4Qgj2k1txc5p9UeDv6IX5MfuGOyLvNu0WJ1jKa2D3rBPfPh9gSyy73UxGXyjTGnhukSa6pYDCBqtk46M3EuyY5jjh_a0WQIXiLFTbnw7ciy2NtDMVw5xxH6p6ehWTojgMf_Rrdwc-3ZT6DszJbwZGRgfxNqf1Glaa_kmm2cKL6OQqdj-Ou-pruKBEc2hNwX7MJPA2F4G6a7mim1Yu6ya0q2F7eFHM9TjB4jk-FsnDsL-DUpPsFzNIXAu7JDiU4VQfCilS_GgbJoNYjb3KRfRY663oh7gjCqjkXUUPGcE3IQNwbvaq696UmIUfo8tWpmFiQfWXi29t_AWWwpTn6FY3bhGljqv_ffwEYvDtt-KHHOjWqYx1lKzIZGkq9VNqWVR5l_SjSNr-sdcQhBi49BHbxWVDNMECLL5l_lmsAr1UI0hnmJ4i_df8AowJW9jd9qefGFAbxfapR-jEr7J7INFUwoOburDBYYnxyMUXcLGN5u7iwNOqTXu9-pDfk_hpxcG9kguC6yNpvquWCbCDqU_4aSBe4d3DGxxVPki1li1YBhE2thIEqtNgdgVwz270wsCSdWz5zP7X0rR0lqN4JNTtbDJjpLhF4MKdU1CmbIqBlVTAE_lv_kDLa0luL-OPw5p9-gm09vYJ9VmGkeEoP6m7DwYIbEjF_8m-mGL8yh5EnPkCUn7l1bw8o-c3H4g2YUoASXmFWk-ZiWFyfP6KI3BzQOVlbRXFlHfw7FTtVmihD7VV2mUWmOM2cVxF6VMvoh4QmDwWo48eSJ0zcpp9Eb-OttElcSShPwu7Fpip4gM3T4O033GZuFmVnumNwYANeTZKT1CqMr4mvkU00O1CpNJoUwdZ8_dO-HLOeCUsKOZwwWASaLZJw-NWJ91jtt6A2r-KANzTgpZwF3bcg8tz1gPqWIsmT17K2XjcvvekoPFcDukUs-1QBV3hRaCvErCT4LAlYjX_0AMi1pviVo0Hj4xW1tEWkRImb9xmVGj1AJE0pg9U5O2bKsDw8rqdeHEjyilo9SUXbmWkTdZ4HqjGh4FApfIeyhhc_KtfFsA64uMRUZugJTFf_RZ_DRdURxt_pzRq7-3bgLouVWqCwabUBQpqBqaT7NmGjBZXsxHU-9rwAjMdG0efDvPMkcwxJPg7-XRXVMa5kBdouw7w8K_JpP6Q22Qeru9jb7E_hiDIdRbwacoTY__goTutIGODVxsjDCwpLapoVTNajLs3w8B6SNN-gdLBZlO5niuAH520AHkQUzZwAx892Vh4iOy4zcBoRh-_J9Ul8qu3BP6All26xfzWL12S14jJDgrThVq8nDJkPrnTUigCafxymQMdroHEV1VD7Adk8vcpzuUq3SP1zGUFlhL7QF58-Xt71G_y1lGnF1ukJD5F1HrDFkSUjbAN-03FBkJer8Dnf3KCQW98t-yw_prwLT3VEyh3uJzUS4upyDmP05s-779cxGYD5cg17hdSXCpfN1TMp_PRJhzAr-7ARNnJxjUGWNQThLrzNzBz4Ho8h_FimtQf3FbZ9J83JHXptNMX2PzDhFcoW0645gZ-zDrsVMWmoCa95pjhZsoEkYIf0wSnDlsXCE0eg9IdKys9Sy4E3zB48L8tpm5ygX2xmlg7VIMWaL9O2ASi6stxCcg894wK6WV4W9wCy81Wo9ni1QGoHSrOnORBO1oqc6aXrqKfVwTxjSu_gdTEbQEgMoVNv4l2dwYVi5pdX19QpkzNxV5rawNysYSmulqYZr0HfzAROZ6DAtQoNIvevMF0VoIWLiUwiQZZ93yBasoANWloWXSrTcj1pmDP-lWuHWAfG4MkMy08gj7G_MTFreQKVp1x0ynmjKIEHtL9giU831aNcWFq7tSVVpf4Id12e_vh-rOTJAR58CeWgVpTeCujSWomP0SgGCF8g_QwQVXRBVFgWR3LaMmkCZeP2WkUAX-TK6KhBu7_jg2N1WQhtlwOavd4XLA_vaTeytkXFexlGbQRLUzjuooJCUuwCZj_SgxSQSci9p4tiGvjuq73BK5hE34F22z6HciIAPLf6z5kMYQM4OFAXa0f_tuNvJ14lYS-_ujoCwvjBv9vOyBsaFen_oKhe2eGBqQvuYMV5PEC2DmFmkVfPV5OQYOBAiHjOxH9Pi473wgz-9NTlQ4EfXpqsmxTsmj5U2XbZueN7kW2UmNyQGx2ApGfftkfkhm1-nHR7okgEZu0II2a1cOsr74PnTpV_4tM8VBoMZ3FmDcWFfujLJRSl2VmyxS6cdbkkF06HdMYYUkem2_mRZkUkTueDh-nmqdGrW16vVSOXiBxEydOuk6qXb15nHSjwegTIEZaKyaxvjsu4lCYzO4nty3_VnjmAxjjBoiU4RvPzFM-OxPDdtQvi0GyXcEi173btj4QZlfJ3063Mob9Kzt6gfTN21mY6-I7J-1zLjAHx4_s4vY2RYAkwvyuQdfqhay4N-5RRlwguLfRJiRHzINTNhgp6ZHYyCwK7kTiA62D4ieHlPTYBbhhyJE576KJrvPf-ofG9rgmPDxPDGlTksJtJnyCuJXFrY7iMqFAUg5zC5pJ8mUisnU13UOVu896BFW2b3SKOJAUh7IQA5p8CdrGGD6ttQMRtowreyw8QsrD4ReeQzMOLsblclTpksdYJHQcNLTyb7_TQHcluKQlhP0ccAoQRLc0zArbjABaT67WO9eK8th9l9ukdL6vJJvy4U4MmdOtmB9BJm_8Ono4jXr6Zr4o6ImQLC9lvXyX-V2E1CfkBXjKZ3XnPf4OB6nUcA0JT9p5vwEw10_myEti7jJ4tcYzhexQCmBwDQr7OWURC4udBm2Zb0EiKLhDlLo09xxAeuUjjWI2_yf3pCtNrbQzvaJuGb-v5sjMnIpH0t374tXVg9Chz8QkgktS4Q4xUV286LXFy2TsvqmwBcZ_90cTUfSgW0ELti4jk5VSxNChhpz8iHlHv1RWq1sZ2nDgc1BDzCLFv7bjOlD_h_6cohe-M_mv0OeHSeSX9DbPfXnPEor3lOmMpTVF0yLXWDAQUq8gO1F4VGroolzt3rz2kJSirXJ_oehSLIgKP_dhFZgjGP08H2eQRIEavVpxXXR-GcEenQmpqeko54X9nZDDyh21URr4uLpnDk8l2Fxrppts7fYY1EQe9cQFLloyQ_rki0jyWj75c8FylNNUZGB-Ku34k30PU_1doJVxjhTn5QHoj3BwK2TzgSih8RCqJP0bAEG-xOXt_xbn5iIwt_FQ-BbBHzkPrJ4viRVdH04q8rwfw==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_052d2bc15dec68e2006aa700432eb487d2a625990f2292836e\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"Briefly: PHP (originally \\\"Personal Home Page\\\", now \\\"PHP: Hypertext Preprocessor\\\") is a widely used, open-source server-side scripting language designed for web development and general-purpose scripting. It\\u2019s embedded in HTML, runs on the server, and produces HTML (or JSON, images, etc.) delivered to clients.\\n\\nKey facts\\n- Origin: created by Rasmus Lerdorf in 1994.\\n- Engine: runs on the Zend Engine; available as mod_php, PHP-FPM, CLI, and in containers.\\n- Files: typically .php files executed by a web server (Apache, Nginx + PHP-FPM) or run from the command line.\\n- Ecosystem: Composer (package manager), Packagist (package repository), PHPUnit (testing), PSR standards from PHP-FIG.\\n\\nWhat it\\u2019s used for\\n- Building dynamic web pages and web applications (CMS, e\\u2011commerce, blogs).\\n- REST APIs and microservices.\\n- Command-line scripts and background jobs.\\n- Rapid prototyping and full-scale enterprise apps.\\n\\nLanguage evolution and modern features (PHP 8+)\\n- Stronger typing: scalar and union types, nullable types, typed properties, return types.\\n- Modern syntax: attributes (annotations), constructor property promotion, match expressions, nullsafe operator.\\n- Performance improvements: JIT and ongoing engine optimizations in recent 8.x releases.\\n- New constructs: enums, readonly properties/classes, fibers (for async-style code), improvements in error handling and deprecations to modernize the language.\\n\\nMinimal example (PHP 8-style)\\n- Hello world:\\n  <?php\\n  echo \\\"Hello, world!\\\";\\n- Function with typing, union type and nullsafe:\\n  <?php\\n  function greet(string|null $name): string {\\n      return $name?->trim() ? \\\"Hello, $name\\\" : \\\"Hello, guest\\\";\\n  }\\n  echo greet(\\\"Alex\\\");\\n\\nMajor frameworks and CMS\\n- Frameworks: Laravel, Symfony, Laminas (formerly Zend Framework), CodeIgniter, CakePHP.\\n- Popular CMS: WordPress (largest share), Drupal, Joomla.\\n\\nDeployment and tooling\\n- Use PHP-FPM behind Nginx for production; mod_php with Apache is also used.\\n- Docker official PHP images are common for containers.\\n- Composer manages dependencies; PSR-4 autoloading is the de facto standard.\\n\\nSecurity considerations\\n- Protect against SQL injection (use prepared statements / PDO), XSS (output escaping), CSRF (tokens), file upload risks, and others.\\n- Keep PHP and extensions up to date; follow secure configuration (disable unnecessary functions, proper error handling).\\n\\nPros\\n- Easy to learn for beginners, especially for web developers.\\n- Large ecosystem, many hosting options, huge library and CMS support.\\n- Fast development with mature frameworks (e.g., Laravel).\\n\\nCons / caveats\\n- Historical inconsistencies in function names and parameter order (much improved in modern versions).\\n- Large amount of legacy code and older apps can be hard to maintain.\\n- Some performance differences vs. compiled languages (though modern PHP is much faster than older releases).\\n\\nWhen to choose PHP\\n- Building websites or web apps quickly, especially when using established tools like WordPress or Laravel.\\n- When you need wide hosting support or a large ecosystem of libraries and CMS plugins.\\n- When your team already has PHP expertise.\\n\\nWhere to learn more\\n- Official manual: https://www.php.net (excellent documentation and examples).\\n- Composer and Packagist docs.\\n- Framework docs (Laravel, Symfony).\\n- Community tutorials, Laracasts, and books on modern PHP practices.\\n\\nIf you want, I can:\\n- Show more code examples (routing, database access with PDO, or a small Laravel snippet).\\n- Explain how to deploy a PHP app with Docker and Nginx.\\n- Compare PHP to a specific alternative (Node.js, Python, Go) for your use case. Which would you prefer?\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 20,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 1600,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 768\n    },\n    \"total_tokens\": 1620\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

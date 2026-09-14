@@ -74,7 +74,13 @@ PHPUnit replay tests set `CASSETTE=replay` themselves:
   output to the committed golden; this is what CI runs, without keys.
 
 Recording is a local maintainer task — CI has no credentials for the providers, so it
-only ever replays. To refresh a single cassette (golden refresh included), narrow the
+only ever replays.
+
+Credentials and account specific values (endpoints, project or account IDs) stay environment
+variables with a placeholder in `.env.test`: replay runs load it instead of `.env.local`, and
+recordings store the placeholders in place of the real values. Every environment variable an
+example reads needs an entry there; only universal values (API versions, public hosts, local
+Docker defaults) are inlined in the examples. To refresh a single cassette (golden refresh included), narrow the
 record run with a filter:
 
 ```bash

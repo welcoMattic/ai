@@ -1,0 +1,269 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "signature": "814ae8caf5874fef07d376f7a55caed1",
+                "signature_v2": "38fede82cb70486d1156e2ec7f5fc886",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Performs mathematical calculations. Use this when you need to solve math problems or do arithmetic.\",\"name\":\"calculate\",\"parameters\":{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\",\"description\":\"the message to pass to the subagent\"}},\"required\":[\"message\"]}},{\"description\":\"Converts values between units of measurement (e.g. km to miles, kg to pounds, Celsius to Fahrenheit).\",\"name\":\"convert_units\",\"parameters\":{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\",\"description\":\"the message to pass to the subagent\"}},\"required\":[\"message\"]}}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"I drove 150 kilometers. How many miles is that? Also, what is 150 divided by 8?\"}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "862"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"functionCall\": {\n              \"name\": \"convert_units\",\n              \"args\": {\n                \"message\": \"150 kilometers to miles\"\n              }\n            },\n            \"thoughtSignature\": \"CpIDARFNMg9G34Cg80pQyRI8A0FjJ4wgPW1aON53McZ8qFWr8jzjh8wbuAcVFSga1OEQZE+7FeXs4EJzVAlxRfs8LHHOPaSjnHzqZteNkzl/T0lNeVhj2WYjYr74OyaasSmRBxpONM+XpV7gBfRPQBDbRTAEa+hD48rbvWY6miHV+n5ZA2lsKwYcpzW7fXgbrUAK5cECswOk36WuHAxCsVzG+nxjqUHCO/RTBXPP+o7PzXrsIG8bOgIO04xxjFyjbnkT1sAHnfw5wW0xAlwWQQ41Z4Tt/oXK2YUGxySvgL4S04hhkWHBHeKSX7Ro/Q3WS8HjkLo17Ho0ibV0ueK0bwosWpufEjLJkFMiG8Rjdki8KACGb93SWuTqoodW7ZZZW6eTJgR3kDpOP/J34OIHkZiLwRrWPYDCORL/XaFbM1C7q2nd+GyYOgPvDE96QV41+r6grJx5OSm9MRdXGNenL454cVhvJFR/FDydgM1RGpubSkaYkj1ec9NUPKewXdehTRLojfrOOAwRpK8zj1Ghz4mCF5uh\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0,\n      \"finishMessage\": \"Model generated function call(s).\"\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 146,\n    \"candidatesTokenCount\": 20,\n    \"totalTokenCount\": 253,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 146\n      }\n    ],\n    \"thoughtsTokenCount\": 87,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"Rf-maoilGvic28oPm4y_8AI\"\n}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "signature": "c43a1d772bdaa17397a92d7f928552d2",
+                "signature_v2": "754f40b054b2568735a08d61d1aa72e2",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"150 kilometers to miles\"}]}],\"system_instruction\":{\"parts\":[{\"text\":\"You are a unit conversion specialist. Convert values between different units of measurement and return the result with a brief explanation.\"}]}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "449"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"150 kilometers is approximately **93.21 miles**.\\n\\n**Explanation:**\\nTo convert kilometers to miles, you divide the number of kilometers by 1.60934 (since 1 mile = 1.60934 kilometers).\\n150 km / 1.60934 km/mile ≈ 93.20567 miles\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 30,\n    \"candidatesTokenCount\": 84,\n    \"totalTokenCount\": 337,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 30\n      }\n    ],\n    \"thoughtsTokenCount\": 223,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"Rv-marG9HYiXvdIP8ZbnkAs\"\n}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "signature": "d9372389c968227c0c27eb1ffdf8d4f0",
+                "signature_v2": "03b941829131954e5c830385e562e393",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Performs mathematical calculations. Use this when you need to solve math problems or do arithmetic.\",\"name\":\"calculate\",\"parameters\":{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\",\"description\":\"the message to pass to the subagent\"}},\"required\":[\"message\"]}},{\"description\":\"Converts values between units of measurement (e.g. km to miles, kg to pounds, Celsius to Fahrenheit).\",\"name\":\"convert_units\",\"parameters\":{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\",\"description\":\"the message to pass to the subagent\"}},\"required\":[\"message\"]}}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"I drove 150 kilometers. How many miles is that? Also, what is 150 divided by 8?\"}]},{\"role\":\"model\",\"parts\":[{\"functionCall\":{\"id\":\"\",\"name\":\"convert_units\",\"args\":{\"message\":\"150 kilometers to miles\"}},\"thoughtSignature\":\"CpIDARFNMg9G34Cg80pQyRI8A0FjJ4wgPW1aON53McZ8qFWr8jzjh8wbuAcVFSga1OEQZE+7FeXs4EJzVAlxRfs8LHHOPaSjnHzqZteNkzl\\/T0lNeVhj2WYjYr74OyaasSmRBxpONM+XpV7gBfRPQBDbRTAEa+hD48rbvWY6miHV+n5ZA2lsKwYcpzW7fXgbrUAK5cECswOk36WuHAxCsVzG+nxjqUHCO\\/RTBXPP+o7PzXrsIG8bOgIO04xxjFyjbnkT1sAHnfw5wW0xAlwWQQ41Z4Tt\\/oXK2YUGxySvgL4S04hhkWHBHeKSX7Ro\\/Q3WS8HjkLo17Ho0ibV0ueK0bwosWpufEjLJkFMiG8Rjdki8KACGb93SWuTqoodW7ZZZW6eTJgR3kDpOP\\/J34OIHkZiLwRrWPYDCORL\\/XaFbM1C7q2nd+GyYOgPvDE96QV41+r6grJx5OSm9MRdXGNenL454cVhvJFR\\/FDydgM1RGpubSkaYkj1ec9NUPKewXdehTRLojfrOOAwRpK8zj1Ghz4mCF5uh\"}]},{\"role\":\"user\",\"parts\":[{\"functionResponse\":{\"name\":\"convert_units\",\"response\":{\"result\":\"150 kilometers is approximately **93.21 miles**.\\n\\n**Explanation:**\\nTo convert kilometers to miles, you divide the number of kilometers by 1.60934 (since 1 mile = 1.60934 kilometers).\\n150 km \\/ 1.60934 km\\/mile \\u2248 93.20567 miles\"}}}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "687"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"functionCall\": {\n              \"name\": \"calculate\",\n              \"args\": {\n                \"message\": \"150 divided by 8\"\n              }\n            },\n            \"thoughtSignature\": \"CvUBARFNMg/FYb+RdguQkTBMG2xc+yu7v680ED6oMtU3H7tlvOo7bhGkvCrn3128DDEBKJFkUDOjWvqW1Sebnf8UrqJBM5h8FMTkOj6E+K6/CsdANXbQ9155+AVcSsqX01fj4KPurk4xKd2RKWPMBb7Tr+8wmv4eRf03do4HBWauxxxd1GUd2U5NQCvwvrKaF1A597zc09t/2ujCpiw5e5UGvBVeb5FraMMhv3ddeusfABFySSiKUkSHLdptlAk4WNwo9oEEeJo1N1U9b8M5VNpTOXYo1mpA3ZMNsUCKUiO5rOO5+S0fC+v3Q8yJXppl7V9sBKWhxPE=\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0,\n      \"finishMessage\": \"Model generated function call(s).\"\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 268,\n    \"candidatesTokenCount\": 19,\n    \"totalTokenCount\": 344,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 268\n      }\n    ],\n    \"thoughtsTokenCount\": 57,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"SP-masCjH_qo28oPyJWw-Qo\"\n}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "signature": "cbb1cac4d81cb6aa8a28edf082d5e4e3",
+                "signature_v2": "9379eda7c8b05478b1269b6c39637ba3",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"150 divided by 8\"}]}],\"system_instruction\":{\"parts\":[{\"text\":\"You are a mathematical calculator. When given a math problem, solve it and return only the numerical result with a brief explanation.\"}]}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "328"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"18.75 (150 divided by 8)\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 33,\n    \"candidatesTokenCount\": 14,\n    \"totalTokenCount\": 76,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 33\n      }\n    ],\n    \"thoughtsTokenCount\": 29,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"Sf-maomoG5XlxN8Pl4LsWA\"\n}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+                "signature": "24f9b56b095782207fb1fed5cfaa98ab",
+                "signature_v2": "6f55caf2e1d2f018fe5df712882f7a7d",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Performs mathematical calculations. Use this when you need to solve math problems or do arithmetic.\",\"name\":\"calculate\",\"parameters\":{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\",\"description\":\"the message to pass to the subagent\"}},\"required\":[\"message\"]}},{\"description\":\"Converts values between units of measurement (e.g. km to miles, kg to pounds, Celsius to Fahrenheit).\",\"name\":\"convert_units\",\"parameters\":{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\",\"description\":\"the message to pass to the subagent\"}},\"required\":[\"message\"]}}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"I drove 150 kilometers. How many miles is that? Also, what is 150 divided by 8?\"}]},{\"role\":\"model\",\"parts\":[{\"functionCall\":{\"id\":\"\",\"name\":\"convert_units\",\"args\":{\"message\":\"150 kilometers to miles\"}},\"thoughtSignature\":\"CpIDARFNMg9G34Cg80pQyRI8A0FjJ4wgPW1aON53McZ8qFWr8jzjh8wbuAcVFSga1OEQZE+7FeXs4EJzVAlxRfs8LHHOPaSjnHzqZteNkzl\\/T0lNeVhj2WYjYr74OyaasSmRBxpONM+XpV7gBfRPQBDbRTAEa+hD48rbvWY6miHV+n5ZA2lsKwYcpzW7fXgbrUAK5cECswOk36WuHAxCsVzG+nxjqUHCO\\/RTBXPP+o7PzXrsIG8bOgIO04xxjFyjbnkT1sAHnfw5wW0xAlwWQQ41Z4Tt\\/oXK2YUGxySvgL4S04hhkWHBHeKSX7Ro\\/Q3WS8HjkLo17Ho0ibV0ueK0bwosWpufEjLJkFMiG8Rjdki8KACGb93SWuTqoodW7ZZZW6eTJgR3kDpOP\\/J34OIHkZiLwRrWPYDCORL\\/XaFbM1C7q2nd+GyYOgPvDE96QV41+r6grJx5OSm9MRdXGNenL454cVhvJFR\\/FDydgM1RGpubSkaYkj1ec9NUPKewXdehTRLojfrOOAwRpK8zj1Ghz4mCF5uh\"}]},{\"role\":\"user\",\"parts\":[{\"functionResponse\":{\"name\":\"convert_units\",\"response\":{\"result\":\"150 kilometers is approximately **93.21 miles**.\\n\\n**Explanation:**\\nTo convert kilometers to miles, you divide the number of kilometers by 1.60934 (since 1 mile = 1.60934 kilometers).\\n150 km \\/ 1.60934 km\\/mile \\u2248 93.20567 miles\"}}}]},{\"role\":\"model\",\"parts\":[{\"functionCall\":{\"id\":\"\",\"name\":\"calculate\",\"args\":{\"message\":\"150 divided by 8\"}},\"thoughtSignature\":\"CvUBARFNMg\\/FYb+RdguQkTBMG2xc+yu7v680ED6oMtU3H7tlvOo7bhGkvCrn3128DDEBKJFkUDOjWvqW1Sebnf8UrqJBM5h8FMTkOj6E+K6\\/CsdANXbQ9155+AVcSsqX01fj4KPurk4xKd2RKWPMBb7Tr+8wmv4eRf03do4HBWauxxxd1GUd2U5NQCvwvrKaF1A597zc09t\\/2ujCpiw5e5UGvBVeb5FraMMhv3ddeusfABFySSiKUkSHLdptlAk4WNwo9oEEeJo1N1U9b8M5VNpTOXYo1mpA3ZMNsUCKUiO5rOO5+S0fC+v3Q8yJXppl7V9sBKWhxPE=\"}]},{\"role\":\"user\",\"parts\":[{\"functionResponse\":{\"name\":\"calculate\",\"response\":{\"result\":\"18.75 (150 divided by 8)\"}}}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "739"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"150 kilometers is approximately **93.21 miles**.\\n\\nAlso, 150 divided by 8 is **18.75**.\",\n            \"thoughtSignature\": \"CrMCARFNMg8Vpd6pX24FcqvQn4EK3r1waNd8518Fxv1IdUb9qrYPOwtSK1h+JM2o9OjTv1nr39LMwpGULb5xoPsebUaQYndGlZ3wYILK5PsNwJcOeuvUQZcfyvPF4x0+21J7EpVwBc2L0GEPYlJAFxUxKzfKt5ACjduwtoV+/xXCSBXToEvOd5JyU3bvZ7yBtYt8mHQxWJ+uIPosz1/ZMfi0RKv+j8SE94qALFjO9ThuB3OoBH7pjFZP05Tp5yqymSNJF3GFZ15LMWA6dVZFv/LbGie3mDcx3VWfWNJjsfesniKeoLKd9F6YFRHzwRtt9WpD9eqlYSYQTu+gVowpP6GBWvRwS/umKZI5bpRpcsyE/VWf7hktYbdEwyR8OhfDyfhE7iL1t2zuYL+Xj8+w7EvxPzXHcw==\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 313,\n    \"candidatesTokenCount\": 33,\n    \"totalTokenCount\": 424,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 313\n      }\n    ],\n    \"thoughtsTokenCount\": 78,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-2.5-flash\",\n  \"responseId\": \"Sv-masqUFaDDvdIPpvvxgAQ\"\n}\n"
+            }
+        }
+    ]
+}

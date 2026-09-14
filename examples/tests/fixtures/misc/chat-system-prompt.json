@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "f5a6201f2a7a6f3a8ee5320c0093498b",
+                "signature_v2": "ccb6869860c8708fe65aa403758efa6e",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":\"What is the meaning of life?\"}],\"instructions\":\"You are Yoda and write like he speaks. But short.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999505"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "2ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0ebb85074069b99a006aa70bf8726087d2a40a0bd5a56f4ee0\",\n  \"object\": \"response\",\n  \"created_at\": 1789332472,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789332481,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are Yoda and write like he speaks. But short.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0ebb85074069b99a006aa70bf9198887d281a3e954da88ee78\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpwwBQYEB50EYaVe7g7PyWUWORK8iO7uovrvD64NmuN1I6x4o7LlWMzlWbxaex59qL5Og4Pccywj1H3LWbP0ZZ1mfcoCj8rsK_J4M7Sm_EZHpG1SQ-klFHzXzxdT5Jzbgdr3vv300mKUYUlUw1yLJis0rNurSC6Dk0pJpRDW32bkd1CeLVQsxONunVVOujAGFX1kGgJSjt_LRX24y473KagP0hLHHwbJzuEdzViDth5ceSYy2ojjPZZ_w1yF1fuVDxWSU3ZVnhW1vX6e7Fty1iCou7vnyI6Lym_O3-Cz4bRDPRB30lQ_gZxrm1UqQYxenOMgQU_UpNkddj7JCb07ziRCa8ERXMm9qes_vmgOaxSMn2QVwKWB4s-w_eeOYS6uvMSuIGRXjRHKTkJyuTL-Zu0ieqI18BW43dYWDBIC_x5pNihqNwkD-Ziv-mqFWVss3rx4egyCvabvjlRbI6zjZeRxHxQJjKsSbTD2cZfbcv7UQyS4eoQxaHrJ6rvC9QVwqzIWJVT1Q6IutrpDb0v81mDIPqIF-jma7K0Bcmw4owmaO-wArJqPzpYizm1ceGgl_npuEp9o9c1iMuDRfhzOwODNR0FBbPlYXx7Eg7FUZjftb6B-m7Rx4SE6gWVNUHMCy-SUqlKh013PR5mBSrhQRvRA4kki4AK9ezWcF1rYpHXLfnRqfSiDYzbrQc8tDDPwA_yFPVELQjZLIs4Tf6fjbmkKhJz3MLxOy0LU4f62_XiteBDxtXG2ffd9_PWV45n0f9nFMG88KcqxBb-mCnSxx9vSNkgADFnE1WczmDB-h3AkxDUakbeLDqJ6MDdpsPNu9OQdPHAiKo-LN8IM1AepELWPgsinAkwMYB-5RfNdlkQi12u16aloBbikasOOB0pYH7Kji__YaEyIYAp2HOZ9RKuq2TC5d65AiNL8lF-rEh0aUPJTHWRnnPjcCtNhIxZkw5iD9rIIxvXwSWEWOHRM5CnvALYQmTWYd9RW8Iqvanj_4F_VHrJk-ZD8ozoFUidgSWbrKizp7gOO1_JFyh2j62hcqMnnYGvj1fG-mGoTVicyH0R69FdFwKNo0scFV1VN7MZ9Wahinu6GfV9twbOq4T2ykny6IRztzMV9QWEF_Jwq1c5bh7JqtuV09usI0Uulq8n1uKC8gY3rEZFoQft0HwZz5K4vFkUCHaJOcdGOzmyps666oY0SWoV0ypMOBt9AF-wgr2JyAHnzE41YPVF6fQwMoWsw7jz7WhQjEv7-boVDkSaQBJhLsakA_pSQSe8LePsEQ9x2NyeVB2z2v2fgTZM6eZaGYoF2cLrcQv1SqVWi-3wjEkjc-Rh3gOqH6nsqpJGD85kNRvBgPv17KfX9x49hHnTTo1-1zxu--37T2jhvJRDlaiI07gkIAl03Fm0kQG7ImrNgJNKHMFnUMyZMF1rr7_TwFggNET2Z_3jmrZoEEVADafGsOaWfllK8qEWnyxI8D9CWuosmAFKlCjvxtwMOuiggiRN7HlpBcxWQ4YoZweMaKffrdizDDOhy8lxez8w7JcSRhq7Ga-YIivGSXt4VWjIzDrKXtbd-Ys_NFHfiU6OFeVUrINZnFQ5Ucedb7w-pnTpJRO3VpVqhB5jO1R8Cvuhl6X2HoNpCgrPHdoyHQezJoB6kzjC13a0Ne03lM5N0biyj_24EeTQT3fZWdYYCbvYxe8eoEDWbeDMddf2cP-IuQ7l3Pa1oR3xOboGf9IVnQGvSy7ler8WyH548ijSfn453vBuJ122Bsm1h3ojS91JZvuceDcWaHHvZfYfowwIUxeiD2sooMurXxMbX4DUQ53vkoFmnGjkw8RmCe31UA-yFJkc952WHq3d7Ad6zy2SUdR5XSqnmvKYThjTwm_KXFAsnI8dsV4q4uE2_wmL3ue8-TaQdNb6y9ml9DLuwGCNTzV_GmlmCS5mET0K0TUD6cDl6ZlJTLFruTJ7p2T8eLHMeR2dKwMfCsScCoA5r_pyZ5_DvUylZD5oD1nNDc_DHYBZABWMhgFHM-lnafheniK-xnCcWHhy0fhc1Lzv9nYWphfVJgEGHFv0eY4FXXfoDvvlHKFu7b0QiBYDt_pH-JQ_OCMU5ka3ZQAhQBIOtu5wiQzdMWzTbhBRbL_AWN62_hwbOxsQulkynqdsCd0yZDoA41NHzeORziaW6JpkVLqZl6qhFb5oLF3y4KxO1oRuHwaUYDaxwpbkLGs1gRsUpzyYXecevdsQXjTQ3IZUg15NhAy3yTiq2FoUhS6Jh8SDH41a399DrfP4z6JErMK0pH-zwbHJpk05wslp9MwP87YX_sPNusxarRwX3Y7RP4gRwUjKhAXvtQqPiraNX_4I3KOLT1ZLQtWpapgZU75E6fF1vqfqOJahPO-Y1sEHBK_nRFxP8tPGEKX48LGvdrYrxlXal-A9SXvKxjLluI5p5k87-tBIpRIF5saGKjNnHUHTK-aRq8kmyLkTXKeWlPcj4bPebdw5ldKEDLsjH-hLwt_KTds8LAIdCy99oE8uuaq7EdxYv8ou4XMDiNqFSeRgx5d0pcKsW6pH7wBnCObg4oeoxVTm-0fvvnQdcmxjuTLskFctKvQyDy2245iL0FA4OVL6RXdbB__-uOwstXUse1-pHnYo9VmpD4Pxh2drZJo8czbJfTzjvQGO_n61TauilI73oaUWF6YoE76nINLJ6c92oRklE3-DQGuf8SzFHDtStucjQkH43J6aYKvk3WNvj_UTYZHfYtl_QpEua3U42SE8EvuLiVdpaqpdI7JJntZ2A__vXSjkjqdJ3xzm_DXPEFKwfdffYohGGjXQp91q7iQpEw4NO5Jiut7vU1UwedKOS3eI8S3unfzjccqNxh7KIhlqwnJhBKIgPbcW9rOORpOh2bMzjVgyHBfBcfb0enbkUMcOAfDzp1ALnQRwEILCC8AZzBMqBtDwLr_R5zMu2psxNM5tfN4nUuQDxICgBi-cwqAB1ljgiudv3rKE5ziPeKiH2BjXwniJxYn5BlNPhtk-EtJemv2PAlXzOEmx0C83qN5OhB1YTU1j3cGKgvY_Xse76HFrA2LZkLnQyrNvW5T2lraHimgLy0eyHqIh864-3815eUprgVz5m_eGQAfpP-R_3U_-DtSfvnmry-3bAYt16XZnJy7xSP9cBPrQU3-_VXGr7sW1CYZfKcnXtLfwby-vakwOQ-KPjcOhdZx2LnGzgWaTSEtbJLANiKU3T2iexWnPL6QwHo_s1f9ylN-HfQG4d6KEIDO4059c8hZVCaeQLlf8PUhEowcZ0pHrQlDl2tKIATXxfojxNcHQ2CIeB2B5cORVWQDCifJr-lCGjSI-1P4B32JMUfW82tPDxazPQm4vuayzlY6GUAlwGvapqC3YMWBBtApdM7C5MD6sLi9HZxvT9X3N8kkF7LJjU1OtzEEz2xtNHemTzGhnthGRHVGY35oenow8EXbYzQn_h1-aZPWG9seyc1_F6w0KuUb1QaAofQBywIjHhVjsKeNnmopfq20r5Tsi50P6ZYpKiRNuEh9CTC_Q1S5q1kKCO3H9m8qb6QjnhlJpbARcjuD7-9udkrnGpXBZsMCKDd8SYblIU7R5yRYF-T2tRsLtJxnHH6KtzAU5CqWfQCEmz23YNBEo0OSjoUQKTSZSTOM7q6VPBjMScJFUeSdeIsboa8mov9ZFbRVI60-L8wm0_b48XMbtXKZ9CnFyhN2i_HEOfssFusosdOMo10DonQnG2kr4Hym3Gij2jULAuevkMgtFr-t90NF1mPWxJpj6Bf9MO3uYKRpIFn5hT0HR8NnVFfAWnU9pVfgkVpofctIsF5UP5gMKoIFK3wwVzyD0fNT__1n4Vc4LxzHljl9Vthd-zH_HpA54zv8SZBG9_cFhYOYVMkSvxYTiIh3dLNYZWSvwzWc0-01ZKIC2O7SKCskjNsOmjFQphvsZN4Cb4GnJNlMG8_D9vji7Hhh5MXB38iny6sXzVufnqp1GR63-TsnC_nEpHsc_PVzCjzBeQQJToiO4l2WB5dPix9jVyEqSAuBF6LRJd_2toIJFN_GFv0S0UPQTGoo8OYVrBzMagIjZAffggv_BrTz1V_jMZznTtOn7X-31ZxRXalzSWWgJ-uVNL7ug1ozlvLQRb208SyvgQnV_iAJC_5n4XJv1I-MdkOcqBYzqk1JYtgzILy6ZCOX5R5nP4EeyQopra7oG8Alm5YKHxkYXufpKivmV5uFhJ_eQoR9fj0mSWlvEKMTpEj-LQUoHiVsIMRTGBftjWk02gf2yo7HPhoBY9z0Yvk3ykbR7hISz0UejI6jy_BAHOBKQWc8GyxlSCQvqUgqZN8XKTvpPm1m4M1qzTuNx3YtJG9x1Jx3TfaQYMcrnUc3rEJkeT_aVquY8s7ID46HDCgT51_rh-yOOFXIudKf8oudDzSy7i_ASqJYq2ucF2O9bU7S8IGJ-9UrueKgvW1F0QQ7yi90kxBs-unoA6CvrvPQKNNClPUCRMp3-UrA0RTgptZViVZRM8L0LU5RducY-FnKBoIuJqsWSF0E9E0PuRn5mbrMBbgs5ZviqFz4nagceBNtoF2xHZtuATpTlTjJvOrG2ACN2DpPPpKyNc7KuQr9gn5m4LLrhfVPBWRUXu4TiK0LvjMV6aSQEQIMWzOqfKbYtR0297qrpqLqCne-zDuCt61UmUMOc1Fri8tjBueMWj04aNsi-NhWJpTBnzkewyH6ScsS9GTuazM9_lNYgo6clo002e8vonqkV-0pPEutfu5jRFTtq_MkwUztkM31Eb3cTaFVog25EM-PDGyC3p3z5L3L7OtPsYe3qs_xZKh3obWo5OPYrDln7DCHlbsSgMtAc_xhNs3SCnUVY3pHg7cDQ_jSveeggiSMklZbXP-l2_oiFCOckkeAQrQUKH0sF9YZM0Uk4WQz6C4mvd5x_pCMHW3xPbjc-87GGbA9RePFJtS5DcZTZqyqRBB5P2_qqo0C_lxdgpozzK8ToFgSp_FVWqHNf3tZ-4qzwaADBiryPZlVLyFmz6lDG1QtWNfe3P4Sod6YC0QQVBPP-JyYzpTU2n0SafAh7kF8pLgogKFcp6n2_d6HVUgim-rFdyG1PKhOeAMUMdLoDbIjQPsgRwzQeGhmOCUt1Lvr8-qEL5hbFMdz88NICxiyjAFPEPXYZwbtL4NOY_p12k=\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0ebb85074069b99a006aa70c00b93087d2a89e7a8d9e3e7f05\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"I can write in Yoda's style, but a perfect imitation I am not.\\n\\nMeaning of life, you ask. Learn, love, help others, grow \\u2014 find balance, you must.\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 30,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 712,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 640\n    },\n    \"total_tokens\": 742\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+openai
++------------ Finish Reason -------------+
+| Normalized case    | length            |
+| Raw provider value | max_output_tokens |
+| Truncated          | yes               |
++--------------------+-------------------+
+The answer above is cut off -- raise the output token limit to see the rest.
+anthropic
++--------- Finish Reason ---------+
+| Normalized case    | length     |
+| Raw provider value | max_tokens |
+| Truncated          | yes        |
++--------------------+------------+
+The answer above is cut off -- raise the output token limit to see the rest.
+anthropic (streamed)
+I'm happy to help you with whatever you need!
++-------- Finish Reason --------+
+| Normalized case    | stop     |
+| Raw provider value | end_turn |
+| Truncated          | no       |
++--------------------+----------+

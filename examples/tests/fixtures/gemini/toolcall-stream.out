@@ -1,0 +1,7 @@
+I will now check the current time and retrieve the list of European capitals using my tools.
+[tool-call started: clock]
+
+[tool-call started: list_european_capitals]
+
+[tool-calls ready: 2]
+

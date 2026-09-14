@@ -1,0 +1,78 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.openai.com/v1/responses",
+                "signature": "60089fa5bffa0f6656675fbe47a1f1b4",
+                "signature_v2": "5619148f3fb8018348da3171cb7336a3",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"model\":\"gpt-5-mini\",\"input\":[{\"role\":\"user\",\"content\":[{\"type\":\"input_text\",\"text\":\"Describe the image as a comedian would do it.\"},{\"type\":\"input_image\",\"image_url\":\"https:\\/\\/christopher-hertel.de\\/images\\/projects\\/llmchain.png\"}]}],\"instructions\":\"You are an image analyzer bot that helps identify the content of images.\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=31536000; includeSubDomains; preload"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Request-ID",
+                        "CF-Ray",
+                        "CF-Ray"
+                    ],
+                    "openai-organization": [
+                        "[redacted]"
+                    ],
+                    "openai-project": [
+                        "[redacted]"
+                    ],
+                    "openai-version": [
+                        "2020-10-01"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "10000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "10000000"
+                    ],
+                    "x-ratelimit-remaining-requests": [
+                        "9999"
+                    ],
+                    "x-ratelimit-remaining-tokens": [
+                        "9999656"
+                    ],
+                    "x-ratelimit-reset-requests": [
+                        "6ms"
+                    ],
+                    "x-ratelimit-reset-tokens": [
+                        "2ms"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"id\": \"resp_0c51c1e58410c731006aa6fff11b3887d284c74115feb9b981\",\n  \"object\": \"response\",\n  \"created_at\": 1789329394,\n  \"status\": \"completed\",\n  \"background\": false,\n  \"billing\": {\n    \"payer\": \"developer\"\n  },\n  \"completed_at\": 1789329400,\n  \"error\": null,\n  \"frequency_penalty\": 0.0,\n  \"incomplete_details\": null,\n  \"instructions\": \"You are an image analyzer bot that helps identify the content of images.\",\n  \"max_output_tokens\": null,\n  \"max_tool_calls\": null,\n  \"model\": \"gpt-5-mini-2025-08-07\",\n  \"moderation\": null,\n  \"output\": [\n    {\n      \"id\": \"rs_0c51c1e58410c731006aa6fff2b1e087d2a14fd7c00f779f96\",\n      \"type\": \"reasoning\",\n      \"content\": [],\n      \"encrypted_content\": \"gAAAAABqpv_5N5tvAaXg6IStRNM8Ce0DQ2Nb341faTyxzg8_z7C278DugOP20fdW8RP6PLspURBMIJ214HHPzJCeU_uHHtAPgfira_FfIMzk-vEI9muDE1LA289lSxnldlVeOdnUJcjzVVNeEeIqIPum9ciQzAHszuJQqq3ExRMV4L8fXDACvsVc3IMJW_pTnu2gDZJnCq8FBeI6S5Q29lTcnLh4IeOI6DjBDrhBNAeVWadpHSdi3w04fWY2Q2f0flO00lFdNJMscRSUge4xXzcTA2J2SPf40kiZuMHXPUtQNdi0uNQsbl8lzh5flpFIPgQWzUy7dXuT7uGKonyuXpU3rC-CZIele0iOaFGeKhXq1FcRVMhf2qJwjRgPc6ID8I9TgQX5fBkiNowZqvgyeZxaR_kgAYKKIVACnNbU-r57yzwev1FBEVurzhqwbR_oJkXz-cYqoqYN_mv7lL9hdd8sJDl2b1YKBNANcQXOVYCWYXM4TWjgl_QgoBr6AKZlfVCH3OctJq08UmmhEFsRJCt6U64X623TaErhXm_K_8iOdW5jSZipoYKbzX4wHfjyZKNPTmeezQgA5Tg0Oq-E3JHVvsMeLjNtdDyILIZQzHVzN-zMDFrtODASxKIRAFwsNKsNbUmqBz16v6F7w0FhU7bsMezjQ8jA0VuAj_wmGJR4SvqNLFyVCYYhxjSNceds61oCU1WjF615fKi_xpEFezT0LjNQ3M2ktsyVfzg0-_uIJ2iGqG_3bTQQrQJW9P-kdiBf64B_y8DvVg17AnPsl4fMLb9VnlO-KptCsKqx-h2BzOg2dnCl2oZK1XnJ-gVveypcFQnLKb0PpqkeQDcSyNF604mSNv8NEZ9KrAup6PrknQ82kXB4W3HkzI71bDcB4vk_OvM3wBofoqfXZ2WGuwQhM-_zRyylknQCrhT5vxPJ0Pu_Ua7IZkHOeo_sLxPfGRMcPP16Z6TZbhrK2NsUg_NRyDVY0zBs8eKoEIhio6aSDo7mw89GE83Q7N0rpHqhUAhJMnZX4a-6GfGRJbe4q0W_0TTDv9SlGRc4LH2LxFa7SQcO8DwWprkIxPIVzpTiLUjI7kce8mkPxIOfOXgT6K3fYzWms_BVUK1wB-Ru4qBA7OV6JQv2eWkk00CAqH7Bu1NFaS-Gk7VgUEOzzrkDSKfSal6pnDWpUOyaZaGCbNi1lh7sECEnqAtWv2GU_WmzTzMninIAEU9_dcvV2gOyOZ-M3zvG_Sl1BRBC8kQ1ej3vOaqyu0fb5tbOume-KlUb4Le1otMTzYcEHAjcSFpc5J4oPoGbZ9EJRRSId9PrHg2KhCLKkKieAAeg3DWaI8wFqFaA4PZjJYDXb9ue75D4bzM-GlqLpU7HWxvj6L0HFDh2OWdgsB28_U25Ve91wm78WaTSzoCyvnaY_J90aeG_J5T6K4diSFiod1wKzolZsbv2Ozqxds_IAJteVJcwNAcfqbNNX1h9xHqLcuCi3DmSnP5BWDXkm6FYv9t1pVXW3amKT7bkTJIlF0mW7l4RmKPVaI498KSjQRFq94FIyNphqbmW1Qr4GA26uOcHVBa-W-Es2vKjCTEgJVayLQX5j-1ceATanknG5yIhVOp0OAlyj9NIBD3HUNOmyUfXcJ2Myd6z9vdJbchmhvl-J7y5PIvfKDotx5tWk6VMExXkQIPZVD2APcdLhpO_Tqko6uKwVkLRMkPv-J6qRgebSFDZXpr0_ZDcpZC4ZVUNI2GoqLJ4706jL0soDPP08HlcM7ZY4SA-knLyXteSMod76gGr2FuhCogtqZVfaGUq-Ne81-SjvYWRRqsIw1c9fGbEyUGOkY-Y-5dRm7QZioykx5J8sS9AiyR1yI99ViI0zGaTVtIvUYJC2qqFm_wILW9lD9rIf4WyvbLS75vm3U2X-DWc5I5zPdoZTULXD4o4Lw9glLWsbIZH1xhWt1HmARMy2bGP3CQA0bZApvqGoIZTEhWKMkCSUkd40mMkprPxQ4adKZP1SKPzlIPz_ifkqfgEW_LH1doDnPXWlqb_JsLFos_UpfmwUfjF-uhpG4B6aBEjLHBlY_M7eLoG_wQ2V8dZQLKYlxqXMHQUm-mNRdTiXq7ohWwhsr0gp49sNbqsM4IhH3FK-ee8hkCx0a3X2Tp45REOgsOjX6wP0GHtnHchrTDe2fzizhyctAA6txvd54NzAI6g96LC1fQqDtAZjsA6mVXW9W2lAWvBJ0Fmh3-jfclsSlu2HEi8rNNu2WGj80bMvwmAcBJWgowX1LxNJUIiXVMHQD-TlaL5iX9tNRI6PjW3NbpmSGDLHSIHMyTo0ozr_dwZIXa4vjMKtoYOzyXahNQEgIF6nFkKJukqP2zfqcdorg6Y9yd65ldUmnqEmleIVnzuyfOrHTVCdm64IMRSFaZXKFHP7W0ZCWOdJDmk7RRirUKrhq13b6t3t4WzOgmMLzt218k3LBGxyl5_aIAlouh8ximxvlchfuftKYxiFE6H3k3dM3CeQEhrKgVXUp1_i1UHsremnBhRZIwlsqfrO4AZggT30JP_2EAj2K9ak1I-UpcRG9xjwBm1LVYOaTOCsd333Vu7bqCVvXd_x5OAwjGCX_V5iv85P0m9xwW9VA9bIxwVZ8s3ynbWXFMu7vW387mAcI7xCANHrvsG2L6yLD5OnpRkOPqe-QXvjWyUhBMWay2clMpIYn25bze4s-FKEBB1wPYskhrhh4MXogWlC89cGR-zZoTV_V3NDAde8ta77ahkS5bP2g9RcYO-noB2IdGYGS43kdaKr26fFJ7XKdIjT74qxc9Pv-qJY6ZVMz7bhEsUWIW0YnPkela1yzkZLm776rNEJMRD1bmvexl_KUkIk_1QI2STuuMhW7ANhtn8sbEzuDJJfeLAR-G4dG34vbgVKoB27teiChH0rtgTD1C7ZquGm9dkjsMsmE2HADTCoeFtm5xjoJd0vL6aGfHheAyZF7xxc4c9dR9mcEdub23teFpv1kmC6QJD4ER3LsGu6C05mZLlPJkMOVWH5EtKbOZv6duf0xjyaAJQSAQNvqRxFjWrrQBdxn9zzZkidW-8HWWjcUktmxR-S78k5gZ1GgnZOl6z8OktjcMxixr49qjmNFL9_vqJLJH_NFqHRX0qV-ell2xytChPOXDiwKfrrUxxWYFwqyEo5deG1jmTZ3aXquebdy2ClX32HedaEAPbMylUg_2HeDbc3DoiSzBFl2_CtnZXU6zmE8TDmQPEdxFTdsmMnroZVSqUhIDvr2TECEe4oa9Mk2V8V3MEhARm01VtpeGldftD_D7MWEhn5UZT1uc7UD0dxCwyDNPHm5y6wXvWK_G20ZoRFXv4z5F6k4GHGNLTuFagopv2vszxB9rf1loDzB1b1dMisAa8yvRLEK-kxgPVSt_d1VcfB1-fjXLBJqsexEpI-LuL2KZWJgJyy21iAw1GEz8BmaizkCMdmGXpOkWv9W7Nz8olTojEIyNDg8fzdt_re0YA7xpLd34X0V2incnB8aV5X6gOzFuOdNbDM748QdxCiYP9y5ZMUMmc3D28jTrvpIPJ38wAx2GLO5zGLJvWON3O4L9uid4-NLqLmpPP19YxSUyIqP5sUSk3zNENoLG4POy7MWgqdTYgvINhvsl2XfiEAM7-P13KAKu9sm_HNZNAY7TbdBuh7Gc7v4QO2QDFDLw2AV1r-xEn_zI8LYEtAlO2zG8sC41TndISORyQoF6hTNVmEsE4SW1IFZ1bW1Y8LwutcD4o0cUnLAbe-Vuha4WwTVMLT8JPujYkusJpTwJk5QLKCT_volqsnja2anXLVlRvlc84B-x_tfS2uDzD8TMjrjzwog0xMoS-MpgW9UsfY1KyN73dqt3uYWclRwyp4NFllwvh-g5F-RMx1ga3Z2Uj3lsv0cyanIEZ9BIffJixGjWE17_gSBBY_Xz4YRrJ4rcVYxQeqf9lEpBTZww3SVGOYazoFEWcfmz2XJhNfqT-l3EyoCZVOXz90neisWKGV6ffvGaAlw_51OelWBjZ5qL0hmZeHISP93z5ALFPbLRRaBYN2mCddGRmwcqUlGEnhrKtLOeq3XBMEHfmB9wDU5cMhwiXlMmpGV_qu5zEKgDTc4tF44kY_2cTpiHth0fRc9I_JQ==\",\n      \"summary\": []\n    },\n    {\n      \"id\": \"msg_0c51c1e58410c731006aa6fff6c77087d288baea122cdfd406\",\n      \"type\": \"message\",\n      \"status\": \"completed\",\n      \"content\": [\n        {\n          \"type\": \"output_text\",\n          \"annotations\": [],\n          \"logprobs\": [],\n          \"text\": \"Alright, picture a movie poster where someone confused \\u201cblockbuster\\u201d with \\u201cblock of cheddar\\u201d and decided the only way to market an AI is to slap an elephant on it.\\n\\nThere\\u2019s a colossal elephant with eyes glowing like bad Wi\\u2011Fi signals, looming over a city like it\\u2019s the final boss in a pachyderm-themed video game. Its trunk looks less like a trunk and more like a data pipeline that\\u2019s been overclocked and is now spraying fire and paperwork everywhere.\\n\\nBelow it, tiny human silhouettes are running, jumping, and doing what every action movie extra does best \\u2014 dramatically flailing while cars and helicopters try to explain insurance claims. The title \\u201cLLM CHAIN\\u201d sits bold and smug at the bottom, as if to say, \\u201cYes, we merged large language models with large mammal problems.\\u201d\\n\\nPunchline: It\\u2019s basically \\u201cJurassic Park\\u201d meets \\u201ctech conference\\u201d \\u2014 the elephant never forgets your prompts, and apparently it holds grudges.\"\n        }\n      ],\n      \"role\": \"assistant\"\n    }\n  ],\n  \"parallel_tool_calls\": true,\n  \"presence_penalty\": 0.0,\n  \"previous_response_id\": null,\n  \"prompt_cache_key\": null,\n  \"prompt_cache_retention\": \"in_memory\",\n  \"reasoning\": {\n    \"context\": \"current_turn\",\n    \"effort\": \"medium\",\n    \"mode\": \"standard\",\n    \"summary\": null\n  },\n  \"safety_identifier\": null,\n  \"service_tier\": \"default\",\n  \"store\": true,\n  \"temperature\": 1.0,\n  \"text\": {\n    \"format\": {\n      \"type\": \"text\"\n    },\n    \"verbosity\": \"medium\"\n  },\n  \"tool_choice\": \"auto\",\n  \"tool_usage\": {\n    \"image_gen\": {\n      \"input_tokens\": 0,\n      \"input_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"output_tokens\": 0,\n      \"output_tokens_details\": {\n        \"image_tokens\": 0,\n        \"text_tokens\": 0\n      },\n      \"total_tokens\": 0\n    },\n    \"web_search\": {\n      \"num_requests\": 0\n    }\n  },\n  \"tools\": [],\n  \"top_logprobs\": 0,\n  \"top_p\": 1.0,\n  \"truncation\": \"disabled\",\n  \"usage\": {\n    \"input_tokens\": 215,\n    \"input_tokens_details\": {\n      \"cache_write_tokens\": 0,\n      \"cached_tokens\": 0\n    },\n    \"output_tokens\": 677,\n    \"output_tokens_details\": {\n      \"reasoning_tokens\": 448\n    },\n    \"total_tokens\": 892\n  },\n  \"user\": null,\n  \"metadata\": {}\n}"
+            }
+        }
+    ]
+}

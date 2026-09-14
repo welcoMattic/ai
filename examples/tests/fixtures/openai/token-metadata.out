@@ -1,0 +1,12 @@
++------------------ Token Usage ------------------+
+| Model                   | gpt-5-mini-2025-08-07 |
+| Prompt tokens           | 25                    |
+| Completion tokens       | 722                   |
+| Thinking tokens         | 256                   |
+| Tool tokens             | n/a                   |
+| Cached tokens           | 0                     |
+| Remaining tokens minute | n/a                   |
+| Remaining tokens month  | n/a                   |
+| Remaining tokens        | 9999495               |
+| Total tokens            | 747                   |
++-------------------------+-----------------------+

@@ -1,0 +1,154 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cohere.com/v2/chat",
+                "signature": "e93d8c02625fefb357a98aaa9c2c2185",
+                "signature_v2": "c3051e2fc064d61d7829b40b6105a057",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}}],\"messages\":[{\"role\":\"user\",\"content\":\"What time is it?\"}],\"model\":\"command-a-03-2025\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "access-control-expose-headers": [
+                        "X-Debug-Trace-ID"
+                    ],
+                    "cache-control": [
+                        "no-cache, no-store, no-transform, must-revalidate, private, max-age=0"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "expires": [
+                        "Thu, 01 Jan 1970 00:00:00 GMT"
+                    ],
+                    "num_chars": [
+                        "6702"
+                    ],
+                    "num_tokens": [
+                        "40"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "vary": [
+                        "Origin,Accept-Encoding"
+                    ],
+                    "x-accel-expires": [
+                        "0"
+                    ],
+                    "x-debug-trace-id": [
+                        "4ab2929cc64f607c93772a7fcb9de532"
+                    ],
+                    "x-endpoint-monthly-call-limit": [
+                        "1000"
+                    ],
+                    "x-trial-endpoint-call-limit": [
+                        "20"
+                    ],
+                    "x-trial-endpoint-call-remaining": [
+                        "19"
+                    ],
+                    "content-length": [
+                        "283"
+                    ],
+                    "server": [
+                        "envoy"
+                    ],
+                    "via": [
+                        "1.1 google"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"ca3cfb27-d21c-4638-89b6-f2bd496eb78c\",\"message\":{\"role\":\"assistant\",\"tool_plan\":\"I will use the clock tool to find out the current time.\",\"tool_calls\":[{\"id\":\"clock_9faecp51ee56\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"}}]},\"finish_reason\":\"TOOL_CALL\",\"usage\":{\"billed_units\":{\"input_tokens\":25,\"output_tokens\":15},\"tokens\":{\"input_tokens\":1421,\"output_tokens\":45},\"cached_tokens\":112}}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cohere.com/v2/chat",
+                "signature": "98537dbefff967de1d4984d2e980fd18",
+                "signature_v2": "29c5348de8009884391d5e097021e3e3",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}}],\"messages\":[{\"role\":\"user\",\"content\":\"What time is it?\"},{\"role\":\"assistant\",\"content\":null,\"tool_calls\":[{\"id\":\"clock_9faecp51ee56\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"content\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 20:42:33 (HH:MM:SS).\",\"tool_call_id\":\"clock_9faecp51ee56\"}],\"model\":\"command-a-03-2025\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "access-control-expose-headers": [
+                        "X-Debug-Trace-ID"
+                    ],
+                    "cache-control": [
+                        "no-cache, no-store, no-transform, must-revalidate, private, max-age=0"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "expires": [
+                        "Thu, 01 Jan 1970 00:00:00 GMT"
+                    ],
+                    "num_chars": [
+                        "7172"
+                    ],
+                    "num_tokens": [
+                        "88"
+                    ],
+                    "pragma": [
+                        "no-cache"
+                    ],
+                    "vary": [
+                        "Origin,Accept-Encoding"
+                    ],
+                    "x-accel-expires": [
+                        "0"
+                    ],
+                    "x-debug-trace-id": [
+                        "942641abe40f890dc98d211374e47295"
+                    ],
+                    "x-endpoint-monthly-call-limit": [
+                        "1000"
+                    ],
+                    "x-trial-endpoint-call-limit": [
+                        "20"
+                    ],
+                    "x-trial-endpoint-call-remaining": [
+                        "16"
+                    ],
+                    "content-length": [
+                        "361"
+                    ],
+                    "server": [
+                        "envoy"
+                    ],
+                    "via": [
+                        "1.1 google"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"2fb893cf-e174-4c78-bccc-3d999a7f1d82\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"The current time is 20:42:33 (HH:MM:SS).\"}],\"citations\":[{\"start\":20,\"end\":28,\"text\":\"20:42:33\",\"sources\":[{\"type\":\"tool\",\"id\":\"clock_9faecp51ee56:0\",\"tool_output\":{\"content\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 20:42:33 (HH:MM:SS).\"}}],\"type\":\"TEXT_CONTENT\"}]},\"finish_reason\":\"COMPLETE\",\"usage\":{\"billed_units\":{\"input_tokens\":68,\"output_tokens\":20},\"tokens\":{\"input_tokens\":1540,\"output_tokens\":33},\"cached_tokens\":112}}"
+            }
+        }
+    ]
+}

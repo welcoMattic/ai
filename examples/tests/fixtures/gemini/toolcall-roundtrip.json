@@ -1,0 +1,216 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+                "signature": "2ce6be4c306d201c259a7ff95185f829",
+                "signature_v2": "9420114d08eca9bd11ca9358a44637ca",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Provides the current date and time.\",\"name\":\"clock\",\"parameters\":null},{\"description\":\"Returns the capitals of a few European countries.\",\"name\":\"list_european_capitals\",\"parameters\":null}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"What is the capital of France?\"}]}],\"system_instruction\":{\"parts\":[{\"text\":\"You are a helpful assistant.\"}]}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "950"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"The capital of France is Paris.\",\n            \"thoughtSignature\": \"EqsECqgEARFNMg+5W3ycBR9tTftJIErbfhRa8y8kX1UFWtVYxhBuoQCqaTvFiFcfRDg1xV9UNfzFxOTG9F2y6EsRUkVPMxgjbXBara/V6eL0E5D2Gmt7591P0elsaf+JFitJQgtbe955jKjN+OClYmQg2LctJ4BD3J96VDs59So8p+QKBxf9me2YwoyP402ieNGlBTdjn1BRWGWZW0a8cS2vTruNvkP43abVYuNKpBNB+uzBbsNFewRzI8svM6kyLtRbIgada7qVWsjPI1PEWQJG5MddTkVEUV0aFDHWAAXQEgHKR/frKr6GJyBEvtHOktHqEljgKUvbuWRg8hp4I1T2kzZgF4I1E8i8JsSyxfqK6TEhkSk3Bgfq/JZwNwljfD8AWXtU6JwbvIsKjNjVECm8P4QRuUaQOev81uxDOM/lTAnpypJtmHRh5MXtNdqztAc7LlG0UjQdsJ69RYSyNLCabkXKz7m/PktO3FdBqdH0mgtRaoKm+IJnTkSsU8qj66jbIgEx+LmkyTvCtIuuHPNOf8DFUPl4lW+Z17odKR9ID8kAKRyKwJa2HxRsfNUIXeJAWX43B5fNASJxozwrGXsga3Y8XCs5gW3KnmZ9RHvDujEXbb2JTMqP+xhqNs37gAi+ldzh8k0XCmRQE2D4JRiBCMLnEvD4N5ViXujgWAGAMZ7qe1Sm1ykL7aQigMT3EFWmxsXKfk1DZsmZnxakVuPlvoZdQ3ufliNjxPf9\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 57,\n    \"candidatesTokenCount\": 7,\n    \"totalTokenCount\": 176,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 57\n      }\n    ],\n    \"thoughtsTokenCount\": 112,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-3.1-pro-preview\",\n  \"responseId\": \"Rf-maveSI4aZ3boPocem-A4\"\n}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+                "signature": "98efc6ad9299c88d469e9575cef2b032",
+                "signature_v2": "5515e212a505e1946463308b80343922",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Provides the current date and time.\",\"name\":\"clock\",\"parameters\":null},{\"description\":\"Returns the capitals of a few European countries.\",\"name\":\"list_european_capitals\",\"parameters\":null}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"What is the capital of France?\"}]},{\"role\":\"model\",\"parts\":[{\"text\":\"The capital of France is Paris.\",\"thoughtSignature\":\"EqsECqgEARFNMg+5W3ycBR9tTftJIErbfhRa8y8kX1UFWtVYxhBuoQCqaTvFiFcfRDg1xV9UNfzFxOTG9F2y6EsRUkVPMxgjbXBara\\/V6eL0E5D2Gmt7591P0elsaf+JFitJQgtbe955jKjN+OClYmQg2LctJ4BD3J96VDs59So8p+QKBxf9me2YwoyP402ieNGlBTdjn1BRWGWZW0a8cS2vTruNvkP43abVYuNKpBNB+uzBbsNFewRzI8svM6kyLtRbIgada7qVWsjPI1PEWQJG5MddTkVEUV0aFDHWAAXQEgHKR\\/frKr6GJyBEvtHOktHqEljgKUvbuWRg8hp4I1T2kzZgF4I1E8i8JsSyxfqK6TEhkSk3Bgfq\\/JZwNwljfD8AWXtU6JwbvIsKjNjVECm8P4QRuUaQOev81uxDOM\\/lTAnpypJtmHRh5MXtNdqztAc7LlG0UjQdsJ69RYSyNLCabkXKz7m\\/PktO3FdBqdH0mgtRaoKm+IJnTkSsU8qj66jbIgEx+LmkyTvCtIuuHPNOf8DFUPl4lW+Z17odKR9ID8kAKRyKwJa2HxRsfNUIXeJAWX43B5fNASJxozwrGXsga3Y8XCs5gW3KnmZ9RHvDujEXbb2JTMqP+xhqNs37gAi+ldzh8k0XCmRQE2D4JRiBCMLnEvD4N5ViXujgWAGAMZ7qe1Sm1ykL7aQigMT3EFWmxsXKfk1DZsmZnxakVuPlvoZdQ3ufliNjxPf9\"}]},{\"role\":\"user\",\"parts\":[{\"text\":\"What time is it right now, and which European capitals do you know about via your tools?\"}]}],\"system_instruction\":{\"parts\":[{\"text\":\"You are a helpful assistant.\"}]}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "1061"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"functionCall\": {\n              \"name\": \"clock\",\n              \"args\": {},\n              \"id\": \"call_3805187\"\n            },\n            \"thoughtSignature\": \"Er8ECrwEARFNMg/ksk+/ojKl4xAp+BNmtppytXqgpF4V0ZS0gYrUiY/K7YsVgppbaTh061g7vJWGNeuiGaYd7S466joVqmIPM9/psjdqM2wSkIryoBnS7u98FzBcIDaYFNuqtR9BQeYlvdht5k6DuzrW1cwr08XUcu1EbgwMWoiqq2OCPFoOBQZBO7h5wch8zSyp8UMbo9eKENmh8DC8XH9czmAgKrk8NswLYQEFLtGrNbIdYu7ZRtccys3t2E8o5vQHLQy0FN9IB1SJglerZcZQGQHhPzZx6HFRdz2XRlQSUfr5262AzvhWJJCZNzohzhHqrQ7bUUb8EUer6xPo1+ZgMycrQtLe1eyqCMEpWk0kko5blA9UcOPOckvxEOLSo37vv25WQjXXTueD0x5KGqgfVEDvOY3yHs2UY8wMQhTKTnzP+lgfQIRYIrBvYww7JnU830hGQgdm+sRE8I7N4GROgMbCaAm5hZ36iKk8fAPNgYvl+NNELzGN6vMR1fq8Zbi2EMNM46trYvx385bbi/a94pcRIigNylqHFTvp37LCvEAzqWF+wWn07fLu5Mynk7Axcb9TDSRBHLZwhtSFrqOaKoUxMxSBhPp4xTNNxnYBv/av14lC/z6s/vq068pPIGoZx9SCnA2Je6uJcBDgcfA63zbYFJda1GA5B9t+zKCrYFI5YYjJga9V6gY/uEyOGZe5f6gkTfNCeMbkyHghSZ4yRJ8gV8NOZ7MVdH4EFJqOr/1x7IUpZ0bD701+OFs2UsA=\"\n          },\n          {\n            \"functionCall\": {\n              \"name\": \"list_european_capitals\",\n              \"args\": {},\n              \"id\": \"call_3805188\"\n            }\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0,\n      \"finishMessage\": \"Model generated function call(s).\"\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 85,\n    \"candidatesTokenCount\": 21,\n    \"totalTokenCount\": 251,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 85\n      }\n    ],\n    \"thoughtsTokenCount\": 145,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-3.1-pro-preview\",\n  \"responseId\": \"SP-mauuANpiV3boPrKzE8Qo\"\n}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+                "signature": "4a142e8af3010e8bd0f20ddd2d398aac",
+                "signature_v2": "a9d642b8b415535df0beed54dd5dd4a0",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Provides the current date and time.\",\"name\":\"clock\",\"parameters\":null},{\"description\":\"Returns the capitals of a few European countries.\",\"name\":\"list_european_capitals\",\"parameters\":null}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"What is the capital of France?\"}]},{\"role\":\"model\",\"parts\":[{\"text\":\"The capital of France is Paris.\",\"thoughtSignature\":\"EqsECqgEARFNMg+5W3ycBR9tTftJIErbfhRa8y8kX1UFWtVYxhBuoQCqaTvFiFcfRDg1xV9UNfzFxOTG9F2y6EsRUkVPMxgjbXBara\\/V6eL0E5D2Gmt7591P0elsaf+JFitJQgtbe955jKjN+OClYmQg2LctJ4BD3J96VDs59So8p+QKBxf9me2YwoyP402ieNGlBTdjn1BRWGWZW0a8cS2vTruNvkP43abVYuNKpBNB+uzBbsNFewRzI8svM6kyLtRbIgada7qVWsjPI1PEWQJG5MddTkVEUV0aFDHWAAXQEgHKR\\/frKr6GJyBEvtHOktHqEljgKUvbuWRg8hp4I1T2kzZgF4I1E8i8JsSyxfqK6TEhkSk3Bgfq\\/JZwNwljfD8AWXtU6JwbvIsKjNjVECm8P4QRuUaQOev81uxDOM\\/lTAnpypJtmHRh5MXtNdqztAc7LlG0UjQdsJ69RYSyNLCabkXKz7m\\/PktO3FdBqdH0mgtRaoKm+IJnTkSsU8qj66jbIgEx+LmkyTvCtIuuHPNOf8DFUPl4lW+Z17odKR9ID8kAKRyKwJa2HxRsfNUIXeJAWX43B5fNASJxozwrGXsga3Y8XCs5gW3KnmZ9RHvDujEXbb2JTMqP+xhqNs37gAi+ldzh8k0XCmRQE2D4JRiBCMLnEvD4N5ViXujgWAGAMZ7qe1Sm1ykL7aQigMT3EFWmxsXKfk1DZsmZnxakVuPlvoZdQ3ufliNjxPf9\"}]},{\"role\":\"user\",\"parts\":[{\"text\":\"What time is it right now, and which European capitals do you know about via your tools?\"}]},{\"role\":\"model\",\"parts\":[{\"functionCall\":{\"id\":\"call_3805187\",\"name\":\"clock\"},\"thoughtSignature\":\"Er8ECrwEARFNMg\\/ksk+\\/ojKl4xAp+BNmtppytXqgpF4V0ZS0gYrUiY\\/K7YsVgppbaTh061g7vJWGNeuiGaYd7S466joVqmIPM9\\/psjdqM2wSkIryoBnS7u98FzBcIDaYFNuqtR9BQeYlvdht5k6DuzrW1cwr08XUcu1EbgwMWoiqq2OCPFoOBQZBO7h5wch8zSyp8UMbo9eKENmh8DC8XH9czmAgKrk8NswLYQEFLtGrNbIdYu7ZRtccys3t2E8o5vQHLQy0FN9IB1SJglerZcZQGQHhPzZx6HFRdz2XRlQSUfr5262AzvhWJJCZNzohzhHqrQ7bUUb8EUer6xPo1+ZgMycrQtLe1eyqCMEpWk0kko5blA9UcOPOckvxEOLSo37vv25WQjXXTueD0x5KGqgfVEDvOY3yHs2UY8wMQhTKTnzP+lgfQIRYIrBvYww7JnU830hGQgdm+sRE8I7N4GROgMbCaAm5hZ36iKk8fAPNgYvl+NNELzGN6vMR1fq8Zbi2EMNM46trYvx385bbi\\/a94pcRIigNylqHFTvp37LCvEAzqWF+wWn07fLu5Mynk7Axcb9TDSRBHLZwhtSFrqOaKoUxMxSBhPp4xTNNxnYBv\\/av14lC\\/z6s\\/vq068pPIGoZx9SCnA2Je6uJcBDgcfA63zbYFJda1GA5B9t+zKCrYFI5YYjJga9V6gY\\/uEyOGZe5f6gkTfNCeMbkyHghSZ4yRJ8gV8NOZ7MVdH4EFJqOr\\/1x7IUpZ0bD701+OFs2UsA=\"},{\"functionCall\":{\"id\":\"call_3805188\",\"name\":\"list_european_capitals\"}}]},{\"role\":\"user\",\"parts\":[{\"functionResponse\":{\"name\":\"clock\",\"response\":{\"result\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 19:53:49 (HH:MM:SS).\"},\"id\":\"call_3805187\"}}]},{\"role\":\"user\",\"parts\":[{\"functionResponse\":{\"name\":\"list_european_capitals\",\"response\":{\"result\":[\"Paris\",\"Berlin\",\"Madrid\",\"Rome\"]},\"id\":\"call_3805188\"}}]}],\"system_instruction\":{\"parts\":[{\"text\":\"You are a helpful assistant.\"}]}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "1216"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"Right now, the time is 19:53:49 (on September 13, 2026). \\n\\nVia my tools, I know about the following European capitals: Paris, Berlin, Madrid, and Rome.\",\n            \"thoughtSignature\": \"EskFCsYFARFNMg8X3Bam79Xkzf/eUSZjoWisV4eSHxzRqMg4Q5dHdkLxXt/gsncvtXyNzlhPxyBajuw3Q9++kv0f3Xk8JBQ8hVxJpzbC8ZL4ifSNTtQOKYArlARMl6Ye9qR9wzlNqe7OCmuYjavwo6a6THLzWVPkducKYbd8ugXnivLUcuoiLiS6wlUKRLFsY41HBrrxezrhcs7a6Z/VuGy5PPQjXhTmutQMjczDpK+vyGc4Adxx4rs1YzWZ2MOgWzQzT3brgPRp6fQ7ZOox40wjJ30sAQIGW2i09/6HolWTXTeFCiOzZQ7Z4IJnshsMgEKhlAplZPTEC5tgPHyHJTR40xoKCG4z12vnl5xcckGeftnthC7c5ac8LhnHtMMPM1VZtNKADVWaDgHkpXJw/YMYmlFZVx6wnpXTubz3MrPWdArswBV+QR81XtkkNaSf4i4LWmmAnpkDykk0HP6Ulyuaq7kMCGsjVmmuNRxCQuu2s7t61z8ctFyRK6OlX7TY36M/1uN79qb/PJaFCom3v5vZPjORyacnqEconfggHYGiJiJYrNOMxStrznlGcrBQrV0VjMPuY3enGsrjvNUBwZX+gvJs9Gx0lmIQCVWQmwiHDWBlgCM6kEkBtz87KxJ/FAgLha8nHs+y9cJ8G0sqVAmQHNDqx7rU8+euqekWhsZrVkUFBcUcqw+Yn08QZjxcxKhBZxJ9V4BoQ3B/bl0Z4Z4zkYYnAl3mjKPOHYQSSP2ni1cM2066RLVwekabnlsqUXm5ClImgpkt3eiqVU9PML0zH/GmAQne51MRMqiLdaJRRzBMPv1D7XG4r5p7rzagSeUyskrU8doC2Lr6ETenig79UD2arjUP77jfAuVJd1Dh1aqTTYbJhFTuPihiHuqIGJ+ayCQvis/4CZtj08jhAYPpI0RAHVnYpodmUM/jvbcCjtSQM4O9NEUvIZc=\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 331,\n    \"candidatesTokenCount\": 51,\n    \"totalTokenCount\": 576,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 331\n      }\n    ],\n    \"thoughtsTokenCount\": 194,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-3.1-pro-preview\",\n  \"responseId\": \"Tf-marGqCZ-d3boPk_D86A0\"\n}\n"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+                "signature": "b52779900a39910f0330b31e91177233",
+                "signature_v2": "0c9ed624dd687ea51c108c60bee434c3",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"functionDeclarations\":[{\"description\":\"Provides the current date and time.\",\"name\":\"clock\",\"parameters\":null},{\"description\":\"Returns the capitals of a few European countries.\",\"name\":\"list_european_capitals\",\"parameters\":null}]}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"What is the capital of France?\"}]},{\"role\":\"model\",\"parts\":[{\"text\":\"The capital of France is Paris.\",\"thoughtSignature\":\"EqsECqgEARFNMg+5W3ycBR9tTftJIErbfhRa8y8kX1UFWtVYxhBuoQCqaTvFiFcfRDg1xV9UNfzFxOTG9F2y6EsRUkVPMxgjbXBara\\/V6eL0E5D2Gmt7591P0elsaf+JFitJQgtbe955jKjN+OClYmQg2LctJ4BD3J96VDs59So8p+QKBxf9me2YwoyP402ieNGlBTdjn1BRWGWZW0a8cS2vTruNvkP43abVYuNKpBNB+uzBbsNFewRzI8svM6kyLtRbIgada7qVWsjPI1PEWQJG5MddTkVEUV0aFDHWAAXQEgHKR\\/frKr6GJyBEvtHOktHqEljgKUvbuWRg8hp4I1T2kzZgF4I1E8i8JsSyxfqK6TEhkSk3Bgfq\\/JZwNwljfD8AWXtU6JwbvIsKjNjVECm8P4QRuUaQOev81uxDOM\\/lTAnpypJtmHRh5MXtNdqztAc7LlG0UjQdsJ69RYSyNLCabkXKz7m\\/PktO3FdBqdH0mgtRaoKm+IJnTkSsU8qj66jbIgEx+LmkyTvCtIuuHPNOf8DFUPl4lW+Z17odKR9ID8kAKRyKwJa2HxRsfNUIXeJAWX43B5fNASJxozwrGXsga3Y8XCs5gW3KnmZ9RHvDujEXbb2JTMqP+xhqNs37gAi+ldzh8k0XCmRQE2D4JRiBCMLnEvD4N5ViXujgWAGAMZ7qe1Sm1ykL7aQigMT3EFWmxsXKfk1DZsmZnxakVuPlvoZdQ3ufliNjxPf9\"}]},{\"role\":\"user\",\"parts\":[{\"text\":\"What time is it right now, and which European capitals do you know about via your tools?\"}]},{\"role\":\"model\",\"parts\":[{\"functionCall\":{\"id\":\"call_3805187\",\"name\":\"clock\"},\"thoughtSignature\":\"Er8ECrwEARFNMg\\/ksk+\\/ojKl4xAp+BNmtppytXqgpF4V0ZS0gYrUiY\\/K7YsVgppbaTh061g7vJWGNeuiGaYd7S466joVqmIPM9\\/psjdqM2wSkIryoBnS7u98FzBcIDaYFNuqtR9BQeYlvdht5k6DuzrW1cwr08XUcu1EbgwMWoiqq2OCPFoOBQZBO7h5wch8zSyp8UMbo9eKENmh8DC8XH9czmAgKrk8NswLYQEFLtGrNbIdYu7ZRtccys3t2E8o5vQHLQy0FN9IB1SJglerZcZQGQHhPzZx6HFRdz2XRlQSUfr5262AzvhWJJCZNzohzhHqrQ7bUUb8EUer6xPo1+ZgMycrQtLe1eyqCMEpWk0kko5blA9UcOPOckvxEOLSo37vv25WQjXXTueD0x5KGqgfVEDvOY3yHs2UY8wMQhTKTnzP+lgfQIRYIrBvYww7JnU830hGQgdm+sRE8I7N4GROgMbCaAm5hZ36iKk8fAPNgYvl+NNELzGN6vMR1fq8Zbi2EMNM46trYvx385bbi\\/a94pcRIigNylqHFTvp37LCvEAzqWF+wWn07fLu5Mynk7Axcb9TDSRBHLZwhtSFrqOaKoUxMxSBhPp4xTNNxnYBv\\/av14lC\\/z6s\\/vq068pPIGoZx9SCnA2Je6uJcBDgcfA63zbYFJda1GA5B9t+zKCrYFI5YYjJga9V6gY\\/uEyOGZe5f6gkTfNCeMbkyHghSZ4yRJ8gV8NOZ7MVdH4EFJqOr\\/1x7IUpZ0bD701+OFs2UsA=\"},{\"functionCall\":{\"id\":\"call_3805188\",\"name\":\"list_european_capitals\"}}]},{\"role\":\"user\",\"parts\":[{\"functionResponse\":{\"name\":\"clock\",\"response\":{\"result\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 19:53:49 (HH:MM:SS).\"},\"id\":\"call_3805187\"}}]},{\"role\":\"user\",\"parts\":[{\"functionResponse\":{\"name\":\"list_european_capitals\",\"response\":{\"result\":[\"Paris\",\"Berlin\",\"Madrid\",\"Rome\"]},\"id\":\"call_3805188\"}}]},{\"role\":\"model\",\"parts\":[{\"text\":\"Right now, the time is 19:53:49 (on September 13, 2026). \\n\\nVia my tools, I know about the following European capitals: Paris, Berlin, Madrid, and Rome.\",\"thoughtSignature\":\"EskFCsYFARFNMg8X3Bam79Xkzf\\/eUSZjoWisV4eSHxzRqMg4Q5dHdkLxXt\\/gsncvtXyNzlhPxyBajuw3Q9++kv0f3Xk8JBQ8hVxJpzbC8ZL4ifSNTtQOKYArlARMl6Ye9qR9wzlNqe7OCmuYjavwo6a6THLzWVPkducKYbd8ugXnivLUcuoiLiS6wlUKRLFsY41HBrrxezrhcs7a6Z\\/VuGy5PPQjXhTmutQMjczDpK+vyGc4Adxx4rs1YzWZ2MOgWzQzT3brgPRp6fQ7ZOox40wjJ30sAQIGW2i09\\/6HolWTXTeFCiOzZQ7Z4IJnshsMgEKhlAplZPTEC5tgPHyHJTR40xoKCG4z12vnl5xcckGeftnthC7c5ac8LhnHtMMPM1VZtNKADVWaDgHkpXJw\\/YMYmlFZVx6wnpXTubz3MrPWdArswBV+QR81XtkkNaSf4i4LWmmAnpkDykk0HP6Ulyuaq7kMCGsjVmmuNRxCQuu2s7t61z8ctFyRK6OlX7TY36M\\/1uN79qb\\/PJaFCom3v5vZPjORyacnqEconfggHYGiJiJYrNOMxStrznlGcrBQrV0VjMPuY3enGsrjvNUBwZX+gvJs9Gx0lmIQCVWQmwiHDWBlgCM6kEkBtz87KxJ\\/FAgLha8nHs+y9cJ8G0sqVAmQHNDqx7rU8+euqekWhsZrVkUFBcUcqw+Yn08QZjxcxKhBZxJ9V4BoQ3B\\/bl0Z4Z4zkYYnAl3mjKPOHYQSSP2ni1cM2066RLVwekabnlsqUXm5ClImgpkt3eiqVU9PML0zH\\/GmAQne51MRMqiLdaJRRzBMPv1D7XG4r5p7rzagSeUyskrU8doC2Lr6ETenig79UD2arjUP77jfAuVJd1Dh1aqTTYbJhFTuPihiHuqIGJ+ayCQvis\\/4CZtj08jhAYPpI0RAHVnYpodmUM\\/jvbcCjtSQM4O9NEUvIZc=\"}]},{\"role\":\"user\",\"parts\":[{\"text\":\"What was the first question I asked you?\"}]}],\"system_instruction\":{\"parts\":[{\"text\":\"You are a helpful assistant.\"}]}}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "1275"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"The first question you asked me was: \\\"What is the capital of France?\\\"\",\n            \"thoughtSignature\": \"Er0GCroGARFNMg9umTVYclPvPv2HO9K2b5OTlQApk89PACBe5yxM/IpF1ii4Df+XEFT9FSGyfMttTM/Fr60gumcntreuCs/HU1v5JbirXS0dXcdII9Kqr2bWWtUl5vsJ3AItSu8tGYKHet4uR1O8Xln/+WO26+9G4PZVSzeU/Lgu1NcRaw3hkZVU3/gXnmpv/np6FfcEag71jWUM/oj62loMlqjaorQ5hLpG3yKsTWMBXwEXYiNf9321HbRqlIdJCzwFIgz78qqPMZS1RggOS/omhJQS4akRh4vHrz1S+7wjjXYKISaDyAFjpn/0zrcqu67YJzyFxZtnLRbfE+iQ9RZ09MmVFeCo7V7TNI4aTzTG5iUwulg9G9SQAPGX1bdVfwxxjljWZIR2sRAUJ+MXUGsHdvro+i2FTNCUdpnKgacput16JLyG6sk0eTEoylnjl3viCL98PTBUixS9TNxHjGLxxZjz6BAagbBXWjG7vWXltdWHSUMMXYrwlcUaju24LUIsdXo8GPQP50kMF4ejSBDv1lMrU+lg8J4bS9NkwFxzndTouiLQFW6YvGi5tcZDScjK1LYvvKyfrD+fRCQQgWLBtP7vH9qLcSuFqV5IL86CG2G0Qdffgn/WT5VClo2GeZCsTLXPsS+TXuwVsHItbMzTLRvlzO1wjmo1VF9cxPp6TuKjOY/rScCGXgPro5zgvS5DRt1K7GnFeYkCv09XWAQwwBkNq8tKguT1sQIMw7V8l+Hyt9NTkmGlzMUH0EB78WFDSo3AV+Jqm2Ib4zbZScPl2Wx9nUCk58J/UhCnW2QfnlVYC32LqkNBBZ6s3o+Wvp/u55NmQy9TdZuE9dLEdIhyGLbHNRmqKmbcIbUbRDYh29uVeDCm9WN3KHBH4+bkE6YRz73+5htsrHP/VI500juEa9M2iMuzs1Hkbcuk8xtCnFKOXia/q4V6ejuG21e+JS7snTKKcG+s6DuTPEkp9Cj0afHg4b2MV+zgTW21uHzMb2KAhC0vDLkt1sKNGotyzaszn9axDluaNB6N25nAY47OXuSm3y2FCeEk+KCLl+JX71lBqMU82tx7UDDjYQZQFIPK8MyvqATJMRMlwUiSpQ==\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 248,\n    \"candidatesTokenCount\": 16,\n    \"totalTokenCount\": 450,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 248\n      }\n    ],\n    \"thoughtsTokenCount\": 186,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-3.1-pro-preview\",\n  \"responseId\": \"UP-masDTI-KY3boPnLOAsQc\"\n}\n"
+            }
+        }
+    ]
+}

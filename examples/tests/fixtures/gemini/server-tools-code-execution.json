@@ -1,0 +1,57 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+                "signature": "3ec7eb222f77d762a65a22a41852a348",
+                "signature_v2": "98e842f30f1ce003e123a7f59bca9337",
+                "headers": {
+                    "x-goog-api-key": [
+                        "[redacted]"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": "{\"tools\":[{\"code_execution\":{}}],\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"Calculate total cost of a mortgage with 1% interest on 100k\\u20ac principal with 25 year maturity\"}]}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "x-gemini-service-tier": [
+                        "standard"
+                    ],
+                    "content-type": [
+                        "application/json; charset=UTF-8"
+                    ],
+                    "vary": [
+                        "Origin",
+                        "X-Origin",
+                        "Referer"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ],
+                    "server": [
+                        "scaffolding on HTTPServer2"
+                    ],
+                    "content-length": [
+                        "3579"
+                    ],
+                    "x-xss-protection": [
+                        "0"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"executableCode\": {\n              \"language\": \"PYTHON\",\n              \"code\": \"P = 100000\\nr_annual = 0.01\\nn_years = 25\\nn_months = n_years * 12\\nr_monthly = r_annual / 12\\n\\nM = P * (r_monthly * (1 + r_monthly)**n_months) / ((1 + r_monthly)**n_months - 1)\\ntotal_paid = M * n_months\\ntotal_interest = total_paid - P\\n\\nprint(f\\\"Monthly payment: {M}\\\")\\nprint(f\\\"Total paid: {total_paid}\\\")\\nprint(f\\\"Total interest: {total_interest}\\\")\\n\",\n              \"id\": \"call_3900820\"\n            },\n            \"thoughtSignature\": \"ErIKCq8KARFNMg8mx+5gzAsWkzRrV7ANbRok3s2QXTY5gSt4mlEHpRPZCPdXHq4nXN0aql+rIDHI7Y/ODmPGDZLtRWmZTF67mQ7RyjPHex/qBA5KXzOL5D6gu/e6e1fV4uLR8nstCUp2GBXD7mpHeZgv4lyq2Y9LO+S0Fc/X4uiDkO3Z0YWtRjUeuNuXSw1jI8mFhqVB5gJ3KBdguQ4oLVuNmnf6VtVcFSZAg2d9pcRLOHNTBNAmu+zSRIL8eGnLgMVa+FomtRilTh1hKMIzieacB8dS7Vq1FiF4oXeKZ8fvUWi4CxlY1z9Gyl8Fq1pIDj5Tpx40mt9xu/xnH0TC7S5nPvXhGTJeV8EVS9Dva4drQeyCVZu47YKE11qcYFkFdtwT2bxcLWZ+y1r4Gw7KOqalTF+cGH67+zwI5J7NDesDbgta+DswvzkIc1yfp42FbMmVlJkfUbAKUg3L9Tvb0nptnq1cmgIkew+lZEeM4YIstxWQDJBKpYU2+IpNNCTYpTl24lUQnBf1JMUUnwoXzpTl35IG2563uDAOcVtBfrb5672sE2S0cXwJj+Xh4QeF69XpKBoPSSc1Sevy8/nyYxuuWPfKuJQxpVShRBXG/r5qbXokG5FNEINxtdm26iqF3xB6FMF589w1k3GHq0AijUfk57q1qz8+htVJzqbwTmjT/UdzK3hP4ZnBLjIZ8YIJyIC8g+AuJ/2Fom6ZpOcJxIm9HhwbggW+oq79DAtxNmtRCze67+fzSKzH7UwIvRurt1rVxalpZJz4BPbUQB5HcL9anCAhhzygrwR+Yp6CtRr+IgoQbLNFAo8KFTWaYqna6Ce/IoKs4PYt/VyHLi0VrEfJP8LYlzu5KpprtAEWyy3615zUI94LjHIVT7xxv5WFNzZrdQTCGr9YLMa0ub6lQ3jjiHSKkCBLUDzvBUcbY9QPY0tRR+U03JWEkxrhrthqTeks7hwuLjO82D87XyX1M9YDM5Mt9N4c0GX8iXDZQrZ2LrKsDE7x4OaA3vITZvnjo9QeAMeJfCK944ukI6EuutQIPHGlOrGx+7YwPcfNf/Z1HsjttGKkeDVcLcKzMKHsdRRZyNXk4BWS8Tew+a9ZeNZWb6e0TUDiWYtsuyGE67M0LxwIbejI89nPOYXDMvkHSK8y8uKksrJe1RUrpJGsYB4zUDjvFDNnyHcgXMgc653H5ZtxEJE1FuqAXwwGmlD7/+8/5asvsV5OEgPDuZAvloJYBSzBGo7oj5RkZL3mGozzHVVcoXgt1RifEMbPreB281n9Al9PMgZLWPO6IrppJneirKIHry45hV48Ma50T0XEU91Xik35jcaGwYFFgPwWfxhX7xqCCDa5Uo14QSc67Aq48QeEdqkkQDOZiqnSdIGZ2m9D9IC7sYDCL1wkg8MaWOPUYsuV18jjIh9clPimAPK1sDH87b7wKLW1tSm9WPt/unCkWcZS7r28EmydoBhtGgs6iQrFweP4nv9w1tNcJ9uwTUfp9swiyrt1MqTQu7mKtFzV3uzZ42QQxb/6P6FAwB/8IJkYAoDrBp8QkTwBEQqmfzDzGGm5LY4V3nLtwNkejE4aERRX4qXQB9cZJLu+85H2piWQAqHVnfM6PVp8xINKx6krTIZ5RlkkPa/CLy1xSRaUHuJTP7x4vJf/h+xnm67mFT7YPxmDJAlGtMppao9o2NimNox7FQbHCqKFGji2eTw2hnH9cwWUXJOCcuRp4cJ4lAM5SvHYD6o62Pcsk1DaZQT6GCObEl0wRdnz4WV3r0svgw==\"\n          },\n          {\n            \"codeExecutionResult\": {\n              \"outcome\": \"OUTCOME_OK\",\n              \"output\": \"Monthly payment: 376.87245423059426\\nTotal paid: 113061.73626917828\\nTotal interest: 13061.736269178276\\n\",\n              \"id\": \"call_3900820\"\n            }\n          },\n          {\n            \"text\": \"To calculate the total cost of the mortgage, we assume a standard fixed-rate mortgage with monthly repayments. \\n\\nHere are the details of the calculation:\\n\\n*   **Principal amount:** 100,000 €\\n*   **Annual interest rate:** 1%\\n*   **Term (Maturity):** 25 years (300 months)\\n\\nFirst, we find the **monthly payment** using the standard amortization formula:\\n**Monthly Payment = ~376.87 €**\\n\\nOver the course of 25 years (300 months), paying 376.87 € per month:\\n\\n*   **Total Amount Paid (Principal + Interest):** **113,061.74 €**\\n*   **Total Cost of Borrowing (Interest only):** **13,061.74 €**\\n\\nTherefore, the total cost for borrowing the money (the interest) is **13,061.74 €**, making your total lifetime repayment to the bank **113,061.74 €**.\",\n            \"thoughtSignature\": \"EqsICqgIARFNMg/tseZMUlgDqeNHypT9cFxWdsDG+ZktuGBvsFZmg+xq1Vdw4Xxvq8csyXujm3cL9LAFOj872eIJFO8GqnLaXzrAtZvHg0Nc1pVe4eV0ydIdeoQYL8bA72OKoCpz5j+EMqIpsxfD3CBu4BhYYcNKey5K4hu0zW6cF03FCYyHaQqMq3fieS5P+poj+mCW6UeqwZDme3jcV/Gtq6HwHViSewsOxmbVvBL6TkqdRSRVdlG5MZKOQcFT/ZF3PgD0+czWOwnPdjszmQtAYin+M+CZLIDCFoyWY94ahhneu4REEkuhTB912A3+7Gg7vB2MfFG9w8EpolBq9nMmp+XQsQ14vb9NeTO5wACdkzV3dQblQTvPYLo0q1NEN0TQBDlyJomzs5iPm89KZUpoVKa/xnAOHEKmeghIvS3shIXdfqLCxKUf5dZ1lJvtoEK/Y7dUbmuS8en0Fm6kknCczl3Yj/IFoPInaB6ojs+kLQp67Wi1pfgqhOr8b0NNtggXXFA+8/XKJlQz9Vk2cjzYHX8x3L2y+rIVi3WqfvUGtOa/YdfZ406wPsi6oXSIz/Wisv8lNEclpGhEijKRv/Qdo9XK4CrioNhvs0jWBLPxujORwtTb4964DcAeybG7z8yCFr8WhZYJlVUghkuCL6Lbyc2k03VZfpmDVFpAqwzR519ELGdslNcHIAju1HTThpq1oMa/3nbC1eMubCp7MBqYTBaWR8y3JOG9lN7Pg4514RHS/XMHjtYWVrKNlwuzuaM7VKPsXn/dkLNSa8ukMQRmKtUt4fb96c2++JSKq1OOFoDKxDC84jVnoL2ZcQeTDeMgEsl5ziDTSA/dZLURpj3cAS8AodUrFjPxg+xFhcY2tpnsZFFhQ+UOfRtDf3JxLzO/gi1W2xXLy5LUx+EVujNBZ6xf1sc7q2Sn5zBu4ksO12A78/J11o6Hi78oGe79SbFAKDSSvDXYjpjMlS1l7oapvtluBJEmqUTgEHkHA0GpEEHlQ3g/RRkDdb9Z9kQoyPiK3u3Zei1eD2LOWtH3ll+hoyyxhkP8ByXnE+PPPd+kTclLD2YnIVB+2VeTISxokRa5CgkfwHb4o71DaXvaq+7uWjVo7aZZLkfV3MNcjVPD7Q3D2dsfO1/Iq5lXHhDQLYQACRonKzYTMWsk804KSO0He0k4NRdoEhB49z1PeJsc0gUVTCsbpWFOeOQ/5a+QIvRFiUbPAAS+nDiHsU6nzpLwuXlp/vlHD1yeZqsHxb4W6Q+qBOBr2Xm3wUN9b7bTGALSsxFFcHctoPPMPiet9pF4oPOWVNj07edwvDBz3AHopddm11dnzQYmnGXFSDSqw6Pboz5yYK8v4PFhmQN320ZVgFYqFDJ31Vx5P2FuH4Q/NvwdWmbajBnday27dFNgZgAgDZBB7b5cGeklbiI=\"\n          }\n        ],\n        \"role\": \"model\"\n      },\n      \"finishReason\": \"STOP\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 465,\n    \"candidatesTokenCount\": 394,\n    \"totalTokenCount\": 2280,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 465\n      }\n    ],\n    \"toolUsePromptTokenCount\": 690,\n    \"toolUsePromptTokensDetails\": [\n      {\n        \"modality\": \"TEXT\",\n        \"tokenCount\": 690\n      }\n    ],\n    \"thoughtsTokenCount\": 731,\n    \"serviceTier\": \"standard\"\n  },\n  \"modelVersion\": \"gemini-3.1-pro-preview\",\n  \"responseId\": \"Rf-mavPpIsis28oPz8THyQM\"\n}\n"
+            }
+        }
+    ]
+}

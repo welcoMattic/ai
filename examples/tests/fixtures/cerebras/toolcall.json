@@ -1,0 +1,172 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cerebras.ai/v1/chat/completions",
+                "signature": "8d1a03780435fab9536299c77ccdb22d",
+                "signature_v2": "0ef8c2263230bab71a749cd62e1065b9",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"user\",\"content\":\"How many days until next Christmas?\"}],\"model\":\"gpt-oss-120b\",\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\",\"parameters\":{\"type\":\"object\"}}}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-ratelimit-remaining-requests-minute": [
+                        "999"
+                    ],
+                    "x-ratelimit-remaining-requests-hour": [
+                        "59999"
+                    ],
+                    "x-ratelimit-remaining-requests-day": [
+                        "1439999"
+                    ],
+                    "x-ratelimit-remaining-tokens-minute": [
+                        "483608"
+                    ],
+                    "x-ratelimit-remaining-tokens-hour": [
+                        "89983608"
+                    ],
+                    "x-ratelimit-remaining-tokens-day": [
+                        "719983608"
+                    ],
+                    "x-ratelimit-limit-requests-minute": [
+                        "1000"
+                    ],
+                    "x-ratelimit-limit-requests-hour": [
+                        "60000"
+                    ],
+                    "x-ratelimit-limit-requests-day": [
+                        "1440000"
+                    ],
+                    "x-ratelimit-limit-tokens-minute": [
+                        "500000"
+                    ],
+                    "x-ratelimit-limit-tokens-hour": [
+                        "30000000"
+                    ],
+                    "x-ratelimit-limit-tokens-day": [
+                        "720000000"
+                    ],
+                    "inference-id": [
+                        "chatcmpl-5e720b29-fbf1-4538-8237-7c06e436cc05"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"chatcmpl-5e720b29-fbf1-4538-8237-7c06e436cc05\",\"choices\":[{\"finish_reason\":\"tool_calls\",\"index\":0,\"message\":{\"reasoning\":\"We need to calculate days until next Christmas from current date. The current date can be obtained via functions.clock. Let's call it.\",\"tool_calls\":[{\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"},\"type\":\"function\",\"id\":\"67e6bf65c\"}],\"role\":\"assistant\"}}],\"created\":1789332150,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_752b9cb17e04d95d05c3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":167,\"completion_tokens\":45,\"completion_tokens_details\":{\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0,\"reasoning_tokens\":26},\"prompt_tokens\":122,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"time_info\":{\"created\":1789332150.0517726,\"queue_time\":0.003413923,\"prompt_time\":0.002347342,\"completion_time\":0.029088386,\"total_time\":0.03643631935119629}}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.cerebras.ai/v1/chat/completions",
+                "signature": "01263f47ee181a06fcd7dcae5e31ae39",
+                "signature_v2": "5f99030cff2a17a9d867f3e062d7f440",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"messages\":[{\"role\":\"user\",\"content\":\"How many days until next Christmas?\"},{\"role\":\"assistant\",\"content\":null,\"tool_calls\":[{\"id\":\"67e6bf65c\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"content\":\"Current date is 2026-09-13 (YYYY-MM-DD) and the time is 20:42:30 (HH:MM:SS).\",\"tool_call_id\":\"67e6bf65c\"}],\"model\":\"gpt-oss-120b\",\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\",\"parameters\":{\"type\":\"object\"}}}]}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-ratelimit-remaining-requests-minute": [
+                        "998"
+                    ],
+                    "x-ratelimit-remaining-requests-hour": [
+                        "59998"
+                    ],
+                    "x-ratelimit-remaining-requests-day": [
+                        "1439998"
+                    ],
+                    "x-ratelimit-remaining-tokens-minute": [
+                        "483422"
+                    ],
+                    "x-ratelimit-remaining-tokens-hour": [
+                        "89983422"
+                    ],
+                    "x-ratelimit-remaining-tokens-day": [
+                        "719983422"
+                    ],
+                    "x-ratelimit-limit-requests-minute": [
+                        "1000"
+                    ],
+                    "x-ratelimit-limit-requests-hour": [
+                        "60000"
+                    ],
+                    "x-ratelimit-limit-requests-day": [
+                        "1440000"
+                    ],
+                    "x-ratelimit-limit-tokens-minute": [
+                        "500000"
+                    ],
+                    "x-ratelimit-limit-tokens-hour": [
+                        "30000000"
+                    ],
+                    "x-ratelimit-limit-tokens-day": [
+                        "720000000"
+                    ],
+                    "inference-id": [
+                        "chatcmpl-b7568691-5288-4bf1-b4e4-4996475c4578"
+                    ],
+                    "referrer-policy": [
+                        "strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "strict-transport-security": [
+                        "max-age=15552000; includeSubDomains; preload"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"chatcmpl-b7568691-5288-4bf1-b4e4-4996475c4578\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"There are **103 days** until Christmas 2026 (December 25).\",\"reasoning\":\"We need to compute days until next Christmas (December 25). Current date: 2026-09-13. Days from Sep 13 to Dec 25 inclusive? Usually days until next Christmas means days remaining after today, not counting today. Compute difference.\\n\\nWe need number of days from 2026-09-13 to 2026-12-25.\\n\\nCount days in each month:\\n\\nSeptember: total days 30. Today is 13, so remaining days in September after 13: 30 - 13 = 17 days (if we count from Sep 14 to Sep 30 inclusive). October = 31 days. November =30 days. December up to 25: 25 days.\\n\\nSum: 17 +31+30+25 = 103 days.\\n\\nCheck if we should include Dec 25? \\\"until next Christmas\\\" likely means days until that day, not including the day itself. So count days between today (Sept 13) and Dec 25 exclusive of Dec 25? Usually \\\"how many days until X?\\\" counts the number of days from tomorrow up to the date inclusive of the target day? Example: If today is Dec 24, answer is 1 day until Christmas. So includes the target day but not today. So our calculation includes Dec 25 as day 1? Let's test: If today is Dec 24, remaining days = (Dec 25 - Dec 24) = 1. That includes Dec 25 as one day. So we should count days from Sep 14 to Dec 25 inclusive. Our sum includes Dec 25 as day 1, correct. So 103 days.\\n\\nThus answer: 103 days.\",\"role\":\"assistant\"}}],\"created\":1789332150,\"model\":\"gpt-oss-120b\",\"system_fingerprint\":\"fp_b546658c8e93d2e57ef2\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":552,\"completion_tokens\":372,\"completion_tokens_details\":{\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0,\"reasoning_tokens\":346},\"prompt_tokens\":180,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"time_info\":{\"created\":1789332150.2703645,\"queue_time\":0.004265828,\"prompt_time\":0.002791814,\"completion_time\":0.21845464,\"total_time\":0.22755885124206543}}"
+            }
+        }
+    ]
+}

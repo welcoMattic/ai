@@ -1,0 +1,61 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://openrouter.ai/api/v1/audio/speech",
+                "signature": "6602fd114bb1ce393b5c43a869739a6e",
+                "signature_v2": "6353c311740f565463122a7944cbd770",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "model": "google/gemini-3.1-flash-tts-preview",
+                    "input": "Hello world from Symfony AI!",
+                    "voice": "Zephyr",
+                    "response_format": "pcm"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "audio/pcm;rate=24000;channels=1"
+                    ],
+                    "access-control-allow-origin": [
+                        "*"
+                    ],
+                    "x-generation-id": [
+                        "gen-tts-1789329453-coSrIDFgVEujQ86vtrJy"
+                    ],
+                    "access-control-expose-headers": [
+                        "X-Generation-Id,X-Provider-Name,request-id,cf-ray"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "permissions-policy": [
+                        "payment=(self \"https://checkout.stripe.com\" \"https://connect-js.stripe.com\" \"https://js.stripe.com\" \"https://*.js.stripe.com\" \"https://hooks.stripe.com\")"
+                    ],
+                    "referrer-policy": [
+                        "no-referrer, strict-origin-when-cross-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ]
+                },
+                "body_format": "binary",
+                "body": null,
+                "body_size": 149760
+            }
+        }
+    ]
+}
