@@ -38,11 +38,31 @@ use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Component\VarDumper\Cloner\VarCloner;
+use Symfony\Component\VarDumper\Dumper\CliDumper;
+use Symfony\Component\VarDumper\VarDumper;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 require_once __DIR__.'/vendor/autoload.php';
 // Replay runs use the placeholder values of .env.test, which are also what recordings store.
 (new Dotenv())->loadEnv(__DIR__.'/.env', defaultEnv: 'replay' === ($_SERVER['CASSETTE'] ?? null) ? 'test' : 'dev');
+
+// Configure VarDumper to drop ID handles like `{#123}` while dumping object instances
+VarDumper::setHandler(static function (mixed $var, ?string $label = null) {
+    static $cloner = null;
+    static $dumper = null;
+
+    $cloner ??= new VarCloner();
+    $dumper ??= new CliDumper();
+
+    $data = $cloner->cloneVar($var)->withRefHandles(false);
+
+    if (null !== $label) {
+        $data = $data->withContext(['label' => $label]);
+    }
+
+    $dumper->dump($data);
+});
 
 const RECORDED_CLOCK_OUTPUT_PATTERN = '/Current date is (?<date>\d{4}-\d{2}-\d{2}) \(YYYY-MM-DD\) and the time is (?<time>\d{2}:\d{2}:\d{2}) \(HH:MM:SS\)\./';
 const RECORDED_DATETIME_OUTPUT_PATTERN = '/(?<datetime>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2})/';

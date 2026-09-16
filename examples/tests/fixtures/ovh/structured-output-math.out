@@ -1,4 +1,4 @@
-Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {#460
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {
   +steps: []
   +finalAnswer: """
     **Step‑by‑step solution**\n

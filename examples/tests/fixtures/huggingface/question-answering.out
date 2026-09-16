@@ -1,4 +1,4 @@
-Symfony\AI\Platform\Bridge\HuggingFace\Output\QuestionAnsweringResult {#32
+Symfony\AI\Platform\Bridge\HuggingFace\Output\QuestionAnsweringResult {
   -answer: "Paris"
   -startIndex: 0
   -endIndex: 5

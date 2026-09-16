@@ -1,4 +1,4 @@
-Symfony\AI\Platform\Bridge\HuggingFace\Output\ZeroShotClassificationResult {#32
+Symfony\AI\Platform\Bridge\HuggingFace\Output\ZeroShotClassificationResult {
   -labels: array:3 [
     0 => "refund"
     1 => "faq"

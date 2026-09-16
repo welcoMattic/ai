@@ -1,14 +1,14 @@
-Symfony\AI\Platform\Bridge\HuggingFace\Output\ClassificationResult {#32
+Symfony\AI\Platform\Bridge\HuggingFace\Output\ClassificationResult {
   -classifications: array:3 [
-    0 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {#63
+    0 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {
       -label: "neutral"
       -score: 0.86976188421249
     }
-    1 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {#80
+    1 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {
       -label: "positive"
       -score: 0.1095381975174
     }
-    2 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {#74
+    2 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {
       -label: "negative"
       -score: 0.020699929445982
     }
