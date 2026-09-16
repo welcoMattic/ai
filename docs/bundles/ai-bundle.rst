@@ -1114,9 +1114,9 @@ bundles share one connection:
                 tools:
                     - { mcp_server: 'research.filesystem' } # tools reach the model as "filesystem_<name>", change it with "prefix"
 
-The remote tools are offered next to the agent's other tools, also combined with ``tools: true``. A
-server that cannot be reached contributes no tools; lower its ``init_timeout`` and ``max_retries`` to
-notice that sooner.
+The list stays explicit: an agent listing only ``mcp_server`` entries gets only the tools of those
+servers. To offer local tools next to them, list those tools as well. A server that cannot be reached
+contributes no tools; lower its ``init_timeout`` and ``max_retries`` to notice that sooner.
 
 Token Usage Tracking
 --------------------
