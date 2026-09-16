@@ -1,5 +1,5 @@
 Initial object state:
-Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\City {#344
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\City {
   +name: "Berlin"
   +population: null
   +country: null
@@ -7,7 +7,7 @@ Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\City {#344
 }
 
 Populated object state:
-Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\City {#344
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\City {
   +name: "Berlin"
   +population: 3645000
   +country: "Germany"

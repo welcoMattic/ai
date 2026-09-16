@@ -32,7 +32,7 @@ final class ExamplesReplayTest extends TestCase
     #[DataProvider('provideRecordedExamples')]
     public function testExampleReplaysDeterministically(string $examplePath, ?string $fixture)
     {
-        // Xdebug allocates objects of its own, which shifts the object ids in dumped output.
+        // Xdebug reformats uncaught errors and only slows the replay down.
         $process = new Process(['php', $examplePath], self::examplesDirectory(), ['CASSETTE' => 'replay', 'XDEBUG_MODE' => 'off']);
         $process->run();
 

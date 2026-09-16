@@ -1,4 +1,4 @@
-Symfony\AI\Platform\Bridge\HuggingFace\Output\TableQuestionAnsweringResult {#32
+Symfony\AI\Platform\Bridge\HuggingFace\Output\TableQuestionAnsweringResult {
   -answer: "2008"
   -coordinates: array:1 [
     0 => array:2 [

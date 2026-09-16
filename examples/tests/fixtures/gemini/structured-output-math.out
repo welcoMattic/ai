@@ -1,18 +1,18 @@
-Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {#469
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {
   +steps: array:4 [
-    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#485
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
       +explanation: "The goal is to isolate the variable 'x'. First, we need to get rid of the constant term on the left side of the equation. To do this, subtract 7 from both sides of the equation."
       +output: "8x + 7 - 7 = -23 - 7"
     }
-    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#479
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
       +explanation: "Perform the subtraction on both sides."
       +output: "8x = -30"
     }
-    2 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#476
+    2 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
       +explanation: "Now, to isolate 'x', we need to get rid of the coefficient 8. Since 8 is multiplying 'x', we divide both sides of the equation by 8."
       +output: "8x / 8 = -30 / 8"
     }
-    3 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#483
+    3 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
       +explanation: "Perform the division on both sides. The fraction -30/8 can be simplified by dividing both the numerator and the denominator by their greatest common divisor, which is 2."
       +output: "x = -15/4"
     }

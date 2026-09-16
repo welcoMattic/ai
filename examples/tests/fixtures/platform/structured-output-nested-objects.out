@@ -1,27 +1,27 @@
 
 === Testing with model: claude-sonnet-4-5-20250929 ===
 
-Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingOrder {#503
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingOrder {
   +recipientName: "John Doe"
-  +priority: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingPriority {#422
+  +priority: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingPriority {
     +name: "Express"
     +value: "express"
   }
-  +deliverBy: DateTimeImmutable @1773619199 {#504
+  +deliverBy: DateTimeImmutable @1773619199 {
     date: 2026-03-15 23:59:59.0 +00:00
   }
-  +address: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\Address {#565
+  +address: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\Address {
     +street: "123 Main St"
     +city: "Springfield"
     +zip: "62701"
   }
   +items: array:2 [
-    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#597
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {
       +name: "Widget"
       +quantity: 3
       +price: 9.99
     }
-    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#594
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {
       +name: "Gadget"
       +quantity: 1
       +price: 24.99
@@ -31,27 +31,27 @@ Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingOrder 
 
 === Testing with model: gpt-5-mini ===
 
-Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingOrder {#494
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingOrder {
   +recipientName: "John Doe"
-  +priority: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingPriority {#422
+  +priority: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingPriority {
     +name: "Express"
     +value: "express"
   }
-  +deliverBy: DateTimeImmutable @1773532800 {#617
+  +deliverBy: DateTimeImmutable @1773532800 {
     date: 2026-03-15 00:00:00.0 +00:00
   }
-  +address: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\Address {#640
+  +address: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\Address {
     +street: "123 Main St"
     +city: "Springfield"
     +zip: "62701"
   }
   +items: array:2 [
-    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#641
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {
       +name: "Widget"
       +quantity: 3
       +price: 9.99
     }
-    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#642
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {
       +name: "Gadget"
       +quantity: 1
       +price: 24.99
@@ -61,27 +61,27 @@ Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingOrder 
 
 === Testing with model: gemini-2.5-flash ===
 
-Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingOrder {#620
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingOrder {
   +recipientName: "John Doe"
-  +priority: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingPriority {#422
+  +priority: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\ShippingPriority {
     +name: "Express"
     +value: "express"
   }
-  +deliverBy: DateTimeImmutable @1773532800 {#629
+  +deliverBy: DateTimeImmutable @1773532800 {
     date: 2026-03-15 00:00:00.0 +00:00
   }
-  +address: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\Address {#638
+  +address: Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\Address {
     +street: "123 Main St"
     +city: "Springfield"
     +zip: "62701"
   }
   +items: array:2 [
-    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#637
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {
       +name: "Widget"
       +quantity: 3
       +price: 9.99
     }
-    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {#636
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\ShippingOrder\OrderItem {
       +name: "Gadget"
       +quantity: 1
       +price: 24.99

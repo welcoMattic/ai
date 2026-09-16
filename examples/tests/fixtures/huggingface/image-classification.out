@@ -1,22 +1,22 @@
-Symfony\AI\Platform\Bridge\HuggingFace\Output\ClassificationResult {#34
+Symfony\AI\Platform\Bridge\HuggingFace\Output\ClassificationResult {
   -classifications: array:5 [
-    0 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {#65
+    0 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {
       -label: "balloon"
       -score: 0.10644098371267
     }
-    1 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {#82
+    1 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {
       -label: "ocarina, sweet potato"
       -score: 0.099919646978378
     }
-    2 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {#76
+    2 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {
       -label: "spotlight, spot"
       -score: 0.099077984690666
     }
-    3 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {#72
+    3 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {
       -label: "theater curtain, theatre curtain"
       -score: 0.095238208770752
     }
-    4 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {#84
+    4 => Symfony\AI\Platform\Bridge\HuggingFace\Output\Classification {
       -label: "stage"
       -score: 0.072535932064056
     }

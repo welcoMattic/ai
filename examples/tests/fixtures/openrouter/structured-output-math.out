@@ -1,10 +1,10 @@
-Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {#468
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {
   +steps: array:2 [
-    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#484
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
       +explanation: "Start with the equation 8x + 7 = -23. To isolate x, first remove 7 from the left by subtracting 7 from both sides (doing the same operation to both sides keeps the equality true)."
       +output: "8x + 7 - 7 = -23 - 7 → 8x = -30"
     }
-    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#478
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
       +explanation: "Now divide both sides by 8 to solve for x."
       +output: "8x/8 = -30/8 → x = -30/8 = -15/4 = -3.75"
     }

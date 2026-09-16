@@ -1,4 +1,4 @@
-Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {#471
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {
   +steps: []
   +finalAnswer: """
     To find the value of\u{202F}*x* that makes the equation true, just isolate\u{202F}*x* step‑by‑step.\n

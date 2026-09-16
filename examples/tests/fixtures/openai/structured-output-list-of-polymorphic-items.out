@@ -1,10 +1,10 @@
-Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\PolymorphicType\ListOfPolymorphicTypesDto {#467
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\PolymorphicType\ListOfPolymorphicTypesDto {
   +items: array:2 [
-    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\PolymorphicType\ListItemName {#507
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\PolymorphicType\ListItemName {
       +name: "John Doe"
       +type: "name"
     }
-    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\PolymorphicType\ListItemAge {#519
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\PolymorphicType\ListItemAge {
       +age: 30
       +type: "age"
     }

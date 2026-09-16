@@ -6,13 +6,13 @@ I'm acting as a math tutor for the user, who wants help solving the equation 8x 
 
 In Step 2, I need to divide both sides by 8. The explanation will be: "Solve for x by dividing both sides by 8." After doing the math, I find that x = -30/8, which reduces to -15/4 or -3.75. For the final answer, I’ll state: "x = -15/4 (which equals -3.75)." I'll be sure to format everything correctly for JSON, avoiding any extra keys, while ensuring proper string escaping and matching types.
 </reasoning>
-Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {#483
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {
   +steps: array:2 [
-    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#499
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
       +explanation: "Isolate the x-term by subtracting 7 from both sides of the equation 8x + 7 = -23."
       +output: "8x = -30"
     }
-    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {#493
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
       +explanation: "Solve for x by dividing both sides by 8."
       +output: "x = -30/8 = -15/4 = -3.75"
     }
