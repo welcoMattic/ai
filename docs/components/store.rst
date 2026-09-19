@@ -237,7 +237,8 @@ Implementing a Bridge
 ---------------------
 
 The main extension points of the Store component is the :class:`Symfony\\AI\\Store\\StoreInterface`, that defines the methods
-for adding, removing and querying vectorized documents in the store.
+for adding, removing, querying and counting vectorized documents in the store. It extends ``\Countable``, so a store
+reports the number of documents it holds and can be handed to ``count()`` directly.
 
 This leads to a store implementing the following methods::
 
@@ -272,6 +273,12 @@ This leads to a store implementing the following methods::
         {
             // Return true if the given query class is supported
             return false;
+        }
+
+        public function count(): int
+        {
+            // Implementation to count the documents in the store
+            return 0;
         }
     }
 
@@ -329,6 +336,37 @@ can be changed with the ``batch_size`` option::
 
 The only exception is Vektor, which supports neither removing documents in bulk nor listing them.
 Its index is the storage directory itself, which is simply recreated.
+
+Counting documents
+------------------
+
+To know how many documents a store holds, use :method:`Symfony\\AI\\Store\\StoreInterface::count`::
+
+    $total = $store->count();
+
+Since ``StoreInterface`` extends ``\Countable``, the store can be passed to ``count()`` as well, which
+also makes ``assertCount()`` work on a store in tests::
+
+    $total = count($store);
+
+    $this->assertCount(3, $store);
+
+Every store supports this operation and uses the native counting mechanism of its backend - for example
+``SELECT COUNT(*)`` for the SQL-based stores, ``_count`` for Elasticsearch and OpenSearch, an aggregation
+for Weaviate, or the exact count endpoint for Qdrant, which is asked instead of the estimated point count
+reported by the collection info.
+
+Two stores have to list their entries to count them, because their backend offers no count operation:
+S3 Vectors and Vektor.
+
+Keep in mind that the number is as fresh as the backend makes it. Stores whose backend indexes documents
+asynchronously - Elasticsearch, OpenSearch, Meilisearch and Pinecone among them - can report a count that
+does not include documents added moments ago::
+
+    $store->add($documents);
+
+    // may still be 0 until the backend has indexed the documents
+    $store->count();
 
 .. toctree::
     :maxdepth: 1
