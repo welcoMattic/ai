@@ -10,3 +10,7 @@ trim_trailing_whitespace = true
 
 [*.yml]
 indent_size = 2
+
+# Recorded example output is compared byte-for-byte by ExamplesReplayTest.
+[examples/tests/fixtures/**]
+trim_trailing_whitespace = false
