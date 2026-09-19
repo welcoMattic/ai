@@ -3,6 +3,12 @@
     "description": "Example scripts about using Symfony AI",
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../src/platform/src/Bridge/TypeSafe"
+        }
+    ],
     "require": {
         "async-aws/sso": "^1.0",
         "async-aws/sso-oidc": "^1.0",
@@ -79,6 +85,7 @@
         "symfony/ai-tavily-tool": "^0.13",
         "symfony/ai-together-platform": "^0.13",
         "symfony/ai-transformers-php-platform": "^0.13",
+        "symfony/ai-type-safe-platform": "dev-main",
         "symfony/ai-typesense-store": "^0.13",
         "symfony/ai-vektor-store": "^0.13",
         "symfony/ai-venice-platform": "^0.13",
