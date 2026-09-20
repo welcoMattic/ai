@@ -136,6 +136,7 @@ Supported Models & Platforms
   * `Amazon's Nova`_ with `AWS Bedrock`_ as Platform
   * `Mistral's Mistral`_ with `Mistral`_ and `OpenRouter`_ as Platform
   * `Albert API`_ models with `Albert`_ as Platform (French government's sovereign AI gateway)
+  * Open-weight models (`gpt-oss`_, `Qwen`_, `Gemma`_) with `Bedrock Mantle`_ as Platform
   * `LiteLLM`_ as unified Platform
 * **Embeddings Models**
   * `Gemini Text Embeddings`_ with `Google`_ and `OpenRouter`_
@@ -195,6 +196,10 @@ model catalogs.
 
 See :doc:`platform/model-catalogs` for keeping catalogs current, adding custom
 models, or bypassing the catalog.
+
+AWS Bedrock reaches its models through two inference engines - the SDK-based ``InvokeModel`` API
+and the OpenAI- and Anthropic-compatible Mantle endpoint - each with its own factory and model
+catalog. See :doc:`platform/bedrock` for the full setup and usage guide.
 
 Providers and Multi-Provider Platforms
 --------------------------------------
@@ -2036,6 +2041,7 @@ Code Examples
 .. _`Anthropic's Claude`: https://www.anthropic.com/claude
 .. _`Anthropic`: https://www.anthropic.com/
 .. _`AWS Bedrock`: https://aws.amazon.com/bedrock/
+.. _`Bedrock Mantle`: https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-mantle.html
 .. _`LiteLLM`: https://docs.litellm.ai/docs/
 .. _`Cartesia`: https://cartesia.ai/
 .. _`Cartesia STT`: https://cartesia.ai/ink
@@ -2061,6 +2067,8 @@ Code Examples
 .. _`Amazon's Nova`: https://nova.amazon.com
 .. _`Mistral's Mistral`: https://www.mistral.ai/
 .. _`Qwen`: https://qwen.ai/
+.. _`Gemma`: https://deepmind.google/models/gemma/
+.. _`gpt-oss`: https://openai.com/open-models/
 .. _`Albert API`: https://github.com/etalab-ia/albert-api
 .. _`Albert`: https://alliance.numerique.gouv.fr/produit/produits-interminist%C3%A9rielles/albert-api/
 .. _`Mistral`: https://www.mistral.ai/

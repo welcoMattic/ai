@@ -463,6 +463,8 @@ deptrac:
       - PlatformComponent
       - MetaPlatform
       - AnthropicPlatform
+      - GenericPlatform
+      - OpenResponsesPlatform
     CachePlatform:
       - PlatformComponent
     CartesiaPlatform:

@@ -52,10 +52,26 @@ Advanced Example with Multiple Agents
                     api_key: '%env(AZURE_OPENAI_KEY)%'
                     api_version: '%env(AZURE_GPT_VERSION)%'
             bedrock:
-                # multiple instances possible - for example region depending
+                # multiple instances possible - for example region or engine depending
+                # "api" selects the inference engine, defaulting to the SDK-based InvokeModel API
                 default: ~
                 eu:
                     bedrock_runtime_client: 'async_aws.client.bedrock_runtime_eu'
+                # the OpenAI- and Anthropic-compatible Bedrock Mantle routes
+                openweight:
+                    api: completions
+                    api_key: '%env(AWS_BEARER_TOKEN_BEDROCK)%'
+                    region: '%env(AWS_DEFAULT_REGION)%'
+                gemma:
+                    # without an api_key, requests are signed with AWS SigV4
+                    api: responses
+                    region: '%env(AWS_DEFAULT_REGION)%'
+                claude:
+                    api: messages
+                    api_key: '%env(AWS_BEARER_TOKEN_BEDROCK)%'
+                    region: '%env(AWS_DEFAULT_REGION)%'
+                    cache_retention: long
+                    # workspace: 'proj_example'
             deepgram:
                 api_key: '%env(DEEPGRAM_API_KEY)%'
             elevenlabs:
