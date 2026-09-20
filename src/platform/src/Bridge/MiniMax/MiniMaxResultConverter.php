@@ -14,6 +14,7 @@ namespace Symfony\AI\Platform\Bridge\MiniMax;
 use Symfony\AI\Platform\Exception\IncompleteStreamException;
 use Symfony\AI\Platform\Exception\RuntimeException;
 use Symfony\AI\Platform\FinishReason\FinishReasonAwareTrait;
+use Symfony\AI\Platform\Job\JobHandle;
 use Symfony\AI\Platform\Model;
 use Symfony\AI\Platform\Result\BinaryResult;
 use Symfony\AI\Platform\Result\ChoiceResult;
@@ -28,7 +29,6 @@ use Symfony\AI\Platform\Result\StreamResult;
 use Symfony\AI\Platform\Result\TextResult;
 use Symfony\AI\Platform\ResultConverterInterface;
 use Symfony\AI\Platform\TokenUsage\TokenUsageExtractorInterface;
-use Symfony\Component\HttpClient\EventSourceHttpClient;
 
 /**
  * @author Guillaume Loulier <personal@guillaumeloulier.fr>
@@ -47,16 +47,12 @@ final class MiniMaxResultConverter implements ResultConverterInterface
 
     private const VIDEO_MAX_DURATION = 600;
 
-    private readonly MiniMaxJobClient $jobClient;
-
     /**
-     * @param MiniMaxJobClient|null $jobClient creates the handles of the jobs this converter starts, so
-     *                                         they name the provider the client serves
+     * @param string $provider the name stamped onto the handles of the jobs this converter starts
      */
-    public function __construct(?MiniMaxJobClient $jobClient = null)
-    {
-        // Only used to create handles, never to send a request.
-        $this->jobClient = $jobClient ?? new MiniMaxJobClient(new EventSourceHttpClient(), '');
+    public function __construct(
+        private readonly string $provider = 'minimax',
+    ) {
     }
 
     public function supports(Model $model): bool
@@ -206,8 +202,8 @@ final class MiniMaxResultConverter implements ResultConverterInterface
     /**
      * MiniMax answered with a task identifier instead of a payload, so the invocation produces a
      * reference to that task rather than a result. Resolving it - polling, and downloading the file
-     * it produces - is the job of {@see MiniMaxJobClient}, which therefore creates the handle; the
-     * handle carries what that client needs to know about the endpoint the task came from.
+     * it produces - is the job of {@see MiniMaxJobClient}; the handle carries what that client needs
+     * to know about the endpoint the task came from.
      *
      * @param array<string, mixed> $data
      * @param int                  $maxDuration   how long this endpoint may reasonably take, in seconds
@@ -218,11 +214,11 @@ final class MiniMaxResultConverter implements ResultConverterInterface
     {
         $taskId = $data['task_id'] ?? throw new RuntimeException('The MiniMax response does not contain a task identifier.');
 
-        return new JobResult($this->jobClient->createHandle((string) $taskId, [
+        return new JobResult(new JobHandle((string) $taskId, [
             'query_path' => $queryPath,
             'mime_type' => $mimeType,
             'archive_member' => $archiveMember,
             'file_id' => $data['file_id'] ?? null,
-        ], $maxDuration));
+        ], $this->provider, $maxDuration));
     }
 }

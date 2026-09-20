@@ -1127,10 +1127,11 @@ The handle holds no connection and no client, only what is needed to ask the pro
 again, so it can be stored and picked up somewhere else entirely::
 
     // in the process that started the job
-    $repository->save($handle->getId(), $handle->toString());
+    $jobId = $handle->getId();
+    $repository->save($jobId, $handle->toString());
 
     // in a worker, possibly much later
-    $handle = JobHandle::fromString($repository->load($id));
+    $handle = JobHandle::fromString($repository->load($jobId));
 
     if ($jobClient->getStatus($handle)->is(JobStateCase::SUCCEEDED)) {
         $result = $jobClient->getResult($handle);
@@ -1175,27 +1176,35 @@ be given ten minutes in a worker and five seconds inside a web request. Say so p
     $result = $runner->wait($jobClient, $handle, maxDuration: 5);
 
 A budget passed to the runner's constructor applies to every job it waits for and sits between the
-two: it overrules what a job asks for, and a single call overrules it in turn.
+two: it overrules what a job asks for, and a single call overrules it in turn. Whichever wins, it is
+spent as wall clock rather than as a number of polls - asking the provider takes time too, so five
+seconds mean five seconds and not five requests that may each take one.
+
+Before polling, the runner asks the client whether the handle is one it can resolve
+(:method:`Symfony\\AI\\Platform\\Job\\JobClientInterface::supports`) - what that means is the
+bridge's own judgement. A handle the client turns down raises an ``InvalidArgumentException`` rather
+than a request that fails halfway.
 
 In a Symfony application a runner using the application clock is available as
 ``ai.platform.job_runner`` and autowired through :class:`Symfony\\AI\\Platform\\Job\\JobRunner`. It
 carries no budget of its own, so the same shared service serves a job finishing in seconds and one
 running for minutes. Each job-capable platform also registers its client as
-``ai.platform.job_client.<name>``, autowired by argument name::
+``ai.platform.job_client.<name>``, autowired by the platform name as argument name - so the argument
+of a MiniMax job client has to be called ``$minimax``::
 
     public function __construct(
         private JobRunner $jobRunner,
-        private JobClientInterface $minimaxJobClient,
+        private JobClientInterface $minimax,
     ) {
     }
 
     public function __invoke(JobHandle $handle): void
     {
         // trust the job
-        $this->jobRunner->wait($this->minimaxJobClient, $handle);
+        $this->jobRunner->wait($this->minimax, $handle);
 
         // or bound it to what a request can afford
-        $this->jobRunner->wait($this->minimaxJobClient, $handle, maxDuration: 5);
+        $this->jobRunner->wait($this->minimax, $handle, maxDuration: 5);
     }
 
 An application holding handles of several providers picks the client by the name the handle carries,
@@ -1210,7 +1219,10 @@ from a locator over the ``ai.platform.job_client`` tag::
 
     public function __invoke(JobHandle $handle): void
     {
-        $this->jobRunner->wait($this->jobClients->get($handle->getProvider()), $handle);
+        // A handle only names a provider when the bridge that created it stated one.
+        $provider = $handle->getProvider() ?? throw new \InvalidArgumentException('The job handle does not name a provider.');
+
+        $this->jobRunner->wait($this->jobClients->get($provider), $handle);
     }
 
 The runner throws a :class:`Symfony\\AI\\Platform\\Exception\\JobFailedException` when the provider

@@ -31,19 +31,6 @@ use Symfony\Component\HttpClient\Response\MockResponse;
  */
 final class MiniMaxJobClientTest extends TestCase
 {
-    public function testItCreatesHandlesForTheProviderItServes()
-    {
-        $handle = (new MiniMaxJobClient(new MockHttpClient(), 'key', provider: 'minimax-eu'))
-            ->createHandle('123', ['query_path' => 'query/video_generation'], 600);
-
-        $this->assertSame('123', $handle->getId());
-        $this->assertSame('minimax-eu', $handle->getProvider());
-        $this->assertSame('query/video_generation', $handle->get('query_path'));
-        $this->assertSame(600, $handle->getMaxDuration());
-
-        $this->assertSame('minimax', (new MiniMaxJobClient(new MockHttpClient(), 'key'))->createHandle('123', [], 600)->getProvider());
-    }
-
     public function testItOnlySupportsHandlesCarryingAQueryPath()
     {
         $jobClient = new MiniMaxJobClient(new MockHttpClient(), 'key');
@@ -89,6 +76,60 @@ final class MiniMaxJobClientTest extends TestCase
 
         $this->assertTrue($status->is(JobStateCase::FAILED));
         $this->assertSame('invalid params', $status->getError());
+    }
+
+    public function testItReportsNoErrorWhileTheJobIsHealthy()
+    {
+        $httpClient = new MockHttpClient(new JsonMockResponse([
+            'status' => 'Processing',
+            'base_resp' => ['status_code' => 0, 'status_msg' => 'success'],
+        ]));
+
+        $status = (new MiniMaxJobClient($httpClient, 'key'))->getStatus($this->handle());
+
+        $this->assertTrue($status->is(JobStateCase::RUNNING));
+        $this->assertNull($status->getError());
+    }
+
+    public function testARejectedQueryEndsTheJobInsteadOfLookingLikeAnUnknownState()
+    {
+        $httpClient = new MockHttpClient(new JsonMockResponse([
+            'base_resp' => ['status_code' => 2013, 'status_msg' => 'invalid params'],
+        ]));
+
+        $status = (new MiniMaxJobClient($httpClient, 'key'))->getStatus($this->handle());
+
+        $this->assertTrue($status->is(JobStateCase::FAILED));
+        $this->assertTrue($status->isTerminal());
+        $this->assertSame('status code 2013', $status->getRaw());
+        $this->assertSame('invalid params', $status->getError());
+    }
+
+    public function testAStateThisBridgeDoesNotKnowStaysNonTerminal()
+    {
+        $httpClient = new MockHttpClient(new JsonMockResponse([
+            'status' => 'Rescheduled',
+            'base_resp' => ['status_code' => 2013, 'status_msg' => 'invalid params'],
+        ]));
+
+        $status = (new MiniMaxJobClient($httpClient, 'key'))->getStatus($this->handle());
+
+        $this->assertTrue($status->is(JobStateCase::UNKNOWN));
+        $this->assertFalse($status->isTerminal());
+        $this->assertSame('Rescheduled', $status->getRaw());
+        $this->assertSame('invalid params', $status->getError());
+    }
+
+    public function testARejectedQueryFailsTheRunnerRightAwayInsteadOfSpendingTheBudget()
+    {
+        $httpClient = new MockHttpClient(new JsonMockResponse([
+            'base_resp' => ['status_code' => 1008, 'status_msg' => 'insufficient balance'],
+        ]));
+
+        $this->expectException(JobFailedException::class);
+        $this->expectExceptionMessage('insufficient balance');
+
+        (new JobRunner(new MockClock()))->wait(new MiniMaxJobClient($httpClient, 'key'), $this->handle());
     }
 
     public function testItLooksUpTheFileAndDownloadsIt()

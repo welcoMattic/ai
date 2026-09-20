@@ -56,13 +56,18 @@ Platform
    ```
 
    Accordingly, `Bridge\MiniMax\MiniMaxResultConverter` no longer takes an HTTP client, API key,
-   endpoint or clock, only an optional `MiniMaxJobClient` that creates the job handles; polling moved to the new `Bridge\MiniMax\MiniMaxJobClient`. Code building the
+   endpoint or clock - polling moved to the new `Bridge\MiniMax\MiniMaxJobClient`. Code building the
    bridge through `Bridge\MiniMax\Factory` is unaffected.
 
    ```diff
    -$converter = new MiniMaxResultConverter($httpClient, $apiKey, $endpoint, $clock);
-   +$converter = new MiniMaxResultConverter($jobClient);
+   +$converter = new MiniMaxResultConverter();
    ```
+
+   Its only argument left is the name of the provider it belongs to, which it stamps onto the
+   handles of the jobs it starts so they can be resolved later. It defaults to `minimax` and only
+   needs to be passed when the provider was registered under a different name - which
+   `Factory::createProvider()` does on its own.
 
 Store
 -----

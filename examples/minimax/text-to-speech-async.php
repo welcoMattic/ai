@@ -15,10 +15,10 @@ use Symfony\AI\Platform\Message\Content\Text;
 
 require_once dirname(__DIR__).'/bootstrap.php';
 
-$provider = Factory::createProvider(env('MINI_MAX_API_KEY'), http_client());
+$platform = Factory::createPlatform(env('MINI_MAX_API_KEY'), http_client());
 
 // The async endpoint enqueues a task, so the invocation hands back a job handle instead of audio.
-$handle = $provider->invoke('speech-2.6-hd', new Text('The real danger is not that computers start thinking like people, but that people start thinking like computers.'), [
+$handle = $platform->invoke('speech-2.6-hd', new Text('The real danger is not that computers start thinking like people, but that people start thinking like computers.'), [
     'async' => true,
     'voice_setting' => [
         'voice_id' => 'English_expressive_narrator',

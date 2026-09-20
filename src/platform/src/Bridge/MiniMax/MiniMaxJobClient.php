@@ -28,8 +28,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
  * MiniMax answers such a request with a `task_id`, exposes the task under an endpoint-specific query
  * path, and delivers the payload as a file that has to be looked up and downloaded separately. Both
  * the query path and the expected MIME type are carried in the {@see JobHandle}, put there by
- * {@see MiniMaxResultConverter} which knows the endpoint the task came from. It creates the handle
- * through this client, which names the provider it serves.
+ * {@see MiniMaxResultConverter} which knows the endpoint the task came from.
  *
  * @author Johannes Wachter <johannes@sulu.io>
  */
@@ -55,17 +54,7 @@ final class MiniMaxJobClient implements JobClientInterface
         private readonly HttpClientInterface $httpClient,
         #[\SensitiveParameter] private readonly string $apiKey,
         private readonly string $endpoint = 'https://api.minimax.io/v1',
-        private readonly string $provider = 'minimax',
     ) {
-    }
-
-    /**
-     * @param array<string, mixed> $data
-     * @param int                  $maxDuration how long the task may reasonably take, in seconds
-     */
-    public function createHandle(string $taskId, array $data, int $maxDuration): JobHandle
-    {
-        return new JobHandle($taskId, $data, $this->provider, $maxDuration);
     }
 
     public function supports(JobHandle $handle): bool
@@ -75,25 +64,16 @@ final class MiniMaxJobClient implements JobClientInterface
 
     public function getStatus(JobHandle $handle): JobStatus
     {
-        $data = $this->query($handle);
-
-        $raw = (string) ($data['status'] ?? '');
-        $case = self::STATES[strtolower($raw)] ?? JobStateCase::UNKNOWN;
-
-        $error = $data['base_resp']['status_msg'] ?? null;
-
-        return new JobStatus($case, $raw, \is_string($error) && '' !== $error ? $error : null);
+        return $this->toStatus($this->query($handle));
     }
 
     public function getResult(JobHandle $handle): ResultInterface
     {
         $data = $this->query($handle);
+        $status = $this->toStatus($data);
 
-        $raw = (string) ($data['status'] ?? '');
-        $case = self::STATES[strtolower($raw)] ?? JobStateCase::UNKNOWN;
-
-        if (JobStateCase::SUCCEEDED !== $case) {
-            throw new JobFailedException(new JobStatus($case, $raw), \sprintf('The MiniMax task "%s" is not ready to be fetched, its status is "%s".', $handle->getId(), $raw));
+        if (!$status->is(JobStateCase::SUCCEEDED)) {
+            throw new JobFailedException($status, \sprintf('The MiniMax task "%s" is not ready to be fetched, its status is "%s".', $handle->getId(), $status->getRaw()));
         }
 
         // The file identifier can already be known from the submit response; the query response wins
@@ -114,6 +94,33 @@ final class MiniMaxJobClient implements JobClientInterface
         $mimeType = $handle->get('mime_type');
 
         return new BinaryResult($payload, \is_string($mimeType) ? $mimeType : null);
+    }
+
+    /**
+     * `status_msg` is a failure message only when `status_code` is not 0 - a healthy one says "success".
+     *
+     * @param array<string, mixed> $data
+     */
+    private function toStatus(array $data): JobStatus
+    {
+        $raw = (string) ($data['status'] ?? '');
+        $case = self::STATES[strtolower($raw)] ?? JobStateCase::UNKNOWN;
+
+        $statusCode = $data['base_resp']['status_code'] ?? 0;
+
+        if (0 === $statusCode) {
+            return new JobStatus($case, $raw);
+        }
+
+        $message = $data['base_resp']['status_msg'] ?? null;
+
+        // No state at all next to an error code is a task MiniMax will not talk about.
+        if ('' === $raw) {
+            $case = JobStateCase::FAILED;
+            $raw = 'status code '.(\is_scalar($statusCode) ? (string) $statusCode : 'unknown');
+        }
+
+        return new JobStatus($case, $raw, \is_string($message) && '' !== $message ? $message : null);
     }
 
     /**
