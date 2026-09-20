@@ -137,6 +137,7 @@ Supported Models & Platforms
   * `Mistral's Mistral`_ with `Mistral`_ and `OpenRouter`_ as Platform
   * `Albert API`_ models with `Albert`_ as Platform (French government's sovereign AI gateway)
   * Open-weight models (`gpt-oss`_, `Qwen`_, `Gemma`_) with `Bedrock Mantle`_ as Platform
+  * Open-weight models like Llama, Qwen, Kimi or GLM with `Together`_ as Platform
   * `LiteLLM`_ as unified Platform
   * Fireworks' hosted models (e.g. Kimi K2, DeepSeek V3.1) with `Fireworks`_ as Platform
 * **Embeddings Models**
@@ -147,6 +148,7 @@ Supported Models & Platforms
   * `Mistral Embed`_ with `Mistral`_ and `OpenRouter`_ as Platform
   * `Qwen`_ with `OpenRouter`_ as Platform
   * Fireworks' embedding models with `Fireworks`_ as Platform
+  * BGE embedding models with `Together`_ as Platform (dedicated endpoint required)
 * **Other Models**
   * `OpenAI's GPT Image`_ with `OpenAI`_ as Platform (generation and editing)
   * `OpenAI's Whisper`_ with `OpenAI`_ and `Azure`_ as Platform
@@ -155,6 +157,7 @@ Supported Models & Platforms
   * All models provided by `HuggingFace`_ can be listed with a command in the examples folder,
     and also filtered, e.g. ``php examples/huggingface/_model.php --provider=hf-inference --task=object-detection``
   * Fireworks' reranking models with `Fireworks`_ as Platform
+  * Llama-Rank reranking models with `Together`_ as Platform (dedicated endpoint required)
 * **Voice Models**
   * `ElevenLabs TTS`_ with `ElevenLabs`_ as Platform
   * `ElevenLabs STT`_ with `ElevenLabs`_ as Platform
@@ -162,11 +165,13 @@ Supported Models & Platforms
   * `Cartesia STT`_ with `Cartesia`_ as Platform
   * `Deepgram TTS`_ with `Deepgram`_ as Platform
   * `Deepgram STT`_ with `Deepgram`_ as Platform
+  * Text-to-speech and speech-to-text with `Together`_ as Platform
 
   For complete Deepgram setup and usage guide (TTS + STT), see :doc:`platform/deepgram`.
 * **Image/Video Models**
   * `Decart T2I`_ with `Decart`_  as Platform
   * `Decart T2V`_ with `Decart`_  as Platform
+  * Image generation with `Together`_ as Platform
 
 Generic Platforms
 ~~~~~~~~~~~~~~~~~
@@ -2040,6 +2045,13 @@ Code Examples
 * `Fireworks Embeddings`_
 * `Fireworks Rerank`_
 * `Fireworks Token Metadata`_
+* `Together Chat`_
+* `Together Streaming`_
+* `Together Tool Call`_
+* `Together Structured Output`_
+* `Together Image`_
+* `Together Text-to-Speech`_
+* `Together Speech-to-Text`_
 
 .. note::
 
@@ -2129,3 +2141,11 @@ Code Examples
 .. _`Fireworks Embeddings`: https://github.com/symfony/ai/blob/main/examples/fireworks/embeddings.php
 .. _`Fireworks Rerank`: https://github.com/symfony/ai/blob/main/examples/fireworks/rerank.php
 .. _`Fireworks Token Metadata`: https://github.com/symfony/ai/blob/main/examples/fireworks/token-metadata.php
+.. _`Together`: https://www.together.ai/
+.. _`Together Chat`: https://github.com/symfony/ai/blob/main/examples/together/chat.php
+.. _`Together Streaming`: https://github.com/symfony/ai/blob/main/examples/together/stream.php
+.. _`Together Tool Call`: https://github.com/symfony/ai/blob/main/examples/together/toolcall.php
+.. _`Together Structured Output`: https://github.com/symfony/ai/blob/main/examples/together/structured-output-math.php
+.. _`Together Image`: https://github.com/symfony/ai/blob/main/examples/together/image.php
+.. _`Together Text-to-Speech`: https://github.com/symfony/ai/blob/main/examples/together/text-to-speech.php
+.. _`Together Speech-to-Text`: https://github.com/symfony/ai/blob/main/examples/together/speech-to-text.php
