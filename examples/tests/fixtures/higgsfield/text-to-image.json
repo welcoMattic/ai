@@ -1,0 +1,3452 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/models",
+                "signature": "b6ceaa076cdc3592aa3227b99eaaf392",
+                "signature_v2": "8bd1c1e3d0b2391cc0ec68919b0c0e3a",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "9363e1211f964f58869f5917fdbedb57"
+                    ],
+                    "x-process-time": [
+                        "0.045155273750424385"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"total\":79,\"items\":[{\"slug\":\"alibaba/happy-horse/image-to-video\",\"title\":\"Happy Horse 1.0\",\"description\":\"Happy Horse 1.0 - Image to Video. Configured Alibaba route; cloned from hh/image-to-video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"alibaba/happy-horse/reference-to-video\",\"title\":\"Happy Horse 1.0\",\"description\":\"Happy Horse 1.0 - Reference to Video. Configured Alibaba route; cloned from happy-horse/reference-to-video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"alibaba/happy-horse/text-to-video\",\"title\":\"Happy Horse 1.0\",\"description\":\"Happy Horse 1.0 - Text to Video. Configured Alibaba route; cloned from hh/text-to-video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"alibaba/happy-horse/v1.1/image-to-video\",\"title\":\"HappyHorse 1.1\",\"description\":\"HappyHorse 1.1 - Image to Video. Configured Alibaba route; cloned from hh/image-to-video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"alibaba/happy-horse/v1.1/reference-to-video\",\"title\":\"HappyHorse 1.1\",\"description\":\"HappyHorse 1.1 - Reference to Video. Configured Alibaba route; cloned from happy-horse/reference-to-video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"alibaba/happy-horse/v1.1/text-to-video\",\"title\":\"HappyHorse 1.1\",\"description\":\"HappyHorse 1.1 - Text to Video. Configured Alibaba route; cloned from hh/text-to-video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"alibaba/qwen-image-3/edit\",\"title\":\"Qwen Image 3\",\"description\":\"Edit images from an instruction and one to three ordered references with Qwen Image 3.\",\"operation_type\":[\"image_edit\"],\"output_type\":\"image\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"text2image\",\"input_schema\":null},{\"slug\":\"alibaba/qwen-image-3/text-to-image\",\"title\":\"Qwen Image 3\",\"description\":\"Generate PNG images from Chinese or English prompts with Alibaba Qwen Image 3.\",\"operation_type\":[\"text2image\"],\"output_type\":\"image\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"text2image\",\"input_schema\":null},{\"slug\":\"alibaba/wan-3.0/image-to-video\",\"title\":\"Wan 3.0 Image to Video\",\"description\":\"Generate videos from a starting image with Wan 3.0.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"wan3_0\",\"input_schema\":null},{\"slug\":\"alibaba/wan-3.0-prime/image-to-video\",\"title\":\"Wan 3.0 Prime Image to Video\",\"description\":\"Generate videos from a starting image with Wan 3.0 Prime.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"wan3_0_prime\",\"input_schema\":null},{\"slug\":\"alibaba/wan-3.0-prime/reference-to-video\",\"title\":\"Wan 3.0 Prime Reference to Video\",\"description\":\"Generate videos guided by reference images with Wan 3.0 Prime.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"wan3_0_prime\",\"input_schema\":null},{\"slug\":\"alibaba/wan-3.0-prime/text-to-video\",\"title\":\"Wan 3.0 Prime Text to Video\",\"description\":\"Generate videos from text prompts with Wan 3.0 Prime.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"wan3_0_prime\",\"input_schema\":null},{\"slug\":\"alibaba/wan-3.0/reference-to-video\",\"title\":\"Wan 3.0 Reference to Video\",\"description\":\"Generate videos guided by reference images with Wan 3.0.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"wan3_0\",\"input_schema\":null},{\"slug\":\"alibaba/wan-3.0/text-to-video\",\"title\":\"Wan 3.0 Text to Video\",\"description\":\"Generate videos from text prompts with Wan 3.0.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"wan3_0\",\"input_schema\":null},{\"slug\":\"bytedance/seedance-2.0/image-to-video\",\"title\":\"Seedance 2.0\",\"description\":\"Seedance 2.0 converts a single image into a video clip with customizable duration, resolution, and optional audio generation. Users can provide an initial image URL, an optional ending image URL for transitions, and a prompt to guide the video content.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"seedance_2_0\",\"input_schema\":null},{\"slug\":\"bytedance/seedance-2.0/reference-to-video\",\"title\":\"Seedance 2.0\",\"description\":\"Seedance 2.0 Reference to Video generates videos from images or existing videos, allowing customization of duration, resolution, aspect ratio, and audio inputs. It supports image-to-video and video-to-video transformations with optional audio generation.\",\"operation_type\":[\"image2video\",\"video2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"seedance_2_0\",\"input_schema\":null},{\"slug\":\"bytedance/seedance-2.0/text-to-video\",\"title\":\"Seedance 2.0\",\"description\":\"Seedance 2.0 generates videos from text prompts, allowing customization of duration, resolution, aspect ratio, and optional audio. This model supports video creation up to 15 seconds with multiple aspect ratios and resolutions including 4K.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"seedance_2_0\",\"input_schema\":null},{\"slug\":\"bytedance/seedance-2.5/image-to-video\",\"title\":\"Seedance 2.5\",\"description\":\"Seedance 2.5 Image to Video generates videos from a single image URL with optional prompts, customizable duration, resolution, and output format. It supports adding an end image and generating audio to enhance the video output.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"seedance_2_5\",\"input_schema\":null},{\"slug\":\"bytedance/seedance-2.5/reference-to-video\",\"title\":\"Seedance 2.5\",\"description\":\"Seedance 2.5 Reference to Video generates videos from images, videos, or audio inputs with customizable duration, resolution, aspect ratio, and output format. It supports image-to-video and video-to-video transformations, allowing creative control through prompts and audio integration.\",\"operation_type\":[\"image2video\",\"video2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"seedance_2_5\",\"input_schema\":null},{\"slug\":\"bytedance/seedance-2.5/text-to-video\",\"title\":\"Seedance 2.5\",\"description\":\"Seedance 2.5 generates videos from text prompts, allowing customization of duration, resolution, aspect ratio, output format, and optional audio generation. This model supports creating videos up to 30 seconds with flexible visual and audio settings.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"seedance_2_0\",\"input_schema\":null},{\"slug\":\"bytedance/seedance-2.5/video-edit\",\"title\":\"Seedance 2.5\",\"description\":\"Seedance 2.5 Video Edit enables video-to-video transformation by editing existing videos with prompts and optional audio, image, or additional video inputs. It supports output customization including resolution and format, with optional audio generation.\",\"operation_type\":[\"video2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"seedance_2_5\",\"input_schema\":null},{\"slug\":\"bytedance/seedance-2.5/video-extend\",\"title\":\"Seedance 2.5\",\"description\":\"Seedance 2.5 Video Extend generates extended video content from an input video URL and text prompt, supporting up to 30 seconds duration and optional audio or image inputs. It outputs videos in 480p or 720p resolution with mp4 or mov format, allowing control over audio generation and multiple media inputs.\",\"operation_type\":[\"video2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"seedance_2_5\",\"input_schema\":null},{\"slug\":\"higgsfield-ai/soul/standard\",\"title\":\"Soul Standard\",\"description\":\"Create original images from written prompts with Soul Standard.\",\"operation_type\":[\"text2image\"],\"output_type\":\"image\",\"base_credits\":\"1.0000\",\"is_workflow\":false,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"higgsfield-ai/soul/v2/standard\",\"title\":\"Soul 2\",\"description\":\"Soul V2 Standard generates images from text prompts with customizable style, resolution, aspect ratio, and batch size. Users can enhance prompts and set a seed for reproducibility, making it suitable for varied creative visual outputs.\",\"operation_type\":[\"text2image\"],\"output_type\":\"image\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"higgsfield/cinema-studio/4.0\",\"title\":\"Cinema Studio 4.0\",\"description\":\"Cinematic video generation with automatic scene direction and optional references\",\"operation_type\":[\"video2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":true,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"higgsfiled/genjutsu/motion-transfer/v1.0\",\"title\":\"Genjutsu Motion Transfer\",\"description\":\"One video. Endless ways to reimagine it.\",\"operation_type\":[\"video2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"higgsfiled/genjutsu/object-swap/v1.0\",\"title\":\"Genjutsu Object Swap\",\"description\":\"One video. Endless ways to reimagine it.\",\"operation_type\":[\"video2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"ideogram/v4.0\",\"title\":\"Ideogram 4.0\",\"description\":\"Ideogram 4.0 generates images from text prompts and allows image editing with adjustable aspect ratios and image influence. Users can control rendering speed and the degree to which the input image affects the output.\",\"operation_type\":[\"image_edit\",\"text2image\"],\"output_type\":\"image\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"kling-video/motion-control/pro\",\"title\":\"Kling 2.6\",\"description\":\"Kling 2.6 Motion Control (Pro) generates videos by animating a source image using the motion from a provided video. Users can control character orientation and choose to retain the original video's sound for customized video creation.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling2_6_motion_control\",\"input_schema\":null},{\"slug\":\"kling-video/motion-control/std\",\"title\":\"Kling 2.6\",\"description\":\"Kling 2.6 Motion Control (Standard) generates videos by animating a source image using motion from a reference video. Users provide an image URL and a video URL, with options to keep the original sound and align character orientation to either the image or video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling2_6_motion_control\",\"input_schema\":null},{\"slug\":\"kling-video/o3/first-last-frame\",\"title\":\"Kling O3\",\"description\":\"Kling O3 First/Last Frame generates videos from a starting image and optional ending image, allowing single or multiple prompt inputs to control the video content. Users can specify duration, aspect ratio, and sound settings to customize the output video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling_o3_flf\",\"input_schema\":null},{\"slug\":\"kling-video/o3/image-reference\",\"title\":\"Kling O3\",\"description\":\"Kling O3 Image Reference generates videos from one or multiple images using customizable prompts and settings like duration, aspect ratio, and sound. It supports both single and multi-shot workflows with options for intelligent or customized shot types.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling_o3_image_reference\",\"input_schema\":null},{\"slug\":\"kling-video/o3/video-edit\",\"title\":\"Kling O3\",\"description\":\"Kling O3 Video Edit generates edited videos from a single input video URL and optional images or elements, guided by a text prompt. Users can select modes including standard, professional, or 4K to customize output quality.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling_video_edit\",\"input_schema\":null},{\"slug\":\"kling-video/o3/video-reference\",\"title\":\"Kling O3\",\"description\":\"Kling O3 Video Reference generates videos based on a text prompt and a single reference video URL. Users can customize duration, aspect ratio, and optionally include images or elements to influence the output.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling_video_reference\",\"input_schema\":null},{\"slug\":\"kling-video/omni/first-last-frame\",\"title\":\"Kling Omni\",\"description\":\"Kling Omni First/Last Frame generates videos by animating between a specified first and optionally last frame image, guided by a text prompt. Users can customize duration, aspect ratio, and choose between standard and pro modes for different animation styles.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling_omni_flf\",\"input_schema\":null},{\"slug\":\"kling-video/omni/image-reference\",\"title\":\"Kling Omni\",\"description\":\"Kling Omni Image Reference generates videos from images and text prompts, allowing customization of duration, aspect ratio, and elements. It supports modes for standard or professional output, making it suitable for creating dynamic video content from static images.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling_omni_image_reference\",\"input_schema\":null},{\"slug\":\"kling-video/omni/video-edit\",\"title\":\"Kling Omni\",\"description\":\"Kling Omni Video Edit enables video generation from a single input video URL combined with text prompts and optional images or elements. Users can select between standard and pro modes to customize the editing process.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling_video_edit\",\"input_schema\":null},{\"slug\":\"kling-video/omni/video-reference\",\"title\":\"Kling Omni\",\"description\":\"Kling Omni Video Reference generates videos from a single input video URL combined with a text prompt and optional images or elements. It supports customizable duration and aspect ratios, enabling creative video synthesis based on reference footage.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling_video_reference\",\"input_schema\":null},{\"slug\":\"kling-video/v2.5-turbo/pro/image-to-video\",\"title\":\"Kling 2.5 Turbo Pro\",\"description\":\"Kling 2.5 Turbo Pro converts a single image into a short video clip using a text prompt to guide the animation style. Users can specify video duration, CFG scale for prompt adherence, and provide negative prompts to refine output.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"kling-video/v2.5-turbo/pro/text-to-video\",\"title\":\"Kling 2.5 Turbo Pro\",\"description\":\"Provides high-end text-to-video output featuring seamless movement, cinematic-quality imagery, and standout prompt fidelity\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"kling-video/v2.5-turbo/standard/image-to-video\",\"title\":\"Kling 2.5 Turbo Standard\",\"description\":\"Kling 2.5 Turbo Standard converts a single image into a short video clip using a text prompt to guide the transformation. Users can specify video duration, CFG scale for prompt adherence, and provide negative prompts to refine output.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"kling-video/v2.6/pro/image-to-video\",\"title\":\"Kling 2.6 Pro\",\"description\":\"Kling 2.6 Pro Image to Video generates short videos from a single image URL using a text prompt to guide the transformation. Users can customize video duration, aspect ratio, sound inclusion, and CFG scale to control creativity and output style.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling2_6\",\"input_schema\":null},{\"slug\":\"kling-video/v2.6/pro/text-to-video\",\"title\":\"Kling 2.6 Pro\",\"description\":\"Kling 2.6 Pro generates short videos from text prompts with customizable duration, aspect ratio, and sound options. Users can adjust the CFG scale to control the adherence to the prompt for creative flexibility.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling2_6\",\"input_schema\":null},{\"slug\":\"kling-video/v3.0/4k/image-to-video\",\"title\":\"Kling 3.0 4k\",\"description\":\"Kling 3.0 4K converts a single image URL into a video up to 15 seconds long, with optional sound generation and multi-shot or multi-prompt support. Users can customize duration, prompts, and configuration scale to influence the video output.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling3_0\",\"input_schema\":null},{\"slug\":\"kling-video/v3.0/4k/text-to-video\",\"title\":\"Kling 3.0\",\"description\":\"Kling 3.0 4K generates 4K videos from text prompts with customizable duration, aspect ratio, and sound options. It supports multi-shot sequences and fine-tuning via CFG scale for detailed control over video output.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling3_0\",\"input_schema\":null},{\"slug\":\"kling-video/v3.0/pro/image-to-video\",\"title\":\"Kling 3.0 Pro\",\"description\":\"Kling 3.0 Image to Video (Pro) generates videos from a single image URL with optional sound and customizable duration up to 15 seconds. It supports multi-shot sequences with multiple prompts and fine-tuning via CFG scale for creative video outputs.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling3_0\",\"input_schema\":null},{\"slug\":\"kling-video/v3.0/pro/text-to-video\",\"title\":\"Kling 3.0 Pro\",\"description\":\"Kling 3.0 Text to Video (Pro) generates videos from text prompts with customizable duration, aspect ratio, and sound options. It supports multi-shot sequences and fine-tuning via CFG scale for creative video outputs.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling3_0\",\"input_schema\":null},{\"slug\":\"kling-video/v3.0/std/image-to-video\",\"title\":\"Kling 3.0 Standard\",\"description\":\"Kling 3.0 Standard converts a single image URL into a video clip with optional sound and customizable duration up to 15 seconds. Users can enhance the output with prompts, multiple shots, and control the CFG scale for creative variation.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling3_0\",\"input_schema\":null},{\"slug\":\"kling-video/v3.0/std/text-to-video\",\"title\":\"Kling 3.0 Standard\",\"description\":\"Kling 3.0 Standard generates videos from text prompts with options for sound, duration, aspect ratio, and multiple shots. It supports multi-prompt sequences and configurable detail via CFG scale for flexible video creation.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling3_0\",\"input_schema\":null},{\"slug\":\"kling-video/v3.0-turbo/image-to-video\",\"title\":\"Kling 3.0 Turbo\",\"description\":\"Kling 3.0 Turbo converts a single image into a short video clip using a text prompt to guide the animation. Users can specify the video duration between 3 to 15 seconds and choose between 720p or 1080p resolution for output.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling3_0_turbo\",\"input_schema\":null},{\"slug\":\"kling-video/v3.0-turbo/text-to-video\",\"title\":\"Kling 3.0 Turbo\",\"description\":\"Kling 3.0 Turbo generates videos from text prompts, allowing customization of duration (3 to 15 seconds), resolution (720p or 1080p), and aspect ratio (16:9, 9:16, or 1:1). This variant focuses on efficient text-to-video creation with flexible output settings.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling3_0_turbo\",\"input_schema\":null},{\"slug\":\"kling-video/v3/motion-control/pro\",\"title\":\"Kling 3.0\",\"description\":\"Kling 3.0 Motion Control (Pro) generates videos by animating a source image according to the motion in a provided video. Users can control character orientation and choose to retain the original video's sound for customized motion-driven video creation.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling3_0_motion_control\",\"input_schema\":null},{\"slug\":\"kling-video/v3/motion-control/std\",\"title\":\"Kling 3.0\",\"description\":\"Kling 3.0 Motion Control (Standard) generates videos by animating a source image according to the motion in a provided video. Users can control character orientation and choose to retain the original video's sound for customized video creation.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"kling3_0_motion_control\",\"input_schema\":null},{\"slug\":\"lightricks/ltx-2.5/image-to-video/fast\",\"title\":\"LTX-2.5 Fast\",\"description\":\"LTX-2.5 Fast Image to Video on Runware with native audio and optional camera movement.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"lightricks/ltx-2.5/image-to-video/pro\",\"title\":\"LTX-2.5 Pro\",\"description\":\"LTX-2.5 Pro Image to Video on Runware with native audio and optional camera movement.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"lightricks/ltx-2.5/text-to-video/fast\",\"title\":\"LTX-2.5 Fast\",\"description\":\"LTX-2.5 Fast Text to Video on Runware with native audio and optional camera movement.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"lightricks/ltx-2.5/text-to-video/pro\",\"title\":\"LTX-2.5 Pro\",\"description\":\"LTX-2.5 Pro Text to Video on Runware with native audio and optional camera movement.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"marketing-studio/image\",\"title\":\"Marketing Studio Image\",\"description\":\"Generate or edit campaign images with optional preset-guided Marketing Studio prompt enhancement.\",\"operation_type\":[\"image_edit\",\"text2image\"],\"output_type\":\"image\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_image\",\"input_schema\":null},{\"slug\":\"minimax/h3/image-to-video\",\"title\":\"MiniMax H3\",\"description\":\"MiniMax H3 / Hailuo-03 preview integration using Video Generation V2.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"minimax_h3\",\"input_schema\":null},{\"slug\":\"minimax/h3/reference-to-video\",\"title\":\"MiniMax H3\",\"description\":\"MiniMax H3 generates videos from reference images or videos using Video Generation V2. Users provide prompts, reference media URLs, and optional audio to create videos up to 15 seconds with customizable resolution and aspect ratio.\",\"operation_type\":[\"image2video\",\"video2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"minimax_h3\",\"input_schema\":null},{\"slug\":\"minimax/h3/text-to-video\",\"title\":\"MiniMax H3\",\"description\":\"MiniMax H3 / Hailuo-03 preview integration using Video Generation V2.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"minimax_h3\",\"input_schema\":null},{\"slug\":\"minimax/hailuo-2.3/standard/image-to-video\",\"title\":\"MiniMax Hailuo 2.3 Standard\",\"description\":\"MiniMax Hailuo 2.3 Standard converts a single image into a short video clip of 6 or 10 seconds based on a text prompt. Users provide an image URL and optional prompt optimization to guide the video generation process.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"minimax/hailuo-2.3/standard/text-to-video\",\"title\":\"MiniMax Hailuo 2.3 Standard\",\"description\":\"MiniMax Hailuo 2.3 Standard is an image-to-video model that delivers physics-aware 768p results and runs with 2.5× higher efficiency\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"pixverse/v6/image-to-video\",\"title\":\"PixVerse V6\",\"description\":\"PixVerse V6 Image to Video on Runware with optional native synchronized audio.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"pixverse/v6/text-to-video\",\"title\":\"PixVerse V6\",\"description\":\"PixVerse V6 Text to Video on Runware with optional native synchronized audio.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"recraft/v4.1/pro/text-to-image\",\"title\":\"Recraft V4.1 Pro\",\"description\":\"Recraft V4.1 Pro generates images from text prompts with customizable resolution, aspect ratio, output format, and color options. Users can specify background and palette colors to tailor the visual style of the output.\",\"operation_type\":[\"text2image\"],\"output_type\":\"image\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"recraft_v4_1\",\"input_schema\":null},{\"slug\":\"recraft/v4.1/text-to-image\",\"title\":\"Recraft V4.1\",\"description\":\"Recraft V4.1 Text to Image generates images from textual prompts with customizable resolution, aspect ratio, and output format. Users can specify colors and background color to tailor the visual style of the generated image.\",\"operation_type\":[\"text2image\"],\"output_type\":\"image\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"recraft_v4_1\",\"input_schema\":null},{\"slug\":\"recraft/v4.1/utility/pro/text-to-image\",\"title\":\"Recraft V4.1 Utility Pro\",\"description\":\"Recraft V4.1 Utility Pro generates images from text prompts with customizable resolution, aspect ratio, output format, and color options. Users can specify background colors and a palette of colors to influence the image creation process.\",\"operation_type\":[\"text2image\"],\"output_type\":\"image\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"recraft_v4_1\",\"input_schema\":null},{\"slug\":\"recraft/v4.1/utility/text-to-image\",\"title\":\"Recraft V4.1 Utility\",\"description\":\"Recraft V4.1 Utility generates images from text prompts with customizable resolution, aspect ratio, output format, and color options including background and palette colors. This variant focuses on utility features for precise control over image attributes.\",\"operation_type\":[\"text2image\"],\"output_type\":\"image\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"recraft_v4_1\",\"input_schema\":null},{\"slug\":\"soul-id\",\"title\":\"Soul ID\",\"description\":\"\",\"operation_type\":[\"character\"],\"output_type\":\"image\",\"base_credits\":\"40.0000\",\"is_workflow\":false,\"fnf_job_set_type\":null,\"input_schema\":null},{\"slug\":\"wan/v2.6/image-to-video\",\"title\":\"Wan 2.6\",\"description\":\"Wan 2.6 - Image to Video. Configured Alibaba route; cloned from wan-26/image-to-video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"wan/v2.6/reference-to-video\",\"title\":\"Wan 2.6\",\"description\":\"Wan 2.6 - Reference to Video. Configured Alibaba route; cloned from wan-26/references-to-video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"wan/v2.6/text-to-video\",\"title\":\"Wan 2.6\",\"description\":\"Wan 2.6 - Text to Video. Configured Alibaba route; cloned from wan-26/text-to-video.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"wan/v2.7/image-to-video\",\"title\":\"Wan 2.7\",\"description\":\"Wan 2.7 - Image to Video. Configured Alibaba route; cloned from wan-27/image-to-video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"wan/v2.7/reference-to-video\",\"title\":\"Wan 2.7\",\"description\":\"Wan 2.7 - Reference to Video. Configured Alibaba route; cloned from wan-27/reference-to-video.\",\"operation_type\":[\"image2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"wan/v2.7/text-to-video\",\"title\":\"Wan 2.7\",\"description\":\"Wan 2.7 - Text to Video. Configured Alibaba route; cloned from wan-27/text-to-video.\",\"operation_type\":[\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"generic_video\",\"input_schema\":null},{\"slug\":\"xai/grok-imagine-image-2.0\",\"title\":\"Grok Imagine 2.0\",\"description\":\"Transform and refine source images with Grok Imagine 2.0.\",\"operation_type\":[\"image_edit\",\"text2image\"],\"output_type\":\"image\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"grok_image\",\"input_schema\":null},{\"slug\":\"xai/grok-imagine-video/v1.5/reference-to-video\",\"title\":\"Grok Imagine Video 1.5\",\"description\":\"Multi-mode video generation with text-to-video, image-to-video, and reference-to-video.\",\"operation_type\":[\"image2video\",\"text2video\"],\"output_type\":\"video\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"grok_video_v15\",\"input_schema\":null},{\"slug\":\"z-image/turbo\",\"title\":\"Z-Image Turbo\",\"description\":\"Fast text-to-image generation with strong Chinese and English text rendering.\",\"operation_type\":[\"text2image\"],\"output_type\":\"image\",\"base_credits\":\"0.0000\",\"is_workflow\":false,\"fnf_job_set_type\":\"text2image\",\"input_schema\":null}]}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://platform.higgsfield.ai/higgsfield-ai/soul/v2/standard",
+                "signature": "38e122a9a507b963c01eebbc17dd2b24",
+                "signature_v2": "e7930db72502e51b3a8c8c53361ce984",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"prompt\":\"A cat on a kitchen table\",\"aspect_ratio\":\"9:16\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "175e378cc9924e1b97436e2251d977d8"
+                    ],
+                    "x-process-time": [
+                        "0.1373621509410441"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "d6ad05788fa34632a1079155d051eb74"
+                    ],
+                    "x-process-time": [
+                        "0.009151726961135864"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "7ec6a62d83de493889b920b4e5018279"
+                    ],
+                    "x-process-time": [
+                        "0.016702696681022644"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "531fcdcdd17f4b4382eb5d46589958d6"
+                    ],
+                    "x-process-time": [
+                        "0.009591042064130306"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "8d500fdfbd78443a8d83c952a9645c08"
+                    ],
+                    "x-process-time": [
+                        "0.008534073829650879"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "2df2f7eed2a8405fba6f9581d05e1a40"
+                    ],
+                    "x-process-time": [
+                        "0.010167144238948822"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "c58dd598af804f60ad595be620ee42e7"
+                    ],
+                    "x-process-time": [
+                        "0.010918719694018364"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "4069815e59734e90b50f6b3ae9771240"
+                    ],
+                    "x-process-time": [
+                        "0.011492280289530754"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "4a8af2a538cf4fb4b1dea45b9adf2737"
+                    ],
+                    "x-process-time": [
+                        "0.006485026329755783"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "f841835daa1949fcbd9c1d49ea7588d9"
+                    ],
+                    "x-process-time": [
+                        "0.017479121685028076"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "a0d3b84e81a449299850284627bf39cc"
+                    ],
+                    "x-process-time": [
+                        "0.009582997998222709"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "2d2d884f6b334a5bbba90f31985721c8"
+                    ],
+                    "x-process-time": [
+                        "0.007803857326507568"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "66fac6b69f484b78a3f0cf106c781ca8"
+                    ],
+                    "x-process-time": [
+                        "0.01203960704151541"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "f7ec84c730414d2189bdf457224d6725"
+                    ],
+                    "x-process-time": [
+                        "0.012991011026315391"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "bcc4c49cbca9484db31a82405e22eb9c"
+                    ],
+                    "x-process-time": [
+                        "0.01144629530608654"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "8c4ac90e1b56410580e949ecf854419a"
+                    ],
+                    "x-process-time": [
+                        "0.016002023592591286"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "fde819ca73464d87bbffec31e258c7c2"
+                    ],
+                    "x-process-time": [
+                        "0.01356376288458705"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "7d81648e6cf64abc997c7f1663ca635f"
+                    ],
+                    "x-process-time": [
+                        "0.00915839709341526"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "3a8078bb12ad4cac8ae8a32117bc1a81"
+                    ],
+                    "x-process-time": [
+                        "0.015109975123777986"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "b425ec94ca954ee3a7236ae362375a81"
+                    ],
+                    "x-process-time": [
+                        "0.010487208142876625"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "697327957e6b4f1caa1bdfd77b8ef3d3"
+                    ],
+                    "x-process-time": [
+                        "0.008898666012100875"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "9aded926cc9f4df1841e35fb1ecca3ea"
+                    ],
+                    "x-process-time": [
+                        "0.011892251903191209"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "3e25350ec3d7469e80ec0e7d2e19e237"
+                    ],
+                    "x-process-time": [
+                        "0.01269308291375637"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "a1af449f110246068cf70f381525fda6"
+                    ],
+                    "x-process-time": [
+                        "0.014242728939279914"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "1605515711cb4dba9ffd16d714dc0a83"
+                    ],
+                    "x-process-time": [
+                        "0.015224914066493511"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "58524b69f288496eb48bf2d0471cc035"
+                    ],
+                    "x-process-time": [
+                        "0.005058120936155319"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "15642585e8c84bc88cbb947a0bf0231a"
+                    ],
+                    "x-process-time": [
+                        "0.013072610017843544"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "ebba8d30e7fc40548f60e652475404cf"
+                    ],
+                    "x-process-time": [
+                        "0.01099821925163269"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "c5fb882a9be64d41a9f64da7c0787cc2"
+                    ],
+                    "x-process-time": [
+                        "0.007841700688004494"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "a75e6c3db5124c7eba5c95e8c163ce7e"
+                    ],
+                    "x-process-time": [
+                        "0.009983620140701532"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "3630e688fa8844d88750ec86dd76da93"
+                    ],
+                    "x-process-time": [
+                        "0.010308516910299659"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "7b51d0dd316e4f13ad1acce26a74a366"
+                    ],
+                    "x-process-time": [
+                        "0.010108768939971924"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "cf92f956c39644bfbe96a58988d33e22"
+                    ],
+                    "x-process-time": [
+                        "0.01688463194295764"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "dfc638e389b24136ad077973a40839ba"
+                    ],
+                    "x-process-time": [
+                        "0.005035374313592911"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "61d7c40f77444cd0aa811c1120ee3892"
+                    ],
+                    "x-process-time": [
+                        "0.01606569904834032"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "a3abe940fe1c4a9cbdeba711eab92f59"
+                    ],
+                    "x-process-time": [
+                        "0.012455340009182692"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "0c885f80f7c244f2869bc55a7202d07e"
+                    ],
+                    "x-process-time": [
+                        "0.013556367019191384"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "1f73be9e1d5f4517afb40e08b58d98a6"
+                    ],
+                    "x-process-time": [
+                        "0.009559776983223855"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "e26dcaf1df1a4826bf821c3bba289d43"
+                    ],
+                    "x-process-time": [
+                        "0.010678459075279534"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "4808c34a117c401fadac8b93f80bed2d"
+                    ],
+                    "x-process-time": [
+                        "0.010606693103909492"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "ac127a55963746d58ceb71ac0ca8e2e0"
+                    ],
+                    "x-process-time": [
+                        "0.008632311597466469"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "8ac58b59d6564df1b8d5625f44d1d975"
+                    ],
+                    "x-process-time": [
+                        "0.012000484392046928"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "8e422a978e9f431e90038c58b99d20f7"
+                    ],
+                    "x-process-time": [
+                        "0.009397665038704872"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "72e96a9f250a4ddaaf8e8af7a5344709"
+                    ],
+                    "x-process-time": [
+                        "0.012367455987259746"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "421ff08ba7dd47649656fb5695555ea0"
+                    ],
+                    "x-process-time": [
+                        "0.014901485294103622"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "8ff10dfd2f4d4fa4aacb29b7e80d8921"
+                    ],
+                    "x-process-time": [
+                        "0.008071037009358406"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "0b2eb19540674f5bb483592c97745585"
+                    ],
+                    "x-process-time": [
+                        "0.012273600324988365"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "9594e62761fd4c87a9e756bf3e3afeda"
+                    ],
+                    "x-process-time": [
+                        "0.010090259835124016"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "d380cb893fb24f108bd630050af72b0d"
+                    ],
+                    "x-process-time": [
+                        "0.011783469468355179"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "a2e5eecc7bd8459a8ab94f366e2a80ec"
+                    ],
+                    "x-process-time": [
+                        "0.015638496726751328"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "50afd426d53f495784791e83608fea46"
+                    ],
+                    "x-process-time": [
+                        "0.018453750992193818"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "10831beedd454591af06b54fe0f23a9d"
+                    ],
+                    "x-process-time": [
+                        "0.013971807900816202"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "fff04fbe4f5f4df99379fce3a0decb08"
+                    ],
+                    "x-process-time": [
+                        "0.013723589479923248"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "1a8bdb13996e4bf5bcad70f65ec0acfb"
+                    ],
+                    "x-process-time": [
+                        "0.005374301224946976"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "d7482d04c3ba40b2b5208a34862b4c22"
+                    ],
+                    "x-process-time": [
+                        "0.01686114107724279"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "a8cd8cc36b7047d692c0d2cd33b83f7d"
+                    ],
+                    "x-process-time": [
+                        "0.01669255830347538"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "1919e31c3c91487988b16e78b9d9d3a4"
+                    ],
+                    "x-process-time": [
+                        "0.013814846985042095"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "1a6c55bf1f1d439082e681a38039e626"
+                    ],
+                    "x-process-time": [
+                        "0.008130975067615509"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "a505fe9faab44f23b6865b61c2cc5aea"
+                    ],
+                    "x-process-time": [
+                        "0.004998978227376938"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "b5a130ded7474b30a8fba417ab390311"
+                    ],
+                    "x-process-time": [
+                        "0.0183282500365749"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"queued\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "b4f9de5b45354abe82750a5ec09e2814"
+                    ],
+                    "x-process-time": [
+                        "0.01664769113995135"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"in_progress\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "5378e6d1c9e34185b888ae9b5e7ceb38"
+                    ],
+                    "x-process-time": [
+                        "0.005090029910206795"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"in_progress\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\"}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status",
+                "signature": "91f8d1a03446245fdb0264c07fa13cd3",
+                "signature_v2": "077365432cf5792b7ef25b4c94642bc8",
+                "headers": {
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "cloudflare"
+                    ],
+                    "x-correlation-id": [
+                        "84e71c0fc0bb4ab2aa71e0fd6f29a885"
+                    ],
+                    "x-process-time": [
+                        "0.012789124622941017"
+                    ],
+                    "set-cookie": [
+                        "[redacted]"
+                    ],
+                    "expect-ct": [
+                        "max-age=86400, enforce"
+                    ],
+                    "referrer-policy": [
+                        "same-origin"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-encoding": [
+                        "gzip"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"status\":\"completed\",\"request_id\":\"d606aff8-a4ee-4147-b3b1-d6329c1c3e44\",\"status_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/status\",\"cancel_url\":\"https://platform.higgsfield.ai/requests/d606aff8-a4ee-4147-b3b1-d6329c1c3e44/cancel\",\"images\":[{\"url\":\"https://d3u0tzju9qaucj.cloudfront.net/2b0cc7c2-23f9-44ea-a3ae-a724b57216ec/8c837b09-c3ce-49ae-bd97-aa7dfbc20d53.png\"}]}"
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "url": "https://d3u0tzju9qaucj.cloudfront.net/2b0cc7c2-23f9-44ea-a3ae-a724b57216ec/8c837b09-c3ce-49ae-bd97-aa7dfbc20d53.png",
+                "signature": "153727054c3218b7dc63e430a384351f",
+                "signature_v2": "2aa492cf275875eec1e103b34d73d4eb"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "image/png"
+                    ],
+                    "content-length": [
+                        "2199561"
+                    ],
+                    "last-modified": [
+                        "Sun, 20 Sep 2026 13:58:08 GMT"
+                    ],
+                    "x-amz-expiration": [
+                        "expiry-date=\"Mon, 28 Sep 2026 00:00:00 GMT\", rule-id=\"Delete after 7 days\""
+                    ],
+                    "etag": [
+                        "\"1f348acca64f4f7da32c77b9c7a83588\""
+                    ],
+                    "x-amz-server-side-encryption": [
+                        "AES256"
+                    ],
+                    "accept-ranges": [
+                        "bytes"
+                    ],
+                    "server": [
+                        "AmazonS3"
+                    ],
+                    "via": [
+                        "1.1 baf250e244bb7810e57efa7ca7e2176c.cloudfront.net (CloudFront)"
+                    ],
+                    "x-cache": [
+                        "Miss from cloudfront"
+                    ],
+                    "x-amz-cf-pop": [
+                        "TXL52-P1"
+                    ],
+                    "x-amz-cf-id": [
+                        "ZW7R4O_dnJ448XoH5poaJr-_dJs5zshzp-GVa6gS5SVZA8zZThjq4g=="
+                    ]
+                },
+                "body_format": "binary",
+                "body": null,
+                "body_size": 2199561
+            }
+        }
+    ]
+}

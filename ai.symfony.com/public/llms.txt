@@ -113,7 +113,7 @@ Symfony integration for the official MCP SDK (`mcp/sdk`). Install with `composer
 
 ## Supported AI Platforms
 
-OpenAI, Anthropic, Google Gemini, Google VertexAI, Azure OpenAI, AWS Bedrock, Ollama, Mistral, Cohere, Meta Llama, DeepSeek, Perplexity, HuggingFace, Replicate, OpenRouter, ElevenLabs, Cartesia, Cerebras, Claude Code, Codex, Decart, Deepgram, MiniMax, LM Studio, Docker Model Runner, OpenResponses, Voyage, Scaleway, OVH, AmazeeAi, Albert, AiMlApi, ModelsDev, Fireworks, Together, and TransformersPHP.
+OpenAI, Anthropic, Google Gemini, Google VertexAI, Azure OpenAI, AWS Bedrock, Ollama, Mistral, Cohere, Meta Llama, DeepSeek, Perplexity, HuggingFace, Replicate, OpenRouter, ElevenLabs, Cartesia, Cerebras, Claude Code, Codex, Decart, Deepgram, MiniMax, LM Studio, Docker Model Runner, OpenResponses, Voyage, Scaleway, OVH, AmazeeAi, Albert, AiMlApi, ModelsDev, Fireworks, Together, Higgsfield, and TransformersPHP.
 
 ## Supported Vector Stores
 

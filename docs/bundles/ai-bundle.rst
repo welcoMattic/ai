@@ -78,6 +78,10 @@ Advanced Example with Multiple Agents
                 api_key: '%env(ELEVEN_LABS_API_KEY)%'
             gemini:
                 api_key: '%env(GEMINI_API_KEY)%'
+            # Higgsfield issues a key id and a key secret, both are required
+            higgsfield:
+                api_key: '%env(HIGGSFIELD_API_KEY)%'
+                api_secret: '%env(HIGGSFIELD_API_SECRET)%'
             perplexity:
                 api_key: '%env(PERPLEXITY_API_KEY)%'
             together:
