@@ -40,15 +40,31 @@ final class Factory
         string $name = 'minimax',
     ): ProviderInterface {
         $httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
+        $jobClient = self::createJobClient($apiKey, $httpClient, $endpoint, $name);
 
         return new Provider(
             $name,
             [new MiniMaxClient($httpClient, $apiKey, $endpoint)],
-            [new MiniMaxResultConverter($httpClient, $apiKey, $endpoint)],
+            [new MiniMaxResultConverter($jobClient)],
             $modelCatalog,
             $contract ?? MiniMaxContract::create(),
             $eventDispatcher,
         );
+    }
+
+    /**
+     * The client resolving the jobs this bridge hands out - typically in a worker picking up a
+     * stored handle, without a provider or platform at hand.
+     *
+     * @param string $name the provider name stated on the handles this client creates
+     */
+    public static function createJobClient(
+        #[\SensitiveParameter] string $apiKey,
+        ?HttpClientInterface $httpClient = null,
+        string $endpoint = 'https://api.minimax.io/v1',
+        string $name = 'minimax',
+    ): MiniMaxJobClient {
+        return new MiniMaxJobClient($httpClient ?? new EventSourceHttpClient(), $apiKey, $endpoint, $name);
     }
 
     /**

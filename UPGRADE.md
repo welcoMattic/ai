@@ -39,6 +39,31 @@ Platform
    +protected function convertStreamUsage(array $usage, ?string $model = null): TokenUsage
    ```
 
+ * The MiniMax bridge no longer waits on a result for asynchronous task runs, like video generation and asynchronous
+   speech synthesis (`async: true`). New return value is a `Result\JobResult` carrying a serializable `Job\JobHandle`,
+   which needs to be solved explicitly in user-land with the newly introduced `JobRunner`. Reading the result directly
+   through `asBinary()`/`asFile()` therefore throws an `UnexpectedResultTypeException`:
+
+   ```diff
+   +use Symfony\AI\Platform\Job\JobRunner;
+   +
+   -$result = $platform->invoke('MiniMax-Hailuo-02', $prompt, ['duration' => 6]);
+   -$result->asFile('video.mp4');
+   +$handle = $platform->invoke('MiniMax-Hailuo-02', $prompt, ['duration' => 6])->asJob();
+   +
+   +$result = (new JobRunner())->wait(MiniMaxFactory::createJobClient($apiKey), $handle);
+   +$result->asFile('video.mp4');
+   ```
+
+   Accordingly, `Bridge\MiniMax\MiniMaxResultConverter` no longer takes an HTTP client, API key,
+   endpoint or clock, only an optional `MiniMaxJobClient` that creates the job handles; polling moved to the new `Bridge\MiniMax\MiniMaxJobClient`. Code building the
+   bridge through `Bridge\MiniMax\Factory` is unaffected.
+
+   ```diff
+   -$converter = new MiniMaxResultConverter($httpClient, $apiKey, $endpoint, $clock);
+   +$converter = new MiniMaxResultConverter($jobClient);
+   ```
+
 Store
 -----
 
