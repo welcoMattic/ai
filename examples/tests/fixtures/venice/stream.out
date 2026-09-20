@@ -1,0 +1,6 @@
+Tina has one brother and one sister. Let's analyze the siblings:
+
+- Tina's brother has 1 sister (Tina) and 1 sister (the other sister), so he has 2 sisters.
+- Tina's sister has 1 sister (Tina) and 0 brothers (since we're only considering sisters), so she has 1 sister.
+
+Therefore, Tina's siblings have a total of 2 + 1 = 3 sisters.

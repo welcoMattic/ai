@@ -1,0 +1,21 @@
+To calculate the number of days until the next Christmas, we need to determine the date of the next Christmas and then count the days from today until that date. Christmas is celebrated on December 25th each year. Since the current date is September 20, 2026, the next Christmas will be on December 25, 2026.
+
+Let's calculate the number of days from September 20, 2026, to December 25, 2026:
+
+1. **Days remaining in September 2026:**
+   - September has 30 days.
+   - Days remaining in September: 30 - 20 = 10 days
+
+2. **Days in October 2026:**
+   - October has 31 days.
+
+3. **Days in November 2026:**
+   - November has 30 days.
+
+4. **Days in December 2026 up to the 25th:**
+   - December 25th is the 25th day of December.
+
+Adding these up:
+- 10 (remaining in September) + 31 (October) + 30 (November) + 25 (December) = 96 days
+
+Therefore, there are 96 days until the next Christmas.
