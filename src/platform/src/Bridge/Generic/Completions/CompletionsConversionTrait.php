@@ -233,7 +233,7 @@ trait CompletionsConversionTrait
      */
     protected function isToolCallsStreamFinished(array $data): bool
     {
-        return isset($data['choices'][0]['finish_reason']) && 'tool_calls' === $data['choices'][0]['finish_reason'];
+        return null !== ($data['choices'][0]['finish_reason'] ?? null);
     }
 
     /**
@@ -241,8 +241,8 @@ trait CompletionsConversionTrait
      *     index: int,
      *     message: array{
      *         role: 'assistant',
-     *         content: ?string,
-     *         tool_calls: list<array{
+     *         content?: ?string,
+     *         tool_calls?: list<array{
      *             id: string,
      *             type: 'function',
      *             function: array{
@@ -258,10 +258,14 @@ trait CompletionsConversionTrait
      */
     protected function convertChoice(array $choice): ToolCallResult|TextResult
     {
-        // Keyed on the payload, not on finish_reason: some OpenAI-compatible servers answer a tool
-        // call with finish_reason "stop", which the streaming path above already handles by presence.
         if ([] !== ($choice['message']['tool_calls'] ?? [])) {
             return $this->withFinishReason(new ToolCallResult(array_map([$this, 'convertToolCall'], $choice['message']['tool_calls'])), FinishReasonMapper::map($choice['finish_reason']));
+        }
+
+        // LiteLLM-style gateways report structured output as finish_reason "tool_calls" but place the
+        // payload in message.content; the branch above already ruled out an actual tool call.
+        if ('tool_calls' === $choice['finish_reason'] && isset($choice['message']['content'])) {
+            return $this->withFinishReason(new TextResult($choice['message']['content']), FinishReasonMapper::map($choice['finish_reason']));
         }
 
         if (\in_array($choice['finish_reason'], ['stop', 'length'], true)) {

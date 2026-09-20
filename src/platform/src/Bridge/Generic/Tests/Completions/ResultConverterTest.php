@@ -266,6 +266,50 @@ class ResultConverterTest extends TestCase
         $this->assertSame('', $result->getContent());
     }
 
+    public function testConvertTextResultFromToolCallsFinishReasonWithContentOnly()
+    {
+        $converter = new ResultConverter();
+        $httpResponse = $this->createMock(ResponseInterface::class);
+        $httpResponse->method('toArray')->willReturn([
+            'choices' => [
+                [
+                    'message' => [
+                        'role' => 'assistant',
+                        'content' => '{"recipe":"Pasta Carbonara"}',
+                    ],
+                    'finish_reason' => 'tool_calls',
+                ],
+            ],
+        ]);
+
+        $result = $converter->convert(new RawHttpResult($httpResponse));
+
+        $this->assertInstanceOf(TextResult::class, $result);
+        $this->assertSame('{"recipe":"Pasta Carbonara"}', $result->getContent());
+        $this->assertSame('tool_calls', $result->getMetadata()->get('finish_reason')->getRaw());
+    }
+
+    public function testConvertThrowsOnToolCallsFinishReasonWithoutToolCallsOrContent()
+    {
+        $converter = new ResultConverter();
+        $httpResponse = $this->createMock(ResponseInterface::class);
+        $httpResponse->method('toArray')->willReturn([
+            'choices' => [
+                [
+                    'message' => [
+                        'role' => 'assistant',
+                    ],
+                    'finish_reason' => 'tool_calls',
+                ],
+            ],
+        ]);
+
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage('Unsupported finish reason "tool_calls"');
+
+        $converter->convert(new RawHttpResult($httpResponse));
+    }
+
     public function testConvertMultipleChoices()
     {
         $converter = new ResultConverter();
@@ -855,6 +899,54 @@ class ResultConverterTest extends TestCase
         $this->assertInstanceOf(ToolCallComplete::class, $chunks[1]);
         $this->assertInstanceOf(MetadataDelta::class, $chunks[2]);
         $this->assertSame(FinishReasonCase::TOOL_CALL, $chunks[2]->getValue()->getCase());
+    }
+
+    public function testStreamingCompletesToolCallsWithStopFinishReason()
+    {
+        $converter = new ResultConverter();
+
+        $events = [
+            ['choices' => [['index' => 0, 'delta' => ['tool_calls' => [['id' => 'call_1', 'function' => ['name' => 'get_weather', 'arguments' => '{"city":"Berlin"}']]]]]]],
+            ['choices' => [['index' => 0, 'delta' => [], 'finish_reason' => 'stop']]],
+        ];
+
+        $streamResult = $converter->convert(new InMemoryRawResult([], $events, $this->httpResponseStub()), ['stream' => true]);
+
+        $chunks = iterator_to_array($streamResult->getContent());
+
+        $this->assertCount(3, $chunks);
+        $this->assertInstanceOf(ToolCallStart::class, $chunks[0]);
+        $this->assertInstanceOf(ToolCallComplete::class, $chunks[1]);
+
+        $completed = $chunks[1]->getToolCalls();
+        $this->assertCount(1, $completed);
+        $this->assertSame('call_1', $completed[0]->getId());
+        $this->assertSame('get_weather', $completed[0]->getName());
+        $this->assertSame(['city' => 'Berlin'], $completed[0]->getArguments());
+
+        $this->assertInstanceOf(MetadataDelta::class, $chunks[2]);
+        $this->assertSame(FinishReasonCase::STOP, $chunks[2]->getValue()->getCase());
+        $this->assertSame('stop', $chunks[2]->getValue()->getRaw());
+    }
+
+    public function testStreamingSurfacesToolCallArgumentsTruncatedByALengthFinishReason()
+    {
+        $converter = new ResultConverter();
+
+        // The model ran into the token limit mid-arguments, so the accumulated JSON is a fragment.
+        // Completing the tool call on any finish reason surfaces that as a malformed tool call
+        // instead of silently dropping the call and leaving the agent without a result.
+        $events = [
+            ['choices' => [['index' => 0, 'delta' => ['tool_calls' => [['id' => 'call_1', 'function' => ['name' => 'get_weather', 'arguments' => '{"city":"Ber']]]]]]],
+            ['choices' => [['index' => 0, 'delta' => [], 'finish_reason' => 'length']]],
+        ];
+
+        $streamResult = $converter->convert(new InMemoryRawResult([], $events, $this->httpResponseStub()), ['stream' => true]);
+
+        $this->expectException(MalformedToolCallException::class);
+        $this->expectExceptionMessage('Model returned malformed JSON arguments for the "get_weather" tool');
+
+        iterator_to_array($streamResult->getContent());
     }
 
     public function testStreamingEmitsFinishReasonAfterTheContentOfTheChunkThatCarriedIt()
