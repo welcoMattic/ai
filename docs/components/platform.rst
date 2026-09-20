@@ -172,6 +172,7 @@ Supported Models & Platforms
   * `Decart T2I`_ with `Decart`_  as Platform
   * `Decart T2V`_ with `Decart`_  as Platform
   * Image generation with `Together`_ as Platform
+  * Image and video generation with `Higgsfield`_ as Platform (asynchronous, poll-based)
 
 Generic Platforms
 ~~~~~~~~~~~~~~~~~
@@ -2052,6 +2053,8 @@ Code Examples
 * `Together Image`_
 * `Together Text-to-Speech`_
 * `Together Speech-to-Text`_
+* `Higgsfield Text-to-Image`_
+* `Higgsfield Image-to-Video`_
 
 .. note::
 
@@ -2078,6 +2081,7 @@ Code Examples
 .. _`ElevenLabs STT`: https://elevenlabs.io/speech-to-text
 .. _`ElevenLabs TTS`: https://elevenlabs.io/text-to-speech
 .. _`Fireworks`: https://fireworks.ai/
+.. _`Higgsfield`: https://higgsfield.ai/
 .. _`LiteLLM example`: https://github.com/symfony/ai/blob/main/examples/litellm/chat.php
 .. _`Meta's Llama`: https://www.llama.com/
 .. _`Ollama`: https://ollama.com/
@@ -2147,5 +2151,7 @@ Code Examples
 .. _`Together Tool Call`: https://github.com/symfony/ai/blob/main/examples/together/toolcall.php
 .. _`Together Structured Output`: https://github.com/symfony/ai/blob/main/examples/together/structured-output-math.php
 .. _`Together Image`: https://github.com/symfony/ai/blob/main/examples/together/image.php
+.. _`Higgsfield Text-to-Image`: https://github.com/symfony/ai/blob/main/examples/higgsfield/text-to-image.php
+.. _`Higgsfield Image-to-Video`: https://github.com/symfony/ai/blob/main/examples/higgsfield/image-to-video.php
 .. _`Together Text-to-Speech`: https://github.com/symfony/ai/blob/main/examples/together/text-to-speech.php
 .. _`Together Speech-to-Text`: https://github.com/symfony/ai/blob/main/examples/together/speech-to-text.php
