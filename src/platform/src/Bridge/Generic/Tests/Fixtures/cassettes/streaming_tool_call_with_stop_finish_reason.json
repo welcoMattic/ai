@@ -1,0 +1,40 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "http://127.0.0.1:8799/v1/chat/completions",
+                "signature": "1e5cb822ea492d5f3d3482de4fc170f3",
+                "signature_v2": "af955b72a62be247416b52b6fcc6c6b2",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"stream\":true,\"stream_options\":{\"include_usage\":true},\"messages\":[{\"role\":\"user\",\"content\":\"What time is it?\"}],\"model\":\"gpt-oss-120b\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "host": [
+                        "127.0.0.1:8799"
+                    ],
+                    "connection": [
+                        "close"
+                    ],
+                    "x-powered-by": [
+                        "PHP/8.5.10"
+                    ],
+                    "content-type": [
+                        "text/event-stream;charset=UTF-8"
+                    ]
+                },
+                "body_format": "sse",
+                "body": "data: {\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"index\":0,\"id\":\"call_1\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"}}]},\"finish_reason\":null}],\"id\":\"x\",\"model\":\"gpt-oss-120b\"}\n\ndata: {\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\"}],\"id\":\"x\",\"model\":\"gpt-oss-120b\"}\n\ndata: [DONE]\n\n"
+            }
+        }
+    ]
+}
