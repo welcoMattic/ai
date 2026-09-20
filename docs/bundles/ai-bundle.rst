@@ -86,6 +86,8 @@ Advanced Example with Multiple Agents
                 api_key: '%env(PERPLEXITY_API_KEY)%'
             together:
                 api_key: '%env(TOGETHER_API_KEY)%'
+            venice:
+                api_key: '%env(VENICE_API_KEY)%'
             # VertexAI with project-scoped endpoint (requires google/auth)
             vertexai:
                 location: '%env(GOOGLE_CLOUD_LOCATION)%'

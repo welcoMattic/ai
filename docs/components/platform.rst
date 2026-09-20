@@ -138,6 +138,7 @@ Supported Models & Platforms
   * `Albert API`_ models with `Albert`_ as Platform (French government's sovereign AI gateway)
   * Open-weight models (`gpt-oss`_, `Qwen`_, `Gemma`_) with `Bedrock Mantle`_ as Platform
   * Open-weight models like Llama, Qwen, Kimi or GLM with `Together`_ as Platform
+  * `Venice's Models`_ with `Venice`_ as Platform
   * `LiteLLM`_ as unified Platform
   * Fireworks' hosted models (e.g. Kimi K2, DeepSeek V3.1) with `Fireworks`_ as Platform
 * **Embeddings Models**
@@ -145,6 +146,7 @@ Supported Models & Platforms
   * `Vertex AI Text Embeddings`_ with `Vertex AI`_
   * `OpenAI's Text Embeddings`_ with `OpenAI`_, `Azure`_ and `OpenRouter`_ as Platform
   * `Voyage's Embeddings`_ with `Voyage`_ as Platform
+  * `Venice's Embeddings`_ with `Venice`_ as Platform
   * `Mistral Embed`_ with `Mistral`_ and `OpenRouter`_ as Platform
   * `Qwen`_ with `OpenRouter`_ as Platform
   * Fireworks' embedding models with `Fireworks`_ as Platform
@@ -166,6 +168,8 @@ Supported Models & Platforms
   * `Deepgram TTS`_ with `Deepgram`_ as Platform
   * `Deepgram STT`_ with `Deepgram`_ as Platform
   * Text-to-speech and speech-to-text with `Together`_ as Platform
+  * `Venice TTS`_ with `Venice`_ as Platform
+  * `Venice STT`_ with `Venice`_ as Platform
 
   For complete Deepgram setup and usage guide (TTS + STT), see :doc:`platform/deepgram`.
 * **Image/Video Models**
@@ -173,6 +177,10 @@ Supported Models & Platforms
   * `Decart T2V`_ with `Decart`_  as Platform
   * Image generation with `Together`_ as Platform
   * Image and video generation with `Higgsfield`_ as Platform (asynchronous, poll-based)
+  * `Venice T2I`_ with `Venice`_ as Platform
+  * `Venice T2V`_ with `Venice`_ as Platform
+
+  For complete Venice setup and usage guide (chat, images, audio and video), see :doc:`platform/venice`.
 
 Generic Platforms
 ~~~~~~~~~~~~~~~~~
@@ -844,6 +852,7 @@ Code Examples
 * `Streaming Claude`_
 * `Streaming GPT`_
 * `Streaming Mistral`_
+* `Streaming Venice`_
 
 Thinking / Extended Reasoning
 -----------------------------
@@ -1252,6 +1261,7 @@ Code Examples
 * `Embeddings with OpenAI`_
 * `Embeddings with Voyage`_
 * `Multimodal embeddings with Voyage`_
+* `Embeddings with Venice`_
 * `Embeddings with Mistral`_
 
 Structured Output
@@ -2155,3 +2165,12 @@ Code Examples
 .. _`Higgsfield Image-to-Video`: https://github.com/symfony/ai/blob/main/examples/higgsfield/image-to-video.php
 .. _`Together Text-to-Speech`: https://github.com/symfony/ai/blob/main/examples/together/text-to-speech.php
 .. _`Together Speech-to-Text`: https://github.com/symfony/ai/blob/main/examples/together/speech-to-text.php
+.. _`Venice`: https://venice.ai/
+.. _`Venice's Models`: https://docs.venice.ai/api-reference/endpoint/chat-completions
+.. _`Venice's Embeddings`: https://docs.venice.ai/api-reference/endpoint/generate-embeddings
+.. _`Venice TTS`: https://docs.venice.ai/api-reference/endpoint/text-to-speech
+.. _`Venice STT`: https://docs.venice.ai/api-reference/endpoint/audio-transcription
+.. _`Venice T2I`: https://docs.venice.ai/api-reference/endpoint/generate-image
+.. _`Venice T2V`: https://docs.venice.ai/api-reference/endpoint/queue-video-generation
+.. _`Streaming Venice`: https://github.com/symfony/ai/blob/main/examples/venice/chat-as-stream.php
+.. _`Embeddings with Venice`: https://github.com/symfony/ai/blob/main/examples/venice/embeddings.php
