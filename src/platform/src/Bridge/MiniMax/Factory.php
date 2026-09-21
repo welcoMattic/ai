@@ -27,25 +27,26 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
  */
 final class Factory
 {
+    private const DEFAULT_ENDPOINT = 'https://api.minimax.io/v1';
+
     /**
      * @param non-empty-string $name
      */
     public static function createProvider(
         #[\SensitiveParameter] string $apiKey,
         ?HttpClientInterface $httpClient = null,
-        string $endpoint = 'https://api.minimax.io/v1',
+        string $endpoint = self::DEFAULT_ENDPOINT,
         ModelCatalogInterface $modelCatalog = new ModelCatalog(),
         ?Contract $contract = null,
         ?EventDispatcherInterface $eventDispatcher = null,
         string $name = 'minimax',
     ): ProviderInterface {
         $httpClient = $httpClient instanceof EventSourceHttpClient ? $httpClient : new EventSourceHttpClient($httpClient);
-        $jobClient = self::createJobClient($apiKey, $httpClient, $endpoint, $name);
 
         return new Provider(
             $name,
             [new MiniMaxClient($httpClient, $apiKey, $endpoint)],
-            [new MiniMaxResultConverter($jobClient)],
+            [new MiniMaxResultConverter($name)],
             $modelCatalog,
             $contract ?? MiniMaxContract::create(),
             $eventDispatcher,
@@ -55,16 +56,13 @@ final class Factory
     /**
      * The client resolving the jobs this bridge hands out - typically in a worker picking up a
      * stored handle, without a provider or platform at hand.
-     *
-     * @param string $name the provider name stated on the handles this client creates
      */
     public static function createJobClient(
         #[\SensitiveParameter] string $apiKey,
         ?HttpClientInterface $httpClient = null,
-        string $endpoint = 'https://api.minimax.io/v1',
-        string $name = 'minimax',
+        string $endpoint = self::DEFAULT_ENDPOINT,
     ): MiniMaxJobClient {
-        return new MiniMaxJobClient($httpClient ?? new EventSourceHttpClient(), $apiKey, $endpoint, $name);
+        return new MiniMaxJobClient($httpClient ?? new EventSourceHttpClient(), $apiKey, $endpoint);
     }
 
     /**
@@ -73,7 +71,7 @@ final class Factory
     public static function createPlatform(
         #[\SensitiveParameter] string $apiKey,
         ?HttpClientInterface $httpClient = null,
-        string $endpoint = 'https://api.minimax.io/v1',
+        string $endpoint = self::DEFAULT_ENDPOINT,
         ModelCatalogInterface $modelCatalog = new ModelCatalog(),
         ?Contract $contract = null,
         ?EventDispatcherInterface $eventDispatcher = null,

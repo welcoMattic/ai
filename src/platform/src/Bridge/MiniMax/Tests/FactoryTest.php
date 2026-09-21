@@ -32,9 +32,4 @@ final class FactoryTest extends TestCase
         $this->assertSame('789', $handle->getId());
         $this->assertSame('minimax-eu', $handle->getProvider());
     }
-
-    public function testTheJobClientCreatesHandlesForTheGivenName()
-    {
-        $this->assertSame('minimax-eu', Factory::createJobClient('key', name: 'minimax-eu')->createHandle('789', [], 600)->getProvider());
-    }
 }

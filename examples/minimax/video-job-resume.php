@@ -29,8 +29,8 @@ require_once dirname(__DIR__).'/bootstrap.php';
 $storage = __DIR__.'/minimax-video-job.json';
 
 if (!is_file($storage)) {
-    $provider = Factory::createProvider(env('MINI_MAX_API_KEY'), http_client());
-    $handle = $provider->invoke('MiniMax-Hailuo-02', new Text('A cat playing the piano on a stage, cinematic lighting'), [
+    $platform = Factory::createPlatform(env('MINI_MAX_API_KEY'), http_client());
+    $handle = $platform->invoke('MiniMax-Hailuo-02', new Text('A cat playing the piano on a stage, cinematic lighting'), [
         'duration' => 6,
         'resolution' => '768P',
     ])->asJob();
