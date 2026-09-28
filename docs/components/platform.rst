@@ -398,14 +398,27 @@ The third parameter of the :method:`Symfony\\AI\\Platform\\PlatformInterface::in
 method is an array of options, which basically wraps the options of the corresponding
 model and platform, like ``temperature`` or ``max_output_tokens``::
 
+    use Symfony\AI\Platform\PlatformOptions;
+
     $result = $platform->invoke('gpt-4o-mini', $input, [
         'temperature' => 0.7,
-        'max_output_tokens' => 100,
+        PlatformOptions::MAX_OUTPUT_TOKENS => 100,
     ]);
 
 .. note::
 
     For model- and platform-specific options, please refer to the respective documentation.
+
+Some options work the same way on every platform. The
+:class:`Symfony\\AI\\Platform\\PlatformOptions` class lists them as constants, and
+each bridge translates them to the field its provider expects. For example,
+``PlatformOptions::MAX_OUTPUT_TOKENS`` becomes ``max_tokens`` for Anthropic and
+``maxOutputTokens`` for Gemini. If you also pass the provider-specific option, like
+``max_tokens``, it wins over the canonical one.
+
+The Anthropic, Amazon Bedrock (Claude and Nova), Gemini, Vertex AI (Gemini), Mistral and
+generic OpenAI-compatible completions bridges translate ``max_output_tokens``. OpenAI
+uses this name natively. Other bridges do not translate it yet.
 
 Language Models and Messages
 ----------------------------

@@ -377,6 +377,38 @@ class ModelClientTest extends TestCase
         $this->modelClient->request($this->model, ['message' => 'test'], $options);
     }
 
+    public function testCanonicalMaxOutputTokensIsRenamedToMaxTokens()
+    {
+        $this->httpClient = new MockHttpClient(function ($method, $url, $options) {
+            $body = json_decode($options['body'], true);
+            $this->assertSame(500, $body['max_tokens']);
+            $this->assertArrayNotHasKey('max_output_tokens', $body);
+
+            return new JsonMockResponse('{"success": true}');
+        });
+
+        $this->modelClient = new ModelClient($this->httpClient, 'test-api-key');
+
+        $options = ['max_output_tokens' => 500];
+        $this->modelClient->request($this->model, ['message' => 'test'], $options);
+    }
+
+    public function testExplicitMaxTokensWinsOverCanonicalMaxOutputTokens()
+    {
+        $this->httpClient = new MockHttpClient(function ($method, $url, $options) {
+            $body = json_decode($options['body'], true);
+            $this->assertSame(2000, $body['max_tokens']);
+            $this->assertArrayNotHasKey('max_output_tokens', $body);
+
+            return new JsonMockResponse('{"success": true}');
+        });
+
+        $this->modelClient = new ModelClient($this->httpClient, 'test-api-key');
+
+        $options = ['max_tokens' => 2000, 'max_output_tokens' => 500];
+        $this->modelClient->request($this->model, ['message' => 'test'], $options);
+    }
+
     public function testStringPayloadThrowsException()
     {
         $this->modelClient = new ModelClient(new MockHttpClient(), 'test-api-key');
