@@ -138,6 +138,39 @@ Each component uses:
 - NEVER mention Claude as co-author in commits
 - Avoid using the `empty()` function; prefer explicit checks like `[] === $array`, `'' === $string`, or `null === $value`
 
+## Code Comments
+
+Comments are the exception, not the default. Well-named classes, methods, and variables
+should carry the meaning; add a comment only when the code cannot explain itself.
+
+- Comment the *why*, never the *what*: a non-obvious constraint, a provider quirk, a
+  workaround for a known upstream bug. Don't narrate what the next line does.
+- Describe the implementation as it is, not how it came to be. No references to the
+  change, the ticket, the PR, the review, or a previous version ("fix for #123",
+  "previously we…", "now also handles…", "as requested") — that context belongs in the
+  commit message or PR description.
+- Keep comments to a single short line. No multi-line rationale blocks; if a longer
+  explanation is needed, it goes into the PR or the docs.
+- Don't add PHPDoc that only repeats the native signature; use PHPDoc for what types can't
+  express (array shapes, generics, `@throws`, `@author`).
+- Be especially restrained in central, frequently read classes (contracts, platform and
+  agent core, result/message value objects): every comment there is read by every
+  contributor and must keep earning its place.
+- When editing existing code, don't add comments to explain your own change, and remove
+  comments your change made obsolete.
+
+## Third-Party Bridges
+
+- The `README.md` of every bridge integrating a third-party service must contain a
+  `<Provider> Documentation` section linking the provider's relevant docs articles (API
+  reference, feature guides the bridge implements), e.g. `src/platform/src/Bridge/Anthropic/README.md`.
+  Keep these links in sync when the bridge gains or changes features.
+- When working on a bridge, ground the work in the provider's documentation instead of
+  assumptions: read the linked articles (and fetch the current version, as provider APIs
+  change) before implementing or changing request payloads, parameters, response parsing,
+  error handling, or model capabilities. Don't infer one provider's behaviour from another
+  provider's API, even if it claims compatibility.
+
 ## Documentation vs Cookbook
 
 The content under `docs/` splits into distinct kinds, and confusing them is the most
