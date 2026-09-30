@@ -1,0 +1,56 @@
+From a zoological and veterinary perspective, cats are classified as **obligate (true) carnivores**. This means their digestive physiology, metabolism, and nutritional requirements are strictly adapted to derive nutrients exclusively from animal tissue. They cannot survive on a vegetarian or plant-based diet.
+
+Here is a breakdown of what cats naturally eat and what domestic cats are fed:
+
+---
+
+### 1. In the Wild (Natural/Ancestral Diet)
+Wild felids and feral domestic cats are opportunistic, small-prey predators. Their natural diet consists of:
+* **Small Rodents:** Mice, voles, rats, and squirrels (the core of their natural diet).
+* **Birds:** Small ground-feeding and songbirds.
+* **Insects:** Grasshoppers, crickets, beetles, and moths.
+* **Reptiles and Amphibians:** Small lizards and occasionally frogs.
+
+**Nutritional note:** When a cat eats prey, it consumes the **entire animal**—including muscle meat, organs (especially liver and heart), bones, and blood. 
+* Muscle provides **protein**.
+* Organs supply vital **vitamins (A and D)** and trace minerals.
+* Bones supply essential **calcium and phosphorus**.
+* Fresh prey has a high water content (about **70–75% moisture**), which provides most of a wild cat's daily hydration.
+
+---
+
+### 2. Domestic Cats (Pet Diets)
+In a home setting, cats typically eat balanced commercial foods formulated to mimic their biological needs:
+
+* **Wet (Canned) Food:** Highly recommended by veterinary nutritionists because it closely matches a cat’s ancestral diet. It is typically high in animal protein, low in carbohydrates, and contains 70–80% water, which helps prevent kidney disease and urinary tract issues.
+* **Dry Food (Kibble):** Very common and convenient, but it tends to be higher in carbohydrates (used as binders) and contains only about 10% water. Cats on dry food must have ample fresh water available.
+* **Fresh or Commercial Raw Diets:** Some owners feed raw or gently cooked meat mixtures. If used, these must be balanced by a veterinary nutritionist to ensure they contain proper calcium and vitamin levels, and handled safely to prevent bacterial contamination (*Salmonella*, *Listeria*).
+
+---
+
+### 3. Critical Nutrients Cats Must Get from Meat
+Cats have unique metabolic limitations and cannot synthesize certain critical nutrients on their own:
+* **Taurine:** An essential amino acid found almost exclusively in animal muscle (especially heart). A deficiency causes blindness, tooth decay, and fatal heart disease (dilated cardiomyopathy).
+* **Arachidonic Acid:** An essential fatty acid that dogs and humans can make from plant oils, but cats must obtain directly from animal fat.
+* **Preformed Vitamin A:** Unlike humans and dogs, cats cannot convert beta-carotene (from carrots/plants) into Vitamin A; they must eat it preformed (found in animal liver).
+* **High Protein for Energy:** Cats constantly use protein for blood glucose regulation (gluconeogenesis), meaning their baseline protein requirement is much higher than that of omnivores or herbivores.
+
+---
+
+### 4. Common Misconceptions: What Cats Should *Not* Eat
+* **Cow’s Milk:** Despite the popular trope, most adult cats are **lactose intolerant**. Milk often causes severe gastrointestinal distress (diarrhea and vomiting).
+* **Dog Food:** Lacks sufficient protein, taurine, and arachidonic acid; over time, it will cause severe malnutrition in cats.
+* **Toxic Human Foods:** Onions, garlic, chives, chocolate, grapes, raisins, alcohol, and caffeine are toxic to felines.
++--------------- Token Usage ----------------+
+| Model                   | gemini-3.8-flash |
+| Prompt tokens           | 17               |
+| Completion tokens       | 785              |
+| Thinking tokens         | 769              |
+| Tool tokens             | n/a              |
+| Cached tokens           | n/a              |
+| Remaining tokens minute | n/a              |
+| Remaining tokens month  | n/a              |
+| Remaining tokens        | n/a              |
+| Total tokens            | 1571             |
++-------------------------+------------------+
+
