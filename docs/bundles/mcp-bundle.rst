@@ -566,9 +566,10 @@ The HTTP transport uses the MCP SDK's ``StreamableHttpTransport`` which supports
 DNS Rebinding Protection
 ........................
 
-By default, the MCP SDK protects the HTTP transport against DNS rebinding attacks by only
-accepting requests whose ``Origin``/``Host`` header points to ``localhost``. To expose a
-public MCP server, configure the allowed hosts:
+By default, the MCP SDK protects the HTTP transport against DNS rebinding attacks. It accepts
+only requests whose ``Host`` header points to ``localhost``, and a request with an ``Origin``
+header only when it comes from the same origin as the MCP endpoint. To expose a public MCP
+server, configure the allowed hosts:
 
 .. code-block:: yaml
 
@@ -588,6 +589,21 @@ reverse proxy that already validates the ``Host`` header) by setting it to ``fal
             default:
                 http:
                     allowed_hosts: false
+
+A browser client on another origin, like the MCP Inspector, sends an ``Origin`` header that
+differs from the MCP endpoint. List the origins to accept, with scheme, host and port:
+
+.. code-block:: yaml
+
+    mcp:
+        servers:
+            default:
+                http:
+                    allowed_origins: ['http://localhost:6274'] # Use ['*'] to accept any origin
+
+The ``Host`` header is still checked against ``allowed_hosts``. ``allowed_origins`` does not add
+CORS headers to the response, so a browser client also needs them from your application, for
+example with NelmioCorsBundle.
 
 Session Storage
 ...............
@@ -669,6 +685,46 @@ This wraps the configured Symfony session handler (e.g. Redis, database, filesys
 your application uses for HTTP sessions) with a JSON envelope for application-level TTL.
 Expired sessions are cleaned up lazily on read.
 
+Session Locking
+...............
+
+A client can send several requests of one session at the same time. Each request reads the session,
+changes it and saves it, so one request can overwrite what another one saved. Enable the session lock
+to handle the requests of one session one after the other:
+
+.. code-block:: yaml
+
+    mcp:
+        servers:
+            default:
+                session:
+                    store: file
+                    lock:
+                        enabled: true
+                        timeout: 30 # seconds to wait while another request of the session holds the lock
+
+With the ``file`` store, the lock is a file next to the session files. A ``cache`` or ``framework`` store
+can be shared by several machines, so it needs a lock from the `Symfony Lock component`_. Install
+``symfony/lock`` and pass a ``LockFactory`` service:
+
+.. code-block:: yaml
+
+    mcp:
+        servers:
+            default:
+                session:
+                    store: cache
+                    lock:
+                        enabled: true
+                        factory: 'lock.factory'
+                        ttl: 300 # seconds before the store expires a lock that was not released
+
+Any store other than ``file`` needs the ``factory`` option. Without it, the configuration is rejected.
+
+The ``ttl`` lets the store expire the lock of a worker that died while holding it. The lock is not
+renewed while a handler runs, so set ``ttl`` longer than your longest handler runs. Otherwise another
+request can take the lock before the first one saved the session.
+
 The Modern Era
 ..............
 
@@ -681,8 +737,8 @@ per era, and the HTTP transport classifies every request before anything else lo
 claiming a modern revision goes to the modern dispatcher, the ``initialize`` handshake and its
 session's later requests go to the other. A client picks nothing.
 
-STDIO carries the handshake era alone — it has no per-request envelope to classify — so a server
-configured for both transports simply serves the modern era over HTTP only.
+Over STDIO, the server reads the protocol version from the client's first request and then serves
+that era on the connection.
 
 By default the HTTP endpoint supports every revision the SDK supports and negotiates with the client.
 Narrow the supported revisions through ``protocol_versions``:
@@ -1010,6 +1066,7 @@ Configuration
                 http:
                     path: /mcp # HTTP endpoint path (default: /mcp/<name>)
                     allowed_hosts: ['example.com'] # DNS rebinding allowlist; false disables the protection
+                    allowed_origins: ['https://app.example.com'] # Cross-origin clients to accept (default: same origin only)
 
                 # Revisions this server answers for, in either era. Unset (the default) inherits
                 # the SDK's own support. Listing no modern revision refuses the modern era; a
@@ -1035,8 +1092,13 @@ Configuration
                     store: file # 'file', 'memory', 'cache' or 'framework' (default: file)
                     directory: '%kernel.cache_dir%/mcp-sessions/default' # File store (default: cache_dir/mcp-sessions/<name>)
                     cache_pool: 'cache.mcp.sessions' # Cache pool service for the cache store (PSR-16)
-                    prefix: 'mcp-default-' # Key prefix for the cache/framework stores (default: mcp-<name>-)
+                    prefix: 'mcp-default-' # Key prefix for the cache/framework stores and a factory lock (default: mcp-<name>-)
                     ttl: 3600 # Session TTL in seconds (default: 3600)
+                    lock: # Serializes the concurrent requests of one session (default: disabled)
+                        enabled: false
+                        factory: null # LockFactory service id; required for any store but 'file'
+                        timeout: 30.0 # Seconds to wait for a lock held by another request (default: 30)
+                        ttl: 300.0 # Seconds before the store expires a 'factory' lock, ignored by the file lock (default: 300)
 
                 # What this server exposes: service ids, class names, namespace prefixes or '*'.
                 # Required. Either one list for every kind (registry: ['App\Mcp\'], registry: '*')
@@ -1223,3 +1285,4 @@ The events are simple marker events that notify when lists have changed, but don
 .. _`Claude Desktop`: https://claude.ai/download
 .. _`MCP Server List`: https://modelcontextprotocol.io/examples
 .. _`Symfony Cache documentation`: https://symfony.com/doc/current/components/cache.html
+.. _`Symfony Lock component`: https://symfony.com/doc/current/components/lock.html

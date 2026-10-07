@@ -1,6 +1,46 @@
 UPGRADE FROM 0.14 to 0.15
 =========================
 
+MCP Bundle
+----------
+
+ * The bundle and `symfony/ai-mcp-tool` require `mcp/sdk` `^0.9`. The SDK's 0.9.0 release contains BC breaks that
+   reach code written against it directly, see its [changelog](https://github.com/modelcontextprotocol/php-sdk/blob/main/CHANGELOG.md).
+   For example, `#[CompletionProvider]` no longer accepts `providerClass`, use `provider` instead:
+
+   ```diff
+   -#[CompletionProvider(providerClass: TalkSlugProvider::class)]
+   +#[CompletionProvider(provider: TalkSlugProvider::class)]
+   ```
+
+ * A client under `mcp.clients` without `protocol_version` now speaks the SDK's new default, `2026-07-28`, and falls
+   back to the `initialize` handshake on `2025-11-25` only when the server does not speak the modern era. Against a
+   server that speaks both, the server can no longer reach the client's `roots` and `sampling` handlers. Pin the
+   revision to keep them:
+
+   ```diff
+    mcp:
+        clients:
+            research:
+   +            protocol_version: '2025-11-25'
+   ```
+
+ * `ServerConnectionInterface` has a new `getServerCapabilities()` method. Classes implementing the interface
+   must add it, returning the `Mcp\Schema\ServerCapabilities` the remote server declared, or `null` before
+   connecting.
+
+ * The HTTP transport rejects a request with an `Origin` header that is neither the MCP endpoint's own origin nor
+   listed in the new `http.allowed_origins` option. Before, an origin passed when its host was in `allowed_hosts`.
+   List the origins of your cross-origin clients, with scheme and port:
+
+   ```diff
+    mcp:
+        servers:
+            default:
+                http:
+   +                allowed_origins: ['http://localhost:6274']
+   ```
+
 Platform
 --------
 
