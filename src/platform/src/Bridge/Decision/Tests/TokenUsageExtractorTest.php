@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\AI\Platform\Bridge\TypeSafe\Tests;
+namespace Symfony\AI\Platform\Bridge\Decision\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\AI\Platform\Bridge\TypeSafe\TokenUsageExtractor;
+use Symfony\AI\Platform\Bridge\Decision\TokenUsageExtractor;
 use Symfony\AI\Platform\Result\InMemoryRawResult;
 use Symfony\AI\Platform\TokenUsage\TokenUsage;
 

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\AI\Platform\Bridge\TypeSafe\Tests\Answer;
+namespace Symfony\AI\Platform\Bridge\Decision\Tests\Answer;
 
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
-use Symfony\AI\Platform\Bridge\TypeSafe\Answer\NoulAnswer;
+use Symfony\AI\Platform\Bridge\Decision\Answer\NoulAnswer;
 
 final class NoulAnswerTest extends TestCase
 {
