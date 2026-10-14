@@ -375,6 +375,7 @@ final class StoreTest extends TestCase
                             '_metadata' => [
                                 '_id' => Uuid::v4()->toRfc4122(),
                             ],
+                            'distance' => 0.1,
                         ],
                         [
                             'id' => Uuid::v4()->toRfc4122(),
@@ -382,6 +383,7 @@ final class StoreTest extends TestCase
                             '_metadata' => [
                                 '_id' => Uuid::v4()->toRfc4122(),
                             ],
+                            'distance' => 0.1,
                         ],
                     ],
                     'status' => 'OK',
@@ -406,6 +408,7 @@ final class StoreTest extends TestCase
                             '_metadata' => [
                                 '_id' => Uuid::v4()->toRfc4122(),
                             ],
+                            'distance' => 0.1,
                         ],
                         [
                             'id' => Uuid::v4()->toRfc4122(),
@@ -413,6 +416,7 @@ final class StoreTest extends TestCase
                             '_metadata' => [
                                 '_id' => Uuid::v4()->toRfc4122(),
                             ],
+                            'distance' => 0.1,
                         ],
                     ],
                     'status' => 'OK',
@@ -430,6 +434,76 @@ final class StoreTest extends TestCase
         $results = iterator_to_array($store->query(new VectorQuery(new Vector(array_fill(0, 1275, 0.1)))));
 
         $this->assertCount(2, $results);
+    }
+
+    public function testStoreQueriesWithTheDistanceOfTheIndex()
+    {
+        $body = null;
+        $httpClient = new MockHttpClient(static function (string $method, string $url, array $options) use (&$body): JsonMockResponse {
+            $body = $options['body'] ?? null;
+
+            return new JsonMockResponse([['result' => [], 'status' => 'OK']], ['http_code' => 200]);
+        }, 'http://127.0.0.1:8000');
+
+        $store = new Store($httpClient, 'test', 'test', 'test', 'test', 'movies', strategy: 'euclidean');
+
+        iterator_to_array($store->query(new VectorQuery(new Vector([0.1, 0.2, 0.3]))));
+
+        $this->assertSame('SELECT id, _vectors, _metadata, vector::distance::knn() AS distance FROM movies WHERE _vectors <|5|> [0.1,0.2,0.3] ORDER BY distance;', $body);
+    }
+
+    public function testStoreQueriesWithTheGivenLimit()
+    {
+        $body = null;
+        $httpClient = new MockHttpClient(static function (string $method, string $url, array $options) use (&$body): JsonMockResponse {
+            $body = $options['body'] ?? null;
+
+            return new JsonMockResponse([['result' => [], 'status' => 'OK']], ['http_code' => 200]);
+        }, 'http://127.0.0.1:8000');
+
+        $store = new Store($httpClient, 'test', 'test', 'test', 'test', 'movies');
+
+        iterator_to_array($store->query(new VectorQuery(new Vector([0.1, 0.2, 0.3])), ['limit' => 10]));
+
+        $this->assertSame('SELECT id, _vectors, _metadata, vector::distance::knn() AS distance FROM movies WHERE _vectors <|10|> [0.1,0.2,0.3] ORDER BY distance;', $body);
+    }
+
+    public function testStoreReturnsTheDistanceAsScore()
+    {
+        $httpClient = new MockHttpClient([
+            new JsonMockResponse([
+                [
+                    'result' => [
+                        [
+                            'id' => 'movies:first',
+                            '_vectors' => [0.1, 0.2, 0.3],
+                            '_metadata' => ['_id' => 'first', 'title' => 'First'],
+                            'distance' => 0.12,
+                        ],
+                        [
+                            'id' => 'movies:second',
+                            '_vectors' => [0.3, 0.2, 0.1],
+                            '_metadata' => ['_id' => 'second', 'title' => 'Second'],
+                            'distance' => 0.34,
+                        ],
+                    ],
+                    'status' => 'OK',
+                ],
+            ], [
+                'http_code' => 200,
+            ]),
+        ], 'http://127.0.0.1:8000');
+
+        $store = new Store($httpClient, 'test', 'test', 'test', 'test', 'movies');
+
+        $results = iterator_to_array($store->query(new VectorQuery(new Vector([0.1, 0.2, 0.3]))));
+
+        $this->assertCount(2, $results);
+        $this->assertSame('first', $results[0]->getId());
+        $this->assertSame(0.12, $results[0]->getScore());
+        $this->assertSame(['title' => 'First'], $results[0]->getMetadata()->getArrayCopy());
+        $this->assertSame('second', $results[1]->getId());
+        $this->assertSame(0.34, $results[1]->getScore());
     }
 
     public function testStoreCanRemove()
