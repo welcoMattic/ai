@@ -117,6 +117,9 @@ Store
    PostgreSQL error for a `vector_type` other than `vector` and `halfvec`, and for the `ivfflat` index
    method with `Distance::L1` when no `index_opclass` is given.
 
+ * `Bridge\AzureSearch\SearchStore::query()` runs an approximate vector query by default; pass the
+   `exhaustive` option to get the previous exact search back.
+
 UPGRADE FROM 0.13 to 0.14
 =========================
 
