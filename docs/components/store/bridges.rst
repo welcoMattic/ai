@@ -677,6 +677,8 @@ Vector storage using `Atlas Vector Search`_.
                     index_name: 'vector_index'
                     vector_field: 'vector'
                     bulk_write: false
+                    dimensions: 1536
+                    similarity: 'euclidean' # or 'cosine', 'dotProduct'
 
 .. note::
 
