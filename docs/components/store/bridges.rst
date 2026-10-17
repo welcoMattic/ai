@@ -906,6 +906,8 @@ The index is created by ``setup()``::
                     index_name: 'my_index'
                     key_prefix: 'vector:'
                     distance: 'COSINE'
+                    setup_options:
+                        vector_size: 1536
 
 SurrealDB
 ~~~~~~~~~
