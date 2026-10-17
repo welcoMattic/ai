@@ -93,6 +93,9 @@ final class Store implements ManagedStoreInterface, StoreInterface
         return VectorQuery::class === $queryClass;
     }
 
+    /**
+     * @param array{limit?: positive-int} $options
+     */
     public function query(QueryInterface $query, array $options = []): iterable
     {
         if (!$query instanceof VectorQuery) {
@@ -103,8 +106,8 @@ final class Store implements ManagedStoreInterface, StoreInterface
         $vectors = json_encode($vector->getData());
 
         $results = $this->request('POST', 'sql', \sprintf(
-            'SELECT id, %s, _metadata, vector::similarity::%s(%s, %s) AS distance FROM %s WHERE %s <|2|> %s;',
-            $this->vectorFieldName, $this->strategy, $this->vectorFieldName, $vectors, $this->table, $this->vectorFieldName, $vectors,
+            'SELECT id, %s, _metadata, vector::distance::knn() AS distance FROM %s WHERE %s <|%d|> %s ORDER BY distance;',
+            $this->vectorFieldName, $this->table, $this->vectorFieldName, $options['limit'] ?? 5, $vectors,
         ));
 
         $statement = $results[0] ?? null;
@@ -279,10 +282,16 @@ final class Store implements ManagedStoreInterface, StoreInterface
 
         unset($metadata['_id']);
 
+        $distance = $data['distance'] ?? null;
+        if (!\is_int($distance) && !\is_float($distance)) {
+            throw new InvalidArgumentException('The document "distance" field must be a number.');
+        }
+
         return new VectorDocument(
             id: $id,
             vector: $vector,
             metadata: new Metadata($metadata),
+            score: (float) $distance,
         );
     }
 
