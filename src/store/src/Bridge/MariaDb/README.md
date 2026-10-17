@@ -8,7 +8,8 @@ Requires MariaDB >=11.7 for vector support.
 MariaDB Documentation
 ---------------------
 
- * [Vector overview (`VECTOR`, `VECTOR INDEX`, distance functions)](https://mariadb.com/kb/en/vector-overview/)
+ * [Vector overview (`VECTOR`, `VECTOR INDEX`, distance functions)](https://mariadb.com/docs/server/reference/sql-structure/vectors/vector-overview)
+ * [CREATE TABLE with vectors (`VECTOR INDEX` options, `DISTANCE`)](https://mariadb.com/docs/server/reference/sql-structure/vectors/create-table-with-vectors)
  * [RAG with MariaDB Vector](https://mariadb.org/rag-with-mariadb-vector/)
 
 Resources

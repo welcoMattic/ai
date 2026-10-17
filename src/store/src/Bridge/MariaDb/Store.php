@@ -63,6 +63,14 @@ final class Store implements ManagedStoreInterface, StoreInterface
             throw new InvalidArgumentException('You need MariaDB >=11.7 to use this feature.');
         }
 
+        // MariaDB serves a query from the vector index only if both use the same distance
+        $indexDistance = match ($this->distance) {
+            Distance::Cosine => ' DISTANCE=cosine',
+            Distance::Euclidean => ' DISTANCE=euclidean',
+            // VEC_DISTANCE() follows the distance of the index, the server default applies
+            Distance::Distance => '',
+        };
+
         $this->connection->exec(
             \sprintf(
                 <<<'SQL'
@@ -70,13 +78,14 @@ final class Store implements ManagedStoreInterface, StoreInterface
                         id UUID NOT NULL PRIMARY KEY,
                         metadata JSON,
                         `%2$s` VECTOR(%4$d) NOT NULL,
-                        VECTOR INDEX %3$s (`%2$s`)
+                        VECTOR INDEX %3$s (`%2$s`)%5$s
                     )
                     SQL,
                 $this->tableName,
                 $this->vectorFieldName,
                 $this->indexName,
                 $options['dimensions'] ?? 1536,
+                $indexDistance,
             ),
         );
     }

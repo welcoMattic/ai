@@ -11,6 +11,7 @@
 
 namespace Symfony\AI\Store\Bridge\MariaDb\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Platform\Vector\Vector;
 use Symfony\AI\Store\Bridge\MariaDb\Distance;
@@ -363,6 +364,43 @@ final class StoreTest extends TestCase
         $this->assertSame(0.85, $results[0]->getScore());
         $this->assertSame($crawlId, $results[0]->getMetadata()['crawlId']);
         $this->assertSame('https://example.com', $results[0]->getMetadata()['url']);
+    }
+
+    #[DataProvider('provideIndexDistances')]
+    public function testSetupCreatesVectorIndexWithStoreDistance(Distance $distance, string $expectedIndex)
+    {
+        $pdo = $this->createMock(\PDO::class);
+        $pdo->method('getAttribute')
+            ->with(\PDO::ATTR_SERVER_VERSION)
+            ->willReturn('11.7.2-MariaDB-ubu2404');
+
+        $store = new Store($pdo, 'embeddings_table', 'embedding_index', 'embedding', $distance);
+
+        $expectedQuery = <<<SQL
+            CREATE TABLE IF NOT EXISTS embeddings_table (
+                id UUID NOT NULL PRIMARY KEY,
+                metadata JSON,
+                `embedding` VECTOR(1536) NOT NULL,
+                {$expectedIndex}
+            )
+            SQL;
+
+        $pdo->expects($this->once())
+            ->method('exec')
+            ->with($expectedQuery)
+            ->willReturn(0);
+
+        $store->setup();
+    }
+
+    /**
+     * @return iterable<string, array{Distance, string}>
+     */
+    public static function provideIndexDistances(): iterable
+    {
+        yield 'cosine' => [Distance::Cosine, 'VECTOR INDEX embedding_index (`embedding`) DISTANCE=cosine'];
+        yield 'euclidean' => [Distance::Euclidean, 'VECTOR INDEX embedding_index (`embedding`) DISTANCE=euclidean'];
+        yield 'distance of the index' => [Distance::Distance, 'VECTOR INDEX embedding_index (`embedding`)'];
     }
 
     public function testItCanDrop()
