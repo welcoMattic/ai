@@ -207,7 +207,7 @@ final class Store implements ManagedStoreInterface, StoreInterface
 
         $maxScore = $options['maxScore'] ?? null;
         if (null !== $maxScore) {
-            $where = \sprintf('WHERE %1$s(`%2$s`, VEC_FromText(:embedding)) <= :maxScore', $this->distance->getComparisonFunction(), $this->vectorFieldName);
+            $where = \sprintf('WHERE %1$s(`%2$s`, q.query_vector) <= :maxScore', $this->distance->getComparisonFunction(), $this->vectorFieldName);
         }
 
         if ($options['where'] ?? false) {
@@ -218,11 +218,13 @@ final class Store implements ManagedStoreInterface, StoreInterface
             }
         }
 
+        // A derived table parses the query vector once, instead of once per row
         $statement = $this->connection->prepare(
             \sprintf(
                 <<<'SQL'
-                    SELECT id, VEC_ToText(`%1$s`) embedding, metadata, %5$s(`%1$s`, VEC_FromText(:embedding)) AS score
+                    SELECT id, VEC_ToText(`%1$s`) embedding, metadata, %5$s(`%1$s`, q.query_vector) AS score
                     FROM %2$s
+                    JOIN (SELECT VEC_FromText(:embedding) AS query_vector) q
                     %3$s
                     ORDER BY score ASC
                     LIMIT %4$d

@@ -33,9 +33,10 @@ final class StoreTest extends TestCase
 
         // Expected SQL query with max score
         $expectedQuery = <<<'SQL'
-            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, VEC_FromText(:embedding)) AS score
+            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, q.query_vector) AS score
             FROM embeddings_table
-            WHERE VEC_DISTANCE_EUCLIDEAN(`embedding`, VEC_FromText(:embedding)) <= :maxScore
+            JOIN (SELECT VEC_FromText(:embedding) AS query_vector) q
+            WHERE VEC_DISTANCE_EUCLIDEAN(`embedding`, q.query_vector) <= :maxScore
             ORDER BY score ASC
             LIMIT 5
             SQL;
@@ -82,9 +83,10 @@ final class StoreTest extends TestCase
 
         // Expected SQL query with max score
         $expectedQuery = <<<'SQL'
-            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, VEC_FromText(:embedding)) AS score
+            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, q.query_vector) AS score
             FROM embeddings_table
-            WHERE VEC_DISTANCE_EUCLIDEAN(`embedding`, VEC_FromText(:embedding)) <= :maxScore
+            JOIN (SELECT VEC_FromText(:embedding) AS query_vector) q
+            WHERE VEC_DISTANCE_EUCLIDEAN(`embedding`, q.query_vector) <= :maxScore
             ORDER BY score ASC
             LIMIT 5
             SQL;
@@ -130,8 +132,9 @@ final class StoreTest extends TestCase
         $store = new Store($pdo, 'embeddings_table', 'embedding_index', 'embedding', Distance::Cosine);
 
         $expectedQuery = <<<'SQL'
-            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_COSINE(`embedding`, VEC_FromText(:embedding)) AS score
+            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_COSINE(`embedding`, q.query_vector) AS score
             FROM embeddings_table
+            JOIN (SELECT VEC_FromText(:embedding) AS query_vector) q
 
             ORDER BY score ASC
             LIMIT 5
@@ -154,8 +157,9 @@ final class StoreTest extends TestCase
 
         // Expected SQL query without maxScore
         $expectedQuery = <<<'SQL'
-            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, VEC_FromText(:embedding)) AS score
+            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, q.query_vector) AS score
             FROM embeddings_table
+            JOIN (SELECT VEC_FromText(:embedding) AS query_vector) q
 
             ORDER BY score ASC
             LIMIT 5
@@ -201,8 +205,9 @@ final class StoreTest extends TestCase
 
         // Expected SQL query with custom limit
         $expectedQuery = <<<'SQL'
-            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, VEC_FromText(:embedding)) AS score
+            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, q.query_vector) AS score
             FROM embeddings_table
+            JOIN (SELECT VEC_FromText(:embedding) AS query_vector) q
 
             ORDER BY score ASC
             LIMIT 10
@@ -237,8 +242,9 @@ final class StoreTest extends TestCase
         $store = new Store($pdo, 'embeddings_table', 'embedding_idx', 'embedding');
 
         $expectedQuery = <<<SQL
-            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, VEC_FromText(:embedding)) AS score
+            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, q.query_vector) AS score
             FROM embeddings_table
+            JOIN (SELECT VEC_FromText(:embedding) AS query_vector) q
             WHERE metadata->>'category' = 'products'
             ORDER BY score
             ASC LIMIT 5
@@ -275,9 +281,10 @@ final class StoreTest extends TestCase
         $store = new Store($pdo, 'embeddings_table', 'embedding_idx', 'embedding');
 
         $expectedQuery = <<<SQL
-            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, VEC_FromText(:embedding)) AS score
+            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, q.query_vector) AS score
             FROM embeddings_table
-            WHERE VEC_DISTANCE_EUCLIDEAN(`embedding`, VEC_FromText(:embedding)) <= :maxScore
+            JOIN (SELECT VEC_FromText(:embedding) AS query_vector) q
+            WHERE VEC_DISTANCE_EUCLIDEAN(`embedding`, q.query_vector) <= :maxScore
                 AND (metadata->>'active' = 'true')
             ORDER BY score ASC
             LIMIT 5
@@ -317,8 +324,9 @@ final class StoreTest extends TestCase
         $store = new Store($pdo, 'embeddings_table', 'embedding_idx', 'embedding');
 
         $expectedQuery = <<<SQL
-            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, VEC_FromText(:embedding)) AS score
+            SELECT id, VEC_ToText(`embedding`) embedding, metadata, VEC_DISTANCE_EUCLIDEAN(`embedding`, q.query_vector) AS score
             FROM embeddings_table
+            JOIN (SELECT VEC_FromText(:embedding) AS query_vector) q
             WHERE metadata->>'crawlId' = :crawlId
                 AND id != :currentId
             ORDER BY score
