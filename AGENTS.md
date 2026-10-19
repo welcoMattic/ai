@@ -228,3 +228,10 @@ These conventions are enforced on every PR by `.github/workflows/changelog.yaml`
   - License: MIT
 - Provide a clear description of the changes below the table
 
+### Pull Request Comments
+- Keep comments and PR descriptions short: one to three sentences
+- After a push, say what changed and why. Do not list the checks, tests, assertions or PHP versions you ran, CI shows that
+- Do not report that nothing happened, such as "no outstanding review conversations"
+- Reply to a review comment only to answer it or to say how it was resolved
+- Do not post a comment for a rebase or force-push unless it changes the code under review
+
