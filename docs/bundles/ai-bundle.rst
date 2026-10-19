@@ -1142,6 +1142,12 @@ The list stays explicit: an agent listing only ``mcp_server`` entries gets only 
 servers. To offer local tools next to them, list those tools as well. A server that cannot be reached
 contributes no tools; lower its ``init_timeout`` and ``max_retries`` to notice that sooner.
 
+The reason is only logged as an error on the application's default logger. In a long-running process,
+e.g. a Messenger worker, the server is then not asked again for the next 60 seconds; with PHP-FPM every
+request asks it again. To find out why an agent has fewer tools than expected, check the log and run
+``php bin/console debug:mcp --client=research --server=filesystem``, which connects to the server and
+prints what it advertises.
+
 Token Usage Tracking
 --------------------
 
