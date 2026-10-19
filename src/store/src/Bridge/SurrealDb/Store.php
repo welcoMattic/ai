@@ -133,7 +133,7 @@ final class Store implements ManagedStoreInterface, StoreInterface
     {
         $this->authenticate();
 
-        $this->request('DELETE', \sprintf('key/%s', $this->table), []);
+        $this->request('POST', 'sql', \sprintf('REMOVE TABLE IF EXISTS %s;', $this->table));
     }
 
     public function count(): int
