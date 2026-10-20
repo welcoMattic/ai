@@ -44,6 +44,19 @@ MCP Bundle
 Platform
 --------
 
+ * `Test\InMemoryPlatform` has been removed. Use `Test\MockPlatformFactory::createPlatform()` instead.
+   It returns a real `Platform`, so the closure receives the payload and options after the contract
+   converted them (for example tools as arrays instead of `Tool` objects). Platform events are dispatched
+   when an event dispatcher is passed.
+
+   ```diff
+   -use Symfony\AI\Platform\Test\InMemoryPlatform;
+   +use Symfony\AI\Platform\Test\MockPlatformFactory;
+
+   -$platform = new InMemoryPlatform('Fake result');
+   +$platform = MockPlatformFactory::createPlatform('Fake result');
+   ```
+
  * The Albert bridge no longer exposes environmental impacts under the `carbon` result metadata.
  * They are now available under `impacts`, with the energy consumption reported directly by Albert:
 

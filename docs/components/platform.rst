@@ -1943,114 +1943,32 @@ Testing Tools
 
 The component ships more than one test double, and which one fits depends on *how much of the
 platform the test should keep running*. They cut the pipeline at different depths, from replacing
-everything down to replacing nothing but the network:
+one provider down to replacing nothing but the network:
 
-* :class:`Symfony\\AI\\Platform\\Test\\InMemoryPlatform` replaces the whole platform. Routing, model
-  catalog, contract, ``ModelClient`` and ``ResultConverter`` are all skipped, and the answer is a
-  string or closure you write. Use it to test *your* code against a given answer.
 * :class:`Symfony\\AI\\Platform\\Test\\Recording\\RecordingProvider` replaces one provider, keeping the
   real ``Platform``, routing and model catalog. The answer is a real result captured once. Use it when
   a test needs a realistic answer but does not care how the bridge produced it.
 * :class:`Symfony\\AI\\Platform\\Test\\MockPlatformFactory` keeps the real ``Platform``, ``Provider``,
-  routing and contract, and fakes only the ``ModelClient`` and ``ResultConverter``. Use it when the
-  test is about the platform itself: model routing and resolution, non-text result types, or
+  routing and contract, and fakes only the ``ModelClient`` and ``ResultConverter``. The answer is a
+  string, a map or a closure you write. Use it to test *your* code against a given answer, or when
+  the test is about the platform itself: model routing and resolution, non-text result types, or
   asserting on the payload the platform built.
 * :class:`Symfony\\AI\\Platform\\Test\\Replay\\CassetteHttpClient` replaces nothing but the network.
   Contract, ``ModelClient`` and ``ResultConverter`` all run for real, against bytes recorded from the
   provider once. Use it when the test is about a bridge's internals.
 
 The lower a tool cuts, the more of the library a test actually covers, and the more setup it needs.
-A second axis runs across that: ``InMemoryPlatform`` and ``MockPlatformFactory`` return an answer you
-wrote by hand, while the two recorders return what a provider really sent, which is what makes them
-drift-checkable.
+A second axis runs across that: ``MockPlatformFactory`` returns an answer you wrote by hand, while
+the two recorders return what a provider really sent, which is what makes them drift-checkable.
 
-For unit or integration testing, you can use the :class:`Symfony\\AI\\Platform\\Test\\InMemoryPlatform`,
-which implements :class:`Symfony\\AI\\Platform\\PlatformInterface` without calling external APIs.
+Mock Platform
+~~~~~~~~~~~~~
 
-It supports returning either:
-
-- A fixed string result
-- A callable that dynamically returns a simple string or any :class:`Symfony\\AI\\Platform\\Result\\ResultInterface` based on the model, input, and options::
-
-    use Symfony\AI\Platform\Model;
-    use Symfony\AI\Platform\Test\InMemoryPlatform;
-
-    $platform = new InMemoryPlatform('Fake result');
-
-    $result = $platform->invoke('gpt-4o-mini', 'What is the capital of France?');
-
-    echo $result->asText(); // "Fake result"
-
-Dynamic Text Results
-~~~~~~~~~~~~~~~~~~~~
-
-::
-
-    $platform = new InMemoryPlatform(
-        fn($model, $input, $options) => "Echo: {$input}"
-    );
-
-    $result = $platform->invoke('gpt-4o-mini', 'Hello AI');
-    echo $result->asText(); // "Echo: Hello AI"
-
-Vector Results
-~~~~~~~~~~~~~~
-
-::
-
-    use Symfony\AI\Platform\Result\VectorResult;
-    use Symfony\AI\Platform\Vector\Vector;
-
-    $platform = new InMemoryPlatform(
-        fn() => new VectorResult([new Vector([0.1, 0.2, 0.3, 0.4])])
-    );
-
-    $result = $platform->invoke('gpt-4o-mini', 'vectorize this text');
-    $vectors = $result->asVectors(); // Returns Vector object with [0.1, 0.2, 0.3, 0.4]
-
-Binary Results
-~~~~~~~~~~~~~~
-
-::
-
-    use Symfony\AI\Platform\Result\BinaryResult;
-
-    $platform = new InMemoryPlatform(
-        fn() => new BinaryResult('fake-pdf-content', 'application/pdf')
-    );
-
-    $result = $platform->invoke('gpt-4o-mini', 'generate PDF document');
-    $binary = $result->asBinary(); // Returns the binary data as string
-
-You can also save binary results directly to a file using
-:method:`Symfony\\AI\\Platform\\Result\\DeferredResult::asFile`::
-
-    $result = $platform->invoke('gemini-2.5-flash-image', $messages);
-    $result->asFile('/path/to/output.png'); // Saves the binary content to a file
-
-The method throws a :class:`Symfony\\AI\\Platform\\Exception\\RuntimeException` if the
-target directory does not exist or is not writable.
-
-Raw Results
-~~~~~~~~~~~
-
-The platform automatically uses the :method:`Symfony\\AI\\Platform\\Result\\ResultInterface::getRawResult` from any :class:`Symfony\\AI\\Platform\\Result\\ResultInterface` returned by closures. For string results, it creates an :class:`Symfony\\AI\\Platform\\Result\\InMemoryRawResult` to simulate real API response metadata.
-
-This allows fast and isolated testing of AI-powered features without relying on live providers or HTTP requests.
-
-.. note::
-
-    This requires `cURL` and the `ext-curl` extension to be installed.
-
-Routing-Aware Mock Provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-``InMemoryPlatform`` replaces the *whole* platform, so it ignores routing and returns text only.
-When a test needs to go through real model routing, coexist with real providers, return non-text
-results, or assert on exactly what was sent, use the provider-level mock from
-:class:`Symfony\\AI\\Platform\\Test\\MockPlatformFactory` instead. It registers as a regular provider and
-threads a scripted :class:`Symfony\\AI\\Platform\\Result\\ResultInterface` through unchanged, so
-every result type is supported.
+:class:`Symfony\\AI\\Platform\\Test\\MockPlatformFactory` builds a real ``Platform`` around a mock
+provider, without calling external APIs. It goes through real model routing, can coexist with real
+providers, dispatches the platform events and lets a test assert on exactly what was sent. It threads
+a scripted :class:`Symfony\\AI\\Platform\\Result\\ResultInterface` through unchanged, so every result
+type is supported. The closure receives the payload and options after the contract converted them.
 
 The scripted response can be a fixed string, a map keyed by model name, or a closure::
 
