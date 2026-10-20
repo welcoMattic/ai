@@ -4,8 +4,8 @@
             "request": {
                 "method": "POST",
                 "url": "https://api.anthropic.com/v1/messages",
-                "signature": "a9fa131ed6e20b7309513d5b0f0c87f3",
-                "signature_v2": "1bcb196677dfe6fb201cda4a6c795bce",
+                "signature": "2bd76b09f7ba750264a5dea543ecca8c",
+                "signature_v2": "c4bf20327f9372f0846f74fe74efb63a",
                 "headers": {
                     "x-api-key": [
                         "[redacted]"
@@ -17,7 +17,7 @@
                         "application/json"
                     ]
                 },
-                "body": "{\"max_tokens\":1000,\"tools\":[{\"name\":\"get_temperature\",\"description\":\"Returns the current temperature in degrees Celsius for a city.\",\"input_schema\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\"}},\"required\":[\"city\"],\"additionalProperties\":false},\"cache_control\":{\"type\":\"ephemeral\"}}],\"tool_choice\":{\"type\":\"auto\"},\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"What is the temperature in Berlin, Paris and Rome?\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"system\":[{\"type\":\"text\",\"text\":\"Use the available tool to answer. Call it once per city, in a single turn.\",\"cache_control\":{\"type\":\"ephemeral\"}}],\"model\":\"claude-sonnet-4-5-20250929\"}"
+                "body": "{\"tools\":[{\"name\":\"get_temperature\",\"description\":\"Returns the current temperature in degrees Celsius for a city.\",\"input_schema\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\"}},\"required\":[\"city\"],\"additionalProperties\":false},\"cache_control\":{\"type\":\"ephemeral\"}}],\"max_tokens\":1000,\"tool_choice\":{\"type\":\"auto\"},\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"What is the temperature in Berlin, Paris and Rome?\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"system\":[{\"type\":\"text\",\"text\":\"Use the available tool to answer. Call it once per city, in a single turn.\",\"cache_control\":{\"type\":\"ephemeral\"}}],\"model\":\"claude-sonnet-4-5-20250929\"}"
             },
             "response": {
                 "status": 200,
@@ -97,8 +97,8 @@
             "request": {
                 "method": "POST",
                 "url": "https://api.anthropic.com/v1/messages",
-                "signature": "155fe30282380e82c08648a10cebfee1",
-                "signature_v2": "13525b9fb94bcbd2683d4c74cf30d878",
+                "signature": "427f412f594881bd952d0e246bfefc7b",
+                "signature_v2": "0e57d010ff35e4274182c1f690b15870",
                 "headers": {
                     "x-api-key": [
                         "[redacted]"
@@ -110,7 +110,7 @@
                         "application/json"
                     ]
                 },
-                "body": "{\"max_tokens\":1000,\"tools\":[{\"name\":\"get_temperature\",\"description\":\"Returns the current temperature in degrees Celsius for a city.\",\"input_schema\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\"}},\"required\":[\"city\"],\"additionalProperties\":false},\"cache_control\":{\"type\":\"ephemeral\"}}],\"tool_choice\":{\"type\":\"auto\"},\"messages\":[{\"role\":\"user\",\"content\":\"What is the temperature in Berlin, Paris and Rome?\"},{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"I\\u0027ll check the current temperature in Berlin, Paris, and Rome for you.\"},{\"type\":\"tool_use\",\"id\":\"toolu_01LTT8rSVJf3L4KxSLHHZQh5\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Berlin\"}},{\"type\":\"tool_use\",\"id\":\"toolu_01CREW2FSPUXAs9zh6Tx1o17\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Paris\"}},{\"type\":\"tool_use\",\"id\":\"toolu_01WCTKEeXsYXhA4TtuA6HvfM\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Rome\"}}]},{\"role\":\"user\",\"content\":[{\"type\":\"tool_result\",\"tool_use_id\":\"toolu_01LTT8rSVJf3L4KxSLHHZQh5\",\"content\":\"12\\u00b0C\"}]},{\"role\":\"user\",\"content\":[{\"type\":\"tool_result\",\"tool_use_id\":\"toolu_01CREW2FSPUXAs9zh6Tx1o17\",\"content\":\"15\\u00b0C\"}]},{\"role\":\"user\",\"content\":[{\"type\":\"tool_result\",\"tool_use_id\":\"toolu_01WCTKEeXsYXhA4TtuA6HvfM\",\"content\":\"19\\u00b0C\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"system\":[{\"type\":\"text\",\"text\":\"Use the available tool to answer. Call it once per city, in a single turn.\",\"cache_control\":{\"type\":\"ephemeral\"}}],\"model\":\"claude-sonnet-4-5-20250929\"}"
+                "body": "{\"tools\":[{\"name\":\"get_temperature\",\"description\":\"Returns the current temperature in degrees Celsius for a city.\",\"input_schema\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\"}},\"required\":[\"city\"],\"additionalProperties\":false},\"cache_control\":{\"type\":\"ephemeral\"}}],\"max_tokens\":1000,\"tool_choice\":{\"type\":\"auto\"},\"messages\":[{\"role\":\"user\",\"content\":\"What is the temperature in Berlin, Paris and Rome?\"},{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"I\\u0027ll check the current temperature in Berlin, Paris, and Rome for you.\"},{\"type\":\"tool_use\",\"id\":\"toolu_01LTT8rSVJf3L4KxSLHHZQh5\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Berlin\"}},{\"type\":\"tool_use\",\"id\":\"toolu_01CREW2FSPUXAs9zh6Tx1o17\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Paris\"}},{\"type\":\"tool_use\",\"id\":\"toolu_01WCTKEeXsYXhA4TtuA6HvfM\",\"name\":\"get_temperature\",\"input\":{\"city\":\"Rome\"}}]},{\"role\":\"user\",\"content\":[{\"type\":\"tool_result\",\"tool_use_id\":\"toolu_01LTT8rSVJf3L4KxSLHHZQh5\",\"content\":\"12\\u00b0C\"}]},{\"role\":\"user\",\"content\":[{\"type\":\"tool_result\",\"tool_use_id\":\"toolu_01CREW2FSPUXAs9zh6Tx1o17\",\"content\":\"15\\u00b0C\"}]},{\"role\":\"user\",\"content\":[{\"type\":\"tool_result\",\"tool_use_id\":\"toolu_01WCTKEeXsYXhA4TtuA6HvfM\",\"content\":\"19\\u00b0C\",\"cache_control\":{\"type\":\"ephemeral\"}}]}],\"system\":[{\"type\":\"text\",\"text\":\"Use the available tool to answer. Call it once per city, in a single turn.\",\"cache_control\":{\"type\":\"ephemeral\"}}],\"model\":\"claude-sonnet-4-5-20250929\"}"
             },
             "response": {
                 "status": 200,
