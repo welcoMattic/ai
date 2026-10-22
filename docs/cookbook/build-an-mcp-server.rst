@@ -142,7 +142,8 @@ client's configuration file pointing at your Symfony console command for STDIO t
     {
         "mcpServers": {
             "my-app": {
-                "command": "php /path/to/project/bin/console mcp:server"
+                "command": "php",
+                "args": ["/path/to/project/bin/console", "mcp:server"]
             }
         }
     }

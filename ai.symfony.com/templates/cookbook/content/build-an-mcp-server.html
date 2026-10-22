@@ -310,7 +310,8 @@ client's configuration file pointing at your Symfony console command for STDIO t
 4
 5
 6
-7</pre>
+7
+8</pre>
                     </div>
                 </td>
                 <td class="code">
@@ -318,7 +319,8 @@ client's configuration file pointing at your Symfony console command for STDIO t
                         <pre class="hljs json">{
     <span class="hljs-attr">"mcpServers"</span>: {
         <span class="hljs-attr">"my-app"</span>: {
-            <span class="hljs-attr">"command"</span>: <span class="hljs-string">"php /path/to/project/bin/console mcp:server"</span>
+            <span class="hljs-attr">"command"</span>: <span class="hljs-string">"php"</span>,
+            <span class="hljs-attr">"args"</span>: [<span class="hljs-string">"/path/to/project/bin/console"</span>, <span class="hljs-string">"mcp:server"</span>]
         }
     }
 }</pre>

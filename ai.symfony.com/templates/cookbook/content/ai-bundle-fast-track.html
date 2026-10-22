@@ -120,7 +120,8 @@ decorators.</p>
     
 </h2>
 <p>An <em>agent</em> combines a platform, a model, and optionally tools and a system prompt. The simplest
-agent only needs a model — it uses the first configured platform by default:</p>
+agent only needs a model — when exactly one platform is configured, it is used by default;
+otherwise set the agent's <code translate="no" class="notranslate">platform</code> option:</p>
 <div translate="no" class="highlight-yaml notranslate">
     <table class="highlighttable">
         <tbody>
@@ -324,7 +325,7 @@ specific one with the <code translate="no" class="notranslate">ai.agent.&lt;name
     </table>
 </div>
 <p>Use the array form for more control — for example, to append the available tool definitions to
-the prompt, or to load a long prompt from a file:</p>
+the prompt (this requires <code translate="no" class="notranslate">tools</code>, see Step 5), or to load a long prompt from a file:</p>
 <div translate="no" class="highlight-yaml notranslate">
     <table class="highlighttable">
         <tbody>
@@ -341,7 +342,8 @@ the prompt, or to load a long prompt from a file:</p>
 8
 9
 10
-11</pre>
+11
+12</pre>
                     </div>
                 </td>
                 <td class="code">
@@ -353,6 +355,7 @@ the prompt, or to load a long prompt from a file:</p>
             <span class="hljs-attr">prompt:</span>
                 <span class="hljs-attr">text:</span> <span class="hljs-string">'You are a concise assistant for a Symfony application.'</span>
                 <span class="hljs-attr">include_tools:</span> <span class="hljs-literal">true</span>
+            <span class="hljs-attr">tools:</span> <span class="hljs-literal">true</span>
         <span class="hljs-attr">reviewer:</span>
             <span class="hljs-attr">model:</span> <span class="hljs-string">'gpt-4o-mini'</span>
             <span class="hljs-attr">prompt:</span>
