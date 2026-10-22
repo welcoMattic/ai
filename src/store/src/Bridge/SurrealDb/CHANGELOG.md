@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+0.15
+----
+
+ * Add support for SurrealDB 3
+ * [BC BREAK] `Store::setup()` creates an `HNSW` index instead of an `MTREE` one
+ * Add `forceDatabaseCreation` option to `Store::setup()` to create the namespace and database
+ * Add `ef` option to `Store::query()`
+
 0.14
 ----
 

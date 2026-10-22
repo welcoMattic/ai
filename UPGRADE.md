@@ -203,6 +203,17 @@ Store
  * `Bridge\AzureSearch\SearchStore::query()` runs an approximate vector query by default; pass the
    `exhaustive` option to get the previous exact search back.
 
+ * The SurrealDB `Store::setup()` creates an `HNSW` index instead of an `MTREE` one, which SurrealDB 3
+   removed, and `Store::query()` searches with the `<|k,EF|>` operator of HNSW indexes. On SurrealDB 2,
+   a query against an existing `MTREE` index returns no results and no error. To recreate the index,
+   keeping the stored documents (shown with the default `table`, `vectorFieldName`, `embeddingsDimension`
+   and `strategy`, replace them with your own values):
+
+   ```sql
+   REMOVE INDEX vectors_vectors ON vectors;
+   DEFINE INDEX vectors_vectors ON vectors FIELDS _vectors HNSW DIMENSION 1536 DIST cosine TYPE F32;
+   ```
+
 UPGRADE FROM 0.13 to 0.14
 =========================
 

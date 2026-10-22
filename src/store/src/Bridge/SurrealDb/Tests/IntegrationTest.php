@@ -26,4 +26,9 @@ final class IntegrationTest extends AbstractStoreIntegrationTestCase
     {
         return StoreFactory::create('test', 'test', 'symfony', 'symfony', 'http://127.0.0.1:8000', table: 'test_vectors', embeddingsDimension: 3);
     }
+
+    protected static function getSetupOptions(): array
+    {
+        return ['forceDatabaseCreation' => true];
+    }
 }
