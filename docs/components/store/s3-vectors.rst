@@ -55,6 +55,27 @@ Before using the store, you need to initialize it with the appropriate configura
         'tags' => ['env' => 'production'], // Optional
     ]);
 
+When using the AI Bundle, configure ``setup_options`` and run ``ai:store:setup``
+to create the vector bucket and index:
+
+.. code-block:: yaml
+
+    # config/packages/ai.yaml
+    ai:
+        store:
+            s3vectors:
+                my_store:
+                    vector_bucket_name: 'my-vector-bucket'
+                    index_name: 'my-index'
+                    configuration:
+                        region: 'us-east-1'
+                    setup_options:
+                        dimension: 1536
+                        distance_metric: cosine
+
+The ``dimension`` option is required when creating an index. The optional
+``distance_metric`` option defaults to ``cosine`` and also accepts ``euclidean``.
+
 Usage
 -----
 

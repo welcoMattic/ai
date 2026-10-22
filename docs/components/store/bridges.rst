@@ -806,6 +806,9 @@ Vector storage using `S3 Vectors`_.
                     top_k: 3
                     configuration:
                         region: 'us-east-1'
+                    setup_options:
+                        dimension: 1536
+                        distance_metric: cosine
 
 See :doc:`s3-vectors` for the AWS credentials setup.
 
