@@ -22,6 +22,7 @@ Question                                                 Tool or resource
 =======================================================  ==================================================
 Which service handles this, is a listener registered?    ``symfony-services``
 How is one service wired?                                ``symfony-service-detail``
+Which ``.env`` file sets a variable, is it resolved?     ``symfony-dotenv-check``
 Which requests failed or were slow?                      ``symfony-profiler-list``
 What happened in one request?                            ``symfony-profiler://profile/{token}``
 What did one collector record (``db``, ``exception``)?   ``symfony-profiler://profile/{token}/{collector}``
@@ -53,6 +54,9 @@ text. Every such response is therefore wrapped in an envelope:
 
 The notice tells the agent to treat everything under ``untrusted_data`` as data and never as
 instructions. When you parse a response in a script, read the payload from that key.
+
+``symfony-dotenv-check`` returns its result without this envelope. It reports on the ``.env``
+files of the project and on the environment of the Mate process.
 
 .. _mate-multi-kernel:
 
@@ -127,6 +131,62 @@ nothing matched.
 
 The extension looks for a ``*DebugContainer.xml`` file in the cache directory itself, then in its
 ``dev``, ``test`` and ``prod`` subdirectories. Kernels with a custom class name are found too.
+
+Environment Variables
+~~~~~~~~~~~~~~~~~~~~~
+
+The ``symfony-dotenv-check`` tool is registered when ``symfony/dotenv`` is installed. Use it to
+find out which ``.env`` file declares a variable and whether the variable has a value. The tool
+never returns the value itself.
+
+``symfony-dotenv-check``
+    Read the files ``.env`` (or ``.env.dist`` when there is no ``.env``), ``.env.local``,
+    ``.env.<APP_ENV>`` and ``.env.<APP_ENV>.local``, in the same order as Symfony. When
+    ``APP_ENV`` is ``test``, ``.env.local`` is skipped. ``APP_ENV`` comes from the environment
+    of the Mate process, then from the ``.env`` file. The default is ``dev``.
+
+    ===========  ==========================================================================
+    Parameter    Description
+    ===========  ==========================================================================
+    ``key``      Check only this variable, even when no ``.env`` file declares it.
+    ``limit``    Maximum number of variables when listing. Default ``200``, ``0`` for all.
+    ===========  ==========================================================================
+
+    The result holds ``app_env``, the candidate files under ``files`` and the variables under
+    ``variables``, plus ``count`` and ``truncated``. Each file shows whether it ``exists``,
+    whether it was ``considered`` and whether it is ``parseable``. Each variable lists the files
+    that declare it under ``declared_in``, tells with ``resolved`` whether the Mate process has
+    a value for it, and has a ``state``:
+
+    ==============================================  =============================================
+    State                                           Meaning
+    ==============================================  =============================================
+    ``file``                                        The value comes from the last file that
+                                                    declares the variable.
+    ``ambient_override``                            A file declares the variable, but the shell
+                                                    or CI environment sets another value.
+    ``ambient_only``                                No file declares the variable. Only the
+                                                    shell or CI environment sets it.
+    ``declared_empty_in_file``                      The last file that declares the variable
+                                                    sets it to an empty value.
+    ``declared_not_resolved_in_this_process``       A file declares a value, but the Mate process
+                                                    doesn't have it.
+    ``not_set``                                     No file declares the variable and the
+                                                    environment doesn't set it.
+    ==============================================  =============================================
+
+    By default, Mate doesn't load the ``.env`` files of your project into its own process. A
+    variable that is only set in a file therefore shows ``declared_not_resolved_in_this_process``,
+    even when your application resolves it. This is the normal case and not an error.
+
+    When the Mate process has a value, the variable shows its ``length``, a masked ``preview``
+    with the first and last character (e.g. ``s***t``) and ``looks_like_placeholder`` instead of
+    the value. The last one is ``true`` for values like ``changeme`` or ``your_api_key``. These
+    fields describe the value in the Mate process, not the value in the file.
+
+.. code-block:: terminal
+
+    $ vendor/bin/mate tools:call symfony-dotenv-check --key=DATABASE_URL
 
 Profiler
 ~~~~~~~~
