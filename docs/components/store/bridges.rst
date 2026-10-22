@@ -643,6 +643,16 @@ Vector storage using `Pinecone`_.
                     index_name: 'my-index'
                     namespace: 'default'
                     top_k: 3
+                    setup_options:
+                        dimension: 1536
+                        metric: cosine
+                        cloud: aws
+                        region: us-east-1
+
+The ``ai:store:setup`` command uses ``setup_options`` to create the serverless
+index. The ``dimension`` option is required. The ``metric`` option is one of
+``cosine``, ``euclidean`` or ``dotproduct``. When you leave them out, ``metric``,
+``cloud`` and ``region`` default to ``cosine``, ``aws`` and ``us-west-2``.
 
 MongoDB Atlas
 ~~~~~~~~~~~~~
