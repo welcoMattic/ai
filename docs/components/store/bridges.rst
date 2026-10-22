@@ -984,6 +984,19 @@ The table and index are created by ``setup()``::
                     strategy: 'cosine'
                     dimensions: 1536
 
+.. tip::
+
+    SurrealDB 3 no longer creates the namespace and database on first use. Pass
+    ``['forceDatabaseCreation' => true]`` to ``setup()``, or set
+    ``setup_options.force_database_creation: true`` in the bundle configuration, to
+    create them as well.
+
+.. caution::
+
+    ``setup()`` creates an ``HNSW`` index. On SurrealDB 2, an ``MTREE`` index created
+    by an earlier version returns no results, without an error. Recreate it as an
+    ``HNSW`` index, see ``UPGRADE.md``.
+
 .. toctree::
     :maxdepth: 1
     :hidden:
