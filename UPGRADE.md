@@ -57,6 +57,31 @@ Platform
    +$platform = MockPlatformFactory::createPlatform('Fake result');
    ```
 
+ * [BC BREAK] The `Evaluation`, `Question\*`, `Answer\*` and `TokenUsageExtractor` classes of the TypeSafe bridge moved
+   to the new Decision bridge (`symfony/ai-decision-platform`, required by the TypeSafe bridge), so that other bridges can share them.
+   The old names are gone, without aliases; update the imports:
+
+   | Before (`Symfony\AI\Platform\Bridge\TypeSafe\`) | After (`Symfony\AI\Platform\Bridge\Decision\`) |
+   | --- | --- |
+   | `Evaluation` | `Evaluation` |
+   | `TokenUsageExtractor` | `TokenUsageExtractor` |
+   | `Question\QuestionInterface` | `Question\QuestionInterface` |
+   | `Question\NoulQuestion` | `Question\NoulQuestion` |
+   | `Question\ChoiceQuestion` | `Question\ChoiceQuestion` |
+   | `Question\ScoreQuestion` | `Question\ScoreQuestion` |
+   | `Answer\AnswerInterface` | `Answer\AnswerInterface` |
+   | `Answer\Answers` | `Answer\Answers` |
+   | `Answer\NoulAnswer` | `Answer\NoulAnswer` |
+   | `Answer\ChoiceAnswer` | `Answer\ChoiceAnswer` |
+   | `Answer\ScoreAnswer` | `Answer\ScoreAnswer` |
+
+   ```diff
+   -use Symfony\AI\Platform\Bridge\TypeSafe\Evaluation;
+   -use Symfony\AI\Platform\Bridge\TypeSafe\Question\NoulQuestion;
+   +use Symfony\AI\Platform\Bridge\Decision\Evaluation;
+   +use Symfony\AI\Platform\Bridge\Decision\Question\NoulQuestion;
+   ```
+
  * The Albert bridge no longer exposes environmental impacts under the `carbon` result metadata.
  * They are now available under `impacts`, with the energy consumption reported directly by Albert:
 

@@ -165,6 +165,10 @@ deptrac:
       collectors:
         - type: classLike
           value: Symfony\\AI\\Platform\\Bridge\\Decart\\.*
+    - name: DecisionPlatform
+      collectors:
+        - type: classLike
+          value: Symfony\\AI\\Platform\\Bridge\\Decision\\.*
     - name: DeepgramPlatform
       collectors:
         - type: classLike
@@ -504,6 +508,8 @@ deptrac:
       - PlatformComponent
     DecartPlatform:
       - PlatformComponent
+    DecisionPlatform:
+      - PlatformComponent
     DeepgramPlatform:
       - PlatformComponent
     DeepSeekPlatform:
@@ -577,6 +583,7 @@ deptrac:
       - PlatformComponent
     TypeSafePlatform:
       - PlatformComponent
+      - DecisionPlatform
     VeniceAiPlatform:
       - PlatformComponent
     VertexAiPlatform:
