@@ -177,6 +177,9 @@ skill.
     ``--dry-run``
         Report what would be installed, rebuilt or removed. Nothing is written.
 
+    ``--format=FORMAT``
+        ``table`` (default), ``json`` or ``toon``.
+
 ``mate skills:list``
     List declared and installed skills with their enabled flag, mode, state and status.
     Read-only.
