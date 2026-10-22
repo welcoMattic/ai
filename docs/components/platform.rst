@@ -228,6 +228,10 @@ Eden AI pairs its OpenAI-compatible chat and embeddings endpoints with expert mo
 document parsing, speech and images, which are addressed as ``feature/subfeature/provider``.
 See :doc:`platform/edenai` for the full setup and usage guide.
 
+Hugging Face routes chat completion and other tasks to its own inference service or to
+third-party inference providers. See :doc:`platform/huggingface` for the full setup and
+usage guide, including tool calling.
+
 Providers and Multi-Provider Platforms
 --------------------------------------
 

@@ -32,6 +32,12 @@ You can run an example by executing the following command:
 php huggingface/object-detection.php
 ```
 
+## Tool Calling
+
+Run `php huggingface/toolcall.php` to use a Wikipedia tool through Symfony AI's Agent component.
+The example uses Nscale with `Qwen/Qwen3-32B`; select another compatible provider/model
+if it is unavailable. Tool calling requires `Task::CHAT_COMPLETION` and is non-streaming.
+
 ## Available Models
 
 When running the examples, you might experience that some models are not available, and you encounter an error like:
