@@ -177,7 +177,7 @@ Advanced Example with Multiple Agents
             research:
                 loader: 'Symfony\AI\Store\Document\Loader\TextFileLoader'
                 vectorizer: 'ai.vectorizer.mistral_embeddings'
-                store: 'ai.store.memory.research'
+                store: 'ai.store.cache.research'
 
             # ConfiguredSourceIndexer: loader + pre-configured source, call index() with no arguments
             docs:
@@ -296,7 +296,7 @@ For each configured store, the bundle automatically creates two types of aliases
 
 From the configuration above, the following aliases are automatically registered:
 
-- ``StoreInterface $main`` - References the memory store (first occurrence)
+- ``StoreInterface $main`` - References the chromadb store (type defined last)
 - ``StoreInterface $memoryMain`` - Explicitly references the memory store
 - ``StoreInterface $chromadbMain`` - Explicitly references the chromadb store
 - ``StoreInterface $products`` - References the memory products store
@@ -309,14 +309,15 @@ You can inject stores into your services using the generated aliases::
     final readonly class DocumentService
     {
         public function __construct(
-            private StoreInterface $main,              // Uses memory store (first occurrence)
+            private StoreInterface $main,              // Uses chromadb store (type defined last)
             private StoreInterface $chromadbMain,      // Explicitly uses chromadb store
             private StoreInterface $memoryProducts,    // Explicitly uses memory products store
         ) {
         }
     }
 
-When multiple stores share the same name (like ``main`` in the example), the simple alias (``$main``) will reference the first occurrence.
+When multiple stores share the same name (like ``main`` in the example), the simple alias (``$main``) will reference the store of the type defined last in the configuration,
+so reordering the store types changes which store is injected.
 Use type-prefixed aliases (``$memoryMain``, ``$chromadbMain``) for explicit disambiguation.
 
 Model Configuration
@@ -462,6 +463,7 @@ For more control, such as including tool definitions in the system prompt, use t
                 prompt:
                     text: 'You are a helpful assistant that can answer questions.'
                     include_tools: true # Include tool definitions at the end of the system prompt
+                tools: true
 
 The array format supports these options:
 
@@ -686,6 +688,8 @@ Key Differences
 
 Configuration
 ^^^^^^^^^^^^^
+
+The orchestrator, handoff and fallback agents must be defined under ``ai.agent``:
 
 .. code-block:: yaml
 

@@ -66,7 +66,8 @@ Step 3: Configure an Agent
 --------------------------
 
 An *agent* combines a platform, a model, and optionally tools and a system prompt. The simplest
-agent only needs a model — it uses the first configured platform by default:
+agent only needs a model — when exactly one platform is configured, it is used by default;
+otherwise set the agent's ``platform`` option:
 
 .. code-block:: yaml
 
@@ -145,7 +146,7 @@ The system prompt shapes how the agent behaves. For simple cases pass a string:
                 prompt: 'You are a concise assistant for a Symfony application.'
 
 Use the array form for more control — for example, to append the available tool definitions to
-the prompt, or to load a long prompt from a file:
+the prompt (this requires ``tools``, see Step 5), or to load a long prompt from a file:
 
 .. code-block:: yaml
 
@@ -156,6 +157,7 @@ the prompt, or to load a long prompt from a file:
                 prompt:
                     text: 'You are a concise assistant for a Symfony application.'
                     include_tools: true
+                tools: true
             reviewer:
                 model: 'gpt-4o-mini'
                 prompt:

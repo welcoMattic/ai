@@ -5,11 +5,11 @@ The local stores provide in-memory vector storage without external dependencies.
 
 .. note::
 
-    Both ``InMemoryStore`` and ``CacheStore`` load all data into PHP memory during queries.
+    Both the InMemory store and the Cache store load all data into PHP memory during queries.
     The dataset must fit within PHP's memory limit.
 
-InMemoryStore
--------------
+InMemory Store
+--------------
 
 Stores vectors in a PHP array. Data is not persisted and is lost when the PHP process ends::
 
@@ -20,8 +20,8 @@ Stores vectors in a PHP array. Data is not persisted and is lost when the PHP pr
     $store->add([$document1, $document2]);
     $results = $store->query(new VectorQuery($vector));
 
-CacheStore
-----------
+Cache Store
+-----------
 
 Stores vectors using a PSR-6 cache implementation. Persistence depends on the cache adapter used::
 

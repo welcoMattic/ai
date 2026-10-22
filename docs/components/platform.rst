@@ -258,7 +258,7 @@ routes each invocation to the first provider whose catalog knows the requested m
     ]);
 
     $platform->invoke('gpt-4o', $messages);             // → OpenAI
-    $platform->invoke('claude-3-5-sonnet', $messages);  // → Anthropic
+    $platform->invoke('claude-sonnet-4-5', $messages);  // → Anthropic
 
 Provider instances also support an optional ``$name`` parameter for connection-level
 identity, useful when running several instances of the same bridge (e.g. one OpenAI
