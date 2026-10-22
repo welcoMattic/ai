@@ -58,7 +58,8 @@ jobs:
                     src/platform/src/Bridge/DeepSeek/Tests/ModelCatalogTest.php \
                     src/platform/src/Bridge/Cohere/Tests/ModelCatalogTest.php \
                     src/platform/src/Bridge/Cerebras/Tests/ModelCatalogTest.php \
-                    src/platform/src/Bridge/OpenRouter/Tests/ModelCatalogTest.php
+                    src/platform/src/Bridge/OpenRouter/Tests/ModelCatalogTest.php \
+                    src/platform/src/Bridge/HuggingFace/Tests/ModelCatalogTest.php
 
             - name: Create pull request
               uses: peter-evans/create-pull-request@v8
@@ -79,8 +80,9 @@ jobs:
                       | License       | MIT
 
                       Automated refresh of the bridge `ModelCatalog` static lists from upstream metadata
-                      (models.dev for per-provider bridges, the OpenRouter API for OpenRouter).
+                      (models.dev for per-provider bridges, the OpenRouter API for OpenRouter, the Hugging Face
+                      Hub API for HuggingFace).
 
-                      New models are appended; hand-curated entries are left untouched. Review the diff
-                      before merging, and adjust capabilities or model classes where the heuristics need
-                      a human.
+                      New models are appended; hand-curated entries are left untouched. The HuggingFace list is
+                      rewritten instead, so it also drops models that went offline. Review the diff before
+                      merging, and adjust capabilities or model classes where the heuristics need a human.

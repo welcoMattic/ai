@@ -14,7 +14,6 @@ use Symfony\AI\Agent\Bridge\Wikipedia\Wikipedia;
 use Symfony\AI\Agent\Toolbox\Toolbox;
 use Symfony\AI\Platform\Bridge\HuggingFace\Factory;
 use Symfony\AI\Platform\Bridge\HuggingFace\Provider;
-use Symfony\AI\Platform\Bridge\HuggingFace\Task;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
 
@@ -27,8 +26,6 @@ $toolbox = new Toolbox([$wikipedia], logger: logger());
 $agent = new Agent($platform, 'Qwen/Qwen3-32B', toolbox: $toolbox);
 
 $messages = new MessageBag(Message::ofUser('Who is the current chancellor of Germany?'));
-$result = $agent->call($messages, [
-    'task' => Task::CHAT_COMPLETION,
-]);
+$result = $agent->call($messages);
 
 echo $result->asText().\PHP_EOL;
