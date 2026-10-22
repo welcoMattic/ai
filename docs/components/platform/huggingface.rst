@@ -27,6 +27,9 @@ the inference provider that runs your models::
 Each model supports a different set of tasks. Pass the task in the ``task`` option of
 every invocation, for example ``Task::CHAT_COMPLETION``.
 
+For chat completion, use the model ID from Hugging Face (e.g. ``openai/gpt-oss-120b``)
+with every provider. Hugging Face maps it to the name the provider uses for the model.
+
 Tool Calling
 ------------
 
