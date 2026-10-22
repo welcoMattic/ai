@@ -11,6 +11,7 @@
 
 namespace Symfony\AI\Store\Bridge\SurrealDb\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\AI\Platform\Vector\Vector;
 use Symfony\AI\Store\Bridge\SurrealDb\Store;
@@ -392,13 +393,6 @@ final class StoreTest extends TestCase
                 'http_code' => 200,
             ]),
             new JsonMockResponse([
-                'code' => 200,
-                'details' => 'Authentication succeeded.',
-                'token' => 'bar',
-            ], [
-                'http_code' => 200,
-            ]),
-            new JsonMockResponse([
                 [
                     'result' => [
                         [
@@ -441,6 +435,10 @@ final class StoreTest extends TestCase
         $httpClient = new MockHttpClient(static function (string $method, string $url, array $options) use (&$body): JsonMockResponse {
             $body = $options['body'] ?? null;
 
+            if (str_ends_with($url, '/signin')) {
+                return new JsonMockResponse(['token' => 'bar'], ['http_code' => 200]);
+            }
+
             return new JsonMockResponse([['result' => [], 'status' => 'OK']], ['http_code' => 200]);
         }, 'http://127.0.0.1:8000');
 
@@ -457,6 +455,10 @@ final class StoreTest extends TestCase
         $httpClient = new MockHttpClient(static function (string $method, string $url, array $options) use (&$body): JsonMockResponse {
             $body = $options['body'] ?? null;
 
+            if (str_ends_with($url, '/signin')) {
+                return new JsonMockResponse(['token' => 'bar'], ['http_code' => 200]);
+            }
+
             return new JsonMockResponse([['result' => [], 'status' => 'OK']], ['http_code' => 200]);
         }, 'http://127.0.0.1:8000');
 
@@ -467,9 +469,48 @@ final class StoreTest extends TestCase
         $this->assertSame('SELECT id, _vectors, _metadata, vector::distance::knn() AS distance FROM movies WHERE _vectors <|10|> [0.1,0.2,0.3] ORDER BY distance;', $body);
     }
 
+    /**
+     * @param \Closure(Store): mixed $operation
+     */
+    #[DataProvider('provideOperationsOnAFreshStore')]
+    public function testStoreAuthenticatesBeforeTheFirstRequest(\Closure $operation, string $expectedUrl)
+    {
+        $requests = [];
+        $httpClient = new MockHttpClient(static function (string $method, string $url, array $options) use (&$requests): JsonMockResponse {
+            $requests[] = ['url' => $url, 'headers' => $options['headers']];
+
+            if (str_ends_with($url, '/signin')) {
+                return new JsonMockResponse(['token' => 'bar'], ['http_code' => 200]);
+            }
+
+            return new JsonMockResponse([['result' => [], 'status' => 'OK']], ['http_code' => 200]);
+        }, 'http://127.0.0.1:8000');
+
+        $store = new Store($httpClient, 'test', 'test', 'test', 'test', 'movies', embeddingsDimension: 3);
+
+        $operation($store);
+
+        $this->assertSame(2, $httpClient->getRequestsCount());
+        $this->assertSame('http://127.0.0.1:8000/signin', $requests[0]['url']);
+        $this->assertSame($expectedUrl, $requests[1]['url']);
+        $this->assertIsArray($requests[1]['headers']);
+        $this->assertContains('Authorization: Bearer bar', $requests[1]['headers']);
+    }
+
+    /**
+     * @return iterable<string, array{\Closure(Store): mixed, string}>
+     */
+    public static function provideOperationsOnAFreshStore(): iterable
+    {
+        yield 'add' => [static fn (Store $store) => $store->add(new VectorDocument('a1', new Vector([0.1, 0.2, 0.3]))), 'http://127.0.0.1:8000/key/movies'];
+        yield 'query' => [static fn (Store $store) => iterator_to_array($store->query(new VectorQuery(new Vector([0.1, 0.2, 0.3])))), 'http://127.0.0.1:8000/sql'];
+        yield 'remove' => [static fn (Store $store) => $store->remove('a1'), 'http://127.0.0.1:8000/sql'];
+    }
+
     public function testStoreReturnsTheDistanceAsScore()
     {
         $httpClient = new MockHttpClient([
+            new JsonMockResponse(['token' => 'bar'], ['http_code' => 200]),
             new JsonMockResponse([
                 [
                     'result' => [
@@ -511,6 +552,10 @@ final class StoreTest extends TestCase
         $httpClient = new MockHttpClient(static function (string $method, string $url, array $options) use (&$body): JsonMockResponse {
             $body = $options['body'] ?? null;
 
+            if (str_ends_with($url, '/signin')) {
+                return new JsonMockResponse(['token' => 'bar'], ['http_code' => 200]);
+            }
+
             return new JsonMockResponse([], ['http_code' => 200]);
         }, 'http://127.0.0.1:8000');
 
@@ -525,6 +570,10 @@ final class StoreTest extends TestCase
         $body = null;
         $httpClient = new MockHttpClient(static function (string $method, string $url, array $options) use (&$body): JsonMockResponse {
             $body = $options['body'] ?? null;
+
+            if (str_ends_with($url, '/signin')) {
+                return new JsonMockResponse(['token' => 'bar'], ['http_code' => 200]);
+            }
 
             return new JsonMockResponse([], ['http_code' => 200]);
         }, 'http://127.0.0.1:8000');
