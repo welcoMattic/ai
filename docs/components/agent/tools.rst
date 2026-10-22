@@ -194,7 +194,9 @@ Reach the server through a toolset and hand it to the toolbox::
 
 To offer them next to local tools, put both toolboxes behind a
 :class:`Symfony\\AI\\Agent\\Toolbox\\ChainToolbox`. A server that cannot be reached contributes no
-tools and is asked again after ``retryAfter`` seconds (60 by default).
+tools and is asked again after ``retryAfter`` seconds (60 by default). The failure is only logged as an
+error, and the toolbox discards it unless you pass a PSR-3 logger as its third argument. Pass one to
+find out why a toolbox offers fewer tools than expected.
 
 The tool list is fetched on first use and kept. Call ``reset()`` on the toolbox to fetch it again on
 the next use, e.g. between the messages of a long-running worker. In a Symfony application the bundle
