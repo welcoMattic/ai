@@ -48,8 +48,6 @@ final class Store implements ManagedStoreInterface, StoreInterface
 
     public function setup(array $options = []): void
     {
-        $this->authenticate();
-
         $this->request('POST', 'sql', \sprintf(
             'DEFINE INDEX %s_vectors ON %s FIELDS %s MTREE DIMENSION %d DIST %s TYPE F32',
             $this->table, $this->table, $this->vectorFieldName, $this->embeddingsDimension, $this->strategy
@@ -83,8 +81,6 @@ final class Store implements ManagedStoreInterface, StoreInterface
 
     public function clear(array $options = []): void
     {
-        $this->authenticate();
-
         $this->request('POST', 'sql', \sprintf('DELETE %s;', $this->table));
     }
 
@@ -131,15 +127,11 @@ final class Store implements ManagedStoreInterface, StoreInterface
 
     public function drop(array $options = []): void
     {
-        $this->authenticate();
-
         $this->request('POST', 'sql', \sprintf('REMOVE TABLE IF EXISTS %s;', $this->table));
     }
 
     public function count(): int
     {
-        $this->authenticate();
-
         $results = $this->request('POST', 'sql', \sprintf('SELECT count() FROM %s GROUP ALL;', $this->table));
 
         $statement = $results[0] ?? null;
@@ -181,6 +173,8 @@ final class Store implements ManagedStoreInterface, StoreInterface
      */
     private function request(string $method, string $endpoint, array|string $payload): array
     {
+        $this->authenticate();
+
         $finalPayload = [];
 
         if (\is_array($payload) && [] !== $payload) {
