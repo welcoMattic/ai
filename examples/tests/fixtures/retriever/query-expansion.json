@@ -56,28 +56,28 @@
                         "uvicorn"
                     ],
                     "x-inference-id": [
-                        "4cab0281-9d20-4ab8-8455-14e8f6e249ba"
+                        "057cb54a-1d5f-4f2d-a47a-65dd57b2c336"
                     ],
                     "x-proxied-host": [
-                        "http://10.109.22.22"
+                        "http://10.109.10.35"
                     ],
                     "x-proxied-path": [
                         "/"
                     ],
                     "x-proxied-replica": [
-                        "4sr9relv-fl6nq"
+                        "4sr9relv-hccsh"
                     ],
                     "x-cache": [
                         "Miss from cloudfront"
                     ],
                     "via": [
-                        "1.1 6545d7be1d26b832ccd87567da82b6e0.cloudfront.net (CloudFront)"
+                        "1.1 123136ea2cc2a463fc0f7d5c10776632.cloudfront.net (CloudFront)"
                     ],
                     "x-amz-cf-pop": [
                         "TXL52-P3"
                     ],
                     "x-amz-cf-id": [
-                        "YXzKCf7GovjAeCW1JRtjh8bOC1eS-nWKRCTsoNiYZOUyyPswlaX7Qg=="
+                        "kWDW6UULkJO6KxrCqjGQ7IXZy5kwxGVt0mdJwXJTTZI06-txfwq72g=="
                     ],
                     "strict-transport-security": [
                         "max-age=31536000"
@@ -143,28 +143,28 @@
                         "uvicorn"
                     ],
                     "x-inference-id": [
-                        "f51a6db1-8722-4d0d-bf09-114f8d803ee3"
+                        "59f77326-b0ad-4d19-9d5d-7d5e0364b418"
                     ],
                     "x-proxied-host": [
-                        "http://10.109.22.22"
+                        "http://10.109.10.35"
                     ],
                     "x-proxied-path": [
                         "/"
                     ],
                     "x-proxied-replica": [
-                        "4sr9relv-fl6nq"
+                        "4sr9relv-hccsh"
                     ],
                     "x-cache": [
                         "Miss from cloudfront"
                     ],
                     "via": [
-                        "1.1 6545d7be1d26b832ccd87567da82b6e0.cloudfront.net (CloudFront)"
+                        "1.1 123136ea2cc2a463fc0f7d5c10776632.cloudfront.net (CloudFront)"
                     ],
                     "x-amz-cf-pop": [
                         "TXL52-P3"
                     ],
                     "x-amz-cf-id": [
-                        "akyOzav21DZRLdrIPY8ByNhrtd-0nIySiCEcYvT2wTsnjlww5zxHIA=="
+                        "qqMsjfAUbifKW1YHYsHKIvriiCB7p8VaNOyvvOAuNEmlkiR_FJAcEA=="
                     ],
                     "strict-transport-security": [
                         "max-age=31536000"
@@ -230,28 +230,28 @@
                         "uvicorn"
                     ],
                     "x-inference-id": [
-                        "d923a10c-0c3b-4110-9d56-f03df42073a7"
+                        "a041e476-b475-4aa7-bc84-6a1b292fb0f1"
                     ],
                     "x-proxied-host": [
-                        "http://10.109.22.22"
+                        "http://10.109.10.35"
                     ],
                     "x-proxied-path": [
                         "/"
                     ],
                     "x-proxied-replica": [
-                        "4sr9relv-fl6nq"
+                        "4sr9relv-hccsh"
                     ],
                     "x-cache": [
                         "Miss from cloudfront"
                     ],
                     "via": [
-                        "1.1 6545d7be1d26b832ccd87567da82b6e0.cloudfront.net (CloudFront)"
+                        "1.1 123136ea2cc2a463fc0f7d5c10776632.cloudfront.net (CloudFront)"
                     ],
                     "x-amz-cf-pop": [
                         "TXL52-P3"
                     ],
                     "x-amz-cf-id": [
-                        "1911816MU4AVnC1atOTrKjGTmjHCJg2BZNmYL3mk1OK_GQm9PE1Osg=="
+                        "aVOcQkOP_Hq1fCAzWv0bBk9lANoIidSpmozy25HivBTWU54sUGOqww=="
                     ],
                     "strict-transport-security": [
                         "max-age=31536000"
@@ -265,8 +265,8 @@
             "request": {
                 "method": "POST",
                 "url": "https://router.huggingface.co/hf-inference/models/BAAI/bge-reranker-base",
-                "signature": "ef2aa6d631983f62568223025de85d65",
-                "signature_v2": "efce1415f1a39970712e9596bf11d613",
+                "signature": "859aa58fdf9aa36369616d361559ce07",
+                "signature_v2": "3fb9ae1e8e2d00e1e20df0700618002d",
                 "headers": {
                     "content-type": [
                         "application/json"
@@ -275,7 +275,7 @@
                         "[redacted]"
                     ]
                 },
-                "body": "{\"inputs\":[{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"\"}]}"
+                "body": "{\"inputs\":[{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: The Godfather\\nDirector: Francis Ford Coppola\\nDescription: The aging patriarch of an organized crime dynasty transfers control of his empire to his reluctant son.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Reservoir Dogs\\nDirector: Quentin Tarantino\\nDescription: A group of criminals gather after a diamond heist gone wrong.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Kill Bill: Vol. 1\\nDirector: Quentin Tarantino\\nDescription: A former assassin seeks revenge against her former boss and colleagues.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Pulp Fiction\\nDirector: Quentin Tarantino\\nDescription: The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: The Matrix\\nDirector: The Wachowskis\\nDescription: A hacker discovers the world he lives in is a simulated reality and joins a rebellion to overthrow its controllers.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: The Green Mile\\nDirector: Frank Darabont\\nDescription: Death row guards discover a mysterious inmate with the ability to heal people.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Memento\\nDirector: Christopher Nolan\\nDescription: A man with short-term memory loss attempts to find his wife\\u0027s murderer.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: The Shawshank Redemption\\nDirector: Frank Darabont\\nDescription: Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Cloud Atlas\\nDirector: The Wachowskis\\nDescription: An epic story of how the actions of individuals influence others in different time and place.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Apocalypse Now\\nDirector: Francis Ford Coppola\\nDescription: A US Army officer is sent on a dangerous mission to terminate a renegade Special Forces Colonel in Cambodia.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Gladiator\\nDirector: Ridley Scott\\nDescription: A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: The Prestige\\nDirector: Christopher Nolan\\nDescription: Two magicians engage in a competitive battle for supremacy in fin-de-si\\u00e8cle London.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: The Dark Knight\\nDirector: Christopher Nolan\\nDescription: When the menace Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the hardest trials of all.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Inception\\nDirector: Christopher Nolan\\nDescription: A skilled thief is given a chance at redemption if he can successfully perform inception, the act of planting an idea in someone\\u0027s subconscious.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Spirited Away\\nDirector: Hayao Miyazaki\\nDescription: A young girl enters a mysterious world of spirits and must find a way to rescue her parents and return home.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: WALL-E\\nDirector: Andrew Stanton\\nDescription: A small waste-collecting robot inadvertently embarks on a space journey that will decide the fate of mankind.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Notting Hill\\nDirector: Roger Michell\\nDescription: A British bookseller meets and falls in love with a famous American actress, navigating the challenges of fame and romance.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Project Hail Mary\\nDirector: Phil Lord and Chris Miller\\nDescription: A teacher and molecular biologist awakens aboard a spacecraft with no memory and must find a way to save Earth from extinction-level alien microorganisms threatening the sun.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Interstellar\\nDirector: Christopher Nolan\\nDescription: A team of explorers travel through a wormhole in space in an attempt to ensure humanity\\u0027s survival.\"},{\"text\":\"gangster crime family mafia organized crime\",\"text_pair\":\"Title: Jurassic Park\\nDirector: Steven Spielberg\\nDescription: During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run amok.\"}]}"
             },
             "response": {
                 "status": 200,
@@ -284,7 +284,7 @@
                         "application/json"
                     ],
                     "content-length": [
-                        "963"
+                        "1019"
                     ],
                     "x-inference-provider": [
                         "hf-inference"
@@ -317,35 +317,35 @@
                         "uvicorn"
                     ],
                     "x-inference-id": [
-                        "1cb56416-4f45-4962-995d-0eb3f8554fd6"
+                        "1ea0772c-3944-42f2-8068-93386e278041"
                     ],
                     "x-proxied-host": [
-                        "http://10.109.51.16"
+                        "http://10.109.27.58"
                     ],
                     "x-proxied-path": [
                         "/"
                     ],
                     "x-proxied-replica": [
-                        "3ew4ez8q-4dbdfwhxq"
+                        "3ew4ez8q-4dbdlmtdq"
                     ],
                     "x-cache": [
                         "Miss from cloudfront"
                     ],
                     "via": [
-                        "1.1 6545d7be1d26b832ccd87567da82b6e0.cloudfront.net (CloudFront)"
+                        "1.1 123136ea2cc2a463fc0f7d5c10776632.cloudfront.net (CloudFront)"
                     ],
                     "x-amz-cf-pop": [
                         "TXL52-P3"
                     ],
                     "x-amz-cf-id": [
-                        "ii9YPPPDTBXtwL3NtvVWCNb2WeBOhuMYI1S8frP_suzyrmHgQJhJGQ=="
+                        "Ug-ljioYC0NSABJfYPedBf3UVmRXROdWEhQuxxLvW95gxOaXUP1x7Q=="
                     ],
                     "strict-transport-security": [
                         "max-age=31536000"
                     ]
                 },
                 "body_format": "json",
-                "body": "[[{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699},{\"label\":\"LABEL_0\",\"score\":0.11628603935241699}]]"
+                "body": "[[{\"label\":\"LABEL_0\",\"score\":0.006862081587314606},{\"label\":\"LABEL_0\",\"score\":0.0024646432138979435},{\"label\":\"LABEL_0\",\"score\":0.00032446274417452514},{\"label\":\"LABEL_0\",\"score\":0.0008183635654859245},{\"label\":\"LABEL_0\",\"score\":0.0002072197530651465},{\"label\":\"LABEL_0\",\"score\":0.0005448212614282966},{\"label\":\"LABEL_0\",\"score\":0.00046502306940965354},{\"label\":\"LABEL_0\",\"score\":0.00007393411215161905},{\"label\":\"LABEL_0\",\"score\":0.00033089573844335973},{\"label\":\"LABEL_0\",\"score\":0.000037294241337804124},{\"label\":\"LABEL_0\",\"score\":0.00028936329181306064},{\"label\":\"LABEL_0\",\"score\":0.00008857346256263554},{\"label\":\"LABEL_0\",\"score\":0.00005936243542237207},{\"label\":\"LABEL_0\",\"score\":0.00003730160460690968},{\"label\":\"LABEL_0\",\"score\":0.000038143676647450775},{\"label\":\"LABEL_0\",\"score\":0.000037292928027454764},{\"label\":\"LABEL_0\",\"score\":0.0000375475428882055},{\"label\":\"LABEL_0\",\"score\":0.00003743292108993046},{\"label\":\"LABEL_0\",\"score\":0.00004382508996059187},{\"label\":\"LABEL_0\",\"score\":0.00003741964610526338}]]"
             }
         }
     ]
