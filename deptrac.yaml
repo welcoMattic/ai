@@ -536,6 +536,7 @@ deptrac:
       - PlatformComponent
     HuggingFacePlatform:
       - PlatformComponent
+      - GenericPlatform
     LmStudioPlatform:
       - PlatformComponent
       - GenericPlatform

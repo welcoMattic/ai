@@ -43,7 +43,7 @@ foreach (Movies::all() as $movie) {
 }
 
 $platform = Factory::createPlatform(env('HUGGINGFACE_KEY'), httpClient: http_client());
-$vectorizer = new Vectorizer($platform, 'BAAI/bge-small-en-v1.5?task=feature-extraction', logger(), includeText: true);
+$vectorizer = new Vectorizer($platform, 'BAAI/bge-small-en-v1.5', logger(), includeText: true);
 $indexer = new DocumentIndexer(new DocumentProcessor($vectorizer, $store, logger: logger()));
 $indexer->index($documents);
 
@@ -69,7 +69,7 @@ echo "\n";
 
 // 2. Hybrid RRF + reranking via PostQueryEvent
 echo "--- Hybrid RRF + HuggingFace Reranking Results ---\n";
-$reranker = new Reranker($platform, 'BAAI/bge-reranker-base?task=text-ranking', logger());
+$reranker = new Reranker($platform, 'cross-encoder/ms-marco-MiniLM-L6-v2', logger());
 
 $dispatcher = new EventDispatcher();
 $dispatcher->addListener(PostQueryEvent::class, new RerankerListener($reranker, topK: 5));

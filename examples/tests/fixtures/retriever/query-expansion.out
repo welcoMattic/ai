@@ -14,11 +14,11 @@ Original query: "gangster"
 
 --- With Query Expansion + Reranking ---
 Enhanced query: "gangster crime family mafia organized crime"
-  1. The Godfather (Relevance: 0.0069)
-  2. Reservoir Dogs (Relevance: 0.0025)
-  3. Pulp Fiction (Relevance: 0.0008)
-  4. The Green Mile (Relevance: 0.0005)
-  5. Memento (Relevance: 0.0005)
+  1. The Godfather (Relevance: -6.1284)
+  2. Pulp Fiction (Relevance: -9.7124)
+  3. Reservoir Dogs (Relevance: -11.1529)
+  4. Jurassic Park (Relevance: -11.1840)
+  5. Interstellar (Relevance: -11.1901)
 
 === Summary ===
 - PreQueryEvent allows modifying the query before vectorization and store lookup

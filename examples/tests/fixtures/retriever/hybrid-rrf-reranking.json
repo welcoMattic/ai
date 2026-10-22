@@ -3,9 +3,9 @@
         {
             "request": {
                 "method": "POST",
-                "url": "https://router.huggingface.co/hf-inference/models/BAAI/bge-small-en-v1.5",
-                "signature": "76f7046a72f3a754c099464a6cfe6ab6",
-                "signature_v2": "80a674005b8db3f098a7dd92d8b74f53",
+                "url": "https://router.huggingface.co/hf-inference/models/BAAI/bge-small-en-v1.5/pipeline/feature-extraction",
+                "signature": "f7ae708308cf8f489b7da22e9e3cfd23",
+                "signature_v2": "31d8d71a5f9e8f93c1e54a00ec8d0859",
                 "headers": {
                     "content-type": [
                         "application/json"
@@ -56,13 +56,13 @@
                         "uvicorn"
                     ],
                     "x-inference-id": [
-                        "5d628d3a-9e98-4ac6-9885-e81a6307fa2b"
+                        "d8b2d075-9c13-4e5f-9b8d-2d533969415f"
                     ],
                     "x-proxied-host": [
                         "http://10.109.10.35"
                     ],
                     "x-proxied-path": [
-                        "/"
+                        "/pipeline/feature-extraction"
                     ],
                     "x-proxied-replica": [
                         "4sr9relv-hccsh"
@@ -71,13 +71,13 @@
                         "Miss from cloudfront"
                     ],
                     "via": [
-                        "1.1 cbcdd7c5f9f32f6aa99d4b5f866132fa.cloudfront.net (CloudFront)"
+                        "1.1 49118071d6afcb9b4734f6f604fc6c5e.cloudfront.net (CloudFront)"
                     ],
                     "x-amz-cf-pop": [
                         "TXL52-P3"
                     ],
                     "x-amz-cf-id": [
-                        "SQy1SA05HdV4BKfE9nYu_uyB3Oqb3s1CSTbcJjFhZQXCSQXEKzWcXw=="
+                        "DTujff1RylHYlRQNjvFf3ccP0vCihq004v1AGHCbQFIXcW3A1N3naA=="
                     ],
                     "strict-transport-security": [
                         "max-age=31536000"
@@ -90,9 +90,9 @@
         {
             "request": {
                 "method": "POST",
-                "url": "https://router.huggingface.co/hf-inference/models/BAAI/bge-small-en-v1.5",
-                "signature": "016e0335e80f4a1bdec45f899af50aa9",
-                "signature_v2": "5aa9fc64e5714b3a1cd9c2015729ecbf",
+                "url": "https://router.huggingface.co/hf-inference/models/BAAI/bge-small-en-v1.5/pipeline/feature-extraction",
+                "signature": "b464a00d23816e2499de349bd600daa8",
+                "signature_v2": "6093c00deed9cb22603eeabcbb93f0e3",
                 "headers": {
                     "content-type": [
                         "application/json"
@@ -143,13 +143,13 @@
                         "uvicorn"
                     ],
                     "x-inference-id": [
-                        "b6cfb00d-b9ad-46f1-b505-8ba73806163f"
+                        "251c93d4-1e5b-4e33-b515-8dff22a902a1"
                     ],
                     "x-proxied-host": [
                         "http://10.109.10.35"
                     ],
                     "x-proxied-path": [
-                        "/"
+                        "/pipeline/feature-extraction"
                     ],
                     "x-proxied-replica": [
                         "4sr9relv-hccsh"
@@ -158,13 +158,13 @@
                         "Miss from cloudfront"
                     ],
                     "via": [
-                        "1.1 cbcdd7c5f9f32f6aa99d4b5f866132fa.cloudfront.net (CloudFront)"
+                        "1.1 49118071d6afcb9b4734f6f604fc6c5e.cloudfront.net (CloudFront)"
                     ],
                     "x-amz-cf-pop": [
                         "TXL52-P3"
                     ],
                     "x-amz-cf-id": [
-                        "fRskmHTeMANYGwfUmxrxgy9ozsYnX2G29AYPJst32Ngl4Z7S80eDKQ=="
+                        "5eg5AzhhqgrbSXh7Y6qsY_PdLdci6HHcyawbySuA8Hb-2jGVTaIdqw=="
                     ],
                     "strict-transport-security": [
                         "max-age=31536000"
@@ -177,9 +177,9 @@
         {
             "request": {
                 "method": "POST",
-                "url": "https://router.huggingface.co/hf-inference/models/BAAI/bge-small-en-v1.5",
-                "signature": "016e0335e80f4a1bdec45f899af50aa9",
-                "signature_v2": "5aa9fc64e5714b3a1cd9c2015729ecbf",
+                "url": "https://router.huggingface.co/hf-inference/models/BAAI/bge-small-en-v1.5/pipeline/feature-extraction",
+                "signature": "b464a00d23816e2499de349bd600daa8",
+                "signature_v2": "6093c00deed9cb22603eeabcbb93f0e3",
                 "headers": {
                     "content-type": [
                         "application/json"
@@ -230,13 +230,13 @@
                         "uvicorn"
                     ],
                     "x-inference-id": [
-                        "868acbfe-e715-49ea-8c6f-fa20cd83d1b2"
+                        "ed205e13-baf5-4579-94d6-e889f007feea"
                     ],
                     "x-proxied-host": [
                         "http://10.109.10.35"
                     ],
                     "x-proxied-path": [
-                        "/"
+                        "/pipeline/feature-extraction"
                     ],
                     "x-proxied-replica": [
                         "4sr9relv-hccsh"
@@ -245,13 +245,13 @@
                         "Miss from cloudfront"
                     ],
                     "via": [
-                        "1.1 cbcdd7c5f9f32f6aa99d4b5f866132fa.cloudfront.net (CloudFront)"
+                        "1.1 49118071d6afcb9b4734f6f604fc6c5e.cloudfront.net (CloudFront)"
                     ],
                     "x-amz-cf-pop": [
                         "TXL52-P3"
                     ],
                     "x-amz-cf-id": [
-                        "olju6rC-4X8PKqqAZqUUiyapKjJITcxbEfW86lamISbJXEDQ8x8y6A=="
+                        "ZoeDK3HjUlvSQuSxG6ca038TtQfk_ylpkwPbw34y4Vlkg26uOPZOaQ=="
                     ],
                     "strict-transport-security": [
                         "max-age=31536000"
@@ -264,9 +264,9 @@
         {
             "request": {
                 "method": "POST",
-                "url": "https://router.huggingface.co/hf-inference/models/BAAI/bge-reranker-base",
-                "signature": "f47d95f2ba3dd47dd3d85f6576917435",
-                "signature_v2": "77fffbd51ff5dd3ec269415311c837fe",
+                "url": "https://router.huggingface.co/hf-inference/models/cross-encoder/ms-marco-MiniLM-L6-v2",
+                "signature": "7994bdbeb1f78719748e68bc91e6ff5e",
+                "signature_v2": "6b1c4937e98dfdc8e76d0c70022021b9",
                 "headers": {
                     "content-type": [
                         "application/json"
@@ -275,7 +275,7 @@
                         "[redacted]"
                     ]
                 },
-                "body": "{\"inputs\":[{\"text\":\"crime family mafia\",\"text_pair\":\"Title: The Godfather\\nDirector: Francis Ford Coppola\\nDescription: The aging patriarch of an organized crime dynasty transfers control of his empire to his reluctant son.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Reservoir Dogs\\nDirector: Quentin Tarantino\\nDescription: A group of criminals gather after a diamond heist gone wrong.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Kill Bill: Vol. 1\\nDirector: Quentin Tarantino\\nDescription: A former assassin seeks revenge against her former boss and colleagues.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: The Matrix\\nDirector: The Wachowskis\\nDescription: A hacker discovers the world he lives in is a simulated reality and joins a rebellion to overthrow its controllers.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Pulp Fiction\\nDirector: Quentin Tarantino\\nDescription: The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: The Green Mile\\nDirector: Frank Darabont\\nDescription: Death row guards discover a mysterious inmate with the ability to heal people.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Memento\\nDirector: Christopher Nolan\\nDescription: A man with short-term memory loss attempts to find his wife\\u0027s murderer.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: The Shawshank Redemption\\nDirector: Frank Darabont\\nDescription: Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Apocalypse Now\\nDirector: Francis Ford Coppola\\nDescription: A US Army officer is sent on a dangerous mission to terminate a renegade Special Forces Colonel in Cambodia.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Spirited Away\\nDirector: Hayao Miyazaki\\nDescription: A young girl enters a mysterious world of spirits and must find a way to rescue her parents and return home.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Gladiator\\nDirector: Ridley Scott\\nDescription: A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: The Dark Knight\\nDirector: Christopher Nolan\\nDescription: When the menace Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the hardest trials of all.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: The Prestige\\nDirector: Christopher Nolan\\nDescription: Two magicians engage in a competitive battle for supremacy in fin-de-si\\u00e8cle London.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Notting Hill\\nDirector: Roger Michell\\nDescription: A British bookseller meets and falls in love with a famous American actress, navigating the challenges of fame and romance.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Cloud Atlas\\nDirector: The Wachowskis\\nDescription: An epic story of how the actions of individuals influence others in different time and place.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: WALL-E\\nDirector: Andrew Stanton\\nDescription: A small waste-collecting robot inadvertently embarks on a space journey that will decide the fate of mankind.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Inception\\nDirector: Christopher Nolan\\nDescription: A skilled thief is given a chance at redemption if he can successfully perform inception, the act of planting an idea in someone\\u0027s subconscious.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Project Hail Mary\\nDirector: Phil Lord and Chris Miller\\nDescription: A teacher and molecular biologist awakens aboard a spacecraft with no memory and must find a way to save Earth from extinction-level alien microorganisms threatening the sun.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Interstellar\\nDirector: Christopher Nolan\\nDescription: A team of explorers travel through a wormhole in space in an attempt to ensure humanity\\u0027s survival.\"},{\"text\":\"crime family mafia\",\"text_pair\":\"Title: Jurassic Park\\nDirector: Steven Spielberg\\nDescription: During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run amok.\"}]}"
+                "body": "{\"inputs\":{\"query\":\"crime family mafia\",\"texts\":[\"Title: The Godfather\\nDirector: Francis Ford Coppola\\nDescription: The aging patriarch of an organized crime dynasty transfers control of his empire to his reluctant son.\",\"Title: Reservoir Dogs\\nDirector: Quentin Tarantino\\nDescription: A group of criminals gather after a diamond heist gone wrong.\",\"Title: Kill Bill: Vol. 1\\nDirector: Quentin Tarantino\\nDescription: A former assassin seeks revenge against her former boss and colleagues.\",\"Title: The Matrix\\nDirector: The Wachowskis\\nDescription: A hacker discovers the world he lives in is a simulated reality and joins a rebellion to overthrow its controllers.\",\"Title: Pulp Fiction\\nDirector: Quentin Tarantino\\nDescription: The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption.\",\"Title: The Green Mile\\nDirector: Frank Darabont\\nDescription: Death row guards discover a mysterious inmate with the ability to heal people.\",\"Title: Memento\\nDirector: Christopher Nolan\\nDescription: A man with short-term memory loss attempts to find his wife\\u0027s murderer.\",\"Title: The Shawshank Redemption\\nDirector: Frank Darabont\\nDescription: Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.\",\"Title: Apocalypse Now\\nDirector: Francis Ford Coppola\\nDescription: A US Army officer is sent on a dangerous mission to terminate a renegade Special Forces Colonel in Cambodia.\",\"Title: Spirited Away\\nDirector: Hayao Miyazaki\\nDescription: A young girl enters a mysterious world of spirits and must find a way to rescue her parents and return home.\",\"Title: Gladiator\\nDirector: Ridley Scott\\nDescription: A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.\",\"Title: The Dark Knight\\nDirector: Christopher Nolan\\nDescription: When the menace Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the hardest trials of all.\",\"Title: The Prestige\\nDirector: Christopher Nolan\\nDescription: Two magicians engage in a competitive battle for supremacy in fin-de-si\\u00e8cle London.\",\"Title: Notting Hill\\nDirector: Roger Michell\\nDescription: A British bookseller meets and falls in love with a famous American actress, navigating the challenges of fame and romance.\",\"Title: Cloud Atlas\\nDirector: The Wachowskis\\nDescription: An epic story of how the actions of individuals influence others in different time and place.\",\"Title: WALL-E\\nDirector: Andrew Stanton\\nDescription: A small waste-collecting robot inadvertently embarks on a space journey that will decide the fate of mankind.\",\"Title: Inception\\nDirector: Christopher Nolan\\nDescription: A skilled thief is given a chance at redemption if he can successfully perform inception, the act of planting an idea in someone\\u0027s subconscious.\",\"Title: Project Hail Mary\\nDirector: Phil Lord and Chris Miller\\nDescription: A teacher and molecular biologist awakens aboard a spacecraft with no memory and must find a way to save Earth from extinction-level alien microorganisms threatening the sun.\",\"Title: Interstellar\\nDirector: Christopher Nolan\\nDescription: A team of explorers travel through a wormhole in space in an attempt to ensure humanity\\u0027s survival.\",\"Title: Jurassic Park\\nDirector: Steven Spielberg\\nDescription: During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run amok.\"]}}"
             },
             "response": {
                 "status": 200,
@@ -284,7 +284,7 @@
                         "application/json"
                     ],
                     "content-length": [
-                        "1024"
+                        "806"
                     ],
                     "x-inference-provider": [
                         "hf-inference"
@@ -317,35 +317,35 @@
                         "uvicorn"
                     ],
                     "x-inference-id": [
-                        "97ade9e8-c968-497e-b018-7790e9388f00"
+                        "3b059925-08fa-4d91-b0ac-29ab45cdfb91"
                     ],
                     "x-proxied-host": [
-                        "http://10.109.27.58"
+                        "http://10.109.13.88"
                     ],
                     "x-proxied-path": [
                         "/"
                     ],
                     "x-proxied-replica": [
-                        "3ew4ez8q-4dbdlmtdq"
+                        "vcb7vf7t-23f8n98gg"
                     ],
                     "x-cache": [
                         "Miss from cloudfront"
                     ],
                     "via": [
-                        "1.1 cbcdd7c5f9f32f6aa99d4b5f866132fa.cloudfront.net (CloudFront)"
+                        "1.1 49118071d6afcb9b4734f6f604fc6c5e.cloudfront.net (CloudFront)"
                     ],
                     "x-amz-cf-pop": [
                         "TXL52-P3"
                     ],
                     "x-amz-cf-id": [
-                        "FEJJAZk-PplNGW4947CPQTle98I6nK0nD_FtkSiHS8WTrtq3zLTPJQ=="
+                        "T0V13FUNmUZUzD7YhOQQL04uruqBkuOF1LLX2kvStfLHcazKATUkPQ=="
                     ],
                     "strict-transport-security": [
                         "max-age=31536000"
                     ]
                 },
                 "body_format": "json",
-                "body": "[[{\"label\":\"LABEL_0\",\"score\":0.000395749433664605},{\"label\":\"LABEL_0\",\"score\":0.0016703399596735835},{\"label\":\"LABEL_0\",\"score\":0.000043443269532872364},{\"label\":\"LABEL_0\",\"score\":0.00003730726530193351},{\"label\":\"LABEL_0\",\"score\":0.00008067776798270643},{\"label\":\"LABEL_0\",\"score\":0.00014896343054715544},{\"label\":\"LABEL_0\",\"score\":0.000049547175876796246},{\"label\":\"LABEL_0\",\"score\":0.00003803830622928217},{\"label\":\"LABEL_0\",\"score\":0.00003732800905709155},{\"label\":\"LABEL_0\",\"score\":0.00003732619734364562},{\"label\":\"LABEL_0\",\"score\":0.00033602750045247376},{\"label\":\"LABEL_0\",\"score\":0.00003728417868842371},{\"label\":\"LABEL_0\",\"score\":0.00005280271579977125},{\"label\":\"LABEL_0\",\"score\":0.00003728944284375757},{\"label\":\"LABEL_0\",\"score\":0.00003729666059371084},{\"label\":\"LABEL_0\",\"score\":0.000037441306631080806},{\"label\":\"LABEL_0\",\"score\":0.000037304522265912965},{\"label\":\"LABEL_0\",\"score\":0.00003744416244444437},{\"label\":\"LABEL_0\",\"score\":0.00003734826896106824},{\"label\":\"LABEL_0\",\"score\":0.00003745013236766681}]]"
+                "body": "[{\"score\":-7.413881778717041,\"index\":0},{\"score\":-10.121028900146484,\"index\":4},{\"score\":-10.723177909851074,\"index\":1},{\"score\":-11.16118335723877,\"index\":10},{\"score\":-11.201708793640137,\"index\":18},{\"score\":-11.212418556213379,\"index\":6},{\"score\":-11.223933219909668,\"index\":17},{\"score\":-11.224008560180664,\"index\":19},{\"score\":-11.245261192321777,\"index\":16},{\"score\":-11.254584312438965,\"index\":9},{\"score\":-11.26318073272705,\"index\":7},{\"score\":-11.265939712524414,\"index\":15},{\"score\":-11.284981727600098,\"index\":13},{\"score\":-11.294135093688965,\"index\":14},{\"score\":-11.295319557189941,\"index\":11},{\"score\":-11.3124361038208,\"index\":5},{\"score\":-11.319695472717285,\"index\":2},{\"score\":-11.332010269165039,\"index\":3},{\"score\":-11.332258224487305,\"index\":12},{\"score\":-11.341349601745605,\"index\":8}]"
             }
         }
     ]

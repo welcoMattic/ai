@@ -165,6 +165,44 @@ Platform
    `FinishReasonMapper` is removed as well, the finish reason being mapped by the OpenResponses bridge
    that the Perplexity classes now extend.
 
+ * The HuggingFace bridge no longer accepts the `task` option, and the `Task` interface has been removed.
+   The model catalog resolves the task of a model and returns a model class per task, e.g. `Completions`,
+   `Embeddings` or `Classification`. Remove the option and the `?task=` suffix of model names:
+
+   ```diff
+   -$result = $platform->invoke('facebook/bart-large-cnn', $text, [
+   -    'task' => Task::SUMMARIZATION,
+   -]);
+   +$result = $platform->invoke('facebook/bart-large-cnn', $text);
+   ```
+
+   The default `ModelCatalog` of the bridge lists the chat models of the inference providers and the most
+   downloaded models of each task. It throws `ModelNotFoundException` for any other model. Pass the models
+   you use as `$additionalModels`, or resolve models through the Hugging Face Hub API with `ModelApiCatalog`:
+
+   ```diff
+   +use Symfony\AI\Platform\Bridge\HuggingFace\ApiClient;
+   +use Symfony\AI\Platform\Bridge\HuggingFace\ModelApiCatalog;
+
+   -$platform = Factory::createPlatform($apiKey, Provider::NSCALE, $httpClient);
+   +$modelCatalog = new ModelApiCatalog(new ApiClient($httpClient, $apiKey), Provider::NSCALE);
+   +$platform = Factory::createPlatform($apiKey, Provider::NSCALE, $httpClient, $modelCatalog);
+   ```
+
+ * The `$provider` argument of the HuggingFace `Factory` defaults to `null` and only applies to chat completion,
+   which Hugging Face routes to a provider of its choice when `null`. All other tasks run on `hf-inference`.
+ * The HuggingFace bridge runs sentence similarity models as `Embeddings` and returns vectors. The
+   `Output\SentenceSimilarityResult` class has been removed.
+ * The HuggingFace bridge only reranks with models of the `text-ranking` task, e.g. `cross-encoder/ms-marco-MiniLM-L6-v2`.
+   Cross-encoders of the `text-classification` task, e.g. `BAAI/bge-reranker-base`, return a classification.
+ * The HuggingFace bridge no longer supports the `text-generation`, `image-to-text` and `audio-classification` tasks,
+   which are not served by Hugging Face Inference Providers. Use chat completion instead of text generation.
+ * The `ModelClient`, `ResultConverter` and `Contract\MessageBagNormalizer` classes of the HuggingFace bridge have
+   been removed. Chat completion uses `Completions\ModelClient` with the result converter of the Generic bridge,
+   and every other task uses `Pipeline\ModelClient` with a result converter per model class.
+ * The `fromArray()` methods of the HuggingFace `Output` result classes, e.g. `Output\ClassificationResult::fromArray()`,
+   have been removed. Use the constructors, or get the result object from `$result->asObject()`.
+
 AI Bundle
 ---------
 
@@ -179,6 +217,9 @@ AI Bundle
    -$name = $definition->getTag('ai.platform')[0]['name']; // 'failover'
    +$name = $definition->getTag('ai.platform')[0]['name']; // 'main'
    ```
+
+ * The `provider` option of the `huggingface` platform defaults to `null` instead of `hf-inference` and only applies
+   to chat completion. Hugging Face then picks the provider of each chat request; set the option to always use the same one.
 
 Store
 -----

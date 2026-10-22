@@ -28,11 +28,11 @@ Query: "crime family mafia"
   20. Jurassic Park (RRF Score: 0.012500)
 
 --- Hybrid RRF + HuggingFace Reranking Results ---
-  1. Reservoir Dogs (Relevance: 0.0017)
-  2. The Godfather (Relevance: 0.0004)
-  3. Gladiator (Relevance: 0.0003)
-  4. The Green Mile (Relevance: 0.0001)
-  5. Pulp Fiction (Relevance: 0.0001)
+  1. The Godfather (Relevance: -7.4139)
+  2. Pulp Fiction (Relevance: -10.1210)
+  3. Reservoir Dogs (Relevance: -10.7232)
+  4. Gladiator (Relevance: -11.1612)
+  5. Interstellar (Relevance: -11.2017)
 
 === Summary ===
 - CombinedStore merges vector and text results using RRF scoring

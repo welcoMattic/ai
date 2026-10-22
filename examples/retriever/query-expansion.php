@@ -44,12 +44,12 @@ foreach (Movies::all() as $movie) {
 }
 
 $platform = Factory::createPlatform(env('HUGGINGFACE_KEY'), httpClient: http_client());
-$vectorizer = new Vectorizer($platform, 'BAAI/bge-small-en-v1.5?task=feature-extraction', logger(), includeText: true);
+$vectorizer = new Vectorizer($platform, 'BAAI/bge-small-en-v1.5', logger(), includeText: true);
 $indexer = new DocumentIndexer(new DocumentProcessor($vectorizer, $store, logger: logger()));
 $indexer->index($documents);
 
 $combinedStore = new CombinedStore($store, $store, rrfK: 60);
-$reranker = new Reranker($platform, 'BAAI/bge-reranker-base?task=text-ranking', logger());
+$reranker = new Reranker($platform, 'cross-encoder/ms-marco-MiniLM-L6-v2', logger());
 
 $vagueQuery = 'gangster';
 echo "Original query: \"$vagueQuery\"\n\n";
