@@ -163,6 +163,7 @@ Supported Models & Platforms
     and also filtered, e.g. ``php examples/huggingface/_model.php --provider=hf-inference --task=object-detection``
   * Fireworks' reranking models with `Fireworks`_ as Platform
   * Llama-Rank reranking models with `Together`_ as Platform (dedicated endpoint required)
+  * `Voyage's Reranking`_ with `Voyage`_ as Platform
 * **Voice Models**
   * `ElevenLabs TTS`_ with `ElevenLabs`_ as Platform
   * `ElevenLabs STT`_ with `ElevenLabs`_ as Platform
@@ -2271,6 +2272,7 @@ Code Examples
 * `Together Speech-to-Text`_
 * `Higgsfield Text-to-Image`_
 * `Higgsfield Image-to-Video`_
+* `Voyage Rerank`_
 
 .. note::
 
@@ -2321,6 +2323,7 @@ Code Examples
 .. _`Vertex AI Text Embeddings`: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/text-embeddings-api
 .. _`OpenAI's Text Embeddings`: https://platform.openai.com/docs/guides/embeddings/embedding-models
 .. _`Voyage's Embeddings`: https://docs.voyageai.com/docs/embeddings
+.. _`Voyage's Reranking`: https://docs.voyageai.com/docs/reranker
 .. _`Voyage`: https://www.voyageai.com/
 .. _`TypeSafe's Jev`: https://docs.typesafe.ai/models
 .. _`TypeSafe`: https://typesafe.ai/
@@ -2369,6 +2372,7 @@ Code Examples
 .. _`Fireworks Structured Output`: https://github.com/symfony/ai/blob/main/examples/fireworks/structured-output-math.php
 .. _`Fireworks Embeddings`: https://github.com/symfony/ai/blob/main/examples/fireworks/embeddings.php
 .. _`Fireworks Rerank`: https://github.com/symfony/ai/blob/main/examples/fireworks/rerank.php
+.. _`Voyage Rerank`: https://github.com/symfony/ai/blob/main/examples/voyage/rerank.php
 .. _`Fireworks Token Metadata`: https://github.com/symfony/ai/blob/main/examples/fireworks/token-metadata.php
 .. _`Together`: https://www.together.ai/
 .. _`Together Chat`: https://github.com/symfony/ai/blob/main/examples/together/chat.php
