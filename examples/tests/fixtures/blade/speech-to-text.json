@@ -1,0 +1,40 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.models.blade.sh/v1/audio/transcriptions",
+                "signature": "9eccffe6cba0abdc173b5c5726fd09a8",
+                "signature_v2": "ec727f9720753d3330ef4b007daf7349",
+                "headers": {
+                    "content-type": [
+                        "multipart/form-data"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "file": "[resource audio.mp3, 51019 bytes]",
+                    "model": "whisper-large-v3-turbo"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "content-length": [
+                        "103"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"text\":\" Wishing you a Merry Christmas and a Happy New Year.\",\"usage\":{\"type\":\"duration\",\"seconds\":3}}"
+            }
+        }
+    ]
+}

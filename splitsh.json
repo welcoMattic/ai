@@ -47,6 +47,7 @@
         "ai-anthropic-platform": "src/platform/src/Bridge/Anthropic",
         "ai-azure-platform": "src/platform/src/Bridge/Azure",
         "ai-bedrock-platform": "src/platform/src/Bridge/Bedrock",
+        "ai-blade-platform": "src/platform/src/Bridge/Blade",
         "ai-cache-platform": "src/platform/src/Bridge/Cache",
         "ai-cartesia-platform": "src/platform/src/Bridge/Cartesia",
         "ai-cerebras-platform": "src/platform/src/Bridge/Cerebras",

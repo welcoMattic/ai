@@ -25,6 +25,7 @@ To use a specific AI platform, install the corresponding bridge package:
 | Anthropic           | `symfony/ai-anthropic-platform`           |
 | Azure OpenAI        | `symfony/ai-azure-platform`               |
 | AWS Bedrock         | `symfony/ai-bedrock-platform`             |
+| Blade               | `symfony/ai-blade-platform`               |
 | Cache               | `symfony/ai-cache-platform`               |
 | Cartesia            | `symfony/ai-cartesia-platform`            |
 | Cerebras            | `symfony/ai-cerebras-platform`            |

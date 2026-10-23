@@ -66,6 +66,7 @@ use Symfony\AI\Platform\Bridge\Anthropic\Factory as AnthropicFactory;
 use Symfony\AI\Platform\Bridge\Azure\OpenAi\Factory as AzureOpenAiFactory;
 use Symfony\AI\Platform\Bridge\Bedrock\Factory as BedrockFactory;
 use Symfony\AI\Platform\Bridge\Bedrock\Mantle\Factory as BedrockMantleFactory;
+use Symfony\AI\Platform\Bridge\Blade\Factory as BladeFactory;
 use Symfony\AI\Platform\Bridge\Cache\CachePlatform;
 use Symfony\AI\Platform\Bridge\Cache\ResultNormalizer;
 use Symfony\AI\Platform\Bridge\Cartesia\Factory as CartesiaFactory;
@@ -645,6 +646,30 @@ final class AiBundle extends AbstractBundle
                     new Reference('serializer.normalizer.object'),
                 ])
                 ->addTag('serializer.normalizer');
+        }
+
+        if ('blade' === $type && isset($platform['api_key'])) {
+            if (!ContainerBuilder::willBeAvailable('symfony/ai-blade-platform', BladeFactory::class, ['symfony/ai-bundle'])) {
+                throw new RuntimeException('Blade platform configuration requires "symfony/ai-blade-platform" package. Try running "composer require symfony/ai-blade-platform".');
+            }
+
+            $platformId = 'ai.platform.blade';
+            $definition = (new Definition(Platform::class))
+                ->setFactory(BladeFactory::class.'::createPlatform')
+                ->setLazy(true)
+                ->addTag('proxy', ['interface' => PlatformInterface::class])
+                ->setArguments([
+                    $platform['api_key'],
+                    new Reference($platform['http_client'], ContainerInterface::NULL_ON_INVALID_REFERENCE),
+                    new Reference('ai.platform.model_catalog.blade'),
+                    null,
+                    new Reference('event_dispatcher'),
+                ])
+                ->addTag('ai.platform', ['name' => 'blade']);
+
+            $container->setDefinition($platformId, $definition);
+
+            return;
         }
 
         if ('cartesia' === $type) {

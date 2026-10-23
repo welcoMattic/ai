@@ -1,0 +1,55 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.models.blade.sh/v1/chat/completions",
+                "signature": "61b6f71a9bb61c67f24924f99212348f",
+                "signature_v2": "2b5db81bad1381d23f22d3b97e7bdf5a",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"response_format\":{\"type\":\"json_schema\",\"json_schema\":{\"name\":\"MathReasoning\",\"schema\":{\"type\":\"object\",\"properties\":{\"steps\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"explanation\":{\"type\":\"string\"},\"output\":{\"type\":\"string\"}},\"required\":[\"explanation\",\"output\"],\"additionalProperties\":false}},\"finalAnswer\":{\"type\":\"string\"},\"result\":{\"type\":\"number\"}},\"required\":[\"steps\",\"finalAnswer\",\"result\"],\"additionalProperties\":false},\"strict\":true}},\"messages\":[{\"role\":\"system\",\"content\":\"You are a helpful math tutor. Guide the user through the solution step by step.\"},{\"role\":\"user\",\"content\":\"how can I solve 8x + 7 = -23\"}],\"model\":\"qwen3.6-35b-a3b\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "1000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "2000000"
+                    ],
+                    "x-shadow-cold-start": [
+                        "0"
+                    ],
+                    "x-shadow-cold-start-ms": [
+                        "0"
+                    ],
+                    "x-shadow-inference-ms": [
+                        "1352"
+                    ],
+                    "x-shadow-latency-ms": [
+                        "1352"
+                    ],
+                    "content-length": [
+                        "1102"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"chatcmpl-req_01M5KZ0H8JM8KQK8KMRSBCS2HJ\",\"object\":\"chat.completion\",\"created\":1792745162,\"model\":\"qwen3.6-35b-a3b\",\"system_fingerprint\":\"shadow-21867eee3791\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"steps\\\": [{\\\"explanation\\\": \\\"Start by isolating the term with the variable $x$. To do this, subtract 7 from both sides of the equation to move the constant term.\\\", \\\"output\\\": \\\"8x = -23 - 7\\\\n8x = -30\\\"}, {\\\"explanation\\\": \\\"Now, solve for $x$ by dividing both sides by the coefficient of $x$, which is 8.\\\", \\\"output\\\": \\\"x = -30 / 8\\\"}, {\\\"explanation\\\": \\\"Simplify the fraction by dividing both the numerator and the denominator by their greatest common divisor, which is 2.\\\", \\\"output\\\": \\\"x = -15 / 4\\\"}], \\\"finalAnswer\\\": \\\"x = -15/4 or -3.75\\\", \\\"result\\\": 0}\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":48,\"total_tokens\":219,\"completion_tokens\":171,\"prompt_tokens_details\":{\"cached_tokens\":0,\"created_cache_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0}},\"pricing\":{\"mode\":\"spot\",\"multiplier\":0.65,\"price_in\":0.0825,\"price_out\":0.5538}}"
+            }
+        }
+    ]
+}

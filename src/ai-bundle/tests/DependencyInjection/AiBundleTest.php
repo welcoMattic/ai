@@ -10380,6 +10380,53 @@ class AiBundleTest extends TestCase
         }
     }
 
+    public function testBladePlatformConfiguration()
+    {
+        $container = $this->buildContainer([
+            'ai' => [
+                'platform' => [
+                    'blade' => [
+                        'api_key' => 'blade-test-key',
+                    ],
+                ],
+            ],
+        ]);
+
+        $this->assertTrue($container->hasDefinition('ai.platform.blade'));
+
+        $definition = $container->getDefinition('ai.platform.blade');
+        $arguments = $definition->getArguments();
+
+        $this->assertCount(5, $arguments);
+        $this->assertSame('blade-test-key', $arguments[0]);
+        $this->assertInstanceOf(Reference::class, $arguments[1]);
+        $this->assertSame('http_client', (string) $arguments[1]);
+        $this->assertInstanceOf(Reference::class, $arguments[2]);
+        $this->assertSame('ai.platform.model_catalog.blade', (string) $arguments[2]);
+        $this->assertNull($definition->getArgument(3));
+    }
+
+    public function testBladePlatformConfigurationWithCustomHttpClient()
+    {
+        $container = $this->buildContainer([
+            'ai' => [
+                'platform' => [
+                    'blade' => [
+                        'api_key' => 'blade-test-key',
+                        'http_client' => 'blade.http_client',
+                    ],
+                ],
+            ],
+        ]);
+
+        $this->assertTrue($container->hasDefinition('ai.platform.blade'));
+
+        $httpClient = $container->getDefinition('ai.platform.blade')->getArgument(1);
+
+        $this->assertInstanceOf(Reference::class, $httpClient);
+        $this->assertSame('blade.http_client', (string) $httpClient);
+    }
+
     public function testOvhPlatformConfiguration()
     {
         $container = $this->buildContainer([
@@ -10894,6 +10941,9 @@ class AiBundleTest extends TestCase
                     ],
                     'ovh' => [
                         'api_key' => 'ovh_key_full',
+                    ],
+                    'blade' => [
+                        'api_key' => 'blade_key_full',
                     ],
                     'cerebras' => [
                         'api_key' => 'csk-cerebras_key_full',

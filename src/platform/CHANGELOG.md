@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.16
+----
+
+ * Add Blade platform bridge
+
 0.15
 ----
 

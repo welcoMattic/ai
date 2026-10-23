@@ -140,6 +140,7 @@ Supported Models & Platforms
   * Open-weight models (`gpt-oss`_, `Qwen`_, `Gemma`_) with `Bedrock Mantle`_ as Platform
   * Open-weight models like Llama, Qwen, Kimi or GLM with `Together`_ as Platform
   * `Venice's Models`_ with `Venice`_ as Platform
+  * Open-weight models hosted in the EU with `Blade`_ as Platform
   * `LiteLLM`_ as unified Platform
   * Fireworks' hosted models (e.g. Kimi K2, DeepSeek V3.1) with `Fireworks`_ as Platform
 * **Embeddings Models**
@@ -152,6 +153,7 @@ Supported Models & Platforms
   * `Qwen`_ with `OpenRouter`_ as Platform
   * Fireworks' embedding models with `Fireworks`_ as Platform
   * BGE embedding models with `Together`_ as Platform (dedicated endpoint required)
+  * Qwen embedding models with `Blade`_ as Platform
 * **Other Models**
   * `OpenAI's GPT Image`_ with `OpenAI`_ as Platform (generation and editing)
   * `OpenAI's Whisper`_ with `OpenAI`_ and `Azure`_ as Platform
@@ -173,6 +175,7 @@ Supported Models & Platforms
   * `Deepgram TTS`_ with `Deepgram`_ as Platform
   * `Deepgram STT`_ with `Deepgram`_ as Platform
   * Text-to-speech and speech-to-text with `Together`_ as Platform
+  * Text-to-speech and speech-to-text with `Blade`_ as Platform
   * `Venice TTS`_ with `Venice`_ as Platform
   * `Venice STT`_ with `Venice`_ as Platform
   * Multi-provider TTS and STT with `Eden AI`_ as Platform
@@ -182,6 +185,7 @@ Supported Models & Platforms
   * `Decart T2I`_ with `Decart`_  as Platform
   * `Decart T2V`_ with `Decart`_  as Platform
   * Image generation with `Together`_ as Platform
+  * Image generation with `Blade`_ as Platform
   * Image and video generation with `Higgsfield`_ as Platform (asynchronous, job-based)
   * `Venice T2I`_ with `Venice`_ as Platform
   * `Venice T2V`_ with `Venice`_ as Platform
@@ -2326,6 +2330,7 @@ Code Examples
 .. _`gpt-oss`: https://openai.com/open-models/
 .. _`Albert API`: https://github.com/etalab-ia/albert-api
 .. _`Albert`: https://alliance.numerique.gouv.fr/produit/produits-interminist%C3%A9rielles/albert-api/
+.. _`Blade`: https://blade.sh
 .. _`Mistral`: https://www.mistral.ai/
 .. _`Gemini Text Embeddings`: https://ai.google.dev/gemini-api/docs/embeddings
 .. _`Vertex AI Gen AI`: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference

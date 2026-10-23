@@ -1,0 +1,106 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.models.blade.sh/v1/chat/completions",
+                "signature": "90b0e54e17f214d0aab4c4602278f04b",
+                "signature_v2": "230c92c676ad78183f2ed824e0bf2c8f",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}}],\"tool_choice\":\"auto\",\"messages\":[{\"role\":\"user\",\"content\":\"How many days until next Christmas?\"}],\"model\":\"qwen3.6-35b-a3b\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "1000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "2000000"
+                    ],
+                    "x-shadow-cold-start": [
+                        "0"
+                    ],
+                    "x-shadow-cold-start-ms": [
+                        "0"
+                    ],
+                    "x-shadow-inference-ms": [
+                        "279"
+                    ],
+                    "x-shadow-latency-ms": [
+                        "279"
+                    ],
+                    "content-length": [
+                        "653"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"chatcmpl-req_01M5KZXMAVQX6TT9DX6Q87J0SW\",\"object\":\"chat.completion\",\"created\":1792746115,\"model\":\"qwen3.6-35b-a3b\",\"system_fingerprint\":\"shadow-21867eee3791\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"tool_calls\":[{\"id\":\"chatcmpl-tool-9feb2205c3b188ea\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"}}]},\"finish_reason\":\"tool_calls\"}],\"usage\":{\"prompt_tokens\":252,\"total_tokens\":266,\"completion_tokens\":14,\"prompt_tokens_details\":{\"cached_tokens\":0,\"created_cache_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0}},\"pricing\":{\"mode\":\"spot\",\"multiplier\":0.65,\"price_in\":0.0825,\"price_out\":0.5538}}"
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.models.blade.sh/v1/chat/completions",
+                "signature": "502b5830208ff97255e07590d3e7cf97",
+                "signature_v2": "fb265d49de3d6d45b5d9a5092ddb121b",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": "{\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"clock\",\"description\":\"Provides the current date and time.\"}}],\"tool_choice\":\"auto\",\"messages\":[{\"role\":\"user\",\"content\":\"How many days until next Christmas?\"},{\"role\":\"assistant\",\"content\":null,\"tool_calls\":[{\"id\":\"chatcmpl-tool-9feb2205c3b188ea\",\"type\":\"function\",\"function\":{\"name\":\"clock\",\"arguments\":\"{}\"}}]},{\"role\":\"tool\",\"content\":\"Current date is 2026-10-23 (YYYY-MM-DD) and the time is 09:01:55 (HH:MM:SS).\",\"tool_call_id\":\"chatcmpl-tool-9feb2205c3b188ea\"}],\"model\":\"qwen3.6-35b-a3b\"}"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "x-ratelimit-limit-requests": [
+                        "1000"
+                    ],
+                    "x-ratelimit-limit-tokens": [
+                        "2000000"
+                    ],
+                    "x-shadow-cold-start": [
+                        "0"
+                    ],
+                    "x-shadow-cold-start-ms": [
+                        "0"
+                    ],
+                    "x-shadow-inference-ms": [
+                        "1187"
+                    ],
+                    "x-shadow-latency-ms": [
+                        "1187"
+                    ],
+                    "content-length": [
+                        "852"
+                    ]
+                },
+                "body_format": "json",
+                "body": "{\"id\":\"chatcmpl-req_01M5KZXMNAE3V4KHRJJKMY9GEQ\",\"object\":\"chat.completion\",\"created\":1792746116,\"model\":\"qwen3.6-35b-a3b\",\"system_fingerprint\":\"shadow-21867eee3791\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Today is October 23, 2026.\\n\\nChristmas Day is December 25, 2026.\\n\\nLet's calculate the number of days:\\n- Days remaining in October 2026: 31 - 23 = 8 days\\n- Days in November 2026: 30 days\\n- Days in December 2026 until Christmas: 25 days\\n\\nTotal days = 8 + 30 + 25 = 63 days.\\n\\nThere are 63 days until next Christmas.\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":322,\"total_tokens\":446,\"completion_tokens\":124,\"prompt_tokens_details\":{\"cached_tokens\":0,\"created_cache_tokens\":0},\"completion_tokens_details\":{\"reasoning_tokens\":0}},\"pricing\":{\"mode\":\"spot\",\"multiplier\":0.65,\"price_in\":0.0825,\"price_out\":0.5538}}"
+            }
+        }
+    ]
+}

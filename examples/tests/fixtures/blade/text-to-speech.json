@@ -1,0 +1,42 @@
+{
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "url": "https://api.models.blade.sh/v1/audio/speech",
+                "signature": "aa94b3edf006ef7273a25eec6e8c0125",
+                "signature_v2": "2133e112511a0aacacd89f06368bda32",
+                "headers": {
+                    "content-type": [
+                        "application/json"
+                    ],
+                    "authorization": [
+                        "[redacted]"
+                    ]
+                },
+                "body": {
+                    "voice": "af_heart",
+                    "model": "kokoro-82m",
+                    "input": "Welcome to Symfony AI, the PHP framework for building AI applications."
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "content-type": [
+                        "audio/wav"
+                    ],
+                    "server": [
+                        "uvicorn"
+                    ],
+                    "content-length": [
+                        "248876"
+                    ]
+                },
+                "body_format": "binary",
+                "body": null,
+                "body_size": 248876
+            }
+        }
+    ]
+}

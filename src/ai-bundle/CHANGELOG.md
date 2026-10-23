@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.16
+----
+
+ * Add `blade` support for platform configuration
+
 0.15
 ----
 

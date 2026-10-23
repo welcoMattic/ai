@@ -1,0 +1,21 @@
+Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\MathReasoning {
+  +steps: array:3 [
+    0 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "Start by isolating the term with the variable $x$. To do this, subtract 7 from both sides of the equation to move the constant term."
+      +output: """
+        8x = -23 - 7\n
+        8x = -30
+        """
+    }
+    1 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "Now, solve for $x$ by dividing both sides by the coefficient of $x$, which is 8."
+      +output: "x = -30 / 8"
+    }
+    2 => Symfony\AI\Platform\Tests\Fixtures\StructuredOutput\Step {
+      +explanation: "Simplify the fraction by dividing both the numerator and the denominator by their greatest common divisor, which is 2."
+      +output: "x = -15 / 4"
+    }
+  ]
+  +finalAnswer: "x = -15/4 or -3.75"
+  +result: 0.0
+}

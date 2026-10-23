@@ -137,6 +137,10 @@ deptrac:
       collectors:
         - type: classLike
           value: Symfony\\AI\\Platform\\Bridge\\Bedrock\\.*
+    - name: BladePlatform
+      collectors:
+        - type: classLike
+          value: Symfony\\AI\\Platform\\Bridge\\Blade\\.*
     - name: CachePlatform
       collectors:
         - type: classLike
@@ -493,6 +497,9 @@ deptrac:
       - AnthropicPlatform
       - GenericPlatform
       - OpenResponsesPlatform
+    BladePlatform:
+      - PlatformComponent
+      - GenericPlatform
     CachePlatform:
       - PlatformComponent
     CartesiaPlatform:
